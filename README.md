@@ -37,7 +37,7 @@ aux 4 serveurs.
 | `rapidocrm` | rapidocrm | CRM : prospection & pipeline, campagnes marketing, devis/factures/relances, communication client, performance commerciale — agents `directeur-commercial` et `sdr-prospection` | `prospection-pipeline`, `campagne-marketing`, `devis-facture-relance`, `communication-client`, `performance-commerciale`, `coaching-pipeline`, `redaction-commerciale` |
 | `rapidocms` | rapidocms | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, conformité de marque — agents `responsable-marketing`, `community-manager`, `directeur-artistique` | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque`, `prompt-engineering-visuel`, `calendrier-editorial`, `analyse-performance-contenu` |
 | `rapidorh` | rapidorh | RH & projets : setup de projets, Kanban, dailies (rapports journaliers), onboarding des employés — agents `chef-de-projet` et `responsable-rh` | `setup-projet`, `flux-kanban`, `daily-report`, `onboarding-equipe`, `revue-projet-hebdo`, `detection-surcharge` |
-| `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée (lecture seule) | `onboarding-client-360`, `revue-hebdo-business` |
+| `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée, comité de direction — agent `directeur-general` | `onboarding-client-360`, `revue-hebdo-business`, `comite-de-direction` |
 
 Chaque plugin embarque en plus un dossier `reference/` (directives communes
 d'utilisation des outils ; charte graphique pour les plugins à contenu visible),
