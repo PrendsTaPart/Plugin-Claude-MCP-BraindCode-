@@ -1,6 +1,6 @@
 {
   "name": "rapido",
-  "owner": { "name": "REMPLACER — nom société" },
+  "owner": { "name": "BraindCode" },
   "metadata": { "description": "Plugins Rapido pour FoodEatUp, CRM, CMS et RH" },
   "plugins": [
     { "name": "foodeatup", "source": "./foodeatup", "description": "Gestion restaurant (HACCP, salle, cuisine, achats)" },

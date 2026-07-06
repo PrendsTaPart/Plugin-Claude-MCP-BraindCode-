@@ -18,8 +18,8 @@ marque vide.
 1. **Lire la KB** — `charte-graphique.md` (hex, typos, logos, interdits),
    `ton-et-accroches.md` (voix, vocabulaire, mots interdits),
    `produits-services.md` + `propositions-valeur.md` (offres, promesse).
-   Les `### À COMPLÉTER` ne se synchronisent pas : lister ce qui manque et
-   proposer de compléter d'abord (`mise-a-jour-kb`).
+   Les sections encore marquées `### À COMPLÉTER` ne se synchronisent pas :
+   lister ce qui manque et proposer de compléter d'abord (`mise-a-jour-kb`).
 2. **Lire l'existant — OBLIGATOIRE avant d'écrire** —
    `get_workspace_knowledge` (`workspace_id` via `list_workspaces`) :
    `set_workspace_knowledge` REMPLACE TOUT (max 10 000 caractères).

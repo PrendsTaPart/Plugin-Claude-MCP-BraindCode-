@@ -33,7 +33,8 @@ Un changement peut toucher plusieurs fichiers — les traiter tous.
 2. **Relire la section** actuelle du fichier avant de la modifier (ne jamais
    écraser à l'aveugle ; le fichier peut avoir été édité à la main).
 3. **Poser les questions ciblées** — uniquement ce qui manque pour écrire la
-   mise à jour (2-3 questions max ; « je ne sais pas » = `### À COMPLÉTER`).
+   mise à jour (2-3 questions max ; « je ne sais pas » = insérer le marqueur
+   `### À COMPLÉTER`).
 4. **Mettre à jour** le contenu (structuré, cohérent avec le style du fichier),
    sans toucher aux sections non concernées.
 5. **Dater** : mettre à jour la ligne d'en-tête

@@ -2,5 +2,5 @@
   "name": "rapido-direction",
   "version": "0.1.0",
   "description": "Chef de cabinet du dirigeant : Gmail, Google Calendar et Google Drive (compte connecté de chacun) unifiés avec CRM, FoodEatUp et n8n — journée du dirigeant, tri de boîte mail en brouillons, secrétariat commercial, coffre documents, délégation du récurrent",
-  "author": { "name": "REMPLACER" }
+  "author": { "name": "BraindCode", "url": "https://braindcode.com" }
 }

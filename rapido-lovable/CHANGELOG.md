@@ -1,5 +1,30 @@
 # Changelog — plugin rapido-lovable
 
+## 0.4.0 — 2026-07-06
+
+- Intégration de 2 skills anthropics/skills (Apache 2.0, LICENSE.txt propre à
+  chaque skill conservé) : `frontend-design` (direction esthétique,
+  typographie — description enrichie : se combine avec ui-ux-pro-max pour le
+  choix des styles) et `web-artifacts-builder` (artifacts HTML multi-
+  composants React/Tailwind/shadcn ; scripts nécessitant Node/pnpm — voir
+  ATTRIBUTIONS.md).
+- ATTRIBUTIONS.md créé, avec entrées rétroactives pour ui-ux-pro-max et
+  ui-styling (MIT, nextlevelbuilder).
+
+## 0.3.0 — 2026-07-06
+
+- Intégration de 2 skills externes MIT depuis
+  github.com/nextlevelbuilder/ui-ux-pro-max-skill (LICENSE copiée dans chaque
+  dossier de skill, artefacts .coverage purgés) :
+  - `ui-ux-pro-max` : intelligence design UI/UX (50+ styles, 161 palettes,
+    57 paires de polices, 99 guidelines UX, 10 stacks) avec scripts de
+    recherche Python stdlib ;
+  - `ui-styling` : shadcn/ui + Tailwind + designs canvas (références,
+    polices OFL embarquées, scripts de génération de config).
+  Dépendances externes NON installées (signalées) : python3 sur le PATH ;
+  Node.js 18+ / npm / npx pour le script shadcn_add.py (ui-styling) ;
+  pytest/pytest-cov/pytest-mock uniquement pour les tests dev.
+
 ## 0.2.0 — 2026-07-06
 
 - Passe de portabilité : section « dégradation propre » dans les directives (Lovable absent → explication + initial_message préparé).

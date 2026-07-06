@@ -1,5 +1,26 @@
 # Changelog — plugin rapidorh
 
+## 0.7.1 — 2026-07-06
+
+- Correctif `job-post-builder` : dossier `reference/` renommé en `references/`
+  (les chemins du SKILL.md source étaient cassés en amont — 5 fichiers).
+
+## 0.7.0 — 2026-07-06
+
+- Intégration de 5 skills Apache 2.0 d'anthropics/knowledge-work-plugins
+  (packs human-resources + small-business ; LICENSE dans chaque dossier,
+  provenance dans ATTRIBUTIONS.md) : `onboarding-rh-methodo` (renommé depuis
+  onboarding — checklist et plan 30/60/90 j d'un nouvel arrivant),
+  `recruiting-pipeline` (suivi du pipeline de recrutement),
+  `interview-prep` (plans d'entretien structurés + scorecards),
+  `job-post-builder` (annonce + guide d'entretien + lettre d'offre),
+  `people-report` (headcount, turnover, santé d'organisation).
+- Adaptation : mention MCP rapidorh/KB en description + section « Adaptation
+  Rapido » (SIRH → get-users/departments/roles/dailies ; ATS → pipeline de
+  recrutement en projet Kanban RapidoRh ; Slack/Gmail/LinkedIn signalés sans
+  équivalent ; embauche effective via onboarding-equipe ; données non
+  exposées par le MCP jamais inventées).
+
 ## 0.6.0 — 2026-07-06
 
 - Passe de portabilité : devise (salaires, budgets) lue depuis la KB (défaut euros signalé).

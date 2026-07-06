@@ -1,6 +1,6 @@
 {
   "name": "rapidorh",
-  "version": "0.6.0",
+  "version": "0.7.1",
   "description": "RapidoRh : projets, Kanban, dailies (rapports journaliers), onboarding des employés et rôles — avec agents chef-de-projet et responsable-rh",
-  "author": { "name": "REMPLACER" }
+  "author": { "name": "BraindCode", "url": "https://braindcode.com" }
 }

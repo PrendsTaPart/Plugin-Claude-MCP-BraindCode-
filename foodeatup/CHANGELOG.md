@@ -1,5 +1,29 @@
 # Changelog — plugin foodeatup
 
+## 0.9.0 — 2026-07-06
+
+- Nouveau skill maison `onboarding-restaurateur` (créé avec la méthodologie
+  skill-creator) : mise en place complète d'un nouveau client — carte via
+  `import_storefront_menu` (idempotence sur les noms), zones et tables
+  (`create_zone`/`create_table` + contrôle `floor_plan_status`), équipe
+  (`create_employee`), premier relevé HACCP (`add_temperature`, garde-fou
+  anti-donnée-inventée rappelé, equipment_id jamais deviné). Une confirmation
+  par chantier ; pas d'outil MCP de création d'établissement (naît à
+  l'inscription FoodEatUp) — documenté honnêtement en Étape 0.
+
+## 0.8.0 — 2026-07-06
+
+- Intégration de 3 skills Apache 2.0 du pack small-business
+  d'anthropics/knowledge-work-plugins (LICENSE dans chaque dossier,
+  provenance dans ATTRIBUTIONS.md à la racine du plugin) :
+  `margin-analyzer` (unit economics par produit, benchmarks sectoriels),
+  `handle-complaint` (réclamation client de bout en bout) et `price-check`
+  (marge par produit + 3 scénarios de prix) — complètent
+  analyse-rentabilite-carte et service-salle.
+- Chaque skill : mention MCP/KB en fin de description + section « Adaptation
+  Rapido » (QuickBooks/PayPal/HubSpot/Slack… → équivalents FoodEatUp/CRM ;
+  seuils maison de la KB prioritaires sur les défauts US).
+
 ## 0.7.0 — 2026-07-06
 
 - Passe de portabilité : devise lue depuis la KB (défaut euros signalé), règles TVA marquées France/défaut produit (la KB prime pour une autre juridiction).
