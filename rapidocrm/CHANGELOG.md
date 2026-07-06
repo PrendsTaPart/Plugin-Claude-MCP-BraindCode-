@@ -1,5 +1,9 @@
 # Changelog — plugin rapidocrm
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.9.0 — 2026-07-06
 
 - Intégration de 3 skills wondelai/skills (MIT, contenu non modifié — skills

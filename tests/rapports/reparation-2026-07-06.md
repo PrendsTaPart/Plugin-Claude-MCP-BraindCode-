@@ -66,9 +66,9 @@ l'original attribué. Note ajoutée dans chaque ATTRIBUTIONS.md. Le test
 « Utiliser quand » du testeur est redevenu BLOQUANT pour tous les skills.
 
 Cas particuliers :
-- `made-to-stick` : les « Lorem ipsum » sont des exemples pédagogiques entre
-  guillemets — le testeur ignore désormais les motifs cités entre guillemets
-  droits (comme il ignorait déjà backticks et blocs de code).
+- `made-to-stick` : les `Lorem ipsum` du corps sont des exemples pédagogiques
+  entre guillemets — le testeur ignore désormais les motifs cités entre
+  guillemets droits (comme il ignorait déjà backticks et blocs de code).
 - `business-pulse/reference/thresholds.md` : les 3 `TODO` remplacés par des
   seuils par défaut documentés « (défaut secteur — personnalisable dans
   ./rapido-kb/) ».

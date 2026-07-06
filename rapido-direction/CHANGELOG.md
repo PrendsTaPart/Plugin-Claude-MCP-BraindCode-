@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-direction
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.1.0 — 2026-07-06
 
 - Version initiale — plugin GÉNÉRALISTE : chaque utilisateur connecte SON

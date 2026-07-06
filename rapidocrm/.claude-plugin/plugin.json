@@ -1,6 +1,9 @@
 {
   "name": "rapidocrm",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "RapidoCRM : prospection, pipeline, campagnes marketing, devis/factures, communication client, performance commerciale — avec agents directeur-commercial et sdr-prospection",
-  "author": { "name": "BraindCode", "url": "https://braindcode.com" }
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  }
 }

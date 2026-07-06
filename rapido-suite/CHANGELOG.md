@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-suite
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.14.0 — 2026-07-06
 
 - Skill `dossier-startup-360` : la mémoire de l'entreprise pour les agents
