@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__rapidocrm__(delete_.*|update_invoice_status|update_contrat_status|close_opportunity)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture ont été appelés avec succès (nom contenant create, update, delete, send, schedule, lancer, enregistrer, ajouter, deplacer, close, recalculer, log), la dernière réponse de l'assistant doit contenir un récapitulatif explicite des objets créés/modifiés avec leurs IDs. Si ce récapitulatif manque, bloque en demandant de terminer la réponse par un récapitulatif listant chaque objet créé/modifié et son ID. Si aucun outil d'écriture n'a été appelé, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

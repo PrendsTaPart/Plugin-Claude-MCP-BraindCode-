@@ -1,0 +1,71 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__foodeatup__delete_.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__rapidocrm__(delete_.*|update_invoice_status|update_contrat_status|close_opportunity)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__rapidocms__(delete_.*|cancel_schedules_post|remove_post_campagne)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__rapidorh__(delete-user-tool|delete-project-link-tool)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__foodeatup__add_temperature",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-donnee-inventee.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture ont été appelés avec succès sur l'un des 4 serveurs (nom contenant create, update, delete, add, edit, schedule, send, cancel, move, adjust, validate, lancer, enregistrer, ajouter, deplacer, close), la dernière réponse de l'assistant doit contenir un récapitulatif PAR SERVEUR des objets créés/modifiés avec leurs IDs. Si ce récapitulatif manque, bloque en demandant de terminer la réponse par un récapitulatif par serveur (CRM / CMS / RH / FoodEatUp) listant chaque objet et son ID. Si aucun outil d'écriture n'a été appelé, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/contexte-session.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

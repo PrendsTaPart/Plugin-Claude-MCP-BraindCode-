@@ -1,0 +1,6 @@
+{
+  "name": "rapido-suite",
+  "version": "0.6.0",
+  "description": "Orchestration transverse des 4 serveurs MCP Rapido : onboarding client 360°, revue business, comité de direction et base de connaissance entreprise (./rapido-kb/) — avec agent directeur-general",
+  "author": { "name": "REMPLACER" }
+}

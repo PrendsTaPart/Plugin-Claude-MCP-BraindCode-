@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rapidorh": {
+      "type": "http",
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "foodeatup": {
+      "type": "http",
+      "url": "https://foodeatup.com/api/mcp"
+    }
+  }
+}

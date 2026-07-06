@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__rapidorh__(delete-user-tool|delete-project-link-tool)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture ont été appelés avec succès (nom contenant create, update, delete, move), la dernière réponse de l'assistant doit contenir un récapitulatif explicite des objets créés/modifiés avec leurs IDs (projets, colonnes, tâches, dailies, rôles, utilisateurs, liens). Si ce récapitulatif manque, bloque en demandant de terminer la réponse par un récapitulatif listant chaque objet créé/modifié et son ID. Si aucun outil d'écriture n'a été appelé, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "rapido",
+  "owner": { "name": "REMPLACER — nom société" },
+  "metadata": { "description": "Plugins Rapido pour FoodEatUp, CRM, CMS et RH" },
+  "plugins": [
+    { "name": "foodeatup", "source": "./foodeatup", "description": "Gestion restaurant (HACCP, salle, cuisine, achats)" },
+    { "name": "rapidocrm", "source": "./rapidocrm", "description": "CRM : prospection, pipeline, facturation, marketing" },
+    { "name": "rapidocms", "source": "./rapidocms", "description": "Contenu & réseaux sociaux, cartes digitales" },
+    { "name": "rapidorh", "source": "./rapidorh", "description": "RH : projets, Kanban, dailies, onboarding" },
+    { "name": "rapido-suite", "source": "./rapido-suite", "description": "Orchestration transverse des 4 MCP" }
+  ]
+}
