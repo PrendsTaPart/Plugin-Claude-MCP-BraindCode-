@@ -22,15 +22,17 @@ règles pendant toute l'exécution (IDs, données, formats, erreurs).
    - `ingishts_campagne` (`campagne_id`) pour les campagnes de la période
      (`list_campagnes` pour les retrouver).
    Aucun chiffre inventé : un post sans insights est signalé, pas estimé.
-3. **Identifier les PATTERNS gagnants** — croiser les posts performants sur
-   4 axes :
-   - **Format** : image vs vidéo vs texte — lequel sur-performe ?
-   - **Sujet/pilier** : quel thème engage le plus ?
-   - **Créneau** : jour et heure des meilleurs posts (ces données priment sur
-     les créneaux génériques du `community-manager`) ;
-   - **Réseau** : où l'audience répond-elle le mieux ?
-   Comparer au MÊME indicateur (engagement, portée…) et ne conclure un pattern
-   qu'avec au moins 3 posts concordants — sinon le dire (« signal faible »).
+3. **Calculer avec le SCRIPT — jamais de tête.** Utiliser le script pour tout
+   calcul ; ne jamais calculer de tête. Construire le JSON d'entrée
+   `[{id, nom, reseau, format, date, heure, likes, commentaires, partages,
+   portee}]` à partir des insights de l'étape 2 et exécuter :
+   `python3 "${CLAUDE_PLUGIN_ROOT}/skills/analyse-performance-contenu/scripts/content_scores.py" <fichier.json>`
+   Le script renvoie l'engagement par post et par format/réseau/créneau, le
+   top/flop 3, la tendance (1re vs 2e moitié de période) et marque
+   `signal_faible` tout pattern sous 3 posts — reprendre ces chiffres tels
+   quels. Le pattern « créneau » calculé prime sur les créneaux génériques du
+   `community-manager` ; l'axe sujet/pilier reste une lecture qualitative à
+   faire à partir du top/flop.
 4. **Restituer le bilan** :
    ```
    📈 BILAN CONTENU — {période}

@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 0.4.0 — 2026-07-06
+
+- `reference/pieges-outils.md` : condensé multi-serveurs (establishment_id
+  FoodEatUp vs session CRM/CMS/RH, deux create_campagne différents, formats de
+  dates divergents CRM/CMS, DGFiP, priorités RH…), référencé par les
+  directives.
+
 ## 0.3.0 — 2026-07-06
 
 - Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :

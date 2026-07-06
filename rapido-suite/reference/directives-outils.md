@@ -2,6 +2,8 @@
 
 Règles applicables à TOUTE exécution de skill de ce plugin, qui orchestre
 4 serveurs MCP : rapidocrm, rapidocms, rapidorh, foodeatup.
+Au moindre doute sur un outil (paramètres pièges, formats, enums), consulter
+`${CLAUDE_PLUGIN_ROOT}/reference/pieges-outils.md`.
 
 ## 1. Résolution d'ID d'abord
 

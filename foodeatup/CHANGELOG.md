@@ -1,5 +1,15 @@
 # Changelog — plugin foodeatup
 
+## 0.4.0 — 2026-07-06
+
+- Script de calcul `skills/analyse-rentabilite-carte/scripts/menu_matrix.py`
+  (stdlib) : food cost %, marges, quadrants Kasavana-Smith, alertes > 30 % —
+  le skill impose « utiliser le script pour tout calcul ; ne jamais calculer
+  de tête ».
+- `reference/pieges-outils.md` : tableau Outil | Paramètres pièges | Erreur
+  fréquente | Parade (establishment_id, poids brut, TVA, item_id recipe_,
+  adjust_stock, machine à états des tables…), référencé par les directives.
+
 ## 0.3.0 — 2026-07-06
 
 - Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :

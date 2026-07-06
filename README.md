@@ -40,8 +40,12 @@ aux 4 serveurs.
 | `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée, comité de direction — agent `directeur-general` | `onboarding-client-360`, `revue-hebdo-business`, `comite-de-direction` |
 
 Chaque plugin embarque en plus un dossier `reference/` (directives communes
-d'utilisation des outils ; charte graphique pour les plugins à contenu visible),
-chargé par les skills en « Étape 0 » — les règles voyagent avec le plugin.
+d'utilisation des outils ; `pieges-outils.md`, tableau des pièges par outil MCP ;
+charte graphique pour les plugins à contenu visible), chargé par les skills en
+« Étape 0 » — les règles voyagent avec le plugin. Les skills d'analyse
+(`analyse-rentabilite-carte`, `coaching-pipeline`, `analyse-performance-contenu`,
+`detection-surcharge`) délèguent leurs calculs à des scripts Python stdlib
+embarqués (`skills/<skill>/scripts/`) : le modèle ne calcule jamais de tête.
 
 ## Test en local
 

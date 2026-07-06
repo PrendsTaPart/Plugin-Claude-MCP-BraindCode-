@@ -10,6 +10,18 @@ description: Utiliser quand l'utilisateur demande une revue de pipeline, « où 
 Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
 règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
 
+## Calculs (script obligatoire)
+
+Utiliser le script pour tout calcul ; ne jamais calculer de tête. Après la
+collecte (étapes 1-4 ci-dessous), construire le JSON d'entrée
+`{date_reference, seuil_dormant_jours, etapes: [{nom, probabilite, deals:
+[{nom, montant, derniere_activite}]}]}` et exécuter :
+`python3 "${CLAUDE_PLUGIN_ROOT}/skills/coaching-pipeline/scripts/funnel_metrics.py" <fichier.json>`
+Le script renvoie les taux de conversion par étape, le maillon faible, les
+deals dormants (> seuil jours) et la valeur brute/pondérée du pipeline —
+restituer ces chiffres tels quels (y compris la note méthodo : conversions
+sur instantané, pas cohorte).
+
 ## Méthode de revue — 4 angles, données réelles uniquement
 
 1. **État du pipeline** — `get_pipeline` (deals par étape) et

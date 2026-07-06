@@ -1,5 +1,15 @@
 # Changelog — plugin rapidocrm
 
+## 0.4.0 — 2026-07-06
+
+- Script de calcul `skills/coaching-pipeline/scripts/funnel_metrics.py`
+  (stdlib) : conversions par étape, maillon faible, deals dormants, valeur
+  brute/pondérée — le skill impose « utiliser le script pour tout calcul ;
+  ne jamais calculer de tête ».
+- `reference/pieges-outils.md` : tableau des pièges (transitions DGFiP,
+  company_id/user_id de session, confirm=true pour suppressions, formats de
+  dates, message vs template SMS…), référencé par les directives.
+
 ## 0.3.0 — 2026-07-06
 
 - Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :

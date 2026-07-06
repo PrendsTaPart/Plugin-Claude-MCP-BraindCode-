@@ -1,5 +1,15 @@
 # Changelog — plugin rapidorh
 
+## 0.4.0 — 2026-07-06
+
+- Script de calcul `skills/detection-surcharge/scripts/charge_equipe.py`
+  (stdlib) : taux de charge %, signaux rouge/jaune/vert/blanc, déséquilibres
+  de tâches — le skill impose « utiliser le script pour tout calcul ; ne
+  jamais calculer de tête ».
+- `reference/pieges-outils.md` : tableau des pièges (1 daily/jour et 0,5-24 h,
+  owners sans dailies, rôle avant utilisateur, échelles de priorité, pas de
+  réassignation de tâche…), référencé par les directives.
+
 ## 0.3.0 — 2026-07-06
 
 - Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :

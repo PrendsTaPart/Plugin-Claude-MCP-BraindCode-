@@ -14,18 +14,24 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
 
 1. **Périmètre** — période analysée (défaut : 2 dernières semaines) et équipe
    (tout le monde ou un projet : `get-users-list-tool`, filtres possibles).
-2. **Heures déclarées vs contractuelles** — pour chaque personne :
+2. **Collecter les données** — pour chaque personne :
    - heures des dailies sur la période : `get-dailies-tool` (par `date` /
-     `user_id`, vue owner) ;
+     `user_id`, vue owner), avec le compte de dailies remplis vs attendus ;
    - référence contractuelle : `hours_worked` (via `get-users-list-tool`) ;
-   - ratio charge = heures déclarées / heures contractuelles attendues sur la
-     période. Seuils indicatifs : > 110 % répété = surcharge ; < 60 % =
-     sous-affectation OU dailies non remplis — TOUJOURS distinguer les deux
-     avant de conclure (un daily manquant n'est pas du temps libre).
-3. **Tâches ouvertes par personne** — `get-projects-list-tool` (projets en
-   cours) puis `get-project-tasks-tool` par projet : compter par personne les
-   tâches non-Done, en pondérant par priorité (0 urgent pèse plus) et en
-   signalant les échéances rapprochées.
+   - tâches ouvertes : `get-projects-list-tool` (projets en cours) puis
+     `get-project-tasks-tool` par projet — compter les non-Done et les
+     urgentes (priorité 0) par personne.
+3. **Calculer avec le SCRIPT — jamais de tête.** Utiliser le script pour tout
+   calcul ; ne jamais calculer de tête. Construire le JSON d'entrée
+   `{periode_jours_ouvres, personnes: [{nom, hours_worked, heures_declarees,
+   dailies_remplis, dailies_attendus, taches_ouvertes, taches_urgentes}]}` et
+   exécuter :
+   `python3 "${CLAUDE_PLUGIN_ROOT}/skills/detection-surcharge/scripts/charge_equipe.py" <fichier.json>`
+   Le script renvoie le taux de charge % (déclaré / attendu), un signal par
+   personne (rouge > 110 %, vert 90-110 %, jaune 60-90 % ou sous-affectation,
+   BLANC = dailies incomplets — jamais conclu en sous-charge) et les
+   déséquilibres de tâches vs moyenne d'équipe — reprendre ces chiffres tels
+   quels.
 4. **Signaler les déséquilibres** :
    ```
    ⚖️ CHARGE ÉQUIPE — {période}

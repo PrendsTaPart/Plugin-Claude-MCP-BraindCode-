@@ -1,6 +1,8 @@
 # Directives communes d'utilisation des outils (rapidocrm)
 
 Règles applicables à TOUTE exécution de skill de ce plugin.
+Au moindre doute sur un outil (paramètres pièges, formats, enums), consulter
+`${CLAUDE_PLUGIN_ROOT}/reference/pieges-outils.md`.
 
 ## 1. Résolution d'ID d'abord
 

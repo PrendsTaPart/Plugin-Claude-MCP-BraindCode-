@@ -1,0 +1,19 @@
+# Pièges des outils MCP (foodeatup) — référence rapide
+
+Consulter ce tableau au moindre doute avant d'appeler un outil.
+
+| Outil | Paramètres pièges | Erreur fréquente | Parade |
+|---|---|---|---|
+| (quasi tous) | `establishment_id` requis presque partout | Appel sans ID → erreur, ou ID deviné | Étape 0 de chaque skill : obtenir l'ID avant tout appel, le demander s'il est inconnu |
+| `create_recipe` | `ingredients[].quantity` en poids **BRUT** ; `desc` ≠ étapes/ingrédients ; `tax_rate` en % | Quantités en poids net → food cost et stock faux ; étapes collées dans `desc` | Convertir avec le coefficient de cuisson (rendement) ou demander le brut ; utiliser les tableaux `ingredients` et `steps` |
+| `create_recipe` (TVA) | `tax_rate` selon la NATURE du plat | 20 % appliqué partout, ou 10 % sur l'alcool | immediate = 10 % ; conservable = 10 % sur place / 5,5 % emporté (demander le canal) ; alcohol = 20 % |
+| `create_haccp_label` | `lot_number` optionnel | Numéro de lot inventé | Ne pas le fournir : il est auto-généré |
+| `create_haccp_reception` | `etat_livraison` enum ; `non_conformites` | `non_conforme` sans liste de non-conformités | Toujours renseigner `non_conformites` si l'état est `non_conforme` |
+| `add_temperature` | `temperature` en °C | Valeur estimée/inventée | Uniquement le relevé réel fourni par l'utilisateur (hook deny hors -30/+90 °C) |
+| `adjust_stock` | `establishment_product_id` ; `mode` | ID d'ingrédient passé à la place du produit ; `set` qui écrase le stock | Prendre le champ `id` de `list_products` ; `increment` à réception, `set` réservé aux inventaires (confirmer) |
+| `create_production_plan` | `item_id` en chaîne | ID de recette passé sans préfixe | Plat = ID entier en chaîne (`"42"`) ; recette = préfixe `recipe_` (`"recipe_12"`) |
+| `validate_production` | met à jour le stock automatiquement | `adjust_stock` appelé en plus → double comptage | Ne jamais ajuster le stock manuellement pour une production validée |
+| `checkin_reservation` / `seat_waitlist` | créent la commande sur place | `create_order` appelé en plus → commande en double | Laisser ces outils créer la commande |
+| `update_table_status` | `status` machine à états | Saut d'état (`occupied` → `free`) | Respecter free → reserved → occupied → cleaning → free (+ `blocked`) |
+| `create_reservation` | risque de double-booking | Créer sans vérifier le créneau | `reservation_availability` TOUJOURS avant |
+| `schedule_draft`-like / dates | dates `YYYY-MM-DD`, heures `HH:MM` | Formats libres (« demain 19h ») | Convertir en ISO avant l'appel |

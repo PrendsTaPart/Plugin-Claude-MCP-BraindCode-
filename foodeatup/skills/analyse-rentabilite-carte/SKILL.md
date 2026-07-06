@@ -32,10 +32,17 @@ Chaque plat est classé sur deux axes, calculés sur des DONNÉES RÉELLES :
      coût complet, le signaler — le plat sort de l'analyse au lieu d'être estimé) ;
    - `list_top_productions` et/ou `list_orders` sur la période : volumes réels
      (préciser la période analysée ; défaut : 30 derniers jours).
-2. **Calculer** pour chaque plat : food cost %, marge unitaire, indice de
-   popularité vs moyenne de sa catégorie.
-3. **Classer** dans la matrice et restituer un tableau : plat | catégorie |
-   food cost % | marge € | popularité | quadrant.
+2. **Calculer avec le SCRIPT — jamais de tête.** Utiliser le script pour tout
+   calcul ; ne jamais calculer de tête. Construire le JSON d'entrée
+   `[{plat, prix_vente, cout_ingredients, quantite_vendue}]` à partir des
+   données de l'étape 1, l'écrire dans un fichier temporaire, puis exécuter :
+   `python3 "${CLAUDE_PLUGIN_ROOT}/skills/analyse-rentabilite-carte/scripts/menu_matrix.py" <fichier.json>`
+   Le script renvoie food cost %, marges, quadrants (seuils Kasavana-Smith :
+   popularité ≥ 70 % de la moyenne, marge ≥ moyenne), alertes food cost > 30 %
+   et les plats exclus faute de données.
+3. **Restituer** le tableau à partir de la sortie du script : plat | catégorie |
+   food cost % | marge € | popularité | quadrant — sans recalculer ni arrondir
+   différemment.
 4. **Recommander par quadrant** :
    - ⭐ **Stars** (populaire + marge haute) : ne pas toucher — mettre en avant
      (position sur la carte, suggestion serveur). Surveiller la constance.
