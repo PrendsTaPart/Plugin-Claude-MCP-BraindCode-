@@ -47,6 +47,14 @@ Premier lancement recommandé : « apprends à connaître mon entreprise » —
 l'onboarding (rapido-suite) construit `./rapido-kb/`, la base de connaissance
 qui personnalise tous les plugins.
 
+**Kit de démarrage — [`rapido-kb-template/`](rapido-kb-template/)** : le
+template vierge de la base de connaissance (8 fichiers à copier dans VOTRE
+répertoire de travail sous le nom `rapido-kb/`, puis à committer dans VOTRE
+git — jamais dans ce dépôt), accompagné du mégaprompt de démarrage
+(`PROMPT-CLAUDE-CODE-MASTER.md`), d'une bibliothèque de prompts testés par
+domaine (`PROMPTS-CLAUDE-CODE.md`) et d'un prompt de site vitrine Lovable
+(`PROMPT-LOVABLE-SITE.md`). Mode d'emploi : `rapido-kb-template/README.md`.
+
 **Prérequis :**
 
 - **Claude Code** (CLI, desktop ou web) — https://code.claude.com/docs
