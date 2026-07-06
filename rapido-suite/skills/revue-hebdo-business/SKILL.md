@@ -63,8 +63,10 @@ dans la synthèse et laisser l'utilisateur décider.
 ## Synthèse exécutive unifiée (format de sortie)
 
 Produire UNE synthèse structurée, avec la période en en-tête :
-1. **Chiffres clés** : CA (CRM + FoodEatUp séparés), pipeline (taux de
-   conversion), impayés ;
+1. **Chiffres clés** : CA (CRM + FoodEatUp séparés) COMPARÉ à la période
+   précédente (↗ ↘ → chiffré), top ventes de la période
+   (`list_top_productions` FoodEatUp / meilleurs devis signés CRM), pipeline
+   (taux de conversion), impayés ;
 2. **Commercial** : évolution du pipeline, deals gagnés/perdus ;
 3. **Contenu** : posts publiés, portée/engagement, meilleur post ;
 4. **Projets** : en cours / en retard / terminés ;
@@ -74,8 +76,13 @@ Produire UNE synthèse structurée, avec la période en en-tête :
    résultat, anomalies ;
 7. **Automatisations** (si disponible) : workflows actifs, taux de succès,
    échecs à traiter ;
-8. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
+8. **Wins & watches** : les victoires de la période (à célébrer, factuel) puis
+   les points d'attention — impayés, projets à risque, baisses d'indicateurs —
    avec suggestion d'action (sans l'exécuter).
+
+(Le format « comparaison vs période précédente, top ventes, wins & watches »
+est hérité du skill `friday-brief` d'anthropics/knowledge-work-plugins,
+Apache 2.0, fusionné ici — voir ATTRIBUTIONS.md du plugin.)
 
 ## Garde-fous
 

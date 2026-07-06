@@ -1,5 +1,18 @@
 # Changelog — plugin foodeatup
 
+## 0.8.0 — 2026-07-06
+
+- Intégration de 3 skills Apache 2.0 du pack small-business
+  d'anthropics/knowledge-work-plugins (LICENSE dans chaque dossier,
+  provenance dans ATTRIBUTIONS.md à la racine du plugin) :
+  `margin-analyzer` (unit economics par produit, benchmarks sectoriels),
+  `handle-complaint` (réclamation client de bout en bout) et `price-check`
+  (marge par produit + 3 scénarios de prix) — complètent
+  analyse-rentabilite-carte et service-salle.
+- Chaque skill : mention MCP/KB en fin de description + section « Adaptation
+  Rapido » (QuickBooks/PayPal/HubSpot/Slack… → équivalents FoodEatUp/CRM ;
+  seuils maison de la KB prioritaires sur les défauts US).
+
 ## 0.7.0 — 2026-07-06
 
 - Passe de portabilité : devise lue depuis la KB (défaut euros signalé), règles TVA marquées France/défaut produit (la KB prime pour une autre juridiction).

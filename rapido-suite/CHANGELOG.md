@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-suite
 
+## 0.12.0 — 2026-07-06
+
+- Intégration de 4 skills Apache 2.0 du pack small-business
+  d'anthropics/knowledge-work-plugins (LICENSE dans chaque dossier,
+  provenance dans ATTRIBUTIONS.md) : `monday-brief` (brief prospectif du
+  lundi), `business-pulse` (snapshot une-page à la demande, renvoi croisé
+  vers revue-hebdo-business), `cash-flow-snapshot` (projection de trésorerie
+  30/60/90 j), `invoice-chase` (relances d'impayés avec ton gradué).
+- `friday-brief` FUSIONNÉ dans revue-hebdo-business au lieu d'être copié
+  (recoupement trop fort) : chiffres clés comparés à la période précédente,
+  top ventes, section « Wins & watches ».
+- Adaptation : mention MCP/KB en description + section « Adaptation Rapido »
+  dans chaque skill copié (mapping des outils US vers les équivalents Rapido).
+
 ## 0.11.0 — 2026-07-06
 
 - Passe de portabilité : devise lue depuis la KB ou le compte connecté ; `onboarding-entreprise` gagne le bloc « réglages techniques » (fuseau horaire, devise, establishment_id FoodEatUp, plafond budget pub/jour, rappel N8N_MCP_URL).
