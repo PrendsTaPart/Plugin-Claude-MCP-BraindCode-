@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-suite
 
+## 0.10.0 — 2026-07-06
+
+- Agent `directeur-general` : devient l'orchestrateur A→Z — délègue aux
+  agents de domaine (chef-restaurateur, directeur-commercial,
+  responsable-marketing, studio-creatif, chef-de-projet/responsable-rh,
+  media-buyer, assistant-direction, workflows n8n), consolide en une
+  synthèse, tranche selon la KB.
+
 ## 0.9.0 — 2026-07-06
 
 - Domaine « Automatisations » ajouté à `revue-hebdo-business` et

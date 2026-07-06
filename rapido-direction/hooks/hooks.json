@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__gmail__.*(trash|spam|delete).*|mcp__google-drive__.*(delete|trash).*|mcp__google-calendar__delete_event",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-irreversible.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils d'écriture ont été appelés avec succès (Gmail create_draft/labels, Calendar create/update/delete_event, Drive create/copy_file, CRM create/update, n8n), la dernière réponse de l'assistant doit contenir un récapitulatif : brouillons créés (destinataire, objet — en rappelant que l'envoi reste à faire par l'utilisateur), événements créés/modifiés (avec mention des notifications aux participants), fichiers classés (chemin Drive), objets CRM créés (IDs). Si ce récapitulatif manque, bloque en demandant de le compléter. Sinon, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

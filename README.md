@@ -1,8 +1,37 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace interne regroupant 9 plugins Claude Code qui packagent des skills
+Marketplace interne regroupant 10 plugins Claude Code qui packagent des skills
 métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH), Canva,
-Lovable, Meta Ads et n8n.
+Lovable, Meta Ads, n8n et Google (Gmail, Calendar, Drive).
+
+**La promesse : une entreprise pilotée de A à Z — les systèmes Rapido
+tiennent les données, Claude pense et crée, n8n exécute en continu, Google
+porte la communication.**
+
+## Le schéma final
+
+```
+                        ┌──────────────────────────────┐
+                        │   rapido-direction (chef de  │
+                        │   cabinet : Gmail/Cal/Drive) │
+                        └──────────────┬───────────────┘
+                        ┌──────────────┴───────────────┐
+                        │  rapido-suite (DG, CODIR,    │
+                        │  KB ./rapido-kb/, revues)    │
+                        └──┬────┬────┬────┬────────────┘
+   DONNÉES MÉTIER          │    │    │    │        CRÉATION & DIFFUSION
+┌──────────┐ ┌──────────┐ ┌┴───┐ ┌──┴─────┐   ┌───────────┐ ┌─────────────┐
+│foodeatup │ │rapidocrm │ │cms │ │rapidorh│   │rapido-    │ │rapido-      │
+│(resto)   │ │(ventes)  │ │(social)│(équipe)│  │canva      │ │lovable      │
+└──────────┘ └──────────┘ └────┘ └────────┘   │(design)   │ │(apps/agents)│
+                                              └───────────┘ └─────────────┘
+   EXÉCUTION CONTINUE                            ACQUISITION
+┌────────────────────────┐                    ┌────────────────────────┐
+│ rapido-n8n (workflows  │                    │ rapido-meta-ads (pubs, │
+│ qui tournent sans      │                    │ argent réel verrouillé)│
+│ Claude)                │                    └────────────────────────┘
+└────────────────────────┘
+```
 
 ## Prérequis
 
@@ -27,6 +56,7 @@ Lovable, Meta Ads et n8n.
 /plugin install rapido-lovable@rapido
 /plugin install rapido-meta-ads@rapido
 /plugin install rapido-n8n@rapido
+/plugin install rapido-direction@rapido
 /reload-plugins
 ```
 
@@ -50,6 +80,7 @@ aux 4 serveurs.
 | `rapido-lovable` | lovable + les 4 serveurs | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant avec réservation connectée, landing pages de campagne, agent IA produit (API Anthropic + mcp_servers), marque synchronisée sur le workspace — architecture 2 modes encodée (`reference/architecture-lovable.md`) | `site-restaurant`, `usine-a-landing`, `agent-ia-produit`, `sync-marque-lovable` |
 | `rapido-meta-ads` | facebook-ads + rapidocms + rapidocrm + canva + lovable | **Argent réel — plugin le plus verrouillé** : campagnes Meta (ODAX, CBO, tout en PAUSED), boost IG en deux temps, audiences CRM (RGPD), créatifs, pixel & retargeting, pilotage au coût par résultat, veille Ad Library, A/B tests — agent `media-buyer`, hooks plafond de budget + confirmations de dépense | `lancement-campagne-meta`, `boost-post-instagram`, `audiences-crm`, `creatifs-publicitaires`, `pixel-et-retargeting`, `pilotage-performance-ads`, `veille-ads-concurrents`, `tests-ab-meta` |
 | `rapido-n8n` | n8n (`${N8N_MCP_URL}` — instance du client) + les 4 serveurs | Automatisations qui tournent SANS Claude : usine à workflows (cycle SDK validé/testé), recettes métier Rapido (relances, stocks, HACCP, leads, récap, anniversaires), surveillance des exécutions, mémoire opérationnelle — règle : ponctuel = Claude, récurrent = workflow ; hooks sur publication/exécution production | `usine-automatisations`, `recettes-metier`, `surveillance-automatisations`, `memoire-operationnelle` |
+| `rapido-direction` | gmail + google-calendar + google-drive (compte de chacun, OAuth individuel) + rapidocrm + foodeatup + n8n | Chef de cabinet : journée du dirigeant en une page (agenda TRIPLE Calendar+CRM+resto), tri de boîte mail en brouillons (Claude rédige, l'humain envoie), secrétariat commercial, coffre Drive sans suppression, délégation du récurrent vers n8n — agent `assistant-direction` | `journee-du-dirigeant`, `tri-boite-mail`, `secretariat-commercial`, `coffre-documents`, `delegation-recurrence` |
 
 **Base de connaissance entreprise** : le skill `onboarding-entreprise`
 (rapido-suite) interviewe l'utilisateur et construit `./rapido-kb/` (8 fichiers
