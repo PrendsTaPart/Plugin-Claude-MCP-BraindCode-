@@ -1,33 +1,51 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace Claude Code regroupant 5 plugins, chacun packageant des skills
-par-dessus un serveur MCP existant.
+Marketplace interne regroupant 5 plugins Claude Code qui packagent des skills
+métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH).
 
-## Structure
+## Prérequis
+
+- **Claude Code installé** (CLI, desktop ou web) — voir
+  https://code.claude.com/docs
+- **Accès aux 4 serveurs MCP** (comptes/session authentifiés) :
+  FoodEatUp, RapidoCRM, RapidoCMS, RapidoRh.
+- **Si le dépôt est privé** : définir la variable d'environnement `GITHUB_TOKEN`
+  (token avec accès en lecture au dépôt) pour que les mises à jour automatiques
+  de la marketplace fonctionnent.
+
+## Installation
 
 ```
-.                                        <- racine du dépôt = la marketplace
-├── .claude-plugin/
-│   └── marketplace.json                 <- catalogue racine (5 plugins)
-├── foodeatup/                           <- Gestion restaurant (HACCP, salle, cuisine, achats)
-│   ├── .claude-plugin/plugin.json
-│   ├── .mcp.json                        <- connexion au serveur MCP FoodEatUp
-│   ├── reference/                       <- règles partagées, chargées par les skills
-│   │   ├── directives-outils.md         <- directives communes (IDs, confirmations…)
-│   │   └── charte-graphique.md          <- (plugins à contenu visible uniquement)
-│   └── skills/                          <- un sous-dossier par skill (SKILL.md)
-├── rapidocrm/                           <- CRM : prospection, pipeline, facturation, marketing
-├── rapidocms/                           <- Contenu & réseaux sociaux, cartes digitales
-├── rapidorh/                            <- RH : projets, Kanban, dailies, onboarding
-└── rapido-suite/                        <- Orchestration transverse des 4 MCP
+/plugin marketplace add <org>/rapido-plugins
+/plugin install foodeatup@rapido
+/plugin install rapidocrm@rapido
+/plugin install rapidocms@rapido
+/plugin install rapidorh@rapido
+/plugin install rapido-suite@rapido
+/reload-plugins
 ```
 
-Chaque plugin suit la même structure : `.claude-plugin/plugin.json`,
-`.mcp.json` et `skills/`.
+Remplacer `<org>` par l'organisation GitHub qui héberge ce dépôt. Installer
+uniquement les plugins dont vous avez besoin — `rapido-suite` suppose l'accès
+aux 4 serveurs.
 
-## Test en local (avant tout push GitHub)
+## Les 5 plugins
 
-Depuis le dossier parent du clone :
+| Plugin | MCP | À quoi ça sert | Skills principales |
+|---|---|---|---|
+| `foodeatup` | foodeatup | Gestion restaurant : conformité HACCP, service en salle, recettes & marges, production, réapprovisionnement | `haccp-conformite-quotidienne`, `service-salle`, `recette-cout-marge`, `production-stock`, `reappro-fournisseurs` |
+| `rapidocrm` | rapidocrm | CRM : prospection & pipeline, campagnes marketing, devis/factures/relances, communication client, performance commerciale | `prospection-pipeline`, `campagne-marketing`, `devis-facture-relance`, `communication-client`, `performance-commerciale` |
+| `rapidocms` | rapidocms | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, conformité de marque | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque` |
+| `rapidorh` | rapidorh | RH & projets : setup de projets, Kanban, dailies (rapports journaliers), onboarding des employés | `setup-projet`, `flux-kanban`, `daily-report`, `onboarding-equipe` |
+| `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée (lecture seule) | `onboarding-client-360`, `revue-hebdo-business` |
+
+Chaque plugin embarque en plus un dossier `reference/` (directives communes
+d'utilisation des outils ; charte graphique pour les plugins à contenu visible),
+chargé par les skills en « Étape 0 » — les règles voyagent avec le plugin.
+
+## Test en local
+
+Avant tout push GitHub, valider depuis le dossier parent du clone :
 
 ```
 /plugin marketplace add ./rapido-plugins
@@ -35,42 +53,39 @@ Depuis le dossier parent du clone :
 /reload-plugins
 ```
 
-(`./rapido-plugins` = chemin vers le clone local de ce dépôt ; adaptez si le
-dossier porte un autre nom.)
+Puis dérouler les scénarios de test de déclenchement fournis pour chaque plugin
+(une phrase déclencheuse + vérification des appels d'outils et des garde-fous).
 
-Puis vérifiez le déclenchement des skills avec les scénarios de test fournis
-pour chaque plugin.
+## Versionner / contribuer
 
-## À remplacer avant publication
+- **Le nom (slug) d'un plugin est IMMUABLE une fois publié.** Ne jamais renommer
+  `foodeatup`, `rapidocrm`, `rapidocms`, `rapidorh` ou `rapido-suite` : cela
+  casse toutes les installations existantes. Pour un changement de nom, créer un
+  nouveau plugin et déprécier l'ancien.
+- **Incrémenter `version`** (dans `<plugin>/.claude-plugin/plugin.json`) à chaque
+  changement, même mineur — c'est ce qui déclenche la mise à jour chez les
+  utilisateurs.
+- **Tenir un CHANGELOG par plugin** (`<plugin>/CHANGELOG.md`) : une entrée par
+  version, avec les skills ajoutés/modifiés et les changements de comportement.
+- Toute modification de skill doit référencer des outils MCP existants (vérifier
+  les noms exacts sur le serveur) et passer le test de déclenchement en local
+  avant merge.
 
-- `owner.name` dans `.claude-plugin/marketplace.json`
-- `author.name` dans chaque `plugin.json`
+## Sécurité
+
+- Un plugin **exécute du code et appelle des outils avec les privilèges de
+  l'utilisateur** connecté (CRM, CMS, RH, FoodEatUp) : n'installer des plugins
+  que depuis **cette source de confiance**.
+- Les skills encodent des garde-fous : toute action destructrice ou irréversible
+  (suppressions, envois d'emails/SMS, lancements de campagne, annulations)
+  **demande une confirmation explicite** avant exécution — ne pas contourner ces
+  confirmations dans les prompts.
+- Ne jamais mettre de secrets (tokens, mots de passe) dans les skills ou les
+  fichiers `reference/` : ils sont distribués avec le plugin.
+
+## À compléter avant publication
+
+- `owner.name` dans `.claude-plugin/marketplace.json` et `author.name` dans
+  chaque `plugin.json` (nom de la société).
 - Les sections `### À COMPLÉTER` des `reference/charte-graphique.md`
-  (codes hex, URLs de logo, typographies, ton de voix)
-
-## Fichiers de référence (progressive disclosure)
-
-Chaque plugin embarque un dossier `reference/` (les règles voyagent AVEC le
-plugin installé — pas de CLAUDE.md racine) :
-
-- `directives-outils.md` (tous les plugins) : résolution d'ID avant action,
-  confirmations obligatoires, interdiction d'inventer des données, locale
-  euros/ISO, gestion d'erreur, récapitulatif final.
-- `charte-graphique.md` (rapidocms, rapidocrm, rapido-suite) : couleurs hex,
-  typographies, logos et variantes, ton de voix do/don't. Pour rapidocms et
-  rapido-suite, les valeurs live `get_brand`/`get_company`/`get_profile` restent
-  prioritaires ; le fichier sert de repli.
-
-Chaque SKILL.md charge ces fichiers en « Étape 0 » via
-`${CLAUDE_PLUGIN_ROOT}/reference/…` (chargés au besoin, pas dans le contexte de
-base).
-
-## Conventions des skills
-
-- Frontmatter YAML : `name` (kebab-case, identique au nom du dossier) et
-  `description` commençant par « Utiliser quand… » avec des déclencheurs concrets.
-- Corps concis, workflow en étapes numérotées.
-- Règles métier et garde-fous explicites (seuils, ordres d'appel,
-  confirmation avant toute action destructrice).
-- Les outils MCP sont référencés par leur nom réel.
-- Langue : français.
+  (codes hex, URLs de logo, typographies, ton de voix).
