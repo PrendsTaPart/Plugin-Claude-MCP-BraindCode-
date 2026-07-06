@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "RapidoCRM": {
+    "rapidocrm": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP RapidoCRM"
+      "url": "https://crm.rapidosoftware.com/mcp"
     }
   }
 }
