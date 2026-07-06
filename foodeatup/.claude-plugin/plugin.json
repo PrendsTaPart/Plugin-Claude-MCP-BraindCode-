@@ -1,6 +1,6 @@
 {
   "name": "foodeatup",
   "version": "0.1.0",
-  "description": "Gestion restaurant (HACCP, salle, cuisine, achats)",
+  "description": "Gestion restaurant FoodEatUp : HACCP, service en salle, recettes & marges, production, réapprovisionnement",
   "author": { "name": "REMPLACER" }
 }
