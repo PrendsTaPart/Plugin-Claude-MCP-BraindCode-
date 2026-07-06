@@ -93,10 +93,12 @@ agent :
 
 ## Avant toute pull request
 
-1. **Obligatoire : `python3 scripts/valider-plugins.py`** doit passer sans
-   erreur (JSON valides, frontmatters `name`+`description` complets, pas de
-   doublon de `name` par plugin, pas d'artefacts, licences/attributions des
-   skills externes présentes).
+1. **Obligatoire : `python3 scripts/tester-skills.py`** doit passer sans
+   FAIL (frontmatters `name`+`description`, unicité des `name`, convention
+   « Utiliser quand… », placeholders, chemins `${CLAUDE_PLUGIN_ROOT}`,
+   scripts compilables, skills mentionnés existants, hooks testés sur stdin ;
+   les WARN — outils MCP non vérifiables, skills tiers — sont tolérés mais à
+   lire).
 2. Dérouler les évals de `tests/evals.md` quand la contribution touche la KB
    ou le routage.
 3. Messages de commit au format
