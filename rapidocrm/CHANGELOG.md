@@ -1,5 +1,18 @@
 # Changelog — plugin rapidocrm
 
+## 0.8.0 — 2026-07-06
+
+- Intégration de 6 skills externes Apache 2.0 depuis
+  anthropics/knowledge-work-plugins (commit 564d560c, LICENSE copiée dans
+  chaque dossier, provenance tracée dans skills/ATTRIBUTIONS.md) :
+  - vente : `pipeline-review-methodo` (renommé depuis pipeline-review pour ne
+    pas confondre avec coaching-pipeline), `draft-outreach`,
+    `account-research`, `forecast` ;
+  - support : `ticket-triage`, `draft-response`.
+- Chaque description se termine par « (utilise les données du MCP rapidocrm
+  quand elles sont disponibles) » pour croiser la méthode avec les vraies
+  données CRM.
+
 ## 0.7.0 — 2026-07-06
 
 - Passe de portabilité : devise lue depuis la KB (défaut euros signalé).
