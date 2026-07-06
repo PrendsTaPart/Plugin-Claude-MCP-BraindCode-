@@ -1,5 +1,9 @@
 # Changelog — plugin rapidorh
 
+## 0.6.0 — 2026-07-06
+
+- Passe de portabilité : devise (salaires, budgets) lue depuis la KB (défaut euros signalé).
+
 ## 0.5.0 — 2026-07-06
 
 - Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement

@@ -49,6 +49,15 @@ generated » = query trop vague ; « Missing scopes » = reconnecter le
 connecteur), expliquer, ne pas boucler. Une transaction d'édition en échec au
 commit = modifications perdues : le dire et proposer de recommencer.
 
+## 4 bis. Dégradation propre
+
+Si les outils Canva sont ABSENTS de la session (connecteur non activé) :
+le dire en une phrase, indiquer la marche à suivre (activer le connecteur
+Canva dans les paramètres / vérifier l'authentification via `/mcp`), et
+faire ce qui reste possible avec les serveurs Rapido (préparer le contenu,
+les textes, la structure — prêt à générer une fois Canva connecté). Jamais
+d'erreur brute.
+
 ## 5. Récapitulatif de fin de séquence
 
 Designs créés (IDs + liens), exports (URLs de téléchargement), objets Rapido

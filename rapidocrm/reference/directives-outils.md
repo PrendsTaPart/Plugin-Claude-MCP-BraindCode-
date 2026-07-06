@@ -46,7 +46,9 @@ par l'utilisateur ou lus via l'API. Valeur manquante → la demander.
 
 ## 4. Locale et formats
 
-- Monnaie : euros. Dates ISO `YYYY-MM-DD` ; envois planifiés au format
+- Langue : français par défaut. Devise : celle du client — lue dans
+  `./rapido-kb/entreprise.md` si renseignée (défaut : euros, en le signalant).
+  Dates ISO `YYYY-MM-DD` ; envois planifiés au format
   `YYYY-MM-DD HH:MM:SS` (`schedule_email`, `schedule_sms`).
 - Statuts de facture : `brouillon`, `en_attente`, `payee`, `en_retard`.
   Transitions autorisées (logique DGFiP) : `brouillon → en_attente → payee` ou

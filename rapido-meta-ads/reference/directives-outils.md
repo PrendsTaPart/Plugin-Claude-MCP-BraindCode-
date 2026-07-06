@@ -46,6 +46,15 @@ Lire le message d'erreur Meta (`ads_get_errors` pour le contexte compte) :
 non-ODAX, budget rejeté = sous `min_daily_budget_cents`. Expliquer, corriger
 UNE fois, sinon remonter. Jamais de retry aveugle sur un outil qui dépense.
 
+## 4 bis. Dégradation propre
+
+Si les outils facebook-ads sont ABSENTS de la session (connecteur non
+activé, compte non autorisé) : le dire en une phrase, indiquer la marche à
+suivre (activer le connecteur Meta / vérifier `is_ads_mcp_enabled` du
+compte), et faire ce qui reste possible (préparer les créatifs via
+Canva/CMS, l'audience côté CRM, le plan de campagne — prêt à lancer une fois
+connecté). Jamais d'erreur brute.
+
 ## 5. Récapitulatif de fin de séquence
 
 Objets créés avec IDs et STATUT (PAUSED/ACTIVE en toutes lettres), budgets en

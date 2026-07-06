@@ -1,5 +1,9 @@
 # Changelog — plugin foodeatup
 
+## 0.7.0 — 2026-07-06
+
+- Passe de portabilité : devise lue depuis la KB (défaut euros signalé), règles TVA marquées France/défaut produit (la KB prime pour une autre juridiction).
+
 ## 0.6.0 — 2026-07-06
 
 - Couverture des outils orphelins — 3 nouveaux skills :

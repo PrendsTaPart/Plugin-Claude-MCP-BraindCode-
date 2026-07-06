@@ -48,7 +48,9 @@ inventé.
 
 ## 4. Locale et formats
 
-- Monnaie : euros. Dates ISO `YYYY-MM-DD`.
+- Langue : français par défaut. Devise (salaires, budgets) : celle du
+  client — lue dans `./rapido-kb/entreprise.md` si renseignée (défaut :
+  euros, en le signalant). Dates ISO `YYYY-MM-DD`.
 - Échelles distinctes (ne pas confondre) : priorité PROJET 1 = basse, 2 = moyenne,
   3 = haute ; priorité TÂCHE 0 = urgent, 1 = moyenne, 2 = faible ; taille projet
   0 = petit, 1 = moyen, 2 = grand.

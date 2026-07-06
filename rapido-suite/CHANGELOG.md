@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-suite
 
+## 0.11.0 — 2026-07-06
+
+- Passe de portabilité : devise lue depuis la KB ou le compte connecté ; `onboarding-entreprise` gagne le bloc « réglages techniques » (fuseau horaire, devise, establishment_id FoodEatUp, plafond budget pub/jour, rappel N8N_MCP_URL).
+
 ## 0.10.0 — 2026-07-06
 
 - Agent `directeur-general` : devient l'orchestrateur A→Z — délègue aux

@@ -47,6 +47,14 @@ workspace puis rappeler. `send_message` en timeout = `get_message` pour suivre
 lire son activité (`list_edits`, `get_diff`), reformuler UNE fois, sinon
 remonter à l'utilisateur.
 
+## 4 bis. Dégradation propre
+
+Si les outils Lovable sont ABSENTS de la session (connecteur non activé) :
+le dire en une phrase, indiquer la marche à suivre (activer le connecteur
+Lovable / vérifier l'authentification via `/mcp`), et faire ce qui reste
+possible (préparer le contenu réel depuis les serveurs Rapido et la KB,
+rédiger l'initial_message prêt à envoyer). Jamais d'erreur brute.
+
 ## 5. Récapitulatif de fin de séquence
 
 Projets créés/modifiés (project_id, editor_url, preview_url, URL publiée le

@@ -155,6 +155,17 @@ Puis dérouler les scénarios de test de déclenchement fournis pour chaque plug
 - Ne jamais mettre de secrets (tokens, mots de passe) dans les skills ou les
   fichiers `reference/` : ils sont distribués avec le plugin.
 
+## Portabilité — le dépôt est un PRODUIT
+
+Ce dépôt est distribué à tous les clients Rapido : il ne contient AUCUNE
+donnée propre à une entreprise. Les URLs des `.mcp.json` sont les URLs
+produit officielles (auth individuelle par client), l'instance n8n passe par
+`${N8N_MCP_URL}`, Google par OAuth individuel. TOUTE personnalisation (nom,
+fuseau, devise, seuils, plafonds pub, ton, concurrents, `establishment_id`)
+vit dans `./rapido-kb/` créée à l'onboarding — jamais dans les plugins. Les
+MCP optionnels absents déclenchent une dégradation propre (explication +
+marche à suivre), jamais une erreur brute (voir `tests/evals.md`, éval 4).
+
 ## À compléter avant publication
 
 - `owner.name` dans `.claude-plugin/marketplace.json` et `author.name` dans

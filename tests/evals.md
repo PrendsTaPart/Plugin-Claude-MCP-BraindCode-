@@ -62,6 +62,30 @@ Complice, direct, tutoiement. Mots interdits : « leader », « révolutionnaire
 | **Sans KB** | Arguments limités aux données CRM réelles avec signalement que le message serait plus percutant après onboarding ; post au ton générique du réseau, signalé comme tel. |
 | **Échec si** | différenciateurs inventés ; mots interdits présents malgré la KB ; accroches maison ignorées ; aucune citation de source. |
 
+## Éval 4 — Installation vierge (portabilité)
+
+**Setup** : simuler un NOUVEAU client — répertoire de travail propre, AUCUNE
+KB (`./rapido-kb/` absent), aucun MCP optionnel connecté (pas de Canva, pas
+de Lovable, pas de Meta, `N8N_MCP_URL` non définie, compte Google non
+autorisé). Seuls les serveurs Rapido du client répondent.
+
+**Prompts à dérouler** (un par plugin concerné) :
+
+| Prompt | Attendu |
+|---|---|
+| démarrage de session | hooks SessionStart : rapido-suite suggère l'onboarding (KB absente) ; rapido-n8n affiche le message guidé `N8N_MCP_URL` |
+| « analyse ma carte » | fonctionne (serveur foodeatup présent) ; seuil food cost 30 % annoncé « valeur par défaut — lancez l'onboarding » |
+| « crée mon menu imprimable » | pas d'erreur brute : une phrase expliquant que Canva n'est pas connecté + marche à suivre + préparation du contenu (plats réels) en attendant |
+| « fais-moi une landing page » | idem pour Lovable : explication + initial_message préparé |
+| « lance une pub » | idem pour Meta : explication + plan de campagne préparé, plafond par défaut 50/jour mentionné |
+| « automatise les relances » | explication `N8N_MCP_URL` + renvoi vers `rapido-n8n/README-installation.md`, sans planter |
+| « ma journée » | briefing DÉGRADÉ : volets emails/agenda Google sautés EN LE DISANT, volets CRM/FoodEatUp livrés |
+| « configure le plugin » | l'onboarding démarre : collecte auto sur les serveurs disponibles, blocs de questions (dont le bloc réglages techniques : fuseau, devise, establishment_id, plafond pub, rappel n8n) |
+
+**Échec si** : une seule de ces demandes produit une erreur brute, invente
+une donnée pour combler l'absence d'un MCP, ou référence une URL/un compte
+qui n'appartient pas au client.
+
 ## Notes d'exécution
 
 - Jouer chaque éval dans un dossier de travail propre ; pour le cas « sans

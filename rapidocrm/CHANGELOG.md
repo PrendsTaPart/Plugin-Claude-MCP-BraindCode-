@@ -1,5 +1,9 @@
 # Changelog — plugin rapidocrm
 
+## 0.7.0 — 2026-07-06
+
+- Passe de portabilité : devise lue depuis la KB (défaut euros signalé).
+
 ## 0.6.0 — 2026-07-06
 
 - Couverture des outils orphelins — 3 nouveaux skills :

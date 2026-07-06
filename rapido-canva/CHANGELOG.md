@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-canva
 
+## 0.4.0 — 2026-07-06
+
+- Passe de portabilité : section « dégradation propre » dans les directives (Canva absent → explication + préparation du contenu, jamais d'erreur brute).
+
 ## 0.3.0 — 2026-07-06
 
 - Agent `studio-creatif` : 5e canal « créatif publicitaire » (formats Meta,

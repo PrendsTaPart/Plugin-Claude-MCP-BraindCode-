@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-meta-ads
 
+## 0.2.0 — 2026-07-06
+
+- Passe de portabilité : section « dégradation propre » ; plafond du hook exprimé dans la devise du compte publicitaire et parsé avec ou sans symbole (€, code ISO, nu) — re-testé (4 cas).
+
 ## 0.1.0 — 2026-07-06
 
 - Version initiale — LE PLUGIN LE PLUS VERROUILLÉ (argent réel) :

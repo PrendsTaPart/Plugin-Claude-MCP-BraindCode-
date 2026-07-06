@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-lovable
 
+## 0.2.0 — 2026-07-06
+
+- Passe de portabilité : section « dégradation propre » dans les directives (Lovable absent → explication + initial_message préparé).
+
 ## 0.1.0 — 2026-07-06
 
 - Version initiale : `.mcp.json` (lovable + foodeatup + rapidocms + rapidocrm

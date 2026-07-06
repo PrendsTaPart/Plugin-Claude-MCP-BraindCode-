@@ -22,13 +22,13 @@ onboarding complet (ne pas écraser sans confirmation).
 
 | Fichier | Contenu |
 |---|---|
-| `entreprise.md` | identité, histoire, mission, implantations, équipe clé |
+| `entreprise.md` | identité, histoire, mission, implantations, équipe clé, fuseau horaire, devise, establishment_id FoodEatUp |
 | `produits-services.md` | offres, prix, marges cibles, best-sellers, saisonnalité |
 | `propositions-valeur.md` | promesse par cible, différenciateurs, preuves (chiffres, avis, labels), garanties |
 | `cibles-personas.md` | segments clients, pains, déclencheurs d'achat, canaux |
 | `charte-graphique.md` | hex, typos, logos (URLs), do/don't — version COMPLÉTÉE |
 | `ton-et-accroches.md` | ton de voix, vocabulaire maison, mots interdits, accroches validées par canal, exemples de posts qui ont marché |
-| `processus-internes.md` | règles métier maison : seuils (food cost, marges), cadences de relance, horaires, politique de remise |
+| `processus-internes.md` | règles métier maison : seuils (food cost, marges), cadences de relance, horaires, politique de remise, plafond budget pub/jour, registre des automatisations |
 | `concurrents.md` | concurrents principaux, leur positionnement, nos parades |
 
 ## Phase 1 — COLLECTE AUTO (ne jamais demander ce que les MCP savent déjà)
@@ -61,6 +61,21 @@ bloc suivant. Sauter toute question dont la réponse est déjà connue (phase 1)
 5. **Bloc règles maison** : seuils financiers (food cost max, marge mini) ?
    cadence de relance ? politique de remise (qui peut, jusqu'à combien) ?
 6. **Bloc concurrence** : 3 concurrents principaux ? leur force ? votre parade ?
+7. **Bloc réglages techniques** (la personnalisation vit dans la KB, jamais
+   dans les plugins) :
+   - FUSEAU HORAIRE de l'entreprise ? → `entreprise.md` (utilisé par
+     l'agenda, les planifications, les workflows) ;
+   - DEVISE de travail (si autre qu'euros) ? → `entreprise.md` ;
+   - `establishment_id` FoodEatUp (si restaurant — le retrouver ensemble via
+     un premier appel FoodEatUp si inconnu) ? → `entreprise.md` ;
+   - PLAFOND de budget publicitaire par jour (défaut 50 €/jour si non
+     défini) ? → `processus-internes.md` (ligne « Plafond budget pub :
+     X €/jour » — lue par le hook du plugin rapido-meta-ads) ;
+   - instance n8n ? → rappel : l'URL se configure par variable
+     d'environnement (`export N8N_MCP_URL=…` avant de lancer Claude Code,
+     voir `rapido-n8n/README-installation.md`) — consigner dans
+     `processus-internes.md` (registre des automatisations) QUE l'instance
+     existe et qui l'administre, pas de secret dans la KB.
 
 Règles d'interview :
 - « je ne sais pas » / « passe » = accepté : marquer `### À COMPLÉTER` dans le

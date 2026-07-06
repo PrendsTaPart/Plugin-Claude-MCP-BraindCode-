@@ -3,8 +3,11 @@
 
 Refuse (exit 2) toute création/modification dont le budget JOURNALIER dépasse
 le plafond maison. Plafond lu dans ./rapido-kb/processus-internes.md
-(première ligne contenant « plafond » et un montant en € sur la même ligne,
-ex. « Plafond budget pub : 80 €/jour ») ; défaut : 50 €/jour.
+(première ligne contenant « plafond » et un montant sur la même ligne, avec
+ou sans symbole — ex. « Plafond budget pub : 80 €/jour », « ... : 80 CHF »,
+« ... : 80/jour ») ; défaut : 50. Le plafond s'exprime dans la DEVISE DU
+COMPTE PUBLICITAIRE (unité principale), les budgets Meta étant comparés en
+centimes/plus petite unité de cette même devise.
 
 Hypothèses : les budgets Meta sont exprimés en CENTIMES (plus petite unité) ;
 les clés journalières contiennent « daily_budget », les clés totales
@@ -25,12 +28,13 @@ def lire_plafond():
         with open(KB_FILE, encoding="utf-8") as f:
             for ligne in f:
                 if "plafond" in ligne.lower():
-                    m = re.search(r"(\d+(?:[.,]\d+)?)\s*€", ligne)
+                    # Montant avec ou sans symbole/devise (€, EUR, CHF, $...)
+                    m = re.search(r"[:\s](\d+(?:[.,]\d+)?)\s*(?:€|[A-Z]{3}|\$)?", ligne)
                     if m:
                         return float(m.group(1).replace(",", ".")), "maison (rapido-kb)"
     except OSError:
         pass
-    return PLAFOND_DEFAUT_EUROS, "défaut (50 €/jour)"
+    return PLAFOND_DEFAUT_EUROS, "défaut (50/jour, devise du compte)"
 
 
 def collecter_budgets(objet, resultats):
