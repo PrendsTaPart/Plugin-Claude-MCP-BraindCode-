@@ -1,5 +1,10 @@
 # Changelog — plugin rapidorh
 
+## 0.7.1 — 2026-07-06
+
+- Correctif `job-post-builder` : dossier `reference/` renommé en `references/`
+  (les chemins du SKILL.md source étaient cassés en amont — 5 fichiers).
+
 ## 0.7.0 — 2026-07-06
 
 - Intégration de 5 skills Apache 2.0 d'anthropics/knowledge-work-plugins

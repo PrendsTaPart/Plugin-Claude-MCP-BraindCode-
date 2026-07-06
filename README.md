@@ -14,20 +14,40 @@ porte la communication.**
 ## Les 10 plugins
 
 Versions lues depuis `<plugin>/.claude-plugin/plugin.json`, serveurs depuis
-`<plugin>/.mcp.json`.
+`<plugin>/.mcp.json`. **105 skills au total**, dont 40 importés de dépôts
+open source (voir « Skills externes & attributions »).
 
-| Plugin | Version | Description courte | Serveurs MCP requis | Variable d'env |
-|---|---|---|---|---|
-| `foodeatup` | 0.7.0 | Gestion restaurant : HACCP, salle, recettes & marges, production, réappro, carte en ligne, planning, commandes | foodeatup | — |
-| `rapidocrm` | 0.7.0 | CRM : prospection, pipeline, devis/factures, contrats, RDV, campagnes, communication, performance | rapidocrm | — |
-| `rapidocms` | 0.6.0 | Contenu & réseaux sociaux, campagnes de posts, cartes digitales, vidéos marketing, conformité de marque | rapidocms, hyperframes | — |
-| `rapidorh` | 0.6.0 | RH & projets : Kanban, dailies, onboarding employés, revues projet, charge d'équipe | rapidorh | — |
-| `rapido-suite` | 0.11.0 | Orchestration : onboarding client 360°, revue business, CODIR, base de connaissance `./rapido-kb/` | rapidocrm, rapidocms, rapidorh, foodeatup | — |
-| `rapido-canva` | 0.4.0 | Design Canva piloté par les données : menus imprimables, visuels sociaux, supports commerciaux, slides CODIR | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-lovable` | 0.2.0 | Apps et agents IA Lovable : site restaurant, landing pages, agent IA produit, marque synchronisée | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-meta-ads` | 0.2.0 | **Argent réel (verrouillé)** : campagnes Meta, boosts IG, audiences CRM, pixel, pilotage, A/B tests | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
-| `rapido-n8n` | 0.1.0 | Automatisations qui tournent sans Claude : usine à workflows, recettes métier, surveillance, mémoire | n8n (instance du client), foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
-| `rapido-direction` | 0.1.0 | Chef de cabinet : journée du dirigeant, tri de boîte mail en brouillons, secrétariat, coffre Drive | gmail, google-calendar, google-drive (OAuth individuel), rapidocrm, foodeatup, n8n | `N8N_MCP_URL` (volet automatisations) |
+| Plugin | Version | Skills | Description courte | Serveurs MCP requis | Variable d'env |
+|---|---|---|---|---|---|
+| `foodeatup` | 0.9.0 | 14 | Gestion restaurant : HACCP, salle, recettes & marges, production, réappro, carte en ligne, planning, commandes | foodeatup | — |
+| `rapidocrm` | 0.9.0 | 19 | CRM : prospection, pipeline, devis/factures, contrats, RDV, campagnes, communication, performance | rapidocrm | — |
+| `rapidocms` | 0.7.0 | 14 | Contenu & réseaux sociaux, campagnes de posts, cartes digitales, vidéos marketing, conformité de marque | rapidocms, hyperframes | — |
+| `rapidorh` | 0.7.1 | 11 | RH & projets : Kanban, dailies, onboarding employés, revues projet, charge d'équipe | rapidorh | — |
+| `rapido-suite` | 0.13.0 | 10 | Orchestration : onboarding client 360°, revue business, CODIR, base de connaissance `./rapido-kb/` | rapidocrm, rapidocms, rapidorh, foodeatup | — |
+| `rapido-canva` | 0.5.1 | 7 | Design Canva piloté par les données : menus imprimables, visuels sociaux, supports commerciaux, slides CODIR | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
+| `rapido-lovable` | 0.4.0 | 8 | Apps et agents IA Lovable : site restaurant, landing pages, agent IA produit, marque synchronisée | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
+| `rapido-meta-ads` | 0.3.0 | 13 | **Argent réel (verrouillé)** : campagnes Meta, boosts IG, audiences CRM, pixel, pilotage, A/B tests | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
+| `rapido-n8n` | 0.1.0 | 4 | Automatisations qui tournent sans Claude : usine à workflows, recettes métier, surveillance, mémoire | n8n (instance du client), foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-direction` | 0.1.0 | 5 | Chef de cabinet : journée du dirigeant, tri de boîte mail en brouillons, secrétariat, coffre Drive | gmail, google-calendar, google-drive (OAuth individuel), rapidocrm, foodeatup, n8n | `N8N_MCP_URL` (volet automatisations) |
+
+## Skills externes & attributions
+
+Une partie des skills est importée de dépôts open source, adaptée aux
+conventions Rapido (mentions MCP/KB, renvois vers les skills d'exécution,
+renommages anti-collision) :
+
+| Source | Licence | Plugins concernés |
+|---|---|---|
+| [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | Apache 2.0 | foodeatup, rapidocrm, rapidocms, rapidorh, rapido-suite, rapido-meta-ads |
+| [anthropics/skills](https://github.com/anthropics/skills) | Apache 2.0 (LICENSE.txt par skill) | rapido-canva, rapido-lovable, rapido-suite (`skill-creator`) |
+| [wondelai/skills](https://github.com/wondelai/skills) | MIT | rapidocms, rapidocrm, rapido-meta-ads |
+| [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT | rapido-lovable |
+
+Règles : chaque skill externe embarque sa LICENSE dans son dossier ; chaque
+plugin concerné tient un `ATTRIBUTIONS.md` (provenance, commit, licence,
+modifications locales). Les skills basés sur des livres (wondelai) ne sont
+pas modifiés. Le skill `skill-creator` (rapido-suite) sert à créer et évaluer
+les nouveaux skills maison.
 
 ## Prérequis
 

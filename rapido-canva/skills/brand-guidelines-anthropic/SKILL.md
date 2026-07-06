@@ -1,6 +1,6 @@
 ---
 name: brand-guidelines-anthropic
-description: Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply. Avant d'appliquer ces couleurs Anthropic, lire d'abord reference/charte-graphique.md du plugin (et ./rapido-kb/charte-graphique.md) s'ils existent : la charte du client prime.
+description: Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply. Avant d'appliquer ces couleurs Anthropic, lire d'abord le fichier charte-graphique.md du dossier reference du plugin rapido-canva (et celui de ./rapido-kb/) s'ils existent : la charte du client prime.
 license: Complete terms in LICENSE.txt
 ---
 

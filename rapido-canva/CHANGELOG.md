@@ -1,5 +1,10 @@
 # Changelog — plugin rapido-canva
 
+## 0.5.1 — 2026-07-06
+
+- `brand-guidelines-anthropic` : formulation du renvoi vers la charte du
+  plugin clarifiée (chemin plugin vs chemin skill).
+
 ## 0.5.0 — 2026-07-06
 
 - Intégration de 3 skills anthropics/skills (Apache 2.0, LICENSE.txt propre à
