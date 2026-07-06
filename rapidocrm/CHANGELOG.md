@@ -1,5 +1,13 @@
 # Changelog — plugin rapidocrm
 
+## 0.9.0 — 2026-07-06
+
+- Intégration de 3 skills wondelai/skills (MIT, contenu non modifié — skills
+  basés sur des livres ; LICENSE dans chaque dossier, provenance ajoutée à
+  skills/ATTRIBUTIONS.md) : `predictable-revenue` (machine outbound B2B),
+  `negotiation` (empathie tactique, questions calibrées, Ackerman),
+  `mom-test` (interviews clients sans biais).
+
 ## 0.8.0 — 2026-07-06
 
 - Intégration de 6 skills externes Apache 2.0 depuis

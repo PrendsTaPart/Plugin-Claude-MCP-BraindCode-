@@ -19,3 +19,13 @@ Modifications locales par rapport à la source : champ `name` du frontmatter
 renommé pour `pipeline-review-methodo` ; mention « (utilise les données du
 MCP rapidocrm quand elles sont disponibles) » ajoutée en fin de `description`
 de chaque skill.
+
+## Ajouts du 2026-07-06 — wondelai/skills
+
+| Skill | Dépôt d'origine | Licence | Date |
+|---|---|---|---|
+| `predictable-revenue` | wondelai/skills (commit `326b3801`) | MIT | 2026-07-06 |
+| `negotiation` | wondelai/skills (commit `326b3801`) | MIT | 2026-07-06 |
+| `mom-test` | wondelai/skills (commit `326b3801`) | MIT | 2026-07-06 |
+
+Skills Wondel (basés sur des livres) : contenu NON modifié.

@@ -1,5 +1,15 @@
 # Changelog — plugin rapidocms
 
+## 0.7.0 — 2026-07-06
+
+- Intégration de 6 skills externes (LICENSE dans chaque dossier, provenance
+  dans ATTRIBUTIONS.md) :
+  - anthropics/knowledge-work-plugins (Apache 2.0) :
+    `content-creation-methodo` (renommé depuis content-creation),
+    `email-sequence`, `brand-review` ;
+  - wondelai/skills (MIT, contenu non modifié — skills basés sur des
+    livres) : `storybrand-messaging`, `made-to-stick`, `contagious`.
+
 ## 0.6.0 — 2026-07-06
 
 - Nouveau skill `video-marketing` (serveur HyperFrames by HeyGen ajouté au

@@ -1,5 +1,16 @@
 # Changelog — plugin rapido-meta-ads
 
+## 0.3.0 — 2026-07-06
+
+- Intégration de 5 skills externes (LICENSE dans chaque dossier, provenance
+  dans ATTRIBUTIONS.md) :
+  - anthropics/knowledge-work-plugins (Apache 2.0) :
+    `campaign-plan-methodo` et `performance-report-methodo` (renommés) — la
+    STRATÉGIE ; leur description renvoie explicitement vers
+    lancement-campagne-meta / pilotage-performance-ads pour l'EXÉCUTION MCP ;
+  - wondelai/skills (MIT, contenu non modifié) : `influence-psychology`,
+    `one-page-marketing`, `hundred-million-offers`.
+
 ## 0.2.0 — 2026-07-06
 
 - Passe de portabilité : section « dégradation propre » ; plafond du hook exprimé dans la devise du compte publicitaire et parsé avec ou sans symbole (€, code ISO, nu) — re-testé (4 cas).
