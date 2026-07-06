@@ -7,6 +7,7 @@
     { "name": "rapidocrm", "source": "./rapidocrm", "description": "CRM : prospection, pipeline, facturation, marketing" },
     { "name": "rapidocms", "source": "./rapidocms", "description": "Contenu & réseaux sociaux, cartes digitales" },
     { "name": "rapidorh", "source": "./rapidorh", "description": "RH : projets, Kanban, dailies, onboarding" },
-    { "name": "rapido-suite", "source": "./rapido-suite", "description": "Orchestration transverse des 4 MCP" }
+    { "name": "rapido-suite", "source": "./rapido-suite", "description": "Orchestration transverse des 4 MCP" },
+    { "name": "rapido-canva", "source": "./rapido-canva", "description": "Design Canva croisé avec les données Rapido : menus, visuels sociaux, supports commerciaux, slides CODIR" }
   ]
 }

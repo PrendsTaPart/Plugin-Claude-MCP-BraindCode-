@@ -1,7 +1,7 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace interne regroupant 5 plugins Claude Code qui packagent des skills
-métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH).
+Marketplace interne regroupant 6 plugins Claude Code qui packagent des skills
+métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH) et Canva.
 
 ## Prérequis
 
@@ -22,6 +22,7 @@ métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH).
 /plugin install rapidocms@rapido
 /plugin install rapidorh@rapido
 /plugin install rapido-suite@rapido
+/plugin install rapido-canva@rapido
 /reload-plugins
 ```
 
@@ -38,6 +39,7 @@ aux 4 serveurs.
 | `rapidocms` | rapidocms | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, conformité de marque — agents `responsable-marketing`, `community-manager`, `directeur-artistique` | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque`, `prompt-engineering-visuel`, `calendrier-editorial`, `analyse-performance-contenu` |
 | `rapidorh` | rapidorh | RH & projets : setup de projets, Kanban, dailies (rapports journaliers), onboarding des employés — agents `chef-de-projet` et `responsable-rh` | `setup-projet`, `flux-kanban`, `daily-report`, `onboarding-equipe`, `revue-projet-hebdo`, `detection-surcharge` |
 | `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée, comité de direction, base de connaissance entreprise — agent `directeur-general` | `onboarding-client-360`, `revue-hebdo-business`, `comite-de-direction`, `onboarding-entreprise`, `mise-a-jour-kb` |
+| `rapido-canva` | canva + les 4 serveurs | Design Canva alimenté par les données Rapido : menus imprimables, visuels sociaux aux formats natifs, propositions/présentations de vente, slides CODIR — règles Canva encodées (`reference/pieges-canva.md`, `CONFORMITE.md`) | `menu-restaurant-design`, `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir` |
 
 **Base de connaissance entreprise** : le skill `onboarding-entreprise`
 (rapido-suite) interviewe l'utilisateur et construit `./rapido-kb/` (8 fichiers
