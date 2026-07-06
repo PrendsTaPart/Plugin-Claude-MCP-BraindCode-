@@ -2,5 +2,5 @@
   "name": "foodeatup",
   "version": "0.7.0",
   "description": "Gestion restaurant FoodEatUp : HACCP, service en salle, recettes & marges, production, réapprovisionnement — avec agents chef-restaurateur et chef-cuisine",
-  "author": { "name": "REMPLACER" }
+  "author": { "name": "BraindCode", "url": "https://braindcode.com" }
 }

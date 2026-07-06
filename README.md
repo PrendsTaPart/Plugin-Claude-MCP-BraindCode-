@@ -149,8 +149,6 @@ personnalisation vit dans `./rapido-kb/` — jamais dans les plugins (voir
 
 ## À compléter avant publication
 
-- `owner.name` dans `.claude-plugin/marketplace.json` et `author.name` dans
-  chaque `plugin.json` (nom de la société).
 - Les sections `### À COMPLÉTER` des `reference/charte-graphique.md`
   (codes hex, URLs de logo, typographies, ton de voix).
 - Vérifier les URLs des serveurs MCP Google (`rapido-direction/.mcp.json`)
