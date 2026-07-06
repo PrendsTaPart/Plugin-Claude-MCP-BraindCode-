@@ -78,8 +78,8 @@ bloc suivant. Sauter toute question dont la réponse est déjà connue (phase 1)
      existe et qui l'administre, pas de secret dans la KB.
 
 Règles d'interview :
-- « je ne sais pas » / « passe » = accepté : marquer `### À COMPLÉTER` dans le
-  fichier, ne JAMAIS inventer pour combler ;
+- « je ne sais pas » / « passe » = accepté : insérer le marqueur
+  `### À COMPLÉTER` dans le fichier, ne JAMAIS inventer pour combler ;
 - reformuler les réponses orales en contenu structuré (listes, tableaux) — pas
   de verbatim brut ;
 - une réponse qui contredit une donnée MCP : signaler l'écart et demander
@@ -89,8 +89,8 @@ Règles d'interview :
 
 1. Générer les 8 fichiers dans `./rapido-kb/` (créer le dossier), chacun avec
    en tête : `> Dernière mise à jour : YYYY-MM-DD — onboarding initial`.
-2. Montrer un RÉSUMÉ (par fichier : 2-3 lignes de ce qui y est + les
-   `### À COMPLÉTER` restants) — pas les 8 fichiers in extenso.
+2. Montrer un RÉSUMÉ (par fichier : 2-3 lignes de ce qui y est + les sections
+   encore marquées `### À COMPLÉTER`) — pas les 8 fichiers in extenso.
 3. Demander validation ; corriger les fichiers concernés si besoin.
 
 ## Phase 4 — CÂBLAGE
@@ -103,7 +103,8 @@ Règles d'interview :
 
 ## Garde-fous
 
-- Jamais de données inventées pour combler un trou : `### À COMPLÉTER`.
+- Jamais de données inventées pour combler un trou : insérer le marqueur
+  `### À COMPLÉTER`.
 - La KB appartient au client : ne jamais y écrire de secrets (tokens, mots de
   passe) ; les prix et marges y sont acceptés (c'est son dépôt).
 - Priorité des sources pour les autres skills : données MCP live > KB >

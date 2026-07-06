@@ -25,8 +25,9 @@ la transmettre à l'utilisateur.
    `carte_visite` | `email_marketing` | `brochure`), objectif, contenu clé
    (titres, sections, CTA).
 2. **Charger la charte** — couleurs hex, typos, logo (URLs), ton : KB
-   prioritaire, sinon charte générique du plugin (en signalant les
-   `### À COMPLÉTER` : demander les valeurs manquantes plutôt qu'inventer).
+   prioritaire, sinon charte générique du plugin (en signalant les sections
+   marquées `### À COMPLÉTER` : demander les valeurs manquantes plutôt
+   qu'inventer).
 3. **Générer le HTML/CSS** aux contraintes du type :
    - newsletter / email_marketing : HTML email-safe (tables ou hybrid, CSS
      INLINE, largeur ~600 px, pile de polices web-safe en secours, un seul
