@@ -1,20 +1,20 @@
 {
   "mcpServers": {
-    "Foodeatup": {
+    "rapidocrm": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP FoodEatUp"
+      "url": "https://crm.rapidosoftware.com/mcp"
     },
-    "RapidoCRM": {
+    "rapidocms": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP RapidoCRM"
+      "url": "https://cms.rapidosoftware.com/mcp"
     },
-    "RapidoCMS": {
+    "rapidorh": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP RapidoCMS"
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh"
     },
-    "RapidoRh": {
+    "foodeatup": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP RapidoRh"
+      "url": "https://foodeatup.com/api/mcp"
     }
   }
 }

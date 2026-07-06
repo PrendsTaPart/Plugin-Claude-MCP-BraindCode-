@@ -1,6 +1,6 @@
 {
   "name": "rapido-suite",
   "version": "0.1.0",
-  "description": "Orchestration transverse des 4 MCP (FoodEatUp, CRM, CMS, RH)",
+  "description": "Orchestration transverse des 4 serveurs MCP Rapido : onboarding client 360° (CRM + CMS + RH) et revue business hebdomadaire (CRM + CMS + RH + FoodEatUp)",
   "author": { "name": "REMPLACER" }
 }
