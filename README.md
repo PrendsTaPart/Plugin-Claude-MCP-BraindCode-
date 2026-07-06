@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![Plugins](https://img.shields.io/badge/plugins-10-blue)
 ![Skills](https://img.shields.io/badge/skills-108-brightgreen)
-![Licence](https://img.shields.io/badge/licence-%C3%A0%20d%C3%A9finir-lightgrey)
+![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 ## Les plugins
 
@@ -170,6 +170,6 @@ ATTRIBUTIONS.md).
 
 ## Licence
 
-La licence du dépôt n'est pas encore définie (pas de fichier `LICENSE` à la
-racine). Les skills importés conservent leur licence d'origine (Apache 2.0 ou
-MIT), embarquée dans leur dossier — voir « Skills tiers et attributions ».
+[Apache License 2.0](LICENSE) — Copyright 2026 BraindCode. Les skills
+importés conservent leur licence d'origine (Apache 2.0 ou MIT), embarquée
+dans leur dossier — voir « Skills tiers et attributions ».
