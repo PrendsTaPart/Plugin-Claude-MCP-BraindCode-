@@ -34,7 +34,7 @@ aux 4 serveurs.
 | Plugin | MCP | À quoi ça sert | Skills principales |
 |---|---|---|---|
 | `foodeatup` | foodeatup | Gestion restaurant : conformité HACCP, service en salle, recettes & marges, production, réapprovisionnement — agents `chef-restaurateur` et `chef-cuisine` | `haccp-conformite-quotidienne`, `service-salle`, `recette-cout-marge`, `production-stock`, `reappro-fournisseurs`, `analyse-rentabilite-carte`, `briefing-du-jour` |
-| `rapidocrm` | rapidocrm | CRM : prospection & pipeline, campagnes marketing, devis/factures/relances, communication client, performance commerciale | `prospection-pipeline`, `campagne-marketing`, `devis-facture-relance`, `communication-client`, `performance-commerciale` |
+| `rapidocrm` | rapidocrm | CRM : prospection & pipeline, campagnes marketing, devis/factures/relances, communication client, performance commerciale — agents `directeur-commercial` et `sdr-prospection` | `prospection-pipeline`, `campagne-marketing`, `devis-facture-relance`, `communication-client`, `performance-commerciale`, `coaching-pipeline`, `redaction-commerciale` |
 | `rapidocms` | rapidocms | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, conformité de marque | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque` |
 | `rapidorh` | rapidorh | RH & projets : setup de projets, Kanban, dailies (rapports journaliers), onboarding des employés | `setup-projet`, `flux-kanban`, `daily-report`, `onboarding-equipe` |
 | `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée (lecture seule) | `onboarding-client-360`, `revue-hebdo-business` |
