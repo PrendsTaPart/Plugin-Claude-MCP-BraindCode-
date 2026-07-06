@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 0.9.0 — 2026-07-06
+
+- Domaine « Automatisations » ajouté à `revue-hebdo-business` et
+  `comite-de-direction` (si le plugin rapido-n8n est installé et N8N_MCP_URL
+  définie) : workflows actifs vs registre KB, taux de succès, échecs à
+  traiter.
+
 ## 0.8.0 — 2026-07-06
 
 - Domaine « Acquisition payante » ajouté à `revue-hebdo-business` et

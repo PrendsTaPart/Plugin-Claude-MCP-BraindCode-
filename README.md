@@ -1,8 +1,8 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace interne regroupant 8 plugins Claude Code qui packagent des skills
+Marketplace interne regroupant 9 plugins Claude Code qui packagent des skills
 métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH), Canva,
-Lovable et Meta Ads.
+Lovable, Meta Ads et n8n.
 
 ## Prérequis
 
@@ -26,8 +26,12 @@ Lovable et Meta Ads.
 /plugin install rapido-canva@rapido
 /plugin install rapido-lovable@rapido
 /plugin install rapido-meta-ads@rapido
+/plugin install rapido-n8n@rapido
 /reload-plugins
 ```
+
+Pour `rapido-n8n` : définir `export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`
+AVANT de lancer Claude Code (voir `rapido-n8n/README-installation.md`).
 
 Remplacer `<org>` par l'organisation GitHub qui héberge ce dépôt. Installer
 uniquement les plugins dont vous avez besoin — `rapido-suite` suppose l'accès
@@ -45,6 +49,7 @@ aux 4 serveurs.
 | `rapido-canva` | canva + les 4 serveurs | Design Canva alimenté par les données Rapido : menus imprimables, visuels sociaux aux formats natifs, propositions/présentations de vente, slides CODIR — agent `studio-creatif` (arbitre image IA / Canva / vidéo / Lovable), règles Canva encodées (`reference/pieges-canva.md`, `CONFORMITE.md`) | `menu-restaurant-design`, `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir` |
 | `rapido-lovable` | lovable + les 4 serveurs | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant avec réservation connectée, landing pages de campagne, agent IA produit (API Anthropic + mcp_servers), marque synchronisée sur le workspace — architecture 2 modes encodée (`reference/architecture-lovable.md`) | `site-restaurant`, `usine-a-landing`, `agent-ia-produit`, `sync-marque-lovable` |
 | `rapido-meta-ads` | facebook-ads + rapidocms + rapidocrm + canva + lovable | **Argent réel — plugin le plus verrouillé** : campagnes Meta (ODAX, CBO, tout en PAUSED), boost IG en deux temps, audiences CRM (RGPD), créatifs, pixel & retargeting, pilotage au coût par résultat, veille Ad Library, A/B tests — agent `media-buyer`, hooks plafond de budget + confirmations de dépense | `lancement-campagne-meta`, `boost-post-instagram`, `audiences-crm`, `creatifs-publicitaires`, `pixel-et-retargeting`, `pilotage-performance-ads`, `veille-ads-concurrents`, `tests-ab-meta` |
+| `rapido-n8n` | n8n (`${N8N_MCP_URL}` — instance du client) + les 4 serveurs | Automatisations qui tournent SANS Claude : usine à workflows (cycle SDK validé/testé), recettes métier Rapido (relances, stocks, HACCP, leads, récap, anniversaires), surveillance des exécutions, mémoire opérationnelle — règle : ponctuel = Claude, récurrent = workflow ; hooks sur publication/exécution production | `usine-automatisations`, `recettes-metier`, `surveillance-automatisations`, `memoire-operationnelle` |
 
 **Base de connaissance entreprise** : le skill `onboarding-entreprise`
 (rapido-suite) interviewe l'utilisateur et construit `./rapido-kb/` (8 fichiers

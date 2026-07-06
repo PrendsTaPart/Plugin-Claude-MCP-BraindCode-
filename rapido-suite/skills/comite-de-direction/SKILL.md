@@ -36,7 +36,10 @@ règles pendant toute l'exécution (IDs, données, formats, erreurs, récapitula
    Acquisition payante (Meta — si le plugin rapido-meta-ads est installé :
    `ads_get_ad_entities` avec période explicite — dépense, coût par résultat —
    + `ads_insights_anomaly_signal`, en coût par CLIENT via les leads CRM ;
-   sinon sauter cette page en le mentionnant).
+   sinon sauter cette page en le mentionnant) / Automatisations (n8n — si le
+   plugin rapido-n8n est installé et `N8N_MCP_URL` définie : workflows actifs
+   via `search_workflows`, taux de succès et échecs via `search_executions`
+   sur la période ; sinon sauter cette page en le mentionnant).
 4. **Arbitrages inter-domaines** — la section qui n'existe dans aucun domaine
    pris seul :
    - croiser les signaux (méthode de l'agent `directeur-general` : acquisition,

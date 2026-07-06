@@ -52,6 +52,13 @@ dans la synthèse et laisser l'utilisateur décider.
    - `ads_insights_anomaly_signal` : décrochages à signaler ;
    - croiser avec les leads CRM réellement entrés en pipeline (coût par
      client, pas par clic).
+7. **Automatisations** (si le serveur n8n est disponible — plugin rapido-n8n
+   installé et `N8N_MCP_URL` définie ; sinon sauter en le mentionnant) :
+   - `search_workflows` : nombre de workflows actifs (vs registre
+     `rapido-kb/processus-internes.md`) ;
+   - `search_executions` (`status: ["error","crashed"]`, `startedAfter` = la
+     période) + total des succès : taux de succès ;
+   - échecs à traiter → renvoyer vers `surveillance-automatisations`.
 
 ## Synthèse exécutive unifiée (format de sortie)
 
@@ -65,7 +72,9 @@ Produire UNE synthèse structurée, avec la période en en-tête :
    lien trafic ↔ campagnes ;
 6. **Acquisition payante** (si disponible) : dépense de la période, coût par
    résultat, anomalies ;
-7. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
+7. **Automatisations** (si disponible) : workflows actifs, taux de succès,
+   échecs à traiter ;
+8. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
    avec suggestion d'action (sans l'exécuter).
 
 ## Garde-fous
