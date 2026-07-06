@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 0.13.0 — 2026-07-06
+
+- Intégration du skill `skill-creator` d'anthropics/skills (Apache 2.0,
+  LICENSE.txt conservé, entrée ATTRIBUTIONS.md) : création, amélioration et
+  évaluation des skills maison de la marketplace. Premier usage :
+  `onboarding-restaurateur` (plugin foodeatup).
+
 ## 0.12.0 — 2026-07-06
 
 - Intégration de 4 skills Apache 2.0 du pack small-business

@@ -15,3 +15,13 @@ chaque dossier de skill).
 Modifications locales : mention MCP/KB ajoutée en fin de `description` ; section « Adaptation Rapido » ajoutée en tête de chaque SKILL.md (mapping QuickBooks/PayPal/HubSpot/Slack… vers les équivalents Rapido).
 
 Fusion (pas de copie) : `friday-brief` (`small-business/skills/friday-brief`) a été FUSIONNÉ dans le skill maison `revue-hebdo-business` (comparaison vs période précédente, top ventes, format « wins & watches ») au lieu d'être copié — recoupement trop fort.
+
+## Ajout du 2026-07-06 — anthropics/skills
+
+| Skill | Dépôt d'origine | Licence | Date |
+|---|---|---|---|
+| `skill-creator` | anthropics/skills (commit `9d2f1ae1`) | Apache 2.0 (LICENSE.txt du skill, conservé) | 2026-07-06 |
+
+Contenu non modifié. Sert à créer et améliorer les skills maison de la
+marketplace (le skill `onboarding-restaurateur` de foodeatup a été créé avec
+sa méthodologie).

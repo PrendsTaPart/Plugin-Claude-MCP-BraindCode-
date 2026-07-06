@@ -1,5 +1,16 @@
 # Changelog — plugin foodeatup
 
+## 0.9.0 — 2026-07-06
+
+- Nouveau skill maison `onboarding-restaurateur` (créé avec la méthodologie
+  skill-creator) : mise en place complète d'un nouveau client — carte via
+  `import_storefront_menu` (idempotence sur les noms), zones et tables
+  (`create_zone`/`create_table` + contrôle `floor_plan_status`), équipe
+  (`create_employee`), premier relevé HACCP (`add_temperature`, garde-fou
+  anti-donnée-inventée rappelé, equipment_id jamais deviné). Une confirmation
+  par chantier ; pas d'outil MCP de création d'établissement (naît à
+  l'inscription FoodEatUp) — documenté honnêtement en Étape 0.
+
 ## 0.8.0 — 2026-07-06
 
 - Intégration de 3 skills Apache 2.0 du pack small-business
