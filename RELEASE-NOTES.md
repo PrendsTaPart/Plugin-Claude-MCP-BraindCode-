@@ -45,11 +45,13 @@ Meta Ads, n8n, Google Workspace).
   `rapido-direction` (URL du serveur MCP de votre instance n8n). Sans elle,
   dégradation propre. Les comptes tiers (Canva, Lovable, Meta Ads,
   HyperFrames, Google) s'authentifient via leurs connecteurs/OAuth.
-- **Endpoints Google à confirmer** : les URLs des serveurs MCP Gmail /
-  Calendar / Drive de `rapido-direction/.mcp.json`
-  (`https://mcp.{gmail,calendar,drive}.googleapis.com/mcp`) restent à
-  vérifier contre la documentation officielle des connecteurs — le
-  README-installation du plugin le signale aussi.
+- ~~Endpoints Google à confirmer~~ — **résolu en 1.0.1** : les URLs de
+  `rapido-direction/.mcp.json` sont désormais celles de la documentation
+  officielle Google Workspace MCP
+  (`gmailmcp`/`calendarmcp`/`drivemcp.googleapis.com/mcp/v1`, vérifiées le
+  2026-07-06). La doc Gmail confirme au passage le design « brouillons
+  uniquement » du plugin : le serveur crée des drafts et labellise, il
+  n'envoie pas.
 - **67 outils MCP « à vérifier en ligne »** : les catalogues facebook-ads,
   n8n et Google vivent sur les serveurs distants — checklist manuelle avant
   usage intensif dans `tests/rapports/outils-a-verifier-en-ligne.md`.
