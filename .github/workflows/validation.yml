@@ -1,0 +1,41 @@
+# Validation de la marketplace Rapido — 100 % stdlib, aucune dépendance pip
+# (volontaire : les scripts de validation, hooks et calculs n'importent que la
+# bibliothèque standard ; les seuls imports tiers du dépôt — pytest, yaml —
+# sont dans des scripts de skills externes documentés comme dépendances
+# optionnelles, jamais exécutés ici : la compilation n'importe rien).
+name: validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  valider:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Pas de `pip install` : tout est stdlib. Si un futur script exige une
+      # dépendance, ce job DOIT échouer — c'est le contrat du dépôt.
+
+      - name: Validation structurelle (valider-plugins.py)
+        run: python3 scripts/valider-plugins.py
+
+      - name: Batterie de tests skills/agents/hooks (tester-skills.py)
+        run: python3 scripts/tester-skills.py
+
+      - name: Compilation de tous les .py
+        env:
+          PYTHONPYCACHEPREFIX: /tmp/pycache  # ne pas polluer l'arbre de travail
+        run: python3 -m compileall -q .
+
+      - name: bash -n de tous les .sh
+        run: |
+          set -euo pipefail
+          find . -name '*.sh' -not -path './.git/*' -print0 \
+            | xargs -0 -r -n1 bash -n
+          echo "Tous les .sh passent bash -n"

@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-meta-ads
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.3.0 — 2026-07-06
 
 - Intégration de 5 skills externes (LICENSE dans chaque dossier, provenance

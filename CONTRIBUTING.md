@@ -93,12 +93,16 @@ agent :
 
 ## Avant toute pull request
 
-1. **Obligatoire : `python3 scripts/tester-skills.py`** doit passer sans
-   FAIL (frontmatters `name`+`description`, unicité des `name`, convention
-   « Utiliser quand… », placeholders, chemins `${CLAUDE_PLUGIN_ROOT}`,
-   scripts compilables, skills mentionnés existants, hooks testés sur stdin ;
-   les WARN — outils MCP non vérifiables, skills tiers — sont tolérés mais à
-   lire).
+1. **Obligatoire : `python3 scripts/valider-plugins.py` puis
+   `python3 scripts/tester-skills.py`** doivent passer sans erreur ni FAIL
+   (JSON valides, frontmatters `name`+`description`, unicité des `name`,
+   artefacts, licences des skills externes ; puis convention « Utiliser
+   quand… », placeholders, chemins `${CLAUDE_PLUGIN_ROOT}`, scripts
+   compilables, skills mentionnés existants, cohérence MCP, hooks testés sur
+   stdin). Les INFO — outils de serveurs à catalogue distant — sont attendus
+   et tracés dans `tests/rapports/outils-a-verifier-en-ligne.md`. La CI
+   (`.github/workflows/validation.yml`) rejoue ces contrôles à chaque push et
+   pull request.
 2. Dérouler les évals de `tests/evals.md` quand la contribution touche la KB
    ou le routage.
 3. Messages de commit au format

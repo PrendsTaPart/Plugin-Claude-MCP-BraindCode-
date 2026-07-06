@@ -6,6 +6,7 @@ Meta Ads, n8n, Google Workspace) : des skills métier, des agents et des
 garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
+![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-10-blue)
 ![Skills](https://img.shields.io/badge/skills-108-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
@@ -19,16 +20,16 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
-| `foodeatup` | 0.9.0 | 14 | 2 | foodeatup | — |
-| `rapidocrm` | 0.9.0 | 19 | 2 | rapidocrm | — |
-| `rapidocms` | 0.8.0 | 16 | 4 | rapidocms, hyperframes | — |
-| `rapidorh` | 0.7.1 | 11 | 2 | rapidorh | — |
-| `rapido-suite` | 0.14.0 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |
-| `rapido-canva` | 0.5.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-lovable` | 0.4.0 | 8 | 0 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-meta-ads` | 0.3.0 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
-| `rapido-n8n` | 0.1.0 | 4 | 0 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
-| `rapido-direction` | 0.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
+| `foodeatup` | 1.0.0 | 14 | 2 | foodeatup | — |
+| `rapidocrm` | 1.0.0 | 19 | 2 | rapidocrm | — |
+| `rapidocms` | 1.0.0 | 16 | 4 | rapidocms, hyperframes | — |
+| `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
+| `rapido-suite` | 1.0.0 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |
+| `rapido-canva` | 1.0.0 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
+| `rapido-lovable` | 1.0.0 | 8 | 0 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
+| `rapido-meta-ads` | 1.0.0 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
+| `rapido-n8n` | 1.0.0 | 4 | 0 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-direction` | 1.0.1 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 
 **Total : 10 plugins, 108 skills, 14 agents.**
 

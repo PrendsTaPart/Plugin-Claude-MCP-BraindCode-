@@ -1,16 +1,7 @@
 ---
 name: business-pulse
-description: >
-  Produces a one-page cross-functional business snapshot for SMB owners —
-  cash position (QuickBooks), sales trend (PayPal/Square), pipeline movement
-  (HubSpot), this week's commitments (Calendar), urgent watch-list items
-  (Gmail/Slack), and the single most important thing needing attention today.
-  Proactively tries every available connector and gracefully scopes to
-  whatever is connected — one connector gives a partial pulse; the full stack
-  gives the full picture. Trigger when the user asks how the business is
-  doing, wants a snapshot, a weekly summary, a Monday brief, or says
-  anything like "what am I missing" or "catch me up on the business."
-  S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur demande comment va la boîte, un snapshot, un résumé rapide, ou dit « qu'est-ce que je rate ? », « remets-moi dans le bain ». Photo une-page transverse : trésorerie, tendance des ventes, pipeline, engagements de la semaine, points de vigilance et LA chose à traiter aujourd'hui — se limite proprement aux connecteurs disponibles. Pour la revue hebdomadaire structurée, voir revue-hebdo-business. S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Business Pulse

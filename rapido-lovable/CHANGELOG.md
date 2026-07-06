@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-lovable
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.4.0 — 2026-07-06
 
 - Intégration de 2 skills anthropics/skills (Apache 2.0, LICENSE.txt propre à

@@ -1,5 +1,16 @@
 # Changelog — plugin rapido-direction
 
+## 1.0.1 — 2026-07-06
+
+- URLs des serveurs MCP Google alignées sur la documentation officielle
+  Google Workspace MCP (gmailmcp/calendarmcp/drivemcp.googleapis.com/mcp/v1,
+  vérifiées le 2026-07-06) ; README-installation mis à jour avec la
+  référence. La doc Gmail confirme le design « brouillons uniquement ».
+
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.1.0 — 2026-07-06
 
 - Version initiale — plugin GÉNÉRALISTE : chaque utilisateur connecte SON

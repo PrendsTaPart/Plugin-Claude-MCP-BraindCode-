@@ -1,8 +1,12 @@
 ---
 name: handle-complaint
-description: Handles an incoming customer complaint end-to-end — pulls context, drafts a response, and suggests an operational fix. Accepts optional email or ticket ID argument. S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand un client se plaint (email, avis, ticket) et qu'il faut traiter la réclamation de bout en bout : contexte récupéré, réponse rédigée, correctif opérationnel proposé. Accepte un email ou un ID de ticket en argument. S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 allowed-tools: Read, WebFetch, Bash
 ---
+
+> Nécessite les MCP **foodeatup** ET **rapidocrm** (tous deux déclarés dans
+> le `.mcp.json` du plugin).
 
 ## Adaptation Rapido (lire d'abord)
 

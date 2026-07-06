@@ -1,6 +1,7 @@
 ---
 name: draft-response
-description: Draft a professional customer-facing response tailored to the situation and relationship. Use when answering a product question, responding to an escalation or outage, delivering bad news like a delay or won't-fix, declining a feature request, or replying to a billing issue. (utilise les données du MCP rapidocrm quand elles sont disponibles)
+description: Utiliser quand l'utilisateur doit répondre à un client dans une situation délicate — question produit, escalade ou incident, annonce d'un retard ou d'un refus, demande de fonctionnalité déclinée, litige de facturation — avec un ton adapté à la situation et à la relation. Utilise les données du MCP rapidocrm quand elles sont disponibles.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<situation description>"
 ---
 

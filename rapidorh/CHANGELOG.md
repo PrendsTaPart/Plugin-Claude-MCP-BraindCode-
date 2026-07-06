@@ -1,5 +1,9 @@
 # Changelog — plugin rapidorh
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.7.1 — 2026-07-06
 
 - Correctif `job-post-builder` : dossier `reference/` renommé en `references/`

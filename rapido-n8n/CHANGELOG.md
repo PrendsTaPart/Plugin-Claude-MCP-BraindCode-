@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-n8n
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.1.0 — 2026-07-06
 
 - Version initiale — plugin GÉNÉRALISTE : chaque client connecte SA propre

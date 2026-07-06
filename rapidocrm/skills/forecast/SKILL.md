@@ -1,6 +1,7 @@
 ---
 name: forecast
-description: Generate a weighted sales forecast with best/likely/worst scenarios, commit vs. upside breakdown, and gap analysis. Use when preparing a quarterly forecast call, assessing gap-to-quota from a pipeline CSV, deciding which deals to commit vs. call upside, or checking pipeline coverage against your number. (utilise les données du MCP rapidocrm quand elles sont disponibles)
+description: Utiliser quand l'utilisateur prépare un forecast de ventes — scénarios pessimiste/probable/optimiste, commit vs upside, écart à l'objectif, couverture de pipeline — pour un point trimestriel ou un arbitrage de fin de période. Utilise les données du MCP rapidocrm quand elles sont disponibles.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<period>"
 ---
 

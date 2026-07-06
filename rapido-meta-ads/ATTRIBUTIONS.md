@@ -11,3 +11,5 @@ LICENSE de chaque dépôt source copiée dans chaque dossier de skill.
 | `hundred-million-offers` | wondelai/skills (commit `326b3801`) | MIT | 2026-07-06 |
 
 Les skills « methodo » portent la stratégie ; l'exécution Meta Ads reste dans lancement-campagne-meta / pilotage-performance-ads (ligne ajoutée à leur description). Skills Wondel : contenu NON modifié.
+
+> Note du 2026-07-06 : la description du frontmatter de chaque skill listé ici a été traduite en français (« Utiliser quand… ») pour le déclenchement — le corps du skill reste inchangé. Une clé `source:` de traçabilité a été ajoutée au frontmatter.

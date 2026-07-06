@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-canva
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.5.1 — 2026-07-06
 
 - `brand-guidelines-anthropic` : formulation du renvoi vers la charte du

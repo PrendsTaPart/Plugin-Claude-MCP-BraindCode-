@@ -1,6 +1,7 @@
 ---
 name: one-page-marketing
-description: 'Build a complete marketing plan covering the full customer journey from stranger to raving fan. Use when the user mentions "marketing plan", "marketing strategy", "target market", "USP", "lead nurture", "customer lifetime value", "PVP Index", or "I dont know where to start with marketing". Also trigger when building a marketing plan from scratch, choosing acquisition channels, or designing end-to-end customer-lifecycle campaigns. Covers the PVP Index, channel selection, and advocacy systems. For brand messaging, see storybrand-messaging. For conversion optimization, see cro-methodology.'
+description: Utiliser quand l'utilisateur veut un plan marketing complet, une stratégie marketing, choisir ses canaux d'acquisition, parle de cible ou d'USP, ou dit « je ne sais pas par où commencer en marketing ». Couvre tout le parcours client, de l'inconnu au fan : PVP Index, choix des canaux, systèmes de recommandation. Pour le message de marque, voir storybrand-messaging.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai

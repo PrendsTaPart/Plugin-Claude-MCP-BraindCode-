@@ -1,5 +1,9 @@
 # Changelog — plugin rapidocms
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.8.0 — 2026-07-06
 
 - Agent `prompt-designer` : ingénieur de prompts visuels — charte chargée

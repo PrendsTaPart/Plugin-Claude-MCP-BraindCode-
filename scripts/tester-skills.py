@@ -124,6 +124,10 @@ set_workspace_knowledge update_workspace_skill""".split()),
     "hyperframes": set("compose get_project get_project_status get_render_status "
                        "list_projects render_video".split()),
 }
+# Serveurs dont le catalogue d'outils vit à distance : un outil qui leur est
+# attribuable passe en INFO (à vérifier en ligne, MCP connectés), pas en WARN.
+SERVEURS_CATALOGUE_DISTANT = ["facebook-ads", "n8n", "gmail", "google-calendar",
+                              "google-drive", "canva", "lovable", "hyperframes"]
 SERVEURS_SANS_CATALOGUE = {"facebook-ads", "n8n", "gmail", "google-calendar", "google-drive"}
 PREFIXES_OUTIL = ("create", "list", "get", "update", "delete", "add", "edit", "send",
                   "schedule", "cancel", "remove", "upload", "generate", "assign", "move",
@@ -172,6 +176,9 @@ TESTS_HOOKS_EXTRAS = {
 RX_FRONT = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 # le span peut se replier sur la ligne suivante (listes de termes longues)
 RX_INLINE_CODE = re.compile(r"`[^`]{1,400}`", re.S)
+# une citation courte entre guillemets droits est un EXEMPLE pédagogique
+# (ex. « never "Lorem ipsum" » dans made-to-stick), pas un placeholder
+RX_QUOTED = re.compile(r'"[^"\n]{1,80}"')
 RX_FENCE = re.compile(r"^```.*?^```", re.S | re.M)
 RX_PLACEHOLDERS = [("REMPLACER", re.compile(r"\bREMPLACER\b")),
                    ("À COMPLÉTER", re.compile(r"À COMPLÉTER")),
@@ -213,7 +220,7 @@ def frontmatter(texte):
 
 
 def sans_code(texte):
-    return RX_INLINE_CODE.sub("", RX_FENCE.sub("", texte))
+    return RX_QUOTED.sub("", RX_INLINE_CODE.sub("", RX_FENCE.sub("", texte)))
 
 
 def skills_externes(plugin_dir):
@@ -271,8 +278,10 @@ def main():
                     if nom:
                         index_global[nom] = chemin
 
-    total = {"FAIL": 0, "WARN": 0}
+    verbose = "--verbose" in sys.argv
+    total = {"FAIL": 0, "WARN": 0, "INFO": 0}
     details_fail, details_warn = [], []
+    infos_globales = []  # (plugin, fichier, outil, serveurs candidats)
 
     print("=" * 72)
     print("RAPPORT tester-skills.py — marketplace Rapido")
@@ -312,11 +321,12 @@ def main():
                          f"doublon de name `{nom}` : {noms_vus[nom]} et {rel}")
             noms_vus[nom] = rel
             if genre == "skill":
+                # Convention BLOQUANTE pour tous, skills tiers compris : leurs
+                # descriptions sont francisées (voir ATTRIBUTIONS.md), seul le
+                # corps reste l'original attribué.
                 if not desc.startswith("Utiliser quand"):
-                    niveau = "WARN" if nom in externes else "FAIL"
-                    src = " (skill tiers — ATTRIBUTIONS.md)" if nom in externes else ""
-                    probleme("STRUCTURE", niveau,
-                             f"{rel} : description ne commence pas par « Utiliser quand »{src}")
+                    probleme("STRUCTURE", "FAIL",
+                             f"{rel} : description ne commence pas par « Utiliser quand »")
             elif "Utiliser pour" not in desc and "Utiliser quand" not in desc:
                 probleme("STRUCTURE", "WARN",
                          f"{rel} : description d'agent sans « Utiliser pour/quand »")
@@ -381,7 +391,8 @@ def main():
         catalogues_declares = set().union(*(CATALOGUE.get(s, set()) for s in serveurs)) \
             if serveurs else set()
         tous_outils = set().union(*CATALOGUE.values())
-        sans_catalogue = [s for s in serveurs if s in SERVEURS_SANS_CATALOGUE]
+        distants = [s for s in serveurs if s in SERVEURS_CATALOGUE_DISTANT]
+        infos_plugin = 0
         for genre, chemin in fichiers_md.get(p, []):
             if os.path.join(p, "skills") not in chemin and genre != "agent":
                 continue
@@ -399,14 +410,25 @@ def main():
                              f"{rel} : `{token}` appartient à {'/'.join(ou)}, "
                              f"serveur(s) non déclaré(s) dans {p}/.mcp.json")
                 elif ressemble:
-                    if sans_catalogue:
-                        probleme("MCP", "WARN",
-                                 f"{rel} : `{token}` non vérifiable (catalogue non embarqué "
-                                 f"pour {'/'.join(sans_catalogue)}) — vérifier sur le serveur")
+                    if distants:
+                        # attribuable à un serveur au catalogue distant : INFO
+                        total["INFO"] += 1
+                        infos_plugin += 1
+                        candidats = [s for s in distants
+                                     if s in SERVEURS_SANS_CATALOGUE] or distants
+                        infos_globales.append((p, rel, token, "/".join(candidats)))
+                        if verbose:
+                            lignes.append(f"    [INFO] MCP — {rel} : `{token}` à vérifier "
+                                          f"en ligne (serveur(s) candidat(s) : "
+                                          f"{'/'.join(candidats)})")
                     else:
                         probleme("MCP", "WARN",
                                  f"{rel} : `{token}` introuvable dans les catalogues des "
                                  f"serveurs déclarés ({', '.join(serveurs)})")
+        if infos_plugin and not verbose:
+            lignes.append(f"    (INFO) MCP — {infos_plugin} outil(s) à vérifier en ligne "
+                          "(catalogues distants) — relancer avec --verbose pour le détail, "
+                          "checklist : tests/rapports/outils-a-verifier-en-ligne.md")
 
         # ---------------- HOOKS
         hooks_json = os.path.join(p, "hooks", "hooks.json")
@@ -447,7 +469,8 @@ def main():
 
     print("\n" + "=" * 72)
     print(f"RÉSUMÉ GLOBAL : {len(plugins)} plugins — "
-          f"{total['FAIL']} FAIL, {total['WARN']} WARN")
+          f"{total['FAIL']} FAIL, {total['WARN']} WARN, {total['INFO']} INFO "
+          "(outils de serveurs à catalogue distant, à vérifier en ligne)")
     print("=" * 72)
     return 1 if total["FAIL"] else 0
 

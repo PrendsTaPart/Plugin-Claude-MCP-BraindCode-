@@ -1,13 +1,7 @@
 ---
 name: cash-flow-snapshot
-description: >
-  Reads AR/AP, historical cash timing, and known fixed costs from QuickBooks,
-  PayPal, Stripe, or Square — or a CSV upload — and produces a 30/60/90-day
-  cash flow forecast with percentage-variance confidence bands and named risk
-  flags. Delivers a chat summary and a downloadable XLSX. Use when the user
-  asks "forecast my cash flow," "will I make payroll," mentions "runway," or
-  says "cash crunch." Falls back to CSV upload when no connector is live.
-  S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur demande une prévision de trésorerie, dit « est-ce que je pourrai payer les salaires ? », parle de runway ou de trou de trésorerie. Projection 30/60/90 jours avec bandes de confiance et risques nommés, à partir des encaissements/décaissements réels (ou d'un CSV en repli). S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 compatibility: "Requires one or more of: QuickBooks MCP, PayPal MCP, Stripe MCP, Square MCP, file upload (CSV fallback). Output uses xlsx skill."
 ---
 

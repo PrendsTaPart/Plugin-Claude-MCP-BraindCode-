@@ -1,6 +1,7 @@
 ---
 name: monday-brief
-description: Generates a one-page Monday morning briefing — cash, sales, pipeline, week ahead, top three to-dos. Accepts optional post destination and save-to arguments. S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur demande son brief du lundi matin : une page — trésorerie, ventes, pipeline, semaine à venir, top 3 des choses à faire. S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 allowed-tools: Read, WebFetch, Bash
 ---
 
