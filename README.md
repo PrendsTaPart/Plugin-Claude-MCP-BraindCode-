@@ -1,8 +1,8 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace interne regroupant 7 plugins Claude Code qui packagent des skills
-métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH), Canva et
-Lovable.
+Marketplace interne regroupant 8 plugins Claude Code qui packagent des skills
+métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH), Canva,
+Lovable et Meta Ads.
 
 ## Prérequis
 
@@ -25,6 +25,7 @@ Lovable.
 /plugin install rapido-suite@rapido
 /plugin install rapido-canva@rapido
 /plugin install rapido-lovable@rapido
+/plugin install rapido-meta-ads@rapido
 /reload-plugins
 ```
 
@@ -43,6 +44,7 @@ aux 4 serveurs.
 | `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée, comité de direction, base de connaissance entreprise — agent `directeur-general` | `onboarding-client-360`, `revue-hebdo-business`, `comite-de-direction`, `onboarding-entreprise`, `mise-a-jour-kb` |
 | `rapido-canva` | canva + les 4 serveurs | Design Canva alimenté par les données Rapido : menus imprimables, visuels sociaux aux formats natifs, propositions/présentations de vente, slides CODIR — agent `studio-creatif` (arbitre image IA / Canva / vidéo / Lovable), règles Canva encodées (`reference/pieges-canva.md`, `CONFORMITE.md`) | `menu-restaurant-design`, `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir` |
 | `rapido-lovable` | lovable + les 4 serveurs | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant avec réservation connectée, landing pages de campagne, agent IA produit (API Anthropic + mcp_servers), marque synchronisée sur le workspace — architecture 2 modes encodée (`reference/architecture-lovable.md`) | `site-restaurant`, `usine-a-landing`, `agent-ia-produit`, `sync-marque-lovable` |
+| `rapido-meta-ads` | facebook-ads + rapidocms + rapidocrm + canva + lovable | **Argent réel — plugin le plus verrouillé** : campagnes Meta (ODAX, CBO, tout en PAUSED), boost IG en deux temps, audiences CRM (RGPD), créatifs, pixel & retargeting, pilotage au coût par résultat, veille Ad Library, A/B tests — agent `media-buyer`, hooks plafond de budget + confirmations de dépense | `lancement-campagne-meta`, `boost-post-instagram`, `audiences-crm`, `creatifs-publicitaires`, `pixel-et-retargeting`, `pilotage-performance-ads`, `veille-ads-concurrents`, `tests-ab-meta` |
 
 **Base de connaissance entreprise** : le skill `onboarding-entreprise`
 (rapido-suite) interviewe l'utilisateur et construit `./rapido-kb/` (8 fichiers

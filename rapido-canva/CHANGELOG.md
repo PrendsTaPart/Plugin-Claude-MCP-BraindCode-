@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-canva
 
+## 0.3.0 — 2026-07-06
+
+- Agent `studio-creatif` : 5e canal « créatif publicitaire » (formats Meta,
+  plugin rapido-meta-ads) — peu de texte incrusté, CTA lié à l'objectif ODAX,
+  variantes A/B, avertissement argent réel.
+
 ## 0.2.0 — 2026-07-06
 
 - Nouvel agent `studio-creatif` : arbitre les 4 canaux de création — image IA

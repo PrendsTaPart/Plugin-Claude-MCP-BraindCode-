@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "facebook-ads": {
+      "type": "http",
+      "url": "https://mcp.facebook.com/ads"
+    },
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    },
+    "canva": {
+      "type": "http",
+      "url": "https://mcp.canva.com/mcp"
+    },
+    "lovable": {
+      "type": "http",
+      "url": "https://mcp.lovable.dev"
+    }
+  }
+}

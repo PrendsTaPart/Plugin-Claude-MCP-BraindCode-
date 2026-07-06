@@ -45,6 +45,13 @@ dans la synthèse et laisser l'utilisateur décider.
      appareils ;
    - croiser avec `get_stats_campagne` (CRM) : le trafic vient-il des
      campagnes ? Les pics correspondent-ils aux envois/publications ?
+6. **Acquisition payante** (si le serveur facebook-ads est disponible —
+   plugin rapido-meta-ads installé ; sinon sauter en le mentionnant) :
+   - `ads_get_ad_entities` (période explicite, mêmes dates) : dépense,
+     résultats, coût par résultat ;
+   - `ads_insights_anomaly_signal` : décrochages à signaler ;
+   - croiser avec les leads CRM réellement entrés en pipeline (coût par
+     client, pas par clic).
 
 ## Synthèse exécutive unifiée (format de sortie)
 
@@ -56,7 +63,9 @@ Produire UNE synthèse structurée, avec la période en en-tête :
 4. **Projets** : en cours / en retard / terminés ;
 5. **Web / Produits** (si disponible) : visiteurs, conversion, sources — et le
    lien trafic ↔ campagnes ;
-6. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
+6. **Acquisition payante** (si disponible) : dépense de la période, coût par
+   résultat, anomalies ;
+7. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
    avec suggestion d'action (sans l'exécuter).
 
 ## Garde-fous

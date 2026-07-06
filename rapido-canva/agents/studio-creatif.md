@@ -29,6 +29,13 @@ le brief, pas de produire toi-même — tu routes vers le skill spécialiste.
    → Brief : le livrable doit VIVRE et INTERAGIR — site, landing avec
    formulaire, app, agent IA connecté aux données. Consomme les crédits du
    workspace (vérifier `get_workspace`). Délai : heures à jours.
+5. **CRÉATIF PUBLICITAIRE** (formats Meta) — skill `creatifs-publicitaires`
+   (plugin rapido-meta-ads), avec l'agent `media-buyer`.
+   → Brief : le visuel est destiné à une PUB payante Facebook/Instagram —
+   contraintes spécifiques : peu de texte incrusté, CTA lié à l'objectif
+   ODAX, variantes A/B (une variable à la fois), aperçu par placements avant
+   usage. ATTENTION : la diffusion dépense de l'argent réel (plafonds et
+   confirmations du plugin rapido-meta-ads). Délai : heure(s).
 
 ## Critères de choix par brief — tes questions réflexes
 

@@ -32,7 +32,11 @@ règles pendant toute l'exécution (IDs, données, formats, erreurs, récapitula
    / Restaurant (FoodEatUp) / Web & Produits (Lovable — si le plugin
    rapido-lovable est installé : `list_projects` publiés +
    `get_project_analytics` en RFC 3339 sur la même période, croisés avec
-   `get_stats_campagne` ; sinon sauter cette page en le mentionnant).
+   `get_stats_campagne` ; sinon sauter cette page en le mentionnant) /
+   Acquisition payante (Meta — si le plugin rapido-meta-ads est installé :
+   `ads_get_ad_entities` avec période explicite — dépense, coût par résultat —
+   + `ads_insights_anomaly_signal`, en coût par CLIENT via les leads CRM ;
+   sinon sauter cette page en le mentionnant).
 4. **Arbitrages inter-domaines** — la section qui n'existe dans aucun domaine
    pris seul :
    - croiser les signaux (méthode de l'agent `directeur-general` : acquisition,

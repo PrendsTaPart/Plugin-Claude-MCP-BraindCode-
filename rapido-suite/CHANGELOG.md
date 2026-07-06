@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 0.8.0 — 2026-07-06
+
+- Domaine « Acquisition payante » ajouté à `revue-hebdo-business` et
+  `comite-de-direction` (si le plugin rapido-meta-ads est installé) :
+  dépense, coût par résultat (`ads_get_ad_entities` avec période), anomalies,
+  lu en coût par CLIENT via les leads CRM.
+
 ## 0.7.0 — 2026-07-06
 
 - Domaine « Web / Produits » ajouté à `revue-hebdo-business` et
