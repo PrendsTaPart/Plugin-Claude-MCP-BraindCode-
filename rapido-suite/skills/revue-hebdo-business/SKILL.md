@@ -37,6 +37,28 @@ dans la synthèse et laisser l'utilisateur décider.
      facturé, encaissé, impayés, dépenses, marge.
    - Si l'utilisateur ne gère pas d'établissement FoodEatUp, sauter cette section
      en le mentionnant.
+5. **Web / Produits** (si le serveur Lovable est disponible — plugin
+   rapido-lovable installé ; sinon sauter en le mentionnant) :
+   - `list_projects` (`publish_status: "published"`) : les apps publiées ;
+   - `get_project_analytics` par projet (`start_date`/`end_date` en RFC 3339,
+     MÊMES dates que la période analysée) : visiteurs, conversion, sources,
+     appareils ;
+   - croiser avec `get_stats_campagne` (CRM) : le trafic vient-il des
+     campagnes ? Les pics correspondent-ils aux envois/publications ?
+6. **Acquisition payante** (si le serveur facebook-ads est disponible —
+   plugin rapido-meta-ads installé ; sinon sauter en le mentionnant) :
+   - `ads_get_ad_entities` (période explicite, mêmes dates) : dépense,
+     résultats, coût par résultat ;
+   - `ads_insights_anomaly_signal` : décrochages à signaler ;
+   - croiser avec les leads CRM réellement entrés en pipeline (coût par
+     client, pas par clic).
+7. **Automatisations** (si le serveur n8n est disponible — plugin rapido-n8n
+   installé et `N8N_MCP_URL` définie ; sinon sauter en le mentionnant) :
+   - `search_workflows` : nombre de workflows actifs (vs registre
+     `rapido-kb/processus-internes.md`) ;
+   - `search_executions` (`status: ["error","crashed"]`, `startedAfter` = la
+     période) + total des succès : taux de succès ;
+   - échecs à traiter → renvoyer vers `surveillance-automatisations`.
 
 ## Synthèse exécutive unifiée (format de sortie)
 
@@ -46,7 +68,13 @@ Produire UNE synthèse structurée, avec la période en en-tête :
 2. **Commercial** : évolution du pipeline, deals gagnés/perdus ;
 3. **Contenu** : posts publiés, portée/engagement, meilleur post ;
 4. **Projets** : en cours / en retard / terminés ;
-5. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
+5. **Web / Produits** (si disponible) : visiteurs, conversion, sources — et le
+   lien trafic ↔ campagnes ;
+6. **Acquisition payante** (si disponible) : dépense de la période, coût par
+   résultat, anomalies ;
+7. **Automatisations** (si disponible) : workflows actifs, taux de succès,
+   échecs à traiter ;
+8. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
    avec suggestion d'action (sans l'exécuter).
 
 ## Garde-fous

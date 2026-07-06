@@ -1,5 +1,38 @@
 # Changelog — plugin rapido-suite
 
+## 0.11.0 — 2026-07-06
+
+- Passe de portabilité : devise lue depuis la KB ou le compte connecté ; `onboarding-entreprise` gagne le bloc « réglages techniques » (fuseau horaire, devise, establishment_id FoodEatUp, plafond budget pub/jour, rappel N8N_MCP_URL).
+
+## 0.10.0 — 2026-07-06
+
+- Agent `directeur-general` : devient l'orchestrateur A→Z — délègue aux
+  agents de domaine (chef-restaurateur, directeur-commercial,
+  responsable-marketing, studio-creatif, chef-de-projet/responsable-rh,
+  media-buyer, assistant-direction, workflows n8n), consolide en une
+  synthèse, tranche selon la KB.
+
+## 0.9.0 — 2026-07-06
+
+- Domaine « Automatisations » ajouté à `revue-hebdo-business` et
+  `comite-de-direction` (si le plugin rapido-n8n est installé et N8N_MCP_URL
+  définie) : workflows actifs vs registre KB, taux de succès, échecs à
+  traiter.
+
+## 0.8.0 — 2026-07-06
+
+- Domaine « Acquisition payante » ajouté à `revue-hebdo-business` et
+  `comite-de-direction` (si le plugin rapido-meta-ads est installé) :
+  dépense, coût par résultat (`ads_get_ad_entities` avec période), anomalies,
+  lu en coût par CLIENT via les leads CRM.
+
+## 0.7.0 — 2026-07-06
+
+- Domaine « Web / Produits » ajouté à `revue-hebdo-business` et
+  `comite-de-direction` (si le plugin rapido-lovable est installé) :
+  `list_projects` publiés + `get_project_analytics` (RFC 3339, même période),
+  croisés avec `get_stats_campagne` (le trafic vient-il des campagnes ?).
+
 ## 0.6.0 — 2026-07-06
 
 - Règle de chargement KB enrichie dans les directives (routage fichier par

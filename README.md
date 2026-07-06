@@ -1,7 +1,37 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace interne regroupant 5 plugins Claude Code qui packagent des skills
-métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH).
+Marketplace interne regroupant 10 plugins Claude Code qui packagent des skills
+métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH), Canva,
+Lovable, Meta Ads, n8n et Google (Gmail, Calendar, Drive).
+
+**La promesse : une entreprise pilotée de A à Z — les systèmes Rapido
+tiennent les données, Claude pense et crée, n8n exécute en continu, Google
+porte la communication.**
+
+## Le schéma final
+
+```
+                        ┌──────────────────────────────┐
+                        │   rapido-direction (chef de  │
+                        │   cabinet : Gmail/Cal/Drive) │
+                        └──────────────┬───────────────┘
+                        ┌──────────────┴───────────────┐
+                        │  rapido-suite (DG, CODIR,    │
+                        │  KB ./rapido-kb/, revues)    │
+                        └──┬────┬────┬────┬────────────┘
+   DONNÉES MÉTIER          │    │    │    │        CRÉATION & DIFFUSION
+┌──────────┐ ┌──────────┐ ┌┴───┐ ┌──┴─────┐   ┌───────────┐ ┌─────────────┐
+│foodeatup │ │rapidocrm │ │cms │ │rapidorh│   │rapido-    │ │rapido-      │
+│(resto)   │ │(ventes)  │ │(social)│(équipe)│  │canva      │ │lovable      │
+└──────────┘ └──────────┘ └────┘ └────────┘   │(design)   │ │(apps/agents)│
+                                              └───────────┘ └─────────────┘
+   EXÉCUTION CONTINUE                            ACQUISITION
+┌────────────────────────┐                    ┌────────────────────────┐
+│ rapido-n8n (workflows  │                    │ rapido-meta-ads (pubs, │
+│ qui tournent sans      │                    │ argent réel verrouillé)│
+│ Claude)                │                    └────────────────────────┘
+└────────────────────────┘
+```
 
 ## Prérequis
 
@@ -22,8 +52,16 @@ métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH).
 /plugin install rapidocms@rapido
 /plugin install rapidorh@rapido
 /plugin install rapido-suite@rapido
+/plugin install rapido-canva@rapido
+/plugin install rapido-lovable@rapido
+/plugin install rapido-meta-ads@rapido
+/plugin install rapido-n8n@rapido
+/plugin install rapido-direction@rapido
 /reload-plugins
 ```
+
+Pour `rapido-n8n` : définir `export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`
+AVANT de lancer Claude Code (voir `rapido-n8n/README-installation.md`).
 
 Remplacer `<org>` par l'organisation GitHub qui héberge ce dépôt. Installer
 uniquement les plugins dont vous avez besoin — `rapido-suite` suppose l'accès
@@ -33,11 +71,16 @@ aux 4 serveurs.
 
 | Plugin | MCP | À quoi ça sert | Skills principales |
 |---|---|---|---|
-| `foodeatup` | foodeatup | Gestion restaurant : conformité HACCP, service en salle, recettes & marges, production, réapprovisionnement — agents `chef-restaurateur` et `chef-cuisine` | `haccp-conformite-quotidienne`, `service-salle`, `recette-cout-marge`, `production-stock`, `reappro-fournisseurs`, `analyse-rentabilite-carte`, `briefing-du-jour` |
-| `rapidocrm` | rapidocrm | CRM : prospection & pipeline, campagnes marketing, devis/factures/relances, communication client, performance commerciale — agents `directeur-commercial` et `sdr-prospection` | `prospection-pipeline`, `campagne-marketing`, `devis-facture-relance`, `communication-client`, `performance-commerciale`, `coaching-pipeline`, `redaction-commerciale` |
-| `rapidocms` | rapidocms | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, conformité de marque — agents `responsable-marketing`, `community-manager`, `directeur-artistique` | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque`, `prompt-engineering-visuel`, `calendrier-editorial`, `analyse-performance-contenu` |
+| `foodeatup` | foodeatup | Gestion restaurant : conformité HACCP, service en salle, recettes & marges, production, réapprovisionnement, carte en ligne, planning, commandes — agents `chef-restaurateur` et `chef-cuisine` | `haccp-conformite-quotidienne`, `service-salle`, `recette-cout-marge`, `production-stock`, `reappro-fournisseurs`, `analyse-rentabilite-carte`, `briefing-du-jour`, `carte-vitrine`, `planning-equipe`, `gestion-commandes` |
+| `rapidocrm` | rapidocrm | CRM : prospection & pipeline, campagnes marketing, devis/factures/relances, contrats, agenda/RDV, templates éditeur, communication client, performance commerciale — agents `directeur-commercial` et `sdr-prospection` | `prospection-pipeline`, `campagne-marketing`, `devis-facture-relance`, `communication-client`, `performance-commerciale`, `coaching-pipeline`, `redaction-commerciale`, `contrats-clients`, `agenda-rdv`, `studio-templates` |
+| `rapidocms` | rapidocms + hyperframes (HeyGen) | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, vidéos marketing, cartes digitales, conformité de marque — agents `responsable-marketing`, `community-manager`, `directeur-artistique` | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque`, `prompt-engineering-visuel`, `calendrier-editorial`, `analyse-performance-contenu`, `video-marketing` |
 | `rapidorh` | rapidorh | RH & projets : setup de projets, Kanban, dailies (rapports journaliers), onboarding des employés — agents `chef-de-projet` et `responsable-rh` | `setup-projet`, `flux-kanban`, `daily-report`, `onboarding-equipe`, `revue-projet-hebdo`, `detection-surcharge` |
 | `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée, comité de direction, base de connaissance entreprise — agent `directeur-general` | `onboarding-client-360`, `revue-hebdo-business`, `comite-de-direction`, `onboarding-entreprise`, `mise-a-jour-kb` |
+| `rapido-canva` | canva + les 4 serveurs | Design Canva alimenté par les données Rapido : menus imprimables, visuels sociaux aux formats natifs, propositions/présentations de vente, slides CODIR — agent `studio-creatif` (arbitre image IA / Canva / vidéo / Lovable), règles Canva encodées (`reference/pieges-canva.md`, `CONFORMITE.md`) | `menu-restaurant-design`, `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir` |
+| `rapido-lovable` | lovable + les 4 serveurs | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant avec réservation connectée, landing pages de campagne, agent IA produit (API Anthropic + mcp_servers), marque synchronisée sur le workspace — architecture 2 modes encodée (`reference/architecture-lovable.md`) | `site-restaurant`, `usine-a-landing`, `agent-ia-produit`, `sync-marque-lovable` |
+| `rapido-meta-ads` | facebook-ads + rapidocms + rapidocrm + canva + lovable | **Argent réel — plugin le plus verrouillé** : campagnes Meta (ODAX, CBO, tout en PAUSED), boost IG en deux temps, audiences CRM (RGPD), créatifs, pixel & retargeting, pilotage au coût par résultat, veille Ad Library, A/B tests — agent `media-buyer`, hooks plafond de budget + confirmations de dépense | `lancement-campagne-meta`, `boost-post-instagram`, `audiences-crm`, `creatifs-publicitaires`, `pixel-et-retargeting`, `pilotage-performance-ads`, `veille-ads-concurrents`, `tests-ab-meta` |
+| `rapido-n8n` | n8n (`${N8N_MCP_URL}` — instance du client) + les 4 serveurs | Automatisations qui tournent SANS Claude : usine à workflows (cycle SDK validé/testé), recettes métier Rapido (relances, stocks, HACCP, leads, récap, anniversaires), surveillance des exécutions, mémoire opérationnelle — règle : ponctuel = Claude, récurrent = workflow ; hooks sur publication/exécution production | `usine-automatisations`, `recettes-metier`, `surveillance-automatisations`, `memoire-operationnelle` |
+| `rapido-direction` | gmail + google-calendar + google-drive (compte de chacun, OAuth individuel) + rapidocrm + foodeatup + n8n | Chef de cabinet : journée du dirigeant en une page (agenda TRIPLE Calendar+CRM+resto), tri de boîte mail en brouillons (Claude rédige, l'humain envoie), secrétariat commercial, coffre Drive sans suppression, délégation du récurrent vers n8n — agent `assistant-direction` | `journee-du-dirigeant`, `tri-boite-mail`, `secretariat-commercial`, `coffre-documents`, `delegation-recurrence` |
 
 **Base de connaissance entreprise** : le skill `onboarding-entreprise`
 (rapido-suite) interviewe l'utilisateur et construit `./rapido-kb/` (8 fichiers
@@ -111,6 +154,17 @@ Puis dérouler les scénarios de test de déclenchement fournis pour chaque plug
     d'autonomie (`reference/autonomie.md`) injecté à chaque session.
 - Ne jamais mettre de secrets (tokens, mots de passe) dans les skills ou les
   fichiers `reference/` : ils sont distribués avec le plugin.
+
+## Portabilité — le dépôt est un PRODUIT
+
+Ce dépôt est distribué à tous les clients Rapido : il ne contient AUCUNE
+donnée propre à une entreprise. Les URLs des `.mcp.json` sont les URLs
+produit officielles (auth individuelle par client), l'instance n8n passe par
+`${N8N_MCP_URL}`, Google par OAuth individuel. TOUTE personnalisation (nom,
+fuseau, devise, seuils, plafonds pub, ton, concurrents, `establishment_id`)
+vit dans `./rapido-kb/` créée à l'onboarding — jamais dans les plugins. Les
+MCP optionnels absents déclenchent une dégradation propre (explication +
+marche à suivre), jamais une erreur brute (voir `tests/evals.md`, éval 4).
 
 ## À compléter avant publication
 

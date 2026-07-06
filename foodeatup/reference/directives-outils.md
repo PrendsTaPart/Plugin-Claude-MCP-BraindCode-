@@ -48,8 +48,11 @@ manquante → la demander, ne pas supposer.
 
 ## 4. Locale et formats
 
-- Monnaie : euros. Dates ISO `YYYY-MM-DD`, heures `HH:MM`.
-- TVA restauration (nature du plat) : `immediate` = 10 % (consommation
+- Langue : français par défaut. Devise : celle du client — lue dans
+  `./rapido-kb/entreprise.md` si renseignée (défaut : euros, en le signalant).
+  Dates ISO `YYYY-MM-DD`, heures `HH:MM`.
+- TVA restauration (règles FRANCE, défaut produit — si la KB définit une
+  autre juridiction, elle prime) : `immediate` = 10 % (consommation
   immédiate) ; `conservable` = 10 % sur place / 5,5 % à emporter (demander le
   canal si ambigu) ; `alcohol` = 20 %.
 - Quantités de recettes en poids BRUT.

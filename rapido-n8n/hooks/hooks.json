@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__n8n__(publish_workflow|unpublish_workflow|archive_workflow|execute_workflow)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-production.py\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/contexte-session.sh\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils n8n d'écriture ont été appelés avec succès (nom contenant create, update, publish, unpublish, archive, execute, add_data_table), la dernière réponse de l'assistant doit contenir un récapitulatif : workflows créés/modifiés avec ID, nom et statut (draft ou PUBLIÉ en toutes lettres), déclencheur et fréquence pour les publiés, credentials restant à configurer par l'utilisateur, et la consignation au registre rapido-kb/processus-internes.md (faite ou proposée). Si ce récapitulatif manque, bloque en demandant de le compléter. Sinon, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -39,7 +39,11 @@ Construire chaque prompt `generate_image` avec :
 ## Workflow
 
 1. **Brief** : sujet, réseau/format de destination, objectif du visuel.
-2. **Proposer 2-3 VARIANTES de prompt** (angles ou styles différents), les
+2. **Consulter la bibliothèque AVANT de créer** — `list_prompts`
+   (`type: "visuel"`, `search` par mot-clé du sujet) : si un prompt gagnant
+   existe, le réutiliser en remplaçant ses placeholders `[entre crochets]`
+   par les valeurs du brief — ne réinventer que s'il n'y a rien d'adapté.
+3. **Proposer 2-3 VARIANTES de prompt** (angles ou styles différents), les
    soumettre à l'utilisateur avant génération.
 3. **Générer** — `generate_image` (`prompt`, `size`).
 4. **Critiquer le résultat VS la charte** — checklist du
@@ -49,6 +53,13 @@ Construire chaque prompt `generate_image` avec :
    itérations max avant de changer d'approche.
 6. **Uploader le visuel retenu** — `upload_file_tool` (`type: "image"`, `name`
    descriptif, `file_url`) pour la bibliothèque, prêt pour `create_draft_tool`.
+7. **Capitaliser — bibliothèque de prompts vivante** : quand un prompt a donné
+   un visuel VALIDÉ par l'utilisateur, le sauvegarder avec `add_prompt`
+   (`title` descriptif ex. « Visuel plat signature — photo chaude »,
+   `content` = le prompt gagnant en GÉNÉRALISANT les valeurs spécifiques en
+   placeholders `[entre crochets]` — ex. `[nom du plat]`, `[couleur primaire]` —,
+   `type: "visuel"`). Vérifier d'abord via `list_prompts` qu'un prompt
+   équivalent n'existe pas déjà (sinon proposer `edit_prompt` pour l'améliorer).
 
 ## Garde-fous
 

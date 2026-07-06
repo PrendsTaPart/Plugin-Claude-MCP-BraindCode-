@@ -1,5 +1,24 @@
 # Changelog — plugin foodeatup
 
+## 0.7.0 — 2026-07-06
+
+- Passe de portabilité : devise lue depuis la KB (défaut euros signalé), règles TVA marquées France/défaut produit (la KB prime pour une autre juridiction).
+
+## 0.6.0 — 2026-07-06
+
+- Couverture des outils orphelins — 3 nouveaux skills :
+  - `carte-vitrine` : toute la carte en ligne en un appel
+    (`import_storefront_menu`, idempotent sur les noms — reprendre les noms
+    exacts de `list_dishes`), formules éditoriales, même source de vérité que
+    le menu imprimable (rapido-canva) ;
+  - `planning-equipe` : `create_shift`, `list_plannings` (coût estimé TOUJOURS
+    affiché), `approve_leave`/`reject_leave`, `list_attendances` — règle dure :
+    jamais de shift sur congé approuvé ;
+  - `gestion-commandes` : `create_order` (canaux, table, facture+devis
+    auto-générés), `update_order_status` (machine à états en_attente →
+    confirmee → en_preparation → prete → livree, effets de bord
+    facture/table), lien avec service-salle.
+
 ## 0.5.0 — 2026-07-06
 
 - Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement

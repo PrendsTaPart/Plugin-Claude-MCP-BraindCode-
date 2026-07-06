@@ -55,7 +55,10 @@ l'utilisateur ou lus via l'API du serveur concerné.
 
 ## 4. Locale et formats
 
-- Monnaie : euros. Dates ISO `YYYY-MM-DD`, heures `HH:MM`.
+- Langue : français par défaut. Devise : celle du client — lue dans
+  `./rapido-kb/entreprise.md` si renseignée, ou depuis le compte connecté
+  quand l'outil l'expose (défaut : euros, en le signalant). Dates ISO
+  `YYYY-MM-DD`, heures `HH:MM`.
 - Respecter les formats stricts propres à chaque serveur : CMS
   `post_date` = `Y-m-d` / `post_heure` = `H-i-s` ; CRM envois planifiés
   `YYYY-MM-DD HH:MM:SS`.
