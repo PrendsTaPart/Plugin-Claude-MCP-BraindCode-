@@ -1,0 +1,95 @@
+---
+name: onboarding-entreprise
+description: Utiliser quand l'utilisateur parle d'onboarding, de configurer le plugin, de setup initial, ou demande d'apprendre à connaître son entreprise. Interviewe l'utilisateur et construit la base de connaissance ./rapido-kb/ (8 fichiers markdown) utilisée ensuite par tous les skills et agents.
+---
+
+# Onboarding entreprise (construction de la KB)
+
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`.
+
+## RÈGLE CRITIQUE — emplacement de la KB
+
+La KB s'écrit dans le RÉPERTOIRE DE TRAVAIL de l'utilisateur : `./rapido-kb/`.
+JAMAIS dans le dossier du plugin installé (`${CLAUDE_PLUGIN_ROOT}` reste
+générique et identique pour toute l'équipe). Ainsi la KB est versionnable dans
+le git du client, éditable à la main, et survit aux mises à jour du plugin.
+Si `./rapido-kb/` existe déjà : proposer `mise-a-jour-kb` plutôt qu'un
+onboarding complet (ne pas écraser sans confirmation).
+
+## Structure cible (8 fichiers)
+
+| Fichier | Contenu |
+|---|---|
+| `entreprise.md` | identité, histoire, mission, implantations, équipe clé |
+| `produits-services.md` | offres, prix, marges cibles, best-sellers, saisonnalité |
+| `propositions-valeur.md` | promesse par cible, différenciateurs, preuves (chiffres, avis, labels), garanties |
+| `cibles-personas.md` | segments clients, pains, déclencheurs d'achat, canaux |
+| `charte-graphique.md` | hex, typos, logos (URLs), do/don't — version COMPLÉTÉE |
+| `ton-et-accroches.md` | ton de voix, vocabulaire maison, mots interdits, accroches validées par canal, exemples de posts qui ont marché |
+| `processus-internes.md` | règles métier maison : seuils (food cost, marges), cadences de relance, horaires, politique de remise |
+| `concurrents.md` | concurrents principaux, leur positionnement, nos parades |
+
+## Phase 1 — COLLECTE AUTO (ne jamais demander ce que les MCP savent déjà)
+
+Interroger les serveurs disponibles et pré-remplir :
+- rapidocms : `get_brand`, `get_company`, `get_profile` → charte-graphique.md
+  (couleurs, logo) + entreprise.md (identité) ;
+- rapidocrm : `list_products`, `list_commerciaux`, `list_segments` →
+  produits-services.md + entreprise.md (équipe) + cibles-personas.md (segments) ;
+- foodeatup : `list_dishes`, `list_recipes` (avec `establishment_id`, le
+  demander si l'utilisateur a un restaurant) → produits-services.md ;
+- rapidorh : `get-users-list-tool`, `get-departments-list-tool` →
+  entreprise.md (organisation).
+Si un serveur est indisponible ou vide : le noter et passer — sans bloquer.
+Annoncer à l'utilisateur ce qui a été pré-rempli automatiquement.
+
+## Phase 2 — INTERVIEW GUIDÉE (uniquement les questions restantes)
+
+Par blocs COURTS : max 3-4 questions à la fois, attendre les réponses avant le
+bloc suivant. Sauter toute question dont la réponse est déjà connue (phase 1).
+
+1. **Bloc identité** : mission en 1 phrase ? ce qui vous rend différent ?
+   votre histoire en 2-3 phrases ?
+2. **Bloc offre** : vos best-sellers ? marges cibles ? offres à pousser / à
+   abandonner ? saisonnalité ?
+3. **Bloc clients** : vos 2-3 types de clients ? leur problème n° 1 ?
+   pourquoi ils vous choisissent vous et pas le concurrent ?
+4. **Bloc marque** : 3 mots qui décrivent votre ton ? mots/sujets interdits ?
+   accroches ou posts qui ont déjà bien marché (les citer) ?
+5. **Bloc règles maison** : seuils financiers (food cost max, marge mini) ?
+   cadence de relance ? politique de remise (qui peut, jusqu'à combien) ?
+6. **Bloc concurrence** : 3 concurrents principaux ? leur force ? votre parade ?
+
+Règles d'interview :
+- « je ne sais pas » / « passe » = accepté : marquer `### À COMPLÉTER` dans le
+  fichier, ne JAMAIS inventer pour combler ;
+- reformuler les réponses orales en contenu structuré (listes, tableaux) — pas
+  de verbatim brut ;
+- une réponse qui contredit une donnée MCP : signaler l'écart et demander
+  laquelle fait foi.
+
+## Phase 3 — RÉDACTION ET VALIDATION
+
+1. Générer les 8 fichiers dans `./rapido-kb/` (créer le dossier), chacun avec
+   en tête : `> Dernière mise à jour : YYYY-MM-DD — onboarding initial`.
+2. Montrer un RÉSUMÉ (par fichier : 2-3 lignes de ce qui y est + les
+   `### À COMPLÉTER` restants) — pas les 8 fichiers in extenso.
+3. Demander validation ; corriger les fichiers concernés si besoin.
+
+## Phase 4 — CÂBLAGE
+
+1. Confirmer que la KB est active : les skills et agents la chargent au besoin
+   (le hook SessionStart du plugin la détecte à chaque session).
+2. Expliquer la mise à jour : skill `mise-a-jour-kb`, ou édition directe des
+   fichiers (markdown simple), ou versionnage dans le git du client.
+3. Recommander de committer `./rapido-kb/` dans le dépôt du client.
+
+## Garde-fous
+
+- Jamais de données inventées pour combler un trou : `### À COMPLÉTER`.
+- La KB appartient au client : ne jamais y écrire de secrets (tokens, mots de
+  passe) ; les prix et marges y sont acceptés (c'est son dépôt).
+- Priorité des sources pour les autres skills : données MCP live > KB >
+  références génériques du plugin.

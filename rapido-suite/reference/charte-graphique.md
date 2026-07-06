@@ -3,7 +3,9 @@
 Ce plugin embarque le serveur CMS : pour tout contenu visible créé pendant une
 orchestration (posts, cartes digitales, campagnes de l'onboarding client),
 privilégier les valeurs LIVE via `get_brand` + `get_company` + `get_profile`.
-Ce fichier sert de REPLI et de référence pour les règles non exposées par l'API.
+Si une base de connaissance `./rapido-kb/charte-graphique.md` existe dans le
+répertoire de travail (version COMPLÉTÉE par l'onboarding entreprise), elle
+prime sur ce fichier générique. Ordre : API live > KB > ce fichier.
 En cas de conflit : la valeur API gagne, sauf mention contraire de l'utilisateur.
 
 ## Couleurs (codes hex)

@@ -18,6 +18,18 @@ Au moindre doute sur un outil (paramètres pièges, formats, enums), consulter
 - Réutiliser les identifiants d'un serveur à l'autre (ex. le nom client du CRM
   pour nommer le projet RH) — ne pas redemander ce qui est déjà connu.
 
+## 1 bis. Base de connaissance entreprise (./rapido-kb/)
+
+- Si le répertoire de travail contient `./rapido-kb/` (signalé par le hook de
+  session), charger le(s) fichier(s) pertinent(s) AVANT de produire du contenu
+  ou des recommandations : `entreprise.md`, `produits-services.md`,
+  `propositions-valeur.md`, `cibles-personas.md`, `charte-graphique.md`,
+  `ton-et-accroches.md`, `processus-internes.md`, `concurrents.md`.
+- Priorité des sources : données MCP live > KB > références génériques du
+  plugin. Un `### À COMPLÉTER` dans la KB = donnée manquante, à demander.
+- La KB ne se modifie que via le skill `mise-a-jour-kb` ou par l'utilisateur ;
+  si elle est absente, proposer le skill `onboarding-entreprise`.
+
 ## 2. Confirmation avant action destructrice ou irréversible
 
 - Tout `delete_*`, tout envoi (email, SMS, publication), tout changement de

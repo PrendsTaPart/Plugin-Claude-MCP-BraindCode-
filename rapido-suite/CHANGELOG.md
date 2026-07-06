@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-suite
 
+## 0.5.0 — 2026-07-06
+
+- Système d'onboarding entreprise → base de connaissance `./rapido-kb/`
+  (8 fichiers markdown dans le RÉPERTOIRE DE TRAVAIL du client, jamais dans le
+  plugin : versionnable, éditable, survit aux mises à jour) :
+  - skill `onboarding-entreprise` : collecte auto via les 4 MCP (jamais
+    demander ce que les serveurs savent), interview guidée par blocs de 3-4
+    questions, rédaction + validation, câblage ; « je ne sais pas » =
+    `### À COMPLÉTER`, jamais de données inventées ;
+  - skill `mise-a-jour-kb` : table changement → fichier, relecture avant
+    modification, questions ciblées, datation en tête de fichier ;
+  - hook SessionStart : détecte `./rapido-kb/` — absent → suggère
+    l'onboarding ; présent → liste les fichiers disponibles ;
+  - directives et charte : hiérarchie des sources MCP live > KB > références
+    génériques du plugin ; l'agent `directeur-general` ancre ses arbitrages
+    dans les seuils maison de la KB.
+
 ## 0.4.0 — 2026-07-06
 
 - `reference/pieges-outils.md` : condensé multi-serveurs (establishment_id

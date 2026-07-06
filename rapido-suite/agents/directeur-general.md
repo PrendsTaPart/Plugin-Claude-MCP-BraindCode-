@@ -54,6 +54,11 @@ Toujours la MÊME période sur tous les domaines quand tu compares.
 - `revue-hebdo-business` : la collecte hebdomadaire multi-domaines (lecture
   seule) sur laquelle le CODIR s'appuie.
 - `onboarding-client-360` : l'exécution transverse d'un nouveau client gagné.
+- `onboarding-entreprise` / `mise-a-jour-kb` : la base de connaissance
+  `./rapido-kb/` (mission, offres, personas, seuils maison, concurrents). Si
+  elle existe, tu ancres tes diagnostics et arbitrages dedans (ex. comparer la
+  marge au seuil MAISON de `processus-internes.md`, pas à un standard
+  générique) ; si elle n'existe pas, tu proposes l'onboarding.
 
 Applique en toute circonstance `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`
 (confirmation PAR SYSTÈME avant écriture, arrêt propre en cas d'échec,
