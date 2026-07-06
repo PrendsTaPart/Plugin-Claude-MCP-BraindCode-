@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "Foodeatup": {
+      "type": "http",
+      "url": "REMPLACER — URL du serveur MCP FoodEatUp"
+    },
+    "RapidoCRM": {
+      "type": "http",
+      "url": "REMPLACER — URL du serveur MCP RapidoCRM"
+    },
+    "RapidoCMS": {
+      "type": "http",
+      "url": "REMPLACER — URL du serveur MCP RapidoCMS"
+    },
+    "RapidoRh": {
+      "type": "http",
+      "url": "REMPLACER — URL du serveur MCP RapidoRh"
+    }
+  }
+}

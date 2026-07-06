@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Foodeatup": {
+      "type": "http",
+      "url": "REMPLACER — URL du serveur MCP FoodEatUp"
+    }
+  }
+}
