@@ -22,6 +22,11 @@ Fusion (pas de copie) : `friday-brief` (`small-business/skills/friday-brief`) a 
 |---|---|---|---|
 | `skill-creator` | anthropics/skills (commit `9d2f1ae1`) | Apache 2.0 (LICENSE.txt du skill, conservé) | 2026-07-06 |
 
-Contenu non modifié. Sert à créer et améliorer les skills maison de la
-marketplace (le skill `onboarding-restaurateur` de foodeatup a été créé avec
-sa méthodologie).
+Sert à créer et améliorer les skills maison de la marketplace (le skill
+`onboarding-restaurateur` de foodeatup a été créé avec sa méthodologie).
+Modification locale du 2026-07-06 : deux noms de scripts d'EXEMPLE cités dans
+la prose (`create_docx.py`, `build_chart.py`) — absents de la source, vérifié
+sur un clone frais — reformulés en description générique pour ne plus être
+pris pour des références de fichiers réelles. Aucun autre changement.
+
+> Note du 2026-07-06 : la description du frontmatter de chaque skill listé ici a été traduite en français (« Utiliser quand… ») pour le déclenchement — le corps du skill reste inchangé. Une clé `source:` de traçabilité a été ajoutée au frontmatter.

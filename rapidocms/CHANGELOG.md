@@ -1,5 +1,25 @@
 # Changelog — plugin rapidocms
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
+## 0.8.0 — 2026-07-06
+
+- Agent `prompt-designer` : ingénieur de prompts visuels — charte chargée
+  avant tout prompt, positif 6 blocs + négatif jamais optionnel, protocole
+  zéro faute sur le texte incrusté, capitalisation via `add_prompt`.
+- Skill `prompts-visuels-pro` : bibliothèque de prompts négatifs (base
+  commune + 5 types de visuel) et protocole zéro faute (texte exact entre
+  guillemets, épellation validée, 5 mots max, 2 itérations puis post-prod).
+- Skill `funnel-tofu-mofu-bofu` : stratégie de contenu par étape du funnel —
+  répartition 60/30/10, frameworks AIDA/PAS/4U/BAB, CTA et KPI par étape,
+  fausse urgence interdite (rareté vérifiable dans les MCP).
+- Liens croisés : `prompt-engineering-visuel` renvoie vers
+  `prompts-visuels-pro` (bloc 6) ; `directeur-artistique` et
+  `community-manager` lisent `./rapido-kb/startup/` (01-vision, 02-persona,
+  05-identite) avant toute production quand il existe.
+
 ## 0.7.0 — 2026-07-06
 
 - Intégration de 6 skills externes (LICENSE dans chaque dossier, provenance

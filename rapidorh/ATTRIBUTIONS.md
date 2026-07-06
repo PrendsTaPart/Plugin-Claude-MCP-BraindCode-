@@ -16,3 +16,5 @@ Modifications locales : champ `name` renommé pour `onboarding-rh-methodo` ;
 mention MCP rapidorh/KB ajoutée en fin de `description` ; section
 « Adaptation Rapido » en tête de chaque SKILL.md (SIRH → outils rapidorh,
 ATS → projet Kanban, Slack/Gmail/LinkedIn signalés sans équivalent direct).
+
+> Note du 2026-07-06 : la description du frontmatter de chaque skill listé ici a été traduite en français (« Utiliser quand… ») pour le déclenchement — le corps du skill reste inchangé. Une clé `source:` de traçabilité a été ajoutée au frontmatter.

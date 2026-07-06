@@ -1,6 +1,7 @@
 ---
 name: content-creation-methodo
-description: Draft marketing content across channels — blog posts, social media, email newsletters, landing pages, press releases, and case studies. Use when writing any marketing content, when you need channel-specific formatting, SEO-optimized copy, headline options, or calls to action.
+description: Utiliser quand l'utilisateur rédige du contenu marketing multi-canaux — article de blog, posts sociaux, newsletter, landing page, communiqué de presse, étude de cas — et veut un formatage par canal, du copy optimisé SEO, des options de titres ou des appels à l'action.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 user-invocable: false
 ---
 

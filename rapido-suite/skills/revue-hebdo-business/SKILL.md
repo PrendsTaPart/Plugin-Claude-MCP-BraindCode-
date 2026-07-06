@@ -81,8 +81,9 @@ Produire UNE synthèse structurée, avec la période en en-tête :
    avec suggestion d'action (sans l'exécuter).
 
 (Le format « comparaison vs période précédente, top ventes, wins & watches »
-est hérité du skill `friday-brief` d'anthropics/knowledge-work-plugins,
-Apache 2.0, fusionné ici — voir ATTRIBUTIONS.md du plugin.)
+est hérité de « friday-brief », pack small-business
+d'anthropics/knowledge-work-plugins, Apache 2.0, fusionné dans ce skill —
+voir ATTRIBUTIONS.md du plugin.)
 
 ## Garde-fous
 

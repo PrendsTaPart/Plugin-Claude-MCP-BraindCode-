@@ -12,3 +12,5 @@ chaque dossier de skill).
 | `price-check` | `small-business/skills/price-check` |
 
 Modifications locales : mention MCP/KB ajoutée en fin de `description` ; section « Adaptation Rapido » ajoutée en tête de chaque SKILL.md (mapping QuickBooks/PayPal/HubSpot/Slack… vers les équivalents Rapido).
+
+> Note du 2026-07-06 : la description du frontmatter de chaque skill listé ici a été traduite en français (« Utiliser quand… ») pour le déclenchement — le corps du skill reste inchangé. Une clé `source:` de traçabilité a été ajoutée au frontmatter.

@@ -1,6 +1,6 @@
 ---
 name: prompt-engineering-visuel
-description: Utiliser quand l'utilisateur veut générer une image, créer un visuel ou améliorer un prompt image. Méthode de construction de prompts pour generate_image, avec variantes, critique vs charte et itération.
+description: Utiliser quand l'utilisateur veut générer une image, créer un visuel ou améliorer un prompt image. Méthode de construction de prompts pour generate_image, avec variantes, critique vs charte et itération. Pour un visuel avec du texte incrusté ou la correction d'une faute dans un rendu, utiliser prompts-visuels-pro.
 ---
 
 # Prompt engineering visuel
@@ -33,6 +33,8 @@ Construire chaque prompt `generate_image` avec :
 6. **[Négatif — ce qu'il ne faut PAS]** — toujours exclure : texte incrusté
    dans l'image, logos (déformés ou non — le logo s'ajoute en post-prod),
    mains/doigts malformés, filigranes.
+   Pour les prompts négatifs détaillés par type de visuel et le protocole
+   zéro faute sur le texte incrusté, utiliser le skill `prompts-visuels-pro`.
 
 `size` : `hd` pour publication, `standard` pour itérer vite.
 

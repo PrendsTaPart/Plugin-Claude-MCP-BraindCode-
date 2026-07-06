@@ -1,6 +1,7 @@
 ---
 name: email-sequence
-description: Design and draft multi-email sequences with full copy, timing, branching logic, exit conditions, and performance benchmarks. Use when building onboarding, lead nurture, re-engagement, win-back, or product launch flows, when you need a complete drip campaign with A/B test suggestions, or when mapping a sequence end-to-end with a flow diagram.
+description: Utiliser quand l'utilisateur construit une séquence d'emails — onboarding, nurture, réengagement, win-back, lancement produit — avec copy complet, timing, embranchements, conditions de sortie et benchmarks, ou veut une drip campaign avec suggestions d'A/B tests et schéma de flux.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "[sequence type]"
 ---
 

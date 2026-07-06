@@ -1,14 +1,8 @@
 ---
 name: invoice-chase
+description: Utiliser quand l'utilisateur demande qui lui doit de l'argent, parle de factures en retard ou veut relancer des impayés avec un ton adapté à chaque client (courtois pour les bons payeurs, ferme pour les retardataires récurrents). Méthodo de relance au ton gradué : l'exécution des relances de factures RapidoCRM passe par devis-facture-relance (plugin rapidocrm). S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 version: 0.2.0
-description: >
-  Drafts overdue-invoice reminder emails from QuickBooks and PayPal data,
-  matched to each customer's payment history and tone (gentle for good customers,
-  firm for repeat late payers). Sends via PayPal with owner approval;
-  non-PayPal invoices queue as mail drafts. Use when the user asks
-  "who owes me money," mentions overdue invoices, or wants to follow up
-  on unpaid invoices.
-  S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
 ---
 
 # Invoice Chase

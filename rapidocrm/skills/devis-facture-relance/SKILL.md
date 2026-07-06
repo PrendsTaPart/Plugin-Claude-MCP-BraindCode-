@@ -33,7 +33,8 @@ et, pour rédiger des emails de relance, `${CLAUDE_PLUGIN_ROOT}/reference/charte
    lien, en reprenant `entreprise_id` et les montants du devis. Ne facturer que sur
    devis `accepte` (sinon demander confirmation explicite).
 3. **Changer un statut** — le statut se définit via le champ `statut`. Aucun outil
-   dédié `update_invoice_status` n'existe sur ce serveur : respecter strictement les
+   dédié de changement de statut de facture (type « update_invoice_status »,
+   qui n'existe que côté FoodEatUp) n'est exposé sur ce serveur : respecter strictement les
    transitions ci-dessus et, si un changement de statut n'est pas possible via
    l'API, le dire à l'utilisateur au lieu de forcer ou de contourner.
 4. **Relancer les impayés** :

@@ -1,6 +1,7 @@
 ---
 name: account-research
-description: Research a company or person and get actionable sales intel. Works standalone with web search, supercharged when you connect enrichment tools or your CRM. Trigger with "research [company]", "look up [person]", "intel on [prospect]", "who is [name] at [company]", or "tell me about [company]". (utilise les données du MCP rapidocrm quand elles sont disponibles)
+description: Utiliser quand l'utilisateur veut des renseignements commerciaux sur une entreprise ou une personne — « recherche [entreprise] », « qui est [nom] chez [société] », « dis-m'en plus sur [société] ». Fonctionne avec la recherche web, enrichi par le CRM. Utilise les données du MCP rapidocrm quand elles sont disponibles.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Account Research

@@ -1,6 +1,7 @@
 ---
 name: draft-outreach
-description: Research a prospect then draft personalized outreach. Uses web research by default, supercharged with enrichment and CRM. Trigger with "draft outreach to [person/company]", "write cold email to [prospect]", "reach out to [name]". (utilise les données du MCP rapidocrm quand elles sont disponibles)
+description: Utiliser quand l'utilisateur veut un premier message de prospection personnalisé — « écris un cold email à X », « contacte ce prospect » : recherche sur le prospect puis rédaction du message. Utilise les données du MCP rapidocrm quand elles sont disponibles.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Draft Outreach

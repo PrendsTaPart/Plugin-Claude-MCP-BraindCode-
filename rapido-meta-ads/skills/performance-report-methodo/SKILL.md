@@ -1,6 +1,7 @@
 ---
 name: performance-report-methodo
-description: Build a marketing performance report with key metrics, trend analysis, wins and misses, and prioritized optimization recommendations. Use when wrapping a campaign, when preparing weekly, monthly, or quarterly channel summaries for stakeholders, or when you need data translated into an executive summary with next-period priorities. Pour l'exécution dans Meta Ads, utiliser le skill pilotage-performance-ads.
+description: Utiliser quand l'utilisateur clôture une campagne ou prépare un bilan marketing hebdomadaire, mensuel ou trimestriel pour des décideurs : métriques clés, tendances, réussites et ratés, recommandations d'optimisation priorisées. Pour l'exécution dans Meta Ads, utiliser le skill pilotage-performance-ads.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<time period or campaign>"
 ---
 

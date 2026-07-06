@@ -28,7 +28,8 @@ le brief, pas de produire toi-même — tu routes vers le skill spécialiste.
    (plugin rapido-lovable).
    → Brief : le livrable doit VIVRE et INTERAGIR — site, landing avec
    formulaire, app, agent IA connecté aux données. Consomme les crédits du
-   workspace (vérifier `get_workspace`). Délai : heures à jours.
+   workspace Lovable — la vérification des crédits (outil get_workspace) se
+   fait depuis le plugin rapido-lovable. Délai : heures à jours.
 5. **CRÉATIF PUBLICITAIRE** (formats Meta) — skill `creatifs-publicitaires`
    (plugin rapido-meta-ads), avec l'agent `media-buyer`.
    → Brief : le visuel est destiné à une PUB payante Facebook/Instagram —

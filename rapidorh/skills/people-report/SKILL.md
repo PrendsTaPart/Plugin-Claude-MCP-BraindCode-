@@ -1,6 +1,7 @@
 ---
 name: people-report
-description: Generate headcount, attrition, diversity, or org health reports. Use when pulling a headcount snapshot for leadership, analyzing turnover trends by team, preparing diversity representation metrics, or assessing span of control and flight risk across the org. S'appuie sur le MCP rapidorh pour les données réelles (équipe, départements, rôles, dailies, projets) et sur ./rapido-kb/ pour les règles maison.
+description: Utiliser quand l'utilisateur veut un rapport RH — effectifs, turnover/attrition, diversité, santé de l'organisation (span of control, risques de départ) — pour la direction ou une analyse par équipe. S'appuie sur le MCP rapidorh pour les données réelles et sur ./rapido-kb/ pour les règles maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<report type — headcount, attrition, diversity, org health>"
 ---
 

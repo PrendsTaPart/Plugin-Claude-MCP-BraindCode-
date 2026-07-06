@@ -1,6 +1,7 @@
 ---
 name: interview-prep
-description: Create structured interview plans with competency-based questions and scorecards. Trigger with "interview plan for", "interview questions for", "how should we interview", "scorecard for", or when the user is preparing to interview candidates. S'appuie sur le MCP rapidorh pour les données réelles (équipe, départements, rôles, dailies, projets) et sur ./rapido-kb/ pour les règles maison.
+description: Utiliser quand l'utilisateur prépare des entretiens d'embauche : plan d'entretien structuré, questions par compétence, grilles d'évaluation (scorecards). S'appuie sur le MCP rapidorh pour les données réelles et sur ./rapido-kb/ pour les règles maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Interview Prep

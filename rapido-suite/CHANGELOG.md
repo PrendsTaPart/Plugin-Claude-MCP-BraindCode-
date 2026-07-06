@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-suite
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
+## 0.14.0 — 2026-07-06
+
+- Skill `dossier-startup-360` : la mémoire de l'entreprise pour les agents
+  IA — dossier `./rapido-kb/startup/` en 8 fichiers (vision, persona,
+  marché, offre, identité, traction, pitch, roadmap), interview guidée,
+  chiffres sourcés MCP, publication en bibliothèque CMS
+  (`upload_file_tool`) et projets RH (`create-project-link-tool`), règle
+  transverse de lecture par tous les agents Rapido.
+- Agent `directeur-general` : lit `./rapido-kb/startup/` (01-vision,
+  02-persona, 05-identite) avant toute production quand il existe ;
+  06-traction ou 08-roadmap datés de plus de 30 jours déclenchent une
+  proposition de mise à jour via `mise-a-jour-kb`.
+
 ## 0.13.0 — 2026-07-06
 
 - Intégration du skill `skill-creator` d'anthropics/skills (Apache 2.0,

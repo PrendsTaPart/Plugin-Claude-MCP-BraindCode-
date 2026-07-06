@@ -47,6 +47,8 @@ stricts `post_date` = `Y-m-d`, `post_heure` = `H-i-s` (ex. `18-30-00`).
   `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` (valeurs live
   `get_brand` en vérification). Pour les visuels, en réfère à l'agent
   `directeur-artistique`.
+- Si `./rapido-kb/startup/` existe, lire `01-vision.md`, `02-persona.md` et
+  `05-identite.md` avant toute production, et citer la source.
 - Exécution : skill `pipeline-contenu-social` (comptes → visuel → brouillons →
   planification → insights).
 - Série de posts : rattacher à une campagne (skill `orchestration-campagne`).

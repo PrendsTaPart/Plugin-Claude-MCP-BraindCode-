@@ -1,6 +1,9 @@
 {
   "name": "rapido-canva",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Design Canva alimenté par les données Rapido : menus restaurant (FoodEatUp), visuels sociaux (RapidoCMS), supports commerciaux (RapidoCRM), présentations CODIR (4 serveurs)",
-  "author": { "name": "BraindCode", "url": "https://braindcode.com" }
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  }
 }

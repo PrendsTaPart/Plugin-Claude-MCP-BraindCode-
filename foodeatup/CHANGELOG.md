@@ -1,5 +1,9 @@
 # Changelog — plugin foodeatup
 
+## 1.0.0 — 2026-07-06
+
+- Première version publique.
+
 ## 0.9.0 — 2026-07-06
 
 - Nouveau skill maison `onboarding-restaurateur` (créé avec la méthodologie

@@ -15,6 +15,14 @@
     "foodeatup": {
       "type": "http",
       "url": "https://foodeatup.com/api/mcp"
+    },
+    "lovable": {
+      "type": "http",
+      "url": "https://mcp.lovable.dev"
+    },
+    "facebook-ads": {
+      "type": "http",
+      "url": "https://mcp.facebook.com/ads"
     }
   }
 }

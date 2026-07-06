@@ -2,15 +2,15 @@
   "mcpServers": {
     "gmail": {
       "type": "http",
-      "url": "https://mcp.gmail.googleapis.com/mcp"
+      "url": "https://gmailmcp.googleapis.com/mcp/v1"
     },
     "google-calendar": {
       "type": "http",
-      "url": "https://mcp.calendar.googleapis.com/mcp"
+      "url": "https://calendarmcp.googleapis.com/mcp/v1"
     },
     "google-drive": {
       "type": "http",
-      "url": "https://mcp.drive.googleapis.com/mcp"
+      "url": "https://drivemcp.googleapis.com/mcp/v1"
     },
     "rapidocrm": {
       "type": "http",

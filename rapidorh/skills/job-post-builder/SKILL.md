@@ -1,15 +1,7 @@
 ---
 name: job-post-builder
-description: >
-  Builds end-to-end hiring packets — job post, structured interview guide with
-  scoring rubric, and offer letter template — from a hiring brief. Triggers on:
-  "help me hire", "we're hiring for", "write a job post", "job description",
-  "JD", "open role", "create a job ad", "interview questions", "scoring rubric",
-  "draft an offer letter", "send an offer", "make a hiring packet", or any
-  request to recruit for a position. When in doubt, trigger — covers the full
-  hiring workflow from job post through DocuSign envelope creation via browser.
-  Does NOT screen or rank applicants.
-  S'appuie sur le MCP rapidorh pour les données réelles (équipe, départements, rôles, dailies, projets) et sur ./rapido-kb/ pour les règles maison.
+description: Utiliser quand l'utilisateur recrute pour un poste — « aide-moi à embaucher », fiche de poste, annonce, questions d'entretien, grille de notation, lettre d'offre — et veut le kit d'embauche complet construit depuis un brief. Ne présélectionne pas et ne classe pas les candidats. S'appuie sur le MCP rapidorh pour les données réelles et sur ./rapido-kb/ pour les règles maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Job Post Builder

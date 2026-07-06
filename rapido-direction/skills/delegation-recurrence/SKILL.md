@@ -1,6 +1,6 @@
 ---
 name: delegation-recurrence
-description: Utiliser dès qu'une demande de direction est récurrente — « tous les lundis… », « à chaque fois que… », ou une tâche refaite à la main pour la énième fois. Transforme la routine en workflow n8n au lieu de la refaire manuellement.
+description: Utiliser quand une demande de direction est récurrente — « tous les lundis… », « à chaque fois que… », ou une tâche refaite à la main pour la énième fois. Transforme la routine en workflow n8n au lieu de la refaire manuellement.
 ---
 
 # Délégation du récurrent (pont vers n8n)

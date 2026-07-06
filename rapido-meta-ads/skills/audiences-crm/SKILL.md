@@ -14,7 +14,8 @@ en entier ici.
 
 ## Workflow
 
-1. **Source CRM** — `list_clients` ou `get_contacts_segment` (segment
+1. **Source clients** — `list_clients` (FoodEatUp — clients du restaurant)
+   ou `get_contacts_segment` (CRM, segment
    existant via `list_segments`) : la liste cible. Annoncer le VOLUME, pas
    les identités (compter, ne pas lister les PII dans la conversation).
 2. **CONSENTEMENT — question explicite et bloquante** : « Ces contacts

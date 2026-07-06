@@ -12,9 +12,13 @@ individuelle : au premier usage, chacun autorise son compte.
   utiliser (`/mcp` liste les serveurs et leur état d'authentification).
 - **claude.ai / Desktop** : Paramètres → Connecteurs → activer Gmail,
   Google Calendar et Google Drive avec votre compte.
-- Vérifiez les URLs des serveurs dans `.mcp.json` contre la documentation
-  officielle des connecteurs Google MCP si la connexion échoue (elles peuvent
-  évoluer) — les corriger dans le plugin le cas échéant.
+- Les URLs du `.mcp.json` sont celles de la documentation officielle Google
+  Workspace MCP (vérifiées le 2026-07-06) :
+  `https://gmailmcp.googleapis.com/mcp/v1`,
+  `https://calendarmcp.googleapis.com/mcp/v1`,
+  `https://drivemcp.googleapis.com/mcp/v1` — référence :
+  https://developers.google.com/workspace/guides/configure-mcp-servers.
+  Si la connexion échoue, re-vérifier cette page (les URLs peuvent évoluer).
 
 ## 2. Vérification
 

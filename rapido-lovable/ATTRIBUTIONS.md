@@ -8,3 +8,5 @@
 | `ui-styling` | nextlevelbuilder/ui-ux-pro-max-skill | MIT (LICENSE copié du dépôt + LICENSE.txt d'origine) | 2026-07-06 |
 
 Modifications locales : phrase ajoutée à la description de frontend-design (se combine avec ui-ux-pro-max pour le choix des styles). ui-ux-pro-max et ui-styling : intégrés le 2026-07-06 (entrées rétroactives).
+
+> Note du 2026-07-06 : la description du frontmatter de chaque skill listé ici a été traduite en français (« Utiliser quand… ») pour le déclenchement — le corps du skill reste inchangé. Une clé `source:` de traçabilité a été ajoutée au frontmatter.

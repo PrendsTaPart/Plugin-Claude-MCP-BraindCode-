@@ -1,6 +1,7 @@
 ---
 name: hundred-million-offers
-description: 'Create irresistible offers using the Value Equation, bonus stacking, risk-reversing guarantees, and ethical scarcity. Use when the user mentions "grand slam offer", "make my offer more compelling", "what bonuses should I add", "guarantee strategy", "offer naming", or "people say its too expensive". Also trigger when packaging a product for higher perceived value, justifying premium pricing instead of discounting, designing a money-back guarantee, or structuring tiers to maximize conversions. Covers the MAGIC naming formula and starving-crowd targeting. For product positioning, see obviously-awesome. For outbound sales, see predictable-revenue.'
+description: Utiliser quand l'utilisateur veut rendre son offre irrésistible, ajouter des bonus, structurer une garantie, nommer son offre ou répondre à « c'est trop cher ». Value Equation, bonus stacking, garanties qui inversent le risque, rareté éthique, formule de nommage MAGIC. Pour la prospection sortante, voir predictable-revenue.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai

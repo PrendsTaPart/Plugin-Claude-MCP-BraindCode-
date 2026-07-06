@@ -1,6 +1,7 @@
 ---
 name: contagious
-description: 'Engineer word-of-mouth and virality using the STEPPS framework (Social Currency, Triggers, Emotion, Public, Practical Value, Stories). Use when the user mentions "go viral", "word of mouth", "shareable content", "social currency", "why people share", "referral program", "nobody is sharing it", or "make this spread". Also trigger when designing shareable features, crafting social campaigns, or building products that spread through peer recommendation. Covers environmental triggers and high-arousal emotional content. For sticky messaging, see made-to-stick. For persuasion tactics, see influence-psychology.'
+description: Utiliser quand l'utilisateur veut du bouche-à-oreille, du contenu partageable, un programme de parrainage, ou dit « personne ne partage », « comment devenir viral ». Framework STEPPS : monnaie sociale, déclencheurs, émotion, visibilité, valeur pratique, histoires. Pour un message qui marque, voir made-to-stick ; pour la persuasion, voir influence-psychology.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai
