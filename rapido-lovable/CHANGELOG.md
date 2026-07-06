@@ -1,5 +1,16 @@
 # Changelog — plugin rapido-lovable
 
+## 0.4.0 — 2026-07-06
+
+- Intégration de 2 skills anthropics/skills (Apache 2.0, LICENSE.txt propre à
+  chaque skill conservé) : `frontend-design` (direction esthétique,
+  typographie — description enrichie : se combine avec ui-ux-pro-max pour le
+  choix des styles) et `web-artifacts-builder` (artifacts HTML multi-
+  composants React/Tailwind/shadcn ; scripts nécessitant Node/pnpm — voir
+  ATTRIBUTIONS.md).
+- ATTRIBUTIONS.md créé, avec entrées rétroactives pour ui-ux-pro-max et
+  ui-styling (MIT, nextlevelbuilder).
+
 ## 0.3.0 — 2026-07-06
 
 - Intégration de 2 skills externes MIT depuis

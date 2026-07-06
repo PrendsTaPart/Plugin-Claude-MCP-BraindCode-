@@ -1,5 +1,15 @@
 # Changelog — plugin rapido-canva
 
+## 0.5.0 — 2026-07-06
+
+- Intégration de 3 skills anthropics/skills (Apache 2.0, LICENSE.txt propre à
+  chaque skill conservé ; provenance dans ATTRIBUTIONS.md) :
+  `canvas-design` (art visuel PNG/PDF + 81 polices embarquées),
+  `theme-factory` (10 thèmes prêts + génération à la volée),
+  `brand-guidelines-anthropic` (renommé depuis brand-guidelines — sa
+  description impose de lire d'abord reference/charte-graphique.md du plugin
+  et la KB : la charte du client prime sur les couleurs Anthropic).
+
 ## 0.4.0 — 2026-07-06
 
 - Passe de portabilité : section « dégradation propre » dans les directives (Canva absent → explication + préparation du contenu, jamais d'erreur brute).
