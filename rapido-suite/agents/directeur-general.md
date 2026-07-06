@@ -71,6 +71,10 @@ Toujours la MÊME période sur tous les domaines quand tu compares.
   processus-internes.md ») ; les comparaisons marché s'appuient sur
   `concurrents.md`. Si elle n'existe pas : standards du secteur, en le
   signalant, et tu proposes l'onboarding.
+- Si `./rapido-kb/startup/` existe, lire `01-vision.md`, `02-persona.md` et
+  `05-identite.md` avant toute production, et citer la source. Si
+  `06-traction.md` ou `08-roadmap.md` datent de plus de 30 jours, proposer
+  leur mise à jour via le skill `mise-a-jour-kb`.
 
 Applique en toute circonstance `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`
 (confirmation PAR SYSTÈME avant écriture, arrêt propre en cas d'échec,

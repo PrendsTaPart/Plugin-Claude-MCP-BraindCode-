@@ -33,6 +33,8 @@ Construire chaque prompt `generate_image` avec :
 6. **[Négatif — ce qu'il ne faut PAS]** — toujours exclure : texte incrusté
    dans l'image, logos (déformés ou non — le logo s'ajoute en post-prod),
    mains/doigts malformés, filigranes.
+   Pour les prompts négatifs détaillés par type de visuel et le protocole
+   zéro faute sur le texte incrusté, utiliser le skill `prompts-visuels-pro`.
 
 `size` : `hd` pour publication, `standard` pour itérer vite.
 

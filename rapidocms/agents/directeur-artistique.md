@@ -19,6 +19,8 @@ tout écart KB/API —, et en dernier repli
 génération (`generate_image`), aucune page de carte (`edit_card_page`) avant
 cette étape. Sans KB ni valeurs API : demander, et signaler que le résultat
 utilise des défauts.
+Si `./rapido-kb/startup/` existe, lire `01-vision.md`, `02-persona.md` et
+`05-identite.md` avant toute production, et citer la source.
 
 **2. Vérifier chaque visuel — ta checklist :**
 - **Contraste** : texte/fond lisible (viser WCAG AA — contraste ≥ 4.5:1 pour le
