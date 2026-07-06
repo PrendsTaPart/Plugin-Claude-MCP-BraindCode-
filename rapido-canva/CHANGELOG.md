@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-canva
 
+## 0.2.0 — 2026-07-06
+
+- Nouvel agent `studio-creatif` : arbitre les 4 canaux de création — image IA
+  (rapide), Canva (support designé), vidéo (motion), Lovable (produit
+  interactif, app, agent) — avec critères de choix par brief (interactivité,
+  durée de vie, mouvement, délai/budget, données vivantes) et annonce des
+  coûts avant de lancer.
+
 ## 0.1.0 — 2026-07-06
 
 - Version initiale : `.mcp.json` (canva + foodeatup + rapidocms + rapidocrm +

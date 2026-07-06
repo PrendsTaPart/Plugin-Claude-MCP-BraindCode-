@@ -37,6 +37,14 @@ dans la synthèse et laisser l'utilisateur décider.
      facturé, encaissé, impayés, dépenses, marge.
    - Si l'utilisateur ne gère pas d'établissement FoodEatUp, sauter cette section
      en le mentionnant.
+5. **Web / Produits** (si le serveur Lovable est disponible — plugin
+   rapido-lovable installé ; sinon sauter en le mentionnant) :
+   - `list_projects` (`publish_status: "published"`) : les apps publiées ;
+   - `get_project_analytics` par projet (`start_date`/`end_date` en RFC 3339,
+     MÊMES dates que la période analysée) : visiteurs, conversion, sources,
+     appareils ;
+   - croiser avec `get_stats_campagne` (CRM) : le trafic vient-il des
+     campagnes ? Les pics correspondent-ils aux envois/publications ?
 
 ## Synthèse exécutive unifiée (format de sortie)
 
@@ -46,7 +54,9 @@ Produire UNE synthèse structurée, avec la période en en-tête :
 2. **Commercial** : évolution du pipeline, deals gagnés/perdus ;
 3. **Contenu** : posts publiés, portée/engagement, meilleur post ;
 4. **Projets** : en cours / en retard / terminés ;
-5. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
+5. **Web / Produits** (si disponible) : visiteurs, conversion, sources — et le
+   lien trafic ↔ campagnes ;
+6. **Points d'attention** : impayés, projets à risque, baisses d'indicateurs —
    avec suggestion d'action (sans l'exécuter).
 
 ## Garde-fous

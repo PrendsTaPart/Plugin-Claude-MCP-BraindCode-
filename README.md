@@ -1,7 +1,8 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace interne regroupant 6 plugins Claude Code qui packagent des skills
-métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH) et Canva.
+Marketplace interne regroupant 7 plugins Claude Code qui packagent des skills
+métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH), Canva et
+Lovable.
 
 ## Prérequis
 
@@ -23,6 +24,7 @@ métier par-dessus les serveurs MCP Rapido (FoodEatUp, CRM, CMS, RH) et Canva.
 /plugin install rapidorh@rapido
 /plugin install rapido-suite@rapido
 /plugin install rapido-canva@rapido
+/plugin install rapido-lovable@rapido
 /reload-plugins
 ```
 
@@ -39,7 +41,8 @@ aux 4 serveurs.
 | `rapidocms` | rapidocms + hyperframes (HeyGen) | Contenu & réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, vidéos marketing, cartes digitales, conformité de marque — agents `responsable-marketing`, `community-manager`, `directeur-artistique` | `pipeline-contenu-social`, `orchestration-campagne`, `carte-digitale`, `contenu-conforme-marque`, `prompt-engineering-visuel`, `calendrier-editorial`, `analyse-performance-contenu`, `video-marketing` |
 | `rapidorh` | rapidorh | RH & projets : setup de projets, Kanban, dailies (rapports journaliers), onboarding des employés — agents `chef-de-projet` et `responsable-rh` | `setup-projet`, `flux-kanban`, `daily-report`, `onboarding-equipe`, `revue-projet-hebdo`, `detection-surcharge` |
 | `rapido-suite` | les 4 serveurs | Orchestration transverse : onboarding client de bout en bout (CRM→CMS→RH), revue business hebdomadaire unifiée, comité de direction, base de connaissance entreprise — agent `directeur-general` | `onboarding-client-360`, `revue-hebdo-business`, `comite-de-direction`, `onboarding-entreprise`, `mise-a-jour-kb` |
-| `rapido-canva` | canva + les 4 serveurs | Design Canva alimenté par les données Rapido : menus imprimables, visuels sociaux aux formats natifs, propositions/présentations de vente, slides CODIR — règles Canva encodées (`reference/pieges-canva.md`, `CONFORMITE.md`) | `menu-restaurant-design`, `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir` |
+| `rapido-canva` | canva + les 4 serveurs | Design Canva alimenté par les données Rapido : menus imprimables, visuels sociaux aux formats natifs, propositions/présentations de vente, slides CODIR — agent `studio-creatif` (arbitre image IA / Canva / vidéo / Lovable), règles Canva encodées (`reference/pieges-canva.md`, `CONFORMITE.md`) | `menu-restaurant-design`, `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir` |
+| `rapido-lovable` | lovable + les 4 serveurs | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant avec réservation connectée, landing pages de campagne, agent IA produit (API Anthropic + mcp_servers), marque synchronisée sur le workspace — architecture 2 modes encodée (`reference/architecture-lovable.md`) | `site-restaurant`, `usine-a-landing`, `agent-ia-produit`, `sync-marque-lovable` |
 
 **Base de connaissance entreprise** : le skill `onboarding-entreprise`
 (rapido-suite) interviewe l'utilisateur et construit `./rapido-kb/` (8 fichiers

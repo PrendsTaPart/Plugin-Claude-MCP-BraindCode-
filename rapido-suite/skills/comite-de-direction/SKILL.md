@@ -29,7 +29,10 @@ règles pendant toute l'exécution (IDs, données, formats, erreurs, récapitula
    🎯 Décision proposée : UNE décision actionnable, avec son responsable naturel
    ```
    Domaines : Commercial (CRM) / Contenu & marque (CMS) / Équipe & projets (RH)
-   / Restaurant (FoodEatUp).
+   / Restaurant (FoodEatUp) / Web & Produits (Lovable — si le plugin
+   rapido-lovable est installé : `list_projects` publiés +
+   `get_project_analytics` en RFC 3339 sur la même période, croisés avec
+   `get_stats_campagne` ; sinon sauter cette page en le mentionnant).
 4. **Arbitrages inter-domaines** — la section qui n'existe dans aucun domaine
    pris seul :
    - croiser les signaux (méthode de l'agent `directeur-general` : acquisition,

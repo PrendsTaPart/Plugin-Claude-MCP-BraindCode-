@@ -8,6 +8,7 @@
     { "name": "rapidocms", "source": "./rapidocms", "description": "Contenu & réseaux sociaux, cartes digitales" },
     { "name": "rapidorh", "source": "./rapidorh", "description": "RH : projets, Kanban, dailies, onboarding" },
     { "name": "rapido-suite", "source": "./rapido-suite", "description": "Orchestration transverse des 4 MCP" },
-    { "name": "rapido-canva", "source": "./rapido-canva", "description": "Design Canva croisé avec les données Rapido : menus, visuels sociaux, supports commerciaux, slides CODIR" }
+    { "name": "rapido-canva", "source": "./rapido-canva", "description": "Design Canva croisé avec les données Rapido : menus, visuels sociaux, supports commerciaux, slides CODIR" },
+    { "name": "rapido-lovable", "source": "./rapido-lovable", "description": "Apps et agents IA Lovable alimentés par les données Rapido : site restaurant, landing pages, agent IA produit, marque synchronisée" }
   ]
 }

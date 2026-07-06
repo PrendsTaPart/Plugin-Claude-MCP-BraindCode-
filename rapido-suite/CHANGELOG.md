@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 0.7.0 — 2026-07-06
+
+- Domaine « Web / Produits » ajouté à `revue-hebdo-business` et
+  `comite-de-direction` (si le plugin rapido-lovable est installé) :
+  `list_projects` publiés + `get_project_analytics` (RFC 3339, même période),
+  croisés avec `get_stats_campagne` (le trafic vient-il des campagnes ?).
+
 ## 0.6.0 — 2026-07-06
 
 - Règle de chargement KB enrichie dans les directives (routage fichier par
