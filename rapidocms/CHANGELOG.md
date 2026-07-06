@@ -1,5 +1,17 @@
 # Changelog — plugin rapidocms
 
+## 0.6.0 — 2026-07-06
+
+- Nouveau skill `video-marketing` (serveur HyperFrames by HeyGen ajouté au
+  `.mcp.json`) : compose (designSource blockframe pop/promo, signal
+  corporate ; itérations avec projectId) → get_project_status (polling au
+  rythme retry_after_seconds, statut waiting = question de l'agent) → preview
+  validée → render_video PAYANT (confirmation niveau 3 obligatoire) →
+  get_render_status (videoId) → URL MP4 livrée → post CMS d'accompagnement.
+- `prompt-engineering-visuel` : bibliothèque de prompts vivante —
+  `list_prompts` consulté AVANT toute création, chaque prompt gagnant
+  sauvegardé via `add_prompt` (placeholders [entre crochets], type visuel).
+
 ## 0.5.0 — 2026-07-06
 
 - Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement

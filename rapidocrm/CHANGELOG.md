@@ -1,5 +1,19 @@
 # Changelog — plugin rapidocrm
 
+## 0.6.0 — 2026-07-06
+
+- Couverture des outils orphelins — 3 nouveaux skills :
+  - `contrats-clients` : `create_contrat_template` → `create_contrat`
+    (⚠️ send_email TRUE par défaut : validation du destinataire avant appel) →
+    `update_contrat_status` (brouillon/en_attente/signe), relance des
+    non-signés à la cadence maison ;
+  - `agenda-rdv` : `create_rdv` (Visioconférence/Téléphonique/Présentiel avec
+    champs conditionnels, mode_envoi SMS/Email confirmé avant),
+    `get_today_schedule` (vérification de conflits), `create_evenement` ;
+  - `studio-templates` : `create_editor_template` appelé DIRECTEMENT avec le
+    HTML (jamais de widget intermédiaire), charte KB imposée dans le HTML/CSS,
+    contraintes email-safe pour les newsletters.
+
 ## 0.5.0 — 2026-07-06
 
 - Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement

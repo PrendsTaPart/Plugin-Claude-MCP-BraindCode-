@@ -3,6 +3,10 @@
     "rapidocms": {
       "type": "http",
       "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "hyperframes": {
+      "type": "http",
+      "url": "https://mcp.heygen.com/mcp/hyperframes"
     }
   }
 }
