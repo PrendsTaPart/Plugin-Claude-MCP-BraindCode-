@@ -6,6 +6,7 @@ Meta Ads, n8n, Google Workspace) : des skills métier, des agents et des
 garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
+![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-10-blue)
 ![Skills](https://img.shields.io/badge/skills-108-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
