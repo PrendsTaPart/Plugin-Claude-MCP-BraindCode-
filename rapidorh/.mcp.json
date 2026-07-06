@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "RapidoRh": {
+    "rapidorh": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP RapidoRh"
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh"
     }
   }
 }
