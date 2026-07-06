@@ -1,6 +1,7 @@
 ---
 name: mom-test
-description: 'Talk to customers without leading them using Mom Test rules: discuss their life not your idea, ask about specifics in the past, and talk less. Use when the user mentions "customer interviews", "validate my idea", "users say they want it but dont buy", "leading questions", "The Mom Test", "customer feedback bias", or "interview script". Also trigger when preparing user-research questions, interpreting ambiguous feedback, or designing customer-discovery that avoids false positives. Covers commitment and advancement, avoiding compliments, and extracting signal from noise. For product-market fit, see jobs-to-be-done. For rapid prototype testing, see design-sprint.'
+description: Utiliser quand l'utilisateur prépare des entretiens clients ou veut valider une idée sans se faire raconter ce qu'il veut entendre — « les utilisateurs disent qu'ils achèteraient mais n'achètent pas », questions orientées, script d'interview. Règles du Mom Test : parler de leur vie (pas de votre idée), du passé et du concret, et parler moins.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai

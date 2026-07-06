@@ -1,6 +1,7 @@
 ---
 name: influence-psychology
-description: 'Apply the seven principles of ethical persuasion (reciprocity, commitment, social proof, authority, liking, scarcity, unity) to product design, copy, and sales. Use when the user mentions "social proof", "persuasive copy", "why users dont convert", "ethical persuasion", "reciprocity", "scarcity tactics", "commitment and consistency", "shared identity", "in-group", "make my copy more persuasive", "increase trust", or "get more people to say yes". Also trigger when designing testimonial sections, crafting urgency messaging, or improving trust signals on landing pages. Covers the principles, when each applies, and ethical limits. For deal negotiation tactics, see negotiation. For viral word-of-mouth, see contagious.'
+description: Utiliser quand l'utilisateur parle de preuve sociale, de copy persuasive, de « pourquoi les gens ne convertissent pas », de rareté, de réciprocité, de confiance ou de signaux de réassurance (témoignages, urgence). Applique les sept principes de persuasion éthique — réciprocité, cohérence, preuve sociale, autorité, sympathie, rareté, unité — avec leurs limites éthiques. Pour la négociation, voir negotiation ; pour le bouche-à-oreille, voir contagious.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai

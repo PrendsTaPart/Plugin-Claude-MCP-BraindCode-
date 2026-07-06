@@ -1,6 +1,7 @@
 ---
 name: frontend-design
-description: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults. Se combine avec le skill ui-ux-pro-max pour le choix des styles (palettes, typographies, styles par stack).
+description: Utiliser quand l'utilisateur construit ou refond une interface et veut une direction visuelle distinctive et intentionnelle — esthétique, typographie, des choix qui ne ressemblent pas à des défauts de template. Se combine avec le skill ui-ux-pro-max pour le choix des styles (palettes, typographies, styles par stack).
+source: anthropics/skills (commit 9d2f1ae1), Apache 2.0
 license: Complete terms in LICENSE.txt
 ---
 

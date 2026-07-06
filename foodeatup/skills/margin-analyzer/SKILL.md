@@ -1,19 +1,13 @@
 ---
 name: margin-analyzer
-description: >
-  Analyzes unit economics by product or service using PayPal merchant
-  insights and QuickBooks cost data, benchmarks against inflation and cost
-  changes, and shows pricing-scenario data (e.g. "a 5% increase historically
-  correlates with ~3% volume drop"). Surfaces analysis only — does not
-  recommend a price. Use when the user asks about raising prices, pricing,
-  margin analysis, what to charge, whether costs are eating into profit, or
-  how a price change might affect their business. Trigger even if the user
-  doesn't say "margin" explicitly — phrases like "am I making enough?",
-  "should I charge more?", or "my costs are going up" all call for this skill.
-  S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur parle d'augmenter ses prix, de marges, de coûts qui grignotent le profit, ou demande « est-ce que je gagne assez ? », « je devrais facturer plus ? ». Analyse l'économie unitaire par produit/service depuis les ventes et coûts réels et montre des scénarios de prix — analyse seulement, ne recommande pas un prix. S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/ pour les seuils maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Margin Analyzer
+
+> Nécessite les MCP **foodeatup** ET **rapidocrm** (tous deux déclarés dans
+> le `.mcp.json` du plugin).
 
 ## Adaptation Rapido (lire d'abord)
 
@@ -93,13 +87,16 @@ If QuickBooks is connected but COGS = $0 across all periods, do not use $0 as th
 
 Flag this limitation in the Data Quality Notes section of the final output.
 
-### Step 4: Pull revenue data (PayPal / Square)
+### Step 4: Pull revenue data (FoodEatUp / RapidoCRM)
 
-Fetch from `list_transactions` (PayPal) or `make_api_request` (Square):
+Fetch from `list_orders` (FoodEatUp — ventes réelles) or `get_revenue_summary`
+(RapidoCRM — synthèse de revenus) :
 - **Date range:** Match the cost data window (last 12 months)
 - **Extract:** Transaction amount, item/service name, date, quantity if available
 
-If you hit PayPal rate limits, pause 30 seconds and retry once. If still blocked, offer: "PayPal is temporarily rate-limited. Want to switch to Square or upload a CSV instead?"
+If the MCP data is incomplete for the window, say so and offer: "Les données
+de vente sont partielles sur cette période — restreindre la fenêtre ou
+compléter par un CSV ?"
 
 If only one data source is available, note the limitation in the output.
 

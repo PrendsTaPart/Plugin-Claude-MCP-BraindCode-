@@ -1,6 +1,7 @@
 ---
 name: ticket-triage
-description: Triage and prioritize a support ticket or customer issue. Use when a new ticket comes in and needs categorization, assigning P1-P4 priority, deciding which team should handle it, or checking whether it's a duplicate or known issue before routing. (utilise les données du MCP rapidocrm quand elles sont disponibles)
+description: Utiliser quand un ticket support ou un problème client arrive et doit être trié : catégorisation, priorité P1-P4, équipe destinataire, détection de doublon ou de problème connu avant routage. Utilise les données du MCP rapidocrm quand elles sont disponibles.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<ticket or issue description>"
 ---
 

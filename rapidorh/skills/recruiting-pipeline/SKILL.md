@@ -1,6 +1,7 @@
 ---
 name: recruiting-pipeline
-description: Track and manage recruiting pipeline stages. Trigger with "recruiting update", "candidate pipeline", "how many candidates", "hiring status", or when the user discusses sourcing, screening, interviewing, or extending offers. S'appuie sur le MCP rapidorh pour les données réelles (équipe, départements, rôles, dailies, projets) et sur ./rapido-kb/ pour les règles maison.
+description: Utiliser quand l'utilisateur demande un point recrutement — pipeline de candidats, combien de candidatures, statut des embauches — ou parle de sourcing, présélection, entretiens ou envoi d'offres. S'appuie sur le MCP rapidorh pour les données réelles et sur ./rapido-kb/ pour les règles maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Recruiting Pipeline

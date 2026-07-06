@@ -1,6 +1,7 @@
 ---
 name: pipeline-review-methodo
-description: Analyze pipeline health — prioritize deals, flag risks, get a weekly action plan. Use when running a weekly pipeline review, deciding which deals to focus on this week, spotting stale or stuck opportunities, auditing for hygiene issues like bad close dates, or identifying single-threaded deals. (utilise les données du MCP rapidocrm quand elles sont disponibles)
+description: Utiliser quand l'utilisateur mène une revue de pipeline hebdomadaire formelle : prioriser les deals, repérer les risques et les opportunités bloquées, auditer l'hygiène (dates de closing douteuses, deals mono-interlocuteur) et repartir avec un plan d'action de la semaine. Utilise les données du MCP rapidocrm quand elles sont disponibles ; pour la revue rapide « où en sont mes deals », voir coaching-pipeline.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<segment or rep>"
 ---
 

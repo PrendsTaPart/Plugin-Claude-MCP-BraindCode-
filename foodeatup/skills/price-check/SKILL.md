@@ -1,8 +1,12 @@
 ---
 name: price-check
-description: Produces a margin-by-product table and three pricing-scenario data views so the owner can see the full financial picture before making a pricing decision. Accepts optional product name argument. S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur veut vérifier ses prix ou voir ses marges par produit avant une décision tarifaire. Produit un tableau marge par produit et trois scénarios de prix pour une vision financière complète. Accepte un nom de produit en argument. S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/ pour les seuils maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 allowed-tools: Read, WebFetch, Bash
 ---
+
+> Nécessite les MCP **foodeatup** ET **rapidocrm** (tous deux déclarés dans
+> le `.mcp.json` du plugin).
 
 ## Adaptation Rapido (lire d'abord)
 

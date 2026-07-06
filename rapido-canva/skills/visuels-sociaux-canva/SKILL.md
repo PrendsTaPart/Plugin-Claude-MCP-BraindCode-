@@ -43,9 +43,11 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`,
    trouver le template auto-remplissable ; `get-brand-template-dataset` pour
    les champs disponibles.
 2. `create-design-from-brand-template` (`brand_template_id` « BTM... »), puis
-   remplir les champs via une transaction d'édition (start → `replace_text`/
-   `update_fill` → preview → accord → commit) — l'outil `autofill-design`
-   n'est pas exposé sur cette connexion (pieges-canva.md §6).
+   remplir les champs via une transaction d'édition :
+   `start-editing-transaction` → opérations de remplacement de texte et de
+   fonds via `perform-editing-operations` → preview → accord →
+   `commit-editing-transaction` — l'outil `autofill-design` n'est pas exposé
+   sur cette connexion (pieges-canva.md §6).
 3. Export + pipeline CMS comme ci-dessus. Proposer de sauvegarder la recette
    (template + champs) pour la prochaine itération.
 

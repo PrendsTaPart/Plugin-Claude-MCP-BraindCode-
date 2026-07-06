@@ -39,5 +39,7 @@ contenu visible (templates, contenus de campagne).
   ne pas lancer une campagne déjà `en_cours` ou `terminee`.
 - Jamais de lancement sans : segment recalculé non vide + template/contenu validé +
   confirmation explicite de l'utilisateur.
-- Ajouter des posts à une campagne existante : `add_post_campagne` est côté
-  RapidoCMS — hors périmètre de ce skill (le signaler si demandé).
+- Ajouter des posts à une campagne existante se fait côté RapidoCMS : pour le
+  volet réseaux sociaux, utiliser le plugin rapidocms (skill
+  orchestration-campagne) — hors périmètre de ce skill (le signaler si
+  demandé).

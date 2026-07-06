@@ -19,6 +19,10 @@
     "lovable": {
       "type": "http",
       "url": "https://mcp.lovable.dev"
+    },
+    "foodeatup": {
+      "type": "http",
+      "url": "https://foodeatup.com/api/mcp"
     }
   }
 }

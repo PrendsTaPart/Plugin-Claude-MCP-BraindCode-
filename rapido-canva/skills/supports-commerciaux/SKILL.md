@@ -15,7 +15,8 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`,
 ## Workflow
 
 1. **Données du deal (CRM)** — `get_entreprise` (contexte client),
-   `get_devis`/`list_devis` (montants, prestations), `get_historique_prospect`
+   `list_devis` (montants, prestations — filtrer sur l'entreprise ; pas
+   d'outil de lecture unitaire de devis sur ce serveur), `get_historique_prospect`
    (enjeux évoqués). Arguments et preuves depuis la KB (citer la source) —
    jamais de promesse inventée.
 2. **Choisir le type de support** :
@@ -43,7 +44,7 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`,
 
 ## Garde-fous
 
-- Montants STRICTEMENT issus du devis CRM (`get_devis`) — pas de prix de tête.
+- Montants STRICTEMENT issus du devis CRM (`list_devis`) — pas de prix de tête.
 - CONFORMITE.md : le support cite l'entreprise cliente et son contact pro
   (c'est son objet), mais JAMAIS de données d'autres clients, de prix
   consentis à d'autres, ni de données internes (marges, salaires).

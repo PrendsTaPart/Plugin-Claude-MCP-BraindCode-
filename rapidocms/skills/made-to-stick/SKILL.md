@@ -1,6 +1,7 @@
 ---
 name: made-to-stick
-description: 'Craft messages that are understood, remembered, and drive action using the SUCCESs checklist (Simple, Unexpected, Concrete, Credible, Emotional, Stories). Use when the user mentions "make it memorable", "no one remembers our pitch", "tagline", "value proposition", "why the message isnt landing", "curse of knowledge", or "concrete language". Also trigger when writing a pitch deck, simplifying a complex product explanation, or making a presentation more compelling. Covers the six SUCCESs traits and the curse of knowledge. For narrative brand frameworks, see storybrand-messaging. For viral sharing, see contagious.'
+description: Utiliser quand l'utilisateur veut un message mémorable — tagline, proposition de valeur, pitch deck, vulgariser un produit complexe — ou dit « personne ne retient notre pitch ». Checklist SUCCESs (Simple, Inattendu, Concret, Crédible, Émotionnel, Histoires) et malédiction du savoir. Pour le cadre narratif de marque, voir storybrand-messaging ; pour la viralité, voir contagious.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai

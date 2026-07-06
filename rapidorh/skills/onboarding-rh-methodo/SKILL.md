@@ -1,6 +1,7 @@
 ---
 name: onboarding-rh-methodo
-description: Generate an onboarding checklist and first-week plan for a new hire. Use when someone has a start date coming up, building the pre-start task list (accounts, equipment, buddy), scheduling Day 1 and Week 1, or setting 30/60/90-day goals for a new team member. S'appuie sur le MCP rapidorh pour les données réelles (équipe, départements, rôles, dailies, projets) et sur ./rapido-kb/ pour les règles maison.
+description: Utiliser quand une prise de poste approche et qu'il faut le plan d'accueil : checklist pré-arrivée (comptes, matériel, parrain), programme du jour 1 et de la semaine 1, objectifs 30/60/90. La création des comptes, rôles et permissions dans RapidoRh relève d'onboarding-equipe. S'appuie sur le MCP rapidorh pour les données réelles et sur ./rapido-kb/ pour les règles maison.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<new hire name and role>"
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: predictable-revenue
-description: 'Build a scalable outbound B2B sales machine with specialized roles (SDR, AE, CSM). Use when the user mentions "outbound sales", "Cold Calling 2.0", "cold email sequences", "sales pipeline", "SDR process", "sales development", "build an outbound sales team", or "fill my pipeline". Also trigger when setting up a B2B SaaS sales team from scratch or building a lead-qualification framework to improve close rates. Covers the three lead types (seeds/nets/spears), role specialization, the referral-email method, ANUM qualification, and pipeline math. For offer design, see hundred-million-offers. For persuasion science, see influence-psychology.'
+description: Utiliser quand l'utilisateur veut monter une machine de vente outbound B2B — rôles spécialisés SDR/AE/CSM, séquences de cold email, Cold Calling 2.0, qualification ANUM, maths de pipeline — ou dit « remplis mon pipeline ». Couvre les trois types de leads (seeds/nets/spears) et la méthode de l'email de référence. Pour le design d'offre, voir hundred-million-offers.
+source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
   author: wondelai

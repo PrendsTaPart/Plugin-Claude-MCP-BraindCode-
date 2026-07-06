@@ -1,6 +1,7 @@
 ---
 name: campaign-plan-methodo
-description: Generate a full campaign brief with objectives, audience, messaging, channel strategy, content calendar, and success metrics. Use when planning a product launch, lead-gen push, or awareness campaign, when you need a week-by-week content calendar with dependencies, or when translating a marketing goal into a structured, executable plan. Pour l'exécution dans Meta Ads, utiliser le skill lancement-campagne-meta.
+description: Utiliser quand l'utilisateur planifie un lancement produit, une campagne de génération de leads ou de notoriété et veut un brief complet : objectifs, audience, message, stratégie de canaux, calendrier semaine par semaine, métriques de succès. Pour l'exécution dans Meta Ads, utiliser le skill lancement-campagne-meta.
+source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 argument-hint: "<campaign objective or product>"
 ---
 

@@ -1,56 +1,55 @@
 # Charte graphique (rapidocms)
 
+> ⚠️ **CHARTE GÉNÉRIQUE DE REPLI** — ces valeurs ne représentent aucune
+> marque. Ordre de priorité réel : `./rapido-kb/charte-graphique.md` →
+> `get_brand` → ce fichier. Tout agent qui utilise ce repli doit le
+> SIGNALER dans sa réponse.
+
 PRIORITÉ DES SOURCES : sur ce plugin, toujours privilégier les valeurs LIVE via
 `get_brand` + `get_company` + `get_profile` (couleurs, logo, infos société).
 Ce fichier sert de REPLI si l'API ne renvoie pas une valeur, et de référence pour
 les règles NON exposées par l'API (marges de protection, usages interdits, ton).
 En cas de conflit : la valeur API gagne, sauf mention contraire de l'utilisateur.
 
-## Couleurs (codes hex)
+## Couleurs (codes hex) — palette neutre professionnelle (repli)
 
-### À COMPLÉTER
-- Primaire : `#______`
-- Secondaire : `#______`
-- Accent : `#______`
-- Neutres : fond clair `#______`, fond foncé `#______`, texte `#______`,
-  texte secondaire `#______`
+- Primaire : `#1E293B`
+- Secondaire : `#64748B`
+- Accent : `#3B82F6`
+- Neutres : fond clair `#F8FAFC`, fond foncé `#0F172A`, texte `#0F172A`,
+  texte secondaire `#64748B`
 
 Règle : utiliser les codes EXACTS — jamais d'approximation ni de couleur proche.
 
-## Typographies
+## Typographies (repli : polices système sûres)
 
-### À COMPLÉTER
-- Titres : ______ (graisse : ______)
-- Corps : ______ (graisse : ______)
-- Tailles minimales : titres ______ px, corps ______ px
+- Titres : Inter, repli `system-ui, sans-serif` (graisse : 600)
+- Corps : Inter, repli `system-ui, sans-serif` (graisse : 400)
+- Tailles minimales : titres 20 px, corps 14 px
 
 ## Logos
 
-### À COMPLÉTER
-- Logo principal (couleur) : URL ______
-- Variante monochrome : URL ______
-- Variante fond clair : URL ______
-- Variante fond foncé : URL ______
+- **Aucun logo par défaut** — utiliser le logo renvoyé par `get_brand`, ou le
+  demander au client. Ne JAMAIS générer ni inventer un logo de substitution.
 
 Règles d'usage :
-- Marge de protection : ### À COMPLÉTER (ex. hauteur du logo × 0,5 sur chaque côté).
+- Marge de protection : hauteur du logo × 0,5 sur chaque côté (défaut).
 - Choisir la variante selon le fond : monochrome/fond foncé sur images sombres,
   couleur/fond clair sur fonds clairs.
 - Usages INTERDITS : déformer, recolorer, pivoter, appliquer une ombre ou un
-  contour, placer sur un fond à faible contraste. ### À COMPLÉTER (interdits
-  spécifiques).
+  contour, placer sur un fond à faible contraste.
 
-## Ton de voix
+## Ton de voix (repli)
 
-### À COMPLÉTER — décrire le ton en une phrase (ex. « expert mais accessible,
-tutoiement, énergique sans superlatifs »).
+Professionnel, clair et factuel — vouvoiement, orienté bénéfice client, sans
+superlatifs. (Le ton réel du client vient de la KB ou de `get_brand`.)
 
 ### Do
-- ### À COMPLÉTER (ex. phrases courtes, un appel à l'action par post, emojis sobres)
+- Phrases courtes, un seul appel à l'action par post, vocabulaire concret,
+  emojis sobres.
 
 ### Don't
-- ### À COMPLÉTER (ex. jargon technique, promesses chiffrées non vérifiées,
-  majuscules criardes)
+- Jargon interne, promesses chiffrées non vérifiées, majuscules criardes.
 
 ## Application par outil
 

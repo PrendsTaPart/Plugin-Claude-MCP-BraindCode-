@@ -2,14 +2,14 @@
 
 Red/yellow/green cutoffs for each section of the pulse. These are SMB defaults — edit them to match the owner's actual targets and plan.
 
-Any threshold marked `# TODO: confirm with owner` should produce a note at the top of the first pulse output so the owner knows to tune it.
+Any threshold marked « défaut secteur » should produce a note at the top of the first pulse output so the owner knows to tune it — les seuils maison de `./rapido-kb/processus-internes.md` priment (les citer).
 
 ---
 
 ## Cash & Finance
 
 **Cash runway**
-- 🟢 ≥ 6 months  # TODO: confirm with owner
+- 🟢 ≥ 6 months  (défaut secteur — personnalisable dans ./rapido-kb/)
 - 🟡 3–6 months
 - 🔴 < 3 months
 
@@ -42,12 +42,12 @@ Any threshold marked `# TODO: confirm with owner` should produce a note at the t
 
 ## Pipeline
 
-**Pipeline coverage** (weighted pipeline ÷ monthly revenue target)  # TODO: confirm target with owner
+**Pipeline coverage** (weighted pipeline ÷ monthly revenue target — objectif mensuel : défaut secteur, personnalisable dans ./rapido-kb/)
 - 🟢 ≥ 2x monthly target
 - 🟡 1–2x
 - 🔴 < 1x
 
-**Stale deal**: no activity in 7+ days → flag  # TODO: owner may prefer 14 days
+**Stale deal**: no activity in 7+ days → flag (défaut secteur — 14 jours possible, personnalisable dans ./rapido-kb/)
 **Slipped deal**: open deal with close date in past → always flag
 
 ---
