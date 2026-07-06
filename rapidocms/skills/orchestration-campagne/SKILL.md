@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur parle de campagne de contenu, de séri
 
 # Orchestration de campagne de contenu
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+
 ## Workflow
 
 1. **Créer la campagne** — `create_campagne` (`name`, `description` requis ;

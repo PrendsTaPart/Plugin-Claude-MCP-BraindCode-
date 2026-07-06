@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur parle de daily, de rapport journalier 
 
 # Daily report
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+
 ## Règles STRICTES (refus du serveur sinon)
 
 - **Un seul daily par jour par utilisateur** : vérifier AVANT de créer.

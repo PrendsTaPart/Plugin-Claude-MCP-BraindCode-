@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur demande une revue hebdo, un point busi
 
 # Revue hebdo business
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, données, formats, erreurs, récapitulatif).
+
 Skill STRICTEMENT EN LECTURE SEULE : aucun outil de création, modification ou
 suppression ne doit être appelé, même si un problème est détecté — le signaler
 dans la synthèse et laisser l'utilisateur décider.

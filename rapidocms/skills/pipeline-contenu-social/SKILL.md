@@ -5,6 +5,13 @@ description: Utiliser quand l'utilisateur veut créer un post, un brouillon, pro
 
 # Pipeline de contenu social
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
+et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` — ce skill produit du
+contenu visible. Priorité aux valeurs live `get_brand`/`get_company`/`get_profile` ;
+la charte sert de repli et pour les règles non exposées par l'API.
+
 ## Workflow
 
 1. **Comptes connectés** — `list_connected_accounts` (filtre `networks` ∈ facebook |

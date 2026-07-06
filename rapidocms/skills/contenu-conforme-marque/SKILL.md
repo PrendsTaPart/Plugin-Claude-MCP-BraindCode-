@@ -5,6 +5,13 @@ description: Utiliser quand l'utilisateur demande de respecter la charte, le ton
 
 # Contenu conforme à la marque
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
+et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` — la charte complète les
+valeurs live de l'API (marges de protection, usages interdits, do/don't) et sert
+de repli si `get_brand` ne renvoie pas une valeur.
+
 ## Workflow
 
 1. **Charger l'identité** (aucun paramètre requis) :

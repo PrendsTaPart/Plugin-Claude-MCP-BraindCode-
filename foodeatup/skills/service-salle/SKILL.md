@@ -5,9 +5,11 @@ description: Utiliser quand l'utilisateur parle de réservation, d'installer un 
 
 # Service en salle
 
-## Étape 0 — Établissement (obligatoire)
+## Étape 0 — Références et établissement (obligatoire)
 
-S'assurer d'avoir l'`establishment_id` (le demander si absent) avant tout appel.
+1. Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+   règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+2. S'assurer d'avoir l'`establishment_id` (le demander si absent) avant tout appel.
 
 ## Machine à états des tables (à respecter strictement)
 

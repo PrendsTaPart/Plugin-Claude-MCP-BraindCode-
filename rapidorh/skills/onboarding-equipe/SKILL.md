@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur veut ajouter un employé, créer un r�
 
 # Onboarding équipe
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+
 ## Ordre OBLIGATOIRE du workflow
 
 Le rôle doit exister AVANT de créer l'utilisateur (`role_id` est requis par

@@ -5,6 +5,12 @@ description: Utiliser quand l'utilisateur veut onboarder un nouveau client, anno
 
 # Onboarding client 360°
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes,
+dont la confirmation PAR SYSTÈME) et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md`
+pour l'étape CMS — ce skill produit du contenu visible.
+
 Workflow transverse sur 3 serveurs MCP : rapidocrm, rapidocms, rapidorh.
 RÈGLE CENTRALE : demander une confirmation explicite à l'utilisateur AVANT chaque
 création dans un nouveau système (une validation par système, pas une validation

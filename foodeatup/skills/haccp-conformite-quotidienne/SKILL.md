@@ -5,10 +5,13 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
 
 # Conformité HACCP quotidienne
 
-## Étape 0 — Établissement (obligatoire)
+## Étape 0 — Références et établissement (obligatoire)
 
-S'assurer d'avoir l'`establishment_id`. S'il n'est pas connu dans la conversation, le
-demander à l'utilisateur AVANT tout appel d'outil. Tous les outils ci-dessous l'exigent.
+1. Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+   règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+2. S'assurer d'avoir l'`establishment_id`. S'il n'est pas connu dans la conversation,
+   le demander à l'utilisateur AVANT tout appel d'outil. Tous les outils ci-dessous
+   l'exigent.
 
 ## Workflow
 

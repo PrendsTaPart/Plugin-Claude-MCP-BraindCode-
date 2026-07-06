@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur veut créer une tâche, assigner une t
 
 # Flux Kanban
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+
 ## Workflow
 
 1. **Identifier le projet** — `get-projects-list-tool` (`search` par nom) si le

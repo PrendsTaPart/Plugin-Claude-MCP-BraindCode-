@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur veut créer un projet ou parle d'un no
 
 # Setup d'un projet
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+
 ## Workflow
 
 1. **Récupérer les IDs valides** — `get-users-list-tool` (filtres `search`,

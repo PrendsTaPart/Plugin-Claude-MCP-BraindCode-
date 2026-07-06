@@ -5,6 +5,12 @@ description: Utiliser quand l'utilisateur parle de campagne, de segment, d'envoi
 
 # Campagne marketing
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
+et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` — ce skill produit du
+contenu visible (templates, contenus de campagne).
+
 ## Workflow
 
 1. **Créer le segment cible** — `create_segment` (`nom` requis ; filtres

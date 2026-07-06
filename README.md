@@ -12,6 +12,9 @@ par-dessus un serveur MCP existant.
 ├── foodeatup/                           <- Gestion restaurant (HACCP, salle, cuisine, achats)
 │   ├── .claude-plugin/plugin.json
 │   ├── .mcp.json                        <- connexion au serveur MCP FoodEatUp
+│   ├── reference/                       <- règles partagées, chargées par les skills
+│   │   ├── directives-outils.md         <- directives communes (IDs, confirmations…)
+│   │   └── charte-graphique.md          <- (plugins à contenu visible uniquement)
 │   └── skills/                          <- un sous-dossier par skill (SKILL.md)
 ├── rapidocrm/                           <- CRM : prospection, pipeline, facturation, marketing
 ├── rapidocms/                           <- Contenu & réseaux sociaux, cartes digitales
@@ -42,7 +45,25 @@ pour chaque plugin.
 
 - `owner.name` dans `.claude-plugin/marketplace.json`
 - `author.name` dans chaque `plugin.json`
-- Les URL `REMPLACER` dans chaque `.mcp.json` (endpoints des serveurs MCP)
+- Les sections `### À COMPLÉTER` des `reference/charte-graphique.md`
+  (codes hex, URLs de logo, typographies, ton de voix)
+
+## Fichiers de référence (progressive disclosure)
+
+Chaque plugin embarque un dossier `reference/` (les règles voyagent AVEC le
+plugin installé — pas de CLAUDE.md racine) :
+
+- `directives-outils.md` (tous les plugins) : résolution d'ID avant action,
+  confirmations obligatoires, interdiction d'inventer des données, locale
+  euros/ISO, gestion d'erreur, récapitulatif final.
+- `charte-graphique.md` (rapidocms, rapidocrm, rapido-suite) : couleurs hex,
+  typographies, logos et variantes, ton de voix do/don't. Pour rapidocms et
+  rapido-suite, les valeurs live `get_brand`/`get_company`/`get_profile` restent
+  prioritaires ; le fichier sert de repli.
+
+Chaque SKILL.md charge ces fichiers en « Étape 0 » via
+`${CLAUDE_PLUGIN_ROOT}/reference/…` (chargés au besoin, pas dans le contexte de
+base).
 
 ## Conventions des skills
 

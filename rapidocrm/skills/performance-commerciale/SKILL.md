@@ -5,6 +5,11 @@ description: Utiliser quand l'utilisateur demande la performance de l'équipe, l
 
 # Performance commerciale
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
+règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
+
 ## Workflow
 
 1. **Lister l'équipe** — `list_commerciaux` (`statut` = actif | inactif, `q`

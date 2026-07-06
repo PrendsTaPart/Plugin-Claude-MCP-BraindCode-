@@ -5,6 +5,12 @@ description: Utiliser quand l'utilisateur parle de devis, de facture, de relance
 
 # Devis, factures et relances
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
+et, pour rédiger des emails de relance, `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md`
+(ton de voix, do/don't).
+
 ## Statuts autorisés (ne jamais en inventer d'autres)
 
 - **Devis** : `brouillon`, `en_attente`, `accepte`, `refuse`, `expire`.

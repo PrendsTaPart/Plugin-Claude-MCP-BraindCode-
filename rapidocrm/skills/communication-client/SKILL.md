@@ -5,6 +5,12 @@ description: Utiliser quand l'utilisateur veut envoyer un email ou un SMS, plani
 
 # Communication client
 
+## Étape 0 — Références (obligatoire)
+
+Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
+et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` — ce skill produit du
+contenu visible (emails, SMS, newsletters).
+
 ## Workflow
 
 1. **Partir de la fiche entreprise** — `get_entreprise` (`id` ou `q` recherche
