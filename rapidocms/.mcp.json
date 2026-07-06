@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "RapidoCMS": {
+    "rapidocms": {
       "type": "http",
-      "url": "REMPLACER — URL du serveur MCP RapidoCMS"
+      "url": "https://cms.rapidosoftware.com/mcp"
     }
   }
 }
