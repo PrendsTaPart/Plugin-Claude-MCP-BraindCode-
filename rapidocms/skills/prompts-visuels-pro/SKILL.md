@@ -1,6 +1,6 @@
 ---
 name: prompts-visuels-pro
-description: Utiliser quand l'utilisateur veut un prompt de génération d'image professionnel, un prompt négatif, ou un visuel contenant du texte sans aucune faute. Bibliothèque de négatifs par type de visuel, protocole zéro faute, charte et logo chargés depuis RapidoCMS.
+description: Utiliser quand l'utilisateur veut un prompt de génération d'image professionnel, un prompt négatif, un visuel contenant du texte sans aucune faute, ou corriger une faute de texte dans un visuel déjà généré. Bibliothèque de négatifs par type de visuel, protocole zéro faute, charte et logo chargés depuis RapidoCMS.
 ---
 
 # Prompts visuels pro — positif + négatif + zéro faute

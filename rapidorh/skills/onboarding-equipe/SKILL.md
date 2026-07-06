@@ -1,6 +1,6 @@
 ---
 name: onboarding-equipe
-description: Utiliser quand l'utilisateur veut ajouter un employé, créer un rôle ou parle d'onboarding dans RapidoRh. Suit l'ordre obligatoire permissions → rôle → département → utilisateur → affectation projets.
+description: Utiliser quand l'utilisateur veut ajouter un employé, créer un rôle ou parle d'onboarding dans RapidoRh. Suit l'ordre obligatoire permissions → rôle → département → utilisateur → affectation projets. Pour la checklist d'accueil (J1, semaine 1, 30/60/90), utiliser onboarding-rh-methodo.
 ---
 
 # Onboarding équipe

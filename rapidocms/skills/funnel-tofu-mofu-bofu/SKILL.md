@@ -1,6 +1,6 @@
 ---
 name: funnel-tofu-mofu-bofu
-description: Utiliser quand l'utilisateur veut des posts par étape du funnel (TOFU, MOFU, BOFU), une stratégie de contenu par niveau de maturité, ou appliquer AIDA, PAS ou 4U à un post. Répartition, frameworks copywriting et CTA par étape.
+description: Utiliser quand l'utilisateur veut des posts par étape du funnel (TOFU, MOFU, BOFU), un équilibre découverte/considération/vente, une stratégie de contenu par niveau de maturité, ou appliquer AIDA, PAS ou 4U à un post. Répartition, frameworks copywriting et CTA par étape.
 ---
 
 # Funnel de contenu — TOFU / MOFU / BOFU

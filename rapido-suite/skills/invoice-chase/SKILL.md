@@ -9,6 +9,7 @@ description: >
   "who owes me money," mentions overdue invoices, or wants to follow up
   on unpaid invoices.
   S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+  Méthodo de relance au ton gradué ; l'exécution des relances de factures RapidoCRM passe par devis-facture-relance (plugin rapidocrm).
 ---
 
 # Invoice Chase
