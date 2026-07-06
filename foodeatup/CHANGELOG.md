@@ -1,5 +1,15 @@
 # Changelog — plugin foodeatup
 
+## 0.3.0 — 2026-07-06
+
+- Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :
+  - PreToolUse `garde-destructif` : confirmation forcée (ask) sur tous les
+    `delete_*` du serveur foodeatup ;
+  - PreToolUse `anti-donnee-inventee` : refus (deny) de toute température hors
+    plage plausible (-30 °C à +90 °C) ou non numérique sur `add_temperature` ;
+  - Stop `récap-actions` (hook prompt) : bloque la fin de tour si des écritures
+    MCP ont eu lieu sans récapitulatif des IDs dans la réponse.
+
 ## 0.2.0 — 2026-07-06
 
 - Ajout de la couche métier :

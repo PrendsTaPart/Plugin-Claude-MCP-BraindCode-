@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-suite
 
+## 0.3.0 — 2026-07-06
+
+- Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :
+  - PreToolUse `garde-destructif` : union des gardes des 4 plugins (delete_*
+    foodeatup ; delete_*/update_invoice_status/update_contrat_status/
+    close_opportunity rapidocrm avec table DGFiP ; delete_*/
+    cancel_schedules_post/remove_post_campagne rapidocms ; delete-user-tool/
+    delete-project-link-tool rapidorh). La vérification DGFiP ne s'applique
+    qu'aux factures CRM (statuts FoodEatUp non vérifiés, schéma différent) ;
+  - PreToolUse `anti-donnee-inventee` : plage plausible sur `add_temperature`
+    (serveur foodeatup) ;
+  - Stop `récap-actions` (hook prompt) : récapitulatif PAR SERVEUR exigé en fin
+    de tour après toute écriture ;
+  - SessionStart `contexte` : injecte le rappel de la politique d'autonomie et
+    du chargement des directives.
+- Nouveau fichier `reference/autonomie.md` : politique d'autonomie détaillée
+  (lecture libre, écriture par système, destructif unitaire, échec transverse).
+
 ## 0.2.0 — 2026-07-06
 
 - Ajout de la couche métier :

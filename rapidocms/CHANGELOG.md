@@ -1,5 +1,13 @@
 # Changelog — plugin rapidocms
 
+## 0.3.0 — 2026-07-06
+
+- Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :
+  - PreToolUse `garde-destructif` : confirmation forcée (ask) sur `delete_*`,
+    `cancel_schedules_post` et `remove_post_campagne` ;
+  - Stop `récap-actions` (hook prompt) : bloque la fin de tour si des écritures
+    MCP ont eu lieu sans récapitulatif des IDs dans la réponse.
+
 ## 0.2.0 — 2026-07-06
 
 - Ajout de la couche métier :

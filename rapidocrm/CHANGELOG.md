@@ -1,5 +1,17 @@
 # Changelog — plugin rapidocrm
 
+## 0.3.0 — 2026-07-06
+
+- Hooks déterministes (`hooks/hooks.json` + `hooks/scripts/`) :
+  - PreToolUse `garde-destructif` : confirmation forcée (ask) sur `delete_*`,
+    `update_contrat_status`, `close_opportunity` et `update_invoice_status` ;
+    refus (deny) de toute transition de facture vers un statut non autorisé par
+    la table DGFiP encodée dans le script (cibles valides : en_attente, payee,
+    en_retard — jamais de retour à brouillon). `update_invoice_status` est
+    matché défensivement (outil non exposé par le serveur à ce jour) ;
+  - Stop `récap-actions` (hook prompt) : bloque la fin de tour si des écritures
+    MCP ont eu lieu sans récapitulatif des IDs dans la réponse.
+
 ## 0.2.0 — 2026-07-06
 
 - Ajout de la couche métier :

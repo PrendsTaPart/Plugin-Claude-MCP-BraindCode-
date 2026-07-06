@@ -80,6 +80,17 @@ Puis dérouler les scénarios de test de déclenchement fournis pour chaque plug
   (suppressions, envois d'emails/SMS, lancements de campagne, annulations)
   **demande une confirmation explicite** avant exécution — ne pas contourner ces
   confirmations dans les prompts.
+- **Garde-fous déterministes (hooks)** : chaque plugin embarque
+  `hooks/hooks.json` + `hooks/scripts/` (Python/bash, sans appel réseau, < 1 s) :
+  - PreToolUse `garde-destructif` : confirmation utilisateur FORCÉE sur les
+    outils destructifs du plugin, et refus pur des patterns interdits (ex.
+    transition de facture hors table DGFiP côté CRM) — indépendant du modèle ;
+  - PreToolUse `anti-donnee-inventee` (foodeatup, rapido-suite) : rejet des
+    températures hors plage plausible (-30 °C à +90 °C) ;
+  - Stop `récap-actions` : la fin de tour est bloquée si des écritures MCP ont
+    eu lieu sans récapitulatif des IDs dans la réponse ;
+  - SessionStart `contexte` (rapido-suite) : rappel de la politique
+    d'autonomie (`reference/autonomie.md`) injecté à chaque session.
 - Ne jamais mettre de secrets (tokens, mots de passe) dans les skills ou les
   fichiers `reference/` : ils sont distribués avec le plugin.
 
