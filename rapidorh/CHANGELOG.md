@@ -1,5 +1,12 @@
 # Changelog — plugin rapidorh
 
+## 0.5.0 — 2026-07-06
+
+- Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement
+  dans les directives (seuils de charge et horaires maison de
+  processus-internes.md prioritaires) ; agent `chef-de-projet` cite ses seuils
+  maison (ex. seuil de blocage) sinon défauts signalés.
+
 ## 0.4.0 — 2026-07-06
 
 - Script de calcul `skills/detection-surcharge/scripts/charge_equipe.py`

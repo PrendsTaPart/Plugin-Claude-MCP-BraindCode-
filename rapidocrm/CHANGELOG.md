@@ -1,5 +1,15 @@
 # Changelog — plugin rapidocrm
 
+## 0.5.0 — 2026-07-06
+
+- Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement
+  dans les directives ; `directeur-commercial` : cadence de relance maison
+  (processus-internes.md) sinon défaut J+3/J+7/J+15 signalé ;
+  `coaching-pipeline` : seuil dormant et cadences maison ;
+  `devis-facture-relance` : escalade d'impayés maison sinon J+7/J+21/J+45 ;
+  `redaction-commerciale` : arguments depuis propositions-valeur.md,
+  objections/parades depuis concurrents.md, ton depuis ton-et-accroches.md.
+
 ## 0.4.0 — 2026-07-06
 
 - Script de calcul `skills/coaching-pipeline/scripts/funnel_metrics.py`

@@ -20,15 +20,24 @@ Au moindre doute sur un outil (paramètres pièges, formats, enums), consulter
 
 ## 1 bis. Base de connaissance entreprise (./rapido-kb/)
 
-- Si le répertoire de travail contient `./rapido-kb/` (signalé par le hook de
-  session), charger le(s) fichier(s) pertinent(s) AVANT de produire du contenu
-  ou des recommandations : `entreprise.md`, `produits-services.md`,
-  `propositions-valeur.md`, `cibles-personas.md`, `charte-graphique.md`,
-  `ton-et-accroches.md`, `processus-internes.md`, `concurrents.md`.
-- Priorité des sources : données MCP live > KB > références génériques du
-  plugin. Un `### À COMPLÉTER` dans la KB = donnée manquante, à demander.
-- La KB ne se modifie que via le skill `mise-a-jour-kb` ou par l'utilisateur ;
-  si elle est absente, proposer le skill `onboarding-entreprise`.
+Si `./rapido-kb/` existe dans le répertoire de travail (signalé par le hook de
+session), charger les fichiers pertinents AVANT de produire :
+- contenu marketing/social → `ton-et-accroches.md` + `charte-graphique.md` +
+  `propositions-valeur.md` + `cibles-personas.md` ;
+- emails commerciaux / devis → `propositions-valeur.md` + `cibles-personas.md` +
+  `processus-internes.md` (politique de remise, cadences) ;
+- analyses financières / carte → `processus-internes.md` (seuils maison
+  prioritaires sur les standards du secteur) ;
+- toute comparaison marché → `concurrents.md`.
+La KB PRIME sur les valeurs par défaut des skills. Si la KB est absente,
+utiliser les standards du secteur ET le signaler (« valeur par défaut — lancez
+l'onboarding pour personnaliser »), et proposer le skill `onboarding-entreprise`.
+
+Priorité des sources : données OPÉRATIONNELLES (prix, stocks, stats, pipeline)
+= MCP live d'abord ; identité de MARQUE (charte, ton, arguments) = KB d'abord
+(complétée et validée par le client), l'API servant de vérification — signaler
+tout écart. Un `### À COMPLÉTER` dans la KB = donnée manquante, à demander.
+La KB ne se modifie que via le skill `mise-a-jour-kb` ou par l'utilisateur.
 
 ## 2. Confirmation avant action destructrice ou irréversible
 

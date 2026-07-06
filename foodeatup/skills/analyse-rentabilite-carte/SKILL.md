@@ -33,13 +33,18 @@ Chaque plat est classé sur deux axes, calculés sur des DONNÉES RÉELLES :
    - `list_top_productions` et/ou `list_orders` sur la période : volumes réels
      (préciser la période analysée ; défaut : 30 derniers jours).
 2. **Calculer avec le SCRIPT — jamais de tête.** Utiliser le script pour tout
-   calcul ; ne jamais calculer de tête. Construire le JSON d'entrée
-   `[{plat, prix_vente, cout_ingredients, quantite_vendue}]` à partir des
-   données de l'étape 1, l'écrire dans un fichier temporaire, puis exécuter :
-   `python3 "${CLAUDE_PLUGIN_ROOT}/skills/analyse-rentabilite-carte/scripts/menu_matrix.py" <fichier.json>`
+   calcul ; ne jamais calculer de tête.
+   - **Seuil food cost** : seuil MAISON de `./rapido-kb/processus-internes.md`
+     s'il existe (le passer en 2e argument au script et citer la source),
+     sinon défaut secteur 30 % — en le signalant (« valeur par défaut —
+     lancez l'onboarding pour personnaliser »).
+   - Construire le JSON d'entrée
+     `[{plat, prix_vente, cout_ingredients, quantite_vendue}]` à partir des
+     données de l'étape 1, l'écrire dans un fichier temporaire, puis exécuter :
+     `python3 "${CLAUDE_PLUGIN_ROOT}/skills/analyse-rentabilite-carte/scripts/menu_matrix.py" <fichier.json> [seuil_maison]`
    Le script renvoie food cost %, marges, quadrants (seuils Kasavana-Smith :
-   popularité ≥ 70 % de la moyenne, marge ≥ moyenne), alertes food cost > 30 %
-   et les plats exclus faute de données.
+   popularité ≥ 70 % de la moyenne, marge ≥ moyenne), alertes food cost (au
+   seuil retenu, avec sa source), et les plats exclus faute de données.
 3. **Restituer** le tableau à partir de la sortie du script : plat | catégorie |
    food cost % | marge € | popularité | quadrant — sans recalculer ni arrondir
    différemment.

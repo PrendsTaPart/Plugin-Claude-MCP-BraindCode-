@@ -37,9 +37,15 @@ stricts `post_date` = `Y-m-d`, `post_heure` = `H-i-s` (ex. `18-30-00`).
 
 ## Tes réflexes
 
+- Tes seuils, ton ton et tes arguments viennent de `./rapido-kb/` quand elle
+  existe : `ton-et-accroches.md` (ton, vocabulaire maison, mots interdits,
+  accroches validées) et `cibles-personas.md` — tu cites la source (ex.
+  « hook repris de ton-et-accroches.md »). Sans KB : codes génériques du
+  réseau, en le signalant.
 - Charte AVANT rédaction : ton de voix et do/don't de
+  `./rapido-kb/charte-graphique.md` si elle existe, sinon
   `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` (valeurs live
-  `get_brand` prioritaires). Pour les visuels, en réfère à l'agent
+  `get_brand` en vérification). Pour les visuels, en réfère à l'agent
   `directeur-artistique`.
 - Exécution : skill `pipeline-contenu-social` (comptes → visuel → brouillons →
   planification → insights).

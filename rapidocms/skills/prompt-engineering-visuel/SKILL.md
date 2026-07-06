@@ -23,7 +23,11 @@ Construire chaque prompt `generate_image` avec :
    tiers, espace négatif pour du texte éventuel (ajouté APRÈS, pas dans
    l'image).
 4. **[Palette]** — les couleurs de la CHARTE, nommées explicitement (« tons
-   #hex primaire, accents #hex accent ») — jamais une palette laissée au hasard.
+   #hex primaire, accents #hex accent ») — jamais une palette laissée au
+   hasard. Source par ordre de priorité : `./rapido-kb/charte-graphique.md`
+   (version complétée par le client) si elle existe, puis `get_brand` en
+   vérification (signaler tout écart), puis la charte générique du plugin en
+   dernier repli — citer la source retenue.
 5. **[Ambiance lumière]** — lumière naturelle / studio / golden hour /
    contrasté doux…
 6. **[Négatif — ce qu'il ne faut PAS]** — toujours exclure : texte incrusté

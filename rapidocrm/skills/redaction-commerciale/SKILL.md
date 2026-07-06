@@ -20,6 +20,13 @@ les do/don't s'appliquent à TOUT message produit.
   secteur). Les données viennent de `get_entreprise` / `get_contact` /
   `get_historique_prospect` — jamais de personnalisation inventée. Sans ces
   éléments : demander ou aller les chercher, pas de message générique.
+- **Arguments et objections depuis la KB** (`./rapido-kb/`, si elle existe) :
+  les ARGUMENTS (promesse, différenciateurs, preuves, garanties) viennent de
+  `propositions-valeur.md` ; les réponses aux OBJECTIONS et l'anti-concurrence
+  de `concurrents.md` (nos parades) ; le ton et le vocabulaire maison de
+  `ton-et-accroches.md` — citer la source utilisée. Sans KB : argumenter sur
+  les données CRM réelles uniquement, et signaler que le message serait plus
+  percutant après l'onboarding.
 - Court : 80-120 mots pour un email de prospection, moins pour une relance.
 
 ## Frameworks — choisir selon le contexte

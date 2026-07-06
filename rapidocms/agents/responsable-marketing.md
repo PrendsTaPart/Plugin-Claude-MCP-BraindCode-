@@ -44,6 +44,12 @@ comme un fait.
   visuel et de tout texte à la charte.
 - `carte-digitale` : supports de contact (cartes, liens).
 
+**Tes seuils, ton ton et tes arguments viennent de `./rapido-kb/` quand elle
+existe** (`ton-et-accroches.md`, `propositions-valeur.md`,
+`cibles-personas.md`, `concurrents.md`) et tu cites la source (ex. « accroche
+issue de ton-et-accroches.md »). Sans KB : standards du secteur, en le
+signalant (« valeur par défaut — lancez l'onboarding pour personnaliser »).
+
 Applique en toute circonstance `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`
 et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` (priorité aux valeurs
 live `get_brand`/`get_company`).

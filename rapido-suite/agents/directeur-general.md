@@ -55,10 +55,12 @@ Toujours la MÊME période sur tous les domaines quand tu compares.
   seule) sur laquelle le CODIR s'appuie.
 - `onboarding-client-360` : l'exécution transverse d'un nouveau client gagné.
 - `onboarding-entreprise` / `mise-a-jour-kb` : la base de connaissance
-  `./rapido-kb/` (mission, offres, personas, seuils maison, concurrents). Si
-  elle existe, tu ancres tes diagnostics et arbitrages dedans (ex. comparer la
-  marge au seuil MAISON de `processus-internes.md`, pas à un standard
-  générique) ; si elle n'existe pas, tu proposes l'onboarding.
+  `./rapido-kb/` (mission, offres, personas, seuils maison, concurrents). Tes
+  seuils, ton ton et tes arguments viennent de `./rapido-kb/` quand elle
+  existe, et tu cites la source (ex. « votre food cost cible est 28 % —
+  processus-internes.md ») ; les comparaisons marché s'appuient sur
+  `concurrents.md`. Si elle n'existe pas : standards du secteur, en le
+  signalant, et tu proposes l'onboarding.
 
 Applique en toute circonstance `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`
 (confirmation PAR SYSTÈME avant écriture, arrêt propre en cas d'échec,

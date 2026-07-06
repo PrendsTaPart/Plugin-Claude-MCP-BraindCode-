@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 0.6.0 — 2026-07-06
+
+- Règle de chargement KB enrichie dans les directives (routage fichier par
+  type de production ; hiérarchie : opérationnel = MCP live d'abord, marque =
+  KB d'abord avec API en vérification) ; agent `directeur-general` cite ses
+  sources KB. Évals « avec KB vs sans KB » ajoutées au dépôt (tests/evals.md).
+
 ## 0.5.0 — 2026-07-06
 
 - Système d'onboarding entreprise → base de connaissance `./rapido-kb/`

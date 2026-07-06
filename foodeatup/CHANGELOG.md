@@ -1,5 +1,13 @@
 # Changelog — plugin foodeatup
 
+## 0.5.0 — 2026-07-06
+
+- Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement
+  dans les directives (la KB PRIME sur les défauts, sans KB = défaut signalé) ;
+  agent `chef-restaurateur` cite ses seuils maison (processus-internes.md) ;
+  `analyse-rentabilite-carte` passe le seuil food cost maison à
+  `menu_matrix.py` (2e argument, source du seuil dans la sortie).
+
 ## 0.4.0 — 2026-07-06
 
 - Script de calcul `skills/analyse-rentabilite-carte/scripts/menu_matrix.py`

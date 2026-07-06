@@ -1,24 +1,31 @@
 #!/usr/bin/env python3
 """Ingénierie de menu — matrice popularité × marge (stdlib uniquement).
 
-Entrée (fichier JSON en argument, ou stdin) :
+Usage :
+  menu_matrix.py [fichier.json] [seuil_food_cost_pct]
+  (entrée : fichier JSON en argument ou stdin ; le 2e argument optionnel
+   remplace le seuil d'alerte food cost — passer ici le SEUIL MAISON de
+   ./rapido-kb/processus-internes.md s'il existe)
+
+Entrée :
   [{"plat": "...", "prix_vente": 12.5, "cout_ingredients": 4.1,
     "quantite_vendue": 87}, ...]
   (prix en euros HT ; quantités sur la période analysée)
 
 Sortie (stdout, JSON) : food cost %, marge €, quadrant
-(Stars / Plow-horses / Puzzles / Dogs), recommandation par plat, seuils utilisés.
+(Stars / Plow-horses / Puzzles / Dogs), recommandation par plat, seuils utilisés
+(le champ "source_seuil_food_cost" indique maison ou défaut secteur).
 
 Seuils (Kasavana-Smith) :
   - popularité haute : quantite_vendue >= 70 % de la quantité moyenne ;
   - marge haute : marge unitaire >= marge unitaire moyenne.
-Alerte food cost si > 30 %.
+Alerte food cost si > seuil (défaut secteur : 30 %).
 """
 import json
 import sys
 
-SEUIL_POPULARITE = 0.70   # part de la quantité moyenne
-SEUIL_FOOD_COST = 30.0    # % d'alerte
+SEUIL_POPULARITE = 0.70          # part de la quantité moyenne
+SEUIL_FOOD_COST_DEFAUT = 30.0    # % d'alerte (défaut secteur)
 
 RECOMMANDATIONS = {
     "Stars": "Ne pas toucher : mettre en avant (carte, suggestion) et surveiller la constance.",
@@ -28,16 +35,29 @@ RECOMMANDATIONS = {
 }
 
 
-def lire_entree():
-    if len(sys.argv) > 1:
-        with open(sys.argv[1], encoding="utf-8") as f:
-            return json.load(f)
-    return json.load(sys.stdin)
+def lire_args():
+    """Sépare les arguments : fichier d'entrée éventuel + seuil food cost éventuel."""
+    fichier, seuil = None, None
+    for arg in sys.argv[1:]:
+        try:
+            seuil = float(arg)
+        except ValueError:
+            fichier = arg
+    return fichier, seuil
 
 
 def main():
+    fichier, seuil_maison = lire_args()
+    seuil_food_cost = seuil_maison if seuil_maison is not None else SEUIL_FOOD_COST_DEFAUT
+    if seuil_maison is not None and not (0 < seuil_maison < 100):
+        sys.stderr.write("Seuil food cost invalide (attendu : % entre 0 et 100).\n")
+        sys.exit(1)
     try:
-        plats = lire_entree()
+        if fichier:
+            with open(fichier, encoding="utf-8") as f:
+                plats = json.load(f)
+        else:
+            plats = json.load(sys.stdin)
     except Exception as e:
         sys.stderr.write(f"Entrée JSON invalide : {e}\n")
         sys.exit(1)
@@ -82,7 +102,7 @@ def main():
             "prix_vente": round(p["prix"], 2),
             "cout_ingredients": round(p["cout"], 2),
             "food_cost_pct": round(food_cost, 1),
-            "alerte_food_cost": food_cost > SEUIL_FOOD_COST,
+            "alerte_food_cost": food_cost > seuil_food_cost,
             "marge_unitaire_eur": round(marge, 2),
             "marge_totale_eur": round(marge * p["qte"], 2),
             "quantite_vendue": p["qte"],
@@ -98,7 +118,9 @@ def main():
             "quantite_moyenne": round(qte_moyenne, 1),
             "seuil_popularite": round(seuil_qte, 1),
             "marge_unitaire_moyenne_eur": round(marge_moyenne, 2),
-            "seuil_alerte_food_cost_pct": SEUIL_FOOD_COST,
+            "seuil_alerte_food_cost_pct": seuil_food_cost,
+            "source_seuil_food_cost": ("maison (rapido-kb)" if seuil_maison is not None
+                                       else "défaut secteur"),
         },
         "plats": resultats,
         "exclus": exclus,

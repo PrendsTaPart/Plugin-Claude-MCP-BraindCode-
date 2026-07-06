@@ -51,5 +51,8 @@ et, pour rédiger des emails de relance, `${CLAUDE_PLUGIN_ROOT}/reference/charte
   valides renvoyés par l'API en cas d'écart.
 - Confirmation explicite de l'utilisateur avant tout envoi de relance (contenu +
   destinataire), et avant de facturer un devis non `accepte`.
-- Escalade des relances : 1ʳᵉ relance courtoise à J+7 après échéance, 2ᵉ ferme à
-  J+21, mise en demeure à J+45 — proposer ce calendrier via `schedule_email`.
+- Escalade des relances d'impayés : cadence MAISON de
+  `./rapido-kb/processus-internes.md` si elle existe (citer la source), sinon
+  défaut — en le signalant : 1ʳᵉ relance courtoise à J+7 après échéance,
+  2ᵉ ferme à J+21, mise en demeure à J+45 — proposer ce calendrier via
+  `schedule_email`.

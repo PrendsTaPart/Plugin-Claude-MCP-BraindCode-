@@ -27,8 +27,9 @@ sur instantané, pas cohorte).
 1. **État du pipeline** — `get_pipeline` (deals par étape) et
    `get_stats_pipeline` / `get_stats_pipeline_global` (taux de conversion par
    étape, `periode` cohérente — défaut `month`).
-2. **Deals dormants** — deals sans mouvement depuis plus de X jours (défaut :
-   14 jours ; demander le seuil si l'utilisateur en a un). Vérifier l'historique
+2. **Deals dormants** — deals sans mouvement depuis plus de X jours. Seuil
+   MAISON de `./rapido-kb/processus-internes.md` s'il existe (citer la
+   source) ; sinon défaut 14 jours, en le signalant. Vérifier l'historique
    réel de chaque deal suspect avec `get_historique_prospect` — un deal n'est
    « dormant » que si son historique le confirme.
 3. **Devis expirant bientôt** — `list_devis` : statut `en_attente` dont la
@@ -54,7 +55,9 @@ sur instantané, pas cohorte).
 RÈGLE : chaque deal listé repart avec UNE prochaine action concrète et datée
 (relancer via `schedule_email`, poser un RDV via `create_rdv`, déplacer d'étape
 via `deplacer_prospect_etape`, clôturer via `close_opportunity`) — jamais un
-constat sans action.
+constat sans action. Les dates de relance suivent la cadence MAISON de
+`./rapido-kb/processus-internes.md` si elle existe (citer la source), sinon le
+défaut J+3 / J+7 / J+15 en le signalant.
 
 ## Garde-fous
 

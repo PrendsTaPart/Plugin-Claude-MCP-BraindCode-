@@ -1,5 +1,15 @@
 # Changelog — plugin rapidocms
 
+## 0.5.0 — 2026-07-06
+
+- Utilisation de la base de connaissance `./rapido-kb/` : règle de chargement
+  dans les directives ; `responsable-marketing`, `community-manager` et
+  `directeur-artistique` puisent ton, accroches et charte dans la KB (avec
+  citation de source) ; `prompt-engineering-visuel` : palette depuis
+  rapido-kb/charte-graphique.md en priorité (get_brand en vérification) ;
+  `calendrier-editorial` : piliers depuis ton-et-accroches.md et
+  propositions-valeur.md.
+
 ## 0.4.0 — 2026-07-06
 
 - Script de calcul `skills/analyse-performance-contenu/scripts/content_scores.py`

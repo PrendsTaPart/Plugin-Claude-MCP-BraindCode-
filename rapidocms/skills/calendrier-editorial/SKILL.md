@@ -15,9 +15,13 @@ tous les posts.
 
 1. **Objectif du mois** — notoriété / trafic / leads / ventes (le demander si
    absent — voir agent `responsable-marketing`). L'objectif pondère les piliers.
-2. **Définir 3-4 PILIERS de contenu** — ex. : coulisses/équipe, expertise/
-   conseils, offre/produit, preuve sociale/avis. Chaque post du mois appartient
-   à UN pilier ; proposer la répartition (ex. 40/30/20/10) selon l'objectif.
+2. **Définir 3-4 PILIERS de contenu** — d'abord depuis la KB si elle existe :
+   `./rapido-kb/ton-et-accroches.md` (accroches validées, sujets qui marchent)
+   et `propositions-valeur.md` (différenciateurs à mettre en scène) — citer la
+   source. Sinon, piliers génériques en le signalant : coulisses/équipe,
+   expertise/conseils, offre/produit, preuve sociale/avis. Chaque post du mois
+   appartient à UN pilier ; proposer la répartition (ex. 40/30/20/10) selon
+   l'objectif.
 3. **Répartir sur le mois PAR RÉSEAU** — vérifier les comptes disponibles
    (`list_connected_accounts`), fixer une fréquence TENABLE par réseau (mieux
    vaut 2 posts/semaine tenus que 5 abandonnés), utiliser les créneaux de

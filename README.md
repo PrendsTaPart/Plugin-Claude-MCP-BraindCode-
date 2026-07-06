@@ -45,8 +45,13 @@ markdown : entreprise, produits, propositions de valeur, personas, charte,
 ton & accroches, processus internes, concurrents) dans le **répertoire de
 travail du client** — jamais dans le plugin — donc versionnable dans son git,
 éditable à la main, et conservée lors des mises à jour du plugin. Tous les
-skills/agents la chargent au besoin (priorité : MCP live > KB > références du
-plugin) ; mise à jour via `mise-a-jour-kb`.
+skills/agents des 5 plugins la chargent au besoin et **elle PRIME sur les
+valeurs par défaut des skills** (seuils, cadences, arguments, piliers) ; sans
+KB, les skills utilisent les standards du secteur en le signalant. Ordre des
+sources : données opérationnelles (prix, stocks, stats) = MCP live d'abord ;
+identité de marque = `./rapido-kb/charte-graphique.md` (client, complété,
+PRIORITAIRE) > `get_brand` (vérification) > `reference/charte-graphique.md` du
+plugin (générique, FALLBACK). Mise à jour via `mise-a-jour-kb`.
 
 Chaque plugin embarque en plus un dossier `reference/` (directives communes
 d'utilisation des outils ; `pieges-outils.md`, tableau des pièges par outil MCP ;
