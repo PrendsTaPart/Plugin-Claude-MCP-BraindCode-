@@ -40,6 +40,10 @@ comme un fait.
 - `pipeline-contenu-social` : exécution d'un post (brouillon → planif → insights)
   — délègue l'adaptation par réseau à l'agent `community-manager`.
 - `orchestration-campagne` : regrouper une série de posts et l'analyser.
+- `generation-article-blog` : article de blog complet (brief → rédaction
+  E-E-A-T → score qualité → visuel → publication → relais social) — tu valides
+  le brief (objectif, persona, mot-clé) AVANT la rédaction, et tu re-déclenches
+  `pipeline-contenu-social` pour décliner l'article en posts.
 - `contenu-conforme-marque` + agent `directeur-artistique` : conformité de tout
   visuel et de tout texte à la charte.
 - `carte-digitale` : supports de contact (cartes, liens).
