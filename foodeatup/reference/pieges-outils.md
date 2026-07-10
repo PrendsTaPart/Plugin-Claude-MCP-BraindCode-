@@ -17,3 +17,6 @@ Consulter ce tableau au moindre doute avant d'appeler un outil.
 | `update_table_status` | `status` machine à états | Saut d'état (`occupied` → `free`) | Respecter free → reserved → occupied → cleaning → free (+ `blocked`) |
 | `create_reservation` | risque de double-booking | Créer sans vérifier le créneau | `reservation_availability` TOUJOURS avant |
 | `schedule_draft`-like / dates | dates `YYYY-MM-DD`, heures `HH:MM` | Formats libres (« demain 19h ») | Convertir en ISO avant l'appel |
+| `update_kds_item_status` | `item_id` = ligne de commande ; `status` 4 états | ID du plat au menu passé à la place de l'item ; oubli de `served` | Prendre l'ID de l'item dans la commande (`list_orders`/`get_order`) ; machine à états pending → in_progress → ready → served |
+| `record_cleaning_action` | `poste_nettoyage_id` | ID de la ZONE passé à la place du POSTE | Les postes sont dans `list_cleaning_zones` (chaque zone contient ses postes) ; `statut` défaut `complete` |
+| `create_employee_contract` | `type` enum ; `end_date` ; données sensibles | CDD sans date de fin ; salaire/heures devinés | `type` ∈ CDI, CDD, Extra, Apprentissage, Stage ; `end_date` pour un CDD ; confirmation niveau 2 avant l'appel (hook) |

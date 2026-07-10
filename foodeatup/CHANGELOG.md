@@ -1,5 +1,34 @@
 # Changelog — plugin foodeatup
 
+## 1.1.0 — 2026-07-10
+
+- Nouveau skill `coordination-cuisine` (pass / KDS) : `list_orders` (en
+  cours) → `update_kds_item_status` plat par plat (machine à états vérifiée
+  serveur : pending → in_progress → ready → **served** — 4 états, `item_id` =
+  ligne de commande, jamais l'ID du plat au menu) → quand tous les plats
+  d'une commande sont `ready`, PROPOSER `update_order_status` (`prete`).
+  Noms de plats dictés à l'oral résolus via `search_entities`
+  (si `ambiguous=true` → confirmation demandée).
+- `haccp-conformite-quotidienne` — volet nettoyage : `list_cleaning_zones`
+  (zones et postes = référentiel attendu), `record_cleaning_action` après
+  confirmation (`poste_nettoyage_id` = le POSTE, statut défaut `complete`),
+  `list_cleaning_actions` pour le registre. Le contrôle du jour couvre
+  désormais températures + réceptions + DLC + checklist hygiène + plan de
+  nettoyage ; KPI conformité étendu : actions faites / attendues.
+- `planning-equipe` — volet administratif : `create_employee_contract`
+  (confirmation niveau 2, données sensibles — type ∈ CDI, CDD, Extra,
+  Apprentissage, Stage ; `end_date` obligatoire pour un CDD),
+  `list_employee_contracts`, `list_employee_documents`. Croisement
+  `detection-surcharge` (rapidorh) : heures contractuelles désormais lues
+  depuis les contrats réels (`weekly_hours`), plus supposées ; salaires
+  jamais affichés dans une vue d'équipe.
+- Hook `garde-destructif` : matcher étendu à `create_employee_contract`
+  (testé fonctionnellement — décision `ask`) ; libellé élargi aux actions
+  sensibles.
+- `reference/pieges-outils.md` : 3 lignes (item_id KDS, poste vs zone de
+  nettoyage, CDD sans end_date).
+- `tests/evals.md` : 8 scénarios de déclenchement et de comportement.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.

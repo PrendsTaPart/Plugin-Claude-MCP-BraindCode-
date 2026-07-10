@@ -17,7 +17,7 @@ print(json.dumps({
         "hookEventName": "PreToolUse",
         "permissionDecision": "ask",
         "permissionDecisionReason": (
-            f"Action destructrice ou irréversible ({tool}) : "
+            f"Action destructrice, irréversible ou sensible ({tool}) : "
             "confirmation utilisateur requise (garde-fou du plugin foodeatup)."
         ),
     }

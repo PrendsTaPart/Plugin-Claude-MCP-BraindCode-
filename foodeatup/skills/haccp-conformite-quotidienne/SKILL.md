@@ -1,6 +1,6 @@
 ---
 name: haccp-conformite-quotidienne
-description: Utiliser quand l'utilisateur parle de relevé de température, HACCP, contrôle réception, étiquette DLC, checklist hygiène ou conformité du jour. Couvre la routine quotidienne de conformité sanitaire d'un restaurant.
+description: Utiliser quand l'utilisateur parle de relevé de température, HACCP, contrôle réception, étiquette DLC, checklist hygiène, plan de nettoyage ou conformité du jour. Couvre la routine quotidienne de conformité sanitaire d'un restaurant.
 ---
 
 # Conformité HACCP quotidienne
@@ -40,11 +40,30 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
    Fait/ouvert, Prêt à manger, Surgelé, Frais, Vente — défaut Frais —, `quantity`,
    `unit`, `storage_location`, `temperature`).
    - Le numéro de lot (`lot_number`) est auto-généré si absent : ne pas en inventer un.
+6. **Plan de nettoyage** — le contrôle du jour inclut désormais le nettoyage :
+   - `list_cleaning_zones` (`establishment_id`) : zones et leurs POSTES de
+     nettoyage — c'est le référentiel de ce qui est attendu ;
+   - pour chaque poste que l'utilisateur CONFIRME avoir nettoyé,
+     `record_cleaning_action` (`establishment_id`, `poste_nettoyage_id` — l'ID
+     du POSTE, pas de la zone ; `statut` défaut `complete`, `commentaires`
+     optionnel). Ne jamais enregistrer une action non confirmée ;
+   - `list_cleaning_actions` (`establishment_id`, `date_from`/`date_to`) : le
+     registre des actions réalisées, pour le contrôle et l'historique.
+
+## KPI conformité du jour
+
+Le contrôle du jour couvre désormais : températures + réceptions + DLC +
+checklist hygiène + plan de nettoyage. KPI étendu : **actions de nettoyage
+faites / attendues** (faites = `list_cleaning_actions` du jour ; attendues =
+postes de `list_cleaning_zones`) — l'annoncer avec les non-conformités.
 
 ## Garde-fous
 
-- Aucune valeur mesurée (température, réponse de checklist) ne doit être supposée.
-- Toute non-conformité détectée (température hors seuil, livraison `non_conforme`)
-  doit être signalée en fin de workflow avec une action corrective proposée.
+- Aucune valeur mesurée (température, réponse de checklist) ne doit être supposée ;
+  aucune action de nettoyage enregistrée sans confirmation explicite.
+- Toute non-conformité détectée (température hors seuil, livraison `non_conforme`,
+  poste de nettoyage non fait) doit être signalée en fin de workflow avec une
+  action corrective proposée.
 - Terminer par un récapitulatif : relevés faits, non-conformités, réceptions,
-  checklists validées, étiquettes créées.
+  checklists validées, étiquettes créées, actions de nettoyage enregistrées
+  (avec le ratio faites / attendues).
