@@ -1,9 +1,9 @@
 ---
 name: loop-engine-v2
-description: Utiliser quand l'utilisateur dit « lance R4/R5/R6/R7/R8 », « routine du lundi », « board mensuel », « sentinelle cash », ou veut installer/planifier ses routines. Moteur des routines Loop Engine - Sense → Plan → Act → Feed → Report, calculs délégués à catalogue-kpi, autonomie gouvernée.
+description: Utiliser quand l'utilisateur dit « lance R4/R5/R6/R7/R8/R9 », « routine du lundi », « board mensuel », « sentinelle cash », « épisode du jour », ou veut installer/planifier ses routines. Moteur des routines Loop Engine - Sense → Plan → Act → Feed → Report, calculs délégués à catalogue-kpi, autonomie gouvernée.
 ---
 
-# Loop Engine v2 — le moteur des routines R4-R8
+# Loop Engine v2 — le moteur des routines R4-R9
 
 Chaque routine est un fichier autonome dans `references/routines/`, avec un
 **bloc CONFIG interchangeable en tête** (pattern client-resellable : le même
@@ -23,6 +23,8 @@ routine a le droit de faire seule). Seuils : `./rapido-kb/` prime.
    - « R6 », « boucle growth », « expérience de la semaine » → `R6-GROWTH-LOOP.md`
    - « R7 », « sentinelle cash », « surveille ma trésorerie » → `R7-CASH-SENTINEL.md`
    - « R8 », « board mensuel », « pack investisseurs » → `R8-MONTHLY-BOARD.md`
+   - « R9 », « épisode du jour », « vidéo du jour », « video factory » →
+     `R9-VIDEO-FACTORY.md`
    Ambigu → demander laquelle (ou proposer la séquence hebdo R4→R5→R6).
 2. **Charger le fichier de routine** et appliquer sa CONFIG : les valeurs de
    `./rapido-kb/` (fuseau, seuils, canaux) écrasent les défauts du bloc.

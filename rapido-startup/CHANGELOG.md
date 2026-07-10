@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-startup
 
+## 1.7.0 — 2026-07-10
+
+- Nouvelle routine `R9-VIDEO-FACTORY` (references/routines/) : l'épisode
+  vidéo du jour — Sense (sujet du calendrier éditorial, marque cible +
+  logos depuis les assets, perfs des épisodes précédents), Plan (brief +
+  composition committée dans le DÉPÔT DE PRODUCTION — CONFIG
+  `depot_production`, défaut `PrendsTaPart/Video`), Act niveau 1
+  (fabrication déléguée à video-marketing ; RENDU payant et PUBLICATION =
+  niveau 3, jamais automatiques), Feed (journal + registre de série
+  videos-episodes.md), Report (chaîne brief → preview → rendu → publication
+  + perf J+7). Déclencheurs dans le SKILL.md : « lance R9 »,
+  « épisode du jour », « vidéo du jour » ; autonomie.md : ligne R9 ;
+  évals mises à jour.
+- R4/R7 : source PRIMAIRE des dépenses = skill `gestion-depenses`
+  (rapidocrm 1.3.0) — complément resto inchangé.
+
 ## 1.6.1 — 2026-07-10
 
 - Correction documentaire (audit) : pieges-outils — ligne

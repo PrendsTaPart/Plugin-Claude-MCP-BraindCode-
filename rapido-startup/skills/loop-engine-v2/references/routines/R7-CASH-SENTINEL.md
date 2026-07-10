@@ -19,8 +19,9 @@ silence_si_vert: true              # au vert : journal seul, pas de message
    annoncé) + trésorerie bancaire si fournie (KB/CSV, datée).
 2. Encaissements attendus : factures `en_attente` (CRM), échéances sous 14 j.
 3. Retards : `list_factures` statut `en_retard` (montant, ancienneté).
-4. Sorties récentes : burn du mois glissant — dépenses via `list_depenses`
-   (CRM, `periode: "month"`, source unique des dépenses) − encaissements.
+4. Sorties récentes : burn du mois glissant — dépenses via le skill
+   `gestion-depenses` (plugin rapidocrm, SOURCE PRIMAIRE : `list_depenses`
+   `periode: "month"`) − encaissements.
 
 ## Plan (calculs via catalogue-kpi)
 

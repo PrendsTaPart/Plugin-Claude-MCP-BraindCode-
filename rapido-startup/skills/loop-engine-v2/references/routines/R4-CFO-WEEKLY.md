@@ -21,7 +21,9 @@ silence_si_vert: false
    `get_revenue_summary`, `list_factures` ; restaurant : `finance_summary`
    (establishment_id requis). MÊME période partout.
 2. Impayés : `list_factures` statut `en_retard` (+ `en_attente` > 30 j).
-3. Dépenses de la semaine : `list_depenses` (CRM) / `list_expenses` (FoodEatUp).
+3. Dépenses de la semaine — SOURCE PRIMAIRE : skill `gestion-depenses`
+   (plugin rapidocrm — `list_depenses`, chiffres cités avec période et
+   statut) ; complément resto : `list_expenses` (FoodEatUp).
 
 ## Plan (calculs via catalogue-kpi UNIQUEMENT)
 

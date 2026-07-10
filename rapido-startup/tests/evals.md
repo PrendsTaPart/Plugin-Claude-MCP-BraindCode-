@@ -117,6 +117,7 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
 | « Lance R6 » / « boucle growth » / « quelle expérience cette semaine ? » | R6-GROWTH-LOOP |
 | « Lance R7 » / « sentinelle cash » / « surveille ma trésorerie » | R7-CASH-SENTINEL |
 | « Lance R8 » / « board mensuel » / « prépare le pack investisseurs » | R8-MONTHLY-BOARD |
+| « Lance R9 » / « épisode du jour » / « vidéo du jour » | R9-VIDEO-FACTORY |
 | « Installe mes routines » | loop-engine-v2 (planification : calendrier + routines.md) |
 
 - ATTENDU : phases Sense → Plan → Act → Feed → Report dans l'ordre ; tous
@@ -128,7 +129,13 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
   R5/R8 n'écrivent qu'après confirmation avec récap des IDs ; écriture
   Stripe interdite en routine.
 - Frontière : « prépare le CODIR » → comite-de-direction (rapido-suite) ;
-  « board mensuel » → R8 (pack startup, réel vs prévisionnel).
+  « board mensuel » → R8 (pack startup, réel vs prévisionnel) ;
+  « fais-moi une vidéo » (hors routine) → video-marketing (rapidocms),
+  R9 = la CHAÎNE quotidienne d'épisodes.
+- ATTENDU R9 : composition/scénario committé dans le dépôt de production
+  (CONFIG `depot_production`, défaut PrendsTaPart/Video) ; preview soumise à
+  validation ; `render_video` (payant) et publication JAMAIS lancés par la
+  routine (niveau 3).
 
 ## Éval 9 — câblages 1.6.0 (utilitaires) + non-régression
 
