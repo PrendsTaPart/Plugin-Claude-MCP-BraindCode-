@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-lovable
 
+## 1.1.0 — 2026-07-10
+
+- Premier agent du plugin : `chef-produit-web` — cadre le brief AVANT de
+  construire (chaque message Lovable consomme des crédits), charge la
+  marque (sync-marque-lovable), route vers le bon skill, pilote par
+  itérations économes (plan_mode sur l'ambigu), valide preview + get_diff
+  avant tout déploiement (accord explicite). tests/evals.md créé.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.

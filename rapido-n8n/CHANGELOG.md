@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-n8n
 
+## 1.1.0 — 2026-07-10
+
+- Premier agent du plugin : `architecte-automatisations` — qualifie ce qui
+  mérite d'être automatisé (et dit quand NE PAS automatiser), réutilise
+  (recettes-metier, search_workflows) avant de construire, impose
+  validate_workflow avant création et test_workflow avant publication,
+  production sous confirmation (hook garde-production), surveille le parc
+  et décide réparer/pause/retirer. tests/evals.md créé.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.
