@@ -36,7 +36,9 @@ contenu visible (emails, SMS, newsletters).
      `template_id`) ;
    - SMS planifié → `schedule_sms` (`entreprise_id`, `date_envoi`) ;
    - Newsletter → `send_newsletter` (`entreprise_id` ; `cible` ; `date_envoi`
-     optionnelle = envoi immédiat si absente).
+     optionnelle = envoi immédiat si absente) — consulter d'abord
+     `list_newsletters` (`q`, `periode`, `statut`) : l'historique évite un
+     doublon d'envoi sur la même cible.
 
 ## Garde-fous
 

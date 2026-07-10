@@ -34,6 +34,9 @@ de repli si `get_brand` ne renvoie pas une valeur.
 
 La marque porte désormais ses ASSETS (schémas vérifiés serveur) :
 
+0. **Consulter la bibliothèque d'abord** — `list_all_files` (`search` par
+   mot-clé, `type` ∈ image, video, doc) : le logo est peut-être déjà uploadé —
+   ne pas créer de doublon.
 1. **Uploader les logos officiels** — `upload_file_tool` (`type: "image"`,
    `name` explicite ex. « logo principal — fond transparent », `file_url`
    publique). Privilégier les versions à FOND TRANSPARENT (PNG) : ce sont
@@ -52,6 +55,10 @@ La marque porte désormais ses ASSETS (schémas vérifiés serveur) :
 > (`video-marketing`) viennent DÉSORMAIS des assets de marque CMS — plus du
 > repo GitHub. Toute mise à jour de logo se fait donc ICI (add_asset), et le
 > kit vidéo la récupère automatiquement.
+
+> **Multi-marques** : créer/modifier/supprimer une MARQUE (couleurs, typo,
+> slogan, logo) = skill `gestion-marques` — ce skill-ci APPLIQUE la marque,
+> il ne la définit pas.
 
 ## Garde-fous
 

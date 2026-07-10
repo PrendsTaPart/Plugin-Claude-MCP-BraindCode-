@@ -58,6 +58,17 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
      optionnel). Ne jamais enregistrer une action non confirmée ;
    - `list_cleaning_actions` (`establishment_id`, `date_from`/`date_to`) : le
      registre des actions réalisées, pour le contrôle et l'historique.
+7. **Traçabilité** — le registre de traçabilité complète les étiquettes :
+   - `create_haccp_tracabilite` (`establishment_id` ; `type` simple |
+     complete — défaut simple ; `reference_type` ∈ ingredient, plat,
+     product, haccp + `reference_id` ; `lot`, `dlc` YYYY-MM-DD, `quantite`,
+     `remarques`) pour tracer un lot/produit ;
+   - `list_haccp_tracabilite` (`status` « complété » / « non complété ») :
+     signaler les enregistrements NON complétés — c'est un trou de
+     traçabilité en cas de contrôle ;
+   - `list_haccp_labels` (`status` ∈ created, printed, validated, used) :
+     le registre des étiquettes DLC émises (créées mais jamais imprimées =
+     à signaler).
 
 ## KPI conformité du jour
 

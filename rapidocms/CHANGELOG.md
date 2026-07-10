@@ -1,5 +1,23 @@
 # Changelog — plugin rapidocms
 
+## 1.3.0 — 2026-07-10 (vague post-audit — consolidé)
+
+- Nouveau skill `gestion-marques` (multi-marques, schémas vérifiés
+  serveur) : get_brand d'abord (anti-doublon), `create_brand` (requis
+  nom/langue/slogan ; couleurs hex séparées par virgules ; font_family =
+  enum web-safe ; logo URL publique), `edit_brand` (brand_id + champs qui
+  changent, avant/après confirmé), `delete_brand` (irréversible, hook
+  garde-destructif + confirmation). Frontière : les assets et l'application
+  de la charte restent dans contenu-conforme-marque.
+- Éditions unitaires câblées (fin des orphelins CMS — 43/43 outils cités) :
+  `edit_draft_tool` (pipeline-contenu-social — corriger avant planifier),
+  `edit_campagne` (orchestration-campagne), `edit_digital_card`
+  (carte-digitale), `list_all_files` (contenu-conforme-marque —
+  bibliothèque média anti-doublon).
+- pipeline-contenu-social : convention post TEXTE (vérifiée par appel réel)
+  inscrite dans le workflow.
+- tests/evals.md : gestion-marques + non-régression (2 scénarios existants).
+
 ## 1.2.1 — 2026-07-10
 
 - Correction documentaire (audit) : piège `create_draft_tool` — les champs

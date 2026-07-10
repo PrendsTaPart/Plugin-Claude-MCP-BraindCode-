@@ -32,7 +32,9 @@ description: Utiliser quand l'utilisateur veut planifier une production, consult
    réappro-fournisseurs avant la date de production.
 3. **Surveiller les alertes** — `list_production_alerts` (`establishment_id`,
    `days` horizon en jours, défaut 7) : ingrédients manquants pour les productions
-   planifiées à venir.
+   planifiées à venir. Vue d'inventaire COMPLÈTE : `list_stocks`
+   (`establishment_id` — tous les articles) ; les seuls articles sous seuil :
+   `list_low_stocks` (réassort : skill `reappro-fournisseurs`).
 4. **Valider la production réalisée** — `validate_production` (`establishment_id`,
    `production_id`, `produced_quantity` = quantité RÉELLEMENT produite,
    `temperature_log` optionnel pour la traçabilité HACCP, `notes`).

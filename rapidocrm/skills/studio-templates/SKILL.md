@@ -44,6 +44,9 @@ la transmettre à l'utilisateur.
    `description`). Transmettre l'URL d'édition retournée.
 6. **Boucler** — le template est réutilisable par les autres skills :
    newsletters (`communication-client`), campagnes (`campagne-marketing`).
+   Retrouver l'existant : `list_editor_templates` (`q`, `type` ∈ newsletter,
+   site_web, landing_page, carte_visite, email_marketing, brochure) — URLs
+   d'édition directes renvoyées ; consulter AVANT de créer un doublon.
 
 ## Garde-fous
 

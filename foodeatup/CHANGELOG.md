@@ -1,5 +1,28 @@
 # Changelog — plugin foodeatup
 
+## 1.4.0 — 2026-07-10 (vague post-audit — consolidé)
+
+- Derniers clusters fonctionnels câblés (schémas vérifiés serveur) :
+  - haccp-conformite-quotidienne étape 7 — TRAÇABILITÉ :
+    `create_haccp_tracabilite` (type simple|complete, reference_type
+    ingredient|plat|product|haccp), `list_haccp_tracabilite` (les « non
+    complété » = trou de traçabilité signalé), `list_haccp_labels`
+    (registre DLC, statuts created|printed|validated|used) ;
+  - gestion-commandes — DEVIS ET FACTURES : `create_quote` (totaux et
+    acompte auto-calculés), `list_quotes`/`get_quote`,
+    `update_quote_status` (brouillon → envoye → accepte/refuse ; expire),
+    `update_invoice_status` (enum élargi, transitions DGFiP validées PAR
+    LE SERVEUR — tenter et relayer l'erreur) ;
+  - production-stock : `list_stocks` (inventaire complet) ;
+    reappro-fournisseurs : `list_deliveries` (en_attente|reçue|annulee) et
+    `create_expense`/`get_expense` (dépense fournisseur enregistrée après
+    confirmation, totaux auto) ;
+  - planning-equipe : `update_employee_schedule` (⚠️ REMPLACE tout le
+    planning type — hook garde-destructif étendu, testé) et `assign_task`
+    (priorité basse|normale|haute|urgente).
+- tests/evals.md : scénarios 1.4.0 + non-régression déjà en place
+  (E10/E11).
+
 ## 1.3.0 — 2026-07-10
 
 - `search_entities` câblé dans TOUT le plugin :

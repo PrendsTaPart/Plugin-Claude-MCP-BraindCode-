@@ -15,7 +15,9 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
 1. **Créer la campagne** — `create_campagne` (`name`, `description` requis ;
    réseaux ciblés via les drapeaux `facebook`, `instagram`, `linkedin`, `tiktok`
    à 1 ou 0). N'activer que les réseaux où un compte est réellement connecté
-   (vérifier avec `list_connected_accounts`).
+   (vérifier avec `list_connected_accounts`). Ajuster une campagne existante :
+   `edit_campagne` (`campagne_id` + les seuls champs à changer — nom,
+   description, drapeaux réseaux) plutôt que supprimer/recréer.
 2. **Rattacher les posts** — pour chaque post de la série :
    `add_post_campagne` (`campagne_id`, `post_id`). Les posts sont créés au
    préalable via le skill pipeline-contenu-social (`create_draft_tool` puis

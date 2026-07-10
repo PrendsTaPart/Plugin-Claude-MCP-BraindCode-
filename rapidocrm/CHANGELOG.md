@@ -1,5 +1,24 @@
 # Changelog — plugin rapidocrm
 
+## 1.2.0 — 2026-07-10 (vague post-audit — consolidé)
+
+- performance-commerciale (schémas vérifiés serveur) :
+  - indicateurs complétés : `get_interaction_stats` (volume d'interactions),
+    `list_depenses` (coûts) et SAISIE d'une dépense dictée `create_depense`
+    (`entreprise_id` + `total_ht` requis, TTC/TVA auto-calculés,
+    mode_paiement enum) après confirmation ;
+  - section « Cycle de vie d'un commercial » (sur demande explicite
+    uniquement) : `create_commercial` (nom/prenom/email + objectifs
+    mensuels), `update_commercial_profil`, `delete_commercial` (`confirm:
+    true` EXIGÉ par le serveur + hook garde-destructif) — proposer d'abord
+    `set_commercial_status` inactif qui préserve l'historique.
+- communication-client : `list_newsletters` consulté avant
+  `send_newsletter` (anti-doublon d'envoi).
+- contrats-clients : `update_contrat_template` (les contrats déjà émis ne
+  changent pas) ; studio-templates : `list_editor_templates` (URLs
+  d'édition directes, consulter avant de créer un doublon).
+- tests/evals.md : non-régression (2 scénarios existants).
+
 ## 1.1.2 — 2026-07-10
 
 - `animation-client` aligné sur la spécification détaillée (le skill

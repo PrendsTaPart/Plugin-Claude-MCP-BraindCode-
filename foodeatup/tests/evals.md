@@ -1,8 +1,34 @@
-# Évals — plugin foodeatup (1.3.0)
+# Évals — plugin foodeatup (1.4.0)
 
 Scénarios de déclenchement et de comportement. À rejouer manuellement (ou
 via un futur harnais) : la phrase utilisateur doit router vers le skill
 attendu et le comportement décrit doit être observé.
+
+## Ajouts 1.4.0 — derniers clusters (traçabilité, devis, planning type)
+
+### E15 — Traçabilité HACCP
+
+- **Phrase** : « Trace le lot de saumon reçu ce matin. »
+- **Attendu** : `haccp-conformite-quotidienne` (étape 7) —
+  `create_haccp_tracabilite` (`reference_type: "ingredient"` +
+  `reference_id` résolu via `search_entities`, `lot`, `dlc`) ; les
+  enregistrements « non complété » de `list_haccp_tracabilite` sont
+  signalés comme trous de traçabilité.
+
+### E16 — Devis restaurant
+
+- **Phrase** : « Fais un devis pour le groupe de 30 personnes de samedi. »
+- **Attendu** : `gestion-commandes` § Devis — `create_quote` (items
+  name/quantity/unit_price ; totaux et acompte AUTO-CALCULÉS — jamais de
+  tête), statuts avancés via `update_quote_status` (enum strict) ; on ne
+  facture que sur devis `accepte`.
+
+### E17 — Planning type = remplacement total
+
+- **Phrase** : « Mets Karim en 35 h : lundi-vendredi 10 h-18 h. »
+- **Attendu** : `update_employee_schedule` — ⚠️ l'appel REMPLACE tout le
+  planning type : l'ancien et le nouveau sont récapitulés, confirmation
+  obligatoire, hook garde-destructif en filet (testé stdin → ask).
 
 ## Ajouts 1.3.0 — résolution des noms (search_entities, règle § 1 ter)
 

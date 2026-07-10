@@ -27,12 +27,21 @@ description: Utiliser quand l'utilisateur parle de stock bas, de commande fourni
    `items` = tableau `{ingredient_id, quantity, unit}`, `note` optionnelle).
    Faire valider le contenu (articles + quantités) par l'utilisateur AVANT l'appel :
    une commande engage un achat.
-4. **À réception de la livraison** :
+4. **Suivre les livraisons attendues** — `list_deliveries`
+   (`establishment_id`, `status` ∈ en_attente, reçue, annulee) : ce qui doit
+   arriver, ce qui est arrivé, ce qui a été annulé.
+5. **À réception de la livraison** :
    a. **Contrôle HACCP** — `create_haccp_reception` (`establishment_id`,
       `date_controle`, `heure_controle`, `etat_livraison` = `conforme` |
       `non_conforme`, avec `non_conformites` si non conforme,
       `temperature_produits_frais` et `reference_bl` si connus).
-   b. **Mise à jour du stock** — `adjust_stock` (`establishment_id`,
+   b. **Enregistrer la dépense** — `create_expense` (`establishment_id`,
+      `items` = `[{name, quantity, unit_price ; tax_rate}]`, `supplier_id`,
+      `supplier_invoice_reference`, `status` ∈ payee, en_attente, decline —
+      défaut en_attente ; totaux auto-calculés) APRÈS confirmation : une
+      dépense enregistre de l'argent sorti. Détail : `get_expense`
+      (`expense_id`).
+   c. **Mise à jour du stock** — `adjust_stock` (`establishment_id`,
       `establishment_product_id` = champ `id` retourné par `list_products`,
       `quantity`, `mode` = `increment` pour AJOUTER la quantité reçue — ne pas
       utiliser `set` qui remplace la valeur, sauf inventaire complet).
