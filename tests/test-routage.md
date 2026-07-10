@@ -107,6 +107,21 @@ que les descriptions déclenchent réellement.
 | X3 | « Lance une campagne Meta à 80 €/jour » | `lancement-campagne-meta` (tout en PAUSED) ; hooks : `plafond-budget` REFUSE (80 > 50 €/j par défaut, sauf plafond maison dans rapido-kb/processus-internes.md) et `garde-argent-reel` force la confirmation sur ads_activate_entity. La phrase A1 à 50 €/j passe le plafond (= limite, pas au-delà) mais garde l'ask à l'activation | Hooks testés fonctionnellement sur stdin par `scripts/tester-skills.py` (deny 9 999 €, allow 10 €, ask activation) |
 | X4 | « Supprime le client Martin » / « Repasse la facture F-12 en brouillon » | Aucun skill dédié (voulu : appel outil direct) ; hooks `garde-destructif` → ask sur tout delete_*, et deny DGFiP sur update_invoice_status statut=brouillon | Testés sur stdin par `scripts/tester-skills.py` (ask delete_x ; deny brouillon ; ask payee) |
 
+## Cluster marques — `gestion-marques` / `gestionnaire-marques` (ajout 2026-07-10)
+
+| # | Phrase | Skill/agent attendu | Descriptions qui matchent | Verdict |
+|---|---|---|---|---|
+| B1 | « Crée la marque FoodEatUp » | `gestion-marques` → `create_brand` | gestion-marques (« créer ou modifier une marque ») | OK — déclencheur verbatim ; couleurs depuis la charte, `font_family` via l'ENUM, récap niveau 2 |
+| B2 | « Ajoute ce logo transparent à ma marque » | `gestion-marques` → `upload_file_tool` + `add_asset` | gestion-marques (« ajouter un logo ou un asset de marque ») | OK — nommage `"<Marque> — logo — fond transparent"` |
+| B3 | « Change les couleurs de la marque BraindCode » | `gestion-marques` → `edit_brand` | gestion-marques (« créer ou modifier une marque… la charte d'une de ses marques ») | OK — récap niveau 2 avant appel |
+| B4 | « Supprime la marque PronoClip » | `gestion-marques` → `delete_brand` | gestion-marques + hook `garde-destructif` | OK — garde-destructif : nom exact retapé (motif `delete_.*`) |
+| B5 | « Génère le post d'annonce » (≥ 2 marques) | agent `gestionnaire-marques` (marque cible d'abord) | gestionnaire-marques (« refuse d'avancer sans marque cible identifiée ») | OK — DEMANDE la marque avant `pipeline-contenu-social` ; pas de défaut silencieux |
+| B6 | « C'est quoi la charte de RapidoSoftware ? » | `gestion-marques` → `get_brand` | gestion-marques (« parle de la charte d'une de ses marques ») | OK — coexiste avec `contenu-conforme-marque` (qui IMPOSE la charte en génération) sans conflit |
+
+Contre-exemples (ne doivent PAS router vers gestion-marques) : « Planifie mes posts du mois »
+→ `calendrier-editorial` ; « Écris un article SEO » → `generation-article-blog` ; « Vérifie ce
+texte contre la voix de marque » → `brand-review` (revue de contenu, pas gestion d'identité).
+
 ## Correctifs de descriptions appliqués (validés le 2026-07-06)
 
 1. `rapidocms/skills/prompt-engineering-visuel` — ajout : « Pour un visuel

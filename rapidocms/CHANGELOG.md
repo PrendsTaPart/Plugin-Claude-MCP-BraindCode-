@@ -1,5 +1,24 @@
 # Changelog — plugin rapidocms
 
+## 1.3.0 — 2026-07-10
+
+- Nouveau skill `gestion-marques` (cluster marques) : `create_brand` / `edit_brand` /
+  `delete_brand` / `add_asset` / `remove_asset`, câblé sur le schéma live (introspection).
+  - `create_brand` requis `nom`/`langue`/`slogan` ; couleurs hex depuis la charte (ordre de
+    priorité KB → `get_brand` → repli), jamais inventées ; `font_family` = ENUM web-safe
+    (choix expliqué à l'utilisateur) ; `logo` = URL publique (via `upload_file_tool` d'abord).
+  - Garde-fous : multi-marques sans défaut silencieux, écriture marque = confirmation niveau 2,
+    `delete_brand` = nom exact retapé (hook garde-destructif en filet), convention d'asset
+    `"<Marque> — <type> — <variante>"`.
+- Nouvel agent `gestionnaire-marques` : gardien de la cohérence multi-enseignes (refuse un
+  contenu sans marque cible, vérifie couleurs/ton/logo avant publication, propose la création
+  de la marque manquante). Complémentaire de `directeur-artistique` (conformité visuelle).
+- Intégrations : `contenu-conforme-marque` (étape 0 résout la marque cible + lit les assets et
+  renvoie le cycle de vie marque à `gestion-marques`), `prompts-visuels-pro` et `video-marketing`
+  (logos = assets de marque, plus de repo GitHub).
+- `plugin.json` : version 1.3.0, agent `gestionnaire-marques` ajouté à la description.
+- Tests de routage ajoutés (`tests/test-routage.md`) : création, ambiguïté multi-marques, destructif.
+
 ## 1.2.1 — 2026-07-10
 
 - Correction documentaire (audit) : piège `create_draft_tool` — les champs

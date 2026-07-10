@@ -18,8 +18,10 @@ positif/négatif déjà validé sert de base.
 Ordre de priorité : `./rapido-kb/charte-graphique.md` → `get_brand` (couleurs
 hex, logo, typos) + `get_company` en vérification (signaler tout écart) →
 `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` en repli. Citer la
-source. Le logo réel s'ajoute TOUJOURS en post-production : jamais demandé au
-générateur.
+source. Le logo réel s'ajoute TOUJOURS en post-production, **depuis les assets de
+la marque** (gérés par `gestion-marques` ; `list_all_files` search
+`"<Marque> — logo"` → URL publique) : jamais demandé au générateur, jamais tiré
+d'un repo GitHub.
 
 ## Prompt négatif — base commune
 
