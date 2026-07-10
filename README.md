@@ -11,6 +11,27 @@ entreprise de A à Z.
 ![Skills](https://img.shields.io/badge/skills-119-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
+## À quoi ça sert
+
+Vous utilisez FoodEatUp, RapidoCRM, RapidoCMS ou RapidoRh ? Cette
+marketplace transforme Claude Code en **équipe de pilotage qui parle à vos
+systèmes** : vous dites « mon briefing du matin », « relance mes factures en
+retard », « prépare les posts de la semaine », « qui est surchargé dans
+l'équipe ? », « lance ma sentinelle trésorerie » — et les skills exécutent
+les bons appels sur VOS comptes, avec des garde-fous déterministes
+(confirmation avant tout ce qui est destructif, payant ou visible par vos
+clients ; jamais de donnée inventée ; calculs par scripts, jamais de tête).
+
+Concrètement, chaque plugin apporte :
+- des **skills** (workflows métier prêts à l'emploi, déclenchés par vos
+  phrases naturelles),
+- des **agents** (personas experts : chef-restaurateur, directeur
+  artistique, CFO virtuel, architecte d'automatisations…),
+- des **hooks** (garde-fous testés qui s'exécutent indépendamment du
+  modèle),
+- une personnalisation par **votre base de connaissance `./rapido-kb/`**
+  (vos seuils, votre charte, vos personas — jamais stockés dans ce dépôt).
+
 ## Les plugins
 
 Chiffres lus depuis les fichiers du dépôt : version dans
@@ -45,49 +66,82 @@ jour) — et l'audit de vérité clos : 100 % des outils des 3 serveurs Rapido
 couverts ou ignorés volontairement avec raison
 (`reference/audit-tools-2026-07-10.md`).
 
-## Démarrage rapide
+## Installation (5 minutes)
 
-```
-/plugin marketplace add <org>/rapido-plugins
-/plugin install rapido-suite@rapido
-/reload-plugins
-```
+1. **Installer Claude Code** (CLI, desktop ou web) —
+   https://code.claude.com/docs
+2. **Ajouter la marketplace** (dans une session Claude Code) :
+   ```
+   /plugin marketplace add PrendsTaPart/Plugin-Claude-MCP-BraindCode-
+   ```
+3. **Installer les plugins dont vous avez besoin** (`@rapido` = le nom de
+   cette marketplace) :
+   ```
+   /plugin install rapido-suite@rapido        ← recommandé en premier (onboarding + pilotage)
+   /plugin install foodeatup@rapido           ← si vous gérez un restaurant
+   /plugin install rapidocrm@rapido           ← ventes, devis, factures, campagnes
+   /plugin install rapidocms@rapido           ← réseaux sociaux, visuels, marques
+   ```
+   …puis rapidorh, rapido-direction, rapido-startup, rapido-canva,
+   rapido-lovable, rapido-meta-ads, rapido-n8n selon vos usages (tableau
+   ci-dessus).
+4. **Recharger** : `/reload-plugins` (ou relancer Claude Code).
 
-Remplacer `<org>` par l'organisation GitHub qui héberge ce dépôt, puis
-installer les plugins dont vous avez besoin (`/plugin install <nom>@rapido`).
-Premier lancement recommandé : « apprends à connaître mon entreprise » —
-l'onboarding (rapido-suite) construit `./rapido-kb/`, la base de connaissance
-qui personnalise tous les plugins.
+Test en local depuis un clone : `/plugin marketplace add ./<dossier-du-clone>`
+depuis le dossier parent, puis les mêmes `install`.
 
-**Kit de démarrage — [`rapido-kb-template/`](rapido-kb-template/)** : le
-template vierge de la base de connaissance (8 fichiers à copier dans VOTRE
-répertoire de travail sous le nom `rapido-kb/`, puis à committer dans VOTRE
-git — jamais dans ce dépôt), accompagné du mégaprompt de démarrage
-(`PROMPT-CLAUDE-CODE-MASTER.md`), d'une bibliothèque de prompts testés par
-domaine (`PROMPTS-CLAUDE-CODE.md`) et d'un prompt de site vitrine Lovable
-(`PROMPT-LOVABLE-SITE.md`). Mode d'emploi : `rapido-kb-template/README.md`.
+## Connecter les serveurs MCP
 
-**Prérequis :**
+Chaque plugin déclare ses serveurs dans son `.mcp.json` — **vous vous
+connectez à VOS comptes**, rien n'est partagé :
 
-- **Claude Code** (CLI, desktop ou web) — https://code.claude.com/docs
-- **Comptes Rapido** : chaque utilisateur se connecte à SON compte FoodEatUp /
-  RapidoCRM / RapidoCMS / RapidoRh (URLs produit dans les `.mcp.json`,
-  authentification individuelle).
-- **`N8N_MCP_URL`** — seule variable d'environnement détectée dans le dépôt,
-  requise pour `rapido-n8n` et le volet automatisations de `rapido-direction` :
-  URL du serveur MCP de VOTRE instance n8n, à exporter avant de lancer
-  Claude Code (`export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`,
-  guide : `rapido-n8n/README-installation.md`). Sans elle, ces plugins
-  dégradent proprement.
-- **Comptes tiers selon les plugins** : Canva, Lovable, Meta Ads et
-  HyperFrames via leurs connecteurs ; Google (Gmail, Calendar, Drive) via
-  OAuth individuel au premier usage
-  (`rapido-direction/README-installation.md`).
-- `GITHUB_TOKEN` — uniquement si ce dépôt est hébergé en privé (mises à jour
-  automatiques de la marketplace).
+| Serveur | Comment se connecter |
+|---|---|
+| **FoodEatUp, RapidoCRM, RapidoCMS, RapidoRh** | Rien à configurer : à la première utilisation, Claude Code ouvre l'authentification du serveur — connectez-vous avec VOTRE compte Rapido. Vérifiez l'état avec `/mcp`. |
+| **Google (Gmail, Calendar, Drive)** — rapido-direction | OAuth individuel au premier usage (Gmail est volontairement « brouillons seulement » : rien ne part sans vous). Guide : `rapido-direction/README-installation.md`. |
+| **n8n** — rapido-n8n, rapido-direction, rapido-suite (optionnel) | Exportez l'URL MCP de VOTRE instance avant de lancer Claude Code : `export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`. Guide : `rapido-n8n/README-installation.md`. Sans elle, les volets n8n se sautent proprement. |
+| **Stripe** — rapido-startup | Connecteur officiel `https://mcp.stripe.com` (OAuth au premier usage). Lecture d'abord ; toute écriture est bloquée en routine et confirmée hors routine. |
+| **Canva, Lovable, Meta Ads, HyperFrames** | Connecteurs OAuth respectifs au premier usage (comptes Canva/Lovable/Meta/HeyGen). |
 
-Test en local avant tout push : `/plugin marketplace add ./rapido-plugins`
-depuis le dossier parent du clone, puis les mêmes `install`.
+**Règle générale** : un serveur optionnel non connecté ne casse rien — le
+skill saute le volet EN LE DISANT (dégradation propre). `/mcp` dans Claude
+Code montre l'état de chaque connexion.
+
+## Comment l'utiliser
+
+**Premier lancement — construisez votre base de connaissance** (recommandé) :
+
+> « Apprends à connaître mon entreprise »
+
+L'onboarding (rapido-suite) vous interviewe et construit `./rapido-kb/`
+dans VOTRE répertoire de travail : seuils maison, charte graphique, ton,
+personas, processus. Tous les plugins la lisent ensuite en priorité — c'est
+elle qui fait passer les skills du générique au sur-mesure. Kit de
+démarrage : [`rapido-kb-template/`](rapido-kb-template/) (8 fichiers
+vierges + mégaprompt `PROMPT-CLAUDE-CODE-MASTER.md` + bibliothèque de
+prompts testés `PROMPTS-CLAUDE-CODE.md`). Cette KB reste chez vous — jamais
+dans ce dépôt.
+
+**Ensuite, parlez naturellement.** Quelques phrases qui déclenchent les
+workflows (une par domaine) :
+
+| Vous dites… | Ce qui se passe |
+|---|---|
+| « Mon briefing du matin » | foodeatup : notifications, HACCP, salle temps réel, créneaux du midi, staffing, stocks — un écran, 3 priorités |
+| « Le tartare de la 12 est prêt » | coordination-cuisine : le plat avance sur le KDS, la commande est proposée au passage quand tout est prêt |
+| « Relance mes factures en retard » | rapidocrm : détection, relances RÉDIGÉES (envoi seulement après votre OK), traçage |
+| « Prépare les posts de la semaine » | rapidocms : calendrier éditorial, brouillons par réseau à votre ton, planification confirmée |
+| « Lance un sondage chez mes clients » | animation-client : modèles existants, confirmation (visible clients), résultats en 3 enseignements |
+| « Qui est surchargé dans l'équipe ? » | rapidorh : charge déclarée vs contractuelle, calculée par script, rééquilibrages proposés |
+| « Ma journée » | rapido-direction : emails + agenda triple + signaux business en UNE page, 3 priorités |
+| « Lance R7 » / « surveille ma trésorerie » | rapido-startup : sentinelle cash — runway calculé par script, alerte seulement, zéro écriture |
+| « Automatise l'envoi du récap hebdo » | rapido-n8n : workflow validé et testé AVANT publication, production sous confirmation |
+
+**Ce que les garde-fous vous garantissent** : les actions destructrices,
+payantes ou visibles par vos clients demandent TOUJOURS votre confirmation
+(hooks déterministes, testés — voir la section suivante) ; aucun chiffre
+n'est calculé « de tête » (scripts embarqués, formule affichée) ; aucune
+donnée n'est inventée (valeur manquante = question posée).
 
 ## Architecture d'un plugin
 
