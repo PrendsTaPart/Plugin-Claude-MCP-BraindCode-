@@ -6,7 +6,7 @@ Consulter ce tableau au moindre doute avant d'appeler un outil.
 |---|---|---|---|
 | `create_draft_tool` | `account_id` = `page_id`, `profile_id` ou `open_id` SELON le réseau | Mauvais identifiant de compte | Toujours le récupérer via `list_connected_accounts` (le `page_id` sert d'identifiant pour les pages) |
 | `create_draft_tool` | `media_source` | Autre valeur que `"biblio"` | `media_source` vaut TOUJOURS `"biblio"` |
-| `create_draft_tool` | tous les champs requis (même post texte) | `media_type`/`media_url`/`media_caption` omis sur un post texte | Renseigner tous les champs exigés par le schéma, même pour `post_type: "text"` |
+| `create_draft_tool` | `media_type`, `media_source`, `media_url`, `media_caption` REQUIS même quand `post_type: "text"` (vérifié par appel réel le 2026-07-10, brouillon jetable créé puis supprimé) | Champs `media_*` omis sur un post texte → schéma rejeté | Convention post TEXTE : `media_type: ""`, `media_url: ""`, `media_source: "biblio"`, et `media_caption` = LE TEXTE du post ; `social_type` ∈ linkedin, facebook, instagram, tiktok |
 | `schedule_draft_tool` | `post_date` = `Y-m-d`, `post_heure` = `H-i-s` | Heure en `HH:MM` ou `18:30:00` | Format à TIRETS pour l'heure : `18-30-00` |
 | `post_insights` | `post_ids` max 10 | 15 posts passés d'un coup | Découper en lots de 10 |
 | `ingishts_campagne` | orthographe du nom | « Corrigé » en `insights_campagne` → outil introuvable | Utiliser le nom EXACT du serveur : `ingishts_campagne` |

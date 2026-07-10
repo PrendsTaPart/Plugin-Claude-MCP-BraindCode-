@@ -52,9 +52,10 @@ Chaque fichier commence par `> Dernière mise à jour : [date] — source : [use
 
 Quand un bloc est validé, produire le document propre correspondant
 (one-pager vision, fiche persona, executive summary, pitch) puis :
-- **Bibliothèque CMS** : `upload_file_tool` (rapidocms — `type: "document"`,
-  `name` explicite ex. « Pitch — v2026-07 », `file_url`) pour qu'il serve aux
-  contenus et campagnes.
+- **Bibliothèque CMS** : `upload_file_tool` (rapidocms — `type: "doc"`, enum
+  réel vérifié serveur : image, video, doc — `name` explicite ex.
+  « Pitch — v2026-07 », `file_url`) pour qu'il serve aux contenus et
+  campagnes.
 - **Projets RH** : rattacher au projet concerné via RapidoRh —
   `create-project-link-tool` (URL du document uploadé) pour que l'équipe le
   trouve depuis son Kanban. Vérifier le projet cible avec

@@ -140,8 +140,9 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__test__delete_x", "tool_input": {}}, "ask"),
     ],
     "anti-donnee-inventee.py": [
-        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 150}}, "deny"),
-        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4}}, "allow"),
+        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 150, "equipment_id": 12}}, "deny"),
+        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4, "equipment_id": 12}}, "allow"),
+        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4}}, "deny"),
     ],
     "garde-argent-reel.py": [
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity", "tool_input": {}}, "ask"),
@@ -170,6 +171,12 @@ TESTS_HOOKS_EXTRAS = {
     ("rapido-suite", "garde-destructif.py"): [
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",
           "tool_input": {"statut": "brouillon"}}, "deny"),
+    ],
+    # delete_prompt est attrapé par le motif delete_.* du matcher rapidocms —
+    # test explicite pour figer cette couverture (audit 2026-07-10).
+    ("rapidocms", "garde-destructif.py"): [
+        ({"tool_name": "mcp__rapidocms__delete_prompt",
+          "tool_input": {"prompt_id": 1}}, "ask"),
     ],
 }
 

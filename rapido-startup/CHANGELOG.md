@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-startup
 
+## 1.6.1 — 2026-07-10
+
+- Correction documentaire (audit) : pieges-outils — ligne
+  `update_invoice_status` (FoodEatUp) : enum élargi vérifié serveur,
+  transitions DGFiP validées PAR LE SERVEUR (ne pas pré-filtrer, tenter et
+  relayer l'erreur ; hook garde-destructif en confirmation).
+
 ## 1.6.0 — 2026-07-10
 
 - Routines Loop Engine — câblage des utilitaires (schémas vérifiés

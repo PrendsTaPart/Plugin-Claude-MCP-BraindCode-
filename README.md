@@ -20,17 +20,17 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.2.0 | 15 | 2 | foodeatup | — |
-| `rapidocrm` | 1.1.0 | 20 | 2 | rapidocrm | — |
-| `rapidocms` | 1.2.0 | 18 | 4 | rapidocms, hyperframes | — |
+| `foodeatup` | 1.2.1 | 15 | 2 | foodeatup | — |
+| `rapidocrm` | 1.1.1 | 20 | 2 | rapidocrm | — |
+| `rapidocms` | 1.2.1 | 18 | 4 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
-| `rapido-suite` | 1.0.0 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |
+| `rapido-suite` | 1.0.1 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |
 | `rapido-canva` | 1.0.0 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.0.0 | 8 | 0 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.0 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
 | `rapido-n8n` | 1.0.0 | 4 | 0 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
-| `rapido-startup` | 1.6.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
+| `rapido-startup` | 1.6.1 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 
 **Total : 11 plugins, 117 skills, 16 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines

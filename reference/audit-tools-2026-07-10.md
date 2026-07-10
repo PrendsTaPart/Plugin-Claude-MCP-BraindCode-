@@ -103,10 +103,10 @@ main AVANT écriture.
 
 | Outil | Schéma LIVE (2026-07-10) | Ce que dit le dépôt | Verdict |
 |---|---|---|---|
-| `update_invoice_status` (FoodEatUp) | **CHANGÉ** — `status` ENUM élargi : `brouillon, en_attente, envoyee, acceptee, refusee, litige, payee, annulee` ; le serveur valide lui-même les transitions (DGFiP) | Références FoodEatUp en retard d'une version | ⚠️ ÉCART DOC toujours ouvert (arbitrage attendu) |
-| `add_temperature` (FoodEatUp) | `equipment_id` REQUIS | Skills HACCP et hook ne nomment que `temperature` | ⚠️ ÉCART partiellement résolu : `search_entities` câblé (coordination-cuisine) mais la mention `equipment_id` manque encore dans les références HACCP |
-| `create_draft_tool` (CMS) | `media_type/media_source/media_url/media_caption` requis MÊME en `post_type: text` | Piège non documenté dans pieges-outils | ⚠️ toujours ouvert (arbitrage attendu) |
-| `upload_file_tool` (CMS) | `type` ∈ `image, video, doc` | dossier-startup-360 écrit `type: "document"` | ❌ ÉCART CONNU toujours ouvert (signalé le 06/07) |
+| `update_invoice_status` (FoodEatUp) | **CHANGÉ** — `status` ENUM élargi : `brouillon, en_attente, envoyee, acceptee, refusee, litige, payee, annulee` ; le serveur valide lui-même les transitions (DGFiP) | pieges-outils (foodeatup, rapido-suite, rapido-startup) + devis-facture-relance à jour : ne pas pré-filtrer, tenter et relayer l'erreur serveur ; hook en confirmation | ✅ **CORRIGÉ le 2026-07-10** |
+| `add_temperature` (FoodEatUp) | `equipment_id` REQUIS | haccp-conformite-quotidienne + pieges-outils : equipment_id REQUIS, résolu via `search_entities` (jamais deviné) ; hook anti-donnee-inventee refuse sans equipment_id (testé) | ✅ **CORRIGÉ le 2026-07-10** |
+| `create_draft_tool` (CMS) | `media_type/media_source/media_url/media_caption` requis MÊME en `post_type: text` | pieges-outils rapidocms : convention post texte VÉRIFIÉE PAR APPEL RÉEL (brouillon jetable créé puis supprimé) — `media_type: ""`, `media_url: ""`, `media_source: "biblio"`, `media_caption` = texte du post | ✅ **CORRIGÉ le 2026-07-10** |
+| `upload_file_tool` (CMS) | `type` ∈ `image, video, doc` | dossier-startup-360 corrigé : `type: "doc"` (aucune autre occurrence de `document` comme valeur de type dans le dépôt) | ✅ **CORRIGÉ le 2026-07-10** (était ouvert depuis le 06/07) |
 | `reservation_availability` (FoodEatUp) | teste UN créneau (`date`, `time` HH:MM, `party_size` requis) — pas de liste des résas du jour | briefing-du-jour v1.2.0 le documente ainsi ✓ (sondage créneau par créneau, `list_reservations` conservé pour les couverts/notes) | ✅ conforme |
 | `list_notifications` (FoodEatUp) | `establishment_id` seul — PAS de filtre « non lues » serveur | briefing-du-jour v1.2.0 : filtrage côté réponse, documenté ✓ | ✅ conforme |
 | `create_notification` (FoodEatUp) | `title` + `message` requis, `type` ∈ info/warning/danger/success (défaut info) | R4/R7 + autonomie.md (canal d'alerte, danger/warning) ✓ | ✅ conforme |
@@ -139,11 +139,14 @@ main AVANT écriture.
 
 ## Recommandations (à arbitrer)
 
-1. **Corrections documentaires toujours ouvertes** (inchangées depuis la
-   v1) : enum élargi + validation DGFiP d'`update_invoice_status` FoodEatUp ;
-   `equipment_id` requis d'`add_temperature` dans les références HACCP ;
-   piège `media_*` de `create_draft_tool` ; `type: "document"` → `doc` dans
-   dossier-startup-360.
+1. **Corrections documentaires : les 4 sont FAITES (2026-07-10)** — enum
+   élargi + validation DGFiP d'`update_invoice_status` ; `equipment_id`
+   requis d'`add_temperature` (hook étendu) ; piège `media_*` de
+   `create_draft_tool` (convention vérifiée par appel réel) ;
+   `type: "document"` → `doc` dans dossier-startup-360. Bonus :
+   `delete_prompt` explicitement couvert par le hook garde-destructif
+   rapidocms (attrapé par le motif `delete_.*`, test figé dans
+   tester-skills.py).
 2. **Arbitrage des 54 orphelins** selon les tableaux (a) : ~23 « couvrir »
    (petites extensions, souvent une ligne) et ~31 « ignorer volontairement »
    (CRUD unitaires atteignables à la demande directe, paramétrage

@@ -16,10 +16,14 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
 ## Workflow
 
 1. **Relevés de température** — pour chaque équipement (frigo, congélateur…), appeler
-   `add_temperature` (`establishment_id`, `equipment_id`, `temperature`, `measured_at`
-   optionnel, défaut = maintenant).
+   `add_temperature` (`establishment_id`, **`equipment_id` REQUIS**, `temperature` ;
+   `measured_at` optionnel ISO 8601, défaut = maintenant).
    - NE JAMAIS inventer une température : chaque valeur doit être fournie par
      l'utilisateur. Si une valeur manque, la demander.
+   - NE JAMAIS deviner l'`equipment_id` : le résoudre via `search_entities`
+     (`types: ["equipment"]`) à partir du nom dicté (« frigo 3 ») — si
+     `ambiguous=true`, demander confirmation avant d'enregistrer. Le hook
+     anti-donnee-inventee refuse tout relevé sans `equipment_id`.
 2. **Contrôle des non-conformités** — appeler `list_haccp_temperatures`
    (`establishment_id`, filtres optionnels `start_date`, `end_date`, `equipment_id`,
    `type`) et signaler explicitement toute valeur hors seuil à l'utilisateur.

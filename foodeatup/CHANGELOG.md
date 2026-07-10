@@ -1,5 +1,18 @@
 # Changelog — plugin foodeatup
 
+## 1.2.1 — 2026-07-10
+
+- Corrections documentaires (audit) : `update_invoice_status` — enum élargi
+  vérifié serveur (brouillon, en_attente, envoyee, acceptee, refusee,
+  litige, payee, annulee), transitions DGFiP validées PAR LE SERVEUR : ne
+  plus pré-filtrer côté skill, tenter l'appel et relayer l'erreur (ligne
+  pieges-outils ajoutée).
+- `add_temperature` : `equipment_id` REQUIS documenté (haccp +
+  pieges-outils) — jamais deviné, résolu via `search_entities`
+  (`types: ["equipment"]`), confirmation si `ambiguous=true` ; le hook
+  anti-donnee-inventee refuse désormais tout relevé sans `equipment_id`
+  (testé stdin : deny sans, allow avec).
+
 ## 1.2.0 — 2026-07-10
 
 - `briefing-du-jour` exploite les utilitaires (schémas vérifiés serveur) :

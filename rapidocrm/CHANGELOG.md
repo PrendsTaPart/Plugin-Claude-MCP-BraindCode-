@@ -1,5 +1,14 @@
 # Changelog — plugin rapidocrm
 
+## 1.1.1 — 2026-07-10
+
+- Correction documentaire (audit) : note « FoodEatUp-only » de
+  devis-facture-relance mise à jour — `update_invoice_status` (FoodEatUp) a
+  désormais un enum élargi (brouillon, en_attente, envoyee, acceptee,
+  refusee, litige, payee, annulee) et le serveur valide lui-même les
+  transitions DGFiP (ne pas pré-filtrer, relayer l'erreur serveur). La
+  logique CRM du skill est inchangée.
+
 ## 1.1.0 — 2026-07-10
 
 - Skill `animation-client` : sondages (list_sondages → modèle existant →

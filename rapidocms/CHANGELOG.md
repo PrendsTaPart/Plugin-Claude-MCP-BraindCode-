@@ -1,5 +1,17 @@
 # Changelog — plugin rapidocms
 
+## 1.2.1 — 2026-07-10
+
+- Correction documentaire (audit) : piège `create_draft_tool` — les champs
+  `media_type`/`media_source`/`media_url`/`media_caption` sont REQUIS même
+  en `post_type: "text"`. Convention VÉRIFIÉE PAR APPEL RÉEL (brouillon
+  jetable créé puis supprimé le 2026-07-10) : `media_type: ""`,
+  `media_url: ""`, `media_source: "biblio"`, `media_caption` = le texte du
+  post ; `social_type` ∈ linkedin, facebook, instagram, tiktok.
+- `delete_prompt` : couverture par le hook garde-destructif explicitée
+  (attrapé par le motif `delete_.*` du matcher — testé stdin → ask, test
+  figé dans scripts/tester-skills.py).
+
 ## 1.2.0 — 2026-07-10
 
 - Skill `bibliotheque-prompts` : gestion centrale de la bibliothèque —

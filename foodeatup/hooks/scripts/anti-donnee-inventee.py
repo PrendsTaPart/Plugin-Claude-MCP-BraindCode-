@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Garde-fou déterministe : refuse tout relevé de température hors plage
-plausible (-30 °C à +90 °C) sur add_temperature. Exit 0 = allow ;
+plausible (-30 °C à +90 °C) ou sans equipment_id sur add_temperature
+(le schéma serveur l'exige — vérifié le 2026-07-10 — et il ne doit jamais
+être deviné : résolution via search_entities). Exit 0 = allow ;
 exit 2 + stderr = deny. Aucun appel réseau."""
 import json
 import sys
@@ -15,6 +17,16 @@ except Exception:
 
 tool_input = data.get("tool_input") or {}
 raw = tool_input.get("temperature")
+
+equipment_id = tool_input.get("equipment_id")
+if equipment_id in (None, "", 0):
+    sys.stderr.write(
+        "equipment_id absent : le schéma serveur l'exige et il ne doit jamais "
+        "être deviné. Résoudre l'équipement via search_entities "
+        "(types: [\"equipment\"]) à partir du nom dicté (« frigo 3 »), "
+        "demander confirmation si ambiguous=true, puis rappeler add_temperature."
+    )
+    sys.exit(2)
 
 try:
     temperature = float(raw)
