@@ -1,5 +1,18 @@
 # Changelog — plugin rapidocrm
 
+## 1.1.2 — 2026-07-10
+
+- `animation-client` aligné sur la spécification détaillée (le skill
+  existait depuis la 1.1.0 — écarts textuels uniquement, comportement
+  inchangé) : description au mot près ; résultats de sondage = taux de
+  participation + scores PAR QUESTION + synthèse des verbatims en
+  3 ENSEIGNEMENTS ; cadre FR des jeux concours complété (règlement déposé,
+  renvoi vers un professionnel du droit — jamais jouer au juriste) ;
+  fidélité = 3 actions de rétention nommées (relance douce des points
+  dormants, récompense des top clients, réactivation) ; renvoi croisé
+  explicite vers la routine R6 GROWTH-LOOP (rapido-startup) qui lit les
+  sondages en cours en phase SENSE.
+
 ## 1.1.1 — 2026-07-10
 
 - Correction documentaire (audit) : note « FoodEatUp-only » de

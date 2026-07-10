@@ -21,7 +21,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.3.0 | 15 | 2 | foodeatup | — |
-| `rapidocrm` | 1.1.1 | 20 | 2 | rapidocrm | — |
+| `rapidocrm` | 1.1.2 | 20 | 2 | rapidocrm | — |
 | `rapidocms` | 1.2.1 | 18 | 4 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.0.1 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |

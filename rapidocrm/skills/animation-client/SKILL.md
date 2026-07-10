@@ -1,6 +1,6 @@
 ---
 name: animation-client
-description: Utiliser quand l'utilisateur veut lancer un sondage, un jeu concours, consulter les résultats d'un sondage, animer/fidéliser ses clients ou parle de points de fidélité.
+description: Utiliser quand l'utilisateur veut lancer un sondage, un jeu concours, consulter des résultats de sondage, animer ou fidéliser ses clients, ou parle de points de fidélité.
 ---
 
 # Animation client — sondages, jeux concours, fidélité
@@ -28,8 +28,8 @@ depuis `cibles-personas.md`. Jamais d'ID inventé : tout part d'un `list_*`.
    les clients verront.
 3. **Résultats** — `get_sondage_resultats` (par `sondage_id` ou
    `sondage_nom` ; `type` = `companie` par défaut, `client` pour un sondage
-   client) : restituer questions, scores, taux de participation, et une
-   **synthèse des verbatims** (3-5 thèmes récurrents, citations courtes
+   client) : restituer taux de participation, scores PAR QUESTION, et une
+   **synthèse des verbatims en 3 enseignements** (citations courtes
    anonymisées — jamais de PII étalée dans la conversation).
 
 ## Jeux concours
@@ -38,18 +38,24 @@ depuis `cibles-personas.md`. Jamais d'ID inventé : tout part d'un `list_*`.
    today/week/month/quarter/year) pour trouver le modèle (`modele_jeu_id` =
    `companies_games.id`) et éviter un doublon en cours.
 2. `lancer_jeu_concours_entreprise` (`modele_jeu_id` + `entreprise_id`) —
-   après confirmation. **Rappel systématique, en une ligne, du cadre légal
-   FR : règlement du jeu accessible, participation gratuite sans obligation
-   d'achat, mentions RGPD sur la collecte des données des participants.**
+   après confirmation. **Rappel systématique, en une ligne, du cadre FR :
+   règlement déposé/accessible, participation gratuite sans obligation
+   d'achat, mentions RGPD sur la collecte des données des participants** —
+   sans jouer au juriste : pour le règlement lui-même, renvoyer vers un
+   professionnel du droit.
 
 ## Fidélité
 
 1. `get_loyalty_points` — points par client (`q` pour cibler un client,
    `periode` pour une fenêtre, `limit`).
-2. **Croiser avec `get_top_clients`** (même `periode`) et proposer des
-   actions de rétention CIBLÉES : gros CA + points dormants → récompense à
-   activer ; points élevés + CA en baisse → relance personnalisée ; top
-   client sans programme → invitation. Chiffres cités avec leur période.
+2. **Croiser avec `get_top_clients`** (même `periode`) et proposer
+   **3 actions de rétention ciblées** :
+   - **relance douce des points dormants** (points élevés, aucune activité
+     récente) ;
+   - **récompense des top clients** (gros CA — reconnaissance avant qu'ils
+     ne la demandent) ;
+   - **réactivation** (CA en baisse ou client silencieux — offre de retour).
+   Chiffres cités avec leur période.
 
 ## Envoi des invitations — TOUJOURS délégué
 
@@ -71,3 +77,7 @@ depuis ce skill**. Pour une opération de masse : skill `campagne-marketing`
   sondage RapidoCRM peut compléter les entretiens — voir le skill
   `mom-test` ; garder des questions sur le passé et le concret, pas des
   intentions.
+- Boucle growth : la routine R6 GROWTH-LOOP (plugin rapido-startup) lit les
+  sondages en cours en phase SENSE (`list_sondages` →
+  `get_sondage_resultats`) — les animations lancées ici alimentent son
+  signal qualitatif.
