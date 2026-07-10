@@ -1,5 +1,19 @@
 # Changelog — plugin foodeatup
 
+## 1.2.0 — 2026-07-10
+
+- `briefing-du-jour` exploite les utilitaires (schémas vérifiés serveur) :
+  - notifications non lues EN TÊTE du briefing (`list_notifications` —
+    pas de filtre serveur, filtrage côté réponse ; y arrivent les alertes
+    des routines Loop Engine) ;
+  - salle & réservations : `floor_plan_status` = l'appel temps réel unique
+    (compteurs + commande active par table) ; `reservation_availability`
+    sonde les créneaux chauds du midi (UN créneau par appel : `date`,
+    `time` HH:MM, `party_size`) ; `list_reservations` conservé — c'est la
+    seule source des couverts/groupes/notes du jour.
+- tests/evals.md : scénarios briefing 1.2.0 + non-régression (2 scénarios
+  existants rejoués).
+
 ## 1.1.0 — 2026-07-10
 
 - Nouveau skill `coordination-cuisine` (pass / KDS) : `list_orders` (en

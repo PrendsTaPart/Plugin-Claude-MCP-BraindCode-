@@ -15,12 +15,22 @@ description: Utiliser quand l'utilisateur demande le briefing du jour, « ma jou
 
 Dérouler dans l'ordre des priorités maison (HACCP > client > rentabilité) :
 
-1. **Conformité HACCP** — `list_haccp_temperatures` (date du jour) : relevés
+1. **Notifications non lues** — `list_notifications` (`establishment_id`
+   seul ; pas de filtre serveur : filtrer les non lues dans la réponse) —
+   elles ouvrent le briefing : ce sont les alertes déposées par le système
+   et les routines (dont Loop Engine).
+2. **Conformité HACCP** — `list_haccp_temperatures` (date du jour) : relevés
    faits ? valeurs hors seuil ? `list_haccp_reception` : réceptions à contrôler ?
    Toute non-conformité passe EN TÊTE du briefing.
-2. **Réservations du jour** — `list_reservations` (date du jour) : couverts par
-   service, gros groupes, notes particulières (allergies, VIP).
-3. **Plan de salle** — `floor_plan_status` : état des tables, commandes actives.
+3. **Salle & réservations — UN appel temps réel** — `floor_plan_status`
+   (compteurs par statut + commande active par table) remplace tout appel
+   séparé aux tables/zones. `list_reservations` (date du jour) reste la
+   source des couverts, gros groupes et notes (allergies, VIP) —
+   l'outil de disponibilité ne renvoie pas les réservations du jour.
+   Puis **créneaux chauds du midi** : `reservation_availability` teste UN
+   créneau à la fois (`date`, `time` HH:MM, `party_size`) — sonder 12:00 /
+   12:30 / 13:00 avec la taille de groupe typique et annoncer la capacité
+   restante (« complet à 12:30, reste 2 tables à 13:00 »).
 4. **Staffing** — `list_plannings` (jour) : qui est présent par service ;
    croiser avec la charge (couverts attendus) et signaler un sous/sur-staffing.
 5. **Productions planifiées** — `list_production_plans` (date du jour) : quoi
@@ -34,6 +44,8 @@ Dérouler dans l'ordre des priorités maison (HACCP > client > rentabilité) :
 ```
 📋 BRIEFING — {date} — {établissement}
 
+🔔 NOTIFICATIONS NON LUES : n — les warning/danger citées une par une
+
 🎯 3 PRIORITÉS DU JOUR
 1. … (toujours la conformité s'il y a une non-conformité HACCP)
 2. …
@@ -41,6 +53,7 @@ Dérouler dans l'ordre des priorités maison (HACCP > client > rentabilité) :
 
 🌡 HACCP : relevés OK/KO, non-conformités, réceptions attendues
 🍽 SERVICE : X couverts midi / Y soir, groupes & notes, état salle
+   (floor_plan_status), créneaux midi restants (12:00/12:30/13:00)
 👥 ÉQUIPE : présents par service, alerte staffing éventuelle
 🔥 PRODUCTION : plans du jour, ingrédients manquants
 📦 STOCK : articles bas → commande à prévoir ?

@@ -21,11 +21,17 @@ brouillons only, fuseau KB, dégradation propre).
    chronologiquement ; signaler les conflits entre sources et les
    chevauchements.
 3. **Business restaurant** — dérouler `briefing-du-jour` (plugin foodeatup)
-   si un établissement est géré : HACCP, salle, production, stocks.
+   si un établissement est géré : notifications non lues
+   (`list_notifications` — dont les alertes déposées par les routines Loop
+   Engine), HACCP, salle, production, stocks.
 4. **Alertes automatisations** — n8n `search_executions` (échecs récents) si
    `N8N_MCP_URL` est définie : un workflow en panne = un rôle non assuré.
 5. **Signaux CRM** — devis expirants / deals dormants (aperçu rapide via
-   `list_devis` + `get_pipeline`).
+   `list_devis` + `get_pipeline`) ; funnel formulaires en un coup d'œil :
+   `list_formulaires` (stats principales) + `list_cta` (clics) — un
+   formulaire qui ne convertit plus est un signal du jour (détail :
+   `get_formulaire_soumissions`, analyse complète : routine R6 du plugin
+   rapido-startup).
 
 ## Restitution — UNE PAGE, pas plus
 
@@ -42,7 +48,8 @@ heure | quoi | source | préparation nécessaire ?
 de | objet | enjeu | → brouillon proposé (oui/non)
 
 🚨 SIGNAUX
-resto (HACCP/stocks) | CRM (devis, deals) | automatisations (échecs)
+resto (notifications non lues, HACCP/stocks) | CRM (devis, deals,
+funnel formulaires/CTA) | automatisations (échecs)
 ```
 
 - Pour chaque email actionnable : PROPOSER le brouillon (skill

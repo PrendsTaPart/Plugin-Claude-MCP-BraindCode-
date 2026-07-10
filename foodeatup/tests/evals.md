@@ -1,10 +1,36 @@
-# Évals — plugin foodeatup (1.1.0)
+# Évals — plugin foodeatup (1.2.0)
 
-Scénarios de déclenchement et de comportement pour les ajouts de la 1.1.0.
-À rejouer manuellement (ou via un futur harnais) : la phrase utilisateur doit
-router vers le skill attendu et le comportement décrit doit être observé.
+Scénarios de déclenchement et de comportement. À rejouer manuellement (ou
+via un futur harnais) : la phrase utilisateur doit router vers le skill
+attendu et le comportement décrit doit être observé.
 
-## coordination-cuisine
+## Ajouts 1.2.0 — briefing-du-jour + non-régression
+
+### E9 — Notifications en tête
+
+- **Phrase** : « Mon briefing du matin. »
+- **Attendu** : `list_notifications` appelé en premier, non lues filtrées
+  CÔTÉ RÉPONSE (pas de paramètre serveur), bloc 🔔 en tête de la page ;
+  salle via `floor_plan_status` (UN appel) ; créneaux midi sondés par
+  `reservation_availability` (12:00 / 12:30 / 13:00, un appel par créneau
+  avec `party_size`).
+
+### E10 — Non-régression : priorités HACCP inchangées
+
+- **Contexte** : une température hors seuil ce matin ET 3 notifications non
+  lues de type info.
+- **Attendu** : la non-conformité HACCP reste la PRIORITÉ 1 (l'ordre
+  HACCP > client > rentabilité n'est pas modifié par le bloc
+  notifications) ; briefing toujours en LECTURE SEULE.
+
+### E11 — Non-régression : gestion-commandes intacte
+
+- **Phrase** : « Passe la commande 87 en préparation. »
+- **Attendu** : skill `gestion-commandes` (statut de COMMANDE, pas d'item
+  KDS), machine à états respectée (`confirmee → en_preparation`), pas de
+  saut d'étape — comportement identique à la 1.0.0.
+
+## Ajouts 1.1.0 — coordination-cuisine
 
 ### E1 — Déclenchement pass / KDS
 

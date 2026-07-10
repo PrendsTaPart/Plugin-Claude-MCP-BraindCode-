@@ -1,87 +1,101 @@
-# Audit de vérité — serveurs foodeatup / rapidocrm / rapidocms (2026-07-10)
+# Audit de vérité — serveurs foodeatup / rapidocrm / rapidocms (2026-07-10, v2)
 
-**Méthode** : introspection des serveurs MCP réellement connectés à la session
-du 2026-07-10 (catalogues live : **foodeatup 112 outils, rapidocrm 103,
-rapidocms 43** — dont 7 outils apparus EN COURS de session), croisée avec les
-outils cités en backticks dans les `SKILL.md` des plugins `foodeatup/`,
-`rapidocrm/`, `rapidocms/` (les agents et `reference/` ne sont pas comptés
-dans le croisement). **Aucun skill n'a été modifié** — cet audit constate.
+**Méthode (v2 — élargie)** : introspection des serveurs MCP réellement
+connectés à la session du 2026-07-10 (catalogues live : **foodeatup 112
+outils, rapidocrm 103, rapidocms 43**), croisée avec les citations en
+backticks dans TOUS les `.md` (`skills/`, `agents/`, `reference/`) de TOUS
+les plugins qui déclarent le serveur dans leur `.mcp.json` — et plus
+seulement les 3 plugins homonymes comme dans la v1. Un outil « orphelin »
+est un outil live cité NULLE PART dans le dépôt.
 
-Outils apparus en session (serveurs en évolution) :
-`search_entities`, `update_kds_item_status` (FoodEatUp) ; `add_asset`,
-`create_brand`, `edit_brand`, `delete_brand`, `remove_asset` (RapidoCMS).
+Plugins déclarants par serveur :
+- **foodeatup** : foodeatup, rapido-canva, rapido-direction, rapido-lovable,
+  rapido-meta-ads, rapido-n8n, rapido-startup, rapido-suite ;
+- **rapidocrm** : les mêmes + rapidocrm ;
+- **rapidocms** : rapidocms, rapido-canva, rapido-lovable, rapido-meta-ads,
+  rapido-n8n, rapido-startup, rapido-suite.
 
 ---
 
-## (a) Outils JAMAIS cités par les SKILL.md des 3 plugins — « les nouveaux »
+## (a) Orphelins restants — 54 au total (34 + 13 + 7)
 
-Lecture : beaucoup de CRUD unitaires sont volontairement non cités (les
-workflows passent par les `list_*`/outils de plus haut niveau) — les vrais
-« nouveaux » sont les clusters fonctionnels de la section 4.
+Depuis la v1, TOUS les clusters fonctionnels identifiés ont été couverts :
+KDS (`update_kds_item_status`), nettoyage (3 outils), contrats employés (3),
+`search_entities`, notifications (`list_notifications` dans briefing-du-jour
+et journee-du-dirigeant, `create_notification` dans les routines R4/R7),
+dépenses (`list_depenses` dans R4/R7), sondages/concours/fidélité
+(animation-client + R6), formulaires + CTA (R6 + journee-du-dirigeant),
+bibliothèque de prompts, assets de marque (`add_asset`/`remove_asset`).
+Restent des orphelins majoritairement CRUD — chacun ci-dessous avec une
+proposition (couvrir / ignorer volontairement + raison), à arbitrer.
 
-### foodeatup — 52/112 jamais cités
+### foodeatup — 34 orphelins
 
-CRUD unitaires probablement volontaires (couverts par les workflows) :
-`assign_task`, `create_category`, `create_client`, `create_dish`,
-`create_dish_category`, `create_expense`, `create_ingredient`,
-`create_product`, `create_quote`, `create_supplier`, `create_tva`,
-`delete_category`, `delete_client`, `delete_dish`, `delete_employee`,
-`delete_ingredient`, `delete_product`, `delete_recipe`, `get_client`,
-`get_employee`, `get_expense`, `get_ingredient`, `get_invoice`,
-`get_product`, `get_quote`, `list_clients` *(cité ailleurs : rapido-meta-ads,
-rapido-startup)*, `list_deliveries`, `list_ingredients`, `list_quotes`,
-`list_stocks`, `list_tva`, `list_units`, `update_category`, `update_client`,
-`update_employee`, `update_employee_schedule`, `update_ingredient`,
-`update_product`, `update_quote_status`.
+**Proposition COUVRIR (valeur métier réelle) :**
 
-Fonctionnels non couverts (→ section 4) : `list_cleaning_actions`,
-`list_cleaning_zones`, `record_cleaning_action` (nettoyage),
-`list_employee_contracts`, `list_employee_documents` (contrats employés),
-`create_haccp_tracabilite`, `list_haccp_tracabilite`, `list_haccp_labels`
-(traçabilité — create_haccp_label est cité, la lecture non),
-`create_notification`, `list_notifications` (notifications),
-`update_invoice_status` (statut de facture restaurant — voir aussi (c)),
-`search_entities` **[NOUVEAU]**, `update_kds_item_status` **[NOUVEAU]**.
+| Outils | Où | Raison |
+|---|---|---|
+| `create_haccp_tracabilite`, `list_haccp_tracabilite`, `list_haccp_labels` | extension `haccp-conformite-quotidienne` | La traçabilité est un pilier HACCP ; `create_haccp_label` est cité mais ni la lecture des étiquettes ni la traçabilité |
+| `create_quote`, `get_quote`, `list_quotes`, `update_quote_status` | extension `gestion-commandes` (ou skill devis-traiteur) | Cycle devis restaurant (groupes, traiteur) entièrement non couvert |
+| `update_invoice_status` | extension `gestion-commandes` | Statut de facture post-commande — enum élargi + validation DGFiP serveur (voir (c)) ; hook ask déjà en filet possible |
+| `list_stocks` | une ligne dans `production-stock` | L'inventaire complet à côté de `list_low_stocks` déjà cité |
+| `list_deliveries` | une ligne dans `reappro-fournisseurs` | Suivi des livraisons à côté des réceptions HACCP |
+| `create_expense`, `get_expense` | une ligne dans `analyse-rentabilite-carte` ou directives | Saisie d'une dépense dictée — `list_expenses` est déjà lu par R4 |
+| `update_employee_schedule`, `assign_task` | extension `planning-equipe` | Modifier un horaire / affecter une tâche : fonctionnels, pas CRUD |
 
-### rapidocrm — 36/103 jamais cités
+**Proposition IGNORER VOLONTAIREMENT (raison) :**
 
-CRUD unitaires probablement volontaires : `create_contact`,
-`create_entreprise`, `create_task`, `get_contacts_segment`, `list_rdvs`,
-`list_segments` *(tous cités ailleurs dans le dépôt)*, `create_product`,
-`create_user`, `delete_contact`, `delete_entreprise`, `delete_product`,
-`delete_template_email`, `delete_template_sms`, `get_product`, `get_user`,
-`list_editor_templates`, `list_entreprises`, `list_newsletters`,
-`update_contact`, `update_contrat_template`, `update_entreprise`,
-`update_product`, `get_interaction_stats`.
+| Outils | Raison |
+|---|---|
+| `create_dish`, `create_dish_category`, `create_category`, `update_category`, `create_ingredient`, `update_ingredient`, `create_product`, `update_product`, `get_product`, `get_ingredient` | Carte et catalogue : la mise en carte passe par `import_storefront_menu` (idempotent) et les `update_dish`/`update_recipe` cités ; la création unitaire reste possible à la demande directe sans skill dédié |
+| `create_client`, `update_client`, `get_client` | Fiches clients gérées par les workflows réservation/commande qui les créent au passage (`create_client` serveur appelé par l'app) |
+| `create_supplier` | `list_suppliers` + `create_supplier_order` cités ; la création d'un fournisseur est un acte rare fait une fois (onboarding possible à la demande) |
+| `create_tva`, `list_tva`, `list_units` | Paramétrage d'installation (une fois), pas un workflow récurrent |
+| `get_employee`, `update_employee`, `get_invoice`, `assign_task`* | Lectures/CRUD unitaires atteignables à la demande directe (*assign_task listé aussi en « couvrir » — arbitrage) |
 
-Fonctionnels non couverts (→ section 4) : `create_depense` (dépenses —
-list_depenses est cité, la création non), `lancer_sondage_entreprise`,
-`get_sondage_resultats`, `list_sondages`, `lancer_jeu_concours_entreprise`,
-`list_jeux_concours`, `get_loyalty_points` (sondages/concours/fidélité),
-`list_formulaires`, `get_formulaire_soumissions`, `list_cta`
-(formulaires + CTA), `create_commercial`, `delete_commercial`,
-`update_commercial_profil` (cycle de vie commerciaux — le pilotage
-get/list/objectifs/statut/performance est déjà cité).
+### rapidocrm — 13 orphelins
 
-### rapidocms — 12/43 jamais cités
+**Proposition COUVRIR :**
 
-`delete_draft_tool`, `delete_prompt`, `edit_campagne`, `edit_digital_card`,
-`edit_draft_tool`, `list_all_files`, `list_digital_card` *(cité ailleurs :
-rapido-canva)* — éditions/suppressions unitaires, faible enjeu (le hook
-garde-destructif couvre les delete_*).
+| Outils | Où | Raison |
+|---|---|---|
+| `create_depense` | extension du skill dépenses/pilotage CRM | Complète le cluster : la lecture (`list_depenses`) est câblée dans R4/R7, la saisie dictée manque |
+| `create_commercial`, `delete_commercial`, `update_commercial_profil` | extension du skill pilotage commerciaux | Cycle de vie (entrée/sortie/profil) — le pilotage (objectifs, statut, performance) est déjà cité ; `delete_commercial` sous garde-destructif |
+| `list_newsletters` | une ligne à côté de `send_newsletter` (cité) | Lire avant d'envoyer |
+| `update_contrat_template` | une ligne à côté de `create_contrat_template`/`list_contrat_templates` (cités) | Compléter le CRUD des modèles de contrat |
+| `list_editor_templates` | une ligne à côté de `create_editor_template` (cité) | Idem |
+| `get_interaction_stats` | une ligne dans le skill stats/pilotage | Un indicateur de plus, coût nul |
 
-**Assets de marque — cluster entier NOUVEAU** : `create_brand`, `edit_brand`,
-`delete_brand`, `add_asset`, `remove_asset` (voir (c) pour le schéma).
+**Proposition IGNORER VOLONTAIREMENT :**
+
+| Outils | Raison |
+|---|---|
+| `create_user`, `get_user` | Administration des comptes utilisateurs : sensible, se fait dans l'interface d'admin |
+| `create_product`, `get_product`, `update_product` | Catalogue produits CRM géré dans l'app ; `list_products` (cité) suffit aux devis/factures |
+
+### rapidocms — 7 orphelins
+
+**Proposition COUVRIR (tous — petites extensions) :**
+
+| Outils | Où | Raison |
+|---|---|---|
+| `create_brand`, `edit_brand`, `delete_brand` | extension `contenu-conforme-marque` (multi-marques) | Schéma vérifié live : requis `nom`/`langue`/`slogan`, `couleurs` hex CSV, `font_family` enum web-safe, `logo` URL publique ; `delete_brand` déjà attrapé par le matcher `delete_.*` du hook |
+| `edit_draft_tool` | une ligne dans `pipeline-contenu-social` | Corriger un brouillon avant planification — vraie valeur, coût une phrase |
+| `edit_campagne` | une ligne dans `orchestration-campagne` | create/delete campagne cités, l'édition manque |
+| `edit_digital_card` | une ligne dans `carte-digitale` | `edit_card_page` cité, l'édition de la carte elle-même manque |
+| `list_all_files` | une ligne dans `contenu-conforme-marque` ou `prompt-engineering-visuel` | Consulter la bibliothèque média avant de re-uploader |
 
 ---
 
 ## (b) Outils cités mais ABSENTS des serveurs — à corriger
 
-**AUCUN.** Zéro outil fantôme dans les 3 plugins : chaque nom d'outil cité
-existe tel quel sur son serveur. (L'extraction remonte 16 tokens qui sont en
-réalité des noms de PARAMÈTRES cités en backticks — `post_date`,
-`post_heure`, `post_id`, `post_ids`, `post_name`, `post_type`,
-`reservation_id`, `search`, `set` — pas des outils. Faux positifs assumés.)
+**AUCUN.** Zéro outil fantôme : chaque nom d'outil cité dans le dépôt existe
+tel quel sur son serveur (vérifié contre les catalogues live du 2026-07-10).
+Les câblages du jour (`floor_plan_status`, `reservation_availability`,
+`list_notifications`, `create_notification`, `list_depenses`,
+`list_formulaires`, `get_formulaire_soumissions`, `list_cta`,
+`list_sondages`, `get_sondage_resultats`) ont tous été vérifiés schéma en
+main AVANT écriture.
 
 ---
 
@@ -89,48 +103,50 @@ réalité des noms de PARAMÈTRES cités en backticks — `post_date`,
 
 | Outil | Schéma LIVE (2026-07-10) | Ce que dit le dépôt | Verdict |
 |---|---|---|---|
-| `update_invoice_status` (FoodEatUp) | **CHANGÉ** — `status` est un ENUM élargi : `brouillon, en_attente, envoyee, acceptee, refusee, litige, payee, annulee` ; description : « en respectant les transitions légales autorisées (DGFiP) » → **le serveur valide lui-même les transitions** | pieges-outils (suite/startup) : « la vérification DGFiP ne s'applique qu'aux factures CRM, statuts FoodEatUp non vérifiés (schéma différent) » ; devis-facture-relance (CRM) le dit « FoodEatUp-only » ✓ | ⚠️ ÉCART DOC : 5 statuts nouveaux (envoyee/acceptee/refusee/litige/annulee) et validation DGFiP native côté serveur — nos références FoodEatUp sont en retard d'une version. Le hook ask (garde-destructif) reste pertinent en confirmation |
-| `add_temperature` (FoodEatUp) | `establishment_id` + **`equipment_id` REQUIS** + `temperature` + `measured_at` optionnel (ISO 8601) | Les skills HACCP et le hook anti-donnee-inventee ne nomment que `temperature` (+ establishment_id) | ⚠️ ÉCART : `equipment_id` obligatoire non documenté — le nouveau `search_entities` (« frigo 3 » → ID) est justement fait pour le résoudre |
-| `create_draft_tool` (CMS) | `required` inclut `media_type`, `media_source`, `media_url`, `media_caption` **même quand `post_type` = `text`** ; `media_source` default `biblio` ✓ ; `post_type` ∈ media/text/mediatext ; `social_type` ∈ linkedin/facebook/instagram/tiktok | media_source « biblio » documenté ✓ ; l'exigence des champs media_* en post TEXTE n'est nulle part | ⚠️ PIÈGE NON DOCUMENTÉ à ajouter aux pieges-outils |
-| `upload_file_tool` (CMS) | `type` ∈ `image, video, doc` | dossier-startup-360 (rapido-suite) écrit `type: "document"` | ❌ ÉCART CONNU toujours ouvert (signalé le 2026-07-06, en attente d'arbitrage) : `document` → `doc` |
-| `generate_image` (CMS) | `prompt` + `size` (`hd`/`standard`), RIEN d'autre | prompt-engineering-visuel / prompts-visuels-pro : pas de paramètre négatif dédié, négatif en fin de prompt ✓ ; size hd/standard ✓ | ✅ conforme |
-| `post_insights` (CMS) | `post_ids` array, **max 10** | « découper en lots de 10 » ✓ | ✅ conforme |
-| `schedule_draft_tool` (CMS) | `post_date` `Y-m-d`, `post_heure` **strict `H-i-s`** | pieges-outils ✓ (revérifié ce jour) | ✅ conforme |
-| `search_entities` (FoodEatUp) **[NOUVEAU]** | `establishment_id` + `query` ; `types` ∈ product/ingredient/dish/equipment/table/recipe ; fuzzy FR (accents, pluriels) ; **si `ambiguous=true` → DEMANDER confirmation avant d'agir** | inexistant dans le dépôt | 🆕 à câbler (résout le piège « establishment_id/IDs devinés ») |
-| `create_brand` (CMS) **[NOUVEAU]** | requis `nom`, `langue`, `slogan` ; `couleurs` = hex séparés par virgules ; `font_family` = ENUM de piles web-safe ; `logo` = URL publique | inexistant dans le dépôt | 🆕 à câbler (écriture de marque = confirmation, delete_brand sous garde-destructif) |
+| `update_invoice_status` (FoodEatUp) | **CHANGÉ** — `status` ENUM élargi : `brouillon, en_attente, envoyee, acceptee, refusee, litige, payee, annulee` ; le serveur valide lui-même les transitions (DGFiP) | Références FoodEatUp en retard d'une version | ⚠️ ÉCART DOC toujours ouvert (arbitrage attendu) |
+| `add_temperature` (FoodEatUp) | `equipment_id` REQUIS | Skills HACCP et hook ne nomment que `temperature` | ⚠️ ÉCART partiellement résolu : `search_entities` câblé (coordination-cuisine) mais la mention `equipment_id` manque encore dans les références HACCP |
+| `create_draft_tool` (CMS) | `media_type/media_source/media_url/media_caption` requis MÊME en `post_type: text` | Piège non documenté dans pieges-outils | ⚠️ toujours ouvert (arbitrage attendu) |
+| `upload_file_tool` (CMS) | `type` ∈ `image, video, doc` | dossier-startup-360 écrit `type: "document"` | ❌ ÉCART CONNU toujours ouvert (signalé le 06/07) |
+| `reservation_availability` (FoodEatUp) | teste UN créneau (`date`, `time` HH:MM, `party_size` requis) — pas de liste des résas du jour | briefing-du-jour v1.2.0 le documente ainsi ✓ (sondage créneau par créneau, `list_reservations` conservé pour les couverts/notes) | ✅ conforme |
+| `list_notifications` (FoodEatUp) | `establishment_id` seul — PAS de filtre « non lues » serveur | briefing-du-jour v1.2.0 : filtrage côté réponse, documenté ✓ | ✅ conforme |
+| `create_notification` (FoodEatUp) | `title` + `message` requis, `type` ∈ info/warning/danger/success (défaut info) | R4/R7 + autonomie.md (canal d'alerte, danger/warning) ✓ | ✅ conforme |
+| `list_depenses` (CRM) | aucun requis ; `statut` ∈ en_attente/payee, `periode` ∈ today/week/month/quarter/year | R4 (semaine) / R7 (`periode: "month"`) ✓ | ✅ conforme |
+| `get_formulaire_soumissions` (CRM) | `formulaire_id` OU `formulaire_nom` (recherche partielle) — vues, clics, taux de conversion | R6 / journee-du-dirigeant ✓ | ✅ conforme |
+| `get_sondage_resultats` (CRM) | `sondage_id` OU `sondage_nom` ; `type` ∈ companie/client (défaut companie) | R6 / animation-client ✓ | ✅ conforme |
+| `generate_image`, `post_insights`, `schedule_draft_tool` (CMS) | inchangés | ✓ | ✅ conforme |
+| `search_entities`, `update_kds_item_status` (FoodEatUp) | inchangés depuis v1 | câblés (coordination-cuisine, 1.1.0) ✓ | ✅ conforme |
 
 ---
 
-## (4) Clusters attendus — état
+## (4) Clusters — état final
 
-| Cluster | Outils (serveur) | État |
-|---|---|---|
-| Dépenses CRM | create_depense, list_depenses | ½ couvert : lecture citée, création jamais |
-| Sondages / concours / fidélité CRM | lancer_sondage_entreprise, get_sondage_resultats, list_sondages, lancer_jeu_concours_entreprise, list_jeux_concours, get_loyalty_points | **6/6 jamais cités → candidat skill** (animation client) |
-| Formulaires + CTA CRM | list_formulaires, get_formulaire_soumissions, list_cta | **3/3 jamais cités → candidat skill** (capture de leads) |
-| Gestion commerciaux CRM | 8 outils | Pilotage déjà couvert (5/8 cités) ; cycle de vie create/delete/update_profil jamais cité |
-| Bibliothèque de prompts CMS | add/list/edit/delete_prompt | Couvert (3/4) ; delete_prompt jamais cité (garde-destructif le couvre) |
-| **Assets de marque CMS** | create/edit/delete_brand, add/remove_asset | **5/5 NOUVEAUX, jamais cités → candidat skill** (gestion de marques multiples) |
-| **KDS FoodEatUp** | update_kds_item_status | **NOUVEAU, jamais cité → candidat skill** (écran cuisine) |
-| Nettoyage FoodEatUp | list_cleaning_zones/actions, record_cleaning_action | **3/3 jamais cités → candidat extension** du skill haccp-conformite-quotidienne |
-| Contrats employés FoodEatUp | create/list_employee_contracts, list_employee_documents | Création citée, lecture jamais → extension planning-equipe |
-| Plan de salle | floor_plan_status | ✅ couvert (service-salle) |
-| **Recherche transverse** | search_entities | **NOUVEAU, jamais cité → à câbler PARTOUT** (Étape 0 des skills FoodEatUp : nom parlé → ID) |
-| Notifications FoodEatUp | create_notification, list_notifications | 2/2 jamais cités → candidat extension (briefing-du-jour, alertes) |
+| Cluster | État |
+|---|---|
+| Dépenses CRM | ✅ lecture câblée (R4, R7) ; `create_depense` → proposition couvrir |
+| Sondages / concours / fidélité CRM | ✅ couvert (animation-client + R6) |
+| Formulaires + CTA CRM | ✅ couvert (R6 + journee-du-dirigeant) |
+| Gestion commerciaux CRM | pilotage couvert ; cycle de vie (3 outils) → proposition couvrir |
+| Bibliothèque de prompts CMS | ✅ couvert (bibliotheque-prompts) |
+| Assets de marque CMS | ✅ add/remove_asset couverts ; CRUD marque (3 outils) → proposition couvrir |
+| KDS FoodEatUp | ✅ couvert (coordination-cuisine) |
+| Nettoyage FoodEatUp | ✅ couvert (haccp-conformite-quotidienne) |
+| Contrats employés FoodEatUp | ✅ couvert (planning-equipe) |
+| Plan de salle / disponibilité | ✅ couvert (service-salle, briefing-du-jour) |
+| Recherche transverse (`search_entities`) | ✅ câblé (coordination-cuisine) ; généralisation Étape 0 → recommandation |
+| Notifications FoodEatUp | ✅ couvert (briefing-du-jour, journee-du-dirigeant, routines R4/R7) |
 
 ---
 
-## Recommandations (rien n'est modifié — à arbitrer)
+## Recommandations (à arbitrer)
 
-1. **Corrections documentaires prioritaires** : statuts update_invoice_status
-   FoodEatUp (enum élargi + validation serveur), `equipment_id` requis
-   d'add_temperature, piège media_* de create_draft_tool, et l'écart
-   `type: "document"` → `doc` de dossier-startup-360 (ouvert depuis le 06/07).
-2. **Câbler `search_entities`** dans les directives foodeatup (résolution
-   nom → ID, confirmation si ambiguous) — supprime une classe entière
-   d'erreurs d'ID.
-3. **3 candidats skills** : assets de marque CMS, animation client CRM
-   (sondages/concours/fidélité), KDS cuisine FoodEatUp.
-4. **3 candidats extensions** : nettoyage (haccp-conformite-quotidienne),
-   formulaires/CTA (prospection-pipeline ou campagne-marketing),
-   notifications (briefing-du-jour).
+1. **Corrections documentaires toujours ouvertes** (inchangées depuis la
+   v1) : enum élargi + validation DGFiP d'`update_invoice_status` FoodEatUp ;
+   `equipment_id` requis d'`add_temperature` dans les références HACCP ;
+   piège `media_*` de `create_draft_tool` ; `type: "document"` → `doc` dans
+   dossier-startup-360.
+2. **Arbitrage des 54 orphelins** selon les tableaux (a) : ~23 « couvrir »
+   (petites extensions, souvent une ligne) et ~31 « ignorer volontairement »
+   (CRUD unitaires atteignables à la demande directe, paramétrage
+   d'installation, administration sensible).
+3. **Généraliser `search_entities`** en Étape 0 des skills FoodEatUp
+   (résolution nom parlé → ID, confirmation si `ambiguous=true`).

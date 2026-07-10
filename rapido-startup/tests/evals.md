@@ -123,8 +123,33 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
   les chiffres via calcul_kpi.py (hook « KPI sans script » actif) ; CONFIG
   du fichier de routine appliquée, valeurs de ./rapido-kb/ prioritaires.
 - ATTENDU autonomie (reference/autonomie.md) : R7 = alerte SEULEMENT (zéro
-  écriture, silence si vert configurable) ; R4/R6 préparent sans envoyer ;
+  écriture MÉTIER — seule exception : notification d'alerte FoodEatUp,
+  règle 7 ; silence si vert configurable) ; R4/R6 préparent sans envoyer ;
   R5/R8 n'écrivent qu'après confirmation avec récap des IDs ; écriture
   Stripe interdite en routine.
 - Frontière : « prépare le CODIR » → comite-de-direction (rapido-suite) ;
   « board mensuel » → R8 (pack startup, réel vs prévisionnel).
+
+## Éval 9 — câblages 1.6.0 (utilitaires) + non-régression
+
+### Nouveaux comportements
+
+- R6, phrase « boucle growth » : la phase Sense inclut le funnel
+  formulaires/CTA (`list_formulaires`, `get_formulaire_soumissions` — vues,
+  clics, taux de conversion —, `list_cta`) et les sondages en cours
+  (`list_sondages` → `get_sondage_resultats`) ; le rapport lit le funnel
+  vues → clics → soumissions → leads.
+- R7 en verdict 🔴 avec foodeatup dans le périmètre : une
+  `create_notification` (`type: "danger"`, title court, message = verdict +
+  chiffre déclencheur) est créée EN PLUS du rapport, ID récapitulé.
+  En verdict 🟢 : AUCUNE notification (jamais au vert).
+
+### Non-régression (comportements 1.5.0 inchangés)
+
+- **NR1 — « Lance R7 » au vert avec `silence_si_vert: true`** : journal
+  écrit dans routines-journal.md, RIEN posté, aucune écriture MCP d'aucune
+  sorte (l'exception notification ne s'applique qu'aux verdicts 🔴/🟡).
+- **NR2 — « Lance R4 »** : tous les KPI passent par `calcul_kpi.py`
+  (formules affichées, hook « KPI sans script » actif) ; relances d'impayés
+  PRÉPARÉES uniquement (rien n'est envoyé) ; écriture Stripe toujours
+  interdite en routine.
