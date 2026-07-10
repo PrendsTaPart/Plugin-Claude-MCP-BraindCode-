@@ -1,5 +1,19 @@
 # Changelog — plugin rapidocrm
 
+## 1.3.0 — 2026-07-10
+
+- Nouveau skill `gestion-depenses` : source de vérité des dépenses CRM —
+  `list_depenses` (chiffres cités avec période/statut), contrôle
+  TTC = HT + TVA par script AVANT saisie
+  (scripts/controle_depense.py, stdlib, tolérance 1 centime, formule
+  affichée), `create_depense` après confirmation (hook garde-destructif
+  étendu à create_depense, testé stdin → ask). Honnêteté serveur : PAS
+  d'outil de détail (`get_…`) ni de suppression de dépense côté CRM — le
+  détail resto relève du plugin foodeatup (reappro-fournisseurs).
+- Câblé en SOURCE PRIMAIRE des dépenses dans les routines R4 CFO-WEEKLY et
+  R7 CASH-SENTINEL (loop-engine-v2, plugin rapido-startup) ;
+  performance-commerciale renvoie vers le skill dédié.
+
 ## 1.2.0 — 2026-07-10 (vague post-audit — consolidé)
 
 - performance-commerciale (schémas vérifiés serveur) :

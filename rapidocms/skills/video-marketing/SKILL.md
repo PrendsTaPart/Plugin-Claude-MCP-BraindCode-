@@ -10,6 +10,10 @@ description: Utiliser quand l'utilisateur veut une vidéo, un teaser, une vidéo
 Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
 et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` ; KB :
 `ton-et-accroches.md` + `charte-graphique.md` si `./rapido-kb/` existe.
+En multi-marques, résoudre la marque cible (agent `gestionnaire-marques`)
+avant de composer. Les logos du kit viennent des ASSETS de marque (gérés par
+`gestion-marques` ; `list_all_files` search `"<Marque> — logo"` → URL
+publique), plus du repo GitHub.
 
 ## Workflow
 

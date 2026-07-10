@@ -167,6 +167,8 @@ TESTS_HOOKS_EXTRAS = {
           "tool_input": {"statut": "brouillon"}}, "deny"),
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",
           "tool_input": {"statut": "payee"}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__create_depense",
+          "tool_input": {"entreprise_id": 1, "total_ht": 100}}, "ask"),
     ],
     ("rapido-suite", "garde-destructif.py"): [
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",

@@ -29,6 +29,7 @@
 | R6 GROWTH-LOOP | lecture | Niveau 1 : expérience préparée (campagne PAUSED, brouillons) |
 | R7 CASH-SENTINEL | lecture | Niveau 0 : ALERTE SEULEMENT — aucune écriture métier (seule exception : notification d'alerte FoodEatUp, règle 7) |
 | R8 MONTHLY-BOARD | lecture | Niveau 2 : board écrit dans la KB + jalon Calendar confirmé |
+| R9 VIDEO-FACTORY | lecture | Niveau 1 : épisode PRÉPARÉ (brief, composition committée dans le dépôt de production, preview) — RENDU payant et PUBLICATION = niveau 3, jamais automatiques |
 
 ## Règles absolues
 

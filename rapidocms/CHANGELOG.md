@@ -1,5 +1,27 @@
 # Changelog — plugin rapidocms
 
+## 1.4.0 — 2026-07-10
+
+- Réconciliation de la branche parallèle `claude/rapidocms-gestion-marques`
+  (implémentation concurrente du cluster marques, non mergée) avec la
+  version de main :
+  - skill `gestion-marques` enrichi (corps de la branche adopté) : note
+    « schéma vivant » (ré-introspection avant écriture), mapping
+    typographique vers l'enum web-safe expliqué à l'utilisateur,
+    `delete_brand` = nom exact retapé, convention de nommage des assets
+    `"<Marque> — <type> — <variante>"`, flux « ajouter un logo » complet ;
+  - **nouvel agent `gestionnaire-marques`** : gardien de la cohérence
+    multi-enseignes — refuse tout contenu sans marque cible identifiée,
+    checklist couleurs/police/logo/ton avant publication, propose la
+    création de la marque manquante ; complémentaire du
+    directeur-artistique ;
+  - multi-marques câblé dans contenu-conforme-marque, video-marketing et
+    prompts-visuels-pro (logos = ASSETS de marque, plus de repo GitHub) ;
+  - portabilité : les noms d'enseignes clientes codés en dur dans la
+    branche ont été remplacés par le renvoi à `./rapido-kb/entreprise.md`
+    + `get_brand` (dépôt produit, aucune donnée client) ;
+  - tests/test-routage.md : 6 cas cluster marques + 3 contre-exemples.
+
 ## 1.3.0 — 2026-07-10 (vague post-audit — consolidé)
 
 - Nouveau skill `gestion-marques` (multi-marques, schémas vérifiés

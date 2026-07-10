@@ -12,6 +12,13 @@ et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` — la charte complète
 valeurs live de l'API (marges de protection, usages interdits, do/don't) et sert
 de repli si `get_brand` ne renvoie pas une valeur.
 
+En **multi-marques**, résoudre d'abord la **marque cible** avant toute lecture
+(agent `gestionnaire-marques` — jamais de défaut silencieux), puis lire
+`get_brand` et les assets de la marque (`list_all_files`, convention
+`"<Marque> — <type> — <variante>"`). La KB reste la source de vérité ; en cas
+d'écart KB ↔ serveur, le signaler. Le cycle de vie des marques
+(création/édition/suppression) : skill `gestion-marques`.
+
 ## Workflow
 
 1. **Charger l'identité** (aucun paramètre requis) :
