@@ -17,7 +17,9 @@ charte sert de repli et pour les règles non exposées par l'API.
 1. **Créer la carte** — `add_digital_card`. TOUS les champs sont requis :
    `card_name`, `owner_first_name`, `owner_last_name`, `owner_email`,
    `owner_phone` (chiffres uniquement, sans espaces ni « + »), `other_info`.
-   Demander les informations manquantes avant l'appel.
+   Demander les informations manquantes avant l'appel. Corriger une carte
+   existante : `edit_digital_card` (`card_id` + les seuls champs à changer —
+   mêmes contraintes, téléphone en chiffres nus).
 2. **Assigner un template** — lister avec `list_card_templates` (`type` = visite |
    nfc, `search` mot-clé), puis `assign_card_template` (`template_id`, `card_id`).
    - RÈGLE : le template choisi doit inclure un QR code, pour les cartes visite

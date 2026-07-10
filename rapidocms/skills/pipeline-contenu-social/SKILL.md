@@ -28,7 +28,10 @@ la charte sert de repli et pour les règles non exposées par l'API.
      `account_id` (étape 1), `post_type` ∈ media | text | mediatext ;
    - `media_type` (image | video), `media_url` (URL du fichier uploadé),
      `media_caption`, `media_source` = toujours `"biblio"` ;
-   - tous ces champs sont requis par l'API, y compris pour un post texte.
+   - tous ces champs sont requis par l'API, y compris pour un post texte —
+     convention post TEXTE (vérifiée par appel réel) : `media_type: ""`,
+     `media_url: ""`, `media_source: "biblio"`, `media_caption` = le texte
+     du post.
    - **Adapter le format et le ton au réseau** : LinkedIn = professionnel,
      paragraphes courts + hashtags sobres ; Instagram = visuel obligatoire, caption
      incisive + hashtags ; Facebook = conversationnel ; TikTok = vidéo, accroche
@@ -37,6 +40,8 @@ la charte sert de repli et pour les règles non exposées par l'API.
    `Y-m-d`, `post_heure` format STRICT `H-i-s`, ex. `2026-07-10` / `18-30-00`).
    Confirmer date et heure avec l'utilisateur avant l'appel. Retrouver un brouillon
    avec `list_drafts_tool` (`name`, `social`), vérifier avec `list_scheduled_posts`.
+   Corriger un brouillon AVANT planification : `edit_draft_tool` (`draft_id` +
+   les seuls champs à changer) — toujours préférable à supprimer/recréer.
 5. **Insights** — après publication, `post_insights` (`post_ids`, **10 posts
    maximum par appel** — découper au-delà).
 

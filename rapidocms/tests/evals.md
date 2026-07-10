@@ -31,3 +31,25 @@
   d'URL improvisée, jamais de logo généré par IA.
 - Pipeline vidéo (kit « Mika ») : les logos viennent des assets CMS, plus du
   repo GitHub — une mise à jour de logo = add_asset, le kit suit.
+
+## Éval 4 — gestion-marques (1.3.0)
+
+| Phrase | Attendu |
+|---|---|
+| « Crée une marque pour ma deuxième enseigne » | `gestion-marques` : `get_brand` d'abord (anti-doublon), récapitulatif complet (nom, langue, slogan, couleurs hex, font web-safe, logo URL publique), confirmation, PUIS `create_brand` |
+| « Change les couleurs de la marque en #0F172A et #F59E0B » | `edit_brand` (`brand_id` de `get_brand`, champ `couleurs` seul) — avant/après montré, confirmation (impact sur toutes les productions suivantes) |
+| « Supprime la marque de test » | `delete_brand` : hook garde-destructif (ask) + confirmation explicite + rappel que les contenus existants perdent leur référentiel |
+
+- Frontière : « uploade le logo » → `contenu-conforme-marque` (assets),
+  pas gestion-marques.
+
+## Non-régression (comportements existants inchangés)
+
+- **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social
+  — `create_draft_tool` un appel par réseau (média : `media_source` toujours
+  `"biblio"`), `schedule_draft_tool` avec `post_date` `Y-m-d` et `post_heure`
+  STRICT `H-i-s` (tirets), confirmation date/heure avant l'appel.
+- **NR2 — « Génère un visuel pour ce post »** : prompt-engineering-visuel —
+  Étape 0 (charte + `list_prompts` AVANT de créer), palette hex de la charte
+  dans le prompt, pas de texte incrusté, capitalisation PROPOSÉE via
+  `add_prompt` (jamais imposée).
