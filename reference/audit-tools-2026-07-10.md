@@ -1,4 +1,4 @@
-# Audit de vérité — serveurs foodeatup / rapidocrm / rapidocms (2026-07-10, v3)
+# Audit de vérité — serveurs MCP de la marketplace (2026-07-10, v4)
 
 **Méthode** : introspection des serveurs MCP réellement connectés à la
 session du 2026-07-10 (catalogues live : **foodeatup 112 outils,
@@ -115,3 +115,65 @@ serveur (catalogues live du 2026-07-10).
   tâches, dépenses CRM, cycle commerciaux, newsletters, templates,
   gestion-marques, éditions CMS, bibliothèque média) ; 25 CRUD/admin
   « ignorés volontairement » avec raison. **Audit clos.**
+
+---
+
+# (6) v4 — Audit complet ÉTENDU À TOUS LES SERVEURS (soir)
+
+**Nouveauté v4** : les catalogues des 6 serveurs restants (gmail,
+google-calendar, google-drive, n8n, facebook-ads, stripe) ont été relevés
+LIVE dans la session du 2026-07-10 et EMBARQUÉS dans
+`scripts/tester-skills.py`. Conséquence : **plus aucun outil « à vérifier en
+ligne »** — le testeur est passé de 78 INFO à **0 FAIL / 0 WARN / 0 INFO**,
+chaque outil cité dans le dépôt est vérifié contre un catalogue serveur.
+Seul canva reste sur son relevé du 2026-07-06 (OAuth non connecté ce jour —
+invérifiable).
+
+## Ce que l'embarquement a immédiatement révélé (corrigé)
+
+1. Le catalogue rapidocms du testeur n'avait jamais reçu les 5 outils
+   marques apparus en session (add_asset, remove_asset, create/edit/
+   delete_brand) → ajoutés.
+2. **rapido-suite citait `search_workflows`/`search_executions` (n8n) sans
+   déclarer le serveur** — corrigé : n8n déclaré dans son `.mcp.json`
+   (`${N8N_MCP_URL}`, optionnel, dégradation propre — pattern
+   rapido-direction) ; le README omettait aussi lovable et facebook-ads
+   pourtant déclarés par rapido-suite → ligne corrigée.
+
+## Couverture par serveur (cités / live, dans les plugins déclarants)
+
+| Serveur | Couverture | Lecture |
+|---|---|---|
+| rapidocms | **43/43** | complet |
+| rapidocrm | 98/103 | 5 ignorés volontairement (§a) |
+| foodeatup | 92/112 | 20 ignorés volontairement (§a) |
+| n8n | 24/26 | orphelins : search_folders, search_projects (navigation d'instance — inutiles aux workflows du plugin) |
+| rapidorh | 18/22 | orphelins : documents/liens de projet + update-user (candidats : une ligne dans revue-projet-hebdo) |
+| hyperframes | 5/6 | orphelin : list_projects (candidat : une ligne dans video-marketing pour retrouver un projet) |
+| gmail | 8/13 | orphelins : labels sensibles/unlabel/list_drafts — le plugin est volontairement « brouillons + tri » |
+| google-drive | 5/8 | orphelins : métadonnées/téléchargement — coffre-documents privilégie recherche + lecture |
+| google-calendar | 4/8 | orphelins : get/update/respond_to_event, list_calendars (candidats : gestion d'un RDV existant dans journee-du-dirigeant) |
+| stripe | 4/9 | outils d'aide au DÉVELOPPEUR (documentation, planner, feedback) volontairement hors périmètre — le plugin utilise l'API read/write/search |
+| lovable | 22/44 | la moitié = skills workspace/connecteurs/analytics avancés — candidats si besoin client |
+| facebook-ads | 31/82 | 51 orphelins = catalogue produits (28 outils), pixel (8) et expérimentations (7) — 3 clusters entiers volontairement hors périmètre v1 de rapido-meta-ads |
+| canva | 17/38 | relevé du 06/07 (OAuth requis pour re-vérifier) — éditions transactionnelles et commentaires hors périmètre v1 |
+
+## Améliorations recommandées (par priorité)
+
+1. **FAIT (cette vague)** : catalogues live embarqués (0 INFO), agents
+   manquants créés (chef-produit-web, architecte-automatisations),
+   déclaration n8n de rapido-suite, évals rapido-lovable + rapido-n8n.
+2. **Évals manquantes** : rapidorh, rapido-suite, rapido-canva,
+   rapido-meta-ads n'ont pas encore de `tests/evals.md` (les scénarios
+   existent en partie dans tests/test-routage.md racine) — à créer sur le
+   modèle des autres plugins.
+3. **Clusters candidats** (si besoin métier) : catalogue produits + pixel
+   Meta (e-commerce), gestion d'un RDV existant (google-calendar),
+   `list_projects` HyperFrames, documents/liens de projet RapidoRH.
+4. **Ré-audit périodique** : les serveurs évoluent EN COURS de session
+   (7 outils apparus le 10/07) — rejouer l'introspection live à chaque
+   vague et comparer aux catalogues embarqués (écart = mise à jour).
+5. **Côté utilisateur** : tag v1.0.0 + Release GitHub (le proxy de session
+   bloque les tags), test réel `/plugin install rapido-suite@rapido`,
+   OAuth Canva pour re-vérifier son catalogue, parties 3-4 du master plan
+   à réconcilier (formules-kpi, routines, gouvernance, R9).

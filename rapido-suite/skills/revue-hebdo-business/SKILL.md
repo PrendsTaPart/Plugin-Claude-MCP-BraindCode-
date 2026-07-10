@@ -52,8 +52,8 @@ dans la synthèse et laisser l'utilisateur décider.
    - `ads_insights_anomaly_signal` : décrochages à signaler ;
    - croiser avec les leads CRM réellement entrés en pipeline (coût par
      client, pas par clic).
-7. **Automatisations** (si le serveur n8n est disponible — plugin rapido-n8n
-   installé et `N8N_MCP_URL` définie ; sinon sauter en le mentionnant) :
+7. **Automatisations** (serveur n8n optionnel du plugin — si `N8N_MCP_URL`
+   est définie ; sinon sauter en le mentionnant) :
    - `search_workflows` : nombre de workflows actifs (vs registre
      `rapido-kb/processus-internes.md`) ;
    - `search_executions` (`status: ["error","crashed"]`, `startedAfter` = la

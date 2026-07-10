@@ -85,14 +85,15 @@ schedule_sms search_entreprises send_email send_newsletter send_sms
 set_commercial_status update_commercial_objectifs update_commercial_profil
 update_contact update_contrat_status update_contrat_template update_entreprise
 update_product""".split()),
-    "rapidocms": set("""add_card_page_link add_digital_card add_post_campagne add_prompt
+    "rapidocms": set("""add_asset add_card_page_link add_digital_card add_post_campagne add_prompt
 assign_card_template cancel_schedules_post create_campagne create_draft_tool
 create_post_template delete_campagne delete_card_page_link delete_digital_card
-delete_draft_tool delete_prompt edit_campagne edit_card_page edit_digital_card
+create_brand delete_brand delete_draft_tool delete_prompt edit_brand
+edit_campagne edit_card_page edit_digital_card
 edit_draft_tool edit_prompt generate_image get_brand get_company get_profile
 ingishts_campagne list_all_files list_campagnes list_card_page list_card_templates
 list_connected_accounts list_digital_card list_drafts_tool list_posts_campagne
-list_prompts list_scheduled_posts post_insights remove_post_campagne
+list_prompts list_scheduled_posts post_insights remove_asset remove_post_campagne
 schedule_draft_tool upload_file_tool""".split()),
     "rapidorh": set("""create-daily-tool create-project-link-tool create-project-tool
 create-role-tool create-task-list-tool create-task-tool create-user-tool
@@ -123,12 +124,65 @@ send_message set_folder_visibility set_project_knowledge set_project_visibility
 set_workspace_knowledge update_workspace_skill""".split()),
     "hyperframes": set("compose get_project get_project_status get_render_status "
                        "list_projects render_video".split()),
+    "gmail": set("""apply_sensitive_message_label apply_sensitive_thread_label
+create_draft create_label get_message get_thread label_message label_thread
+list_drafts list_labels search_threads unlabel_message unlabel_thread""".split()),
+    "google-calendar": set("""create_event delete_event get_event list_calendars
+list_events respond_to_event suggest_time update_event""".split()),
+    "google-drive": set("""copy_file create_file download_file_content
+get_file_metadata get_file_permissions list_recent_files read_file_content
+search_files""".split()),
+    "n8n": set("""add_data_table_column add_data_table_rows archive_workflow
+create_data_table create_workflow_from_code delete_data_table_column
+execute_workflow get_execution get_node_types get_sdk_reference
+get_suggested_nodes get_workflow_details prepare_test_pin_data publish_workflow
+rename_data_table rename_data_table_column search_data_tables search_executions
+search_folders search_nodes search_projects search_workflows test_workflow
+unpublish_workflow update_workflow validate_workflow""".split()),
+    "facebook-ads": set("""ads_account_get_activity_logs ads_activate_entity
+ads_boost_ig_post ads_catalog_create ads_catalog_create_feed_rule
+ads_catalog_create_product_feed ads_catalog_create_product_feed_upload_session
+ads_catalog_create_product_set ads_catalog_delete_product
+ads_catalog_get_catalogs ads_catalog_get_data_sources ads_catalog_get_details
+ads_catalog_get_diagnostics ads_catalog_get_dynamic_ads_health
+ads_catalog_get_event_source_catalogs ads_catalog_get_feed_rules
+ads_catalog_get_product_details ads_catalog_get_product_feed_details
+ads_catalog_get_product_feed_upload_sessions
+ads_catalog_get_product_product_sets ads_catalog_get_product_set_details
+ads_catalog_get_product_set_products ads_catalog_get_product_sets
+ads_catalog_search_product ads_catalog_update_catalog ads_catalog_update_product
+ads_catalog_update_product_feed ads_catalog_update_product_set ads_create_ad
+ads_create_ad_set ads_create_campaign ads_create_creative
+ads_create_custom_audience ads_delete_custom_audience
+ads_experiment_abtest_create_test ads_experiment_abtest_get_test
+ads_experiment_abtest_update_test ads_experiment_check_eligibility
+ads_experiment_lift_create_test ads_experiment_lift_get_test
+ads_experiment_list_tests ads_get_ad_account_custom_audiences
+ads_get_ad_account_pages ads_get_ad_accounts ads_get_ad_entities
+ads_get_ad_images ads_get_ad_preview ads_get_ad_videos ads_get_creative_ads
+ads_get_creatives ads_get_custom_audience ads_get_custom_audience_adsets
+ads_get_customconversions ads_get_dataset_details ads_get_dataset_quality
+ads_get_dataset_stats ads_get_datasets ads_get_errors ads_get_field_context
+ads_get_help_article ads_get_ig_accounts ads_get_ig_media
+ads_get_opportunity_score ads_get_pages_for_business ads_get_user_pages
+ads_insights_advertiser_context ads_insights_anomaly_signal
+ads_insights_auction_ranking_benchmarks ads_insights_industry_benchmark
+ads_insights_performance_trend ads_library_search ads_pixel_event_create
+ads_pixel_event_delete ads_pixel_event_read ads_pixel_event_update
+ads_pixel_parameter_create ads_pixel_parameter_delete ads_pixel_parameter_read
+ads_pixel_parameter_update ads_update_custom_audience
+ads_update_custom_audience_users ads_update_entity""".split()),
+    "stripe": set("""fetch_stripe_resources search_stripe_documentation
+search_stripe_resources send_stripe_mcp_feedback stripe_api_details
+stripe_api_read stripe_api_search stripe_api_write
+stripe_implementation_planner""".split()),
 }
 # Serveurs dont le catalogue d'outils vit à distance : un outil qui leur est
 # attribuable passe en INFO (à vérifier en ligne, MCP connectés), pas en WARN.
-SERVEURS_CATALOGUE_DISTANT = ["facebook-ads", "n8n", "gmail", "google-calendar",
-                              "google-drive", "canva", "lovable", "hyperframes"]
-SERVEURS_SANS_CATALOGUE = {"facebook-ads", "n8n", "gmail", "google-calendar", "google-drive"}
+# canva : OAuth non connecté dans la session du 2026-07-10 — seul catalogue
+# non re-vérifiable en live (relevé du 2026-07-06 embarqué ci-dessus).
+SERVEURS_CATALOGUE_DISTANT = ["canva"]
+SERVEURS_SANS_CATALOGUE = set()
 PREFIXES_OUTIL = ("create", "list", "get", "update", "delete", "add", "edit", "send",
                   "schedule", "cancel", "remove", "upload", "generate", "assign", "move",
                   "publish", "unpublish", "archive", "execute", "activate", "ads")
