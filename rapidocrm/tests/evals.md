@@ -28,3 +28,15 @@
 - Croisement Mom Test : « je veux valider mon idée à plus grande échelle »
   → sondage via animation-client avec questions passé/concret (description
   de `mom-test` mise à jour, corps du skill Wondel inchangé).
+
+## Non-régression 1.2.0 (comportements existants inchangés)
+
+- **NR1 — « Relance mes factures en retard »** : devis-facture-relance —
+  transitions CRM strictes (brouillon → en_attente → payee ;
+  en_attente → en_retard → payee, sinon avoir), relance `send_email` avec
+  numéro/montant/échéance, `log_activity` pour tracer. Le nouvel enum
+  élargi ne concerne QUE update_invoice_status côté FoodEatUp.
+- **NR2 — « Lance un sondage chez Dupont SA »** : animation-client —
+  `list_sondages` d'abord (jamais d'ID inventé), confirmation niveau 2
+  avant `lancer_sondage_entreprise` (hook en filet), invitations déléguées
+  à communication-client (jamais d'envoi direct).

@@ -21,8 +21,10 @@ plus : tout changement passe par un avenant (nouveau contrat).
 
 1. **Template d'abord** — vérifier l'existant avec `list_contrat_templates` ;
    sinon `create_contrat_template` (`titre`, `contenu` HTML/texte avec
-   variables dynamiques, `description`). Faire valider le contenu juridique
-   par l'utilisateur — vous rédigez, il assume.
+   variables dynamiques, `description`) ; pour amender un modèle existant :
+   `update_contrat_template` (`id` requis ; `titre`/`contenu`/`description`)
+   — les contrats DÉJÀ émis ne changent pas. Faire valider le contenu
+   juridique par l'utilisateur — vous rédigez, il assume.
 2. **Créer et envoyer le contrat** — `create_contrat` (`entreprise_id`,
    `contrat_template_id`, `date_debut`/`date_fin` YYYY-MM-DD).
    - ⚠️ PIÈGE : `send_email` vaut TRUE par défaut — l'email part
