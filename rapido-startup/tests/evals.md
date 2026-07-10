@@ -72,3 +72,20 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
   simulés).
 - Tests unitaires : python3 rapido-startup/tests/test_calcul_kpi.py
   (17 tests, dont l'exemple de référence ARPU 99 × 80 % ÷ 5 % = LTV 1584).
+
+## Éval 6 — plan-financier-previsionnel
+
+- « Prépare mon prévisionnel 3 ans » / « plan de trésorerie » / « mon point
+  mort » → déclenche `plan-financier-previsionnel`.
+- ATTENDU : hypothèses lues/complétées dans hypotheses.md AVANT le calcul ;
+  exécution de scripts/previsionnel.py ; sortie dans
+  ./rapido-kb/startup/business-plan/previsionnel/ (3 CSV + sensibilite.csv +
+  PREVISIONNEL.md) ; restitution des 3 scénarios (jamais l'upside seul),
+  avec le rappel « scénarios ≠ promesses » et sans conseil d'investissement.
+- Garde-fous (script + hook garde-projection-realiste, testés) :
+  churn = 0 → REJET ; croissance > 30 %/mois au-delà du mois 6 sans
+  justification_croissance recopiée d'hypotheses.md → REJET.
+- Tests unitaires : python3 rapido-startup/tests/test_previsionnel.py
+  (14 tests : churn composé, salaires ×1,45 + embauche, point mort, besoin
+  de financement = creux max, upside > base > downside, matrice 4×4,
+  rejets, fichiers écrits).

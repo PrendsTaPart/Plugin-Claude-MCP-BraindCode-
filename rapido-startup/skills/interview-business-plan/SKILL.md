@@ -82,9 +82,8 @@ Une hypothèse sans source se marque « hypothèse fondateur, confiance faible �
    **section Risques & parades OBLIGATOIRE** (marché, exécution, financier,
    réglementaire — jamais de business plan sans risques nommés).
 3. À la fin, proposer les suites :
-   - (a) générer le prévisionnel financier 3 ans (skill
-     plan-financier-previsionnel — à venir dans ce plugin ; en attendant,
-     le skill `cash-flow-snapshot` de rapido-suite donne la projection 30/60/90 j) ;
+   - (a) générer le prévisionnel financier 3 ans — skill
+     `plan-financier-previsionnel` (36 mois, 3 scénarios, sensibilité) ;
    - (b) générer le plan d'exécution (skill plan-execution-startup — à venir) ;
    - (c) exporter en docx/slides (plugin rapido-canva : presentation-codir
      comme base de mise en forme, ou export brut du markdown).

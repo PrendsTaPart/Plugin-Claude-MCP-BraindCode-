@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-startup
 
+## 1.3.0 — 2026-07-10
+
+- Skill `plan-financier-previsionnel` : modèle mois par mois sur 36 mois
+  (clients avec churn composé, MRR, CA, COGS, salaires chargés ×1,45,
+  marketing piloté par le CAC, coûts fixes, résultat, trésorerie cumulée) ;
+  point mort, besoin de financement (creux de trésorerie max) ; 3 scénarios
+  base / upside (+20 % croissance) / downside (churn +2 pts, CAC +30 %) ;
+  matrice de sensibilité churn × CAC ; sortie CSV + PREVISIONNEL.md dans
+  ./rapido-kb/startup/business-plan/previsionnel/. Rappels : pas de conseil
+  d'investissement, scénarios ≠ promesses, document vivant.
+- Hook PreToolUse `garde-projection-realiste` (+ mêmes contrôles dans le
+  script) : REJET churn = 0 ; REJET croissance > 30 %/mois au-delà du mois 6
+  sans justification_croissance recopiée d'hypotheses.md.
+- 14 tests unitaires (tests/test_previsionnel.py) ; interview-business-plan
+  référence désormais le skill réel (plus « à venir »).
+
 ## 1.2.0 — 2026-07-10
 
 - Skill `catalogue-kpi` : 22 KPI avec formule exacte, outils MCP par KPI,
