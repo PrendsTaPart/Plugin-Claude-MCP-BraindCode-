@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-suite
 
+## 1.1.0 — 2026-07-10
+
+- Serveur n8n déclaré dans `.mcp.json` (`${N8N_MCP_URL}`, optionnel —
+  dégradation propre) : comite-de-direction et revue-hebdo-business
+  citaient `search_workflows`/`search_executions` via « plugin rapido-n8n
+  co-installé » — le serveur est désormais porté par le plugin lui-même,
+  même pattern que rapido-direction. Formulations ajustées.
+
 ## 1.0.1 — 2026-07-10
 
 - Corrections documentaires (audit) : dossier-startup-360 —
