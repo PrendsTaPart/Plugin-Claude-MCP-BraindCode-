@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-10-blue)
-![Skills](https://img.shields.io/badge/skills-108-brightgreen)
+![Skills](https://img.shields.io/badge/skills-109-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 ## Les plugins
@@ -22,7 +22,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 |---|---|---|---|---|---|
 | `foodeatup` | 1.0.0 | 14 | 2 | foodeatup | — |
 | `rapidocrm` | 1.0.0 | 19 | 2 | rapidocrm | — |
-| `rapidocms` | 1.0.0 | 16 | 4 | rapidocms, hyperframes | — |
+| `rapidocms` | 1.1.0 | 17 | 4 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.0.0 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |
 | `rapido-canva` | 1.0.0 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
@@ -31,7 +31,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-n8n` | 1.0.0 | 4 | 0 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.0.1 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 
-**Total : 10 plugins, 108 skills, 14 agents.**
+**Total : 10 plugins, 109 skills, 14 agents.**
 
 ## Démarrage rapide
 
@@ -152,7 +152,7 @@ distribués avec le plugin.
 
 ## Skills tiers et attributions
 
-40 des 108 skills sont importés de dépôts open source, adaptés aux
+41 des 109 skills sont importés de dépôts open source, adaptés aux
 conventions Rapido (mentions MCP/KB, renvois vers les skills d'exécution,
 renommages anti-collision). Provenance détaillée — commit, chemin d'origine,
 modifications locales — dans l'`ATTRIBUTIONS.md` de chaque plugin concerné ;
@@ -164,6 +164,7 @@ la LICENSE de la source est copiée dans chaque dossier de skill.
 | [anthropics/skills](https://github.com/anthropics/skills) | Apache 2.0 (LICENSE.txt par skill) | 6 | rapido-canva (3), rapido-lovable (2), rapido-suite (1 : `skill-creator`) |
 | [wondelai/skills](https://github.com/wondelai/skills) | MIT | 9 | rapidocms (3), rapidocrm (3), rapido-meta-ads (3) |
 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT | 2 | rapido-lovable (2) |
+| [AgriciDaniel/claude-blog](https://github.com/AgriciDaniel/claude-blog) | MIT | 1 | rapidocms (1 : `generation-article-blog`) |
 
 Les skills wondelai (basés sur des livres) ne sont pas modifiés. Cas
 particulier documenté dans `rapido-suite/ATTRIBUTIONS.md` : `friday-brief` a

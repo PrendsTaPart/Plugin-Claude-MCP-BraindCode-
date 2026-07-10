@@ -1,5 +1,17 @@
 # Changelog — plugin rapidocms
 
+## 1.1.0 — 2026-07-09
+
+- Skill `generation-article-blog` (importé de AgriciDaniel/claude-blog,
+  commit `49842ea9`, MIT — skill `blog` renommé) : moteur d'articles de blog
+  E-E-A-T/GEO — brief, recherche sourcée, plan, rédaction au ton de la KB,
+  grille qualité 100 points, visuel via `generate_image`, publication
+  (Lovable `send_message` ou markdown livré), relais social via
+  `pipeline-contenu-social`. SKILL.md réécrit en français et câblé MCP ;
+  `references/` (21 annexes) et `templates/` (10 gabarits) non modifiés.
+- Agent `responsable-marketing` : invoque `generation-article-blog` (valide
+  le brief avant rédaction).
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.
