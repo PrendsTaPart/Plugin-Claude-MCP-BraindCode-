@@ -26,7 +26,8 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
    et pour SAISIR une dépense dictée : `create_depense` (`entreprise_id`,
    `total_ht` requis ; `taux_tva` en %, TTC/TVA auto-calculés sinon ;
    `mode_paiement` ∈ Espèce, Carte bleu, Virement, Chèque ; `statut`) après
-   confirmation — une dépense enregistre de l'argent sorti.
+   confirmation — une dépense enregistre de l'argent sorti (workflow
+   complet avec contrôle TTC=HT+TVA par script : skill `gestion-depenses`).
 4. **Synthèse structurée** à restituer :
    - vue équipe : effectif actif, objectifs atteints / en retard ;
    - top / flop par indicateur (CA, conversions, activité) — factuel, sans jugement ;
