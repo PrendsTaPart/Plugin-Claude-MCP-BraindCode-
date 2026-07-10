@@ -1,4 +1,4 @@
-# Notes de release — v1.0.0 (2026-07-06)
+# Notes de release — v1.0.0 (2026-07-10)
 
 Première version publique de la **marketplace Rapido** : des plugins Claude
 Code pour piloter une entreprise via les systèmes Rapido (FoodEatUp,
@@ -7,11 +7,14 @@ Meta Ads, n8n, Google Workspace).
 
 ## En chiffres
 
-- **10 plugins** (tous en 1.0.0), **108 skills**, **14 agents** (personas).
+- **11 plugins**, **119 skills**, **17 agents** (personas) — chiffres
+  recomptés depuis les fichiers au moment du tag.
 - **8 plugins avec hooks** déterministes — 13 scripts de garde testés
   fonctionnellement sur stdin, plus des hooks Stop (récapitulatif exigé) et
   SessionStart (détection de la KB).
-- 40 des 108 skills importés de 4 dépôts open source, attribués et licenciés.
+- 40 des 119 skills importés de 4 dépôts open source, attribués et licenciés ;
+  audit de vérité des 3 serveurs Rapido CLOS (100 % des outils couverts ou
+  ignorés volontairement avec raison — reference/audit-tools-2026-07-10.md).
 - 2 scripts de validation stdlib + une CI GitHub Actions qui les rejoue.
 
 ## Les 5 points forts
