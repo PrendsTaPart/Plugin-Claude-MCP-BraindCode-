@@ -31,3 +31,5 @@ de chaque skill.
 Skills Wondel (basés sur des livres) : contenu NON modifié.
 
 > Note du 2026-07-06 : la description du frontmatter de chaque skill listé ici a été traduite en français (« Utiliser quand… ») pour le déclenchement — le corps du skill reste inchangé. Une clé `source:` de traçabilité a été ajoutée au frontmatter.
+
+> 2026-07-10 : description de `mom-test` enrichie d'un cas d'usage croisé (sondages via animation-client) — corps du skill toujours inchangé.

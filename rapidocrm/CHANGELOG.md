@@ -1,5 +1,24 @@
 # Changelog — plugin rapidocrm
 
+## 1.1.0 — 2026-07-10
+
+- Skill `animation-client` : sondages (list_sondages → modèle existant →
+  lancer_sondage_entreprise, résultats via get_sondage_resultats avec
+  synthèse des verbatims), jeux concours (list_jeux_concours →
+  lancer_jeu_concours_entreprise, rappel systématique du cadre légal FR :
+  règlement, gratuité, RGPD), fidélité (get_loyalty_points croisé
+  get_top_clients → actions de rétention ciblées). Envoi des invitations
+  DÉLÉGUÉ à communication-client (masse : campagne-marketing). Schémas
+  vérifiés sur le serveur live (modele_sondage_id = sondage_companie.id,
+  get_sondage_resultats par id/nom + type companie/client).
+- Hook garde-destructif : matcher étendu à lancer_sondage_entreprise et
+  lancer_jeu_concours_entreprise (action visible par les clients =
+  confirmation forcée, testé stdin).
+- `mom-test` : cas d'usage croisé ajouté à la DESCRIPTION (validation
+  terrain à l'échelle via animation-client) — corps du skill Wondel
+  inchangé, conformément à la règle d'intégration.
+- tests/evals.md : scénarios de déclenchement et de comportement.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.

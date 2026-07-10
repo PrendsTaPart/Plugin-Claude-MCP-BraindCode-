@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-11-blue)
-![Skills](https://img.shields.io/badge/skills-114-brightgreen)
+![Skills](https://img.shields.io/badge/skills-115-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 ## Les plugins
@@ -21,7 +21,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.0.0 | 14 | 2 | foodeatup | — |
-| `rapidocrm` | 1.0.0 | 19 | 2 | rapidocrm | — |
+| `rapidocrm` | 1.1.0 | 20 | 2 | rapidocrm | — |
 | `rapidocms` | 1.1.0 | 17 | 4 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.0.0 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup | — |
@@ -32,7 +32,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-direction` | 1.0.1 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.5.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 
-**Total : 11 plugins, 114 skills, 16 agents.** (`rapido-startup` — finance &
+**Total : 11 plugins, 115 skills, 16 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, coach + CFO virtuel.)
 

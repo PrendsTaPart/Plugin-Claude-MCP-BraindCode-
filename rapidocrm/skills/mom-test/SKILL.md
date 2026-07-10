@@ -1,6 +1,6 @@
 ---
 name: mom-test
-description: Utiliser quand l'utilisateur prépare des entretiens clients ou veut valider une idée sans se faire raconter ce qu'il veut entendre — « les utilisateurs disent qu'ils achèteraient mais n'achètent pas », questions orientées, script d'interview. Règles du Mom Test : parler de leur vie (pas de votre idée), du passé et du concret, et parler moins.
+description: Utiliser quand l'utilisateur prépare des entretiens clients ou veut valider une idée sans se faire raconter ce qu'il veut entendre — « les utilisateurs disent qu'ils achèteraient mais n'achètent pas », questions orientées, script d'interview. Règles du Mom Test : parler de leur vie (pas de votre idée), du passé et du concret, et parler moins. Cas d'usage croisé - passer à l'échelle la validation terrain avec un sondage RapidoCRM (skill animation-client), en gardant des questions Mom Test (passé, concret, jamais d'intentions).
 source: wondelai/skills (commit 326b3801), MIT
 license: MIT
 metadata:
