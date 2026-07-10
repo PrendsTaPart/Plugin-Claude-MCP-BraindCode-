@@ -9,7 +9,9 @@ description: Utiliser quand l'utilisateur veut générer une image, créer un vi
 
 Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` (règles communes)
 et `${CLAUDE_PLUGIN_ROOT}/reference/charte-graphique.md` — la palette du prompt
-vient de la charte (valeurs live `get_brand` prioritaires).
+vient de la charte (valeurs live `get_brand` prioritaires). Consulter aussi la
+bibliothèque de prompts gagnants (skill `bibliotheque-prompts`) : un prompt
+proche déjà validé sert de base et économise les itérations.
 
 ## Structure de prompt — les 6 blocs, dans l'ordre
 
@@ -62,6 +64,8 @@ Construire chaque prompt `generate_image` avec :
    placeholders `[entre crochets]` — ex. `[nom du plat]`, `[couleur primaire]` —,
    `type: "visuel"`). Vérifier d'abord via `list_prompts` qu'un prompt
    équivalent n'existe pas déjà (sinon proposer `edit_prompt` pour l'améliorer).
+   PROPOSER la sauvegarde à l'utilisateur, jamais l'imposer — titre normalisé
+   « type — sujet — style » et gestion complète : skill `bibliotheque-prompts`.
 
 ## Garde-fous
 

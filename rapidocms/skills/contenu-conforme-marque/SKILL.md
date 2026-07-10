@@ -30,6 +30,29 @@ de repli si `get_brand` ne renvoie pas une valeur.
 3. **Vérifier avant livraison** : couleurs exactes (codes hex de `get_brand`, pas
    d'approximation), logo présent quand pertinent, ton homogène.
 
+## Assets de marque (logos officiels)
+
+La marque porte désormais ses ASSETS (schémas vérifiés serveur) :
+
+1. **Uploader les logos officiels** — `upload_file_tool` (`type: "image"`,
+   `name` explicite ex. « logo principal — fond transparent », `file_url`
+   publique). Privilégier les versions à FOND TRANSPARENT (PNG) : ce sont
+   elles que les générations réutilisent proprement.
+2. **Les rattacher à la marque** — `add_asset` (`asset_id` renvoyé par la
+   bibliothèque + `brand_id` de `get_brand`). Une variante par usage :
+   principal, monochrome, fond clair, fond foncé.
+3. **Les référencer dans TOUTE génération** : visuels, cartes, templates —
+   le logo vient des assets de marque, jamais d'une URL improvisée ni d'une
+   génération IA (un logo généré est toujours déformé).
+4. **`remove_asset`** (`asset_id`) sur confirmation uniquement (hook
+   garde-destructif en filet) — retirer un logo de la marque impacte toutes
+   les productions suivantes.
+
+> **Pipeline vidéo (kit « Mika »)** : les logos utilisés par la chaîne vidéo
+> (`video-marketing`) viennent DÉSORMAIS des assets de marque CMS — plus du
+> repo GitHub. Toute mise à jour de logo se fait donc ICI (add_asset), et le
+> kit vidéo la récupère automatiquement.
+
 ## Garde-fous
 
 - Appeler `get_brand` UNE fois par session et réutiliser le résultat — pas besoin
