@@ -1,5 +1,18 @@
 # Changelog — plugin rapido-startup
 
+## 1.4.0 — 2026-07-10
+
+- Skill `plan-execution-startup` (routine R5 STARTUP-BUILDER) : du business
+  plan aux tâches — WBS de référence ~105-120 tâches FR en 6 phases
+  (juridique/admin, produit, go-to-market, finance dont dossiers BPI/CII/
+  JEI/French Tech, RH, pilotage) avec dépendances et durées types ;
+  adaptation au BP puis PRÉSENTATION avant toute écriture ; création
+  RapidoRH (ordre setup-projet : projet → colonnes par phase → tâches),
+  jalons Google Calendar (serveur ajouté au .mcp.json, dégradation propre),
+  tâches commerciales CRM ; mapping tracé dans
+  ./rapido-kb/startup/plan-execution.md ; récap des IDs par système ;
+  relances = delta uniquement. Réutilise les skills existants par référence.
+
 ## 1.3.0 — 2026-07-10
 
 - Skill `plan-financier-previsionnel` : modèle mois par mois sur 36 mois

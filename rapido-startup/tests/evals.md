@@ -89,3 +89,21 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
   (14 tests : churn composé, salaires ×1,45 + embauche, point mort, besoin
   de financement = creux max, upside > base > downside, matrice 4×4,
   rejets, fichiers écrits).
+
+## Éval 7 — plan-execution-startup
+
+- « Lance l'exécution » / « crée les tâches de mon BP » / « planifie la
+  création de ma boîte » → déclenche `plan-execution-startup`.
+- ATTENDU : sans ./rapido-kb/startup/business-plan/ → arrêt + renvoi vers
+  interview-business-plan (aucune écriture).
+- ATTENDU : WBS adapté (vertical/équipe/budget) PRÉSENTÉ et validé AVANT
+  toute écriture ; puis ordre setup-projet (IDs valides, jamais devinés) :
+  create-project-tool → colonnes (create-task-list-tool, une par phase) →
+  create-task-tool ; jalons seuls dans Google Calendar (dégradation propre
+  si non connecté) ; tâches commerciales via create_task (CRM).
+- ATTENDU : mapping tâche ↔ ID écrit dans
+  ./rapido-kb/startup/plan-execution.md ; récap final des IDs par système ;
+  relance de la routine → uniquement le delta (pas de doublons).
+- Les tâches « → skill X » invoquent le skill existant (usine-a-landing,
+  calendrier-editorial, prospection-pipeline, lancement-campagne-meta,
+  job-post-builder, onboarding-equipe…), jamais de logique dupliquée.

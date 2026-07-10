@@ -19,6 +19,10 @@
     "foodeatup": {
       "type": "http",
       "url": "https://foodeatup.com/api/mcp"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://calendarmcp.googleapis.com/mcp/v1"
     }
   }
 }

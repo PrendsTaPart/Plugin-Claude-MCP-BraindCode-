@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-11-blue)
-![Skills](https://img.shields.io/badge/skills-111-brightgreen)
+![Skills](https://img.shields.io/badge/skills-112-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 ## Les plugins
@@ -30,9 +30,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-meta-ads` | 1.0.0 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
 | `rapido-n8n` | 1.0.0 | 4 | 0 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.0.1 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
-| `rapido-startup` | 1.3.0 | 3 | 1 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup | — |
+| `rapido-startup` | 1.4.0 | 4 | 1 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 
-**Total : 11 plugins, 111 skills, 15 agents.** (`rapido-startup` — finance &
+**Total : 11 plugins, 112 skills, 15 agents.** (`rapido-startup` — finance &
 création de startup : interview business plan + coach, autres skills à venir.)
 
 ## Démarrage rapide
