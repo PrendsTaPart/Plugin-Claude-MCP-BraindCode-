@@ -1,0 +1,9 @@
+{
+  "name": "rapido-startup",
+  "version": "1.0.0",
+  "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup. Skills à venir.",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  }
+}
