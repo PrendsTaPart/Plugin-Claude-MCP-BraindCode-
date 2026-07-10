@@ -48,6 +48,22 @@ confirmation explicite de l'utilisateur.
 4. **Annulation** — `update_order_status` avec `annulee` : action
    irréversible, confirmation explicite obligatoire, motif consigné en note.
 
+## Devis et factures (groupes, traiteur, privatisation)
+
+1. **Devis** — `create_quote` (`establishment_id`, `items` =
+   `[{name, quantity, unit_price ; tax_rate, discount_amount, description}]` ;
+   `client_id`, `validity_date`, `advance_percentage` — totaux et acompte
+   calculés automatiquement, ne pas les calculer soi-même). Suivre :
+   `list_quotes` (`status` ∈ brouillon, envoye, accepte, refuse, expire) et
+   `get_quote` (détail lignes incluses).
+2. **Avancer un devis** — `update_quote_status` (enum strict : brouillon →
+   envoye → accepte / refuse ; expire). Ne facturer que sur devis `accepte`.
+3. **Statut de facture** — `update_invoice_status` (`status` ENUM élargi
+   vérifié serveur : brouillon, en_attente, envoyee, acceptee, refusee,
+   litige, payee, annulee). Les transitions légales DGFiP sont validées PAR
+   LE SERVEUR : ne pas pré-filtrer, tenter l'appel et relayer l'erreur si la
+   transition est illégale (pieges-outils).
+
 ## Garde-fous
 
 - Jamais de commande sans articles vérifiés (nom, quantité, prix unitaire,

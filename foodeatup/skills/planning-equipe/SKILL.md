@@ -34,6 +34,15 @@ description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horair
    `date_from`/`date_to`, défaut mois en cours) : croiser pointages vs shifts
    planifiés et signaler les écarts (retards récurrents, heures sup non
    planifiées) — factuellement, sans jugement de personne.
+5. **Planning hebdomadaire type** — `update_employee_schedule`
+   (`establishment_id`, `employee_id`, `schedules` =
+   `[{day, start_time, end_time, break_duration}]`) : ⚠️ REMPLACE
+   ENTIÈREMENT le planning type de l'employé (pas un ajout) — récapituler
+   l'ancien et le nouveau, confirmation obligatoire (hook en filet).
+6. **Affecter une tâche** — `assign_task` (`establishment_id`,
+   `professional_id`, `name` ; `date`, `time` HH:MM, `priority` ∈ basse,
+   normale, haute, urgente, `category`) : la consigne du jour rattachée à la
+   bonne personne.
 
 ## Volet administratif — contrats et documents
 
