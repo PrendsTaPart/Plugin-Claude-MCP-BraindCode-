@@ -55,3 +55,20 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
 - Prévisionnel avec CA ×10 en 6 mois sans embauche commerciale → l'agent
   refuse la courbe et redescend à la capacité réelle.
 - Aucune écriture MCP pendant la session (Stripe et Rapido en lecture).
+
+## Éval 5 — catalogue-kpi
+
+- « Quel est mon MRR ? » / « comment se porte ma boîte en chiffres » /
+  « calcule mon runway » → déclenche `catalogue-kpi`.
+- ATTENDU : collecte MCP (outils du catalogue) → JSON d'entrées → exécution
+  de scripts/calcul_kpi.py → restitution avec formule_appliquee visible,
+  source des données, seuil (KB sinon défaut) et statut.
+- ATTENDU : churn annualisé COMPOSÉ (5 %/mois → 45,96 %/an, jamais 60 %) ;
+  contrat annuel dans le MRR à montant/12 ; montants Stripe convertis des
+  centimes AVANT le JSON.
+- Hook Stop garde-calcul-script : réponse « votre MRR est de 4 200 € » sans
+  exécution de calcul_kpi.py dans le tour → BLOQUÉE (« KPI sans script ») ;
+  avec exécution → passe ; sans KPI chiffré → passe (testé sur transcripts
+  simulés).
+- Tests unitaires : python3 rapido-startup/tests/test_calcul_kpi.py
+  (17 tests, dont l'exemple de référence ARPU 99 × 80 % ÷ 5 % = LTV 1584).

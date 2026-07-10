@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-startup
 
+## 1.2.0 — 2026-07-10
+
+- Skill `catalogue-kpi` : 22 KPI avec formule exacte, outils MCP par KPI,
+  fréquence, seuil (KB prioritaire sinon seuils-defaut) et pièges (churn
+  annuel COMPOSÉ jamais ×12, centimes Stripe, contrat annuel = MRR/12) ;
+  règle absolue « le script calcule, pas le modèle » — collecte MCP → JSON
+  d'entrées → scripts/calcul_kpi.py → formule TOUJOURS affichée.
+- scripts/calcul_kpi.py (stdlib, fonctions pures + CLI JSON) : sortie
+  {kpi, valeur, formule_appliquee, entrees, seuil, statut} ; seuils par
+  défaut embarqués, seuil maison prioritaire. 17 tests unitaires
+  (tests/test_calcul_kpi.py), dont l'exemple de référence LTV 1584.
+- Hook Stop `garde-calcul-script` : bloque toute réponse annonçant un KPI
+  chiffré sans exécution de calcul_kpi.py dans le tour (« KPI sans
+  script ») — testé sur transcripts simulés, fail-open.
+- NOTE : la « Partie 3 » du master plan (placeholder non fourni dans le
+  brief) — catalogue construit depuis la spec et l'exemple de référence,
+  à réconcilier si le master plan diverge.
+
 ## 1.1.0 — 2026-07-10
 
 - Skill `interview-business-plan` : interview en 9 phases (executive summary
