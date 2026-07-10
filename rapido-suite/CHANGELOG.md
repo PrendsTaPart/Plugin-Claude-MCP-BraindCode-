@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-suite
 
+## 1.0.1 — 2026-07-10
+
+- Corrections documentaires (audit) : dossier-startup-360 —
+  `upload_file_tool` `type: "document"` → `type: "doc"` (enum réel vérifié
+  serveur : image, video, doc ; écart ouvert depuis le 06/07, aucune autre
+  occurrence dans le dépôt).
+- pieges-outils : ligne `update_invoice_status` (FoodEatUp) — enum élargi,
+  transitions DGFiP validées PAR LE SERVEUR, ne pas pré-filtrer côté skill.
+- Hook anti-donnee-inventee (copie locale) aligné sur foodeatup 1.2.1 :
+  refus de tout `add_temperature` sans `equipment_id` (requis par le schéma
+  serveur, résolution via `search_entities`) — testé stdin.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.

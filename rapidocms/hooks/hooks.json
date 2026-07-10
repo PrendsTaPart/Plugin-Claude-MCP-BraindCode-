@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__rapidocms__(delete_.*|cancel_schedules_post|remove_post_campagne)",
+        "matcher": "mcp__rapidocms__(delete_.*|cancel_schedules_post|remove_post_campagne|remove_asset)",
         "hooks": [
           {
             "type": "command",

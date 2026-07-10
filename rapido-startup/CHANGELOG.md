@@ -1,5 +1,33 @@
 # Changelog — plugin rapido-startup
 
+## 1.6.1 — 2026-07-10
+
+- Correction documentaire (audit) : pieges-outils — ligne
+  `update_invoice_status` (FoodEatUp) : enum élargi vérifié serveur,
+  transitions DGFiP validées PAR LE SERVEUR (ne pas pré-filtrer, tenter et
+  relayer l'erreur ; hook garde-destructif en confirmation).
+
+## 1.6.0 — 2026-07-10
+
+- Routines Loop Engine — câblage des utilitaires (schémas vérifiés
+  serveur) :
+  - R4 CFO-WEEKLY : source dépenses `list_depenses` (CRM) confirmée (déjà
+    en place) ; alerte 🔴/🟡 diffusée EN PLUS via `create_notification`
+    FoodEatUp (`type` danger/warning) quand le vertical resto est actif ;
+  - R7 CASH-SENTINEL : `list_depenses` (CRM, `periode: "month"`) explicité
+    comme source unique des dépenses ; même diffusion d'alerte FoodEatUp —
+    cadrée comme CANAL D'ALERTE (pas une action métier), jamais au vert ;
+  - R6 GROWTH-LOOP : phase Sense enrichie du funnel complet formulaires +
+    CTA (`list_formulaires`, `get_formulaire_soumissions` — vues, clics,
+    taux de conversion —, `list_cta`) et des sondages en cours
+    (`list_sondages`, `get_sondage_resultats`) ; le funnel se lit
+    vues → clics → soumissions → leads.
+- `reference/autonomie.md` : règle 7 — la notification FoodEatUp est un
+  canal d'alerte autorisé en routine (R4, R7) uniquement pour un verdict
+  🔴/🟡, type danger/warning, ID récapitulé ; tableaux R4/R7 mis à jour.
+- tests/evals.md : éval 9 (nouveaux câblages) + non-régression (2
+  scénarios existants rejoués).
+
 ## 1.5.0 — 2026-07-10
 
 - Skill `loop-engine-v2` : moteur des routines R4-R8 — un fichier par

@@ -24,10 +24,10 @@
 
 | Routine | Sense | Act maximum autorisé |
 |---|---|---|
-| R4 CFO-WEEKLY | lecture | Niveau 1 : relances d'impayés PRÉPARÉES (non envoyées) |
+| R4 CFO-WEEKLY | lecture | Niveau 1 : relances d'impayés PRÉPARÉES (non envoyées) + notification d'alerte FoodEatUp (règle 7) |
 | R5 STARTUP-BUILDER | lecture | Niveau 2 : tâches delta après confirmation |
 | R6 GROWTH-LOOP | lecture | Niveau 1 : expérience préparée (campagne PAUSED, brouillons) |
-| R7 CASH-SENTINEL | lecture | Niveau 0 : ALERTE SEULEMENT — aucune écriture |
+| R7 CASH-SENTINEL | lecture | Niveau 0 : ALERTE SEULEMENT — aucune écriture métier (seule exception : notification d'alerte FoodEatUp, règle 7) |
 | R8 MONTHLY-BOARD | lecture | Niveau 2 : board écrit dans la KB + jalon Calendar confirmé |
 
 ## Règles absolues
@@ -43,3 +43,9 @@
    `./rapido-kb/startup/routines-journal.md` — c'est la mémoire des boucles.
 6. Silence configurable : une sentinelle au vert peut ne rien poster
    (CONFIG `silence_si_vert: true`) — mais elle journalise quand même.
+7. Notification FoodEatUp (`create_notification`) : c'est un CANAL D'ALERTE,
+   pas une action métier. Autorisée en routine (R4, R7) UNIQUEMENT pour
+   diffuser un verdict 🔴/🟡 quand le vertical resto est actif — `type`
+   `danger` ou `warning`, jamais au vert, jamais pour autre chose, ID
+   récapitulé. Elle ne remplace pas le rapport : elle le double côté
+   FoodEatUp (lue par `briefing-du-jour`).

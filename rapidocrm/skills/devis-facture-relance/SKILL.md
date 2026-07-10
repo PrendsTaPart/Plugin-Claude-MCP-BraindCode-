@@ -34,7 +34,10 @@ et, pour rédiger des emails de relance, `${CLAUDE_PLUGIN_ROOT}/reference/charte
    devis `accepte` (sinon demander confirmation explicite).
 3. **Changer un statut** — le statut se définit via le champ `statut`. Aucun outil
    dédié de changement de statut de facture (type « update_invoice_status »,
-   qui n'existe que côté FoodEatUp) n'est exposé sur ce serveur : respecter strictement les
+   qui n'existe que côté FoodEatUp — enum élargi vérifié serveur 2026-07-10 :
+   brouillon, en_attente, envoyee, acceptee, refusee, litige, payee, annulee,
+   transitions DGFiP validées PAR LE SERVEUR : ne pas pré-filtrer, tenter
+   l'appel et relayer l'erreur) n'est exposé sur ce serveur : respecter strictement les
    transitions ci-dessus et, si un changement de statut n'est pas possible via
    l'API, le dire à l'utilisateur au lieu de forcer ou de contourner.
 4. **Relancer les impayés** :

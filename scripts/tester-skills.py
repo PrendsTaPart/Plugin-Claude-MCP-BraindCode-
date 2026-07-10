@@ -57,9 +57,9 @@ list_ingredients list_invoices list_leaves list_low_stocks list_notifications
 list_orders list_plannings list_production_alerts list_production_plans list_products
 list_quotes list_recipes list_reservations list_stocks list_suppliers list_tables
 list_top_productions list_tva list_units list_waitlist list_zones no_show_reservation
-record_cleaning_action reject_leave reservation_availability seat_waitlist
+record_cleaning_action reject_leave reservation_availability search_entities seat_waitlist
 update_category update_client update_dish update_employee update_employee_schedule
-update_ingredient update_invoice_status update_order_status update_product
+update_ingredient update_invoice_status update_kds_item_status update_order_status update_product
 update_quote_status update_recipe update_table_status validate_production""".split()),
     "rapidocrm": set("""ajouter_prospect_pipeline close_opportunity create_campagne
 create_commercial create_contact create_contrat create_contrat_template create_depense
@@ -140,8 +140,9 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__test__delete_x", "tool_input": {}}, "ask"),
     ],
     "anti-donnee-inventee.py": [
-        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 150}}, "deny"),
-        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4}}, "allow"),
+        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 150, "equipment_id": 12}}, "deny"),
+        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4, "equipment_id": 12}}, "allow"),
+        ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4}}, "deny"),
     ],
     "garde-argent-reel.py": [
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity", "tool_input": {}}, "ask"),
@@ -170,6 +171,12 @@ TESTS_HOOKS_EXTRAS = {
     ("rapido-suite", "garde-destructif.py"): [
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",
           "tool_input": {"statut": "brouillon"}}, "deny"),
+    ],
+    # delete_prompt est attrapé par le motif delete_.* du matcher rapidocms —
+    # test explicite pour figer cette couverture (audit 2026-07-10).
+    ("rapidocms", "garde-destructif.py"): [
+        ({"tool_name": "mcp__rapidocms__delete_prompt",
+          "tool_input": {"prompt_id": 1}}, "ask"),
     ],
 }
 

@@ -9,7 +9,11 @@ Complète `prompt-engineering-visuel` (structure 6 blocs, workflow, capitalisati
 ce skill ajoute les prompts NÉGATIFS structurés et le protocole texte-dans-l'image.
 L'agent `prompt-designer` applique les deux.
 
-## Étape 0 — Marque (obligatoire, avant tout prompt)
+## Étape 0 — Marque et bibliothèque (obligatoire, avant tout prompt)
+
+Consulter la bibliothèque de prompts gagnants (skill `bibliotheque-prompts` :
+`list_prompts` `type: "visuel"`, `search` par sujet) — un couple
+positif/négatif déjà validé sert de base.
 
 Ordre de priorité : `./rapido-kb/charte-graphique.md` → `get_brand` (couleurs
 hex, logo, typos) + `get_company` en vérification (signaler tout écart) →
@@ -68,8 +72,9 @@ Format : [dimensions selon réseau — voir directeur-artistique]
 Source charte : [rapido-kb / get_brand / générique]
 
 2-3 variantes, validation utilisateur, génération, critique vs charte,
-upload (`upload_file_tool`), capitalisation (`add_prompt` — le négatif fait
-partie du prompt sauvegardé).
+upload (`upload_file_tool`), puis PROPOSER la capitalisation (`add_prompt` —
+le négatif fait partie du prompt sauvegardé ; titre « type — sujet — style »,
+gestion : skill `bibliotheque-prompts`).
 
 ## Pièges
 

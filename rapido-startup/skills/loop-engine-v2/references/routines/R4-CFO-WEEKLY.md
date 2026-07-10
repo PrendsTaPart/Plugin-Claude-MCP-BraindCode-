@@ -35,15 +35,21 @@ silence_si_vert: false
 6. DSO hors seuil → PRÉPARER les relances (skill `devis-facture-relance`,
    brouillons non envoyés, ton gradué). Dépense anormale → la nommer et
    proposer l'arbitrage. RIEN ne part sans demande explicite.
+7. Alerte 🔴/🟡 ET vertical resto actif (foodeatup dans le périmètre) → EN
+   PLUS du rapport, diffuser via `create_notification` FoodEatUp
+   (`establishment_id`, `title` court, `message` = KPI + formule + verdict,
+   `type: "danger"` si 🔴, `"warning"` si 🟡). Canal d'alerte interne, pas
+   une action métier — reference/autonomie.md.
 
 ## Feed
 
-7. Journal : `./rapido-kb/startup/routines-journal.md` (date, KPI, verdicts,
+8. Journal : `./rapido-kb/startup/routines-journal.md` (date, KPI, verdicts,
    actions proposées). Écart durable vs prévisionnel (> 30 % sur 2 mois) →
    proposer la mise à jour (skill `plan-financier-previsionnel`, doc vivant).
 
 ## Report
 
-8. Une page : 5 KPI (valeur, formule, statut vs seuil sourcé), les 3 points
+9. Une page : 5 KPI (valeur, formule, statut vs seuil sourcé), les 3 points
    priorisés, les relances préparées en attente d'accord. Récap des
-   écritures (normalement : journal uniquement).
+   écritures (normalement : journal + notification d'alerte éventuelle,
+   avec son ID).

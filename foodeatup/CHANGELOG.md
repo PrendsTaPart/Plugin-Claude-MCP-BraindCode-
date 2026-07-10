@@ -1,5 +1,80 @@
 # Changelog — plugin foodeatup
 
+## 1.3.0 — 2026-07-10
+
+- `search_entities` câblé dans TOUT le plugin :
+  - directives-outils.md § 1 ter « Résolution des noms » : tout nom parlé/
+    écrit (produit, ingrédient, plat, équipement, table, recette) se résout
+    via `search_entities` (`establishment_id` + `query` + `types`) AVANT
+    tout autre appel ; fuzzy FR serveur (accents, pluriels — passer le nom
+    tel que dicté) ; `ambiguous=true` → candidats présentés + confirmation
+    exigée ; interdiction de deviner un ID ;
+  - Étape 0 des skills recette-cout-marge, gestion-commandes, service-salle,
+    production-stock, reappro-fournisseurs, haccp-conformite-quotidienne et
+    coordination-cuisine : renvoi à la règle commune ; heuristiques locales
+    remplacées (production-stock : nom → `search_entities`
+    `types: ["dish", "recipe"]` au lieu de list_dishes/list_recipes ;
+    price-check : argument produit résolu via `search_entities`) ;
+  - tests/evals.md : 3 scénarios — nom exact (résolution directe), nom
+    approximatif (« les frigos » → liste), ambigu (2 candidats →
+    confirmation exigée).
+
+## 1.2.1 — 2026-07-10
+
+- Corrections documentaires (audit) : `update_invoice_status` — enum élargi
+  vérifié serveur (brouillon, en_attente, envoyee, acceptee, refusee,
+  litige, payee, annulee), transitions DGFiP validées PAR LE SERVEUR : ne
+  plus pré-filtrer côté skill, tenter l'appel et relayer l'erreur (ligne
+  pieges-outils ajoutée).
+- `add_temperature` : `equipment_id` REQUIS documenté (haccp +
+  pieges-outils) — jamais deviné, résolu via `search_entities`
+  (`types: ["equipment"]`), confirmation si `ambiguous=true` ; le hook
+  anti-donnee-inventee refuse désormais tout relevé sans `equipment_id`
+  (testé stdin : deny sans, allow avec).
+
+## 1.2.0 — 2026-07-10
+
+- `briefing-du-jour` exploite les utilitaires (schémas vérifiés serveur) :
+  - notifications non lues EN TÊTE du briefing (`list_notifications` —
+    pas de filtre serveur, filtrage côté réponse ; y arrivent les alertes
+    des routines Loop Engine) ;
+  - salle & réservations : `floor_plan_status` = l'appel temps réel unique
+    (compteurs + commande active par table) ; `reservation_availability`
+    sonde les créneaux chauds du midi (UN créneau par appel : `date`,
+    `time` HH:MM, `party_size`) ; `list_reservations` conservé — c'est la
+    seule source des couverts/groupes/notes du jour.
+- tests/evals.md : scénarios briefing 1.2.0 + non-régression (2 scénarios
+  existants rejoués).
+
+## 1.1.0 — 2026-07-10
+
+- Nouveau skill `coordination-cuisine` (pass / KDS) : `list_orders` (en
+  cours) → `update_kds_item_status` plat par plat (machine à états vérifiée
+  serveur : pending → in_progress → ready → **served** — 4 états, `item_id` =
+  ligne de commande, jamais l'ID du plat au menu) → quand tous les plats
+  d'une commande sont `ready`, PROPOSER `update_order_status` (`prete`).
+  Noms de plats dictés à l'oral résolus via `search_entities`
+  (si `ambiguous=true` → confirmation demandée).
+- `haccp-conformite-quotidienne` — volet nettoyage : `list_cleaning_zones`
+  (zones et postes = référentiel attendu), `record_cleaning_action` après
+  confirmation (`poste_nettoyage_id` = le POSTE, statut défaut `complete`),
+  `list_cleaning_actions` pour le registre. Le contrôle du jour couvre
+  désormais températures + réceptions + DLC + checklist hygiène + plan de
+  nettoyage ; KPI conformité étendu : actions faites / attendues.
+- `planning-equipe` — volet administratif : `create_employee_contract`
+  (confirmation niveau 2, données sensibles — type ∈ CDI, CDD, Extra,
+  Apprentissage, Stage ; `end_date` obligatoire pour un CDD),
+  `list_employee_contracts`, `list_employee_documents`. Croisement
+  `detection-surcharge` (rapidorh) : heures contractuelles désormais lues
+  depuis les contrats réels (`weekly_hours`), plus supposées ; salaires
+  jamais affichés dans une vue d'équipe.
+- Hook `garde-destructif` : matcher étendu à `create_employee_contract`
+  (testé fonctionnellement — décision `ask`) ; libellé élargi aux actions
+  sensibles.
+- `reference/pieges-outils.md` : 3 lignes (item_id KDS, poste vs zone de
+  nettoyage, CDD sans end_date).
+- `tests/evals.md` : 8 scénarios de déclenchement et de comportement.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.

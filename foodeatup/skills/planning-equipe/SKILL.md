@@ -1,6 +1,6 @@
 ---
 name: planning-equipe
-description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horaires d'équipe, de demandes de congé ou de pointages dans son restaurant. Gère les créneaux de travail, les congés et le suivi du coût.
+description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horaires d'équipe, de demandes de congé, de pointages, de contrat de travail ou de documents d'un employé dans son restaurant. Gère les créneaux, les congés, le suivi du coût et l'administratif des contrats.
 ---
 
 # Planning équipe (restaurant)
@@ -35,6 +35,30 @@ description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horair
    planifiés et signaler les écarts (retards récurrents, heures sup non
    planifiées) — factuellement, sans jugement de personne.
 
+## Volet administratif — contrats et documents
+
+1. **Créer un contrat** — `create_employee_contract` (`establishment_id`,
+   `employee_id` via `list_employees` ; `type` ∈ CDI, CDD, Extra,
+   Apprentissage, Stage — défaut CDI ; `start_date` défaut aujourd'hui,
+   `end_date` obligatoire pour un CDD ; `weekly_hours`, `days_per_week`,
+   `base_salary`, `job_title`, `manager_name`).
+   - **Confirmation niveau 2 obligatoire** (données sensibles — salaire,
+     durée) : récapituler employé, type, dates, heures et salaire, attendre le
+     OK explicite AVANT l'appel (hook garde-destructif en filet). Chaque
+     valeur vient de l'utilisateur — jamais un salaire ou des heures devinés.
+2. **Consulter les contrats** — `list_employee_contracts`
+   (`establishment_id`, `employee_id` optionnel) : type, dates, heures
+   hebdomadaires réelles de chaque employé.
+3. **Documents administratifs** — `list_employee_documents`
+   (`establishment_id`, `employee_id` optionnel) : pièces du dossier employé ;
+   signaler les dossiers incomplets, sans en exposer le contenu inutilement.
+
+> **Croisement `detection-surcharge` (plugin rapidorh)** : les heures
+> contractuelles sont désormais lues depuis les CONTRATS RÉELS
+> (`list_employee_contracts` → `weekly_hours`), plus supposées — c'est cette
+> valeur qui sert de référence « heures attendues » dans l'analyse de charge
+> et dans le contrôle pointages vs planning ci-dessus.
+
 ## Garde-fous
 
 - Congé approuvé = intouchable : pas de shift dessus, pas d'annulation de
@@ -43,3 +67,6 @@ description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horair
   session de planification ; alerter si la tendance dépasse le seuil maison.
 - Cohérence salle/cuisine : rappeler le briefing du jour (`briefing-du-jour`)
   qui croise couverts attendus et staffing.
+- Données sensibles : jamais de création de contrat sans confirmation
+  explicite ; les salaires ne s'affichent que sur demande directe, jamais
+  dans une vue d'équipe ou une analyse de charge.

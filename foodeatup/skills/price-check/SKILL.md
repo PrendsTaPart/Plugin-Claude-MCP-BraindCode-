@@ -26,6 +26,11 @@ systématiquement ses outils par les équivalents Rapido :
 Les seuils, cadences et benchmarks du skill sont des DÉFAUTS US : les seuils
 maison de `./rapido-kb/processus-internes.md` priment (les citer).
 
+Le produit passé en argument (un NOM, ex. « burger maison ») se résout via
+`search_entities` (foodeatup — `types: ["product", "dish"]`, règle
+« Résolution des noms » des directives § 1 ter) : jamais d'ID deviné,
+confirmation demandée si `ambiguous=true`.
+
 
 Run the pricing analysis. Pull cost and revenue data, build the margin table, and model three pricing scenarios — so the owner can see the numbers clearly before deciding what to charge.
 

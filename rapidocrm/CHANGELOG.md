@@ -1,5 +1,46 @@
 # Changelog — plugin rapidocrm
 
+## 1.1.2 — 2026-07-10
+
+- `animation-client` aligné sur la spécification détaillée (le skill
+  existait depuis la 1.1.0 — écarts textuels uniquement, comportement
+  inchangé) : description au mot près ; résultats de sondage = taux de
+  participation + scores PAR QUESTION + synthèse des verbatims en
+  3 ENSEIGNEMENTS ; cadre FR des jeux concours complété (règlement déposé,
+  renvoi vers un professionnel du droit — jamais jouer au juriste) ;
+  fidélité = 3 actions de rétention nommées (relance douce des points
+  dormants, récompense des top clients, réactivation) ; renvoi croisé
+  explicite vers la routine R6 GROWTH-LOOP (rapido-startup) qui lit les
+  sondages en cours en phase SENSE.
+
+## 1.1.1 — 2026-07-10
+
+- Correction documentaire (audit) : note « FoodEatUp-only » de
+  devis-facture-relance mise à jour — `update_invoice_status` (FoodEatUp) a
+  désormais un enum élargi (brouillon, en_attente, envoyee, acceptee,
+  refusee, litige, payee, annulee) et le serveur valide lui-même les
+  transitions DGFiP (ne pas pré-filtrer, relayer l'erreur serveur). La
+  logique CRM du skill est inchangée.
+
+## 1.1.0 — 2026-07-10
+
+- Skill `animation-client` : sondages (list_sondages → modèle existant →
+  lancer_sondage_entreprise, résultats via get_sondage_resultats avec
+  synthèse des verbatims), jeux concours (list_jeux_concours →
+  lancer_jeu_concours_entreprise, rappel systématique du cadre légal FR :
+  règlement, gratuité, RGPD), fidélité (get_loyalty_points croisé
+  get_top_clients → actions de rétention ciblées). Envoi des invitations
+  DÉLÉGUÉ à communication-client (masse : campagne-marketing). Schémas
+  vérifiés sur le serveur live (modele_sondage_id = sondage_companie.id,
+  get_sondage_resultats par id/nom + type companie/client).
+- Hook garde-destructif : matcher étendu à lancer_sondage_entreprise et
+  lancer_jeu_concours_entreprise (action visible par les clients =
+  confirmation forcée, testé stdin).
+- `mom-test` : cas d'usage croisé ajouté à la DESCRIPTION (validation
+  terrain à l'échelle via animation-client) — corps du skill Wondel
+  inchangé, conformément à la règle d'intégration.
+- tests/evals.md : scénarios de déclenchement et de comportement.
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.

@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-direction
 
+## 1.1.0 — 2026-07-10
+
+- `journee-du-dirigeant` intègre les utilitaires (schémas vérifiés
+  serveur) dans la page unique :
+  - volet resto : notifications FoodEatUp non lues (`list_notifications` —
+    dont les alertes déposées par les routines Loop Engine R4/R7 de
+    rapido-startup) via le déroulé de briefing-du-jour ;
+  - signaux CRM : funnel formulaires en un coup d'œil (`list_formulaires`
+    stats principales + `list_cta` clics ; détail par formulaire :
+    `get_formulaire_soumissions` — analyse complète : routine R6) ;
+  - bloc 🚨 SIGNAUX enrichi en conséquence.
+- tests/evals.md créé : scénarios 1.1.0 + non-régression (2 scénarios
+  existants rejoués).
+
 ## 1.0.1 — 2026-07-06
 
 - URLs des serveurs MCP Google alignées sur la documentation officielle

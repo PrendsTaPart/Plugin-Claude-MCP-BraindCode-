@@ -10,6 +10,11 @@ description: Utiliser quand l'utilisateur veut planifier une production, consult
 1. Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
    règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
 2. S'assurer d'avoir l'`establishment_id` (le demander si absent) avant tout appel.
+3. Règle « Résolution des noms » (directives § 1 ter) : tout nom parlé ou
+   écrit (produit, ingrédient, plat, équipement, table, recette) se résout
+   via `search_entities` AVANT tout autre appel — fuzzy FR géré par le
+   serveur (accents, pluriels) ; si `ambiguous=true`, présenter les
+   candidats et DEMANDER confirmation avant d'agir. Jamais d'ID deviné.
 
 ## Workflow
 
@@ -17,8 +22,10 @@ description: Utiliser quand l'utilisateur veut planifier une production, consult
    `planned_quantity`, `planned_date` YYYY-MM-DD, `planned_time` HH:MM défaut 09:00,
    `notes` optionnel).
    - `item_id` : ID du **plat** en entier (ex. `"42"`), ou de la **recette** avec le
-     préfixe `recipe_` (ex. `"recipe_12"`). Retrouver l'ID via `list_dishes` ou
-     `list_recipes` si l'utilisateur ne donne qu'un nom.
+     préfixe `recipe_` (ex. `"recipe_12"`). Si l'utilisateur ne donne qu'un nom,
+     le résoudre via `search_entities` (`types: ["dish", "recipe"]` — règle
+     « Résolution des noms », directives § 1 ter) ; confirmation si
+     `ambiguous=true`.
 2. **Vérifier les ingrédients** — `get_production_ingredients` (`establishment_id`,
    `production_id`) : contrôler le statut suffisant/manquant de chaque ingrédient.
    Si des ingrédients manquent, le signaler et proposer le skill

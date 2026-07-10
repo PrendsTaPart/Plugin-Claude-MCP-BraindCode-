@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__rapidocrm__(delete_.*|update_invoice_status|update_contrat_status|close_opportunity)",
+        "matcher": "mcp__rapidocrm__(delete_.*|update_invoice_status|update_contrat_status|close_opportunity|lancer_sondage_entreprise|lancer_jeu_concours_entreprise)",
         "hooks": [
           {
             "type": "command",

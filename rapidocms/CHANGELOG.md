@@ -1,5 +1,37 @@
 # Changelog — plugin rapidocms
 
+## 1.2.1 — 2026-07-10
+
+- Correction documentaire (audit) : piège `create_draft_tool` — les champs
+  `media_type`/`media_source`/`media_url`/`media_caption` sont REQUIS même
+  en `post_type: "text"`. Convention VÉRIFIÉE PAR APPEL RÉEL (brouillon
+  jetable créé puis supprimé le 2026-07-10) : `media_type: ""`,
+  `media_url: ""`, `media_source: "biblio"`, `media_caption` = le texte du
+  post ; `social_type` ∈ linkedin, facebook, instagram, tiktok.
+- `delete_prompt` : couverture par le hook garde-destructif explicitée
+  (attrapé par le motif `delete_.*` du matcher — testé stdin → ask, test
+  figé dans scripts/tester-skills.py).
+
+## 1.2.0 — 2026-07-10
+
+- Skill `bibliotheque-prompts` : gestion centrale de la bibliothèque —
+  list_prompts AVANT toute génération (un prompt gagnant proche sert de
+  base), add_prompt PROPOSÉ à chaque visuel validé (titre normalisé
+  « type — sujet — style », content = prompt complet négatifs inclus,
+  placeholders généralisés), edit_prompt pour versionner, delete_prompt sur
+  confirmation. Piège vérifié serveur : type ∈ text | visuel uniquement
+  (pas de type vidéo — préfixe de titre « vidéo — »).
+- Intégration : prompt-engineering-visuel et prompts-visuels-pro consultent
+  la bibliothèque en Étape 0 et PROPOSENT la sauvegarde en étape finale
+  (renvois croisés vers bibliotheque-prompts).
+- `contenu-conforme-marque` : section Assets de marque — logos officiels
+  (fond transparent) uploadés (upload_file_tool type image) puis rattachés
+  via add_asset (brand_id de get_brand), référencés dans toute génération ;
+  remove_asset sur confirmation (matcher du hook garde-destructif étendu) ;
+  note pipeline vidéo (kit « Mika ») : les logos viennent désormais des
+  assets de marque CMS, plus du repo GitHub.
+- tests/evals.md : scénarios de déclenchement et de comportement.
+
 ## 1.1.0 — 2026-07-09
 
 - Skill `generation-article-blog` (importé de AgriciDaniel/claude-blog,

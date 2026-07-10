@@ -9,6 +9,7 @@ un outil précis, consulter le `reference/pieges-outils.md` du plugin dédié.
 | CRM/CMS/RH (tous) | `company_id`/`user_id` déduits de la session | Les passer ou les inventer | Ne les fournir que si la session ne les donne pas |
 | `finance_summary` (FoodEatUp) | `date_from`/`date_to` défaut = mois en cours | Période incohérente avec les autres serveurs | MÊME période partout dans une comparaison multi-serveurs |
 | Factures CRM (statuts) | transitions DGFiP limitées | Rétrograder `payee`, supprimer une facture émise | brouillon → en_attente → payee ; en_attente → en_retard → payee ; sinon avoir (hook deny) |
+| `update_invoice_status` (FoodEatUp) | `status` ENUM élargi (vérifié serveur 2026-07-10) : brouillon, en_attente, envoyee, acceptee, refusee, litige, payee, annulee — le serveur VALIDE lui-même les transitions légales DGFiP | Pré-filtrer les transitions côté skill avec l'ancienne liste | Ne PAS pré-filtrer : tenter l'appel et relayer l'erreur serveur si la transition est illégale ; hook garde-destructif en confirmation |
 | `create_campagne` | existe sur CRM ET CMS avec des schémas DIFFÉRENTS | Paramètres de l'un passés à l'autre | CRM : canal/segment/statut ; CMS : drapeaux facebook/instagram/linkedin/tiktok à 1/0 |
 | `schedule_email`/`schedule_sms` (CRM) vs `schedule_draft_tool` (CMS) | formats de date différents | Format CRM utilisé côté CMS | CRM : `YYYY-MM-DD HH:MM:SS` ; CMS : `post_date` `Y-m-d` + `post_heure` `H-i-s` (tirets) |
 | `ingishts_campagne` (CMS) | orthographe | Nom « corrigé » → introuvable | Utiliser le nom exact du serveur |
