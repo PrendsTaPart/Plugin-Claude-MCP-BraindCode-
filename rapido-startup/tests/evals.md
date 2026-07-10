@@ -107,3 +107,24 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
 - Les tâches « → skill X » invoquent le skill existant (usine-a-landing,
   calendrier-editorial, prospection-pipeline, lancement-campagne-meta,
   job-post-builder, onboarding-equipe…), jamais de logique dupliquée.
+
+## Éval 8 — loop-engine-v2 (déclenchement des 5 routines)
+
+| Phrase | Routine attendue |
+|---|---|
+| « Lance R4 » / « routine du lundi » / « revue finance de la semaine » | R4-CFO-WEEKLY |
+| « Lance R5 » / « où en est l'exécution de ma startup ? » | R5-STARTUP-BUILDER |
+| « Lance R6 » / « boucle growth » / « quelle expérience cette semaine ? » | R6-GROWTH-LOOP |
+| « Lance R7 » / « sentinelle cash » / « surveille ma trésorerie » | R7-CASH-SENTINEL |
+| « Lance R8 » / « board mensuel » / « prépare le pack investisseurs » | R8-MONTHLY-BOARD |
+| « Installe mes routines » | loop-engine-v2 (planification : calendrier + routines.md) |
+
+- ATTENDU : phases Sense → Plan → Act → Feed → Report dans l'ordre ; tous
+  les chiffres via calcul_kpi.py (hook « KPI sans script » actif) ; CONFIG
+  du fichier de routine appliquée, valeurs de ./rapido-kb/ prioritaires.
+- ATTENDU autonomie (reference/autonomie.md) : R7 = alerte SEULEMENT (zéro
+  écriture, silence si vert configurable) ; R4/R6 préparent sans envoyer ;
+  R5/R8 n'écrivent qu'après confirmation avec récap des IDs ; écriture
+  Stripe interdite en routine.
+- Frontière : « prépare le CODIR » → comite-de-direction (rapido-suite) ;
+  « board mensuel » → R8 (pack startup, réel vs prévisionnel).

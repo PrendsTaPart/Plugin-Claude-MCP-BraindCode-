@@ -1,5 +1,29 @@
 # Changelog — plugin rapido-startup
 
+## 1.5.0 — 2026-07-10
+
+- Skill `loop-engine-v2` : moteur des routines R4-R8 — un fichier par
+  routine (references/routines/) avec bloc CONFIG interchangeable en tête
+  (pattern client-resellable), phases Sense → Plan → Act → Feed → Report,
+  calculs délégués à catalogue-kpi, journal ./rapido-kb/startup/
+  routines-journal.md, installation/planification des routines (Calendar).
+- reference/autonomie.md : gouvernance des routines — 4 niveaux (lecture
+  seule par défaut, préparation, écriture confirmée par système, externe
+  jamais automatique), tableau par routine (R7 = alerte seulement),
+  écriture Stripe interdite en routine.
+- Agent `cfo-virtuel` : ne calcule jamais de tête (scripts + formules
+  affichées), priorité des sources Stripe > CRM > FoodEatUp > CSV, données
+  manquantes signalées jamais estimées, pas de conseil d'investissement.
+- NOTE : les « parties 4 » du master plan (prompts des routines et section
+  Gouvernance) n'ont pas été fournies (placeholders vides dans le brief) —
+  contenus rédigés depuis la spec, à réconcilier si le master plan diverge.
+- `TODO` : workflow n8n équivalent de R7 CASH-SENTINEL pour tourner SANS
+  Claude (via le skill usine-automatisations, plugin rapido-n8n) — proposé,
+  non implémenté : Schedule Trigger quotidien → HTTP Stripe Balance +
+  factures CRM en retard → calcul runway (Code node, mêmes formules que
+  calcul_kpi.py) → IF runway < seuil KB → notification (email/webhook),
+  sinon journal seul.
+
 ## 1.4.0 — 2026-07-10
 
 - Skill `plan-execution-startup` (routine R5 STARTUP-BUILDER) : du business
