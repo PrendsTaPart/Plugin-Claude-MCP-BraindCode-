@@ -15,6 +15,11 @@ en travaillant au niveau de l'ITEM.
 1. Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et appliquer ses
    règles pendant toute l'exécution (IDs, confirmations, données, formats, erreurs).
 2. S'assurer d'avoir l'`establishment_id` (le demander si absent) avant tout appel.
+3. Règle « Résolution des noms » (directives § 1 ter) : tout nom parlé ou
+   écrit (produit, ingrédient, plat, équipement, table, recette) se résout
+   via `search_entities` AVANT tout autre appel — fuzzy FR géré par le
+   serveur (accents, pluriels) ; si `ambiguous=true`, présenter les
+   candidats et DEMANDER confirmation avant d'agir. Jamais d'ID deviné.
 
 ## Machine à états d'un plat (KDS)
 

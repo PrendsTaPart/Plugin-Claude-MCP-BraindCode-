@@ -12,6 +12,11 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
 2. S'assurer d'avoir l'`establishment_id`. S'il n'est pas connu dans la conversation,
    le demander à l'utilisateur AVANT tout appel d'outil. Tous les outils ci-dessous
    l'exigent.
+3. Règle « Résolution des noms » (directives § 1 ter) : tout nom parlé ou
+   écrit (produit, ingrédient, plat, équipement, table, recette) se résout
+   via `search_entities` AVANT tout autre appel — fuzzy FR géré par le
+   serveur (accents, pluriels) ; si `ambiguous=true`, présenter les
+   candidats et DEMANDER confirmation avant d'agir. Jamais d'ID deviné.
 
 ## Workflow
 

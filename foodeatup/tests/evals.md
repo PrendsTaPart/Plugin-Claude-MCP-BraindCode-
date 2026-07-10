@@ -1,8 +1,36 @@
-# Évals — plugin foodeatup (1.2.0)
+# Évals — plugin foodeatup (1.3.0)
 
 Scénarios de déclenchement et de comportement. À rejouer manuellement (ou
 via un futur harnais) : la phrase utilisateur doit router vers le skill
 attendu et le comportement décrit doit être observé.
+
+## Ajouts 1.3.0 — résolution des noms (search_entities, règle § 1 ter)
+
+### E12 — Nom exact : résolution directe
+
+- **Phrase** : « Planifie 20 tartares de saumon pour demain. »
+- **Attendu** : `search_entities` (`query: "tartare de saumon"`,
+  `types: ["dish", "recipe"]`) AVANT `create_production_plan` ; réponse non
+  ambiguë → l'ID est utilisé directement (annoncé : « Tartare de saumon,
+  plat #42 »), sans question inutile.
+
+### E13 — Nom approximatif : le fuzzy serveur travaille
+
+- **Phrase** : « Relevé des frigos : 3 °C. »
+- **Attendu** : `search_entities` (`query: "frigo"` ou le nom tel que dicté,
+  `types: ["equipment"]`) — le nom est passé TEL QUE DICTÉ (accents,
+  pluriels gérés par le serveur, pas de « correction » locale) ; la liste
+  des équipements correspondants est présentée et un relevé est enregistré
+  PAR équipement confirmé, jamais un relevé global.
+
+### E14 — Ambigu : confirmation exigée
+
+- **Phrase** : « Passe le burger en prêt. »
+- **Contexte** : `search_entities` renvoie `ambiguous=true` avec 2
+  candidats (« Burger maison », « Burger végé »).
+- **Attendu** : les 2 candidats sont PRÉSENTÉS et la confirmation est
+  DEMANDÉE avant tout appel d'écriture — jamais de choix silencieux,
+  jamais d'ID deviné (règle § 1 ter des directives).
 
 ## Ajouts 1.2.0 — briefing-du-jour + non-régression
 

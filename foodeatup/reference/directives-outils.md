@@ -14,6 +14,21 @@ Au moindre doute sur un outil (paramètres pièges, formats, enums), consulter
   outils : c'est l'« Étape 0 » de chaque skill. S'il est inconnu, le demander en
   premier — aucun autre appel avant.
 
+## 1 ter. Résolution des noms (search_entities)
+
+Tout skill qui reçoit un nom parlé ou écrit — produit, ingrédient, plat,
+équipement, table, recette — le résout via `search_entities`
+(`establishment_id` + `query` + `types` ciblés, ex. `["dish"]`,
+`["equipment"]`) AVANT tout autre appel utilisant cet ID.
+- Le serveur gère le fuzzy français (accents, pluriels) : passer le nom tel
+  que dicté (« tomates », « frigo 3 »), ne pas le « corriger » soi-même.
+- Si la réponse contient `ambiguous=true` : présenter les candidats à
+  l'utilisateur et DEMANDER confirmation avant d'agir — jamais de choix
+  silencieux.
+- INTERDICTION de deviner un ID (cf. règle 1) : `search_entities` est le
+  chemin nominal du nom vers l'ID ; les `list_*` restent le repli quand on
+  veut un inventaire complet plutôt qu'une résolution.
+
 ## 1 bis. Base de connaissance entreprise (./rapido-kb/)
 
 Si `./rapido-kb/` existe dans le répertoire de travail, charger les fichiers

@@ -1,5 +1,24 @@
 # Changelog — plugin foodeatup
 
+## 1.3.0 — 2026-07-10
+
+- `search_entities` câblé dans TOUT le plugin :
+  - directives-outils.md § 1 ter « Résolution des noms » : tout nom parlé/
+    écrit (produit, ingrédient, plat, équipement, table, recette) se résout
+    via `search_entities` (`establishment_id` + `query` + `types`) AVANT
+    tout autre appel ; fuzzy FR serveur (accents, pluriels — passer le nom
+    tel que dicté) ; `ambiguous=true` → candidats présentés + confirmation
+    exigée ; interdiction de deviner un ID ;
+  - Étape 0 des skills recette-cout-marge, gestion-commandes, service-salle,
+    production-stock, reappro-fournisseurs, haccp-conformite-quotidienne et
+    coordination-cuisine : renvoi à la règle commune ; heuristiques locales
+    remplacées (production-stock : nom → `search_entities`
+    `types: ["dish", "recipe"]` au lieu de list_dishes/list_recipes ;
+    price-check : argument produit résolu via `search_entities`) ;
+  - tests/evals.md : 3 scénarios — nom exact (résolution directe), nom
+    approximatif (« les frigos » → liste), ambigu (2 candidats →
+    confirmation exigée).
+
 ## 1.2.1 — 2026-07-10
 
 - Corrections documentaires (audit) : `update_invoice_status` — enum élargi
