@@ -19,10 +19,18 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
      (`nom` ou `siret`) ; pour une vérification SIRET seule :
      `rechercher_entreprise_siret` ;
    - Ciblage par code NAF / spécialité / date de création → `prospecter_prospect`
-     (`code_naf`, `specialite`, `date`, `nom_societe`, `nombre` 1-100).
+     (`code_naf`, `specialite`, `date`, `nom_societe`, `nombre` 1-100) ;
+   - **Soumissions de formulaires (leads entrants)** →
+     `get_formulaire_soumissions` (`formulaire_id` ou `formulaire_nom`) :
+     chaque soumission est un prospect CHAUD — c'est la source à traiter en
+     premier (elle a levé la main).
 2. **Dédoublonner AVANT d'ajouter** : vérifier que le prospect n'existe pas déjà via
    `rechercher_prospects` (`q` recherche libre) et `search_entreprises` (`q`).
-   Ne jamais créer de doublon dans le pipeline.
+   Ne jamais créer de doublon dans le pipeline. Pour une SOUMISSION de
+   formulaire : chercher par email puis par nom (`rechercher_prospects`,
+   `list_contacts` `q`) AVANT `enregistrer_prospect` — une soumission d'un
+   contact déjà connu = interaction à tracer (`log_activity`), pas un
+   nouveau prospect.
 3. **Ajouter au pipeline** — `ajouter_prospect_pipeline` avec `entreprise_id` OU
    `contact_id` (pipeline par défaut si `pipeline_id` absent ; `etape_id` pour une
    étape précise).
