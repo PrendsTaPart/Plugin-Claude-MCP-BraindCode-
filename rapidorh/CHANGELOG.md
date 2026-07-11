@@ -1,5 +1,10 @@
 # Changelog — plugin rapidorh
 
+## 1.0.2 — 2026-07-11
+
+- Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,
+  le fichier n'a jamais été porté) supprimée de people-report et onboarding-rh-methodo.
+
 ## 1.0.1 — 2026-07-11
 
 - tests/evals.md créé : 4 déclenchements (surcharge, daily, recrutement,

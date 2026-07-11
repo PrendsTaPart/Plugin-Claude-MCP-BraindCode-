@@ -1,7 +1,7 @@
 ---
 name: generation-article-blog
 description: Utiliser quand l'utilisateur veut écrire un article de blog, un article SEO, un contenu long pour son site, un brief d'article, réécrire/optimiser un article existant, ou dit « écris-moi un article sur… », « génère un article de blog », « optimise cet article ». Produit un article complet (plan → rédaction → score qualité → visuel → publication → relais social) optimisé Google (E-E-A-T) et citations IA (GEO/AEO), dans le ton de la KB.
-source: AgriciDaniel/claude-blog (commit 49842ea9), MIT — skill d'origine « blog » renommé, SKILL.md réécrit en français et câblé sur les MCP Rapido ; references/ et templates/ non modifiés
+source: AgriciDaniel/claude-blog (commit 49842ea9), MIT — skill d'origine « blog » renommé, SKILL.md réécrit en français et câblé sur les MCP Rapido ; references/ et templates/ conservés, allégés des documents liés à la chaîne de scripts non portée (blog-delivery-contract, cognitive-load)
 license: MIT
 ---
 

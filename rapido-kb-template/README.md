@@ -20,6 +20,8 @@ agir « comme un expert de votre entreprise » et non de façon générique.
 - **Automatique + interview** : lancez le skill d'onboarding (voir
   PROMPTS-CLAUDE-CODE.md). Il pré-remplit tout ce que vos MCP savent déjà, puis
   vous pose seulement les questions restantes.
+- **Bonus site web** : PROMPT-LOVABLE-SITE.md contient le prompt prêt à
+  l'emploi pour générer votre site vitrine dans Lovable à partir de cette KB.
 - **À la main** : éditez directement les 8 fichiers markdown.
 
 ## Mise à jour

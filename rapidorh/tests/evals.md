@@ -1,4 +1,4 @@
-# Évals — plugin rapidorh (1.0.1)
+# Évals — plugin rapidorh (1.0.2)
 
 ## Déclenchements
 

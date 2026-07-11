@@ -28,8 +28,6 @@ défauts US. Données non exposées par le MCP (diversité, salaires agrégés,
 ancienneté fine) : le DIRE et demander la source — ne jamais inventer.
 
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
-
 Generate a comprehensive onboarding plan for a new team member.
 
 ## Usage

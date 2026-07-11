@@ -32,7 +32,7 @@ The point: **a draft can score zero on a phrase blocklist and still be obviously
 
 This is what the existing AI-detection in `blog-analyze` and `blog-rewrite` already covers. Documented here for completeness.
 
-**Trigger phrases** (full list in `agents/blog-reviewer.md` and `scripts/analyze_blog.py`):
+**Trigger phrases** (liste indicative — la revue se fait à la lecture, pas par script) :
 
 - "In today's digital landscape" / "In the ever-evolving"
 - "It's important to note" / "It is worth mentioning"

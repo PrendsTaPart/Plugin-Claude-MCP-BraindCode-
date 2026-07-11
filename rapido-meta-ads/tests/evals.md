@@ -1,4 +1,4 @@
-# Évals — plugin rapido-meta-ads (1.0.1)
+# Évals — plugin rapido-meta-ads (1.0.2)
 
 ## Déclenchements
 
