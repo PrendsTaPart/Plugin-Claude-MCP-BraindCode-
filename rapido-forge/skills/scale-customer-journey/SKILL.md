@@ -1,6 +1,8 @@
 ---
 name: scale-customer-journey
 description: "Utiliser quand l'utilisateur veut mapper les 7 étapes du parcours client de la découverte à l'advocacy (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # Customer Journey

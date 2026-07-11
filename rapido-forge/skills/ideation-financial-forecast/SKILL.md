@@ -1,6 +1,8 @@
 ---
 name: ideation-financial-forecast
 description: "Utiliser quand l'utilisateur veut créer des projections financières à 3 ans (parcours idéation StartupsForge)."
+tags: [finance]
+niveau: intermediaire
 ---
 
 # Financial Forecast

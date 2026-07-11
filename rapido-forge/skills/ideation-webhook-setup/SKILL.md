@@ -1,6 +1,8 @@
 ---
 name: ideation-webhook-setup
 description: "Utiliser quand l'utilisateur veut configurer un webhook pour capturer les leads de son formulaire (parcours idéation StartupsForge)."
+tags: [organisation, data]
+niveau: intermediaire
 ---
 
 # Webhook Setup

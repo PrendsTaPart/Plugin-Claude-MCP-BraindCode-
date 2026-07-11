@@ -1,6 +1,8 @@
 ---
 name: scale-kpi-dashboard
 description: "Utiliser quand l'utilisateur veut créer un dashboard des 10 métriques essentielles à suivre chaque semaine (parcours scale StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # Kpi Dashboard

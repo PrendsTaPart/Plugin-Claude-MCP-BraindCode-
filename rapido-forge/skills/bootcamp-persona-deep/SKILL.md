@@ -1,6 +1,9 @@
 ---
 name: bootcamp-persona-deep
 description: "Utiliser quand l'utilisateur veut créer des personas détaillés avec jobs-to-be-done (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [produit]
+niveau: debutant
+prerequis: [bootcamp-market-segmentation]
 ---
 
 # Persona Approfondi

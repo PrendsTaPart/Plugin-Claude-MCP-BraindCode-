@@ -1,6 +1,9 @@
 ---
 name: ideation-launch-plan
 description: "Utiliser quand l'utilisateur veut créer un plan de lancement détaillé (parcours idéation StartupsForge)."
+tags: [marketing]
+niveau: debutant
+prerequis: [ideation-landing-page, ideation-launch-checklist]
 ---
 
 # Launch Plan

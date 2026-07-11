@@ -1,6 +1,9 @@
 ---
 name: ideation-retargeting-setup
 description: "Utiliser quand l'utilisateur veut configurer le retargeting pour récupérer les visiteurs (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Retargeting Setup

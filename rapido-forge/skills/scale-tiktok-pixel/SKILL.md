@@ -1,6 +1,9 @@
 ---
 name: scale-tiktok-pixel
 description: "Utiliser quand l'utilisateur veut préparer son tracking TikTok pour de futures campagnes (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Tiktok Pixel

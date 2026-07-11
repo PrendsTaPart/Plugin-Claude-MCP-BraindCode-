@@ -1,6 +1,8 @@
 ---
 name: scale-bcg-matrix
 description: "Utiliser quand l'utilisateur veut analyser son portefeuille produits/services pour identifier les Stars à développer, les Vaches à lait à optimiser, les Dilemmes à arbitrer et les Poids morts à abandonner (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Bcg Matrix

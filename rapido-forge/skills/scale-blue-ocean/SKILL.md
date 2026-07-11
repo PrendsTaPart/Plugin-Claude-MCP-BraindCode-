@@ -1,6 +1,8 @@
 ---
 name: scale-blue-ocean
 description: "Utiliser quand l'utilisateur veut identifier des espaces de marché inexploités où la concurrence est inexistante (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Blue Ocean

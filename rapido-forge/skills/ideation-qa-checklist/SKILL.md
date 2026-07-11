@@ -1,6 +1,8 @@
 ---
 name: ideation-qa-checklist
 description: "Utiliser quand l'utilisateur veut tester exhaustivement son site avant le lancement (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Qa Checklist

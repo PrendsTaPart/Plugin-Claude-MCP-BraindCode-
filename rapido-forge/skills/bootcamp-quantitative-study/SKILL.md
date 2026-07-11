@@ -1,6 +1,8 @@
 ---
 name: bootcamp-quantitative-study
 description: "Utiliser quand l'utilisateur veut conçois un questionnaire de validation avec scoring et analyse (bootcamp 5 jours StartupsForge — Jour 1)."
+tags: [data]
+niveau: debutant
 ---
 
 # Étude Quantitative

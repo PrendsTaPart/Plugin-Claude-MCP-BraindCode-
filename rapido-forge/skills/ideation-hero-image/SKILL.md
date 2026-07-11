@@ -1,6 +1,8 @@
 ---
 name: ideation-hero-image
 description: "Utiliser quand l'utilisateur veut générer des visuels professionnels pour son site web (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Hero Image

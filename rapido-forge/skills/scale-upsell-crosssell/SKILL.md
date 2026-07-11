@@ -1,6 +1,8 @@
 ---
 name: scale-upsell-crosssell
 description: "Utiliser quand l'utilisateur veut cartographier les opportunités d'upsell et cross-sell par segment client (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Upsell Crosssell

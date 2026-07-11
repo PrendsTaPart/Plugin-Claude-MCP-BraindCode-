@@ -1,6 +1,8 @@
 ---
 name: bootcamp-revenue-model-b5
 description: "Utiliser quand l'utilisateur veut définir ses sources de revenus et pricing (bootcamp 5 jours StartupsForge — Jour 3)."
+tags: [finance]
+niveau: debutant
 ---
 
 # Modèle de Revenus

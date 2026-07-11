@@ -1,6 +1,8 @@
 ---
 name: ideation-logo-prompt
 description: "Utiliser quand l'utilisateur veut créer un logo professionnel représentant l'identité de sa marque (parcours idéation StartupsForge)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Logo Prompt

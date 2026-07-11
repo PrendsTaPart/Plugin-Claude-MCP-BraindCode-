@@ -1,6 +1,8 @@
 ---
 name: ideation-launch-post
 description: "Utiliser quand l'utilisateur veut rédiger le post de lancement parfait pour ses réseaux (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Launch Post

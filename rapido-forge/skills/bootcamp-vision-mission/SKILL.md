@@ -1,6 +1,8 @@
 ---
 name: bootcamp-vision-mission
 description: "Utiliser quand l'utilisateur veut définir sa vision long terme et sa mission (bootcamp 5 jours StartupsForge — Jour 3)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Vision & Mission

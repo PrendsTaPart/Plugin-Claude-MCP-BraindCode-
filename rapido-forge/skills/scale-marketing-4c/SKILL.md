@@ -1,6 +1,8 @@
 ---
 name: scale-marketing-4c
 description: "Utiliser quand l'utilisateur veut transformer son approche marketing en adoptant la perspective client (parcours scale StartupsForge)."
+tags: [marketing]
+niveau: intermediaire
 ---
 
 # Marketing 4c

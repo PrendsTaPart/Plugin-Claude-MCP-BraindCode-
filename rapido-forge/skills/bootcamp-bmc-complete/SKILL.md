@@ -1,6 +1,9 @@
 ---
 name: bootcamp-bmc-complete
 description: "Utiliser quand l'utilisateur veut compléter son Business Model Canvas (bootcamp 5 jours StartupsForge — Jour 3)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-persona-deep, bootcamp-problem-validation]
 ---
 
 # Business Model Canvas

@@ -1,6 +1,8 @@
 ---
 name: bootcamp-content-strategy-b5
 description: "Utiliser quand l'utilisateur veut planifie sa stratégie de contenu (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Stratégie de Contenu

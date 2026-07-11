@@ -1,6 +1,8 @@
 ---
 name: ideation-sitemap-generator
 description: "Utiliser quand l'utilisateur veut planifier la structure de pages de son site web (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Sitemap Generator

@@ -1,6 +1,9 @@
 ---
 name: ideation-pitch-script
 description: "Utiliser quand l'utilisateur veut pratiquer et perfectionner sa présentation orale (parcours idéation StartupsForge)."
+tags: [pitch]
+niveau: intermediaire
+prerequis: [bootcamp-problem-validation, ideation-financial-forecast]
 ---
 
 # Pitch Script

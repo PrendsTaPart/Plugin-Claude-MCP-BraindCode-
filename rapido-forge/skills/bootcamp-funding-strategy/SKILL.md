@@ -1,6 +1,8 @@
 ---
 name: bootcamp-funding-strategy
 description: "Utiliser quand l'utilisateur veut définir sa stratégie de levée de fonds (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [finance]
+niveau: debutant
 ---
 
 # Stratégie de Financement

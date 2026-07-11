@@ -1,6 +1,8 @@
 ---
 name: ideation-usp-statement
 description: "Utiliser quand l'utilisateur veut créer un pitch d'une phrase percutante et mémorable (parcours idéation StartupsForge)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Usp Statement

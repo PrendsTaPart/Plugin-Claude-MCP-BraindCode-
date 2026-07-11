@@ -1,6 +1,8 @@
 ---
 name: bootcamp-launch-budget
 description: "Utiliser quand l'utilisateur veut estime le budget nécessaire au lancement (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [finance, marketing]
+niveau: debutant
 ---
 
 # Budget de Lancement

@@ -1,6 +1,9 @@
 ---
 name: scale-tiktok-ads-creator
 description: "Utiliser quand l'utilisateur veut créer des publicités TikTok natives qui ne ressemblent pas à des pubs (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Tiktok Ads Creator

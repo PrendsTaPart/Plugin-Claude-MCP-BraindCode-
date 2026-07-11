@@ -1,6 +1,8 @@
 ---
 name: scale-design-system
 description: "Utiliser quand l'utilisateur veut créer un Design System V1 avec les composants essentiels (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # Design System

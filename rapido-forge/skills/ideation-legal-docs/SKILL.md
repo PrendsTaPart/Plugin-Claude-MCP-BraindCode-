@@ -1,6 +1,8 @@
 ---
 name: ideation-legal-docs
 description: "Utiliser quand l'utilisateur veut générer des CGV et mentions légales conformes (parcours idéation StartupsForge)."
+tags: [juridique]
+niveau: debutant
 ---
 
 # Legal Docs

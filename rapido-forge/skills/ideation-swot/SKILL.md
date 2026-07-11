@@ -1,6 +1,8 @@
 ---
 name: ideation-swot
 description: "Utiliser quand l'utilisateur veut réaliser une analyse SWOT complète pour guider sa stratégie de développement (parcours idéation StartupsForge)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Swot

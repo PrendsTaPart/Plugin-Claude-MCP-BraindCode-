@@ -1,6 +1,9 @@
 ---
 name: bootcamp-problem-validation
 description: "Utiliser quand l'utilisateur veut valide que le problème est réel et fréquent (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-qualitative-study]
 ---
 
 # Validation du Problème

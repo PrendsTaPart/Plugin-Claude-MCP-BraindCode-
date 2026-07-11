@@ -1,6 +1,8 @@
 ---
 name: ideation-launch-checklist
 description: "Utiliser quand l'utilisateur veut créer et valider la checklist finale de lancement (parcours idéation StartupsForge)."
+tags: [marketing]
+niveau: debutant
 ---
 
 # Launch Checklist

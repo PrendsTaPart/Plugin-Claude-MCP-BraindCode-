@@ -1,6 +1,9 @@
 ---
 name: ideation-investor-faq
 description: "Utiliser quand l'utilisateur veut préparer les réponses aux questions investisseurs (parcours idéation StartupsForge)."
+tags: [pitch]
+niveau: intermediaire
+prerequis: [bootcamp-problem-validation, ideation-financial-forecast]
 ---
 
 # Investor Faq

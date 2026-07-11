@@ -1,6 +1,8 @@
 ---
 name: ideation-landing-copy
 description: "Utiliser quand l'utilisateur veut finaliser le texte de sa landing page (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Landing Copy

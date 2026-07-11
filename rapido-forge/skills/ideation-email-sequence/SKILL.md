@@ -1,6 +1,8 @@
 ---
 name: ideation-email-sequence
 description: "Utiliser quand l'utilisateur veut rédiger un email de bienvenue engageant (parcours idéation StartupsForge)."
+tags: [marketing, contenu]
+niveau: intermediaire
 ---
 
 # Email Sequence

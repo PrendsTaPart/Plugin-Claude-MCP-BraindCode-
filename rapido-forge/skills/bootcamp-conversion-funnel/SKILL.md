@@ -1,6 +1,8 @@
 ---
 name: bootcamp-conversion-funnel
 description: "Utiliser quand l'utilisateur veut construis son funnel de conversion (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marketing]
+niveau: debutant
 ---
 
 # Tunnel de Conversion

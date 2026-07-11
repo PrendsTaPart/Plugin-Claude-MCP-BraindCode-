@@ -1,6 +1,8 @@
 ---
 name: ideation-ui-guidelines
 description: "Utiliser quand l'utilisateur veut sélectionner une combinaison de fonts harmonieuse et lisible (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Ui Guidelines

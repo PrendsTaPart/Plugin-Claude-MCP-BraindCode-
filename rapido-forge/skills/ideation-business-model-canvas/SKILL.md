@@ -1,6 +1,8 @@
 ---
 name: ideation-business-model-canvas
 description: "Utiliser quand l'utilisateur veut remplir un Business Model Canvas complet avec les 9 blocs (parcours idéation StartupsForge)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Business Model Canvas

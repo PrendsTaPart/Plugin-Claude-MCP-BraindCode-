@@ -1,6 +1,8 @@
 ---
 name: scale-community-building
 description: "Utiliser quand l'utilisateur veut lancer et structurer une communauté autour de sa marque/produit (parcours scale StartupsForge)."
+tags: [marketing]
+niveau: intermediaire
 ---
 
 # Community Building

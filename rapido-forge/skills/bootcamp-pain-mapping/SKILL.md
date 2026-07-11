@@ -1,6 +1,9 @@
 ---
 name: bootcamp-pain-mapping
 description: "Utiliser quand l'utilisateur veut analyse en profondeur les frustrations utilisateurs (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-qualitative-study]
 ---
 
 # Cartographie des Douleurs

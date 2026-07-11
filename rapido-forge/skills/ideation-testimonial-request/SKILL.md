@@ -1,6 +1,8 @@
 ---
 name: ideation-testimonial-request
 description: "Utiliser quand l'utilisateur veut créer des témoignages crédibles pour renforcer la confiance (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Testimonial Request

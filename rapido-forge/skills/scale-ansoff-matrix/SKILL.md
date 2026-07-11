@@ -1,6 +1,8 @@
 ---
 name: scale-ansoff-matrix
 description: "Utiliser quand l'utilisateur veut définir sa stratégie de croissance principale parmi les 4 options d'Ansoff (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Ansoff Matrix

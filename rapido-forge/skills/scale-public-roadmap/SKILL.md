@@ -1,6 +1,8 @@
 ---
 name: scale-public-roadmap
 description: "Utiliser quand l'utilisateur veut créer une roadmap produit transparente et engageante pour ses utilisateurs (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # Public Roadmap

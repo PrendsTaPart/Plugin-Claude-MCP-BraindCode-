@@ -1,6 +1,9 @@
 ---
 name: bootcamp-feature-benchmark
 description: "Utiliser quand l'utilisateur veut compare les fonctionnalités clés du marché (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [produit]
+niveau: debutant
+prerequis: [bootcamp-competitive-deep]
 ---
 
 # Benchmarking Fonctionnel

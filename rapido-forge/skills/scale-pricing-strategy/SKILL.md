@@ -1,6 +1,9 @@
 ---
 name: scale-pricing-strategy
 description: "Utiliser quand l'utilisateur veut tester et optimiser sa stratégie de pricing pour maximiser le revenu (parcours scale StartupsForge)."
+tags: [finance, strategie]
+niveau: expert
+prerequis: [scale-unit-economics]
 ---
 
 # Pricing Strategy

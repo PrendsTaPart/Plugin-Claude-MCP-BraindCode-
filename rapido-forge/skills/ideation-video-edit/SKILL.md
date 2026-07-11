@@ -1,6 +1,8 @@
 ---
 name: ideation-video-edit
 description: "Utiliser quand l'utilisateur veut créer une vidéo teaser courte et percutante (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Video Edit

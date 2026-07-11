@@ -1,6 +1,8 @@
 ---
 name: ideation-export-pdf
 description: "Utiliser quand l'utilisateur veut compiler tous les documents clés dans un dossier PDF (parcours idéation StartupsForge)."
+tags: [organisation, data]
+niveau: debutant
 ---
 
 # Export Pdf

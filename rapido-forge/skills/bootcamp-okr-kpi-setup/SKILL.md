@@ -1,6 +1,8 @@
 ---
 name: bootcamp-okr-kpi-setup
 description: "Utiliser quand l'utilisateur veut définir ses objectifs et indicateurs clés (bootcamp 5 jours StartupsForge — Jour 3)."
+tags: [data, organisation]
+niveau: debutant
 ---
 
 # OKRs & KPIs

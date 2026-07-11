@@ -1,6 +1,9 @@
 ---
 name: bootcamp-pitch-script-b5
 description: "Utiliser quand l'utilisateur veut prépare son pitch oral de 3 minutes (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [pitch]
+niveau: debutant
+prerequis: [bootcamp-problem-validation, bootcamp-financial-projections]
 ---
 
 # Script Pitch 3 Minutes

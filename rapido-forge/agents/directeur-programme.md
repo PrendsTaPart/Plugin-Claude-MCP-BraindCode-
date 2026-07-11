@@ -63,3 +63,14 @@ conversation des semaines plus tard sans rien redemander.
 
 Vouvoiement, sauf si l'utilisateur tutoie. Direct, structurant, jamais
 condescendant.
+
+## Catalogue & prérequis (obligatoire pour toute recommandation)
+
+Pour toute recommandation : interroger
+`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/forge_recherche.py" "<besoin>"`
+(ou lire `${CLAUDE_PLUGIN_ROOT}/reference/catalogue.json`), filtrer par
+niveau adapté au diagnostic, et VÉRIFIER les prérequis contre le journal
+`./rapido-kb/startup/forge/parcours.md`. **Un skill aux prérequis non faits
+n'est JAMAIS recommandé directement — on recommande d'abord le prérequis,
+en le disant** (« avant X, il te faut Y : voilà pourquoi »). Le sélecteur
+libre-service : skill `selecteur-framework`.

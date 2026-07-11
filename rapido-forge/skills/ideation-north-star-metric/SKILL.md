@@ -1,6 +1,8 @@
 ---
 name: ideation-north-star-metric
 description: "Utiliser quand l'utilisateur veut définir et documenter sa North Star Metric (parcours idéation StartupsForge)."
+tags: [data]
+niveau: debutant
 ---
 
 # North Star Metric

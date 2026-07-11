@@ -1,6 +1,8 @@
 ---
 name: ideation-advisory-board
 description: "Utiliser quand l'utilisateur veut identifier et approcher des advisors potentiels (parcours idéation StartupsForge)."
+tags: [organisation]
+niveau: debutant
 ---
 
 # Advisory Board

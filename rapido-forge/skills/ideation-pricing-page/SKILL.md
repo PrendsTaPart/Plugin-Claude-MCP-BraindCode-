@@ -1,6 +1,9 @@
 ---
 name: ideation-pricing-page
 description: "Utiliser quand l'utilisateur veut présenter ses tarifs de façon claire et convaincante (parcours idéation StartupsForge)."
+tags: [finance, strategie, produit]
+niveau: intermediaire
+prerequis: [ideation-value-proposition]
 ---
 
 # Pricing Page

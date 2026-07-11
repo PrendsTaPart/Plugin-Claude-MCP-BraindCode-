@@ -1,6 +1,8 @@
 ---
 name: ideation-email-marketing-setup
 description: "Utiliser quand l'utilisateur veut configurer son système d'email marketing complet avec automation (parcours idéation StartupsForge)."
+tags: [marketing, contenu]
+niveau: debutant
 ---
 
 # Email Marketing Setup

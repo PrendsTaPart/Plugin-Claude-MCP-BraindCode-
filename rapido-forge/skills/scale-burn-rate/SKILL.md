@@ -1,6 +1,9 @@
 ---
 name: scale-burn-rate
 description: "Utiliser quand l'utilisateur veut calculer son burn rate actuel et projeter son runway (parcours scale StartupsForge)."
+tags: [finance]
+niveau: expert
+prerequis: [ideation-financial-forecast]
 ---
 
 # Burn Rate

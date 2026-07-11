@@ -1,6 +1,8 @@
 ---
 name: bootcamp-trend-analysis
 description: "Utiliser quand l'utilisateur veut identifie les tendances émergentes et signaux faibles du marché (bootcamp 5 jours StartupsForge — Jour 1)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Tendances & Signaux Faibles

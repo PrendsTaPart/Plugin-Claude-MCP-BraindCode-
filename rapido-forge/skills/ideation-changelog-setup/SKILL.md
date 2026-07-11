@@ -1,6 +1,8 @@
 ---
 name: ideation-changelog-setup
 description: "Utiliser quand l'utilisateur veut créer et maintenir un changelog public (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Changelog Setup

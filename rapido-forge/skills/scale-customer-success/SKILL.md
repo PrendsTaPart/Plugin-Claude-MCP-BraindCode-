@@ -1,6 +1,8 @@
 ---
 name: scale-customer-success
 description: "Utiliser quand l'utilisateur veut définir son playbook Customer Success avec onboarding, check-ins et expansion (parcours scale StartupsForge)."
+tags: [vente, organisation]
+niveau: intermediaire
 ---
 
 # Customer Success

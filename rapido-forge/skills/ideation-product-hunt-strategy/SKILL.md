@@ -1,6 +1,8 @@
 ---
 name: ideation-product-hunt-strategy
 description: "Utiliser quand l'utilisateur veut élaborer une stratégie complète pour Product Hunt (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: debutant
 ---
 
 # Product Hunt Strategy

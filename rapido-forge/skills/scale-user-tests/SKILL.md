@@ -1,6 +1,8 @@
 ---
 name: scale-user-tests
 description: "Utiliser quand l'utilisateur veut recruter et observer 5 personnes utilisant son produit/prototype (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # User Tests

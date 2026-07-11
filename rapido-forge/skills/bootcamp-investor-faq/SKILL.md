@@ -1,6 +1,9 @@
 ---
 name: bootcamp-investor-faq
 description: "Utiliser quand l'utilisateur veut prépare les réponses aux questions fréquentes (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [pitch]
+niveau: debutant
+prerequis: [bootcamp-problem-validation, bootcamp-financial-projections]
 ---
 
 # FAQ Investisseurs

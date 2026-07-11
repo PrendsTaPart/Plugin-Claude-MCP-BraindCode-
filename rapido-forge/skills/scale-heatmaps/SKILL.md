@@ -1,6 +1,8 @@
 ---
 name: scale-heatmaps
 description: "Utiliser quand l'utilisateur veut installer et analyser les heatmaps et session recordings sur son site (parcours scale StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # Heatmaps

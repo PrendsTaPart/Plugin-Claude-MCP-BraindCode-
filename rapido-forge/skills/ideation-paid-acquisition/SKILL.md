@@ -1,6 +1,9 @@
 ---
 name: ideation-paid-acquisition
 description: "Utiliser quand l'utilisateur veut élaborer une stratégie d'acquisition payante (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Paid Acquisition

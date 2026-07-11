@@ -1,6 +1,8 @@
 ---
 name: scale-okrs-q1
 description: "Utiliser quand l'utilisateur veut définir 3-5 objectifs ambitieux avec résultats clés mesurables pour son premier trimestre Scale (parcours scale StartupsForge)."
+tags: [organisation]
+niveau: intermediaire
 ---
 
 # Okrs Q1

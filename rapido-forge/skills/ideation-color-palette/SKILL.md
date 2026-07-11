@@ -1,6 +1,8 @@
 ---
 name: ideation-color-palette
 description: "Utiliser quand l'utilisateur veut définir une palette de couleurs cohérente et professionnelle (parcours idéation StartupsForge)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Color Palette

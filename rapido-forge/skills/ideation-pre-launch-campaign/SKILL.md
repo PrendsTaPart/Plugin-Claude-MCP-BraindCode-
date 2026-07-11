@@ -1,6 +1,8 @@
 ---
 name: ideation-pre-launch-campaign
 description: "Utiliser quand l'utilisateur veut créer une campagne email de pré-lancement (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: debutant
 ---
 
 # Pre Launch Campaign

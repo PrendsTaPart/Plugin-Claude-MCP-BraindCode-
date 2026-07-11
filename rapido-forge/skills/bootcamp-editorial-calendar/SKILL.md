@@ -1,6 +1,8 @@
 ---
 name: bootcamp-editorial-calendar
 description: "Utiliser quand l'utilisateur veut organise ses publications sur 30 jours (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Calendrier Éditorial

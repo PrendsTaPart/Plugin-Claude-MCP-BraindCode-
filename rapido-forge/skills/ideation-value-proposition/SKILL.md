@@ -1,6 +1,8 @@
 ---
 name: ideation-value-proposition
 description: "Utiliser quand l'utilisateur veut identifier et articuler le problème précis que sa solution résout, avec son intensité et sa fréquence (parcours idéation StartupsForge)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Value Proposition

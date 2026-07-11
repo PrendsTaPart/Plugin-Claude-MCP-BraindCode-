@@ -1,6 +1,8 @@
 ---
 name: ideation-social-strategy
 description: "Utiliser quand l'utilisateur veut planifier 30 jours de contenu social media (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Social Strategy

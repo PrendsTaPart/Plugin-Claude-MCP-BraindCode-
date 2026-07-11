@@ -1,6 +1,8 @@
 ---
 name: bootcamp-social-media-strategy
 description: "Utiliser quand l'utilisateur veut définir sa présence sur les réseaux (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Stratégie Social Media

@@ -1,6 +1,8 @@
 ---
 name: ideation-lean-canvas
 description: "Utiliser quand l'utilisateur veut remplir un Lean Canvas complet pour visualiser son modèle d'affaires et identifier les hypothèses à valider (parcours idéation StartupsForge)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Lean Canvas

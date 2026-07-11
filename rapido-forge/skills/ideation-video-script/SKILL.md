@@ -1,6 +1,8 @@
 ---
 name: ideation-video-script
 description: "Utiliser quand l'utilisateur veut scripter une vidéo tutoriel ou explicative (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Video Script

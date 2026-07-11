@@ -1,6 +1,8 @@
 ---
 name: scale-porter-5-forces
 description: "Utiliser quand l'utilisateur veut évaluer les 5 forces qui déterminent la rentabilité potentielle de son marché (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Porter 5 Forces

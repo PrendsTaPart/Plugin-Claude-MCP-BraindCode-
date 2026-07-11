@@ -1,6 +1,9 @@
 ---
 name: bootcamp-positioning-map
 description: "Utiliser quand l'utilisateur veut définir son positionnement unique sur le marché (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-competitive-deep]
 ---
 
 # Positionnement Stratégique

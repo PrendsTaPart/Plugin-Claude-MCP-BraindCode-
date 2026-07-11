@@ -1,6 +1,8 @@
 ---
 name: scale-spin-selling
 description: "Utiliser quand l'utilisateur veut maîtriser les 4 types de questions SPIN pour qualifier et convertir efficacement (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Spin Selling

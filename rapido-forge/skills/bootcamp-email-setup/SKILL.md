@@ -1,6 +1,8 @@
 ---
 name: bootcamp-email-setup
 description: "Utiliser quand l'utilisateur veut configure ses séquences email (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marketing, contenu]
+niveau: debutant
 ---
 
 # Email Marketing Setup

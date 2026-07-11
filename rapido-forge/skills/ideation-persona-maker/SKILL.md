@@ -1,6 +1,8 @@
 ---
 name: ideation-persona-maker
 description: "Utiliser quand l'utilisateur veut créer 2-3 personas détaillés représentant ses clients idéaux avec leurs motivations, frustrations et comportements (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Persona Maker

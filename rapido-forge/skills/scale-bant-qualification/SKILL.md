@@ -1,6 +1,8 @@
 ---
 name: scale-bant-qualification
 description: "Utiliser quand l'utilisateur veut créer une grille de qualification BANT pour prioriser ses opportunités (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Bant Qualification

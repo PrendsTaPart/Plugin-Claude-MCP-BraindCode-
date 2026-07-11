@@ -1,6 +1,9 @@
 ---
 name: bootcamp-pestel-analysis
 description: "Utiliser quand l'utilisateur veut évalue l'environnement macro-économique (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-trend-analysis]
 ---
 
 # Analyse PESTEL

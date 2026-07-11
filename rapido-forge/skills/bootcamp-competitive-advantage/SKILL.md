@@ -1,6 +1,9 @@
 ---
 name: bootcamp-competitive-advantage
 description: "Utiliser quand l'utilisateur veut identifie et formule son avantage défendable (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-positioning-map]
 ---
 
 # Avantage Concurrentiel

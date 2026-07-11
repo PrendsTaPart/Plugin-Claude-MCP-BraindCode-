@@ -1,6 +1,8 @@
 ---
 name: scale-semrush-audit
 description: "Utiliser quand l'utilisateur veut réaliser un audit SEO complet et créer un plan d'action priorisé (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Semrush Audit

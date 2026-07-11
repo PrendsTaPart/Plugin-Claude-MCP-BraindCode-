@@ -1,6 +1,9 @@
 ---
 name: scale-meta-ads-campaign
 description: "Utiliser quand l'utilisateur veut créer et lancer une campagne Meta Ads complète (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Meta Ads Campaign

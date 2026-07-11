@@ -1,6 +1,8 @@
 ---
 name: scale-cost-waterfall
 description: "Utiliser quand l'utilisateur veut cartographier et catégoriser tous ses coûts fixes et variables (parcours scale StartupsForge)."
+tags: [finance]
+niveau: expert
 ---
 
 # Cost Waterfall

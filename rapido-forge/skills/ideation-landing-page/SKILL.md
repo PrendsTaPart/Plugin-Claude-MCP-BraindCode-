@@ -1,6 +1,9 @@
 ---
 name: ideation-landing-page
 description: "Utiliser quand l'utilisateur veut rédiger un titre et sous-titre Hero accrocheurs qui convertissent (parcours idéation StartupsForge)."
+tags: [produit, marketing]
+niveau: debutant
+prerequis: [ideation-value-proposition, ideation-persona-maker]
 ---
 
 # Landing Page

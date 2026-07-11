@@ -1,6 +1,8 @@
 ---
 name: bootcamp-growth-strategy
 description: "Utiliser quand l'utilisateur veut planifie sa stratégie de croissance (bootcamp 5 jours StartupsForge — Jour 3)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Stratégie de Croissance

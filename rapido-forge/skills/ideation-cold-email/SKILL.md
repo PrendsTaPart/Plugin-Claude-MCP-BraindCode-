@@ -1,6 +1,8 @@
 ---
 name: ideation-cold-email
 description: "Utiliser quand l'utilisateur veut identifier et préparer le contact de 10 prospects qualifiés (parcours idéation StartupsForge)."
+tags: [acquisition, vente]
+niveau: debutant
 ---
 
 # Cold Email

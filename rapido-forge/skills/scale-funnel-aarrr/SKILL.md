@@ -1,6 +1,8 @@
 ---
 name: scale-funnel-aarrr
 description: "Utiliser quand l'utilisateur veut analyser et optimiser chaque étape de son funnel AARRR (parcours scale StartupsForge)."
+tags: [marketing]
+niveau: intermediaire
 ---
 
 # Funnel Aarrr

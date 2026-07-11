@@ -1,6 +1,8 @@
 ---
 name: scale-user-story-mapping
 description: "Utiliser quand l'utilisateur veut cartographier les parcours utilisateurs en user stories prioritisées (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # User Story Mapping

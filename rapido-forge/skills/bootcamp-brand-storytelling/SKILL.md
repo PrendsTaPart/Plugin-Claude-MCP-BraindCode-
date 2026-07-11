@@ -1,6 +1,8 @@
 ---
 name: bootcamp-brand-storytelling
 description: "Utiliser quand l'utilisateur veut construis l'histoire de sa marque (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Storytelling de Marque

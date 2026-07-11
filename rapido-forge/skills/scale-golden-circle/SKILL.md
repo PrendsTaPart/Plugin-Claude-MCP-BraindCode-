@@ -1,6 +1,8 @@
 ---
 name: scale-golden-circle
 description: "Utiliser quand l'utilisateur veut définir clairement son WHY (raison d'être), HOW (différenciation) et WHAT (produit) (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Golden Circle

@@ -1,6 +1,9 @@
 ---
 name: scale-fundraising-plan
 description: "Utiliser quand l'utilisateur veut définir sa stratégie de financement sur les 24 prochains mois (parcours scale StartupsForge)."
+tags: [finance, pitch]
+niveau: expert
+prerequis: [scale-unit-economics, scale-financial-projections]
 ---
 
 # Fundraising Plan

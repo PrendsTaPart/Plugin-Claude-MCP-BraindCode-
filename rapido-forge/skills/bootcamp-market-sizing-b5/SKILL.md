@@ -1,6 +1,8 @@
 ---
 name: bootcamp-market-sizing-b5
 description: "Utiliser quand l'utilisateur veut calcule la taille de son marché avec précision (bootcamp 5 jours StartupsForge — Jour 1)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Taille de Marché TAM/SAM/SOM

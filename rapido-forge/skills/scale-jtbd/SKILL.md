@@ -1,6 +1,8 @@
 ---
 name: scale-jtbd
 description: "Utiliser quand l'utilisateur veut identifier les 'jobs' fonctionnels, émotionnels et sociaux que ses clients veulent accomplir (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # Jtbd

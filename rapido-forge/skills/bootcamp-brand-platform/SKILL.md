@@ -1,6 +1,8 @@
 ---
 name: bootcamp-brand-platform
 description: "Utiliser quand l'utilisateur veut définir l'ADN de sa marque (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Plateforme de Marque

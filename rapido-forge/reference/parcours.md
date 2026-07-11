@@ -128,3 +128,25 @@ aussi » dans chaque skill) :
 Plateformes SANS MCP (Google Ads, TikTok, LinkedIn Ads, Semrush, GA4…) :
 préparer plan et assets, l'utilisateur exécute dans l'outil — le dire
 explicitement.
+
+---
+
+## Catalogue & recherche
+
+- **`reference/catalogue.json`** — l'index machine-readable des 180
+  exercices : `{name, parcours, jour?, description, tags, niveau,
+  prerequis, voir_aussi, livrable_path}`. Généré et validé (graphe de
+  prérequis sans cycle) par `scripts/forge_catalogue.py` à la racine du
+  dépôt — rejoué en CI.
+- **Recherche** :
+  `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/forge_recherche.py" "<besoin>"`
+  (filtres `--tags`, `--niveau`, `--parcours` ; hors-ligne, TF-IDF stdlib ;
+  `--embeddings` optionnel avec repli silencieux). Skill dédié :
+  `selecteur-framework`.
+- **Convention du journal** — pour que le script détecte les exercices
+  faits, chaque exercice terminé s'inscrit dans
+  `./rapido-kb/startup/forge/parcours.md` sur UNE ligne :
+  `- [x] <skill> — <date> — <verdict>`
+  (ex. `- [x] bootcamp-persona-deep — 2026-07-10 — persona validé,
+  2 interviews à refaire`). Les agents tiennent ce journal ; les prérequis
+  cochés ne sont plus signalés comme manquants.

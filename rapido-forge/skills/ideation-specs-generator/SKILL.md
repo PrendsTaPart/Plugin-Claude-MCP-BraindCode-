@@ -1,6 +1,8 @@
 ---
 name: ideation-specs-generator
 description: "Utiliser quand l'utilisateur veut créer un cahier des charges technique complet avec wireframes pour faire développer son MVP (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Specs Generator

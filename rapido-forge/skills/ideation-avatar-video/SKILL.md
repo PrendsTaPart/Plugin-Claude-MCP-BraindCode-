@@ -1,6 +1,8 @@
 ---
 name: ideation-avatar-video
 description: "Utiliser quand l'utilisateur veut créer une vidéo avec un présentateur IA réaliste (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Avatar Video

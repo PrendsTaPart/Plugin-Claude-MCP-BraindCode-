@@ -1,6 +1,8 @@
 ---
 name: scale-ab-testing
 description: "Utiliser quand l'utilisateur veut définir un plan de 5 tests A/B prioritaires avec hypothèses et métriques (parcours scale StartupsForge)."
+tags: [data]
+niveau: expert
 ---
 
 # Ab Testing

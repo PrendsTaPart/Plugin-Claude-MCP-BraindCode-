@@ -1,6 +1,8 @@
 ---
 name: bootcamp-financial-projections
 description: "Utiliser quand l'utilisateur veut créer ses projections sur 3 ans (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [finance]
+niveau: debutant
 ---
 
 # Prévisions Financières

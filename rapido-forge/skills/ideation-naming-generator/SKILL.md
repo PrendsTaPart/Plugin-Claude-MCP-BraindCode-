@@ -1,6 +1,8 @@
 ---
 name: ideation-naming-generator
 description: "Utiliser quand l'utilisateur veut générer et sélectionner un nom de marque mémorable et disponible (parcours idéation StartupsForge)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Naming Generator

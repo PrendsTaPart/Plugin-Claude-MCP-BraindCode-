@@ -1,6 +1,8 @@
 ---
 name: scale-google-trends
 description: "Utiliser quand l'utilisateur veut identifier les tendances de sa niche et créer du contenu aligné (parcours scale StartupsForge)."
+tags: [data, strategie]
+niveau: intermediaire
 ---
 
 # Google Trends

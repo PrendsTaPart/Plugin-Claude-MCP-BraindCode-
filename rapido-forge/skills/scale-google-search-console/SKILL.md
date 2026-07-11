@@ -1,6 +1,8 @@
 ---
 name: scale-google-search-console
 description: "Utiliser quand l'utilisateur veut configurer GSC et analyser les premières données de performance SEO (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Google Search Console

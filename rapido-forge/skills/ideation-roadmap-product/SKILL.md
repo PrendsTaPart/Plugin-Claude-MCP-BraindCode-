@@ -1,6 +1,8 @@
 ---
 name: ideation-roadmap-product
 description: "Utiliser quand l'utilisateur veut définir les fonctionnalités essentielles du MVP à développer en premier (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Roadmap Product

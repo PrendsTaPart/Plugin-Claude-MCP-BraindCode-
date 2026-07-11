@@ -1,0 +1,2586 @@
+[
+  {
+    "name": "bootcamp-bmc-complete",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut compléter son Business Model Canvas (bootcamp 5 jours StartupsForge — Jour 3).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-persona-deep",
+      "bootcamp-problem-validation"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-business-model-canvas"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-bmc-complete.md",
+    "jour": 3
+  },
+  {
+    "name": "bootcamp-brand-platform",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir l'ADN de sa marque (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:gestion-marques"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-brand-platform.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-brand-storytelling",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut construis l'histoire de sa marque (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:storybrand-messaging",
+      "rapidocms:made-to-stick"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-brand-storytelling.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-cash-flow-plan",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut prévois ses flux de trésorerie (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-suite:cash-flow-snapshot",
+      "rapido-startup:plan-financier-previsionnel"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-cash-flow-plan.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-certification-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut obtiens sa certification Bootcamp et célèbre ! (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-certification-b5.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-competitive-advantage",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut identifie et formule son avantage défendable (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-positioning-map"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-competitive-advantage.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-competitive-deep",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut analyse détaillée des forces et faiblesses concurrents (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-market-segmentation"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-competitive-analysis",
+      "rapido-meta-ads:veille-ads-concurrents"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-competitive-deep.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-content-strategy-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut planifie sa stratégie de contenu (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:funnel-tofu-mofu-bofu",
+      "rapidocms:calendrier-editorial"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-content-strategy-b5.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-conversion-funnel",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut construis son funnel de conversion (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-funnel-aarrr"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-conversion-funnel.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-editorial-calendar",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut organise ses publications sur 30 jours (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:calendrier-editorial"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-editorial-calendar.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-email-setup",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut configure ses séquences email (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marketing",
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-email-marketing-setup"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-email-setup.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-feature-benchmark",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut compare les fonctionnalités clés du marché (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-competitive-deep"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-competitive-analysis"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-feature-benchmark.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-financial-projections",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut créer ses projections sur 3 ans (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:plan-financier-previsionnel"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-financial-projections.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-funding-strategy",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir sa stratégie de levée de fonds (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-fundraising-plan",
+      "rapido-startup:interview-business-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-funding-strategy.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-growth-strategy",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut planifie sa stratégie de croissance (bootcamp 5 jours StartupsForge — Jour 3).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-growth-experiments",
+      "rapido-forge:scale-ansoff-matrix"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-growth-strategy.md",
+    "jour": 3
+  },
+  {
+    "name": "bootcamp-investor-faq",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut prépare les réponses aux questions fréquentes (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-problem-validation",
+      "bootcamp-financial-projections"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-investor-faq"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-investor-faq.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-ip-protection",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut protège sa marque et ses innovations (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "juridique"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-ip-protection.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-landing-copy-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut rédiger le contenu de sa landing page (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-landing-copy",
+      "rapido-lovable:usine-a-landing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-landing-copy-b5.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-launch-budget",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut estime le budget nécessaire au lancement (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "finance",
+      "marketing"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:gestion-depenses"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-launch-budget.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-launch-plan",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut planifie son lancement step-by-step (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-launch-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-launch-plan.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-legal-documents",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut génère ses documents légaux obligatoires (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "juridique"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-legal-docs"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-legal-documents.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-legal-status",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut choisir la forme juridique adaptée (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "juridique"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-legal-structure"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-legal-status.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-market-segmentation",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut identifie et priorise ses segments de marché cibles (bootcamp 5 jours StartupsForge — Jour 1).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-market-segmentation.md",
+    "jour": 1
+  },
+  {
+    "name": "bootcamp-market-sizing-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut calcule la taille de son marché avec précision (bootcamp 5 jours StartupsForge — Jour 1).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:interview-business-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-market-sizing-b5.md",
+    "jour": 1
+  },
+  {
+    "name": "bootcamp-mvp-wireframes",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut créer les maquettes de son MVP (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-mvp-wireframes",
+      "rapido-lovable:frontend-design"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-mvp-wireframes.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-naming-tagline",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut trouve le nom parfait et son slogan (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-naming-generator",
+      "rapidocms:made-to-stick"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-naming-tagline.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-okr-kpi-setup",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir ses objectifs et indicateurs clés (bootcamp 5 jours StartupsForge — Jour 3).",
+    "tags": [
+      "data",
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-okrs-q1",
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-okr-kpi-setup.md",
+    "jour": 3
+  },
+  {
+    "name": "bootcamp-pain-mapping",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut analyse en profondeur les frustrations utilisateurs (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-qualitative-study"
+    ],
+    "voir_aussi": [
+      "rapidocrm:mom-test"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-pain-mapping.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-persona-deep",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut créer des personas détaillés avec jobs-to-be-done (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-market-segmentation"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-persona-maker",
+      "rapido-suite:dossier-startup-360"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-persona-deep.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-pestel-analysis",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut évalue l'environnement macro-économique (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-trend-analysis"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-pestel-analysis.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-pitch-deck-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut créer son pitch deck investisseur (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-problem-validation",
+      "bootcamp-financial-projections"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-pitch-deck",
+      "rapido-canva:supports-commerciaux"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-pitch-deck-b5.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-pitch-script-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut prépare son pitch oral de 3 minutes (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-problem-validation",
+      "bootcamp-financial-projections"
+    ],
+    "voir_aussi": [
+      "rapido-forge:ideation-pitch-script"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-pitch-script-b5.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-porter-forces",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut analyse les 5 forces concurrentielles (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-market-sizing-b5"
+    ],
+    "voir_aussi": [
+      "rapido-forge:scale-porter-5-forces"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-porter-forces.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-positioning-map",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir son positionnement unique sur le marché (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-competitive-deep"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-positioning-map.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-press-release-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut rédiger son communiqué de lancement (bootcamp 5 jours StartupsForge — Jour 5).",
+    "tags": [
+      "pitch",
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-press-release"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-press-release-b5.md",
+    "jour": 5
+  },
+  {
+    "name": "bootcamp-problem-validation",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut valide que le problème est réel et fréquent (bootcamp 5 jours StartupsForge — Jour 2).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "bootcamp-qualitative-study"
+    ],
+    "voir_aussi": [
+      "rapidocrm:mom-test"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-problem-validation.md",
+    "jour": 2
+  },
+  {
+    "name": "bootcamp-qualitative-study",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut mène des interviews utilisateurs approfondies avec la méthode The Mom Test (bootcamp 5 jours StartupsForge — Jour 1).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:mom-test"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-qualitative-study.md",
+    "jour": 1
+  },
+  {
+    "name": "bootcamp-quantitative-study",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut conçois un questionnaire de validation avec scoring et analyse (bootcamp 5 jours StartupsForge — Jour 1).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:animation-client"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-quantitative-study.md",
+    "jour": 1
+  },
+  {
+    "name": "bootcamp-revenue-model-b5",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir ses sources de revenus et pricing (bootcamp 5 jours StartupsForge — Jour 3).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-business-model-canvas",
+      "rapido-forge:scale-pricing-strategy"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-revenue-model-b5.md",
+    "jour": 3
+  },
+  {
+    "name": "bootcamp-social-media-strategy",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir sa présence sur les réseaux (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-social-strategy",
+      "rapidocms:pipeline-contenu-social"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-social-media-strategy.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-stakeholder-mapping",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut cartographie tous les acteurs de son écosystème (bootcamp 5 jours StartupsForge — Jour 1).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-stakeholder-mapping.md",
+    "jour": 1
+  },
+  {
+    "name": "bootcamp-tone-of-voice",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir la personnalité de sa communication (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:contenu-conforme-marque"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-tone-of-voice.md",
+    "jour": 4
+  },
+  {
+    "name": "bootcamp-trend-analysis",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut identifie les tendances émergentes et signaux faibles du marché (bootcamp 5 jours StartupsForge — Jour 1).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-google-trends"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-trend-analysis.md",
+    "jour": 1
+  },
+  {
+    "name": "bootcamp-uvp-builder",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut formule sa proposition de valeur irrésistible (bootcamp 5 jours StartupsForge — Jour 3).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-value-proposition",
+      "rapido-meta-ads:hundred-million-offers"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-uvp-builder.md",
+    "jour": 3
+  },
+  {
+    "name": "bootcamp-vision-mission",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut définir sa vision long terme et sa mission (bootcamp 5 jours StartupsForge — Jour 3).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-golden-circle"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-vision-mission.md",
+    "jour": 3
+  },
+  {
+    "name": "bootcamp-visual-identity",
+    "parcours": "bootcamp",
+    "description": "Utiliser quand l'utilisateur veut créer son logo et charte graphique (bootcamp 5 jours StartupsForge — Jour 4).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:ideation-color-palette",
+      "rapidocms:gestion-marques"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/bootcamp/bootcamp-visual-identity.md",
+    "jour": 4
+  },
+  {
+    "name": "ideation-about-page",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut raconter l'histoire de sa startup et créer une connexion émotionnelle (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-about-page.md"
+  },
+  {
+    "name": "ideation-advisory-board",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut identifier et approcher des advisors potentiels (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-advisory-board.md"
+  },
+  {
+    "name": "ideation-analytics-setup",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut configurer GA4, Mixpanel ou équivalent (parcours idéation StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-google-analytics-4"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-analytics-setup.md"
+  },
+  {
+    "name": "ideation-automation-workflow",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un workflow complet de traitement des nouveaux leads (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation",
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-n8n:usine-automatisations"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-automation-workflow.md"
+  },
+  {
+    "name": "ideation-avatar-video",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer une vidéo avec un présentateur IA réaliste (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:video-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-avatar-video.md"
+  },
+  {
+    "name": "ideation-blog-outline",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut rédiger un article de blog complet et optimisé SEO (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:generation-article-blog"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-blog-outline.md"
+  },
+  {
+    "name": "ideation-business-model-canvas",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut remplir un Business Model Canvas complet avec les 9 blocs (parcours idéation StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:interview-business-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-business-model-canvas.md"
+  },
+  {
+    "name": "ideation-cash-flow",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un plan de trésorerie mensuel sur 12 mois (parcours idéation StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-suite:cash-flow-snapshot"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-cash-flow.md"
+  },
+  {
+    "name": "ideation-certification",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut célébrer la fin du hackathon et obtenir sa certification (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-certification.md"
+  },
+  {
+    "name": "ideation-changelog-setup",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer et maintenir un changelog public (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-changelog-setup.md"
+  },
+  {
+    "name": "ideation-cold-email",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut identifier et préparer le contact de 10 prospects qualifiés (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition",
+      "vente"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:draft-outreach",
+      "rapidocrm:redaction-commerciale"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-cold-email.md"
+  },
+  {
+    "name": "ideation-color-palette",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut définir une palette de couleurs cohérente et professionnelle (parcours idéation StartupsForge).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-color-palette.md"
+  },
+  {
+    "name": "ideation-competitive-analysis",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut cartographier le paysage concurrentiel avec forces, faiblesses et opportunités de différenciation (parcours idéation StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:account-research"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-competitive-analysis.md"
+  },
+  {
+    "name": "ideation-contact-form",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un formulaire de contact optimisé pour la conversion (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation",
+      "data"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-contact-form.md"
+  },
+  {
+    "name": "ideation-course-outline",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut structurer le contenu pédagogique de son produit/service (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-course-outline.md"
+  },
+  {
+    "name": "ideation-demo-script",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut enregistrer une démo produit professionnelle (parcours idéation StartupsForge).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-demo-script.md"
+  },
+  {
+    "name": "ideation-email-marketing-setup",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut configurer son système d'email marketing complet avec automation (parcours idéation StartupsForge).",
+    "tags": [
+      "marketing",
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:email-sequence"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-email-marketing-setup.md"
+  },
+  {
+    "name": "ideation-email-sequence",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut rédiger un email de bienvenue engageant (parcours idéation StartupsForge).",
+    "tags": [
+      "marketing",
+      "contenu"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:email-sequence"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-email-sequence.md"
+  },
+  {
+    "name": "ideation-export-pdf",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut compiler tous les documents clés dans un dossier PDF (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation",
+      "data"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-export-pdf.md"
+  },
+  {
+    "name": "ideation-feedback-analysis",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut analyser et synthétiser les premiers retours utilisateurs (parcours idéation StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-nps-survey"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-feedback-analysis.md"
+  },
+  {
+    "name": "ideation-financial-forecast",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer des projections financières à 3 ans (parcours idéation StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:plan-financier-previsionnel"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-financial-forecast.md"
+  },
+  {
+    "name": "ideation-first-ad-campaign",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut lancer sa première campagne publicitaire (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [
+      "rapido-meta-ads:lancement-campagne-meta"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-first-ad-campaign.md"
+  },
+  {
+    "name": "ideation-gamification",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut ajouter un élément interactif engageant à son site (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-gamification.md"
+  },
+  {
+    "name": "ideation-growth-experiments",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut planifier 3 expériences de croissance (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-growth-experiments.md"
+  },
+  {
+    "name": "ideation-hero-image",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut générer des visuels professionnels pour son site web (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:prompt-engineering-visuel"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-hero-image.md"
+  },
+  {
+    "name": "ideation-hunter-outreach",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut contacter et sécuriser un hunter pour le lancement (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition",
+      "vente"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-hunter-outreach.md"
+  },
+  {
+    "name": "ideation-investor-faq",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut préparer les réponses aux questions investisseurs (parcours idéation StartupsForge).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "bootcamp-problem-validation",
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [
+      "rapido-startup:interview-business-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-investor-faq.md"
+  },
+  {
+    "name": "ideation-iteration-planning",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut planifier le sprint pour la V2 (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-iteration-planning.md"
+  },
+  {
+    "name": "ideation-kpi-dashboard",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un dashboard avec les KPIs essentiels (parcours idéation StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-kpi-dashboard.md"
+  },
+  {
+    "name": "ideation-landing-copy",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut finaliser le texte de sa landing page (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-landing-copy.md"
+  },
+  {
+    "name": "ideation-landing-page",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut rédiger un titre et sous-titre Hero accrocheurs qui convertissent (parcours idéation StartupsForge).",
+    "tags": [
+      "produit",
+      "marketing"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "ideation-value-proposition",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [
+      "rapido-lovable:usine-a-landing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-landing-page.md"
+  },
+  {
+    "name": "ideation-launch-checklist",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer et valider la checklist finale de lancement (parcours idéation StartupsForge).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-launch-checklist.md"
+  },
+  {
+    "name": "ideation-launch-plan",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un plan de lancement détaillé (parcours idéation StartupsForge).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "debutant",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-launch-checklist"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-launch-plan.md"
+  },
+  {
+    "name": "ideation-launch-post",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut rédiger le post de lancement parfait pour ses réseaux (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:pipeline-contenu-social"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-launch-post.md"
+  },
+  {
+    "name": "ideation-lead-magnet",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un ebook ou guide PDF à forte valeur ajoutée (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-lead-magnet.md"
+  },
+  {
+    "name": "ideation-lean-canvas",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut remplir un Lean Canvas complet pour visualiser son modèle d'affaires et identifier les hypothèses à valider (parcours idéation StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:interview-business-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-lean-canvas.md"
+  },
+  {
+    "name": "ideation-legal-docs",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut générer des CGV et mentions légales conformes (parcours idéation StartupsForge).",
+    "tags": [
+      "juridique"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-legal-docs.md"
+  },
+  {
+    "name": "ideation-legal-structure",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut choisir le statut juridique adapté à son projet (parcours idéation StartupsForge).",
+    "tags": [
+      "juridique"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-legal-structure.md"
+  },
+  {
+    "name": "ideation-lessons-learned",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut documenter les apprentissages du lancement (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-lessons-learned.md"
+  },
+  {
+    "name": "ideation-linkedin-posts",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut rédiger 5 posts LinkedIn prêts à publier (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:pipeline-contenu-social"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-linkedin-posts.md"
+  },
+  {
+    "name": "ideation-logo-prompt",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un logo professionnel représentant l'identité de sa marque (parcours idéation StartupsForge).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:prompt-engineering-visuel",
+      "rapidocms:prompts-visuels-pro"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-logo-prompt.md"
+  },
+  {
+    "name": "ideation-lovable-prompt",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut générer le code de son site web avec Lovable.dev (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-lovable:frontend-design",
+      "rapido-lovable:ui-ux-pro-max"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-lovable-prompt.md"
+  },
+  {
+    "name": "ideation-mvp-wireframes",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer les wireframes de son MVP (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-mvp-wireframes.md"
+  },
+  {
+    "name": "ideation-naming-generator",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut générer et sélectionner un nom de marque mémorable et disponible (parcours idéation StartupsForge).",
+    "tags": [
+      "marque"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:made-to-stick"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-naming-generator.md"
+  },
+  {
+    "name": "ideation-north-star-metric",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut définir et documenter sa North Star Metric (parcours idéation StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-forge:scale-north-star-metric"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-north-star-metric.md"
+  },
+  {
+    "name": "ideation-paid-acquisition",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut élaborer une stratégie d'acquisition payante (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [
+      "rapido-meta-ads:campaign-plan-methodo",
+      "rapido-meta-ads:lancement-campagne-meta"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-paid-acquisition.md"
+  },
+  {
+    "name": "ideation-persona-maker",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer 2-3 personas détaillés représentant ses clients idéaux avec leurs motivations, frustrations et comportements (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-suite:dossier-startup-360"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-persona-maker.md"
+  },
+  {
+    "name": "ideation-ph-page-copy",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer la page Product Hunt parfaite (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-ph-page-copy.md"
+  },
+  {
+    "name": "ideation-pitch-deck",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut structurer son pitch deck avec les 10-12 slides essentielles (parcours idéation StartupsForge).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "bootcamp-problem-validation",
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [
+      "rapido-canva:supports-commerciaux"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-pitch-deck.md"
+  },
+  {
+    "name": "ideation-pitch-script",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut pratiquer et perfectionner sa présentation orale (parcours idéation StartupsForge).",
+    "tags": [
+      "pitch"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "bootcamp-problem-validation",
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-pitch-script.md"
+  },
+  {
+    "name": "ideation-pre-launch-campaign",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer une campagne email de pré-lancement (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-pre-launch-campaign.md"
+  },
+  {
+    "name": "ideation-press-release",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut rédiger un communiqué de presse professionnel (parcours idéation StartupsForge).",
+    "tags": [
+      "pitch",
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-press-release.md"
+  },
+  {
+    "name": "ideation-pricing-page",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut présenter ses tarifs de façon claire et convaincante (parcours idéation StartupsForge).",
+    "tags": [
+      "finance",
+      "strategie",
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-value-proposition"
+    ],
+    "voir_aussi": [
+      "rapido-forge:scale-pricing-strategy"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-pricing-page.md"
+  },
+  {
+    "name": "ideation-product-hunt-strategy",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut élaborer une stratégie complète pour Product Hunt (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-product-hunt-strategy.md"
+  },
+  {
+    "name": "ideation-qa-checklist",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut tester exhaustivement son site avant le lancement (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-qa-checklist.md"
+  },
+  {
+    "name": "ideation-quiz-generator",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un quiz interactif pour engager et qualifier les visiteurs (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:animation-client"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-quiz-generator.md"
+  },
+  {
+    "name": "ideation-referral-program",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un programme de parrainage efficace (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:contagious"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-referral-program.md"
+  },
+  {
+    "name": "ideation-retargeting-setup",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut configurer le retargeting pour récupérer les visiteurs (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [
+      "rapido-meta-ads:pixel-et-retargeting"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-retargeting-setup.md"
+  },
+  {
+    "name": "ideation-roadmap-product",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut définir les fonctionnalités essentielles du MVP à développer en premier (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-roadmap-product.md"
+  },
+  {
+    "name": "ideation-seo-meta",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut optimiser le SEO de base de son site pour les moteurs de recherche (parcours idéation StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:generation-article-blog"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-seo-meta.md"
+  },
+  {
+    "name": "ideation-sitemap-generator",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut planifier la structure de pages de son site web (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-sitemap-generator.md"
+  },
+  {
+    "name": "ideation-social-strategy",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut planifier 30 jours de contenu social media (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-social-strategy.md"
+  },
+  {
+    "name": "ideation-specs-generator",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un cahier des charges technique complet avec wireframes pour faire développer son MVP (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-specs-generator.md"
+  },
+  {
+    "name": "ideation-swot",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut réaliser une analyse SWOT complète pour guider sa stratégie de développement (parcours idéation StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-swot.md"
+  },
+  {
+    "name": "ideation-testimonial-request",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer des témoignages crédibles pour renforcer la confiance (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:communication-client"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-testimonial-request.md"
+  },
+  {
+    "name": "ideation-ui-guidelines",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut sélectionner une combinaison de fonts harmonieuse et lisible (parcours idéation StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-ui-guidelines.md"
+  },
+  {
+    "name": "ideation-usp-statement",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer un pitch d'une phrase percutante et mémorable (parcours idéation StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-meta-ads:one-page-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-usp-statement.md"
+  },
+  {
+    "name": "ideation-value-proposition",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut identifier et articuler le problème précis que sa solution résout, avec son intensité et sa fréquence (parcours idéation StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-value-proposition.md"
+  },
+  {
+    "name": "ideation-video-edit",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut créer une vidéo teaser courte et percutante (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:video-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-video-edit.md"
+  },
+  {
+    "name": "ideation-video-script",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut scripter une vidéo tutoriel ou explicative (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:video-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-video-script.md"
+  },
+  {
+    "name": "ideation-voiceover",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut générer une voix-off IA pour sa vidéo (parcours idéation StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:video-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-voiceover.md"
+  },
+  {
+    "name": "ideation-webhook-setup",
+    "parcours": "ideation",
+    "description": "Utiliser quand l'utilisateur veut configurer un webhook pour capturer les leads de son formulaire (parcours idéation StartupsForge).",
+    "tags": [
+      "organisation",
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-n8n:usine-automatisations"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/ideation/ideation-webhook-setup.md"
+  },
+  {
+    "name": "scale-ab-testing",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut définir un plan de 5 tests A/B prioritaires avec hypothèses et métriques (parcours scale StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "expert",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-meta-ads:tests-ab-meta"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-ab-testing.md"
+  },
+  {
+    "name": "scale-adoption-curve",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier son segment d'adoption actuel et adapter sa stratégie en conséquence (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-adoption-curve.md"
+  },
+  {
+    "name": "scale-ansoff-matrix",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut définir sa stratégie de croissance principale parmi les 4 options d'Ansoff (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-ansoff-matrix.md"
+  },
+  {
+    "name": "scale-bant-qualification",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer une grille de qualification BANT pour prioriser ses opportunités (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:prospection-pipeline"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-bant-qualification.md"
+  },
+  {
+    "name": "scale-bcg-matrix",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut analyser son portefeuille produits/services pour identifier les Stars à développer, les Vaches à lait à optimiser, les Dilemmes à arbitrer et les Poids morts à abandonner (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-bcg-matrix.md"
+  },
+  {
+    "name": "scale-blue-ocean",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier des espaces de marché inexploités où la concurrence est inexistante (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-blue-ocean.md"
+  },
+  {
+    "name": "scale-break-even",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut calculer son point mort et définir la trajectoire pour l'atteindre (parcours scale StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "expert",
+    "prerequis": [
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-break-even.md"
+  },
+  {
+    "name": "scale-burn-rate",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut calculer son burn rate actuel et projeter son runway (parcours scale StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "expert",
+    "prerequis": [
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-burn-rate.md"
+  },
+  {
+    "name": "scale-cap-table",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer et simuler sa table de capitalisation avant/après levée (parcours scale StartupsForge).",
+    "tags": [
+      "finance",
+      "pitch"
+    ],
+    "niveau": "expert",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-cap-table.md"
+  },
+  {
+    "name": "scale-cold-email-prospection",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut rédiger une séquence de cold emails avec personnalisation et follow-ups (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition",
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:predictable-revenue",
+      "rapidocrm:draft-outreach"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-cold-email-prospection.md"
+  },
+  {
+    "name": "scale-commercial-proposal",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un template de proposition commerciale B2B convaincant et professionnel (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-canva:supports-commerciaux"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-commercial-proposal.md"
+  },
+  {
+    "name": "scale-community-building",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut lancer et structurer une communauté autour de sa marque/produit (parcours scale StartupsForge).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:contagious"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-community-building.md"
+  },
+  {
+    "name": "scale-content-pillar",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer une stratégie de contenu SEO avec articles piliers et clusters (parcours scale StartupsForge).",
+    "tags": [
+      "contenu"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:calendrier-editorial"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-content-pillar.md"
+  },
+  {
+    "name": "scale-cost-waterfall",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut cartographier et catégoriser tous ses coûts fixes et variables (parcours scale StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "expert",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:gestion-depenses"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-cost-waterfall.md"
+  },
+  {
+    "name": "scale-customer-journey",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut mapper les 7 étapes du parcours client de la découverte à l'advocacy (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-meta-ads:one-page-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-customer-journey.md"
+  },
+  {
+    "name": "scale-customer-success",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut définir son playbook Customer Success avec onboarding, check-ins et expansion (parcours scale StartupsForge).",
+    "tags": [
+      "vente",
+      "organisation"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:draft-response",
+      "rapidocrm:ticket-triage"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-customer-success.md"
+  },
+  {
+    "name": "scale-design-system",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un Design System V1 avec les composants essentiels (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-lovable:ui-styling",
+      "rapido-lovable:frontend-design"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-design-system.md"
+  },
+  {
+    "name": "scale-eisenhower-matrix",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut organiser ses tâches selon l'urgence et l'importance pour maximiser son impact (parcours scale StartupsForge).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidorh:flux-kanban"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-eisenhower-matrix.md"
+  },
+  {
+    "name": "scale-financial-projections",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un P&L prévisionnel sur 3 ans avec hypothèses détaillées (parcours scale StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "expert",
+    "prerequis": [
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [
+      "rapido-startup:plan-financier-previsionnel"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-financial-projections.md"
+  },
+  {
+    "name": "scale-fundraising-plan",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut définir sa stratégie de financement sur les 24 prochains mois (parcours scale StartupsForge).",
+    "tags": [
+      "finance",
+      "pitch"
+    ],
+    "niveau": "expert",
+    "prerequis": [
+      "scale-unit-economics",
+      "scale-financial-projections"
+    ],
+    "voir_aussi": [
+      "rapido-startup:interview-business-plan"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-fundraising-plan.md"
+  },
+  {
+    "name": "scale-funnel-aarrr",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut analyser et optimiser chaque étape de son funnel AARRR (parcours scale StartupsForge).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:funnel-tofu-mofu-bofu"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-funnel-aarrr.md"
+  },
+  {
+    "name": "scale-golden-circle",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut définir clairement son WHY (raison d'être), HOW (différenciation) et WHAT (produit) (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-golden-circle.md"
+  },
+  {
+    "name": "scale-google-ads-setup",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut lancer sa première campagne Google Ads Search rentable (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-google-ads-setup.md"
+  },
+  {
+    "name": "scale-google-analytics-4",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut installer et configurer GA4 pour tracker son site web avec les événements clés (parcours scale StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-google-analytics-4.md"
+  },
+  {
+    "name": "scale-google-search-console",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut configurer GSC et analyser les premières données de performance SEO (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-google-search-console.md"
+  },
+  {
+    "name": "scale-google-trends",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier les tendances de sa niche et créer du contenu aligné (parcours scale StartupsForge).",
+    "tags": [
+      "data",
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-google-trends.md"
+  },
+  {
+    "name": "scale-heatmaps",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut installer et analyser les heatmaps et session recordings sur son site (parcours scale StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-heatmaps.md"
+  },
+  {
+    "name": "scale-impact-effort",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut placer toutes ses idées sur la matrice et identifier les Quick Wins (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-impact-effort.md"
+  },
+  {
+    "name": "scale-influencer-marketing",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier 20 micro-influenceurs pertinents et créer un plan d'approche (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-influencer-marketing.md"
+  },
+  {
+    "name": "scale-jtbd",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier les 'jobs' fonctionnels, émotionnels et sociaux que ses clients veulent accomplir (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-jtbd.md"
+  },
+  {
+    "name": "scale-kpi-dashboard",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un dashboard des 10 métriques essentielles à suivre chaque semaine (parcours scale StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-kpi-dashboard.md"
+  },
+  {
+    "name": "scale-linkedin-ads-b2b",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut lancer une campagne LinkedIn Ads ciblant les décideurs B2B (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-linkedin-ads-b2b.md"
+  },
+  {
+    "name": "scale-linkedin-pixel",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut installer le Insight Tag et configurer le tracking B2B (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-linkedin-pixel.md"
+  },
+  {
+    "name": "scale-marketing-4c",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut transformer son approche marketing en adoptant la perspective client (parcours scale StartupsForge).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-marketing-4c.md"
+  },
+  {
+    "name": "scale-marketing-4p",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut optimiser chaque P de son Marketing Mix pour maximiser l'impact (parcours scale StartupsForge).",
+    "tags": [
+      "marketing"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-marketing-4p.md"
+  },
+  {
+    "name": "scale-meta-ads-campaign",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer et lancer une campagne Meta Ads complète (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [
+      "rapido-meta-ads:lancement-campagne-meta"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-meta-ads-campaign.md"
+  },
+  {
+    "name": "scale-meta-pixel",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut installer le Meta Pixel avec les événements de conversion clés (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [
+      "rapido-meta-ads:pixel-et-retargeting"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-meta-pixel.md"
+  },
+  {
+    "name": "scale-negotiation-batna",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut préparer une négociation commerciale avec BATNA, ZOPA et tactiques (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "expert",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:negotiation"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-negotiation-batna.md"
+  },
+  {
+    "name": "scale-north-star-metric",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier et définir LA métrique unique qui guide toutes ses décisions (parcours scale StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-north-star-metric.md"
+  },
+  {
+    "name": "scale-nps-survey",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut mettre en place une mesure régulière du NPS avec actions correctives (parcours scale StartupsForge).",
+    "tags": [
+      "data"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:animation-client"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-nps-survey.md"
+  },
+  {
+    "name": "scale-objections-playbook",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut anticiper et préparer des réponses structurées aux 10 objections les plus fréquentes (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:negotiation"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-objections-playbook.md"
+  },
+  {
+    "name": "scale-okrs-q1",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut définir 3-5 objectifs ambitieux avec résultats clés mesurables pour son premier trimestre Scale (parcours scale StartupsForge).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidorh:setup-projet"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-okrs-q1.md"
+  },
+  {
+    "name": "scale-porter-5-forces",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut évaluer les 5 forces qui déterminent la rentabilité potentielle de son marché (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-porter-5-forces.md"
+  },
+  {
+    "name": "scale-pr-media-kit",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un Media Kit complet prêt à envoyer aux journalistes et partenaires (parcours scale StartupsForge).",
+    "tags": [
+      "pitch",
+      "contenu"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:content-creation-methodo"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-pr-media-kit.md"
+  },
+  {
+    "name": "scale-pricing-strategy",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut tester et optimiser sa stratégie de pricing pour maximiser le revenu (parcours scale StartupsForge).",
+    "tags": [
+      "finance",
+      "strategie"
+    ],
+    "niveau": "expert",
+    "prerequis": [
+      "scale-unit-economics"
+    ],
+    "voir_aussi": [
+      "foodeatup:price-check",
+      "rapido-meta-ads:hundred-million-offers"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-pricing-strategy.md"
+  },
+  {
+    "name": "scale-prototype",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un prototype interactif navigable de son MVP (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-lovable:frontend-design"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-prototype.md"
+  },
+  {
+    "name": "scale-public-roadmap",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer une roadmap produit transparente et engageante pour ses utilisateurs (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-public-roadmap.md"
+  },
+  {
+    "name": "scale-referral-program",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut concevoir un programme de parrainage viral avec incentives optimisés (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:contagious",
+      "rapidocrm:animation-client"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-referral-program.md"
+  },
+  {
+    "name": "scale-rice-prioritization",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut scorer et prioriser ses features avec la méthode RICE (parcours scale StartupsForge).",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-rice-prioritization.md"
+  },
+  {
+    "name": "scale-sales-call-script",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer un script d'appel de vente structuré en 7 étapes avec transitions naturelles (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:redaction-commerciale"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-sales-call-script.md"
+  },
+  {
+    "name": "scale-scenarios-planning",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer 3 scénarios de croissance : pessimiste, réaliste, optimiste (parcours scale StartupsForge).",
+    "tags": [
+      "strategie"
+    ],
+    "niveau": "expert",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-startup:plan-financier-previsionnel"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-scenarios-planning.md"
+  },
+  {
+    "name": "scale-semrush-audit",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut réaliser un audit SEO complet et créer un plan d'action priorisé (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-semrush-audit.md"
+  },
+  {
+    "name": "scale-seo-meta",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut optimiser les balises meta de toutes ses pages clés pour maximiser le CTR (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocms:generation-article-blog"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-seo-meta.md"
+  },
+  {
+    "name": "scale-soncas",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut identifier le profil SONCAS de ses clients types et adapter ses argumentaires (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:redaction-commerciale"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-soncas.md"
+  },
+  {
+    "name": "scale-spin-selling",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut maîtriser les 4 types de questions SPIN pour qualifier et convertir efficacement (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:coaching-pipeline"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-spin-selling.md"
+  },
+  {
+    "name": "scale-tiktok-ads-creator",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut créer des publicités TikTok natives qui ne ressemblent pas à des pubs (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-tiktok-ads-creator.md"
+  },
+  {
+    "name": "scale-tiktok-pixel",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut préparer son tracking TikTok pour de futures campagnes (parcours scale StartupsForge).",
+    "tags": [
+      "acquisition"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [
+      "ideation-landing-page",
+      "ideation-persona-maker"
+    ],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-tiktok-pixel.md"
+  },
+  {
+    "name": "scale-unit-economics",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut calculer et optimiser ses métriques unitaires : CAC, LTV, ratio LTV/CAC (parcours scale StartupsForge).",
+    "tags": [
+      "finance"
+    ],
+    "niveau": "expert",
+    "prerequis": [
+      "ideation-financial-forecast"
+    ],
+    "voir_aussi": [
+      "rapido-startup:catalogue-kpi"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-unit-economics.md"
+  },
+  {
+    "name": "scale-upsell-crosssell",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut cartographier les opportunités d'upsell et cross-sell par segment client (parcours scale StartupsForge).",
+    "tags": [
+      "vente"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:campagne-marketing"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-upsell-crosssell.md"
+  },
+  {
+    "name": "scale-user-story-mapping",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut cartographier les parcours utilisateurs en user stories prioritisées (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-user-story-mapping.md"
+  },
+  {
+    "name": "scale-user-tests",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut recruter et observer 5 personnes utilisant son produit/prototype (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapidocrm:mom-test"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-user-tests.md"
+  },
+  {
+    "name": "scale-wireframes",
+    "parcours": "scale",
+    "description": "Utiliser quand l'utilisateur veut esquisser les 5 écrans clés de son application (parcours scale StartupsForge).",
+    "tags": [
+      "produit"
+    ],
+    "niveau": "intermediaire",
+    "prerequis": [],
+    "voir_aussi": [
+      "rapido-lovable:frontend-design"
+    ],
+    "livrable_path": "./rapido-kb/startup/forge/scale/scale-wireframes.md"
+  },
+  {
+    "name": "selecteur-framework",
+    "parcours": "selecteur",
+    "description": "Utiliser quand l'utilisateur décrit un besoin sans nommer de framework (« comment je valide mon idée », « aide-moi à structurer mes prix ») ou demande quel exercice/framework utiliser. Recherche sémantique locale dans les 180 exercices, 3 propositions max, prérequis vérifiés contre le journal.",
+    "tags": [
+      "organisation"
+    ],
+    "niveau": "debutant",
+    "prerequis": [],
+    "voir_aussi": [],
+    "livrable_path": "./rapido-kb/startup/forge/parcours.md"
+  }
+]

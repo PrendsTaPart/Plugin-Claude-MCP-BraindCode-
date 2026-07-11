@@ -1,6 +1,9 @@
 ---
 name: bootcamp-competitive-deep
 description: "Utiliser quand l'utilisateur veut analyse détaillée des forces et faiblesses concurrents (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-market-segmentation]
 ---
 
 # Analyse Concurrentielle Approfondie

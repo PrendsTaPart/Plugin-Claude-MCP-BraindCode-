@@ -1,6 +1,8 @@
 ---
 name: ideation-quiz-generator
 description: "Utiliser quand l'utilisateur veut créer un quiz interactif pour engager et qualifier les visiteurs (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Quiz Generator

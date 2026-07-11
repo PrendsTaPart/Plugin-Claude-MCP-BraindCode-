@@ -1,6 +1,8 @@
 ---
 name: scale-sales-call-script
 description: "Utiliser quand l'utilisateur veut créer un script d'appel de vente structuré en 7 étapes avec transitions naturelles (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Sales Call Script

@@ -1,6 +1,9 @@
 ---
 name: ideation-pitch-deck
 description: "Utiliser quand l'utilisateur veut structurer son pitch deck avec les 10-12 slides essentielles (parcours idéation StartupsForge)."
+tags: [pitch]
+niveau: intermediaire
+prerequis: [bootcamp-problem-validation, ideation-financial-forecast]
 ---
 
 # Pitch Deck

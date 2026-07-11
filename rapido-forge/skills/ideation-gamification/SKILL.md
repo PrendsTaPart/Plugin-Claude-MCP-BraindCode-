@@ -1,6 +1,8 @@
 ---
 name: ideation-gamification
 description: "Utiliser quand l'utilisateur veut ajouter un élément interactif engageant à son site (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Gamification

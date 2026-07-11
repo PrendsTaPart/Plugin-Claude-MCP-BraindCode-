@@ -1,6 +1,8 @@
 ---
 name: bootcamp-launch-plan
 description: "Utiliser quand l'utilisateur veut planifie son lancement step-by-step (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [marketing]
+niveau: debutant
 ---
 
 # Plan de Lancement

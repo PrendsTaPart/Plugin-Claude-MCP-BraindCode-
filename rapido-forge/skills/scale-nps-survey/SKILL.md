@@ -1,6 +1,8 @@
 ---
 name: scale-nps-survey
 description: "Utiliser quand l'utilisateur veut mettre en place une mesure régulière du NPS avec actions correctives (parcours scale StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # Nps Survey

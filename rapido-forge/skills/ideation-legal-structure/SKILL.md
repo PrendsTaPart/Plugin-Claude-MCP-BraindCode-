@@ -1,6 +1,8 @@
 ---
 name: ideation-legal-structure
 description: "Utiliser quand l'utilisateur veut choisir le statut juridique adapté à son projet (parcours idéation StartupsForge)."
+tags: [juridique]
+niveau: debutant
 ---
 
 # Legal Structure

@@ -1,6 +1,8 @@
 ---
 name: ideation-contact-form
 description: "Utiliser quand l'utilisateur veut créer un formulaire de contact optimisé pour la conversion (parcours idéation StartupsForge)."
+tags: [organisation, data]
+niveau: debutant
 ---
 
 # Contact Form

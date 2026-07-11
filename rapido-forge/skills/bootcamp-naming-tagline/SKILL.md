@@ -1,6 +1,8 @@
 ---
 name: bootcamp-naming-tagline
 description: "Utiliser quand l'utilisateur veut trouve le nom parfait et son slogan (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Naming & Tagline

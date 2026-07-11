@@ -1,6 +1,8 @@
 ---
 name: scale-impact-effort
 description: "Utiliser quand l'utilisateur veut placer toutes ses idées sur la matrice et identifier les Quick Wins (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Impact Effort

@@ -1,6 +1,9 @@
 ---
 name: scale-linkedin-pixel
 description: "Utiliser quand l'utilisateur veut installer le Insight Tag et configurer le tracking B2B (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Linkedin Pixel

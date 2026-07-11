@@ -1,6 +1,8 @@
 ---
 name: bootcamp-mvp-wireframes
 description: "Utiliser quand l'utilisateur veut créer les maquettes de son MVP (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Wireframes MVP

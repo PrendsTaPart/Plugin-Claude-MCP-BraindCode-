@@ -1,6 +1,8 @@
 ---
 name: scale-seo-meta
 description: "Utiliser quand l'utilisateur veut optimiser les balises meta de toutes ses pages clés pour maximiser le CTR (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Seo Meta

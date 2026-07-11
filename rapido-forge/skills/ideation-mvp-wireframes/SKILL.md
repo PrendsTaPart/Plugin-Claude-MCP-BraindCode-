@@ -1,6 +1,8 @@
 ---
 name: ideation-mvp-wireframes
 description: "Utiliser quand l'utilisateur veut créer les wireframes de son MVP (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Mvp Wireframes

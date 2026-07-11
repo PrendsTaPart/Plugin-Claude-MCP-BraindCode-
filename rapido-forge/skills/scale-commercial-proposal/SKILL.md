@@ -1,6 +1,8 @@
 ---
 name: scale-commercial-proposal
 description: "Utiliser quand l'utilisateur veut créer un template de proposition commerciale B2B convaincant et professionnel (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Commercial Proposal

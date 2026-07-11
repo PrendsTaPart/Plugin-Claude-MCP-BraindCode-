@@ -1,6 +1,8 @@
 ---
 name: scale-adoption-curve
 description: "Utiliser quand l'utilisateur veut identifier son segment d'adoption actuel et adapter sa stratégie en conséquence (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: intermediaire
 ---
 
 # Adoption Curve

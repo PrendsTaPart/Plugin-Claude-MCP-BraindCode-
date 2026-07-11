@@ -1,6 +1,8 @@
 ---
 name: scale-soncas
 description: "Utiliser quand l'utilisateur veut identifier le profil SONCAS de ses clients types et adapter ses argumentaires (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Soncas

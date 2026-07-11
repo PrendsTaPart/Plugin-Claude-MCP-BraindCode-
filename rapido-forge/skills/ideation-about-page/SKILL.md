@@ -1,6 +1,8 @@
 ---
 name: ideation-about-page
 description: "Utiliser quand l'utilisateur veut raconter l'histoire de sa startup et créer une connexion émotionnelle (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # About Page

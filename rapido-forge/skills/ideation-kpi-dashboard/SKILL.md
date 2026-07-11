@@ -1,6 +1,8 @@
 ---
 name: ideation-kpi-dashboard
 description: "Utiliser quand l'utilisateur veut créer un dashboard avec les KPIs essentiels (parcours idéation StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # Kpi Dashboard

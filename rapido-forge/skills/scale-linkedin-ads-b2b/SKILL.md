@@ -1,6 +1,9 @@
 ---
 name: scale-linkedin-ads-b2b
 description: "Utiliser quand l'utilisateur veut lancer une campagne LinkedIn Ads ciblant les décideurs B2B (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Linkedin Ads B2b

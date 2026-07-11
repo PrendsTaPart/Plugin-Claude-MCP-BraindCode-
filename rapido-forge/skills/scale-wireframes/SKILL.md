@@ -1,6 +1,8 @@
 ---
 name: scale-wireframes
 description: "Utiliser quand l'utilisateur veut esquisser les 5 écrans clés de son application (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # Wireframes

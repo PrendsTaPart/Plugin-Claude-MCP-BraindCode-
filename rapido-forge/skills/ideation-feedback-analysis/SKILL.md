@@ -1,6 +1,8 @@
 ---
 name: ideation-feedback-analysis
 description: "Utiliser quand l'utilisateur veut analyser et synthétiser les premiers retours utilisateurs (parcours idéation StartupsForge)."
+tags: [data]
+niveau: debutant
 ---
 
 # Feedback Analysis

@@ -1,6 +1,8 @@
 ---
 name: ideation-press-release
 description: "Utiliser quand l'utilisateur veut rédiger un communiqué de presse professionnel (parcours idéation StartupsForge)."
+tags: [pitch, contenu]
+niveau: debutant
 ---
 
 # Press Release

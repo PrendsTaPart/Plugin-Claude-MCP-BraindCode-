@@ -1,6 +1,8 @@
 ---
 name: ideation-automation-workflow
 description: "Utiliser quand l'utilisateur veut créer un workflow complet de traitement des nouveaux leads (parcours idéation StartupsForge)."
+tags: [organisation, data]
+niveau: intermediaire
 ---
 
 # Automation Workflow

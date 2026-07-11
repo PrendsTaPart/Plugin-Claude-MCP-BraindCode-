@@ -1,6 +1,9 @@
 ---
 name: ideation-first-ad-campaign
 description: "Utiliser quand l'utilisateur veut lancer sa première campagne publicitaire (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: debutant
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # First Ad Campaign

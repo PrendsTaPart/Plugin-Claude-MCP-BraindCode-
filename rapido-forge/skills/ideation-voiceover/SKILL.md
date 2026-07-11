@@ -1,6 +1,8 @@
 ---
 name: ideation-voiceover
 description: "Utiliser quand l'utilisateur veut générer une voix-off IA pour sa vidéo (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Voiceover

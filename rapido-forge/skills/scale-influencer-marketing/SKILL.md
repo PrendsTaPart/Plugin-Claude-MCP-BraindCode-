@@ -1,6 +1,8 @@
 ---
 name: scale-influencer-marketing
 description: "Utiliser quand l'utilisateur veut identifier 20 micro-influenceurs pertinents et créer un plan d'approche (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Influencer Marketing

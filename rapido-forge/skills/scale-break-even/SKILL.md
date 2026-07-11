@@ -1,6 +1,9 @@
 ---
 name: scale-break-even
 description: "Utiliser quand l'utilisateur veut calculer son point mort et définir la trajectoire pour l'atteindre (parcours scale StartupsForge)."
+tags: [finance]
+niveau: expert
+prerequis: [ideation-financial-forecast]
 ---
 
 # Break Even

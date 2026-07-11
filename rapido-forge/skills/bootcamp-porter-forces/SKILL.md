@@ -1,6 +1,9 @@
 ---
 name: bootcamp-porter-forces
 description: "Utiliser quand l'utilisateur veut analyse les 5 forces concurrentielles (bootcamp 5 jours StartupsForge — Jour 2)."
+tags: [strategie]
+niveau: debutant
+prerequis: [bootcamp-market-sizing-b5]
 ---
 
 # Forces de Porter

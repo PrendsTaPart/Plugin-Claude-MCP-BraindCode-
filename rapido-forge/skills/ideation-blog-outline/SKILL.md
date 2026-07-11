@@ -1,6 +1,8 @@
 ---
 name: ideation-blog-outline
 description: "Utiliser quand l'utilisateur veut rédiger un article de blog complet et optimisé SEO (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Blog Outline

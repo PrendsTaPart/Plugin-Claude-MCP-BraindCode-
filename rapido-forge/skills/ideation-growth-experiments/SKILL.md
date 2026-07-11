@@ -1,6 +1,8 @@
 ---
 name: ideation-growth-experiments
 description: "Utiliser quand l'utilisateur veut planifier 3 expériences de croissance (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Growth Experiments

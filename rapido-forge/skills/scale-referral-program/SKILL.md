@@ -1,6 +1,8 @@
 ---
 name: scale-referral-program
 description: "Utiliser quand l'utilisateur veut concevoir un programme de parrainage viral avec incentives optimisés (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Referral Program

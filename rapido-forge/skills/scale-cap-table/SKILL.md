@@ -1,6 +1,8 @@
 ---
 name: scale-cap-table
 description: "Utiliser quand l'utilisateur veut créer et simuler sa table de capitalisation avant/après levée (parcours scale StartupsForge)."
+tags: [finance, pitch]
+niveau: expert
 ---
 
 # Cap Table

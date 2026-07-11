@@ -1,6 +1,8 @@
 ---
 name: scale-google-analytics-4
 description: "Utiliser quand l'utilisateur veut installer et configurer GA4 pour tracker son site web avec les événements clés (parcours scale StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # Google Analytics 4

@@ -1,6 +1,8 @@
 ---
 name: scale-scenarios-planning
 description: "Utiliser quand l'utilisateur veut créer 3 scénarios de croissance : pessimiste, réaliste, optimiste (parcours scale StartupsForge)."
+tags: [strategie]
+niveau: expert
 ---
 
 # Scenarios Planning

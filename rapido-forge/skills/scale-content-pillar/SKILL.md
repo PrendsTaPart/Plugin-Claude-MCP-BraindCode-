@@ -1,6 +1,8 @@
 ---
 name: scale-content-pillar
 description: "Utiliser quand l'utilisateur veut créer une stratégie de contenu SEO avec articles piliers et clusters (parcours scale StartupsForge)."
+tags: [contenu]
+niveau: intermediaire
 ---
 
 # Content Pillar

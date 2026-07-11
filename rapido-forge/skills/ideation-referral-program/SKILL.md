@@ -1,6 +1,8 @@
 ---
 name: ideation-referral-program
 description: "Utiliser quand l'utilisateur veut créer un programme de parrainage efficace (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
 ---
 
 # Referral Program

@@ -1,6 +1,8 @@
 ---
 name: ideation-linkedin-posts
 description: "Utiliser quand l'utilisateur veut rédiger 5 posts LinkedIn prêts à publier (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Linkedin Posts

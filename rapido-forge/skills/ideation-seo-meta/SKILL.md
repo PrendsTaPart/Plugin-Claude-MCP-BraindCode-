@@ -1,6 +1,8 @@
 ---
 name: ideation-seo-meta
 description: "Utiliser quand l'utilisateur veut optimiser le SEO de base de son site pour les moteurs de recherche (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: debutant
 ---
 
 # Seo Meta

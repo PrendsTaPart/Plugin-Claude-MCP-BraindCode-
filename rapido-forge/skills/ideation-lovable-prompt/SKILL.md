@@ -1,6 +1,8 @@
 ---
 name: ideation-lovable-prompt
 description: "Utiliser quand l'utilisateur veut générer le code de son site web avec Lovable.dev (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Lovable Prompt

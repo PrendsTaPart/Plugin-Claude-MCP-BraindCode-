@@ -1,6 +1,8 @@
 ---
 name: bootcamp-market-segmentation
 description: "Utiliser quand l'utilisateur veut identifie et priorise ses segments de marché cibles (bootcamp 5 jours StartupsForge — Jour 1)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Segmentation Marché

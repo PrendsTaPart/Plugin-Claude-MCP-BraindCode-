@@ -1,6 +1,9 @@
 ---
 name: scale-unit-economics
 description: "Utiliser quand l'utilisateur veut calculer et optimiser ses métriques unitaires : CAC, LTV, ratio LTV/CAC (parcours scale StartupsForge)."
+tags: [finance]
+niveau: expert
+prerequis: [ideation-financial-forecast]
 ---
 
 # Unit Economics

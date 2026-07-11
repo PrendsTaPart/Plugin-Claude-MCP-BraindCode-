@@ -1,6 +1,8 @@
 ---
 name: ideation-lessons-learned
 description: "Utiliser quand l'utilisateur veut documenter les apprentissages du lancement (parcours idéation StartupsForge)."
+tags: [organisation]
+niveau: debutant
 ---
 
 # Lessons Learned

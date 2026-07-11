@@ -1,6 +1,8 @@
 ---
 name: ideation-ph-page-copy
 description: "Utiliser quand l'utilisateur veut créer la page Product Hunt parfaite (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: debutant
 ---
 
 # Ph Page Copy

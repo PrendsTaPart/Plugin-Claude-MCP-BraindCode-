@@ -1,6 +1,8 @@
 ---
 name: bootcamp-stakeholder-mapping
 description: "Utiliser quand l'utilisateur veut cartographie tous les acteurs de son écosystème (bootcamp 5 jours StartupsForge — Jour 1)."
+tags: [organisation]
+niveau: debutant
 ---
 
 # Analyse des Parties Prenantes

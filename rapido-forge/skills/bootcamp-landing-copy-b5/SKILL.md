@@ -1,6 +1,8 @@
 ---
 name: bootcamp-landing-copy-b5
 description: "Utiliser quand l'utilisateur veut rédiger le contenu de sa landing page (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Landing Page Copy

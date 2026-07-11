@@ -1,6 +1,9 @@
 ---
 name: scale-financial-projections
 description: "Utiliser quand l'utilisateur veut créer un P&L prévisionnel sur 3 ans avec hypothèses détaillées (parcours scale StartupsForge)."
+tags: [finance]
+niveau: expert
+prerequis: [ideation-financial-forecast]
 ---
 
 # Financial Projections

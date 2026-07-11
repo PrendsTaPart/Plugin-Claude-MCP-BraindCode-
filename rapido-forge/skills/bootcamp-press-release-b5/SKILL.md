@@ -1,6 +1,8 @@
 ---
 name: bootcamp-press-release-b5
 description: "Utiliser quand l'utilisateur veut rédiger son communiqué de lancement (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [pitch, contenu]
+niveau: debutant
 ---
 
 # Communiqué de Presse

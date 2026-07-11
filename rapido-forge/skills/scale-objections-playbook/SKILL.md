@@ -1,6 +1,8 @@
 ---
 name: scale-objections-playbook
 description: "Utiliser quand l'utilisateur veut anticiper et préparer des réponses structurées aux 10 objections les plus fréquentes (parcours scale StartupsForge)."
+tags: [vente]
+niveau: intermediaire
 ---
 
 # Objections Playbook

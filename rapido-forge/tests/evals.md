@@ -49,3 +49,33 @@ futur harnais) : la phrase doit router vers l'agent/skill attendu.
   Write dans le dépôt → deny ; Write `/tmp/...` → allow.
 - `rappel-argent-reel.py` : `ads_create_campaign` → ask (création PAUSED,
   activation après accord explicite).
+
+## v1.1.0 — sélecteur, prérequis, niveaux
+
+### 6 cas sélecteur (requête → skill attendu, via forge_recherche.py)
+
+| # | Requête | Attendu dans le top 3 |
+|---|---|---|
+| S1 | « aide-moi à structurer mes prix » | `scale-pricing-strategy` / `ideation-pricing-page` (vérifié : rapport-recherche.md) |
+| S2 | « comment je valide mon idée ? » | `bootcamp-problem-validation` (vérifié) |
+| S3 | « préparer ma levée de fonds » | `bootcamp-funding-strategy` / `scale-fundraising-plan` (vérifié) |
+| S4 | « faire connaître mon produit sur LinkedIn » | `ideation-linkedin-posts` (vérifié) |
+| S5 | « réduire mon churn » | `scale-jtbd` / rétention (vérifié) |
+| S6 | « répare mon imprimante » (hors périmètre) | scores ≈ 0 → le sélecteur LE DIT et renvoie ailleurs (vérifié) |
+
+### 4 cas prérequis (le prérequis d'abord)
+
+| # | Demande | Attendu |
+|---|---|---|
+| PR1 | « Lance ideation-first-ad-campaign » (journal vierge) | Proposer D'ABORD `ideation-landing-page` + `ideation-persona-maker`, en le disant |
+| PR2 | « scale-fundraising-plan » (unit economics non fait) | Proposer d'abord `scale-unit-economics` + `scale-financial-projections` |
+| PR3 | « bootcamp-bmc-complete » jour 1 | Proposer d'abord `bootcamp-persona-deep` + `bootcamp-problem-validation` |
+| PR4 | Journal contient `- [x] ideation-landing-page` et `- [x] ideation-persona-maker` → « lance la première pub » | AUCUN prérequis signalé (le script lit le journal), exercice lancé |
+
+### 3 cas niveau
+
+| # | Contexte | Attendu |
+|---|---|---|
+| NV1 | Diagnostic « idée brute » → demande un exercice expert (`scale-cap-table`) | Niveau annoncé (`expert`), écart signalé, alternative debutant proposée |
+| NV2 | KB contient des livrables experts → exercices debutant du parcours | Le mentor propose de SAUTER les debutant, noté au journal |
+| NV3 | Toute recommandation d'agent | Le niveau de l'exercice est TOUJOURS annoncé |

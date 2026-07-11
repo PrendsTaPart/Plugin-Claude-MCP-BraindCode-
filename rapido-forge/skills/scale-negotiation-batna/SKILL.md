@@ -1,6 +1,8 @@
 ---
 name: scale-negotiation-batna
 description: "Utiliser quand l'utilisateur veut préparer une négociation commerciale avec BATNA, ZOPA et tactiques (parcours scale StartupsForge)."
+tags: [vente]
+niveau: expert
 ---
 
 # Negotiation Batna

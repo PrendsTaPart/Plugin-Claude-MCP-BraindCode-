@@ -1,6 +1,8 @@
 ---
 name: scale-marketing-4p
 description: "Utiliser quand l'utilisateur veut optimiser chaque P de son Marketing Mix pour maximiser l'impact (parcours scale StartupsForge)."
+tags: [marketing]
+niveau: intermediaire
 ---
 
 # Marketing 4p

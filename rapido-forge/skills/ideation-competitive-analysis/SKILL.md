@@ -1,6 +1,8 @@
 ---
 name: ideation-competitive-analysis
 description: "Utiliser quand l'utilisateur veut cartographier le paysage concurrentiel avec forces, faiblesses et opportunités de différenciation (parcours idéation StartupsForge)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Competitive Analysis

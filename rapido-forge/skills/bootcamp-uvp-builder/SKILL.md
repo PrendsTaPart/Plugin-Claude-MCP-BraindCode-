@@ -1,6 +1,8 @@
 ---
 name: bootcamp-uvp-builder
 description: "Utiliser quand l'utilisateur veut formule sa proposition de valeur irrésistible (bootcamp 5 jours StartupsForge — Jour 3)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Proposition de Valeur Unique

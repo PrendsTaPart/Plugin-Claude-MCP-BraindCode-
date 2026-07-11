@@ -1,6 +1,9 @@
 ---
 name: scale-google-ads-setup
 description: "Utiliser quand l'utilisateur veut lancer sa première campagne Google Ads Search rentable (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Google Ads Setup

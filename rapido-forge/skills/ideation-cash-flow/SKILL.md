@@ -1,6 +1,8 @@
 ---
 name: ideation-cash-flow
 description: "Utiliser quand l'utilisateur veut créer un plan de trésorerie mensuel sur 12 mois (parcours idéation StartupsForge)."
+tags: [finance]
+niveau: intermediaire
 ---
 
 # Cash Flow

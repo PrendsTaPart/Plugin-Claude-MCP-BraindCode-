@@ -1,6 +1,8 @@
 ---
 name: scale-eisenhower-matrix
 description: "Utiliser quand l'utilisateur veut organiser ses tâches selon l'urgence et l'importance pour maximiser son impact (parcours scale StartupsForge)."
+tags: [organisation]
+niveau: intermediaire
 ---
 
 # Eisenhower Matrix

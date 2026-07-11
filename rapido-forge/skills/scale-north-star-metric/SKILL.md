@@ -1,6 +1,8 @@
 ---
 name: scale-north-star-metric
 description: "Utiliser quand l'utilisateur veut identifier et définir LA métrique unique qui guide toutes ses décisions (parcours scale StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # North Star Metric

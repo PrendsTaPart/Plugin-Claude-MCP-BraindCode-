@@ -1,6 +1,8 @@
 ---
 name: scale-pr-media-kit
 description: "Utiliser quand l'utilisateur veut créer un Media Kit complet prêt à envoyer aux journalistes et partenaires (parcours scale StartupsForge)."
+tags: [pitch, contenu]
+niveau: intermediaire
 ---
 
 # Pr Media Kit

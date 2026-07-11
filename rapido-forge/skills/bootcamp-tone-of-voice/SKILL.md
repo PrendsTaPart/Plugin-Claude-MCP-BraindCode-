@@ -1,6 +1,8 @@
 ---
 name: bootcamp-tone-of-voice
 description: "Utiliser quand l'utilisateur veut définir la personnalité de sa communication (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Ton de Voix

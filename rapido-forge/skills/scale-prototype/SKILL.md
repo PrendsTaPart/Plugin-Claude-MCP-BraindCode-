@@ -1,6 +1,8 @@
 ---
 name: scale-prototype
 description: "Utiliser quand l'utilisateur veut créer un prototype interactif navigable de son MVP (parcours scale StartupsForge)."
+tags: [produit]
+niveau: intermediaire
 ---
 
 # Prototype

@@ -1,6 +1,8 @@
 ---
 name: bootcamp-visual-identity
 description: "Utiliser quand l'utilisateur veut créer son logo et charte graphique (bootcamp 5 jours StartupsForge — Jour 4)."
+tags: [marque]
+niveau: debutant
 ---
 
 # Identité Visuelle

@@ -1,6 +1,8 @@
 ---
 name: ideation-lead-magnet
 description: "Utiliser quand l'utilisateur veut créer un ebook ou guide PDF à forte valeur ajoutée (parcours idéation StartupsForge)."
+tags: [acquisition]
+niveau: debutant
 ---
 
 # Lead Magnet

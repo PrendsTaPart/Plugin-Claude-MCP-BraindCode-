@@ -1,6 +1,8 @@
 ---
 name: bootcamp-legal-status
 description: "Utiliser quand l'utilisateur veut choisir la forme juridique adaptée (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [juridique]
+niveau: debutant
 ---
 
 # Choix du Statut Juridique

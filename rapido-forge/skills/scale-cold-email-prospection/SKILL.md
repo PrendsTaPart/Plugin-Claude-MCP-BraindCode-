@@ -1,6 +1,8 @@
 ---
 name: scale-cold-email-prospection
 description: "Utiliser quand l'utilisateur veut rédiger une séquence de cold emails avec personnalisation et follow-ups (parcours scale StartupsForge)."
+tags: [acquisition, vente]
+niveau: intermediaire
 ---
 
 # Cold Email Prospection

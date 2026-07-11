@@ -1,6 +1,8 @@
 ---
 name: bootcamp-legal-documents
 description: "Utiliser quand l'utilisateur veut génère ses documents légaux obligatoires (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [juridique]
+niveau: debutant
 ---
 
 # CGV & Mentions Légales

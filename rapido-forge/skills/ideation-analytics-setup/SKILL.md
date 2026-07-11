@@ -1,6 +1,8 @@
 ---
 name: ideation-analytics-setup
 description: "Utiliser quand l'utilisateur veut configurer GA4, Mixpanel ou équivalent (parcours idéation StartupsForge)."
+tags: [data]
+niveau: intermediaire
 ---
 
 # Analytics Setup

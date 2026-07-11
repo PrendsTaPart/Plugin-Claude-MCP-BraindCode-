@@ -1,6 +1,9 @@
 ---
 name: bootcamp-pitch-deck-b5
 description: "Utiliser quand l'utilisateur veut créer son pitch deck investisseur (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [pitch]
+niveau: debutant
+prerequis: [bootcamp-problem-validation, bootcamp-financial-projections]
 ---
 
 # Pitch Deck Complet

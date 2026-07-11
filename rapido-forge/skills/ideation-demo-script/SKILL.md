@@ -1,6 +1,8 @@
 ---
 name: ideation-demo-script
 description: "Utiliser quand l'utilisateur veut enregistrer une démo produit professionnelle (parcours idéation StartupsForge)."
+tags: [pitch]
+niveau: debutant
 ---
 
 # Demo Script

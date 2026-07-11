@@ -1,6 +1,8 @@
 ---
 name: ideation-iteration-planning
 description: "Utiliser quand l'utilisateur veut planifier le sprint pour la V2 (parcours idéation StartupsForge)."
+tags: [produit]
+niveau: debutant
 ---
 
 # Iteration Planning

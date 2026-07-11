@@ -1,6 +1,8 @@
 ---
 name: bootcamp-certification-b5
 description: "Utiliser quand l'utilisateur veut obtiens sa certification Bootcamp et célèbre ! (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [organisation]
+niveau: debutant
 ---
 
 # Certification & Célébration

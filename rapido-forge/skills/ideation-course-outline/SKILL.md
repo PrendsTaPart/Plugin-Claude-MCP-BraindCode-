@@ -1,6 +1,8 @@
 ---
 name: ideation-course-outline
 description: "Utiliser quand l'utilisateur veut structurer le contenu pédagogique de son produit/service (parcours idéation StartupsForge)."
+tags: [contenu]
+niveau: debutant
 ---
 
 # Course Outline

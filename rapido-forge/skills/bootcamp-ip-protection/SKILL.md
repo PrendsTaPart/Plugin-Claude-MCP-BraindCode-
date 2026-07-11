@@ -1,6 +1,8 @@
 ---
 name: bootcamp-ip-protection
 description: "Utiliser quand l'utilisateur veut protège sa marque et ses innovations (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [juridique]
+niveau: debutant
 ---
 
 # Protection Propriété Intellectuelle

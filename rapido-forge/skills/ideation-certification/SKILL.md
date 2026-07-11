@@ -1,6 +1,8 @@
 ---
 name: ideation-certification
 description: "Utiliser quand l'utilisateur veut célébrer la fin du hackathon et obtenir sa certification (parcours idéation StartupsForge)."
+tags: [organisation]
+niveau: debutant
 ---
 
 # Certification

@@ -1,6 +1,8 @@
 ---
 name: bootcamp-qualitative-study
 description: "Utiliser quand l'utilisateur veut mène des interviews utilisateurs approfondies avec la méthode The Mom Test (bootcamp 5 jours StartupsForge — Jour 1)."
+tags: [strategie]
+niveau: debutant
 ---
 
 # Étude Qualitative

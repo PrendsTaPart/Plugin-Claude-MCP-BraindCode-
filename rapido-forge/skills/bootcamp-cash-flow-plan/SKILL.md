@@ -1,6 +1,8 @@
 ---
 name: bootcamp-cash-flow-plan
 description: "Utiliser quand l'utilisateur veut prévois ses flux de trésorerie (bootcamp 5 jours StartupsForge — Jour 5)."
+tags: [finance]
+niveau: debutant
 ---
 
 # Plan de Trésorerie

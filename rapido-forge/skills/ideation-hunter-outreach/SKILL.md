@@ -1,6 +1,8 @@
 ---
 name: ideation-hunter-outreach
 description: "Utiliser quand l'utilisateur veut contacter et sécuriser un hunter pour le lancement (parcours idéation StartupsForge)."
+tags: [acquisition, vente]
+niveau: debutant
 ---
 
 # Hunter Outreach

@@ -1,6 +1,9 @@
 ---
 name: scale-meta-pixel
 description: "Utiliser quand l'utilisateur veut installer le Meta Pixel avec les événements de conversion clés (parcours scale StartupsForge)."
+tags: [acquisition]
+niveau: intermediaire
+prerequis: [ideation-landing-page, ideation-persona-maker]
 ---
 
 # Meta Pixel

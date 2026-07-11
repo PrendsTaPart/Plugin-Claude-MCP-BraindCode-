@@ -1,6 +1,8 @@
 ---
 name: scale-rice-prioritization
 description: "Utiliser quand l'utilisateur veut scorer et prioriser ses features avec la méthode RICE (parcours scale StartupsForge)."
+tags: [organisation]
+niveau: intermediaire
 ---
 
 # Rice Prioritization
