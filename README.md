@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-12-blue)
-![Skills](https://img.shields.io/badge/skills-299-brightgreen)
+![Skills](https://img.shields.io/badge/skills-301-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 ## À quoi ça sert
@@ -45,16 +45,16 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapidocrm` | 1.3.0 | 21 | 2 | rapidocrm | — |
 | `rapidocms` | 1.4.0 | 19 | 5 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
-| `rapido-suite` | 1.1.0 | 11 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
+| `rapido-suite` | 1.2.0 | 12 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.0 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.0 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
 | `rapido-n8n` | 1.1.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.7.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
-| `rapido-forge` | 1.0.0 | 180 | 4 | rapidocrm, rapidocms, rapidorh | — |
+| `rapido-forge` | 1.1.0 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 
-**Total : 12 plugins, 299 skills, 23 agents.** (`rapido-startup` — finance &
+**Total : 12 plugins, 301 skills, 23 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

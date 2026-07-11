@@ -1,5 +1,14 @@
 # Notes de release — v1.0.0 (2026-07-10)
 
+## Ajout — rapido-forge 1.1.0 (2026-07-10)
+
+Tags (taxonomie fermée à 12) + niveaux sur les 180 exercices, prérequis
+(graphe validé sans cycle, CI), `catalogue.json` machine-readable,
+recherche sémantique hors-ligne (TF-IDF stdlib, synonymes FR→EN) + skill
+`selecteur-framework`, agents branchés sur le catalogue, et orchestrateur
+`lancement-projet-360` côté rapido-suite (1.2.0) — Forge pense, les
+plugins exécutent.
+
 ## Ajout — rapido-forge 1.0.0 (2026-07-10)
 
 Nouveau plugin **rapido-forge** : la source StartupsForge (PrendsTaPart)
