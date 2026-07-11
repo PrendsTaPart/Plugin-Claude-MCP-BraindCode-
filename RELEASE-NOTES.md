@@ -1,5 +1,24 @@
 # Notes de release — v1.0.0 (2026-07-10)
 
+## Ajout — rapido-forge 1.1.0 (2026-07-10)
+
+Tags (taxonomie fermée à 12) + niveaux sur les 180 exercices, prérequis
+(graphe validé sans cycle, CI), `catalogue.json` machine-readable,
+recherche sémantique hors-ligne (TF-IDF stdlib, synonymes FR→EN) + skill
+`selecteur-framework`, agents branchés sur le catalogue, et orchestrateur
+`lancement-projet-360` côté rapido-suite (1.2.0) — Forge pense, les
+plugins exécutent.
+
+## Ajout — rapido-forge 1.0.0 (2026-07-10)
+
+Nouveau plugin **rapido-forge** : la source StartupsForge (PrendsTaPart)
+mise aux conventions Rapido — 180 exercices en 3 parcours (dont les
+46 skills bootcamp enrichis d'une méthode pas à pas), ~146 renvois croisés
+vérifiés vers les plugins métier, 4 agents mentors (directeur-programme +
+3 mentors de parcours). Livrables consignés dans
+`./rapido-kb/startup/forge/`, hooks garde-ecriture-kb et rappel
+« argent réel » Meta Ads.
+
 Première version publique de la **marketplace Rapido** : des plugins Claude
 Code pour piloter une entreprise via les systèmes Rapido (FoodEatUp,
 RapidoCRM, RapidoCMS, RapidoRh) et leurs outils satellites (Canva, Lovable,

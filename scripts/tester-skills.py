@@ -211,6 +211,14 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__n8n__execute_workflow", "tool_input": {"executionMode": "manual"}}, "allow"),
         ({"tool_name": "mcp__n8n__publish_workflow", "tool_input": {}}, "ask"),
     ],
+    "garde-ecriture-kb.py": [
+        ({"tool_name": "Write", "tool_input": {"file_path": "./rapido-kb/startup/forge/bootcamp/jour1.md"}}, "allow"),
+        ({"tool_name": "Write", "tool_input": {"file_path": "foodeatup/skills/x/SKILL.md"}}, "deny"),
+        ({"tool_name": "Write", "tool_input": {"file_path": "/tmp/entrees.json"}}, "allow"),
+    ],
+    "rappel-argent-reel.py": [
+        ({"tool_name": "mcp__facebook-ads__ads_create_campaign", "tool_input": {}}, "ask"),
+    ],
     "garde-irreversible.py": [
         ({"tool_name": "mcp__google-calendar__delete_event", "tool_input": {}}, "ask"),
     ],

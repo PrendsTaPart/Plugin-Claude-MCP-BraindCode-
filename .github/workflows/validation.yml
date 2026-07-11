@@ -28,6 +28,9 @@ jobs:
       - name: Batterie de tests skills/agents/hooks (tester-skills.py)
         run: python3 scripts/tester-skills.py
 
+      - name: Catalogue forge (graphe de prérequis sans cycle)
+        run: python3 scripts/forge_catalogue.py --check
+
       - name: Compilation de tous les .py
         env:
           PYTHONPYCACHEPREFIX: /tmp/pycache  # ne pas polluer l'arbre de travail
