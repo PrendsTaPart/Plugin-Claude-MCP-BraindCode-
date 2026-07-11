@@ -1,5 +1,12 @@
 # Changelog — plugin rapidorh
 
+## 1.0.1 — 2026-07-11
+
+- tests/evals.md créé : 4 déclenchements (surcharge, daily, recrutement,
+  frontière congés → foodeatup), les 2 agents, les hooks garde-destructif
+  et Stop récapitulatif, 2 non-régressions (placeholders salaire,
+  onboarding confirmé).
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.
