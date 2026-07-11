@@ -1,5 +1,15 @@
 # Changelog — plugin rapido-n8n
 
+## 1.2.0 — 2026-07-11
+
+- Nouvelle référence `reference/recette-r7-cash-sentinel.md` : la routine
+  R7 du Loop Engine (rapido-startup) en workflow n8n autonome — 6 nodes
+  (Schedule 08:00 → Stripe Balance en credential Bearer → Code calcul
+  runway avec CONFIG en tête → If → alerte webhook / NoOp), activation en
+  5 étapes côté client (credential restreinte lecture Balance, JAMAIS de
+  clé en clair, test_workflow puis publication confirmée), limites
+  assumées. Renvoi ajouté dans le skill `recettes-metier`.
+
 ## 1.1.0 — 2026-07-10
 
 - Premier agent du plugin : `architecte-automatisations` — qualifie ce qui

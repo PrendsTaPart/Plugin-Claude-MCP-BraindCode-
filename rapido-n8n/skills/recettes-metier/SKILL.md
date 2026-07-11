@@ -66,3 +66,10 @@ existe dans le CRM (sinon la recette ne produit rien — le dire).
    → code → validation → test → publication confirmée → registre).
 3. Adapter les seuils aux valeurs maison de la KB (cadence de relance, seuil
    de stock…) — citer la source.
+
+## Recette prête : R7 CASH-SENTINEL (sentinelle trésorerie)
+
+La routine R7 du Loop Engine (plugin rapido-startup) en workflow autonome —
+nodes, CONFIG et étapes d'activation dans
+`${CLAUDE_PLUGIN_ROOT}/reference/recette-r7-cash-sentinel.md`. Publication
+toujours confirmée (hook garde-production).
