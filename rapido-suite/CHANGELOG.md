@@ -1,5 +1,15 @@
 # Changelog — plugin rapido-suite
 
+## 1.2.0 — 2026-07-10
+
+- Nouveau skill `lancement-projet-360` : l'orchestrateur « je lance un
+  nouveau SaaS » de bout en bout — 5 actes (Penser via rapido-forge →
+  Structurer RH + prévisionnel → Construire landing/marque/visuels →
+  Vendre & raconter → Automatiser & mesurer), validation OBLIGATOIRE entre
+  chaque acte, livrables méthodo en KB avant exécution, récapitulatif par
+  acte avec IDs réels ; ads toujours en PAUSED (argent réel, accord
+  explicite). tests/evals.md créé (3 déclenchements + non-régression).
+
 ## 1.1.0 — 2026-07-10
 
 - Serveur n8n déclaré dans `.mcp.json` (`${N8N_MCP_URL}`, optionnel —
