@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-suite
 
+## 1.3.0 — 2026-07-11
+
+- Nouveau skill `pilotage-entreprise` : « Pilote mon entreprise » — le
+  prompt maître du kit (`rapido-kb-template/PROMPT-PILOTAGE.md`) encodé
+  en skill. Étape 0 obligatoire (KB entière + autonomie.md + vérif
+  serveurs), puis Sense → Plan → Act → Feed → Report sur TOUS les
+  domaines (finance, ventes, marketing, équipe, resto, automatisations) ;
+  KPI via catalogue-kpi uniquement, récap groupé avant toute écriture,
+  report une page. Frontières documentées vers monday-brief,
+  business-pulse, comite-de-direction, R4-R9 et lancement-projet-360.
+  tests/evals.md : 3 scénarios P1-P3.
+
 ## 1.2.0 — 2026-07-10
 
 - Nouveau skill `lancement-projet-360` : l'orchestrateur « je lance un

@@ -26,6 +26,14 @@ agir « comme un expert de votre entreprise » et non de façon générique.
 Un prix change, un concurrent apparaît ? Éditez le fichier concerné, ou demandez
 « mets à jour ma base de connaissance : … ». Datez toujours l'en-tête.
 
+## Après l'onboarding : le prompt de pilotage
+Une fois `./rapido-kb/` rempli, **PROMPT-PILOTAGE.md** contient le prompt maître
+qui lance le Loop Engine sur toute l'entreprise (Sense → Plan → Act → Feed →
+Report), sa version courte et les variantes par moment de la semaine (lundi,
+sentinelle quotidienne, board mensuel, vidéo, business pulse). Équivalent sans
+rien coller : dites « **Pilote mon entreprise** » — le skill
+`rapido-suite:pilotage-entreprise` encode la même boucle.
+
 ## Les 8 fichiers
 | Fichier | Contenu |
 |---|---|

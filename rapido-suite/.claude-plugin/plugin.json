@@ -1,6 +1,6 @@
 {
   "name": "rapido-suite",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Orchestration transverse des 4 serveurs MCP Rapido : onboarding client 360°, revue business, comité de direction et base de connaissance entreprise (./rapido-kb/) — avec agent directeur-general — et l'orchestrateur lancement-projet-360 : la méthode rapido-forge pense, les plugins métier exécutent, validation entre chaque acte",
   "author": {
     "name": "BraindCode",
