@@ -1,5 +1,10 @@
 # Changelog — plugin rapidocrm
 
+## 1.4.1 — 2026-07-11
+
+- Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,
+  le fichier n'a jamais été porté) supprimée de ticket-triage, draft-response, forecast et pipeline-review-methodo.
+
 ## 1.4.0 — 2026-07-11
 
 - Capture de leads câblée côté CRM (schémas vérifiés serveur) :

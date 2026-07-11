@@ -1,5 +1,15 @@
 # Changelog — plugin rapidocms
 
+## 1.4.1 — 2026-07-11
+
+- Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,
+  le fichier n'a jamais été porté) supprimée de brand-review et email-sequence.
+- generation-article-blog : nettoyage de la chaîne d'import —
+  blog-delivery-contract.md et cognitive-load.md retirés (ils imposaient
+  6 scripts et un agent blog-reviewer jamais portés dans ce dépôt),
+  ai-slop-detection.md corrigé (revue à la lecture, pas par script),
+  note d'attribution du SKILL.md mise à jour.
+
 ## 1.4.0 — 2026-07-10
 
 - Réconciliation de la branche parallèle `claude/rapidocms-gestion-marques`

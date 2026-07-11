@@ -1,4 +1,4 @@
-# Évals — plugin rapido-n8n (1.1.0)
+# Évals — plugin rapido-n8n (1.2.0)
 
 ## Agent architecte-automatisations
 

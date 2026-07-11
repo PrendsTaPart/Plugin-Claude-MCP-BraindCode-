@@ -1,4 +1,4 @@
-# Évals — plugin rapido-forge (1.0.0)
+# Évals — plugin rapido-forge (1.1.0)
 
 Scénarios de déclenchement et de routage. À rejouer manuellement (ou via un
 futur harnais) : la phrase doit router vers l'agent/skill attendu.

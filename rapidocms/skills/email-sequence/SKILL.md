@@ -7,8 +7,6 @@ argument-hint: "[sequence type]"
 
 # Email Sequence
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
-
 Design and draft complete email sequences with full copy, timing, branching logic, and performance benchmarks for any lifecycle or campaign use case.
 
 ## Trigger

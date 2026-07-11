@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-canva
 
+## 1.0.1 — 2026-07-11
+
+- tests/evals.md créé : 4 déclenchements (visuel social, menu PDF, CODIR,
+  frontière texte → rapidocms), agent studio-creatif, règle serveur à
+  catalogue distant (OAuth absent = on le dit, rien d'inventé),
+  2 non-régressions (charte depuis la KB, URLs d'export réelles).
+
 ## 1.0.0 — 2026-07-06
 
 - Première version publique.
