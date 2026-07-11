@@ -1,6 +1,6 @@
 ---
 name: coordination-cuisine
-description: Utiliser quand, pendant le service, l'utilisateur parle du pass, d'un plat prêt/en préparation, du KDS ou de coordonner cuisine et salle. Fait avancer les plats commande par commande (update_kds_item_status) et propose le passage de la commande quand tout est prêt.
+description: Utiliser quand, pendant le service, l'utilisateur parle du pass, de l'écran cuisine (KDS), d'un plat prêt, en préparation ou à lancer, ou de coordonner cuisine et salle. Fait avancer les plats commande par commande (update_kds_item_status), signale les commandes qui attendent trop et propose le passage quand tout est prêt.
 ---
 
 # Coordination cuisine (pass / KDS)
@@ -24,9 +24,10 @@ en travaillant au niveau de l'ITEM.
 ## Machine à états d'un plat (KDS)
 
 `pending → in_progress → ready → served` — vérifié serveur.
-`served` existe côté serveur (plat envoyé en salle) : l'utiliser quand la
-salle confirme l'envoi, pas avant. Pas de saut en arrière sans demande
-explicite.
+Transitions STRICTES : **jamais de saut en avant** (pending ne passe pas
+directement à ready), **jamais de retour arrière sans confirmation
+explicite**. `served` (plat envoyé en salle) : uniquement quand la salle
+confirme l'envoi.
 
 ## Workflow
 
@@ -50,6 +51,18 @@ explicite.
    le signaler et PROPOSER `update_order_status` (`order_id`,
    `status: "prete"`) — décision de l'utilisateur, jamais automatique
    (machine à états des commandes : voir `gestion-commandes`).
+5. **Commandes qui attendent** — à chaque vue du pass, signaler toute
+   commande en cours depuis plus que le seuil maison
+   (`./rapido-kb/processus-internes.md`, défaut 15 min) : « ⏱ table 7
+   attend depuis 18 min ». Proposer l'action, ne pas la décider.
+
+## Mode coup de feu
+
+Pendant le service : réponses ULTRA-COURTES — une ligne par action
+(« ✅ Tartare table 12 → prêt »), pas de récapitulatif intermédiaire, un
+« ✅ » de l'utilisateur vaut confirmation de la dernière proposition. Le
+récapitulatif complet (IDs, statuts, retards) se fait EN FIN DE SERVICE.
+L'agent `chef-de-pass` incarne ce mode.
 
 ## Garde-fous
 

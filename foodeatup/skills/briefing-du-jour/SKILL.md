@@ -38,6 +38,12 @@ Dérouler dans l'ordre des priorités maison (HACCP > client > rentabilité) :
 6. **Alertes ingrédients** — `list_production_alerts` : ingrédients manquants
    pour les productions à venir.
 7. **Stocks bas** — `list_low_stocks` : articles sous le seuil.
+8. **Publier les alertes (seule écriture, sur confirmation)** — pour chaque
+   alerte retenue du briefing (non-conformité HACCP, relevé manquant, stock
+   critique, surbooking), PROPOSER `create_notification`
+   (`establishment_id`, `title` court, `message` factuel, `type` ∈
+   `warning` | `danger`) pour qu'elle atteigne toute l'équipe dans
+   FoodEatUp. Une confirmation PAR notification ; IDs récapitulés.
 
 ## Format de sortie — UN écran, pas plus
 
@@ -64,7 +70,9 @@ actionnable, choisie selon l'ordre HACCP > expérience client > rentabilité.
 
 ## Garde-fous
 
-- Briefing en LECTURE SEULE : aucune création/modification. Chaque priorité
+- Briefing en LECTURE SEULE — une seule exception : la PUBLICATION des
+  alertes (`create_notification`), toujours après confirmation, une par
+  une. Chaque priorité
   pointe vers le skill qui permet d'agir (`haccp-conformite-quotidienne`,
   `service-salle`, `production-stock`, `reappro-fournisseurs`) — l'action ne se
   lance que si l'utilisateur le demande.
