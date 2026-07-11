@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-12-blue)
-![Skills](https://img.shields.io/badge/skills-301-brightgreen)
+![Skills](https://img.shields.io/badge/skills-302-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
@@ -51,16 +51,16 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapidocrm` | 1.4.0 | 21 | 2 | rapidocrm | — |
 | `rapidocms` | 1.4.0 | 19 | 5 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.0 | 11 | 2 | rapidorh | — |
-| `rapido-suite` | 1.2.0 | 12 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
+| `rapido-suite` | 1.3.0 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.0 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.0 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable | — |
-| `rapido-n8n` | 1.1.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-n8n` | 1.2.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
-| `rapido-startup` | 1.8.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
+| `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.0 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 
-**Total : 12 plugins, 301 skills, 24 agents.** (`rapido-startup` — finance &
+**Total : 12 plugins, 302 skills, 24 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
@@ -185,7 +185,9 @@ personas, processus. Tous les plugins la lisent ensuite en priorité — c'est
 elle qui fait passer les skills du générique au sur-mesure. Kit de
 démarrage : [`rapido-kb-template/`](rapido-kb-template/) (8 fichiers
 vierges + mégaprompt `PROMPT-CLAUDE-CODE-MASTER.md` + bibliothèque de
-prompts testés `PROMPTS-CLAUDE-CODE.md`). Cette KB reste chez vous — jamais
+prompts testés `PROMPTS-CLAUDE-CODE.md` + prompt de pilotage
+`PROMPT-PILOTAGE.md` — le prompt maître qui lance le Loop Engine sur toute
+l'entreprise, avec ses variantes lundi / sentinelle / board / vidéo). Cette KB reste chez vous — jamais
 dans ce dépôt.
 
 **Ensuite, parlez naturellement.** Quelques phrases qui déclenchent les
@@ -200,10 +202,11 @@ workflows (une par domaine) :
 | « Lance un sondage chez mes clients » | animation-client : modèles existants, confirmation (visible clients), résultats en 3 enseignements |
 | « Qui est surchargé dans l'équipe ? » | rapidorh : charge déclarée vs contractuelle, calculée par script, rééquilibrages proposés |
 | « Ma journée » | rapido-direction : emails + agenda triple + signaux business en UNE page, 3 priorités |
-| « Lance R7 » / « surveille ma trésorerie » | rapido-startup : sentinelle cash — runway calculé par script, alerte seulement, zéro écriture |
+| « Lance R7 » / « surveille ma trésorerie » | rapido-startup : sentinelle cash — runway calculé par script, alerte seulement, zéro écriture (existe aussi en workflow n8n autonome : `rapido-n8n/reference/recette-r7-cash-sentinel.md`) |
 | « Automatise l'envoi du récap hebdo » | rapido-n8n : workflow validé et testé AVANT publication, production sous confirmation |
 | « Quel est mon prochain exercice ? » | rapido-forge : le directeur-programme lit votre journal, vérifie les prérequis et propose l'exercice suivant (niveau annoncé) |
 | « Je veux lancer un SaaS » | rapido-suite : orchestrateur lancement-projet-360 — la méthode Forge pense, les plugins exécutent, validation entre chaque acte |
+| « Pilote mon entreprise » | rapido-suite : le Loop Engine complet sur toute la boîte (Sense → Plan → Act → Feed → Report), KPI par script, récap groupé avant toute écriture, report une page |
 
 **Ce que les garde-fous vous garantissent** : les actions destructrices,
 payantes ou visibles par vos clients demandent TOUJOURS votre confirmation
