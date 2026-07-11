@@ -1,18 +1,71 @@
 {
   "name": "rapido",
-  "owner": { "name": "BraindCode" },
-  "metadata": { "description": "Plugins Rapido pour FoodEatUp, CRM, CMS et RH" },
+  "owner": {
+    "name": "BraindCode"
+  },
+  "metadata": {
+    "description": "Plugins Rapido pour FoodEatUp, CRM, CMS et RH"
+  },
   "plugins": [
-    { "name": "foodeatup", "source": "./foodeatup", "description": "Gestion restaurant (HACCP, salle, cuisine, achats)" },
-    { "name": "rapidocrm", "source": "./rapidocrm", "description": "CRM : prospection, pipeline, facturation, marketing" },
-    { "name": "rapidocms", "source": "./rapidocms", "description": "Contenu & réseaux sociaux, cartes digitales" },
-    { "name": "rapidorh", "source": "./rapidorh", "description": "RH : projets, Kanban, dailies, onboarding" },
-    { "name": "rapido-suite", "source": "./rapido-suite", "description": "Orchestration transverse des 4 MCP" },
-    { "name": "rapido-canva", "source": "./rapido-canva", "description": "Design Canva croisé avec les données Rapido : menus, visuels sociaux, supports commerciaux, slides CODIR" },
-    { "name": "rapido-lovable", "source": "./rapido-lovable", "description": "Apps et agents IA Lovable alimentés par les données Rapido : site restaurant, landing pages, agent IA produit, marque synchronisée" },
-    { "name": "rapido-meta-ads", "source": "./rapido-meta-ads", "description": "Publicité Meta (Facebook/Instagram) pilotée par les données Rapido : campagnes, boosts, audiences CRM, pixel, A/B tests — verrouillé (argent réel)" },
-    { "name": "rapido-n8n", "source": "./rapido-n8n", "description": "Automatisations n8n sur l'instance du client (URL par variable d'environnement) : Claude fabrique des workflows qui tournent ensuite sans lui — recettes métier Rapido incluses" },
-    { "name": "rapido-direction", "source": "./rapido-direction", "description": "Chef de cabinet : Gmail, Google Calendar et Drive (compte de chacun) unifiés avec les systèmes Rapido — journée du dirigeant, tri de boîte mail, secrétariat commercial, coffre documents" },
-    { "name": "rapido-startup", "source": "./rapido-startup", "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup. Skills à venir" }
+    {
+      "name": "foodeatup",
+      "source": "./foodeatup",
+      "description": "Gestion restaurant (HACCP, salle, cuisine, achats)"
+    },
+    {
+      "name": "rapidocrm",
+      "source": "./rapidocrm",
+      "description": "CRM : prospection, pipeline, facturation, marketing"
+    },
+    {
+      "name": "rapidocms",
+      "source": "./rapidocms",
+      "description": "Contenu & réseaux sociaux, cartes digitales"
+    },
+    {
+      "name": "rapidorh",
+      "source": "./rapidorh",
+      "description": "RH : projets, Kanban, dailies, onboarding"
+    },
+    {
+      "name": "rapido-suite",
+      "source": "./rapido-suite",
+      "description": "Orchestration transverse des 4 MCP"
+    },
+    {
+      "name": "rapido-canva",
+      "source": "./rapido-canva",
+      "description": "Design Canva croisé avec les données Rapido : menus, visuels sociaux, supports commerciaux, slides CODIR"
+    },
+    {
+      "name": "rapido-lovable",
+      "source": "./rapido-lovable",
+      "description": "Apps et agents IA Lovable alimentés par les données Rapido : site restaurant, landing pages, agent IA produit, marque synchronisée"
+    },
+    {
+      "name": "rapido-meta-ads",
+      "source": "./rapido-meta-ads",
+      "description": "Publicité Meta (Facebook/Instagram) pilotée par les données Rapido : campagnes, boosts, audiences CRM, pixel, A/B tests — verrouillé (argent réel)"
+    },
+    {
+      "name": "rapido-n8n",
+      "source": "./rapido-n8n",
+      "description": "Automatisations n8n sur l'instance du client (URL par variable d'environnement) : Claude fabrique des workflows qui tournent ensuite sans lui — recettes métier Rapido incluses"
+    },
+    {
+      "name": "rapido-direction",
+      "source": "./rapido-direction",
+      "description": "Chef de cabinet : Gmail, Google Calendar et Drive (compte de chacun) unifiés avec les systèmes Rapido — journée du dirigeant, tri de boîte mail, secrétariat commercial, coffre documents"
+    },
+    {
+      "name": "rapido-startup",
+      "source": "./rapido-startup",
+      "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup. Skills à venir"
+    },
+    {
+      "name": "rapido-forge",
+      "source": "./rapido-forge",
+      "description": "StartupsForge (PrendsTaPart) : 180 exercices d'incubateur en 3 parcours (bootcamp 5 jours, idéation, scale) + 4 agents mentors — livrables dans ./rapido-kb/startup/forge/"
+    }
   ]
 }

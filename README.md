@@ -7,8 +7,8 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-11-blue)
-![Skills](https://img.shields.io/badge/skills-119-brightgreen)
+![Plugins](https://img.shields.io/badge/plugins-12-blue)
+![Skills](https://img.shields.io/badge/skills-299-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 ## À quoi ça sert
@@ -52,11 +52,17 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-n8n` | 1.1.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.7.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
+| `rapido-forge` | 1.0.0 | 180 | 4 | rapidocrm, rapidocms, rapidorh | — |
 
-**Total : 11 plugins, 119 skills, 19 agents.** (`rapido-startup` — finance &
+**Total : 12 plugins, 299 skills, 23 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
+
+Nouveau : **`rapido-forge`** (StartupsForge / PrendsTaPart) — 180 exercices
+d'incubateur en 3 parcours (bootcamp 5 jours, roadmap idéation, roadmap
+scale) pilotés par un directeur de programme et 3 mentors ; livrables dans
+`./rapido-kb/startup/forge/`, exécution réelle déléguée aux plugins métier.
 
 Nouveautés de la vague du 2026-07-10 : `gestion-marques` + agent
 `gestionnaire-marques` (rapidocms, multi-enseignes), `animation-client` et
