@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-startup
 
+## 1.9.0 — 2026-07-11
+
+- R7 CASH-SENTINEL précisé : la phase Plan intègre la **projection
+  30/60/90 jours** via le skill `cash-flow-snapshot` (rapido-suite) s'il
+  est installé — sinon runway seul, en le disant ; et il est désormais
+  explicite que R7 ne prépare JAMAIS de relances (il recommande de lancer
+  R4, qui les prépare).
+- Point ouvert n8n de R7 (le `TODO` historique) RÉSOLU : la sentinelle existe en **workflow n8n
+  autonome** (Schedule 08:00 → Stripe Balance → calcul runway → alerte
+  webhook, silence au vert) — créé NON PUBLIÉ sur l'instance de
+  référence ; recette portable et étapes d'activation dans
+  `rapido-n8n/reference/recette-r7-cash-sentinel.md` (renvoi depuis la
+  routine).
+
 ## 1.8.0 — 2026-07-11
 
 - catalogue-kpi : nouvelle formule `taux_conversion_etape` (passés ÷

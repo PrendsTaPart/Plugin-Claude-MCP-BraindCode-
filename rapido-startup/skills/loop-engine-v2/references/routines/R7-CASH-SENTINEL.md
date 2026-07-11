@@ -11,6 +11,11 @@ autonomie: NIVEAU 0 STRICT — alerte seulement, AUCUNE écriture — reference/
 silence_si_vert: true              # au vert : journal seul, pas de message
 ```
 
+> **Version autonome (sans Claude)** : la même sentinelle existe en
+> workflow n8n — recette et activation dans
+> `rapido-n8n/reference/recette-r7-cash-sentinel.md` (Schedule 08:00 →
+> Stripe Balance → runway → alerte webhook ; publication confirmée).
+
 > Prompt rédigé depuis la spec (partie 4 du master plan non fournie).
 
 ## Sense (lecture seule)
@@ -26,9 +31,13 @@ silence_si_vert: true              # au vert : journal seul, pas de message
 ## Plan (calculs via catalogue-kpi)
 
 5. Runway (formule affichée) vs `seuil_alerte_runway_mois` ; DSO ; total en
-   retard. Verdict : 🟢 (tout dans les seuils) / 🟡 (runway < cible OU retard
+   retard ; **projection 30/60/90 jours** via le skill `cash-flow-snapshot`
+   (plugin rapido-suite) s'il est installé — sinon runway seul, en le
+   disant. Verdict : 🟢 (tout dans les seuils) / 🟡 (runway < cible OU retard
    > seuil) / 🔴 (runway < seuil d'alerte OU trésorerie négative projetée
    sous 60 j d'après le prévisionnel s'il existe).
+   Relances : R7 n'en prépare JAMAIS — il recommande de lancer R4, qui les
+   prépare (brouillons, ton gradué).
 
 ## Act — NIVEAU 0 : ALERTE SEULEMENT
 
