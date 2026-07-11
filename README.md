@@ -11,6 +11,12 @@ entreprise de A à Z.
 ![Skills](https://img.shields.io/badge/skills-301-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
+**Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
+· [Installation](#installation-5-minutes) · [Connecter les serveurs
+MCP](#connecter-les-serveurs-mcp--guide-par-serveur) · [Comment
+l'utiliser](#comment-lutiliser) · [Architecture](#architecture-dun-plugin)
+· [Garde-fous](#garde-fous-intégrés) · [Licence](#licence)
+
 ## À quoi ça sert
 
 Vous utilisez FoodEatUp, RapidoCRM, RapidoCMS ou RapidoRh ? Cette
@@ -87,6 +93,7 @@ couverts ou ignorés volontairement avec raison
    /plugin install foodeatup@rapido           ← si vous gérez un restaurant
    /plugin install rapidocrm@rapido           ← ventes, devis, factures, campagnes
    /plugin install rapidocms@rapido           ← réseaux sociaux, visuels, marques
+   /plugin install rapido-forge@rapido        ← 180 exercices d'incubateur (bootcamp, idéation, scale)
    ```
    …puis rapidorh, rapido-direction, rapido-startup, rapido-canva,
    rapido-lovable, rapido-meta-ads, rapido-n8n selon vos usages (tableau
@@ -96,22 +103,75 @@ couverts ou ignorés volontairement avec raison
 Test en local depuis un clone : `/plugin marketplace add ./<dossier-du-clone>`
 depuis le dossier parent, puis les mêmes `install`.
 
-## Connecter les serveurs MCP
+## Connecter les serveurs MCP — guide par serveur
 
 Chaque plugin déclare ses serveurs dans son `.mcp.json` — **vous vous
-connectez à VOS comptes**, rien n'est partagé :
-
-| Serveur | Comment se connecter |
-|---|---|
-| **FoodEatUp, RapidoCRM, RapidoCMS, RapidoRh** | Rien à configurer : à la première utilisation, Claude Code ouvre l'authentification du serveur — connectez-vous avec VOTRE compte Rapido. Vérifiez l'état avec `/mcp`. |
-| **Google (Gmail, Calendar, Drive)** — rapido-direction | OAuth individuel au premier usage (Gmail est volontairement « brouillons seulement » : rien ne part sans vous). Guide : `rapido-direction/README-installation.md`. |
-| **n8n** — rapido-n8n, rapido-direction, rapido-suite (optionnel) | Exportez l'URL MCP de VOTRE instance avant de lancer Claude Code : `export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`. Guide : `rapido-n8n/README-installation.md`. Sans elle, les volets n8n se sautent proprement. |
-| **Stripe** — rapido-startup | Connecteur officiel `https://mcp.stripe.com` (OAuth au premier usage). Lecture d'abord ; toute écriture est bloquée en routine et confirmée hors routine. |
-| **Canva, Lovable, Meta Ads, HyperFrames** | Connecteurs OAuth respectifs au premier usage (comptes Canva/Lovable/Meta/HeyGen). |
-
+connectez à VOS comptes**, rien n'est partagé. Après chaque connexion,
+vérifiez avec `/mcp` (la commande liste l'état de tous les serveurs).
 **Règle générale** : un serveur optionnel non connecté ne casse rien — le
-skill saute le volet EN LE DISANT (dégradation propre). `/mcp` dans Claude
-Code montre l'état de chaque connexion.
+skill saute le volet EN LE DISANT (dégradation propre).
+
+### Les 4 serveurs Rapido (FoodEatUp, RapidoCRM, RapidoCMS, RapidoRh)
+
+Utilisés par : foodeatup, rapidocrm, rapidocms, rapidorh, rapido-suite,
+rapido-forge, rapido-direction, rapido-startup et les plugins satellites.
+
+1. Rien à installer : les URLs produit sont déjà dans les `.mcp.json`
+   (`foodeatup.com/api/mcp`, `crm.rapidosoftware.com/mcp`,
+   `cms.rapidosoftware.com/mcp`, `rh.rapidosoftware.com/mcp/rapidorh`).
+2. Au PREMIER appel d'outil, Claude Code ouvre l'authentification du
+   serveur : connectez-vous avec VOTRE compte FoodEatUp / RapidoCRM /
+   RapidoCMS / RapidoRh (authentification individuelle par utilisateur).
+3. Vérifiez : `/mcp` → les 4 serveurs « connected ».
+4. FoodEatUp : les skills demandent votre `establishment_id` à la première
+   utilisation (notez-le dans `rapido-kb/entreprise.md` pour ne plus le
+   ressaisir).
+
+### Google — Gmail, Calendar, Drive (plugin rapido-direction)
+
+1. Au premier usage d'un outil Google, OAuth individuel dans le
+   navigateur : autorisez le compte Google de VOTRE choix.
+2. Gmail est volontairement « **brouillons seulement** » : le serveur ne
+   sait pas envoyer — rien ne part sans vous.
+3. Guide détaillé et dépannage : `rapido-direction/README-installation.md`.
+
+### n8n (rapido-n8n ; volets optionnels de rapido-direction et rapido-suite)
+
+1. Activez le serveur MCP de VOTRE instance n8n (n8n ≥ 1.x, MCP Server
+   activé dans les settings de l'instance).
+2. Exportez l'URL AVANT de lancer Claude Code :
+   `export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`
+3. Sans cette variable, les volets n8n se sautent proprement (le skill le
+   dit). Guide : `rapido-n8n/README-installation.md`.
+
+### Stripe (plugin rapido-startup)
+
+1. Connecteur officiel `https://mcp.stripe.com` — OAuth Stripe au premier
+   usage (choisissez le bon compte/environnement).
+2. Lecture d'abord : toute ÉCRITURE Stripe est interdite dans les routines
+   et confirmée explicitement hors routine (hook garde-stripe-write).
+3. Les montants Stripe sont en centimes — les skills convertissent avant
+   tout calcul (scripts, formule affichée).
+
+### Canva (rapido-canva) · Lovable (rapido-lovable) · Meta Ads (rapido-meta-ads) · HyperFrames (rapidocms vidéo)
+
+1. Connecteurs OAuth respectifs au premier usage : compte Canva, compte
+   Lovable (workspace), compte Meta Business, compte HeyGen.
+2. À savoir : chaque message envoyé à **Lovable** consomme des crédits du
+   workspace (l'agent chef-produit-web cadre AVANT de construire) ; les
+   campagnes **Meta** se créent toujours en PAUSED avec plafond de budget
+   (hooks plafond-budget + garde-argent-reel) ; le rendu vidéo
+   **HyperFrames** est payant (confirmation niveau 3).
+
+### Dépannage rapide
+
+- `/mcp` → serveur « needs authentication » : relancez l'outil, la fenêtre
+  d'authentification se rouvre.
+- Un volet est sauté avec un message « serveur non connecté » : c'est le
+  comportement nominal (dégradation propre) — connectez le serveur ou
+  ignorez le volet.
+- Les serveurs évoluent : les skills ré-introspectent les schémas avant
+  toute écriture sensible et signalent les écarts (« le serveur fait foi »).
 
 ## Comment l'utiliser
 
@@ -142,6 +202,8 @@ workflows (une par domaine) :
 | « Ma journée » | rapido-direction : emails + agenda triple + signaux business en UNE page, 3 priorités |
 | « Lance R7 » / « surveille ma trésorerie » | rapido-startup : sentinelle cash — runway calculé par script, alerte seulement, zéro écriture |
 | « Automatise l'envoi du récap hebdo » | rapido-n8n : workflow validé et testé AVANT publication, production sous confirmation |
+| « Quel est mon prochain exercice ? » | rapido-forge : le directeur-programme lit votre journal, vérifie les prérequis et propose l'exercice suivant (niveau annoncé) |
+| « Je veux lancer un SaaS » | rapido-suite : orchestrateur lancement-projet-360 — la méthode Forge pense, les plugins exécutent, validation entre chaque acte |
 
 **Ce que les garde-fous vous garantissent** : les actions destructrices,
 payantes ou visibles par vos clients demandent TOUJOURS votre confirmation
