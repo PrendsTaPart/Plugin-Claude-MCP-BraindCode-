@@ -1,6 +1,6 @@
 {
   "name": "foodeatup",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — avec agents chef-restaurateur et chef-cuisine",
   "author": {
     "name": "BraindCode",

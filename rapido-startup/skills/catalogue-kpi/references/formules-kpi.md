@@ -53,6 +53,7 @@ Règles transverses :
 
 | KPI | Formule exacte | Fonction | Outils MCP | Fréquence | Seuil défaut | Pièges |
 |---|---|---|---|---|---|---|
+| **Taux de conversion par étape (funnel)** | passés ÷ entrés, appliqué étape par étape (vues → clics CTA → soumissions → prospects) | `taux_conversion_etape` | CRM : `list_formulaires`, `get_formulaire_soumissions`, `list_cta` | hebdo (R6) | — (tendance par étape) | Une conversion se calcule ÉTAPE PAR ÉTAPE, jamais bout en bout seul (masque l'étape qui fuit) |
 | **Vélocité pipeline** | (opportunités × taux de conversion × panier moyen) ÷ durée de cycle (jours) | `velocite_pipeline` | CRM : `get_pipeline`, `get_stats_pipeline_global`, `list_devis` | hebdo | — (tendance) | Les 4 termes sur la MÊME fenêtre ; cycle en jours calendaires |
 | **Pipeline coverage** | pipeline pondéré ÷ objectif de la période | `pipeline_coverage` | CRM : `get_stats_pipeline_global` + objectif (KB : processus-internes.md) | hebdo | 3–4× | Pipeline PONDÉRÉ par probabilité d'étape, pas brut |
 

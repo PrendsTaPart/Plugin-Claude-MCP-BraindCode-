@@ -128,6 +128,15 @@ def cout_revient_projet(heures, taux_horaire_charge, couts_directs):
     return round(float(heures) * float(taux_horaire_charge) + float(couts_directs), 2)
 
 
+def taux_conversion_etape(passes, entres):
+    """Conversion d'une étape de funnel = passés ÷ entrés (vues → clics →
+    soumissions → prospects : appliquer étape par étape)."""
+    entres = float(entres)
+    if entres <= 0:
+        return None
+    return round(float(passes) / entres, 4)
+
+
 # ------------------------------------------------------------ dispatch & seuils
 FORMULES = {
     "mrr": (mrr, "MRR = Σ abonnements normalisés au mois (annuel ÷ 12) = {valeur}"),
@@ -152,6 +161,7 @@ FORMULES = {
     "ticket_moyen": (ticket_moyen, "ticket moyen = CA ÷ commandes = {ca} ÷ {nb_commandes} = {valeur}"),
     "charge_vs_contrat": (charge_vs_contrat, "charge = réalisées ÷ contractuelles = {heures_realisees} ÷ {heures_contractuelles} = {valeur}"),
     "cout_revient_projet": (cout_revient_projet, "coût de revient = heures × taux chargé + coûts directs = {heures} × {taux_horaire_charge} + {couts_directs} = {valeur}"),
+    "taux_conversion_etape": (taux_conversion_etape, "conversion étape = passés ÷ entrés = {passes} ÷ {entres} = {valeur}"),
 }
 
 # Seuils par défaut (= reference/seuils-defaut.md) — la KB PRIME toujours :

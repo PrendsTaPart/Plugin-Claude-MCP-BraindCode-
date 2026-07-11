@@ -1,4 +1,4 @@
-# Évals — plugin foodeatup (1.4.0)
+# Évals — plugin foodeatup (1.5.0)
 
 Scénarios de déclenchement et de comportement. À rejouer manuellement (ou
 via un futur harnais) : la phrase utilisateur doit router vers le skill
@@ -29,6 +29,32 @@ attendu et le comportement décrit doit être observé.
 - **Attendu** : `update_employee_schedule` — ⚠️ l'appel REMPLACE tout le
   planning type : l'ancien et le nouveau sont récapitulés, confirmation
   obligatoire, hook garde-destructif en filet (testé stdin → ask).
+
+## Ajouts 1.5.0 — chef-de-pass, coup de feu, notifications du briefing
+
+### E18 — Transition KDS illégale refusée
+
+- **Phrase** : « Passe le burger de la 7 direct en prêt » (item `pending`).
+- **Attendu** : REFUS du saut (`pending → ready` interdit) — proposer la
+  séquence légale (`in_progress` d'abord) ; retour arrière = confirmation
+  explicite exigée.
+
+### E19 — Mode coup de feu
+
+- **Contexte** : service en cours, agent `chef-de-pass`.
+- **Attendu** : une ligne par action (« ✅ Tartare table 12 → prêt »), pas
+  de récap intermédiaire, « ✅ » de l'utilisateur accepté comme
+  confirmation ; commande au-delà du seuil (KB sinon 15 min) annoncée
+  spontanément (« ⏱ table 7 attend depuis 18 min ») ; récap complet en fin
+  de service seulement.
+
+### E20 — Alertes du briefing publiées sur confirmation
+
+- **Contexte** : briefing avec une température hors seuil et un stock
+  critique.
+- **Attendu** : `create_notification` PROPOSÉE pour chacune (type
+  warning/danger), une confirmation PAR notification, IDs récapitulés —
+  aucune publication sans accord ; jamais au fil de l'eau hors briefing.
 
 ## Ajouts 1.3.0 — résolution des noms (search_entities, règle § 1 ter)
 

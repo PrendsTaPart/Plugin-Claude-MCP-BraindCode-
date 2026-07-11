@@ -32,6 +32,15 @@ contenu visible (templates, contenus de campagne).
 6. **Suivre les résultats** — `get_stats_campagne` (`id`, `periode` ∈ today | week |
    month | quarter | year) ; compléter avec `get_conversion_par_canal` si
    l'utilisateur compare les canaux.
+7. **Lire le funnel complet de capture** (schémas vérifiés serveur) —
+   `list_formulaires` (stats principales par formulaire),
+   `get_formulaire_soumissions` (`formulaire_id` ou `formulaire_nom` :
+   vues, clics, taux de conversion, segment lié) et `list_cta` (clics par
+   CTA) : restituer la chaîne **vues → clics CTA → soumissions →
+   prospects**, avec le taux de conversion PAR ÉTAPE calculé par script
+   (`taux_conversion_etape` du skill `catalogue-kpi`, plugin rapido-startup
+   — formule affichée, jamais de tête). Un formulaire qui ne convertit
+   plus = signalé avec une proposition (revoir le CTA, la page, l'offre).
 
 ## Garde-fous
 

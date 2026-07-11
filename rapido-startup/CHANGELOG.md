@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-startup
 
+## 1.8.0 — 2026-07-11
+
+- catalogue-kpi : nouvelle formule `taux_conversion_etape` (passés ÷
+  entrés, appliquée étape par étape — vues → clics CTA → soumissions →
+  prospects ; jamais bout en bout seul) — fonction + entrée FORMULES dans
+  calcul_kpi.py, ligne dédiée dans formules-kpi.md, 2 tests unitaires
+  (19 au total). Consommée par campagne-marketing (rapidocrm 1.4.0) et la
+  routine R6.
+
 ## 1.7.0 — 2026-07-10
 
 - Nouvelle routine `R9-VIDEO-FACTORY` (references/routines/) : l'épisode

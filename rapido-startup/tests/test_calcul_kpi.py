@@ -100,6 +100,13 @@ class TestStatuts(unittest.TestCase):
 
 
 class TestMainCLI(unittest.TestCase):
+    def test_taux_conversion_etape(self):
+        self.assertEqual(k.taux_conversion_etape(50, 1000), 0.05)
+        self.assertEqual(k.taux_conversion_etape(12, 50), 0.24)
+
+    def test_taux_conversion_etape_zero(self):
+        self.assertIsNone(k.taux_conversion_etape(10, 0))
+
     def test_cli_json(self):
         demande = json.dumps({"kpi": "ltv", "entrees": {"arpu_mensuel": 99,
                               "marge_brute_ratio": 0.80, "churn_mensuel": 0.05}})

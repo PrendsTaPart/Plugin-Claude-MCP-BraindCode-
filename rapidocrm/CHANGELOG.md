@@ -1,5 +1,19 @@
 # Changelog — plugin rapidocrm
 
+## 1.4.0 — 2026-07-11
+
+- Capture de leads câblée côté CRM (schémas vérifiés serveur) :
+  - `campagne-marketing` étape 7 : funnel complet vues → clics CTA →
+    soumissions → prospects (`list_formulaires`,
+    `get_formulaire_soumissions`, `list_cta`), taux PAR ÉTAPE calculé par
+    script (`taux_conversion_etape`, catalogue-kpi) ; formulaire qui ne
+    convertit plus = signalé avec proposition ;
+  - `prospection-pipeline` : les soumissions de formulaires deviennent une
+    SOURCE d'entrée du pipeline (leads chauds, à traiter en premier), avec
+    dédoublonnage par email puis nom AVANT `enregistrer_prospect` — une
+    soumission d'un contact connu = interaction tracée (`log_activity`),
+    pas un nouveau prospect.
+
 ## 1.3.0 — 2026-07-10
 
 - Nouveau skill `gestion-depenses` : source de vérité des dépenses CRM —

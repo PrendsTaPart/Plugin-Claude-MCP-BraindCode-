@@ -53,3 +53,14 @@
 - **Honnêteté serveur** : « montre le détail de la dépense 12 » → pas
   d'outil de détail côté CRM : `list_depenses` filtré, sinon renvoi
   interface (jamais de contournement).
+
+## Éval — capture de leads (1.4.0)
+
+- **Phrase** : « Comment convertit mon formulaire de contact ? » →
+  `campagne-marketing` étape 7 : funnel vues → clics CTA → soumissions →
+  prospects, taux PAR ÉTAPE via `taux_conversion_etape` (formule affichée).
+- **Phrase** : « Traite les nouvelles soumissions du formulaire démo » →
+  `prospection-pipeline` : `get_formulaire_soumissions`, dédoublonnage
+  email puis nom (`rechercher_prospects`, `list_contacts`) AVANT
+  `enregistrer_prospect` ; contact déjà connu → `log_activity`, pas de
+  doublon.

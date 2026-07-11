@@ -1,5 +1,22 @@
 # Changelog — plugin foodeatup
 
+## 1.5.0 — 2026-07-11
+
+- **Nouvel agent `chef-de-pass`** : tient le KDS au rythme du coup de feu —
+  une ligne par action, ✅ accepté comme confirmation, annonce spontanée
+  des commandes au-delà du seuil d'attente (KB sinon 15 min) et des temps
+  morts, récap complet en fin de service ; ne touche jamais aux recettes
+  ni aux prix (renvoi recette-cout-marge).
+- `coordination-cuisine` : transitions KDS STRICTES (jamais de saut en
+  avant, retour arrière sur confirmation explicite), § Mode coup de feu,
+  étape « commandes qui attendent » (seuil maison), description élargie
+  (écran cuisine, plat à lancer).
+- `briefing-du-jour` : les alertes du briefing (HACCP, stock critique,
+  surbooking) PROPOSENT une `create_notification` (warning/danger) — seule
+  écriture du briefing, une confirmation PAR notification, IDs récapitulés.
+- tests/evals.md : E18 (transition illégale refusée), E19 (coup de feu),
+  E20 (alertes publiées sur confirmation).
+
 ## 1.4.0 — 2026-07-10 (vague post-audit — consolidé)
 
 - Derniers clusters fonctionnels câblés (schémas vérifiés serveur) :
