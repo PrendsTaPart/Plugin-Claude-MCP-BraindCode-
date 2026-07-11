@@ -1,4 +1,12 @@
-# Évals — plugin rapido-suite (1.2.0)
+# Évals — plugin rapido-suite (1.3.0)
+
+## pilotage-entreprise
+
+| # | Phrase | Attendu |
+|---|---|---|
+| P1 | « Pilote mon entreprise » | `pilotage-entreprise` — Étape 0 (KB entière + autonomie.md + vérif serveurs), puis les 5 phases sur TOUS les domaines ; KPI via `catalogue-kpi` uniquement ; récap groupé AVANT toute écriture ; report une page |
+| P2 (frontière) | « Mon lundi » | `monday-brief` DIRECT — format lundi dédié, pas la boucle transverse |
+| P3 (frontière) | « Lance R7 » | `loop-engine-v2` (plugin rapido-startup) — routine unitaire, pas le pilotage complet |
 
 ## lancement-projet-360 (orchestrateur)
 
