@@ -109,3 +109,25 @@
 - **Souhait** : confirmer/documenter le mécanisme de capture d'un formulaire intégré
   publié dans l'éditeur CRM (ou exposer un webhook de soumission).
 - **Priorité** : haute (débloque la Route A totalement native).
+
+## 11. Auth multi-tenant des MCP Rapido (PRÉREQUIS PRODUIT — priorité absolue)
+- **Constat (live, LV0)** : le pattern MCP de production (`academyrapido:execute-prompt`)
+  appelle les URLs MCP **globales** (`crm/cms/rh.rapidosoftware`, `foodeatup.com/api/mcp`)
+  avec `mcp_servers:[{type:url,url,name}]` **sans token ni scope par client**, et une
+  **clé Anthropic plateforme partagée** (`settings.ANTHROPIC_API_KEY`). En session Claude
+  Code, l'accès MCP passe par un **OAuth interactif par utilisateur** — inexploitable par
+  un edge function serveur-à-serveur d'un site client.
+- **Cas d'usage** : livrer à **chaque client** (restaurateur, commerçant) un **site
+  agentique scopé sur SON établissement**, avec SES identifiants — sans qu'aucune clé
+  BraindCode ni donnée d'un autre tenant ne fuite.
+- **Souhait** : un mécanisme d'**auth MCP par tenant** :
+  - **token par établissement/compte** (ex. header `Authorization: Bearer <token_tenant>`
+    ou clé d'API scopée sur `foodeatup.com/api/mcp`) ;
+  - **scope serveur non contournable** (`establishment_id`/`company_id` lié au token,
+    jamais un paramètre que le front peut manipuler) ;
+  - **rotation** et révocation des tokens ; journal d'accès par tenant.
+- **Contournement actuel** : scope injecté **côté serveur** par l'edge function depuis
+  l'env (jamais depuis le front) + clé du **client** en secret Lovable — mais tant que le
+  serveur MCP n'isole pas par token, l'isolation reste imparfaite.
+- **Priorité** : **absolue** — c'est le prérequis qui transforme le kit connecteur en
+  **produit vendable** (chaque client son site agentique), pas juste un outil interne.
