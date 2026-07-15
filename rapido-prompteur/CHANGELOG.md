@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-prompteur
 
+## 0.3.2 — 2026-07-15 — brief Lovable branché sur les tokens du DS
+
+- `prompt-lovable` : la section « design system » **pointe les tokens** du design system
+  produit par `rapido-design:studio-maquette` (charte → variables Figma → DS Lovable) quand
+  il existe — le MVP démarre du DS, zéro divergence ; sinon on s'en tient à la charte `get_brand`.
+
 ## 0.3.1 — 2026-07-15 — pont vers le kit connecteur MCP
 
 - `prompt-lovable` : tout brief incluant un **agent embarqué connecté à un MCP** délègue

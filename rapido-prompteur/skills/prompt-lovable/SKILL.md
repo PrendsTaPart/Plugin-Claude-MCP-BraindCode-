@@ -43,6 +43,10 @@ confirmer côté backend Tunis »), ne rien inventer.
 - Couleurs **en hex exact**, police(s), logo (URL/asset réel), ton, densité.
 - Style **générique** décrit (« minimalisme premium, beaucoup de blanc ») —
   **jamais** « façon [marque/site connu] » (interdits ci-dessous).
+- **Tokens** : quand un vrai design system existe (produit par
+  `rapido-design:studio-maquette` : charte → variables Figma → DS Lovable), le brief
+  **pointe ces tokens** (mêmes couleurs/typo/spacing) au lieu de re-décrire un style — le
+  MVP démarre du DS, **zéro divergence**. Sinon, on s'en tient à la charte `get_brand`.
 
 ### 4. Données & MODE B (formulaire → CRM)
 - **Mode B** = l'app déployée agit vraiment : le **formulaire crée le prospect
