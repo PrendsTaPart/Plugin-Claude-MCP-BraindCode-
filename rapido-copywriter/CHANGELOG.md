@@ -1,5 +1,18 @@
 # Changelog — plugin rapido-copywriter
 
+## 0.2.0 — 2026-07-15 — copy-linkedin + copy-meta
+
+- Skill **`copy-linkedin`** — copy pour les **pages de marque** (frontière stricte vs
+  profil perso `social-selling-linkedin`) : brief funnel/cible/preuve réelle → **3
+  variantes** (grammaire LinkedIn, hooks piochés GAGNANT d'abord) → passe anti-voix-IA →
+  gate `brand-review` → `create_draft_tool` (bon compte) + hooks consignés. Carrousel →
+  structure slide par slide + visuel délégué.
+- Skill **`copy-meta`** — Facebook + Instagram (grammaires **distinctes**) : post FB
+  (40-120 mots, local), caption IG (hook < 125 car., 3-8 hashtags), carrousel IG (6-10
+  slides), Reel (caption courte + texte à l'écran → monteur), Stories. Brouillons CMS par
+  compte.
+- Évals : 4 cas (chaîne, renvoi profil perso, blocage anti-voix-IA, grammaires distinctes).
+
 ## 0.1.0 — 2026-07-15 — Squelette (grammaires 4 réseaux)
 
 - Nouveau plugin **rapido-copywriter** (24e du marketplace) — copywriter LinkedIn /
