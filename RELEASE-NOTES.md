@@ -1,3 +1,37 @@
+# Notes de release
+
+## Boucle de vente — loop-engineering (2026-07-15)
+
+Complète le loop-engineering du marketplace **sans rien refonder** (loop-engine-v2,
+pilotage-marketing, autonomie.md et hooks inchangés — tout s'y branche).
+
+- **Registre unifié des routines** (`reference/registre-routines.md`) — catalogue
+  canonique préfixé par domaine (`FIN-*`/`STARTUP-*`/`GROWTH-*`/`VIDEO-*`/`MKT-*`/
+  `VENTE-*`/`OPS-*`) ; anciens noms `R4…R9`, `R-MKT-*` conservés en **alias**
+  (rétrocompatibilité, aucun déclencheur cassé). **Registre des KPIs** : source unique
+  des formules = `rapido-startup:catalogue-kpi`.
+- **`rapidocrm:pilotage-commercial`** (`1.6.0`) — orchestrateur de la boucle
+  commerciale (Sense→Plan→Act→Feed→Report), calculs délégués à `catalogue-kpi`.
+  Routines **`VENTE-HYGIENE`** (hygiène /100), **`VENTE-RELANCES`** (relances
+  quotidiennes, table `vente_relances_journal`), **`VENTE-REVUE`** (couverture).
+- **`rapidocrm:expansion-clients`** + **`programme-ambassadeurs`** — tunnel
+  Studio→Agence→SaaS + programme 10 %/20 %, routine **`VENTE-EXPANSION`**.
+- **`rapido-n8n` (`1.3.0`)** — recettes événementielles **`OPS-LEAD-CHAUD`**,
+  **`OPS-CLIENT-GAGNE`**, **`OPS-ALERTE-CHURN`** (tables mémoire obligatoires ;
+  installées sur confirmation, aucun workflow créé d'office).
+- **KPI anti-divergence** — `catalogue-kpi` décrété source des formules ;
+  `attribution-kpi-marketing` réduit à ce qui lui est propre (attribution par canal,
+  LTGP/ROI ≠ LTV), commentaires « source : catalogue-kpi ».
+- Descriptions `marketplace.json` périmées corrigées (rapido-startup, rapido-marketing).
+- **Validation** : `valider-plugins.py` TOUT VALIDE (17 plugins) ; `tester-skills.py`
+  0 FAIL/0 WARN/0 INFO ; dry-run lecture seule « pilote mon commercial » →
+  `get_stats_pipeline_global` OK (chaîne SENSE résolue, données réelles).
+
+Plugins touchés : `rapidocrm` 1.4.3→1.6.0, `rapido-n8n` 1.2.0→1.3.0,
+`rapido-marketing` 0.16.1→0.16.3, `rapido-startup` 1.9.0→1.9.1.
+
+---
+
 # Notes de release — v1.0.0 (2026-07-10)
 
 ## Ajout — rapido-forge 1.1.0 (2026-07-10)

@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-17-blue)
-![Skills](https://img.shields.io/badge/skills-318-brightgreen)
+![Skills](https://img.shields.io/badge/skills-337-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
@@ -69,6 +69,23 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
+
+### Nouveau — Boucle de vente (loop-engineering)
+
+Le loop-engineering du marketplace est complété par la **boucle commerciale** —
+de l'hygiène des données à l'encaissement, sans rien refonder :
+- **Registre unifié des routines** (`reference/registre-routines.md`) : un
+  identifiant canonique par domaine (`FIN-*`, `STARTUP-*`, `GROWTH-*`, `VIDEO-*`,
+  `MKT-*`, `VENTE-*`, `OPS-*`) — les anciens noms (`R4…R9`, `R-MKT-*`) restent des
+  alias. Plus d'ambiguïté sur « lance R5 ». Inclut un **Registre des KPIs** (source
+  unique des formules : `catalogue-kpi`).
+- **`rapidocrm:pilotage-commercial`** — l'orchestrateur de la vente (Sense → Plan →
+  Act → Feed → Report), miroir de `pilotage-marketing` (qui génère les leads ; lui
+  les convertit). Routines **`VENTE-HYGIENE`** / **`VENTE-RELANCES`** / **`VENTE-REVUE`**.
+- **`rapidocrm:expansion-clients`** (tunnel Studio → Agence → SaaS) et
+  **`rapidocrm:programme-ambassadeurs`** (10 %/20 %), routine **`VENTE-EXPANSION`**.
+- **`rapido-n8n`** recettes événementielles **`OPS-LEAD-CHAUD`** / **`OPS-CLIENT-GAGNE`**
+  / **`OPS-ALERTE-CHURN`** — vendre pendant qu'on dort (installées sur confirmation).
 
 Nouveau : **`rapido-forge`** (StartupsForge / PrendsTaPart) — 180 exercices
 d'incubateur en 3 parcours (bootcamp 5 jours, roadmap idéation, roadmap
