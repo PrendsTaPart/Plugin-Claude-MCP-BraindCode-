@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-gmaps
 
+## 0.5.0 — 2026-07-15 — routine GMAPS-HEBDO + runbook recette
+
+- Routine **`GMAPS-HEBDO`** (lundi 8h) — sourcing ICP par ville, déduplication,
+  import des nouveaux leads uniquement, résumé. `reference/routines.md` +
+  recette n8n `rapido-n8n/reference/recettes-gmaps.md` (table mémoire
+  `gmaps_jobs_journal`) + inscription au registre unifié (préfixe `GMAPS-*`).
+- `docs/RECETTE-GMAPS.md` — runbook des 3 scénarios (sourcing Lyon, détection
+  FoodEatUp Paris 10, enrichissement ×3) avec grille de relevé. **Recette réelle
+  déférée au client** : le scrape Google Maps n'est pas joignable depuis
+  l'environnement de build (prouvé en GMS0) ; à exécuter sur poste (Docker) ou
+  VPS (API SaaS). Aucun résultat simulé.
+- Évals consolidées : 3 anti-déclenchements (prospecter_maps CRM, hors-périmètre
+  LinkedIn, avis clients FoodEatUp → handle-complaint).
+- **Version 0.5.0** (feature-complete : 4 skills + 1 agent + 1 routine) — le
+  passage **1.0.0** sera justifié après un run réel de la recette côté client.
+
 ## 0.4.0 — 2026-07-15 — veille-concurrents + agent chasseur-leads
 
 - Skill **`veille-concurrents-gmaps`** — situer un établissement FoodEatUp face à

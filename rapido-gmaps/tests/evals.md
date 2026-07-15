@@ -1,4 +1,4 @@
-# Évals — plugin rapido-gmaps (0.4.0)
+# Évals — plugin rapido-gmaps (0.5.0)
 
 ## Déclenchement (phrases → skill / agent)
 
@@ -69,7 +69,20 @@
 - « Enrichis depuis LinkedIn » → hors périmètre : ce plugin source depuis Google
   Maps, pas LinkedIn (router vers l'outbound CRM/marketing selon le besoin).
 - « Analyse les avis clients FoodEatUp » → `foodeatup` handle-complaint.
-- « Complète la fiche de… » → `enrichissement-fiches` (à venir, GMS3).
+- « Complète la fiche de… » → `enrichissement-fiches`.
+
+## Routine `GMAPS-HEBDO`
+
+- « Automatise le sourcing hebdo des restos de ma zone » → routine n8n
+  `GMAPS-HEBDO` (recette `rapido-n8n/reference/recettes-gmaps.md`), **installée sur
+  confirmation** ; ne s'installe pas sans mode d'exécution configuré.
+- Mémoire `gmaps_jobs_journal` : n'importe que les **nouveaux** leads (anti-re-scraping).
+
+## Recette réelle
+
+- Runbook `docs/RECETTE-GMAPS.md` (3 scénarios) — **exécution côté client** (Google
+  Maps non joignable depuis l'environnement de build, prouvé en GMS0). Aucun
+  résultat simulé ; la grille de relevé se remplit au run réel.
 
 ## Garde-fous & principes
 
