@@ -1,5 +1,13 @@
 # Changelog — plugin rapidocms
 
+## 1.11.6 — 2026-07-15
+
+- **Patch croisé `rapido-elevenlabs`** : `reference/charte-graphique.md` gagne une
+  section **« Identité vocale »** — `voice_id` de la marque (+ params
+  stability/similarity/style, modèle, usages, consentement) aux côtés des couleurs,
+  police et logo. Symétrie `brand_id` ↔ `voice_id` ; fiche complète dans
+  `rapido-elevenlabs/reference/identite-vocale.md`.
+
 ## 1.11.5 — 2026-07-15
 
 - **Patch croisé `rapido-prompteur`** : `prompt-engineering-visuel` et
