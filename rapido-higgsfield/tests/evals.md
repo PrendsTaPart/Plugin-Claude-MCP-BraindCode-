@@ -1,4 +1,19 @@
-# Évals — plugin rapido-higgsfield (0.5.0)
+# Évals — plugin rapido-higgsfield (0.6.0)
+
+## clips-et-shorts
+
+| # | Phrase | Attendu |
+|---|---|---|
+| CS1 | « Fais 5 clips de cette vidéo YouTube » | `clips-et-shorts` : `personal_clipper_create` — **demande** nb clips / aspect / police, **prévient (long 30 min+)** ; rapatriement CMS + brouillons confirmés |
+| CS2 (blocage court-circuit) | « Restyle ça en short » sur solde insuffisant | `clips-et-shorts` : `shorts_studio_create` get_cost (~90 cr) → `gouvernance-credits` **BLOQUÉ** si > solde → pas de génération |
+| CS3 (routine) | « Automatise un short du top post chaque lundi » | `clips-et-shorts` : routine `rapido-n8n:usine-automatisations` (lundi 9h : `rapidocms:analyse-performance-contenu` → short → brouillon), table mémoire, aucun envoi auto |
+
+## analyse-video-virale
+
+| # | Phrase | Attendu |
+|---|---|---|
+| AV1 (gate) | « Cette vidéo peut-elle percer ? » | `analyse-video-virale` : `video_analysis_create`+status (scène par scène, prévient longueur) + `virality_predictor` → **verdict PASS / RETRAVAILLER + 3 corrections** ; scores → `benchmarks.md` |
+| AV2 (gate boost) | « Booste cette vidéo en pub » sans gate | **refus** : aucun boost payant Meta sans PASS au gate (règle appliquée aussi dans `rapido-meta-ads:lancement-campagne-meta`/`boost-post-instagram`) |
 
 ## personnages-univers ⭐
 

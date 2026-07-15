@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.6.0 — 2026-07-15
+
+- Skills **`clips-et-shorts`** + **`analyse-video-virale`** (H6).
+  - `clips-et-shorts` : 3 chaînes — Personal Clipper (`personal_clipper_create`,
+    YouTube → clips, long-running prévenu), Shorts Studio (`shorts_studio_list_presets`
+    + `shorts_studio_create`, préflight coût), reframe/upscale à l'unité ; rapatriement
+    CMS + brouillons confirmés ; routine n8n lundi (top post → short).
+  - `analyse-video-virale` : `video_analysis_create` (scène par scène) +
+    `virality_predictor` → **verdict PASS / RETRAVAILLER + 3 corrections** ; scores →
+    `benchmarks.md`. **Gate : aucun boost payant Meta sans PASS** (règle appliquée
+    aussi côté rapido-meta-ads — patch séparé).
+  - Schémas vérifiés live (virality_predictor, video_analysis, reframe, shorts,
+    personal_clipper). `tests/evals.md` : 5 scénarios (dont AV2 gate boost).
+
 ## 0.5.0 — 2026-07-15
 
 - Skill **`personnages-univers`** ⭐ (H5) — cohérence de personnage industrialisée
