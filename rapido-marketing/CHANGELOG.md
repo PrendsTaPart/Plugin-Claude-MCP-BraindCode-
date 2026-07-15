@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-marketing
 
+## 0.8.0 — 2026-07-14
+
+- 2 skills « mesure » (comblent les derniers MANQUANT/PARTIEL M0) :
+  - `attribution-kpi-marketing` : collecte multi-sources (CRM
+    get_conversion_par_canal/get_dashboard_general_stats, CMS ingishts_campagne/
+    post_insights, Meta pilotage-performance-ads), modèle d'attribution SIMPLE
+    et honnête (premier/dernier point, limites documentées — pas de multi-touch
+    inventé), CAC/LTV/ROI délégués à catalogue-kpi sinon scripts/kpi_marketing.py
+    (stdlib) ; tableau par canal + 3 recos d'allocation ; benchmarks.md à jour.
+  - `growth-experiments` : backlog scoré ICE (scripts/ice_score.py), protocole
+    par expérience (hypothèse/métrique/échantillon/durée/arrêt), exécution
+    déléguée (tests-ab-meta, landing CRM/Lovable, email-sequence), lecture des
+    résultats par scripts/ab_result.py (test z 2 proportions → PASS/FAIL/
+    INCONCLUSIF), leçons → apprentissages.md, renvois scale-ab-testing/
+    scale-heatmaps.
+- 3 scripts stdlib testés ; tests/evals.md : 2 déclenchements + 1 anti par skill.
+
 ## 0.7.0 — 2026-07-14
 
 - Nouveau skill orchestrateur FLAGSHIP `tunnel-de-vente-360` : conçoit ET

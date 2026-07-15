@@ -1,4 +1,20 @@
-# Évals — plugin rapido-marketing (0.7.0)
+# Évals — plugin rapido-marketing (0.8.0)
+
+## attribution-kpi-marketing
+
+| # | Phrase | Attendu |
+|---|---|---|
+| AT1 | « D'où viennent mes clients ? » | `attribution-kpi-marketing` : collecte CRM (`get_conversion_par_canal`/`get_dashboard_general_stats`) + CMS + Meta → modèle single-touch **avec limites dites** → tableau par canal + 3 recos ; benchmarks.md mis à jour |
+| AT2 | « Mon ROI et mon CAC par canal ? » | `attribution-kpi-marketing` : calcul via `catalogue-kpi` sinon `kpi_marketing.py` (jamais de tête), formules affichées |
+| AT3 (anti) | « Calcule mon MRR et mon churn » | PAS attribution (canal) → skill `catalogue-kpi` (KPI généraux) |
+
+## growth-experiments
+
+| # | Phrase | Attendu |
+|---|---|---|
+| GX1 | « Fais-moi un backlog d'expériences de croissance » | `growth-experiments` : hypothèses scorées ICE via `ice_score.py` (jamais de tête) → backlog trié + protocole par test |
+| GX2 | « Lis les résultats de mon A/B test » | `growth-experiments` : `ab_result.py` → uplift + z + **verdict PASS/FAIL/INCONCLUSIF** ; échantillon insuffisant = INCONCLUSIF |
+| GX3 (anti) | « Pose des heatmaps sur ma page » | PAS growth-experiments (méthode) → skill `scale-heatmaps` (outillage CRO) |
 
 ## tunnel-de-vente-360 (flagship)
 
