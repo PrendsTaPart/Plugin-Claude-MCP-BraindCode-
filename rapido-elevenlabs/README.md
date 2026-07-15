@@ -10,11 +10,15 @@ FoodEatUp/Twilio) — via le **MCP officiel ElevenLabs** (`elevenlabs/elevenlabs
 > `agent-vocal-jarvis`) sont livrés en **E2+**, après l'**audit live E0**
 > (`docs/AUDIT-MCP-ELEVENLABS.md`) — pattern « squelette avant audit » (comme H1→H0).
 
-## Connecteur (installation)
+## Connecteur — deux modes de connexion
 
-Le serveur officiel est **local** (`uvx elevenlabs-mcp`). Le brancher au niveau de
-l'environnement/session, **clé UNIQUEMENT en variable d'environnement — jamais dans
-le dépôt** :
+**Clé UNIQUEMENT en variable d'environnement — jamais dans le dépôt** (règle
+marketplace), quel que soit le mode.
+
+### (a) Local stdio — mode par défaut (poste Windows/Mac/Linux)
+
+Le serveur officiel tourne **en local** (`uvx elevenlabs-mcp`). C'est le mode de
+l'audit **E0-local** (`docs/PROMPT-E0-LOCAL.md`) et de l'usage sur poste :
 
 ```
 claude mcp add ElevenLabs \
@@ -26,8 +30,25 @@ claude mcp add ElevenLabs \
 - **`ELEVENLABS_API_KEY`** : ta clé (env, jamais commitée). Free tier 10 000 crédits/mois.
 - **`ELEVENLABS_MCP_BASE_PATH`** : **obligatoire** → sinon les audios sortent sur
   `~/Desktop` (piège 2). Pointer vers le dossier de travail du projet.
-- `.mcp.json` du plugin déclare `ElevenLabs` (via `uvx`, clé en `${ELEVENLABS_API_KEY}`)
-  + le pont `rapidocms` (rapatriement audio `upload_file_tool`).
+- Prérequis : `uv`/`uvx` installé. Les MCP Rapido (RapidoCMS, CRM…) sont des **URL
+  distantes**, donc joignables depuis le poste local (pont TTS→`upload_file_tool` OK).
+- Le `.mcp.json` du plugin déclare ce mode (`ElevenLabs` via `uvx`, clé en
+  `${ELEVENLABS_API_KEY}`) + le pont `rapidocms`.
+
+### (b) Environnement conteneurisé — passerelle HTTP (optionnelle, infra)
+
+Pour une session **conteneurisée** (pas de `uvx`/stdio local), passer par une
+**passerelle HTTP streamable auto-hébergée** devant `elevenlabs-mcp` :
+
+```jsonc
+// entrée serveur (niveau environnement, PAS dans le repo) :
+"ElevenLabs": { "type": "http", "url": "${ELEVENLABS_MCP_URL}",
+                "headers": { "Authorization": "Bearer ${ELEVENLABS_MCP_TOKEN}" } }
+```
+
+- **`ELEVENLABS_MCP_URL`** + **`ELEVENLABS_MCP_TOKEN`** en variables d'environnement.
+- **À déployer par l'équipe infra** — **optionnel**. **Aucune clé ni token dans le
+  dépôt** ; la passerelle détient la clé ElevenLabs côté serveur.
 
 **Stratégie hybride** : MCP officiel pour l'**interactif** (orchestré par les skills)
 + **SDK Python `elevenlabs`** dans des scripts pour le **BATCH déterministe** (ex.
