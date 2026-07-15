@@ -1,5 +1,23 @@
 # Changelog — plugin rapidocrm
 
+## 1.6.0 — 2026-07-15 — boucle d'expansion (upsell + ambassadeurs)
+
+- Skill **`expansion-clients`** — le tunnel **Studio → Agence → SaaS** à 3 transitions
+  à signaux réels : livrables Studio terminés (Kanban RapidoRH à Done), projet agence
+  à J-15, client SaaS actif 3+ mois. Proposition déléguée à `redaction-commerciale`,
+  `create_devis` après confirmation, relance J+7 — tout en brouillon ; fourchettes/
+  paliers depuis `./rapido-kb/offres.md`.
+- Skill **`programme-ambassadeurs`** — opère le programme **10 % client / 20 %
+  apporteur** : éligibilité (6+ mois, factures payées, satisfaction), proposition
+  convertible en crédits, suivi via `get_loyalty_points` (plafonds serveur ; aucun
+  ajustement inventé), relance J+60. **Anti-collision** avec
+  `rapido-marketing:lead-getters-systeme` (lui = choisit le TYPE ; moi = opère le
+  programme existant) — documentée dans les deux SKILL.md.
+- Routine **`VENTE-EXPANSION`** (hebdo jeudi) : scan des 3 signaux + éligibles
+  ambassadeurs → opportunités de la semaine, propositions préparées. Enregistrée au
+  registre unifié.
+- Évals : 5 phrases + 3 contre-exemples par skill (non-collision).
+
 ## 1.5.0 — 2026-07-15 — pilotage-commercial (la boucle de vente)
 
 - Skill **`pilotage-commercial`** — l'orchestrateur de la boucle commerciale

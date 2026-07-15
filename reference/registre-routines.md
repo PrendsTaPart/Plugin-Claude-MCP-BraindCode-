@@ -138,11 +138,20 @@
 - **Autonomie** : **niveau 1 max** — décisions préparées, aucune écriture d'office.
 - **Mémoire n8n** : — (journal `rapido-kb/commercial/apprentissages.md`).
 
+### VENTE-EXPANSION
+- **Noms parlés** : « opportunités d'expansion », « qui faire monter en gamme », « upsell de la semaine », « éligibles ambassadeurs ».
+- **Cadence** : hebdomadaire — jeudi.
+- **Propriétaire** : `rapidocrm:pilotage-commercial` (skills `expansion-clients` + `programme-ambassadeurs`) · **Fichier** : `rapidocrm/references/routines/VENTE-EXPANSION.md`.
+- **Skills délégués** : `expansion-clients`, `programme-ambassadeurs`, `redaction-commerciale`.
+- **Autonomie** : **niveau 1 max** — propositions préparées, aucune écriture d'office.
+- **Mémoire n8n** : — (journal `rapido-kb/commercial/apprentissages.md`).
+
 ---
 
 ## Réservé (prochains lots)
 
-- **`VENTE-EXPANSION`** — boucle d'expansion (`rapidocrm:expansion-clients`), hebdo jeudi (PROMPT 3).
+- **`OPS-*`** — workflows événementiels de vente (`rapido-n8n`) : `OPS-LEAD-CHAUD`,
+  `OPS-CLIENT-GAGNE`, `OPS-ALERTE-CHURN` (PROMPT 4).
 - **`OPS-*`** — workflows événementiels de vente (`rapido-n8n`) : `OPS-LEAD-CHAUD`,
   `OPS-CLIENT-GAGNE`, `OPS-ALERTE-CHURN` (PROMPT 4).
 
