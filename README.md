@@ -124,8 +124,8 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | RapidoRh |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | Orchestration transverse des 4 serveurs MCP Rapido |
-| `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | Design Canva alimenté par les données Rapido |
-| `rapido-lovable` | 1.5.1 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | Apps et agents IA Lovable alimentés par les données Rapido |
+| `rapido-canva` | 1.0.2 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | Design Canva alimenté par les données Rapido |
+| `rapido-lovable` | 1.5.2 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | Apps et agents IA Lovable alimentés par les données Rapido |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido |
 | `rapido-n8n` | 1.6.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | Automatisations n8n sur l'instance du client |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | Chef de cabinet du dirigeant |
@@ -133,7 +133,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | StartupsForge (PrendsTaPart) |
 | `rapido-marketing` | 0.18.3 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | Marketing & acquisition Rapido-first |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | Usine média IA (Higgsfield) branchée sur l'écosystème Rapido |
-| `rapido-video` | 1.0.0 | 2 | 0 | rapidocms | Montage vidéo 100 % libre (ffmpeg + Whisper) |
+| `rapido-video` | 1.0.1 | 2 | 0 | rapidocms | Montage vidéo 100 % libre (ffmpeg + Whisper) |
 | `rapido-prompteur` | 0.3.2 | 2 | 1 | lovable, rapidocms, rapidocrm | Directeur de prompts |
 | `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs, rapidocms | La voix de l'écosystème (MCP officiel ElevenLabs) |
 | `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics, rapidocms, rapidocrm | SEO & acquisition organique pilotés par les données |

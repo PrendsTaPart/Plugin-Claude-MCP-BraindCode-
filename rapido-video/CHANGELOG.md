@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-video
 
+## 1.0.1 — 2026-07-15 — hooks (garde + récap IDs) — série FINITION F2
+
+- hook PreToolUse `garde-video` sur Bash (ask avant installation lourde ffmpeg/Whisper/Remotion, et confirmation musique = registre autorisé) + hook Stop récap-IDs. Testés au testeur.
+
 ## 1.0.0 — 2026-07-15 — RELEASE montage 3 étages
 
 - **Release** : 3 étages — montage libre (`montage-express`), motion design

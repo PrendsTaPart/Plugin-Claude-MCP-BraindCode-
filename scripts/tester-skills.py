@@ -235,6 +235,19 @@ TESTS_HOOKS = {
     ],
 }
 TESTS_HOOKS_EXTRAS = {
+    # rapido-lovable / rapido-canva / rapido-video — hooks ajoutés (série FINITION F2)
+    ("rapido-lovable", "garde-lovable.py"): [
+        ({"tool_name": "mcp__Lovable__deploy_project", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__Lovable__set_workspace_knowledge", "tool_input": {}}, "ask"),
+    ],
+    ("rapido-canva", "garde-canva.py"): [
+        ({"tool_name": "mcp__Canva__export-design", "tool_input": {}}, "ask"),
+    ],
+    ("rapido-video", "garde-video.py"): [
+        ({"tool_name": "Bash", "tool_input": {"command": "python3 bootstrap_video.py"}}, "ask"),
+        ({"tool_name": "Bash", "tool_input": {"command": "ffmpeg -i m.mp3 -map 0:a out.mp4"}}, "ask"),
+        ({"tool_name": "Bash", "tool_input": {"command": "ls -la"}}, "allow"),
+    ],
     # foodeatup — argent/points/public sensibles ajoutés au matcher (série SYNC S1)
     ("foodeatup", "garde-destructif.py"): [
         ({"tool_name": "mcp__foodeatup__adjust_points",
