@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__huggsfield__(generate_image|generate_video|generate_audio|generate_3d|dubbing|voice_change|upscale_image|upscale_video|shorts_studio_create|personal_clipper_create|explainer_video|outpaint_image|motion_control|render_video|deploy_website|deploy_game)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-couts.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__huggsfield__(create_voice|create_voice_from_confirmed_audio|voice_change|dubbing)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-voix.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils Higgsfield (mcp__huggsfield__*) de génération, de rendu ou de déploiement ont été appelés avec succès, la dernière réponse de l'assistant DOIT contenir un récapitulatif listant : les job_ids et/ou asset_ids produits, le coût réel (ou estimé via get_cost) en crédits, et le devenir de chaque rendu (rapatrié dans RapidoCMS ? brouillon ? en attente). De plus, si des dépendances de montage ont été téléchargées ce tour (via scripts/bootstrap_video.py), le récapitulatif DOIT lister chaque téléchargement effectué : nom, taille approximative, et emplacement local (cf. rapido-kb/outils-locaux.md). Si ce récapitulatif manque ou omet les IDs, les coûts, ou un téléchargement effectué, bloque en demandant de le compléter. Si aucun outil Higgsfield de production ni téléchargement n'a eu lieu, ou si le récapitulatif est complet, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

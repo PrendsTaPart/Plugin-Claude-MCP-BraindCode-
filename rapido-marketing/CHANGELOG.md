@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-marketing
 
+## 0.16.1 — 2026-07-15
+
+- `tunnel-de-vente-360` (patch V5) : Acte 2 — **héros vidéo de landing monté
+  localement (0 crédit)** via `rapido-video:montage-express` si les rushes existent ;
+  génératif via `rapido-higgsfield` (coût confirmé).
+
+## 0.16.0 — 2026-07-15
+
+- **Croisements Higgsfield** (patch H9) : `tunnel-de-vente-360` Acte 2 (héros vidéo
+  de landing) et Acte 4 (créatifs premium image/vidéo IA + `self_ai_disclosure OPT_IN`
+  + gate viral) → `rapido-higgsfield` ; `machine-outbound` gagne l'option **vidéo
+  d'outreach premium** pour les ~10 prospects les mieux scorés (coût confirmé). Tout
+  conditionné à la présence du plugin.
+
 ## 0.15.0 — 2026-07-15
 
 - Skill **`pilotage-marketing`** (orchestrateur) : boucle **Sense → Plan → Act →

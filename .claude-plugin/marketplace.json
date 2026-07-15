@@ -71,6 +71,21 @@
       "name": "rapido-marketing",
       "source": "./rapido-marketing",
       "description": "Marketing & acquisition Rapido-first : leads, tunnel de conversion, nurturing, publicité et analytics — priorité CRM/CMS/RH, MCP secondaires en repli. Squelette 0.1.0 (reference + garde-fous + hooks), skills à venir."
+    },
+    {
+      "name": "rapido-higgsfield",
+      "source": "./rapido-higgsfield",
+      "description": "Usine média IA (Higgsfield) : images 4K & packshots, vidéos génératives & pubs, personnages cohérents (Soul/Elements, PronoClip), voix & doublage, sites & jeux — routage média unifié et gouvernance des coûts en crédits. 9 skills + agent producteur-studio."
+    },
+    {
+      "name": "rapido-video",
+      "source": "./rapido-video",
+      "description": "Montage vidéo 100 % libre (ffmpeg + Whisper) : concat, coupes, xfade, reframe 9:16/1:1/16:9, overlay logo, sous-titres burn-in, suppression des silences — zéro crédit, embarquable en SaaS. Dépendances auto-installées par l'agent."
+    },
+    {
+      "name": "rapido-prompteur",
+      "source": "./rapido-prompteur",
+      "description": "Directeur de prompts : orchestre la conception de prompts (image/vidéo/web/audio) pour Higgsfield, RapidoCMS, Lovable et Canva. Règle d'or — la grammaire d'un moteur se LIT à chaque session (models_explore, pièges, doc), jamais de mémoire. 2 skills (prompt-lovable brief marque+CRM, prompt-personnage banque de traits combinatoire) + patterns francisés par usage + garde anti-IP tierce/artiste vivant."
     }
   ]
 }

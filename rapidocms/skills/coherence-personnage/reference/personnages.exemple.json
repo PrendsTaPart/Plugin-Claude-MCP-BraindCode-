@@ -1,6 +1,7 @@
 {
   "_fichier": "EXEMPLE — le vrai registre vit dans ./rapido-kb/personnages.json (côté client, jamais dans ce dépôt).",
-  "_schema": "personnages[]: { nom, marque, brand_id, description_canonique, version_active, portraits[] }",
+  "_schema": "personnages[]: { nom, marque, brand_id, description_canonique, version_active, portraits[], element_id?, soul_id? }",
+  "_note_higgsfield": "element_id / soul_id sont AJOUTÉS par rapido-higgsfield:personnages-univers (Elements/Soul). Absents = personnage non encore câblé vidéo/photo réaliste ; la voie images_to_image (ce skill) fonctionne sans eux.",
   "personnages": [
     {
       "nom": "Origami",
@@ -8,6 +9,9 @@
       "brand_id": 14,
       "description_canonique": "Oiseau en origami géométrique, papier bleu #0052FF, plis nets et anguleux, œil rond noir unique, bec triangulaire, fond neutre. Style épuré, ombres douces.",
       "version_active": "v1",
+      "element_id": "e1b2c3d4-0000-0000-0000-000000000000",
+      "soul_id": null,
+      "_note_moteur": "element_id = Element Higgsfield (multi-sujets, Kling/Seedance) ; soul_id = identité Soul entraînée (humain réel, Soul V2/Cinema). null = non câblé.",
       "portraits": [
         {
           "_note": "1 à 3 portraits canoniques MAX servent de références à images_to_image",
@@ -31,6 +35,9 @@
       "_note_brand_id": "0 = à résoudre via get_brand avant tout rattachement — jamais inventé",
       "description_canonique": "Personnage style anime, cheveux bleu nuit en pics, veste de sport, expression déterminée, line-art net, palette froide.",
       "version_active": "v1",
+      "element_id": "a11ce000-0000-0000-0000-000000000000",
+      "soul_id": null,
+      "_note_pronoclip": "Anime = Element (pas Soul). Le clip PronoClip passe le portrait canonique en start_image + <<<element_id>>> dans le prompt Kling 3.0.",
       "portraits": [
         {
           "asset_id": 0,

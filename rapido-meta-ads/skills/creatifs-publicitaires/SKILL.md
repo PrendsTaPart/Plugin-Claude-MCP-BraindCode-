@@ -23,6 +23,10 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`,
      PNG → URL publique ;
    - **Image IA CMS** (rapide) : skill `prompt-engineering-visuel`
      (`generate_image` + `upload_file_tool`) — pas de texte dans l'image.
+   - **Higgsfield premium** (packshot 4K, pub vidéo) :
+     `rapido-higgsfield:studio-image-pro` / `usine-video-marketing` **si installé**,
+     **coût confirmé** ; créatif IA → **`self_ai_disclosure: OPT_IN`**, et **gate
+     viral** (`rapido-higgsfield:analyse-video-virale`) avant tout boost.
    Règle pub : peu de texte incrusté (meilleure diffusion), le message vit
    dans le texte de l'annonce.
 3. **Créer le créatif Meta** — `ads_create_creative` : `page_id` VÉRIFIÉ

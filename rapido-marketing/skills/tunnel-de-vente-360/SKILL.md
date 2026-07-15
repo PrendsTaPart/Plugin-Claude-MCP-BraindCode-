@@ -35,6 +35,10 @@ réexécute rien — il enchaîne les skills et pose garde-fous, KPI et IDs.
   (rapidocrm) ; **voie 2** skill `usine-a-landing` (Lovable) si disponible.
 - **Formulaire de capture CRM** + **CTA trackés** (`list_cta`).
 - **Visuels brandés** → skill `studio-visuel-marque` (logo + charte **réels**).
+- **Héros vidéo de landing** (optionnel) : **montage local 0 crédit** via
+  `rapido-video:montage-express` (+ intro/outro) si les rushes existent ; **génératif**
+  → `rapido-higgsfield:usine-video-marketing` / `studio-image-pro` (si installé, coût
+  confirmé avant génération).
 - ⏸️ **VALIDATION** avant l'Acte 3.
 
 ## ACTE 3 — Séquences & automatisations
@@ -50,6 +54,9 @@ réexécute rien — il enchaîne les skills et pose garde-fous, KPI et IDs.
 - **Entrant** → skill `machine-inbound` ; **sortant** → skill `machine-outbound` ;
   **paid** → skills `lancement-campagne-meta` + `pixel-et-retargeting`
   (**budget plafonné confirmé**, entités PAUSED).
+- **Créatifs premium** (image/vidéo IA) → `rapido-higgsfield:usine-video-marketing`
+  / `studio-image-pro` (si installé), coût confirmé, **self_ai_disclosure OPT_IN** +
+  **gate viral** avant tout boost.
 - ⏸️ **VALIDATION avant toute activation** (dépense = argent réel).
 
 ## ACTE 5 — Mesure & optimisation

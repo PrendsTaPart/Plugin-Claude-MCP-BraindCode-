@@ -64,3 +64,9 @@ publique), plus du repo GitHub.
   (`npx skills add heygen-com/hyperframes`) — relayer ce message tel quel.
 - Contenu : ton et accroches de la KB, pas de données personnelles clients
   dans une vidéo publique, chiffres avec source uniquement.
+- **Arbre de routage vidéo** : ce skill = vidéo **éditoriale maquettée** (presets
+  design, typographie animée, HeyGen). Pour une vidéo **générative** (pub produit,
+  personnages, shorts, clip Kling) → `rapido-higgsfield:usine-video-marketing` /
+  `personnages-univers`. Pour du **montage de médias réels** (couper, assembler,
+  sous-titrer, reframe 9:16) → **`rapido-video:montage-express` (0 crédit)**. Tout
+  « si installé ».

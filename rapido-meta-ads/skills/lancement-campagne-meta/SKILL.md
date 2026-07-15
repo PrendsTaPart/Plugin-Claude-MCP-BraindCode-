@@ -51,3 +51,8 @@ exacts de l'utilisateur à chaque appel.
 - Budget sous `min_daily_budget_cents` = rejet : proposer le minimum du compte.
 - Petit budget test d'abord (voir agent `media-buyer`) : 10 €/j × 5 j avant
   de scaler.
+- **Gate viral (créatif vidéo IA)** : un créatif **vidéo généré par IA**
+  (Higgsfield) ne part **pas en payant sans PASS** au gate
+  `rapido-higgsfield:analyse-video-virale` (si le plugin est installé). Un
+  RETRAVAILLER = on corrige avant d'activer. Rappel : créatif IA vers Meta =
+  `self_ai_disclosure: "OPT_IN"`.

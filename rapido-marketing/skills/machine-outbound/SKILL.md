@@ -44,6 +44,9 @@ récurrent.
 - Enrichissement/angle par prospect prioritaire : `rapidocrm:account-research`
   (contexte) + `rapidocrm:draft-outreach` (angle). **Personnalisation obligatoire**
   (règle du skill `rapidocrm:redaction-commerciale`) : jamais de message générique.
+- **Option vidéo d'outreach premium** (les ~10 prospects les mieux scorés) : vidéo
+  personnalisée via `rapido-higgsfield:usine-video-marketing` (si installé), **coût
+  confirmé** avant génération — réservée aux comptes à fort potentiel.
 
 ### 3. GATE OBLIGATOIRE — délivrabilité (bloquant, sur CHAQUE lot)
 - Avant tout envoi, invoquer **`delivrabilite-email`** : scorecard de liste +

@@ -1,5 +1,11 @@
 # Changelog — plugin foodeatup
 
+## 1.5.1 — 2026-07-15
+
+- `carte-vitrine` (patch H9) : renvoi vers le mode « carte en photos » de
+  `rapido-higgsfield:studio-image-pro` (si installé) — packshots 4K par plat
+  (`list_dishes`), coût du lot confirmé, rapatriement puis liaison à la vitrine.
+
 ## 1.5.0 — 2026-07-11
 
 - **Nouvel agent `chef-de-pass`** : tient le KDS au rythme du coup de feu —

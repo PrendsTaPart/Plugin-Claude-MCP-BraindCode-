@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "huggsfield": {
+      "type": "http",
+      "url": "${HIGGSFIELD_MCP_URL}"
+    },
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    },
+    "rapidorh": {
+      "type": "http",
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh"
+    },
+    "foodeatup": {
+      "type": "http",
+      "url": "https://foodeatup.com/api/mcp"
+    }
+  }
+}

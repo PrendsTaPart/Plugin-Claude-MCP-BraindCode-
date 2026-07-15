@@ -1,5 +1,29 @@
 # Changelog — plugin rapidocms
 
+## 1.11.4 — 2026-07-15
+
+- `video-marketing` (patch V5) : **branche `rapido-video`** ajoutée à l'arbre de
+  routage vidéo — montage de médias réels (couper/assembler/sous-titrer/reframe) →
+  `rapido-video:montage-express` (0 crédit) ; éditorial maquetté = ici (HyperFrames) ;
+  génératif = `rapido-higgsfield`.
+
+## 1.11.3 — 2026-07-15
+
+- **Croisements Higgsfield** (patch H9) : `studio-visuel-marque` route le
+  **premium/4K/pub/photo réaliste** vers `rapido-higgsfield:studio-image-pro`
+  (si installé ; le brandé courant reste sur `images_to_image`) ; `video-marketing`
+  distingue **éditorial maquetté (HyperFrames)** vs **génératif** (délégué à
+  `rapido-higgsfield:usine-video-marketing`/`personnages-univers`).
+
+## 1.11.2 — 2026-07-15
+
+- `coherence-personnage` : **branche de délégation** vers
+  `rapido-higgsfield:personnages-univers` (si installé) pour la **vidéo / photo
+  réaliste** d'un personnage (Soul/Elements, Kling 3.0) ; ce skill reste la voie
+  `images_to_image`. Le registre `personnages.json` est **partagé** — exemple enrichi
+  des champs `element_id` / `soul_id` (moteur Higgsfield), rétro-compatible (absents =
+  voie CMS inchangée).
+
 ## 1.11.1 — 2026-07-15
 
 Enrichissements founder-playbook (MIT © 2026 AgentSeal) — ajouts seuls,
