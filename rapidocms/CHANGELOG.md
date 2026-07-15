@@ -1,5 +1,18 @@
 # Changelog — plugin rapidocms
 
+## 1.11.1 — 2026-07-15
+
+Enrichissements founder-playbook (MIT © 2026 AgentSeal) — ajouts seuls,
+attribution en fin de chaque section, aucune régression du contenu importé :
+
+- `storybrand-messaging` : **test des 5 secondes** (grunt test à 3 questions,
+  précise la ligne « caveman in 5 seconds » du diagnostic) + **feuille de route
+  marketing en 5 tâches** (one-liner, générateur de leads, séquence email,
+  témoignages de transformation, système de parrainage). Attribution : Miller.
+- `made-to-stick` : **tableau symptôme → principe** (diagnostic inversé —
+  du symptôme observé vers le principe SUCCESs à activer). Attribution : Heath
+  & Heath.
+
 ## 1.11.0 — 2026-07-14 — RELEASE couche marque
 
 Entrée consolidée de la vague « couche marque RapidoCMS » (détail par sous-
