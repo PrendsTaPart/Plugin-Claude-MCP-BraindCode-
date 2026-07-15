@@ -91,6 +91,17 @@ chacune) — pas `generate_image`. Le prompt se construit alors différemment :
    PROPOSER la sauvegarde à l'utilisateur, jamais l'imposer — titre normalisé
    « type — sujet — style » et gestion complète : skill `bibliotheque-prompts`.
 
+## Patterns & variante multi-moteurs
+
+- **Patterns d'usage** : s'appuyer sur les fiches `assets/patterns/` du plugin
+  `rapido-prompteur` (packshot, portrait, food, personnage…) — structures
+  francisées, moteurs compatibles, garde anti-IP.
+- **Variante multi-moteurs** : ce skill construit le prompt pour `generate_image`
+  (RapidoCMS). Si le besoin est de **choisir entre plusieurs moteurs** (RapidoCMS
+  vs Higgsfield premium/4K vs Canva print) ou d'obtenir des **variantes
+  comparées**, passer par l'agent `rapido-prompteur:directeur-prompts` — il lit la
+  grammaire de chaque moteur en direct, propose 3 variantes et délègue l'exécution.
+
 ## Garde-fous
 
 - Jamais de génération sans palette de charte dans le prompt.
