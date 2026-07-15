@@ -1,5 +1,17 @@
 # PLAN FoodEatUp V2 — audit MCP + intégration (série SYNC S1) — 2026-07-15
 
+> **État d'avancement (2026-07-15).**
+> - ✅ **Fait** : correctifs des 3 skills half-adaptés (1.5.2) ; inventaire 164 ;
+>   **3 nouveaux skills** `fidelite-restaurant`, `caisse-du-jour`, `site-vitrine-foodeatup`
+>   + agent `gerant-digital` + hook étendu (1.6.0), sur **schémas réels** (24 outils).
+> - ⏳ **Buildable maintenant** (schémas connus, dans les 111) : extensions CRUD
+>   (client, produit, ingrédient, plat, employé, tva, fournisseur, facture, recette).
+> - ⛔ **Bloqué sur schémas** (29 outils à réintrospecter, **ne pas inventer**) :
+>   `recrutement-resto` (job_offer/applications), offre (happy hours/livraison/boissons),
+>   avis complet (`list_reviews`/`reply_review`), + POS `list_pos_tabs`/`close_pos_session`
+>   (params exacts), site `add_site_page`/`update_section`/`publish_site`/`get_domain_status`.
+
+
 Analyse des outils du MCP FoodEatUp croisée avec le plugin `foodeatup`.
 Audit : `docs/audits/AUDIT-foodeatup-2026-07-15.md` · inventaire :
 `docs/inventaires/foodeatup-tools.json`.
