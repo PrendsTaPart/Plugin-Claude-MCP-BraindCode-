@@ -1,8 +1,8 @@
 # Audit MCP ↔ plugin — foodeatup — 2026-07-15
 
 - Inventaire serveur : 111 outils (`docs/inventaires/foodeatup-tools.json`, source : introspection du MCP FoodEatUp connecté (session Claude Code, 2026-07-15)).
-- Couverture : **83/111 outils exploités (75 %)** par les skills du plugin.
-- Orphelins : **28** · Références mortes suspectes : **10**.
+- Couverture : **85/111 outils exploités (77 %)** par les skills du plugin.
+- Orphelins : **26** · Références mortes suspectes : **11**.
 
 ## 1. Références mortes (PRIORITÉ 1 — drift, bug silencieux)
 
@@ -10,20 +10,21 @@ Identifiants à **verbe d'action**, cités par le plugin mais absents de **tout*
 
 | Identifiant cité | Fichiers |
 |---|---|
+| `get_contact` | foodeatup/skills/handle-complaint/SKILL.md |
 | `get_entreprise` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
 | `get_historique_prospect` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
+| `get_loyalty_points` | foodeatup/skills/handle-complaint/SKILL.md |
 | `get_pipeline` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
-| `get_revenue_summary` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
-| `list_depenses` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
+| `get_revenue_summary` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/margin-analyzer/reference/gotchas.md, foodeatup/skills/price-check/SKILL.md |
+| `list_depenses` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/margin-analyzer/reference/gotchas.md, foodeatup/skills/price-check/SKILL.md |
 | `list_devis` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
-| `list_factures` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
-| `list_transactions` | foodeatup/skills/margin-analyzer/reference/gotchas.md |
+| `list_factures` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/margin-analyzer/reference/gotchas.md, foodeatup/skills/price-check/SKILL.md |
 | `schedule_email` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
 | `send_email` | foodeatup/skills/handle-complaint/SKILL.md, foodeatup/skills/margin-analyzer/SKILL.md, foodeatup/skills/price-check/SKILL.md |
 
 ## 2. Outils orphelins (valeur dormante — exposés, cités par aucun skill)
 
-28 outils, groupés par famille fonctionnelle :
+26 outils, groupés par famille fonctionnelle :
 
 ### category (3)
 
@@ -33,13 +34,12 @@ Identifiants à **verbe d'action**, cités par le plugin mais absents de **tout*
 | `delete_category` | Supprime une catégorie propre à un établissement (les catégories globales sont protégées). |
 | `update_category` | Modifie une catégorie d'un établissement. |
 
-### client (5)
+### client (4)
 
 | Outil | Description |
 |---|---|
 | `create_client` | Crée un client pour un établissement. |
 | `delete_client` | Supprime un client d'un établissement. Action irréversible. |
-| `get_client` | Retourne le détail d'un client d'un établissement. |
 | `list_clients` | Liste les clients d'un établissement. Filtres : recherche, statut. |
 | `update_client` | Modifie un client d'un établissement. |
 
@@ -74,14 +74,13 @@ Identifiants à **verbe d'action**, cités par le plugin mais absents de **tout*
 |---|---|
 | `get_invoice` | Retourne le détail complet d'une facture (lignes incluses). |
 
-### product (4)
+### product (3)
 
 | Outil | Description |
 |---|---|
 | `create_product` | Crée un nouveau produit dans le menu d'un établissement. |
 | `delete_product` | Supprime un produit du catalogue d'un établissement. Action irréversible. |
 | `get_product` | Retourne le détail d'un produit du catalogue d'un établissement. |
-| `update_product` | Modifie un produit du catalogue (prix, unité, stock, description, nom, promotion). |
 
 ### recipe (1)
 
@@ -118,11 +117,11 @@ Identifiants à **verbe d'action**, cités par le plugin mais absents de **tout*
 | `coordination-cuisine` | `get_order`, `list_orders`, `search_entities`, `update_kds_item_status`, `update_order_status` |
 | `gestion-commandes` | `checkin_reservation`, `create_invoice`, `create_order`, `create_quote`, `floor_plan_status`, `get_order`, `get_quote`, `list_dishes`, `list_orders`, `list_products`, `list_quotes`, `search_entities`, `seat_waitlist`, `update_invoice_status`, `update_order_status`, `update_quote_status` |
 | `haccp-conformite-quotidienne` | `add_temperature`, `create_haccp_label`, `create_haccp_reception`, `create_haccp_tracabilite`, `create_hygiene_checklist_validation`, `list_cleaning_actions`, `list_cleaning_zones`, `list_haccp_labels`, `list_haccp_temperatures`, `list_haccp_tracabilite`, `list_hygiene_checklists`, `record_cleaning_action`, `search_entities` |
-| `handle-complaint` | `finance_summary`, `list_expenses`, `list_invoices`, `list_orders` |
-| `margin-analyzer` | `finance_summary`, `list_expenses`, `list_invoices`, `list_orders` |
+| `handle-complaint` | `finance_summary`, `get_client`, `get_order`, `list_expenses`, `list_invoices`, `list_orders` |
+| `margin-analyzer` | `finance_summary`, `get_recipe`, `list_expenses`, `list_invoices`, `list_orders` |
 | `onboarding-restaurateur` | `add_temperature`, `create_employee`, `create_employee_contract`, `create_hygiene_checklist_validation`, `create_table`, `create_zone`, `floor_plan_status`, `import_storefront_menu`, `list_categories`, `list_dishes`, `list_employees`, `list_haccp_temperatures`, `list_hygiene_checklists`, `list_tables`, `list_zones` |
 | `planning-equipe` | `approve_leave`, `assign_task`, `create_employee_contract`, `create_shift`, `list_attendances`, `list_employee_contracts`, `list_employee_documents`, `list_employees`, `list_leaves`, `list_plannings`, `reject_leave`, `update_employee_schedule` |
-| `price-check` | `finance_summary`, `list_expenses`, `list_invoices`, `list_orders`, `search_entities` |
+| `price-check` | `finance_summary`, `get_recipe`, `list_expenses`, `list_invoices`, `list_orders`, `search_entities`, `update_dish`, `update_product` |
 | `production-stock` | `adjust_stock`, `create_production_plan`, `get_production_ingredients`, `list_low_stocks`, `list_production_alerts`, `list_production_plans`, `list_stocks`, `search_entities` |
 | `reappro-fournisseurs` | `adjust_stock`, `create_expense`, `create_haccp_reception`, `create_supplier_order`, `get_expense`, `get_supplier`, `list_deliveries`, `list_low_stocks`, `list_products`, `list_suppliers`, `search_entities` |
 | `recette-cout-marge` | `create_recipe`, `get_recipe`, `list_recipes`, `search_entities` |
