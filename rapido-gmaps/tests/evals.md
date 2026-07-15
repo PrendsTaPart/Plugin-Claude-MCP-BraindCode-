@@ -1,33 +1,46 @@
-# Évals — plugin rapido-gmaps (0.1.0, squelette)
+# Évals — plugin rapido-gmaps (0.2.0)
 
-Le plugin est au stade squelette : garde-fous + fondations. Les évals de
-déclenchement des skills seront ajoutées avec eux (GMS2→GMS4).
+## Déclenchement (phrases → skill)
 
-## Garde-fous (hook `garde-scraping`, testés au testeur)
-
-| Entrée | Décision attendue |
+| Phrase | Skill |
 |---|---|
-| Bash `... google-maps-scraper ... -depth 40` | **ask** (profondeur > seuil 10) |
-| Bash `... /api/v1/scrape ... "max_depth": 50` | **ask** (profondeur > seuil) |
-| Bash `... gms-bin ... -radius 80` | **ask** (rayon > seuil 20 km) |
-| Bash `... google-maps-scraper ... -depth 1` | **allow** (sous les seuils) |
-| Bash `ls -la` (non-scraper) | **allow** |
-| `mcp__rapidocrm__enregistrer_tous_prospects` | **ask** (import en lot) |
-| `mcp__rapidocrm__list_contacts` | **allow** |
+| « Trouve-moi des restaurants à Lyon » / « prospecte les cafés de Tunis » | `sourcing-gmaps` |
+| « Sourcing Google Maps » / « leads restauration Paris 11ème » | `sourcing-gmaps` |
 
-## Anti-déclenchements (à respecter dans les skills)
+## Cas `sourcing-gmaps` (4)
 
-- « Prospecte via le CRM » / « prospecte cette entreprise » →
-  **`rapidocrm` `prospecter_maps` / `prospecter_entreprise`** (workflows N8N
-  officiels), pas le scraping direct.
-- « Enrichis depuis LinkedIn » → **`rapido-marketing` draft-outreach /
-  account-research**, pas Google Maps.
-- « Analyse les avis clients FoodEatUp » → **`foodeatup` handle-complaint**,
-  pas la veille concurrents.
+1. **Déclenchement + chaîne** : « trouve-moi des restaurants gastronomiques à
+   Lyon » → construction requête `"restaurant gastronomique in Lyon France"`,
+   estimation volume/temps → **confirmation** → scrape → scoring par script →
+   dédup → validation top 20 → import par lots de 10.
+2. **Refus de volume** : requête à `-depth 40` (ou `radius 80`) → le hook
+   `garde-scraping` force une **confirmation** (avertissement volumétrique) avant
+   lancement.
+3. **Déduplication** : un lead dont le nom+ville existe déjà (`rechercher_prospects`
+   renvoie une fiche) → **écarté** de la création (ou routé vers
+   `enrichissement-fiches`), jamais de doublon.
+4. **Anti-collision** : « prospecte via le CRM » / « prospecte cette entreprise »
+   → router vers **`rapidocrm` prospecter_maps / prospecter_entreprise** (workflows
+   N8N), **pas** ce skill.
 
-## Principes vérifiés
+## Scoring (`scripts/score_leads_gmaps.py`)
 
-- Aucune donnée de scrape inventée : si aucun mode d'exécution n'est configuré,
-  le skill l'annonce et s'arrête.
-- Déduplication obligatoire avant toute création CRM.
-- Score de priorité **par script** (formule affichée), jamais de tête.
+- `score = review_rating × ln(review_count+1) × signal` ; `signal=1.5` si
+  `order_online` **et** `reservations` vides, sinon `1.0`.
+- Vérifié : note 4.7 / 800 avis / sans système → 47.135 ; mêmes note/avis **avec**
+  système → 31.424 ; tri décroissant ; filtres ICP (min-rating/min-reviews/
+  catégories) excluent sans planter.
+
+## Anti-déclenchements
+
+- « Prospecte via le CRM » → `rapidocrm` prospecter_maps (workflows N8N).
+- « Enrichis depuis LinkedIn » → hors périmètre : ce plugin source depuis Google
+  Maps, pas LinkedIn (router vers l'outbound CRM/marketing selon le besoin).
+- « Analyse les avis clients FoodEatUp » → `foodeatup` handle-complaint.
+- « Complète la fiche de… » → `enrichissement-fiches` (à venir, GMS3).
+
+## Garde-fous & principes
+
+- Aucune donnée de scrape inventée ; dégradation propre si aucun mode configuré.
+- Déduplication obligatoire ; import en lot confirmé (`garde-scraping`).
+- Score **par script**, formule affichée.

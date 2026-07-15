@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-gmaps
 
+## 0.2.0 — 2026-07-15 — sourcing-gmaps (Google Maps → pipeline CRM)
+
+- Skill **`sourcing-gmaps`** — de la requête Google Maps au pipeline CRM en
+  chaîne confirmée : construction de requête + estimation de volume (confirmation),
+  scrape (Docker local / API SaaS), scoring **par script**, déduplication
+  obligatoire, validation top 20, import par lots de 10 confirmés, capitalisation
+  KB. Positionnement explicite vs `prospecter_maps` (workflows N8N) — coexistence,
+  déclencheurs distincts.
+- `scripts/score_leads_gmaps.py` (stdlib) — score =
+  `review_rating × ln(review_count+1) × signal_opportunite` (1.5 si sans système
+  numérique : `order_online` ∧ `reservations` vides), tri décroissant, filtres ICP
+  optionnels (min-rating / min-reviews / catégories). Formule affichée, jamais de
+  calcul de tête.
+- Évals : 4 cas (déclenchement, refus de volume, déduplication, anti-collision
+  `prospecter_maps`).
+
 ## 0.1.0 — 2026-07-15 — Squelette (mapping CRM, garde-fous)
 
 - Nouveau plugin **rapido-gmaps** (22e du marketplace) — sourcing de leads
