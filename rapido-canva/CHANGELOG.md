@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-canva
 
+## 1.0.2 — 2026-07-15 — hooks (garde + récap IDs) — série FINITION F2
+
+- hook PreToolUse `garde-canva` (ask) sur export-design / publish-brand-template (sorties partagées) + hook Stop récap-IDs. Testés au testeur.
+
 ## 1.0.1 — 2026-07-11
 
 - tests/evals.md créé : 4 déclenchements (visuel social, menu PDF, CODIR,
