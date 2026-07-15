@@ -272,6 +272,21 @@ To build a Grand Slam Offer from scratch, run the eight sections above in this o
 
 See [references/offer-creation-checklist.md](references/offer-creation-checklist.md) to run this process as a fill-in worksheet (per-step prompts, scoring rubric, assembly template), and [references/case-studies.md](references/case-studies.md) for six full before/after offer redesigns (SaaS, coaching, e-commerce, agency, local, info product).
 
+## Enrichment — Obstacle taxonomy
+
+When running step 3 ("List every obstacle"), don't brainstorm loosely — sort every obstacle between the customer and the Dream Outcome into four buckets so none slip through, then invert each into a "how to..." solution:
+
+- **Knowledge gaps** — they don't know what to do
+- **Skill deficiencies** — they can't yet execute it
+- **Environmental barriers** — their context blocks them (tools, time, people, budget)
+- **Psychological blocks** — fear, doubt, or identity resistance
+
+Aim for 15+ obstacles spread across the four categories before designing solutions. Feed the resulting solutions straight into the existing Trim & Stack step (§2): keep the high-value / low-cost ones, cut the rest.
+
+*Rapido use case:* structure a FoodEatUp client's coaching offer around these four buckets so the delivered value answers every real blocker, not just the obvious ones.
+
+> Ideas: Alex Hormozi, *$100M Offers* — distilled from founder-playbook (MIT © 2026 AgentSeal). Reworded, no excerpt.
+
 ## Common Mistakes
 
 | Mistake | Why It Fails | Fix |
