@@ -1,5 +1,9 @@
 # Changelog — plugin rapido-lovable
 
+## 1.5.2 — 2026-07-15 — hooks (garde + récap IDs) — série FINITION F2
+
+- hook PreToolUse `garde-lovable` (ask) sur deploy_project / create·update·delete_workspace_skill / set_workspace_knowledge (périmètre large) + hook Stop récap-IDs/URLs. Testés au testeur.
+
 ## 1.5.1 — 2026-07-15 — articulation avec le pipeline rapido-design
 
 - `mvp-lovable` : quand un travail de design précède le build, **le MVP démarre du design

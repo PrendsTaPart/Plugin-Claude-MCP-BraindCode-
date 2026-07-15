@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__[Ll]ovable__(deploy_project|create_workspace_skill|update_workspace_skill|delete_workspace_skill|set_workspace_knowledge)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-lovable.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture Lovable ont été appelés avec succès (nom contenant create, update, delete, deploy, set, send, add, remove, enable, disable, move, remix), la dernière réponse doit contenir un récapitulatif explicite des objets créés/modifiés (projet, message, skill workspace, connecteur, knowledge) avec leurs identifiants et/ou URLs (editor_url / preview_url). Si ce récapitulatif manque, bloque en demandant de terminer par ce récapitulatif. Si aucune écriture n'a eu lieu, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}
