@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.3.0 — 2026-07-15
+
+- Skill **`studio-image-pro`** (H3) : images premium brandées (Higgsfield).
+  - **Pont de marque** RapidoCMS → Higgsfield (`get_brand`/`list_all_files` →
+    `media_import_url` → `medias` par media_id) ; modèles `nano_banana_pro` (4K/texte),
+    DTC Ads (`ms_image` + `style_id` + `brand_kit`), `soul_2` (portraits).
+  - **brand_kit miroir** via `show_marketing_studio` type=brand_kit (fetch site OU
+    create depuis la marque CMS ; logo/images en CDN Higgsfield ; update = remplacement
+    total) ; `brand_kit_id` stocké dans `charte-graphique.md`.
+  - Génération **chiffrée** (préflight → `gouvernance-credits`) → critique charte
+    (grille `rapidocms:studio-visuel-marque`, max 2 itérations) → rapatriement CMS
+    `{marque}-{type}-{variante}-vN` + `add_asset`.
+  - Mode **carte-en-photos FoodEatUp** : `list_dishes` → packshot par plat, **coût
+    total du lot confirmé** avant lancement, liaison `foodeatup:carte-vitrine`.
+  - Schémas vérifiés live (H0/H3) : `get_brand`, `show_marketing_studio` (brand_kit
+    create/get/update/fetch), `media_import_url`, `upload_file_tool`, `add_asset`.
+  - `tests/evals.md` : 4 scénarios (dont SIP2 routage refusé, SIP4 lot FoodEatUp).
+
 ## 0.2.0 — 2026-07-15
 
 - Skill **`gouvernance-credits`** (H2) : gardien budgétaire du plugin.

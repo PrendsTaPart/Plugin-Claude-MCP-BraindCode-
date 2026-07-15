@@ -1,4 +1,13 @@
-# Évals — plugin rapido-higgsfield (0.2.0)
+# Évals — plugin rapido-higgsfield (0.3.0)
+
+## studio-image-pro
+
+| # | Phrase | Attendu |
+|---|---|---|
+| SIP1 | « Fais-moi un packshot 4K de mon produit » | `studio-image-pro` : Étape 0 (routage OK premium) → pont marque (`get_brand`/`list_all_files` → `media_import_url`) → `nano_banana_pro` 4k, **préflight coût** via `gouvernance-credits` → critique charte (grille `rapidocms:studio-visuel-marque`) → `upload_file_tool` `{marque}-{type}-{variante}-vN` + `add_asset` |
+| SIP2 (routage refusé) | « Décline juste mon logo en carré pour Instagram » | `studio-image-pro` : **renvoie** — visuel brandé simple → `rapidocms:studio-visuel-marque` (CMS `images_to_image`, moins cher) ; ne génère PAS en premium Higgsfield |
+| SIP3 (brand_kit) | « Crée le brand kit Higgsfield de ma marque » | `studio-image-pro` : `show_marketing_studio` type=brand_kit (fetch site OU create depuis `get_brand`), **logo/images réimportés en CDN Higgsfield**, update = remplacement total ; `brand_kit_id` stocké dans `charte-graphique.md` |
+| SIP4 (lot FoodEatUp) | « Mets toute ma carte resto en photos » | `studio-image-pro` mode carte-en-photos : `list_dishes` → packshot `ms_image` par plat → **coût TOTAL du lot confirmé** (`gouvernance-credits`) AVANT lancement → rapatriement CMS + liaison `foodeatup:carte-vitrine` |
 
 ## gouvernance-credits
 
