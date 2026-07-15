@@ -26,6 +26,24 @@ sur NOS données.
   (hooks de copy), il ne rédige pas les messages lui-même.
 
 ## Étape 0 — Charger (obligatoire)
+
+### Pré-check connecteur Fireflies (AVANT tout)
+Fireflies est un **connecteur optionnel** non déclaré par le plugin. **Vérifier la
+présence des outils `fireflies_*`** (p. ex. `fireflies_get_transcripts`) avant
+toute action. **Absents → NE PAS appeler d'outil** ; afficher un message guidé
+puis **s'arrêter proprement** (jamais d'erreur brute, jamais de tentative d'appel) :
+
+> Ce skill mine vos **transcripts de RDV réels** (objections, voix du client) pour
+> en tirer un playbook et des hooks de copy. Il a besoin du **connecteur Fireflies**
+> (optionnel), non installé ici. Pour l'ajouter dans Claude Code :
+> `claude mcp add --transport http fireflies https://api.fireflies.ai/mcp`
+> (authentification à votre charge ; aucune clé n'est stockée dans le dépôt).
+> Relancez ensuite « analyse mes calls ». *(Sans Fireflies : import manuel d'un
+> export possible — coller le texte dans l'entrée du script.)*
+
+Ne poursuivre les étapes ci-dessous **que si** les outils `fireflies_*` sont présents.
+
+### Charger
 - `${CLAUDE_PLUGIN_ROOT}/reference/garde-fous-marketing.md` — **§b (données
   personnelles / RGPD)** s'applique en plein : un transcript est une **donnée
   personnelle**.
@@ -102,10 +120,10 @@ sur NOS données.
   fois, après accord ; `privacies` par défaut `team`.
 
 ## Mode dégradé
-- **MCP Fireflies indisponible** (non connecté / `${FIREFLIES_MCP_URL}` absent) :
-  ne rien inventer — signaler que la source de transcripts manque, proposer
-  l'import manuel d'un export (coller le texte → même entrée JSON du script) et
-  **flaguer au backend (Tunis)** le besoin de connecter Fireflies.
+- **Connecteur Fireflies absent** (outils `fireflies_*` indisponibles) : voir le
+  **pré-check de l'Étape 0** — message guidé (commande d'ajout + URL) puis arrêt
+  propre. Alternative sans Fireflies : import manuel d'un export (coller le texte
+  → même entrée JSON du script), sans jamais rien inventer.
 - **CRM absent** : mining possible sans l'issue (patterns gagné/perdu omis, dit
   explicitement).
 

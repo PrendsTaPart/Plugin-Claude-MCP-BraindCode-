@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-marketing
 
+## 0.14.2 — 2026-07-15
+
+- **Fireflies devient un connecteur OPTIONNEL documenté, plus une dépendance.**
+  - **Choix de format** : le format de plugin (`.mcp.json`) **ne supporte pas** de
+    déclaration de serveur MCP « optionnel » — tout serveur listé est tenté à
+    chaque session (une URL absente aurait produit une erreur de connexion). Donc
+    **README uniquement** : l'entrée `fireflies` est **retirée de `.mcp.json`**.
+  - `README.md` du plugin : section **« Connecteurs optionnels »** — MCP Fireflies,
+    URL `https://api.fireflies.ai/mcp`, commande d'ajout Claude Code (transport
+    HTTP), auth à la charge de l'utilisateur ; rappel : **aucune clé/secret dans le
+    dépôt**. Variable `FIREFLIES_MCP_URL` supprimée (plus utilisée).
+  - `sales-intelligence-fireflies` : **pré-check en Étape 0** — détection de
+    l'absence des outils `fireflies_*` → message guidé (rôle du skill + commande
+    d'ajout) puis **arrêt propre**, jamais d'erreur brute ni d'appel d'outil.
+  - Éval **SIF-ABSENT** (Fireflies non connecté → message guidé, zéro appel).
+
 ## 0.14.1 — 2026-07-15
 
 - `delivrabilite-email` : **paramètre de MODE** au contrat du skill.

@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.14.1)
+# Évals — plugin rapido-marketing (0.14.2)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
@@ -62,6 +62,7 @@ Collaboration attendue (tous) : chaîne directeur → managers → skills ; hand
 | SI1 | « Analyse mes calls, quelles objections reviennent ? » | `sales-intelligence-fireflies` : Étape 0 (garde-fous §b + icp.md) → **cadrage confirmé** (période/type/participants) → `fireflies_get_transcripts` filtré → `fireflies_get_summary`+`fireflies_get_transcript` par call → mining via `mine_transcripts.py` (fréquences + verbatims ANONYMISÉS, jamais de tête) → `objections.md` au format `rapido-forge:scale-objections-playbook` ; grille `rapidocrm:mom-test` (passé/concret) |
 | SI2 | « Voix du client : mine mes transcripts du dernier trimestre » | `sales-intelligence-fireflies` : `fromDate`/`toDate` sur le trimestre → croisement CRM (`rechercher_prospects`/`get_entreprise`) pour l'issue → **patterns gagné vs perdu** ; hooks de copy proposés à `redaction-commerciale`/`machine-outbound`, jamais envoyés ; 1-3 leçons datées (≥2 occurrences) dans `apprentissages.md` |
 | SI3 (refus périmètre) | « Analyse TOUS mes appels » (sans préciser) | `sales-intelligence-fireflies` : **refuse de lire sans périmètre confirmé** — demande période/type/participants AVANT tout `fireflies_get_transcripts` ; rappelle que transcript = donnée personnelle (KB interne) |
+| SIF-ABSENT (connecteur absent) | « Analyse mes calls » **sans Fireflies connecté** | `sales-intelligence-fireflies` : pré-check Étape 0 détecte l'absence des outils `fireflies_*` → **message guidé** (rôle du skill + `claude mcp add --transport http fireflies https://api.fireflies.ai/mcp` + auth utilisateur) puis **arrêt propre** ; **zéro appel d'outil**, aucune erreur brute |
 
 ## machine-inbound
 

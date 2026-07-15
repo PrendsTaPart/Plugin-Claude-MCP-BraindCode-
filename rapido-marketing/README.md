@@ -47,6 +47,28 @@ repli seulement.
 RapidoCRM, RapidoCMS, RapidoRH (prioritaires) + facebook-ads, canva, lovable,
 n8n, gmail, google-calendar (repli). Variable d'env : `N8N_MCP_URL` (n8n).
 
+## Connecteurs optionnels
+
+Certains skills exploitent un connecteur **optionnel** que le plugin **ne
+déclare pas** (aucune dépendance dure) : il s'ajoute côté utilisateur, et le
+skill fonctionne en mode dégradé s'il est absent.
+
+### Fireflies (transcripts de RDV) — skill `sales-intelligence-fireflies`
+
+- **URL** : `https://api.fireflies.ai/mcp`
+- **Ajout dans Claude Code** (transport HTTP) :
+
+  ```bash
+  claude mcp add --transport http fireflies https://api.fireflies.ai/mcp
+  ```
+
+- **Authentification** : à la charge de l'utilisateur (compte Fireflies), gérée
+  par Claude Code au moment de la connexion.
+- ⚠️ **Aucune clé ni secret dans ce dépôt** (règle du marketplace). Le connecteur
+  n'est **pas** listé dans `.mcp.json` : il reste optionnel et local à
+  l'utilisateur. Sans lui, `sales-intelligence-fireflies` explique comment
+  l'ajouter puis s'arrête proprement (aucun appel d'outil, aucune erreur brute).
+
 ## Garanties
 Tout envoi (email/SMS/newsletter/campagne/publication/activation pub) demande
 une **confirmation humaine explicite** ; RGPD (consentement + effacement)
