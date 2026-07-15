@@ -16,6 +16,10 @@ dupliquer**. Voie Rapido d'abord (CRM), n8n pour le récurrent.
   invoquer le skill `icp-generator` d'abord.
 - `docs/methodo/etat-de-lart-2026.md` **§4 délivrabilité** (warmup, plafonds,
   rotation, taux de réponse de référence).
+- **Lire `./rapido-kb/marketing/apprentissages.md` et `benchmarks.md` AVANT de
+  proposer un plan** — les leçons et taux passés **priment** sur les défauts.
+  Fichiers absents → créés depuis `${CLAUDE_PLUGIN_ROOT}/reference/kb-templates/`
+  (voir `reference/memoire.md` ; mémoire d'exécution = tables n8n).
 
 ## Pipeline
 
@@ -71,9 +75,13 @@ dupliquer**. Voie Rapido d'abord (CRM), n8n pour le récurrent.
 - Envoi de masse indisponible → prioriser les prospects à **score élevé** en
   1-à-1 (`send_email` unitaire confirmé).
 
-## Apprentissage (obligatoire)
-Chaque campagne alimente `./rapido-kb/marketing/apprentissages.md` : 1-3 leçons
-datées (via skill `mise-a-jour-kb`).
+## Capitalisation automatique (obligatoire)
+À chaque **clôture de campagne/expérience** : ajouter **1 à 3 leçons datées et
+SOURCÉES** (chiffre issu du script) dans `./rapido-kb/marketing/apprentissages.md`
+(format `date | contexte | leçon | preuve | skill source`), et **mettre à jour
+`benchmarks.md`** si un taux de référence change — le tout via `mise-a-jour-kb`.
+Pas de leçon sans preuve chiffrée.
+
 
 ## Cas d'usage croisés
 - Méthode outbound complète (rôles, ANUM) → skill `predictable-revenue`.

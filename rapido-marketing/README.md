@@ -5,7 +5,7 @@ de leads, le tunnel de conversion, le nurturing, la publicité et l'analytics en
 **priorisant les serveurs Rapido** (CRM → CMS → RH), les MCP secondaires en
 repli seulement.
 
-> **Version 0.9.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
+> **Version 0.10.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
 > **méthodo** (distillation $100M Leads). Les skills d'**exécution**
 > (machine-inbound/outbound, tunnel-de-vente-360) suivent.
 
@@ -17,6 +17,8 @@ repli seulement.
 | `reference/garde-fous-marketing.md` | envois confirmés, RGPD, délivrabilité, budgets pub, KPI par script |
 | `reference/pieges-outils.md` | pièges des outils marketing des 3 serveurs (repris de M0) |
 | `hooks/` | `garde-envois` (confirmation forcée sur tout envoi) + Stop récap-actions |
+| `reference/memoire.md` | mapping des 5 périmètres de mémoire + tables n8n |
+| `reference/kb-templates/` | 6 modèles `rapido-kb/marketing/` (créés à la 1re exécution) |
 
 ## Skills (✅ = livré ; autres à venir — voir `docs/MATRICE-COUVERTURE.md`)
 

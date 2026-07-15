@@ -1,5 +1,24 @@
 # Changelog — plugin rapido-marketing
 
+## 0.10.0 — 2026-07-14
+
+- Couche mémoire sur les primitives EXISTANTES (rapido-kb + tables n8n), aucun
+  nouveau système :
+  - `reference/kb-templates/` : 6 modèles copiés dans `./rapido-kb/marketing/` à
+    la 1re exécution (icp.md, scoring.md, offres.md, tunnels.md [registre à IDs],
+    benchmarks.md [taux + sources], apprentissages.md [date | contexte | leçon |
+    preuve | skill source]).
+  - `reference/memoire.md` : mapping des 5 périmètres (longue durée = rapido-kb/
+    marketing ; travail = session + projet RH Kanban ; projet = tunnels.md +
+    projet RH ; client = fiches CRM source de vérité ; entreprise = rapido-kb/
+    racine) + RAG en Étape 0 + mémoire d'exécution n8n (3 tables documentées :
+    mkt_sequences_etat, mkt_relances_antidoublon, mkt_historique_envois).
+  - Capitalisation AUTOMATIQUE encodée dans machine-inbound, machine-outbound,
+    tunnel-de-vente-360, growth-experiments, attribution-kpi-marketing : Étape 0
+    lit apprentissages.md + benchmarks.md AVANT tout plan (les leçons priment) ;
+    à chaque clôture, 1-3 leçons datées et sourcées (chiffres du script) +
+    mise à jour de benchmarks.md si un taux change.
+
 ## 0.9.0 — 2026-07-14
 
 - Équipe marketing IA : 5 agents (frontmatter conforme au repo — name +

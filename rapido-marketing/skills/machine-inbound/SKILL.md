@@ -13,6 +13,10 @@ d'exécution et pose les garde-fous, KPI et modes dégradés. Voie Rapido d'abor
 - `${CLAUDE_PLUGIN_ROOT}/reference/priorite-mcp.md` et `garde-fous-marketing.md`.
 - `./rapido-kb/marketing/icp.md` **OBLIGATOIRE** (cible de tout l'inbound) — s'il
   est absent, invoquer le skill `icp-generator` **d'abord**, puis revenir.
+- **Lire `./rapido-kb/marketing/apprentissages.md` et `benchmarks.md` AVANT de
+  proposer un plan** — les leçons passées et les taux de référence **priment**
+  sur les valeurs par défaut. Fichiers absents → créés depuis
+  `${CLAUDE_PLUGIN_ROOT}/reference/kb-templates/` (voir `reference/memoire.md`).
 
 ## Pipeline (chaque étape : outils MCP + garde-fous + KPI + mode dégradé)
 
@@ -76,9 +80,13 @@ d'exécution et pose les garde-fous, KPI et modes dégradés. Voie Rapido d'abor
   `flux-kanban` (rapidorh) avec les **tâches récurrentes** (publier, capturer,
   nurturer, scorer, mesurer).
 
-## Apprentissage (obligatoire)
-Chaque exécution alimente `./rapido-kb/marketing/apprentissages.md` : **1 à 3
-leçons datées** (via skill `mise-a-jour-kb`).
+## Capitalisation automatique (obligatoire)
+À chaque **clôture de campagne/expérience** : ajouter **1 à 3 leçons datées et
+SOURCÉES** (chiffre issu du script) dans `./rapido-kb/marketing/apprentissages.md`
+(format `date | contexte | leçon | preuve | skill source`), et **mettre à jour
+`benchmarks.md`** si un taux de référence change — le tout via `mise-a-jour-kb`.
+Pas de leçon sans preuve chiffrée.
+
 
 ## Livrable type
 Un **plan de machine inbound opérationnel** : campagne CMS + lead magnet + page de

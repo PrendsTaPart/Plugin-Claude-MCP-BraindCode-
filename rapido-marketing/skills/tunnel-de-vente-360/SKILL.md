@@ -12,7 +12,10 @@ réexécute rien — il enchaîne les skills et pose garde-fous, KPI et IDs.
 
 ## Étape 0 — Charger (obligatoire)
 - `${CLAUDE_PLUGIN_ROOT}/reference/priorite-mcp.md` et `garde-fous-marketing.md`.
-- `./rapido-kb/marketing/` (`icp.md`, `tunnels.md` s'ils existent).
+- `./rapido-kb/marketing/` (`icp.md`, `tunnels.md`, et **`apprentissages.md` +
+  `benchmarks.md` à lire AVANT de proposer le schéma** — les leçons priment sur
+  les défauts). Fichiers absents → créés depuis
+  `${CLAUDE_PLUGIN_ROOT}/reference/kb-templates/` (voir `reference/memoire.md`).
 - **Transversal** : créer le **projet Kanban RapidoRH** dès l'Acte 1 (le tunnel
   EST un projet) → skills `setup-projet` puis `flux-kanban` ; **chaque acte = une
   colonne**. Récap des IDs à chaque fin d'acte (hook Stop).
@@ -56,7 +59,7 @@ réexécute rien — il enchaîne les skills et pose garde-fous, KPI et IDs.
   `get_conversion_par_canal`) — taux par passage, **goulot** identifié, jamais
   de calcul de tête.
 - **Plan d'A/B tests** sur le goulot → skill `ideation-growth-experiments`.
-- **Leçons** → `./rapido-kb/marketing/apprentissages.md` (1-3, datées).
+- **Leçons (automatique)** → 1 à 3 leçons datées et **sourcées** (chiffres de `funnel_metrics.py`) dans `./rapido-kb/marketing/apprentissages.md` + **màj `benchmarks.md`** si un taux change (via `mise-a-jour-kb`).
 - **Registre** `tunnels.md` mis à jour avec les **IDs réels** : campagne CMS,
   templates, segments, séquences, workflows n8n, projet RH.
 

@@ -12,7 +12,10 @@ description: Utiliser quand l'utilisateur demande d'où viennent ses clients, un
 
 ## Étape 0 — Charger (obligatoire)
 - `${CLAUDE_PLUGIN_ROOT}/reference/priorite-mcp.md` et `garde-fous-marketing.md`.
-- `./rapido-kb/marketing/benchmarks.md` (repères) et `icp.md` (segments) si présents.
+- **Lire `./rapido-kb/marketing/apprentissages.md` et `benchmarks.md` AVANT de
+  conclure** — les taux de référence maison **priment** sur tout repère par
+  défaut. `icp.md` (segments). Fichiers absents → créés depuis
+  `${CLAUDE_PLUGIN_ROOT}/reference/kb-templates/` (voir `reference/memoire.md`).
 
 ## Méthode
 
@@ -37,8 +40,10 @@ Choisir **premier** ou **dernier** point de contact avec l'utilisateur ;
 ### 4. Sortie
 **Tableau par canal** (CAC / LTGP / ROI / part) + **3 recommandations
 d'allocation** (renforcer le canal au meilleur ROI, corriger/couper le pire,
-tester le sous-exploité). Mettre à jour `./rapido-kb/marketing/benchmarks.md` à
-chaque run (via `mise-a-jour-kb`).
+tester le sous-exploité). **Capitalisation automatique** : à chaque run, mettre à
+jour `./rapido-kb/marketing/benchmarks.md` ET ajouter 1-3 leçons datées et
+sourcées (chiffres de `kpi_marketing.py`) dans `apprentissages.md` — via
+`mise-a-jour-kb`. Pas de leçon sans preuve chiffrée.
 
 ## Livrable type
 Tableau d'attribution + KPI par canal + 3 recommandations d'allocation budgétaire,

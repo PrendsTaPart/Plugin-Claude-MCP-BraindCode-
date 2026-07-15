@@ -7,7 +7,11 @@ description: Utiliser quand l'utilisateur veut des expériences de croissance, u
 
 ## Étape 0 — Charger (obligatoire)
 - `${CLAUDE_PLUGIN_ROOT}/reference/priorite-mcp.md` et `garde-fous-marketing.md`.
-- `./rapido-kb/marketing/` (`benchmarks.md`, `apprentissages.md`) si présents.
+- **Lire `./rapido-kb/marketing/apprentissages.md` et `benchmarks.md` AVANT de
+  proposer un backlog** — une hypothèse déjà testée (leçon passée) ne se
+  re-teste pas à l'aveugle ; les leçons priment sur les défauts. Fichiers absents
+  → créés depuis `${CLAUDE_PLUGIN_ROOT}/reference/kb-templates/`
+  (voir `reference/memoire.md`).
 
 ## Méthode
 
@@ -36,8 +40,11 @@ avec `{"controle": {n, conversions}, "variante": {n, conversions},
 INCONCLUSIF** (test z à deux proportions). Un échantillon insuffisant =
 **INCONCLUSIF**, jamais « ça marche ».
 
-### 5. Capitaliser
-Leçon datée → `./rapido-kb/marketing/apprentissages.md` (via `mise-a-jour-kb`).
+### 5. Capitaliser (automatique)
+Ajouter 1 à 3 **leçons datées et SOURCÉES** (verdict du script) dans
+`./rapido-kb/marketing/apprentissages.md` (`date | contexte | leçon | preuve |
+skill source`) et **mettre à jour `benchmarks.md`** si un taux change — via
+`mise-a-jour-kb`. Pas de leçon sans preuve chiffrée.
 
 ## Livrable type
 Backlog priorisé ICE + protocole de l'expérience en cours + verdict chiffré du
