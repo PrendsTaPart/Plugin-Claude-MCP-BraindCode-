@@ -6,9 +6,11 @@ Analyse **exhaustive** des **111 outils** du MCP FoodEatUp connecté
 
 ## 1. Couverture
 
-- **111 outils** exposés · **83 exploités (75 %)** · **28 orphelins** · **0 référence
-  morte réelle** (après correctif, cf. §2).
-- Les 9 « suspects » du 1ᵉʳ run (`get_pipeline`, `list_factures`, `send_email`…) sont
+- **111 outils** exposés · **85 exploités (77 %)** · **26 orphelins** · **0 référence
+  morte réelle** (après correctif, cf. §2 — la couverture a gagné 2 outils, `get_client`
+  et `update_product`, désormais cités par les skills corrigés).
+- Les **11 « suspects »** (`get_pipeline`, `list_factures`, `send_email`, `get_contact`,
+  `get_loyalty_points`…) sont
   des outils **RapidoCRM** légitimement appelés (le plugin déclare `rapidocrm` dans son
   `.mcp.json`, avec table de correspondance explicite dans les skills). Le harnais les
   reclassera automatiquement en **cross-serveur** dès que l'inventaire CRM existera (S2).
@@ -36,7 +38,7 @@ QuickBooks/PayPal/HubSpot → Rapido avait été ajoutée en tête, **mais le co
 > informative « citations non reconnues » (tout token *tool-like* absent de tout
 > inventaire, à revoir humainement).
 
-## 3. Outils orphelins (28) — décision par famille
+## 3. Outils orphelins (26) — décision par famille
 
 **Règle** : ne créer un skill que s'il y a une vraie **valeur d'usage**. La plupart des
 orphelins sont des **primitives CRUD** qui complètent des skills existants → **extension**,
@@ -44,8 +46,8 @@ pas nouveau skill. Écritures sensibles (suppressions) = confirmation (hook `gar
 
 | Famille | Outils orphelins | Décision |
 |---|---|---|
-| **client** (5) | `create_client`, `get_client`, `list_clients`, `update_client`, `delete_client` | **Extension `service-salle`** : créer/retrouver un client au moment de la réservation (fidéliser le fichier resto). Le CRM (`rapidocrm`) reste le système de référence B2B — pont, pas doublon. `delete_client` = confirmation. |
-| **product** (4) | `create_product`, `get_product`, `update_product`, `delete_product` | **Extension `reappro-fournisseurs`** (catalogue produits/épicerie, distinct des plats). CRUD au sein du réappro. |
+| **client** (4) | `create_client`, `list_clients`, `update_client`, `delete_client` | **Extension `service-salle`** : créer/retrouver un client au moment de la réservation (fidéliser le fichier resto). Le CRM (`rapidocrm`) reste le système de référence B2B — pont, pas doublon. `delete_client` = confirmation. (`get_client` déjà mobilisé par `handle-complaint`.) |
+| **product** (3) | `create_product`, `get_product`, `delete_product` | **Extension `reappro-fournisseurs`** (catalogue produits/épicerie, distinct des plats). CRUD au sein du réappro. |
 | **ingredient** (4) | `create_ingredient`, `get_ingredient`, `update_ingredient`, `delete_ingredient` | **Extension `recette-cout-marge` / `reappro-fournisseurs`** : gérer la fiche ingrédient (prix, seuil) qui alimente le coût de revient. |
 | **dish** (3) | `create_dish`, `create_dish_category`, `delete_dish` | **Extension `carte-vitrine`** : créer/supprimer un plat unitaire + sa catégorie (aujourd'hui seul `import_storefront_menu` en masse + `update_dish` sont utilisés). |
 | **employee** (3) | `get_employee`, `update_employee`, `delete_employee` | **Extension `planning-equipe` / `onboarding-restaurateur`** : édition de fiche + offboarding. `delete_employee` = confirmation. |
