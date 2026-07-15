@@ -53,10 +53,21 @@ mise en ligne **uniquement sur confirmation explicite**.
 Spec + série archivées dans `rapido-kb/lovable/projets/{slug}.md`. **Apprentissages**
 consignés (ce qui a demandé des itérations → améliore le kit / les règles de stack).
 
+## En amont — le pipeline design
+
+Quand un vrai travail de design précède le build, la spec **descend de
+`rapido-design`** : direction artistique → sitemap/flows → maquettes hi-fi Figma →
+**design system**. Dans ce cas, **le MVP démarre du design system Lovable** produit par
+`rapido-design:studio-maquette` (créer le projet à partir de ce DS, `create_project` avec
+`design_systems`) et reprend **les mêmes tokens** (couleurs, typo, spacing) — **zéro
+divergence**, aucune valeur en dur. Sans pipeline design, on reste sur la charte
+(`get_brand`) comme aujourd'hui.
+
 ## Passerelles & anti-collisions
 
 - Landing simple → `usine-a-landing`. Site restaurant → `site-restaurant`. Brief one-shot
   → `rapido-prompteur:prompt-lovable`. Artefact HTML → `web-artifacts-builder`.
+- Design en amont (DA/maquettes/DS) → `rapido-design:studio-maquette` (le MVP consomme le DS).
 - Branchement MCP → `connecteur-mcp-lovable` (jamais réimplémenté ici).
 
 ## Règles

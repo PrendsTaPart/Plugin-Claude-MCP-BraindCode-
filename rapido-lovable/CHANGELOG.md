@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-lovable
 
+## 1.5.1 — 2026-07-15 — articulation avec le pipeline rapido-design
+
+- `mvp-lovable` : quand un travail de design précède le build, **le MVP démarre du design
+  system Lovable** produit par `rapido-design:studio-maquette` (`create_project` avec
+  `design_systems`) et reprend **les mêmes tokens** — zéro divergence. Passerelle ajoutée.
+- `ui-ux-pro-max` : articulation écrite — ce skill est la **bibliothèque de styles**,
+  `rapido-design` est le **pipeline** qui l'exploite de bout en bout (DA → maquettes → DS → MVP).
+
 ## 1.5.0 — 2026-07-15 — workspace sync + agent architecte-lovable (LV4)
 
 - `sync-marque-lovable` : **volet kit** — pousse le connecteur en **workspace skill**

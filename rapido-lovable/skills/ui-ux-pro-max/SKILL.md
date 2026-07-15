@@ -8,6 +8,14 @@ source: nextlevelbuilder/ui-ux-pro-max-skill, MIT
 
 Comprehensive design guide for web and mobile applications. Contains 50+ styles, 161 color palettes, 57 font pairings, 161 product types with reasoning rules, 99 UX guidelines, and 25 chart types across 10 technology stacks. Searchable database with priority-based recommendations.
 
+> **Articulation avec rapido-design.** Ce skill est la **bibliothèque de styles** (styles,
+> palettes, paires de polices, guidelines) : on **choisit** une direction ici. Le
+> **pipeline** qui l'exploite de bout en bout — charte → direction artistique → sitemap/flows
+> → maquettes hi-fi Figma → design system → MVP Lovable animé — vit dans `rapido-design`
+> (`rapido-design:direction-artistique` consomme cette bibliothèque pour proposer 3 directions ;
+> `rapido-design:studio-maquette` matérialise le design system). Ici = **la matière** ;
+> `rapido-design` = **la chaîne de production** qui la transforme en produit livré.
+
 ## When to Apply
 
 This Skill should be used when the task involves **UI structure, visual design decisions, interaction patterns, or user experience quality control**.
