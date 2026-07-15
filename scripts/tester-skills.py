@@ -270,6 +270,23 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
           "tool_input": {}}, "ask"),
     ],
+    ("rapido-prompteur", "anti-ip.py"): [
+        # prompt propre → allow
+        ({"tool_name": "mcp__huggsfield__generate_image",
+          "tool_input": {"params": {"prompt": "a cute cat, soft light, studio backdrop"}}}, "allow"),
+        # IP/marque présente → ask (confirmation avec avertissement)
+        ({"tool_name": "mcp__huggsfield__generate_image",
+          "tool_input": {"params": {"prompt": "a stormtrooper from Star Wars"}}}, "ask"),
+        # formule « style de [artiste] » → ask
+        ({"tool_name": "mcp__RapidoCMS__images_to_image",
+          "tool_input": {"prompt": "portrait in the style of Wes Anderson",
+                         "images": "https://x/a.png"}}, "ask"),
+        # brief web propre (Lovable) → allow
+        ({"tool_name": "mcp__Lovable__send_message",
+          "tool_input": {"message": "build a landing page for a local bakery"}}, "allow"),
+        # outil non génératif (défense en profondeur) → allow
+        ({"tool_name": "mcp__huggsfield__show_medias", "tool_input": {}}, "allow"),
+    ],
     ("rapidocms", "valide_charte_hook.py"): [
         # couleurs
         ({"tool_name": "mcp__rapidocms__create_brand",

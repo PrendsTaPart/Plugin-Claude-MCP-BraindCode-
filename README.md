@@ -7,7 +7,7 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-15-blue)
+![Plugins](https://img.shields.io/badge/plugins-16-blue)
 ![Skills](https://img.shields.io/badge/skills-318-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
@@ -62,8 +62,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-marketing` | 0.16.1 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 | `rapido-higgsfield` | 1.0.2 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
+| `rapido-prompteur` | 0.1.0 | 0 | 0 | — (orchestre huggsfield, rapidocms, lovable, canva) | **Prérequis : aucun** — squelette reference + patterns + hooks |
 
-**Total : 13 plugins, 318 skills, 30 agents.** (`rapido-startup` — finance &
+**Total : 16 plugins, 332 skills, 31 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

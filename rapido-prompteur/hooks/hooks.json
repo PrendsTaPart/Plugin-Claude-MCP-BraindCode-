@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__(huggsfield__(generate_image|generate_video|generate_audio|generate_3d)|RapidoCMS__(generate_image|images_to_image)|Canva__(generate-design|generate-design-structured)|Lovable__(create_project|send_message))",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-ip.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si le directeur de prompts a produit un ou plusieurs prompts ce tour (pour un moteur d'image, de vidéo, d'audio, de web/app ou de design), la dernière réponse de l'assistant DOIT contenir un récapitulatif listant, pour chaque prompt : (1) le média et le moteur cible ; (2) le prompt COMPLET affiché en bloc copiable (jamais seulement décrit) ; (3) la grammaire du moteur lue en direct ce tour (models_explore / pièges / doc Lovable / Canva) et la source de la charte (get_brand ou rapido-kb) ; (4) le prompt négatif s'il y a lieu ; (5) le contrôle anti-IP (aucune IP tierce ni style d'artiste vivant) confirmé. Si un moteur a été sollicité SANS que sa grammaire ait été lue en direct ce tour, ou si un prompt est décrit sans être affiché, ou si le contrôle anti-IP manque, bloque en demandant de compléter. Si aucun prompt n'a été produit, ou si le récapitulatif est complet, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}
