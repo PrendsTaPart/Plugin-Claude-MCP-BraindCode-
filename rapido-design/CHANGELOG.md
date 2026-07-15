@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-design
 
+## 0.4.0 — 2026-07-15 — animations-web + agent directeur-ux
+
+- Skill **`animations-web`** — motion **sobre** : audit des surfaces qui méritent du motion →
+  plan (motif + durée/easing + fallback) → implémentation Figma→code (`figma-use-motion` →
+  `figma-implement-motion`) **ou** patchs framer-motion (motifs francisés) → **gates**
+  perf (`transform`/`opacity`, 60 fps) et **`prefers-reduced-motion` obligatoire** → recette
+  avant/après. Une intention par animation, 2-3 surfaces max.
+- Agent **`directeur-ux`** — orchestre les **7 étapes** (DA → archi info → maquettes/DS gates →
+  handoff → motion), **tient le fil rouge des tokens** (charte CMS → variables Figma → DS
+  Lovable, zéro divergence), arbitre avec goût (2 itérations max) et rapporte à
+  `rapido-lovable:architecte-lovable`. 5 interdits non négociables.
+- Patchs croisés (articulation du pipeline) : `rapido-lovable:mvp-lovable` (le MVP démarre du
+  DS Lovable), `rapido-lovable:ui-ux-pro-max` (bibliothèque de styles vs pipeline),
+  `rapido-prompteur:prompt-lovable` (tokens du DS), `rapidocms:gestion-marques` (sync DA
+  bidirectionnel).
+- Évals : +3 cas `animations-web` (reduced-motion, perf, sobriété) + orchestration `directeur-ux`.
+
 ## 0.3.0 — 2026-07-15 — architecture-info + studio-maquette (DS Figma ↔ Lovable)
 
 - Skill **`architecture-info`** — structure d'abord : sitemap + user flows (FigJam,

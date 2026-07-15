@@ -5,13 +5,24 @@ charte CMS → **direction artistique** → **sitemap/flows** (FigJam) → **maq
 design system** (Figma) → **MVP Lovable** → **animations**. Le fil rouge des tokens
 (couleurs/typo) ne diverge jamais.
 
-## État : squelette (0.1.0)
+## Skills & agent (0.4.0)
 
 Fondations : `reference/pipeline-design.md` (7 étapes), `passerelles.md` (CMS↔Figma↔Lovable,
 outil par outil), `jugement-design.md` (anti-goût-IA), `motifs-animation.md` (sobriété +
-`prefers-reduced-motion`), hook `garde-charte`. Skills à venir : `direction-artistique`
-(D2), `architecture-info` + `studio-maquette` (D3), `animations-web` + agent `directeur-ux`
-(D4). Audit fondateur : `docs/IMPORTS-DESIGN.md`, `docs/PASSERELLES-REELLES.md`.
+`prefers-reduced-motion`), hook `garde-charte`.
+
+- **`direction-artistique`** — DA ↔ charte CMS : 3 directions filtrées par le jugement, sync
+  CMS confirmé (la charte existante prime).
+- **`architecture-info`** — structure d'abord : sitemap + user flows (FigJam) + wireframes
+  gris, validés **avant** toute hi-fi.
+- **`studio-maquette`** — design system Figma d'abord (variables des tokens) → écrans hi-fi
+  qui consomment les variables → gates critique + a11y → handoff Lovable.
+- **`animations-web`** — motion sobre : plan, implémentation Figma→code / framer-motion,
+  gates perf (60 fps) + `prefers-reduced-motion` **obligatoire**.
+- Agent **`directeur-ux`** — orchestre les 7 étapes et tient le fil rouge des tokens (zéro
+  divergence), rapporte à `rapido-lovable:architecte-lovable`.
+
+Audit fondateur : `docs/IMPORTS-DESIGN.md`, `docs/PASSERELLES-REELLES.md`.
 
 ## Prérequis MCP
 

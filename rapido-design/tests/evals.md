@@ -1,4 +1,4 @@
-# Évals — plugin rapido-design (0.2.0)
+# Évals — plugin rapido-design (0.4.0)
 
 ## Déclenchement
 
@@ -7,6 +7,7 @@
 | « direction artistique » / « moodboard » / « quel style pour [projet] » / « identité visuelle du site » | `direction-artistique` |
 | « sitemap » / « user flow » / « arborescence » / « wireframes » | `architecture-info` |
 | « maquette » / « écrans hi-fi » / « design system » / « maquette Figma de [projet] » | `studio-maquette` |
+| « anime le site » / « micro-interactions » / « animations au scroll » / « transitions » / « rends-le vivant » | `animations-web` |
 
 ## Cas `direction-artistique` (3)
 
@@ -46,9 +47,29 @@
 7. **Push DS Lovable confirmé** : DS maison poussé en projet design system Lovable **après
    confirmation**, versionné (0 DS aujourd'hui → créé ici).
 
+## Cas `animations-web` (3)
+
+8. **`prefers-reduced-motion` obligatoire** : chaque animation a un fallback
+   `reduce` (fondu discret ou état final direct) — un écran animé sans fallback est **rejeté**.
+9. **Perf** : n'animer que `transform`/`opacity` (viser 60 fps) ; une animation d'ombre en
+   boucle ou sur un layout coûteux est **écartée**.
+10. **Sobriété** : **une intention par animation**, 2-3 surfaces max par écran ; toute
+    animation sans intention (carnaval) est **retirée**.
+
+## Orchestration — agent `directeur-ux`
+
+- Déroule les **7 étapes** (`direction-artistique` → `architecture-info` → `studio-maquette`
+  gates → handoff → `animations-web`) et **tient le fil rouge des tokens** (charte CMS →
+  variables Figma → DS Lovable, **zéro divergence**).
+- **Interdits** vérifiés : pixel sans charte ; hi-fi sans structure validée ; valeur en dur ;
+  animation sans `prefers-reduced-motion` ; push DS Lovable sans confirmation.
+- Arbitre **avec goût** (2 itérations max, critique argumentée) et **rapporte** à
+  `rapido-lovable:architecte-lovable` pour le build.
+
 ## Anti-déclenchements (à respecter dans les skills)
 
 - « Génère un visuel de post » → `rapidocms:studio-visuel-marque`.
 - « Quel style choisir » seul → `rapido-lovable:ui-ux-pro-max`.
 - « Audit accessibilité » d'un site existant → gate a11y de `studio-maquette` (pas un skill
   séparé).
+- « Monte une vidéo » / « montage » → `rapido-video:montage-express` (pas `animations-web`).
