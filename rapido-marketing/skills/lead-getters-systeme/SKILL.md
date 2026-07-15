@@ -49,6 +49,13 @@ fois le **programme ambassadeurs BraindCode** décidé (10 % client / 20 % appor
 son **exécution** (éligibilité, propositions, suivi des commissions, relances J+60)
 revient à `rapidocrm:programme-ambassadeurs`. Règle miroir documentée dans les deux SKILL.md.
 
+## Frontière avec `rapido-marketing:operations-influenceurs`
+Ce skill **choisit le TYPE** de programme d'apport (parrainage / affiliation /
+ambassadeurs / **influenceurs**) — **stratégie**. Une fois l'influence retenue,
+l'**opération** des collaborations (sourcing → brief → contrat → tracking → ROI) revient
+à `operations-influenceurs`. (`rapido-forge:scale-influencer-marketing` conçoit la
+stratégie d'influence en exercice.) Frontière documentée des trois côtés.
+
 ## Cas d'usage croisés
 - Amplifier le bouche-à-oreille → skill `contagious` (STEPPS).
 - Rôles d'une machine commerciale (SDR/AE/CSM) → skill `predictable-revenue`.

@@ -108,6 +108,15 @@
 - **Autonomie** : alerte seulement, action **jamais exécutée d'office**.
 - **Mémoire n8n** : `mkt_sentinelle_leads` (anti-double-alerte).
 
+### MKT-INFLUENCE-MENSUEL
+- **Noms parlés** : « revue ROI influenceurs », « mes collaborations d'influence ce mois ».
+- **Cadence** : mensuelle.
+- **Propriétaire** : `rapido-marketing:operations-influenceurs`.
+- **Contenu** : revue **ROI des collaborations actives** + décision **continuer / arrêter
+  / renégocier** par influenceur (coût vs CA attribué, via `catalogue-kpi`).
+- **Autonomie** : décisions préparées, aucune écriture d'office.
+- **Mémoire n8n** : — (`./rapido-kb/marketing/influenceurs.md`).
+
 ### MKT-MENSUEL  *(alias R-MKT-MENSUEL)*
 - **Noms parlés** : « board marketing », « attribution du mois », « arbitrage budget canaux ».
 - **Cadence** : mensuelle — 1er du mois 07:00 (cron `0 7 1 * *`).

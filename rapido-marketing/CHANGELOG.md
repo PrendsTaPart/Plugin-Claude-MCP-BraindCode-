@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-marketing
 
+## 0.18.0 — 2026-07-15 — opérations influenceurs
+
+- Skill **`operations-influenceurs`** — le cycle complet d'une collaboration :
+  **sourcing** (grille KB + recherche → entreprises CRM taguées « influenceur »),
+  **brief** (délégué `rapidocms:contenu-conforme-marque` ; mentions légales de
+  transparence obligatoires), **contrat** (délégué `rapidocrm:contrats-clients`),
+  **tracking** (code promo/UTM par influenceur), **ROI** (coût vs CA attribué via
+  `catalogue-kpi` → `./rapido-kb/marketing/influenceurs.md`). Pont forge
+  `scale-influencer-marketing`.
+- **Frontières** documentées : `scale-influencer-marketing` (stratégie, exercice) /
+  `lead-getters-systeme` (choix du type) / `operations-influenceurs` (opérer). Note
+  ajoutée à `lead-getters-systeme`.
+- Routine **`MKT-INFLUENCE-MENSUEL`** (revue ROI + décision par influenceur) au registre.
+  Évals 5+3.
+
 ## 0.17.0 — 2026-07-15 — intégration acquisition (SEO/SEA/TikTok)
 
 - `pilotage-marketing` : **SENSE enrichi** — SEO (`rapido-seo:pilotage-seo`), SEA

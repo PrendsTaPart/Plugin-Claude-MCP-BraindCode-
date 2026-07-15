@@ -59,7 +59,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.2 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
-| `rapido-marketing` | 0.17.0 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
+| `rapido-marketing` | 0.18.0 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
@@ -69,7 +69,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
 | `rapido-relation-client` | 0.1.0 | 5 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 
-**Total : 21 plugins, 360 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 21 plugins, 361 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
