@@ -1,5 +1,31 @@
 # Notes de release
 
+## Studio UX/UI — rapido-design (2026-07-15)
+
+Nouveau plugin **`rapido-design`** (25e) — le **studio UX/UI** qui orchestre toute la
+chaîne **charte → direction artistique → sitemap/flows → maquettes hi-fi Figma → design
+system → MVP Lovable animé**, avec **les mêmes tokens du début à la fin**.
+
+- **Audit D0** (`docs/IMPORTS-DESIGN.md`, `docs/PASSERELLES-REELLES.md`) : 5 dépôts **MIT**
+  relus (hue, styleseed, qiaomu, work-with-design-systems, figgo) — Trystan-SA
+  (reverse-engineered) **exclu**. Passerelles **vérifiées en direct** : charte CMS → Figma
+  OK (**`font_family` = 9 web-safe** ; la vraie police vit dans le DS), mécanisme
+  design system Lovable validé (0 DS dans le workspace → créé par le pipeline).
+- **Fondations** : `pipeline-design.md` (7 étapes), `passerelles.md` (CMS↔Figma↔Lovable
+  outil par outil), `jugement-design.md` (**anti-goût-IA** : gradients violets,
+  glassmorphism, cartes clonées… + quand dire non), `motifs-animation.md` (sobriété +
+  `prefers-reduced-motion`), hook `garde-charte`.
+- **4 skills** : `direction-artistique` (DA ↔ charte CMS, la charte existante **prime**),
+  `architecture-info` (structure **validée avant tout pixel**), `studio-maquette` (**DS
+  Figma d'abord**, écrans qui **consomment les variables**, gates critique + WCAG, handoff
+  Lovable), `animations-web` (motion sobre, `prefers-reduced-motion` **obligatoire**).
+  **Agent** `directeur-ux` (tient le fil rouge des tokens, **zéro divergence**).
+- **Articulation** (patchs croisés) : `rapido-lovable:mvp-lovable` (le MVP démarre du DS
+  Lovable), `ui-ux-pro-max` (bibliothèque de styles vs pipeline qui l'exploite),
+  `rapido-prompteur:prompt-lovable` (tokens du DS), `rapidocms:gestion-marques` (sync DA
+  bidirectionnel). Runbook `docs/RECETTE-DESIGN.md`. **Validation** : TOUT VALIDE
+  (25 plugins) ; tester 0/0/0.
+
 ## Copywriter 4 réseaux (2026-07-15)
 
 Nouveau plugin **`rapido-copywriter`** (24e) — le copywriter **LinkedIn · Facebook ·

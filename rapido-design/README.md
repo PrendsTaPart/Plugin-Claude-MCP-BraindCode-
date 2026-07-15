@@ -5,7 +5,7 @@ charte CMS → **direction artistique** → **sitemap/flows** (FigJam) → **maq
 design system** (Figma) → **MVP Lovable** → **animations**. Le fil rouge des tokens
 (couleurs/typo) ne diverge jamais.
 
-## Skills & agent (0.4.0)
+## Skills & agent (0.5.0)
 
 Fondations : `reference/pipeline-design.md` (7 étapes), `passerelles.md` (CMS↔Figma↔Lovable,
 outil par outil), `jugement-design.md` (anti-goût-IA), `motifs-animation.md` (sobriété +
@@ -22,7 +22,8 @@ outil par outil), `jugement-design.md` (anti-goût-IA), `motifs-animation.md` (s
 - Agent **`directeur-ux`** — orchestre les 7 étapes et tient le fil rouge des tokens (zéro
   divergence), rapporte à `rapido-lovable:architecte-lovable`.
 
-Audit fondateur : `docs/IMPORTS-DESIGN.md`, `docs/PASSERELLES-REELLES.md`.
+Audit fondateur : `docs/IMPORTS-DESIGN.md`, `docs/PASSERELLES-REELLES.md`. Recette de bout
+en bout (runbook, à jouer sur données réelles) : `docs/RECETTE-DESIGN.md`.
 
 ## Prérequis MCP
 

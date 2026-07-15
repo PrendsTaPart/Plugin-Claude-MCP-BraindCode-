@@ -130,7 +130,7 @@
     {
       "name": "rapido-design",
       "source": "./rapido-design",
-      "description": "Le studio UX/UI : orchestre la chaîne charte CMS → direction artistique → sitemap/flows (FigJam) → maquettes hi-fi + design system Figma → MVP Lovable → animations, avec les mêmes tokens du début à la fin. Jugement design anti-goût-IA, gates accessibilité WCAG et prefers-reduced-motion. Squelette — skills en cours."
+      "description": "Le studio UX/UI : orchestre la chaîne charte CMS → direction artistique → sitemap/flows (FigJam) → maquettes hi-fi + design system Figma → MVP Lovable → animations, avec les mêmes tokens du début à la fin. Jugement design anti-goût-IA, gates accessibilité WCAG et prefers-reduced-motion."
     }
   ]
 }

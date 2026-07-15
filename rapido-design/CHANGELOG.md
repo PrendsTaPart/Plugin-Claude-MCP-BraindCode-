@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-design
 
+## 0.5.0 — 2026-07-15 — release studio UX/UI (charte → Figma → Lovable)
+
+- **Pipeline complet** livré : `direction-artistique` → `architecture-info` →
+  `studio-maquette` (gates critique + a11y) → handoff → `animations-web`, orchestré par
+  l'agent `directeur-ux` avec **le même fil rouge de tokens** du début à la fin.
+- **Tests consolidés** (`tests/evals.md`) : déclenchements des 4 skills, cas par skill,
+  garde-fous `garde-charte` (testés au testeur), **3 anti-déclenchements** (visuel de post →
+  `rapidocms:studio-visuel-marque` ; style seul → `rapido-lovable:ui-ux-pro-max` ; audit a11y →
+  gate de `studio-maquette` ; +montage → `rapido-video`).
+- **Recette de bout en bout** documentée en runbook : `docs/RECETTE-DESIGN.md` (landing de
+  démo charte → wireframes → hi-fi/DS Figma → MVP Lovable animé) — à jouer sur données réelles.
+- Marketplace : description « Squelette » retirée (plugin livré). Racine : 25 plugins /
+  380 skills / 37 agents.
+
 ## 0.4.0 — 2026-07-15 — animations-web + agent directeur-ux
 
 - Skill **`animations-web`** — motion **sobre** : audit des surfaces qui méritent du motion →
