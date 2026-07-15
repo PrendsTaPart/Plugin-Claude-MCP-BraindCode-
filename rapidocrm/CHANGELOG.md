@@ -1,5 +1,13 @@
 # Changelog — plugin rapidocrm
 
+## 1.4.2 — 2026-07-15
+
+- Enrichissement `mom-test` (founder-playbook, MIT © 2026 AgentSeal) : ajout du
+  **Filter Test** — si le prospect n'a jamais cherché de solution par lui-même,
+  la douleur ne justifie pas un achat, quel que soit son enthousiasme. Ajout
+  seul, attribution en fin de section. Le type de mauvaise donnée
+  « Idées/Fonctionnalités » n'est pas redupliqué (déjà couvert §3).
+
 ## 1.4.1 — 2026-07-11
 
 - Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,

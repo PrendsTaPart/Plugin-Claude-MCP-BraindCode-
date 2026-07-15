@@ -48,7 +48,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.0 | 15 | 3 | foodeatup, rapidocrm | — |
-| `rapidocrm` | 1.4.1 | 21 | 2 | rapidocrm | — |
+| `rapidocrm` | 1.4.2 | 21 | 2 | rapidocrm | — |
 | `rapidocms` | 1.11.0 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.2 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.1 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
