@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-video
 
+## 0.2.0 — 2026-07-15
+
+- Skill **`motion-design-remotion`** : motion design programmatique (Remotion) aux
+  couleurs de la marque.
+  - **5 gabarits** `templates/` paramétrés par la charte (hex, police, logo CMS) :
+    Intro (logo+tagline), Outro (CTA), LowerThird (nom+fonction), TitleCard, StatBar
+    (barre + compteur, stats PronoClip). `Root.tsx` (1080×1920 @ 30 fps), `_shared.tsx`
+    (safe zones 150/170/60, polices ≥ 56/36, jamais < 28, sobriété).
+  - **Gate licence V0** : si la décision Remotion n'est pas tranchée (ou licence
+    entreprise refusée) → **mode « aperçu non commercial »** (bandeau APERÇU, dit
+    explicitement, usage commercial/publié interdit) ; gratuit ≤ 3 employés sinon Company.
+  - **DELTA V4** : skills Remotion absents → `npx skills add remotion-dev/skills`
+    exécuté par l'agent ; projet Remotion créé au workspace (npm i local) ; **Chromium
+    headless annoncé + confirmé** avant rendu. Aucun guide manuel.
+  - Rendu CLI → MP4 → assemblage `montage-express` → rapatriement CMS ; capitalisation
+    `add_prompt` + `rapido-kb/marketing/gabarits-video.md`. 3 évals (dont gate licence).
+
 ## 0.1.0 — 2026-07-15
 
 - Nouveau plugin **rapido-video** (15e du marketplace) — montage 100 % libre.

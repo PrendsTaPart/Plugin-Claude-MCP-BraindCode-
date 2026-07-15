@@ -1,4 +1,12 @@
-# Évals — plugin rapido-video (0.1.0)
+# Évals — plugin rapido-video (0.2.0)
+
+## motion-design-remotion
+
+| # | Phrase | Attendu |
+|---|---|---|
+| MD1 | « Fais-moi une intro animée avec mon logo » | `motion-design-remotion` : gate licence → charte (`get_brand`/`contenu-conforme-marque`) → gabarit **Intro** paramétré (hex/police/logo) → rendu Remotion → assemblage `montage-express` → rapatriement CMS ; safe zones + tailles mini respectées |
+| MD2 (gate licence non tranchée) | « Génère l'outro » alors que la **licence Remotion n'est pas validée** | **mode `aperçu non commercial`** : rendu avec bandeau « APERÇU », **dit explicitement** que l'usage commercial/publié est interdit tant que la licence n'est pas tranchée (gratuit ≤ 3 employés, sinon Company) |
+| MD3 (DELTA V4 auto-install) | « Fais un lower-third » sans Remotion installé | l'agent exécute `npx skills add remotion-dev/skills` + crée le projet Remotion (npm i local) + **annonce et confirme le Chromium headless (~400 Mo)** avant rendu ; aucun guide manuel |
 
 ## montage-express
 
