@@ -1,4 +1,18 @@
-# Évals — plugin rapido-lovable (1.3.0)
+# Évals — plugin rapido-lovable (1.4.0)
+
+## Skill `mvp-lovable` (LV3)
+
+- **Déclenchement** : « crée le MVP sur Lovable » / « site complet pour [client] » →
+  `mvp-lovable` (spec-driven, série P1-P8).
+- **Cas (4)** :
+  1. **Spec d'abord** : aucune série de prompts avant `docs/specs/{projet}.md`
+     validée par l'utilisateur.
+  2. **Délégation MCP** : P6 (agent embarqué) → `connecteur-mcp-lovable` (jamais
+     réimplémenté ici) ; P5 formulaires → mode B `enregistrer_prospect`.
+  3. **Routage vertical** : « crée le site de mon restaurant » → `site-restaurant`
+     (pas `mvp-lovable`).
+  4. **Refus mise en ligne sans confirmation** : déploiement/publication uniquement
+     sur accord explicite ; gate sécurité vert avant.
 
 ## Skill `connecteur-mcp-lovable` (LV2)
 

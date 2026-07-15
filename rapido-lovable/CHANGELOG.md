@@ -1,5 +1,18 @@
 # Changelog — plugin rapido-lovable
 
+## 1.4.0 — 2026-07-15 — mvp-lovable (spec-driven, série P1-P8, LV3)
+
+- Skill **`mvp-lovable`** — du brief au MVP multi-pages : **SPEC d'abord**
+  (`templates/spec-mvp.md` → `docs/specs/{projet}.md`, validée avant tout prompt),
+  design system (charte + `ui-ux-pro-max`), **série P1-P8** (fondations → pages →
+  données/formulaires mode B → agent embarqué délégué à `connecteur-mcp-lovable` →
+  SEO/perfs/a11y → recette + gate sécurité + mise en ligne confirmée), exécution
+  assistée optionnelle, capitalisation KB. Frontière : one-shot = `prompt-lovable`,
+  verticaux = `usine-a-landing`/`site-restaurant`.
+- `templates/spec-mvp.md` (méthode spec-driven, cf. NOTICE).
+- Évals : 4 cas (spec d'abord, délégation MCP, routage vertical, mise en ligne
+  confirmée).
+
 ## 1.3.0 — 2026-07-15 — connecteur-mcp-lovable (kit → prompts étagés, LV2)
 
 - Skill **`connecteur-mcp-lovable`** — LE skill « connecte le MCP X au site » :
