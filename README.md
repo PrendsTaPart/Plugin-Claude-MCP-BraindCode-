@@ -48,7 +48,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.1 | 15 | 3 | foodeatup, rapidocrm | — |
-| `rapidocrm` | 1.6.0 | 24 | 2 | rapidocrm | — |
+| `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | — |
 | `rapidocms` | 1.11.6 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
@@ -57,7 +57,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
 | `rapido-n8n` | 1.4.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
-| `rapido-startup` | 1.9.1 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
+| `rapido-startup` | 1.9.2 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 | `rapido-marketing` | 0.17.0 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
@@ -68,7 +68,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads (read-only), dataforseo, analytics (GA4), rapidocrm | `GOOGLE_ADS_MCP_URL`, `DATAFORSEO_AUTH`, `GA4_MCP_URL` |
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
 
-**Total : 20 plugins, 350 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 20 plugins, 355 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

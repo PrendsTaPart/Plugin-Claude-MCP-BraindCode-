@@ -1,5 +1,19 @@
 # Changelog — plugin rapidocrm
 
+## 1.7.0 — 2026-07-15 — vente terrain opérationnelle (pont forge → ops)
+
+- **5 skills** appliquant les méthodes forge aux **données MCP réelles** (pont
+  `reference/pont-forge-operations.md`) : `preparation-rdv` (SONCAS opérationnel :
+  fiche CRM + profil SONCAS sourcé + SPIN + objectif de sortie, notes `log_activity`
+  confirmées), `qualification-deals` (BANT/MEDDIC sur le pipeline, multi-threading ;
+  anti-collision `coaching-pipeline`), `coach-de-vente` (routeur multi-livres SPIN/
+  Challenger/Gap/Fanatical/Voss/Cialdini — **synthétise et route**, ne duplique pas
+  `negotiation`/`influence-psychology`), `playbook-objections-vivant` (objections
+  réelles Fireflies/CRM/deals perdus → `./rapido-kb/commercial/objections.md`
+  incrémental ; frontière `hundred-million-offers`), `funnel-aarrr-reel` (AARRR sur
+  données MCP, **formules `catalogue-kpi`**, étape fuyante + 3 actions routées).
+- Évals 5+3 par skill. Chaque skill lit le livrable forge (ou dit son absence).
+
 ## 1.6.0 — 2026-07-15 — boucle d'expansion (upsell + ambassadeurs)
 
 - Skill **`expansion-clients`** — le tunnel **Studio → Agence → SaaS** à 3 transitions

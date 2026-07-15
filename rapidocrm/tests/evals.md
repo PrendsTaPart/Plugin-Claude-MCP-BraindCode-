@@ -124,3 +124,33 @@
 - « Quel type de programme d'affiliation choisir » → **`rapido-marketing:lead-getters-systeme`** (stratégie/type).
 - « Fais monter ce client au palier supérieur » → **`expansion-clients`** (montée en gamme).
 - « Envoie la newsletter aux ambassadeurs » → **`campagne-marketing`** + gate délivrabilité (envoi de masse).
+
+## Éval — vente terrain opérationnelle (1.7.0)
+
+**preparation-rdv** — 5 : « prépare mon RDV avec X », « je vois ce client demain »,
+« profil SONCAS de ce contact », « fiche de prépa entretien », « mon argumentaire pour X ».
+Contre-ex : « où en sont mes deals » → `coaching-pipeline` ; « écris-lui un email » →
+`redaction-commerciale` ; « teste mon idée business » → `mom-test`.
+
+**qualification-deals** — 5 : « qualifie mon pipeline », « ce deal est-il solide »,
+« BANT de mes deals », « quels deals sont fragiles », « lesquels je pousse/sors ».
+Contre-ex : « quoi relancer / deals dormants » → `coaching-pipeline` ; « la boucle
+commerciale complète » → `pilotage-commercial` ; « méthode de revue de pipeline » →
+`pipeline-review-methodo`.
+
+**coach-de-vente** — 5 : « comment vendre à ce prospect », « quelle approche de vente »,
+« il ne répond plus je fais quoi », « coach de vente », « quelle méthode pour ce deal ».
+Contre-ex : « négocie le prix / il dit trop cher, je négocie » → `negotiation` (Voss) ;
+« quels leviers de persuasion » → `rapido-meta-ads:influence-psychology` ; « rédige l'email
+de vente » → `redaction-commerciale`.
+
+**playbook-objections-vivant** — 5 : « playbook d'objections », « quelles objections
+reviennent », « comment répondre à c'est trop cher », « objections par produit »,
+« mets à jour mes réponses aux objections ». Contre-ex : « refais mon offre face à trop
+cher » → `rapido-meta-ads:hundred-million-offers` (redessine l'OFFRE) ; « négocie ce
+prix » → `negotiation` ; « écris la réponse » → `redaction-commerciale`.
+
+**funnel-aarrr-reel** — 5 : « mon funnel AARRR », « métriques pirates », « où fuit mon
+funnel », « taux d'activation/rétention réels », « mon funnel chiffré ». Contre-ex :
+« conçois mon funnel AARRR (exercice) » → `rapido-forge:scale-funnel-aarrr` ; « donne-moi
+une formule KPT » → `catalogue-kpi` ; « pilote mon marketing » → `pilotage-marketing`.
