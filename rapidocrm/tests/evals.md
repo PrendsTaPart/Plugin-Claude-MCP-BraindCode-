@@ -78,3 +78,21 @@
   (dédoublonnage + taille), lien de désinscription présent dans le template,
   taille du lot confirmée explicitement ; signale que le **gate complet** vient de
   rapido-marketing ; envoi **confirmé** (`garde-envois`) puis `lancer_campagne`.
+
+## Éval — pilotage-commercial (1.5.0)
+
+**5 phrases déclenchantes** (→ `pilotage-commercial`) :
+1. « Pilote mon commercial »
+2. « Fais le point ventes / la boucle commerciale »
+3. « Sense → Plan → Report sur mes ventes »
+4. « Où en est ma conversion, qu'est-ce que je relance en priorité cette semaine »
+5. « Lance la revue commerciale du lundi » (VENTE-REVUE)
+
+**3 contre-exemples** (NE doivent PAS déclencher `pilotage-commercial`) :
+- « Où en sont mes deals ? » (revue ponctuelle) → **`coaching-pipeline`** (pas la boucle orchestrée).
+- « Génère-moi des leads / remplis le haut du tunnel » → **`rapido-marketing:pilotage-marketing`** (génération, pas conversion).
+- « Fais le point global de la boîte » → **`rapido-suite:pilotage-entreprise`** (transverse ; il invoque pilotage-commercial pour le volet ventes, sans le dupliquer).
+
+> Frontière : `coaching-pipeline` = revue ponctuelle des deals ; `pilotage-commercial`
+> = la boucle complète (hygiène → relances → revue → capitalisation, routines VENTE-*).
+> `pilotage-marketing` génère, `pilotage-commercial` convertit.

@@ -48,7 +48,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.1 | 15 | 3 | foodeatup, rapidocrm | — |
-| `rapidocrm` | 1.4.3 | 21 | 2 | rapidocrm | — |
+| `rapidocrm` | 1.5.0 | 22 | 2 | rapidocrm | — |
 | `rapidocms` | 1.11.6 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
@@ -65,7 +65,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
 | `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs (local `uvx` ou passerelle HTTP), rapidocms | `ELEVENLABS_API_KEY` + `ELEVENLABS_MCP_BASE_PATH` (local) **ou** `ELEVENLABS_MCP_URL` + `ELEVENLABS_MCP_TOKEN` (passerelle) — squelette |
 
-**Total : 17 plugins, 334 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 17 plugins, 335 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

@@ -1,5 +1,25 @@
 # Changelog — plugin rapidocrm
 
+## 1.5.0 — 2026-07-15 — pilotage-commercial (la boucle de vente)
+
+- Skill **`pilotage-commercial`** — l'orchestrateur de la boucle commerciale
+  (hygiène → relances → conversion → encaissement), sur le modèle EXACT de
+  `rapido-marketing:pilotage-marketing` : cycle **Sense → Plan → Act → Feed →
+  Report**, gouvernance `autonomie.md`, **calculs délégués à
+  `rapido-startup:catalogue-kpi` (jamais de calcul local)**, priorisation
+  valeur×probabilité×urgence, anti-doublon Kanban RapidoRH avant création. Envois en
+  brouillon confirmé (`garde-envois`). **Anti-collision** explicite : sous-domaine de
+  `rapido-suite:pilotage-entreprise` ; distinct de `coaching-pipeline` (revue
+  ponctuelle) et de `pilotage-marketing` (génère les leads ; moi je convertis).
+- **3 routines `VENTE-*`** au format CONFIG interchangeable de loop-engine
+  (`references/routines/`) : **VENTE-HYGIENE** (hebdo lundi, score /100 pondéré
+  40/30/20/10, niveau 0), **VENTE-RELANCES** (quotidien 14h, brouillons + table
+  mémoire `vente_relances_journal` anti-double-relance), **VENTE-REVUE** (hebdo lundi,
+  couverture = pipeline pondéré ÷ objectif via catalogue-kpi). Enregistrées au
+  **registre unifié** `reference/registre-routines.md`.
+- Évals : 5 phrases déclenchantes + 3 contre-exemples (non-collision coaching-pipeline
+  / pilotage-marketing / pilotage-entreprise).
+
 ## 1.4.3 — 2026-07-15
 
 - `campagne-marketing` : **gate délivrabilité conditionnel** avant tout envoi de

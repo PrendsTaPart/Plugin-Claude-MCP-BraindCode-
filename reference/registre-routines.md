@@ -15,7 +15,7 @@
 | `GROWTH-*` | Acquisition / croissance | `rapido-startup` (`loop-engine-v2`) | actif |
 | `VIDEO-*` | Production vidéo éditoriale | `rapido-startup` (`loop-engine-v2`) | actif |
 | `MKT-*` | Marketing (pilotage, sentinelle, board) | `rapido-marketing` | actif |
-| `VENTE-*` | Boucle commerciale (hygiène, relances, revue, expansion) | `rapidocrm` | **réservé** (PROMPT 2-3) |
+| `VENTE-*` | Boucle commerciale (hygiène, relances, revue, expansion) | `rapidocrm` (`pilotage-commercial`) | actif (expansion : PROMPT 3) |
 | `OPS-*` | Workflows événementiels de vente (n8n) | `rapido-n8n` | **réservé** (PROMPT 4) |
 
 ## Table des alias (rétrocompatibilité)
@@ -114,10 +114,35 @@
 
 ---
 
+### VENTE-HYGIENE
+- **Noms parlés** : « hygiène des données », « nettoie mon pipeline », « qualité CRM ».
+- **Cadence** : hebdomadaire — lundi (avant VENTE-REVUE).
+- **Propriétaire** : `rapidocrm:pilotage-commercial` · **Fichier** : `rapidocrm/references/routines/VENTE-HYGIENE.md`.
+- **Skills délégués** : `coaching-pipeline`, `devis-facture-relance` (lecture) ; score /100.
+- **Autonomie** : **niveau 0** — diagnostic seul, aucune écriture.
+- **Mémoire n8n** : — (série `rapido-kb/commercial/historique-hygiene.md`).
+
+### VENTE-RELANCES
+- **Noms parlés** : « relances du jour », « devis qui expirent », « relance mes deals dormants ».
+- **Cadence** : quotidienne — 14h.
+- **Propriétaire** : `rapidocrm:pilotage-commercial` · **Fichier** : `rapidocrm/references/routines/VENTE-RELANCES.md`.
+- **Skills délégués** : `devis-facture-relance`, `redaction-commerciale`, `coaching-pipeline`.
+- **Autonomie** : **niveau 1 max** — relances en brouillon confirmé.
+- **Mémoire n8n** : `vente_relances_journal` (anti-double-relance, obligatoire).
+
+### VENTE-REVUE
+- **Noms parlés** : « revue commerciale », « couverture pipeline », « point ventes du lundi ».
+- **Cadence** : hebdomadaire — lundi (après VENTE-HYGIENE).
+- **Propriétaire** : `rapidocrm:pilotage-commercial` · **Fichier** : `rapidocrm/references/routines/VENTE-REVUE.md`.
+- **Skills délégués** : `forecast`, `performance-commerciale` ; calculs → `rapido-startup:catalogue-kpi`.
+- **Autonomie** : **niveau 1 max** — décisions préparées, aucune écriture d'office.
+- **Mémoire n8n** : — (journal `rapido-kb/commercial/apprentissages.md`).
+
+---
+
 ## Réservé (prochains lots)
 
-- **`VENTE-*`** — boucle commerciale (`rapidocrm:pilotage-commercial`) : `VENTE-HYGIENE`,
-  `VENTE-RELANCES`, `VENTE-REVUE` (PROMPT 2) ; `VENTE-EXPANSION` (PROMPT 3).
+- **`VENTE-EXPANSION`** — boucle d'expansion (`rapidocrm:expansion-clients`), hebdo jeudi (PROMPT 3).
 - **`OPS-*`** — workflows événementiels de vente (`rapido-n8n`) : `OPS-LEAD-CHAUD`,
   `OPS-CLIENT-GAGNE`, `OPS-ALERTE-CHURN` (PROMPT 4).
 
