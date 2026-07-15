@@ -1,0 +1,9 @@
+{
+  "name": "rapido-elevenlabs",
+  "version": "0.1.0",
+  "description": "La voix de l'écosystème (MCP officiel ElevenLabs) : voix off & narration, transcription Scribe (diarisation), identité vocale de marque, clonage sous consentement, sound design & musique autorisée, et agents vocaux téléphoniques (Jarvis, pont FoodEatUp/Twilio). Squelette 0.1.0 (routage audio + garde-fous coûts/voix/appels), skills livrés en E2+ après l'audit live E0.",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  }
+}

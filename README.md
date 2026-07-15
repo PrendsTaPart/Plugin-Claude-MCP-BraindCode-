@@ -7,7 +7,7 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-16-blue)
+![Plugins](https://img.shields.io/badge/plugins-17-blue)
 ![Skills](https://img.shields.io/badge/skills-318-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
@@ -63,8 +63,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-higgsfield` | 1.0.3 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
+| `rapido-elevenlabs` | 0.1.0 | 0 | 0 | ElevenLabs (uvx elevenlabs-mcp), rapidocms | `ELEVENLABS_API_KEY`, `ELEVENLABS_MCP_BASE_PATH` — squelette routage + garde-fous |
 
-**Total : 16 plugins, 334 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 17 plugins, 334 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

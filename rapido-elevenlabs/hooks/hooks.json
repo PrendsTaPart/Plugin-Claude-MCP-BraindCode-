@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__ElevenLabs__(text_to_speech|text_to_sound_effects|sound_effect|generate_music|voice_design|design_voice|speech_to_speech|dubbing|voice_change|isolate_audio)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-couts.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__ElevenLabs__(voice_clone|clone_voice|create_voice|voice_design|design_voice)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-voix.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__ElevenLabs__(make_outbound_call|place_call)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-appels.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils ElevenLabs (mcp__ElevenLabs__*) de génération audio, de clonage, de voice design, de doublage ou d'appel ont été appelés avec succès, la dernière réponse de l'assistant DOIT contenir un récapitulatif listant : les fichiers audio produits (nom + emplacement local, cf. ELEVENLABS_MCP_BASE_PATH), les voice_id créés/utilisés, le coût réel ou estimé en crédits (avec check_subscription), le devenir de chaque audio (rapatrié dans RapidoCMS via upload_file_tool ? brouillon ?), et pour tout appel : numéro, destinataire, script, résultat. Si un consentement a été engagé (clonage), le chemin du document doit être cité. Si ce récapitulatif manque ou omet un fichier, un voice_id, un coût ou un appel, bloque en demandant de le compléter. Si aucun outil ElevenLabs de production n'a eu lieu, ou si le récapitulatif est complet, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

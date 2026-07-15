@@ -270,6 +270,21 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
           "tool_input": {}}, "ask"),
     ],
+    ("rapido-elevenlabs", "garde-couts.py"): [
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech",
+          "tool_input": {"cout_confirme": True}}, "allow"),
+        ({"tool_name": "mcp__ElevenLabs__list_voices", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-elevenlabs", "garde-voix.py"): [
+        ({"tool_name": "mcp__ElevenLabs__voice_clone", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__voice_design", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-elevenlabs", "garde-appels.py"): [
+        ({"tool_name": "mcp__ElevenLabs__make_outbound_call", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "allow"),
+    ],
     ("rapido-prompteur", "anti-ip.py"): [
         # prompt propre → allow
         ({"tool_name": "mcp__huggsfield__generate_image",

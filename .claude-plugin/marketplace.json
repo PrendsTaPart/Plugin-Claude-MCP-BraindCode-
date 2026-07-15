@@ -86,6 +86,11 @@
       "name": "rapido-prompteur",
       "source": "./rapido-prompteur",
       "description": "Directeur de prompts : l'agent directeur-prompts orchestre la conception de prompts (image/vidéo/web/audio) pour Higgsfield, RapidoCMS, Lovable et Canva — il prompte, il ne produit pas. Règle d'or — la grammaire se LIT en direct (models_explore, pièges, doc). Boucle d'apprentissage (métriques réelles → GAGNANT/NEUTRE). 2 skills (prompt-lovable, prompt-personnage) + patterns francisés + garde anti-IP."
+    },
+    {
+      "name": "rapido-elevenlabs",
+      "source": "./rapido-elevenlabs",
+      "description": "La voix de l'écosystème (MCP officiel ElevenLabs) : voix off & narration, transcription Scribe (diarisation), identité vocale de marque, clonage sous consentement, sound design & musique autorisée, agents vocaux téléphoniques (Jarvis, pont FoodEatUp/Twilio). Squelette 0.1.0 (routage audio + garde-fous coûts/voix/appels), skills en E2+ après l'audit live E0."
     }
   ]
 }
