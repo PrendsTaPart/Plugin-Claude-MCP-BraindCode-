@@ -121,6 +121,11 @@
       "name": "rapido-leadmagnet",
       "source": "./rapido-leadmagnet",
       "description": "L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (Lovable → segment + pipeline CRM), campagne multi-canal (organique + payant PAUSED + nurturing + mesure) et projet RH (tâches affectées aux agents IA). Exécute ce que rapido-marketing:lead-magnet-machine a conçu. Garde-fous RGPD/délivrabilité/budget."
+    },
+    {
+      "name": "rapido-copywriter",
+      "source": "./rapido-copywriter",
+      "description": "Le copywriter LinkedIn · Facebook · Instagram · TikTok : grammaires natives par réseau (datées, révision trimestrielle), banque de hooks vivante taguée par les vrais insights CMS, passe anti-voix-IA francisée, boucle d'apprentissage. Brouillons CMS par réseau (jamais de publication directe), gate voix de marque obligatoire. Squelette — skills en cours."
     }
   ]
 }
