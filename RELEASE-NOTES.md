@@ -1,5 +1,34 @@
 # Notes de release
 
+## Copywriter 4 réseaux (2026-07-15)
+
+Nouveau plugin **`rapido-copywriter`** (24e) — le copywriter **LinkedIn · Facebook ·
+Instagram · TikTok** : il connaît chaque réseau, produit la copy plateforme par
+plateforme et **apprend de ses vrais résultats**.
+
+- **Audit CW0** (`docs/IMPORTS-COPYWRITER.md`) : 3 dépôts **MIT** relus (linkedin-skills,
+  social-media-skills, social-creative-director) avec anti-verbatim renforcé (hooks
+  re-dérivés, humanizer francisé). **Relevé live décisif** : `post_insights` expose par
+  réseau exactement **`liked`/`shares`/`views`/`comments`** → ce qui fonde le scoring.
+- **Fondations** : `grammaires-reseaux.md` (4 fiches **datées**, révision trimestrielle),
+  `banque-hooks.md` (patterns par réseau, tag GAGNANT/NEUTRE + compteur), `anti-voix-ia.md`
+  (tics **français** + passe finale), `articulations.md` (frontières).
+- **4 skills** : `copy-linkedin`, `copy-meta` (FB+IG), `copy-tiktok` (script de tournage),
+  `declinaison-multi-reseaux` (1 idée → 4 déclinaisons natives). **Agent**
+  `copywriter-social`. **Boucle** `scripts/score_hooks.py` (interactions = liked + shares
+  + comments ; GAGNANT si > médiane du réseau — aucune métrique inventée).
+- **Garde-fous** : gate voix de marque + passe anti-voix-IA obligatoires, hook
+  `garde-voix-marque`, **brouillons CMS uniquement (jamais de publication directe)**,
+  anti-clickbait, preuves réelles, hooks re-dérivés. **Frontière stricte** : profil perso
+  = `social-selling-linkedin` ; pages marque = ce plugin. Runbook
+  `docs/RECETTE-COPYWRITER.md`. **Validation** : valider TOUT VALIDE (24 plugins) ;
+  tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-copywriter` ; `rapidocms` 1.11.6→1.11.7,
+`rapido-marketing` 0.18.2→0.18.3.
+
+---
+
 ## rapido-lovable v2 — kit connecteur MCP + usine MVP (2026-07-15)
 
 Upgrade majeur de `rapido-lovable` (1.1.0 → 1.5.0) : n'importe quel client demande

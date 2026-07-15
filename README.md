@@ -14,9 +14,9 @@ routines récurrentes — pour piloter une entreprise de A à Z.
 > `./rapido-kb/` (jamais commitées). Aucun secret n'est stocké dans le dépôt.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-23-blue)
-![Skills](https://img.shields.io/badge/skills-372-brightgreen)
-![Agents](https://img.shields.io/badge/agents-35-orange)
+![Plugins](https://img.shields.io/badge/plugins-24-blue)
+![Skills](https://img.shields.io/badge/skills-376-brightgreen)
+![Agents](https://img.shields.io/badge/agents-36-orange)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins) ·
@@ -79,8 +79,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 | `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Docker **ou** `GMAPS_API_URL`+`GMAPS_API_KEY` (KB) |
 | `rapido-leadmagnet` | 0.5.0 | 4 | 1 | rapidocrm, rapidocms, rapidorh, lovable, facebook-ads | — |
+| `rapido-copywriter` | 0.5.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | — |
 
-**Total : 23 plugins, 372 skills, 35 agents.** Historique détaillé des vagues :
+**Total : 24 plugins, 376 skills, 36 agents.** Historique détaillé des vagues :
 [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 ## Domaines couverts
@@ -92,7 +93,7 @@ Quel plugin pour quel besoin — installez seulement ce qui vous concerne.
 | **Restaurant** | `foodeatup` | Salle, cuisine (écran KDS), HACCP, achats, réservations |
 | **Ventes & CRM** | `rapidocrm`, `rapido-gmaps` | Prospection, pipeline, devis/factures, vente terrain (SONCAS, BANT, objections, AARRR), expansion Studio→Agence→SaaS, ambassadeurs, **sourcing de leads Google Maps → CRM** (scoring ICP, dédup, opportunités FoodEatUp) |
 | **Relation client** | `rapido-relation-client` | Service client en boucle (SLA), NPS, health score, RFM, 100 premiers jours |
-| **Contenu & marque** | `rapidocms` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels |
+| **Contenu & marque** | `rapidocms`, `rapido-copywriter` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels, **copy 4 réseaux** (grammaires natives, banque de hooks, anti-voix-IA) |
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
 | **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, **usine à lead magnets** (fabrication → capture → campagne → RH → mesure), SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos génératives, montage libre (ffmpeg), voix (ElevenLabs), design, direction de prompts |
@@ -120,6 +121,7 @@ directeur commercial… ») ou ils sont mobilisés par les orchestrateurs.
 | `rapido-forge` | directeur-programme · mentor-bootcamp · mentor-ideation · mentor-scale |
 | `rapido-canva` | studio-creatif |
 | `rapido-lovable` | chef-produit-web · architecte-lovable (kit connecteur MCP) |
+| `rapido-copywriter` | copywriter-social (directeur de création 4 réseaux) |
 | `rapido-n8n` | architecte-automatisations |
 | `rapido-higgsfield` | producteur-studio |
 | `rapido-prompteur` | directeur-prompts (orchestre la conception de prompts) |

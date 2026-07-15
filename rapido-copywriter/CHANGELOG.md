@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-copywriter
 
+## 0.5.0 — 2026-07-15 — release (recette + README, feature-complete)
+
+- `docs/RECETTE-COPYWRITER.md` : runbook FoodEatUp « coût caché des ruptures de stock »
+  → déclinaison 4 réseaux + grille de relevé. **Recette réelle déférée** (crée des
+  brouillons CMS). Livré **0.5.0** feature-complete (4 skills + 1 agent + boucle) ; 1.0.0
+  après un run réel.
+- README racine : 24 plugins / 376 skills / 36 agents ; rapido-copywriter ajouté.
+
 ## 0.4.0 — 2026-07-15 — agent copywriter-social + boucle hooks gagnants
 
 - Agent **`copywriter-social`** — directeur de création : du brief au lot de brouillons
