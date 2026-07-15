@@ -116,6 +116,11 @@
       "name": "rapido-gmaps",
       "source": "./rapido-gmaps",
       "description": "Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS), scoring ICP par script, déduplication obligatoire, détection d'opportunités FoodEatUp (business sans système numérique), enrichissement de fiches, veille concurrentielle. Garde-fous CGU/RGPD déterministes. Squelette — skills en cours."
+    },
+    {
+      "name": "rapido-leadmagnet",
+      "source": "./rapido-leadmagnet",
+      "description": "L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (Lovable → segment + pipeline CRM), campagne multi-canal (organique + payant PAUSED + nurturing + mesure) et projet RH (tâches affectées aux agents IA). Exécute ce que rapido-marketing:lead-magnet-machine a conçu. Garde-fous RGPD/délivrabilité/budget. Squelette — skills en cours."
     }
   ]
 }

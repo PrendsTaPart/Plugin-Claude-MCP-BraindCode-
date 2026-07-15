@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__facebook-ads__(ads_create_campaign|ads_create_ad_set|ads_create_ad|ads_activate_entity|ads_boost_ig_post|ads_update_entity)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-budget-ads.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si l'usine à lead magnet a produit des actions, la dernière réponse DOIT récapituler : les assets produits (PDF + URL bibliothèque CMS, landing + URL, visuels/vidéo), les objets CRM/RH créés avec leurs IDs (segment LM-{slug}, campagne, projet RH + tâches, prospects de test), le statut de chaque envoi (brouillon/planifié/envoyé — jamais d'envoi non confirmé), et pour toute pub Meta le rappel PAUSED + coût max (activation confirmée séparément). Tout score/stat doit citer sa source (script/soumissions réelles) — aucune donnée inventée. Rappelle qu'un seul lead magnet en production à la fois sans accord. Si un élément manque, bloque en demandant de compléter ; sinon autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}
