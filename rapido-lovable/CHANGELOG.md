@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-lovable
 
+## 1.2.0 — 2026-07-15 — kit connecteur MCP canonique (v2, LV1)
+
+- `reference/kit-connecteur-mcp/` (kit v1) — source de vérité versionnée : `_commun.md`
+  (template edge function canonisé depuis academyrapido:execute-prompt — API Anthropic +
+  mcp_servers type url, beta mcp-client-2025-04-04, parsing PAR TYPE, rate-limits, filtre
+  injection, scope injecté serveur, écritures confirmées, 7 points sécurité, versioning) +
+  une fiche par MCP (`foodeatup`, `crm`, `cms`, `rh` : env immuables, familles d'outils
+  autorisées, system prompt, scope).
+- `reference/regles-stack-lovable.md` (awesome-cursorrules CC0, francisé) : règles
+  React/TS/Tailwind/shadcn/Supabase injectées dans chaque prompt.
+- `reference/gate-securite.md` (VibeSec Apache-2.0, adapté/modifié) : checklist bloquante
+  « agent + clés MCP » (secrets hors bundle, appels serveur, scope, écritures confirmées).
+- `NOTICE.md` (CC0/Apache-2.0/MIT, modifications VibeSec signalées) ; patch
+  `architecture-lovable.md` (section kit canonique).
+- Fondé sur l'audit LV0 (`docs/REFERENCE-AGENT-LOVABLE.md`, `docs/IMPORTS-LOVABLE-V2.md`)
+  et la spec auth multi-tenant (`docs/OUTILS-MCP-MANQUANTS.md` §11). Skills LV2→LV5 à venir.
+
 ## 1.1.0 — 2026-07-10
 
 - Premier agent du plugin : `chef-produit-web` — cadre le brief AVANT de
