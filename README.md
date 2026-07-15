@@ -119,7 +119,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.6.1 | 18 | 4 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
+| `foodeatup` | 1.7.0 | 18 | 4 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
 | `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | RapidoRh |

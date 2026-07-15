@@ -70,6 +70,17 @@ client délicates). Sinon, rédiger directement :
 2. If it's a pattern: "This is the {Nth} complaint about {issue} this month. Consider: {specific operational change}."
 3. If it's isolated: "This looks like a one-off. No pattern detected."
 
+## Volet avis publics (FoodEatUp)
+
+Au-delà des plaintes privées, gérer les **avis clients** (site + Google) :
+1. `list_reviews` (`establishment_id`, `rating`/`status` optionnels) : lister, prioriser
+   les avis négatifs récents.
+2. **Répondre** : `reply_review` (`review_id`, `body`) — la réponse est **enregistrée**
+   (publication Google **manuelle**). Rédiger la réponse **en brouillon, validée avec
+   l'exploitant AVANT** l'appel (public, ton de marque).
+3. **Modérer** un avis du site : `moderate_review` (`review_id`, `action` ∈ publish/reject)
+   — **confirmation** (hook `garde-destructif`).
+
 ## Connector failures
 
 Si le CRM et la boîte mail (rapido-direction) sont injoignables, demander à l'exploitant

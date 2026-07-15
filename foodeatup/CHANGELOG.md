@@ -1,5 +1,21 @@
 # Changelog — plugin foodeatup
 
+## 1.7.0 — 2026-07-15 — familles site / caisse / fidélité / avis complètes (série FINITION F3)
+
+- 8 outils parqués **réintrospectés** (schémas réels) et intégrés : `add_site_page`
+  (type ∈ about/faq/allergens/gallery/jobs/beverages/private/producers/delivery/press/
+  giftcards, en brouillon), `update_section` (props fusion partielle), `publish_site`
+  (`confirm`), `get_domain_status`, `close_pos_session` (`operator_id`, `confirm`,
+  `counted_cash` opt), `list_pos_tabs`, `list_reviews` (rating/status), `reply_review`
+  (réponse enregistrée, publication Google manuelle). Inventaire à **143/164** introspectés.
+- `site-vitrine-foodeatup` : les 4 outils site finalisés (résume-puis-confirme sur
+  `publish_site`). `caisse-du-jour` : clôture Z avec ses vrais paramètres + ardoises
+  (`list_pos_tabs`). `handle-complaint` : **volet avis** (`list_reviews` → `reply_review`
+  en **brouillon validé** → `moderate_review` gaté).
+- Agent `gerant-digital` : **la caisse sort de son périmètre** (relève de l'exploitation).
+- Recette : familles **validées en lecture** sur le démo `gosushi` (est. 2) ; écritures
+  en runbook supervisé (`docs/RECETTE-FOODEATUP-V2.md`).
+
 ## 1.6.1 — 2026-07-15 — extensions CRUD (série SYNC S1)
 
 - Couverture des primitives CRUD dormantes ajoutée aux skills existants (schémas déjà

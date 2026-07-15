@@ -38,13 +38,14 @@ opérateur, TVA, remises — **restitués tels quels**.
 
 ## 4. Clôturer (Z)
 
-`get_pos_session` pour l'état, puis **clôture Z** (`close_pos_session`) : comptage des
-espèces optionnel, **écart calculé par le serveur**. Le serveur **exige `confirm:true`**
-→ le skill **récapitule** (CA, écart annoncé) **puis** confirme, **jamais `confirm:true`
-d'office**. Après clôture, présenter le Z (`get_pos_report` avec le `session_id`).
+`get_pos_session` pour l'état, puis **clôture Z** : `close_pos_session` (`operator_id`,
+`confirm` ; `counted_cash` optionnel pour le comptage des espèces, **écart calculé par le
+serveur**). Le serveur **exige `confirm:true`** → le skill **résume le rapport X à
+l'opérateur** (CA, écart annoncé) **puis** confirme, **jamais `confirm:true` d'office**.
+Après clôture, présenter le Z (`get_pos_report` avec le `session_id`).
 
-> Les ardoises clients ouvertes se listent via `list_pos_tabs` (schéma à finaliser après
-> réintrospection — ne pas inventer ses paramètres).
+> Ardoises clients ouvertes (soldes dus) : `list_pos_tabs` — le règlement se fait en
+> caisse (`record_pos_payment`).
 
 ## Passerelles
 
