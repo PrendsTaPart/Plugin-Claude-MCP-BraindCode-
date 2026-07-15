@@ -1,4 +1,12 @@
-# Évals — plugin rapido-prompteur (0.2.0)
+# Évals — plugin rapido-prompteur (0.3.0)
+
+## agent directeur-prompts + boucle d'apprentissage
+
+| # | Phrase | Attendu |
+|---|---|---|
+| DP1 | « J'ai un besoin flou, transforme-le en prompt » | `directeur-prompts` : étape 0 (grammaire-des-moteurs + regles-de-construction + patterns + **`list_prompts` GAGNANT d'abord**) → charte `get_brand` → **moteur choisi + grammaire lue en direct** (`models_explore`) → **3 variantes** (prompt complet affiché + paramètres réels + coût + références) → **délègue au skill exécutant** (jamais de génération payante en direct) → **propose la capitalisation** (`add_prompt`) |
+| BA1 | « Ces prompts ont tourné, mets à jour ce qui marche » | boucle : métriques **réelles** (`post_insights`, virality, réutilisations) → `scripts/score_prompts.py` → tags **GAGNANT/NEUTRE** (`edit_prompt`) + journal `apprentissages.md` ; **INSUFFISANT** si aucune métrique (jamais de score inventé) ; l'agent **pioche les GAGNANT d'abord** ensuite |
+
 
 ## prompt-lovable
 

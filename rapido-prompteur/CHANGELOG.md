@@ -1,5 +1,25 @@
 # Changelog — plugin rapido-prompteur
 
+## 0.3.0 — 2026-07-15 — Agent directeur-prompts + boucle d'apprentissage
+
+- Agent **`directeur-prompts`** — du besoin au **prompt exécutable** : étape 0
+  (grammaire-des-moteurs + regles-de-construction + patterns + **prompts gagnants
+  d'abord** via `list_prompts`), 3 variantes (prompt complet affiché + paramètres
+  lus en direct + coût + références), **délégation aux skills exécutants**,
+  **capitalisation systématique** (`add_prompt`). Frontmatter `tools` **sans aucun
+  outil de génération payante** (`get_brand`/`list_prompts`/`add_prompt`/`edit_prompt`
+  CMS + `models_explore` Higgsfield + lecture des références) — **il prompte, il ne
+  produit pas**. Squelette inspiré du `prompt-engineer` de `wshobson/agents` (MIT,
+  structure PR0 réécrite — cf. `docs/IMPORTS-PROMPTEUR.md`).
+- **Boucle d'apprentissage** (`reference/boucle-apprentissage.md` +
+  `scripts/score_prompts.py`, stdlib) : après production/publication, les skills
+  exécutants rapportent les **métriques réelles** (`post_insights`, virality,
+  réutilisations) → le script classe **GAGNANT / NEUTRE** (formule transparente,
+  seuils surchargeables) et émet un plan `edit_prompt` + journal daté
+  `rapido-kb/marketing/apprentissages.md`. **Aucun score inventé** : sans métrique
+  réelle → **INSUFFISANT** (non taggé). L'agent **pioche les GAGNANT d'abord**.
+- **2 évals** ajoutées (DP1 agent, BA1 boucle). Bump 0.2.0 → 0.3.0.
+
 ## 0.2.0 — 2026-07-15 — Skills prompt-lovable + prompt-personnage
 
 - Skill **`prompt-lovable`** — produit un **brief Lovable structuré** (6 sections :

@@ -17,6 +17,8 @@ il ne remplace pas** les skills prompts existants (cf. `docs/IMPORTS-PROMPTEUR.m
 
 | Élément | Rôle |
 |---|---|
+| `agents/directeur-prompts.md` | Agent orchestrateur : du besoin au prompt exécutable (3 variantes), délègue la génération, capitalise — **il prompte, il ne produit pas** |
+| `reference/boucle-apprentissage.md` + `scripts/score_prompts.py` | Boucle d'apprentissage : métriques réelles → tag GAGNANT/NEUTRE (`edit_prompt`) + journal ; aucun score inventé |
 | `skills/prompt-lovable/` | Brief Lovable structuré (rôle → pages → design charte → mode B CRM → interdits → critères testables) |
 | `skills/prompt-personnage/` | Banque de traits combinatoire → prompts de scène cohérents avec le canon (routage CMS/Higgsfield) |
 | `reference/grammaire-des-moteurs.md` | Règle d'or + tableau moteur → où lire ses contraintes en live |
