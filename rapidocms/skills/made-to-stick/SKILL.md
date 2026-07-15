@@ -212,6 +212,23 @@ See [references/curse-of-knowledge.md](references/curse-of-knowledge.md) when yo
 
 See [references/applications.md](references/applications.md) when applying SUCCESs to a specific format—it has element-by-element tables, fill-in templates, and before/after examples for landing pages, demos, onboarding, presentations, email campaigns, internal comms, and documentation. See [references/case-studies.md](references/case-studies.md) for full worked teardowns (JFK's moonshot, the Subway diet, Don't Mess with Texas) when you want to see all six traits operating together in a famous message.
 
+## Enrichment — Symptom → principle (reverse diagnostic)
+
+The Quick Diagnostic below scores each trait one by one; this table runs the other way. Start from what's actually wrong with a message and jump straight to the principle that fixes it:
+
+| Symptom (what people say) | Reach for |
+|---------------------------|-----------|
+| "It's too complicated" | **Simple** |
+| "They tune out" | **Unexpected** |
+| "They forget it" | **Concrete** |
+| "They don't believe it" | **Credible** |
+| "They get it but don't care" | **Emotional** |
+| "They care but don't act" | **Stories** |
+
+*Rapido use case:* diagnose a post or hook that isn't converting — identify the symptom first, then rewrite for the one principle it's missing rather than reworking all six.
+
+> Ideas: Chip & Dan Heath, *Made to Stick* — distilled from founder-playbook (MIT © 2026 AgentSeal). Reworded, no excerpt.
+
 ## Common Mistakes
 
 | Mistake | Why It Fails | Fix |

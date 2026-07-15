@@ -247,6 +247,16 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocms__remove_asset",
           "tool_input": {"asset_id": 12}}, "ask"),
     ],
+    ("rapido-marketing", "garde-envois.py"): [
+        ({"tool_name": "mcp__rapidocrm__send_newsletter",
+          "tool_input": {"entreprise_id": 1}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__schedule_email",
+          "tool_input": {"entreprise_id": 1, "date_envoi": "2026-07-20 09:00:00", "sujet": "x"}}, "ask"),
+        ({"tool_name": "mcp__rapidocms__schedule_draft_tool",
+          "tool_input": {"draft_id": 1}}, "ask"),
+        ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
+          "tool_input": {}}, "ask"),
+    ],
     ("rapidocms", "valide_charte_hook.py"): [
         # couleurs
         ({"tool_name": "mcp__rapidocms__create_brand",

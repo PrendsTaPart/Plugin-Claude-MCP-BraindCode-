@@ -16,7 +16,11 @@
 | 07 | [lead-getters](07-lead-getters.md) | 4 types de lead getters + 3D |
 | 08 | [arbres-de-decision](08-arbres-de-decision.md) | Arbres de décision + checklist maîtrise |
 
-Chaque fiche porte le mapping **« Outils MCP Rapido pressentis »**.
+Chaque fiche porte le mapping **« Outils MCP Rapido pressentis »**. Les fiches
+01, 03 et 06 portent un encart **« Mise à jour marché 2026 »** sourcé ; l'état de
+l'art complet (HubSpot, Salesforce RevOps, Clay/Apollo, délivrabilité, nurturing,
+n8n, agents Anthropic, GEO) est dans
+[`../etat-de-lart-2026.md`](../etat-de-lart-2026.md).
 
 ## ⚠️ Dépendance manquante — MATRICE-COUVERTURE.md (M0)
 

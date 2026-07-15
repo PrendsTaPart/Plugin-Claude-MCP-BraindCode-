@@ -64,6 +64,27 @@ dans SON répertoire de travail — jamais dans le plugin). Si des chiffres
 clés en sortent, proposer de mettre à jour
 `./rapido-kb/startup/business-plan/hypotheses.md` (source + date).
 
+## Enrichissement — besoin implicite→explicite & Advance
+
+Compléments issus de la recherche de Rackham, au-delà des 4 types de questions :
+
+- **Implicite → explicite** : dans les ventes importantes, seuls les besoins
+  **explicites** (le client énonce lui-même le manque) prédisent l'achat. Le rôle
+  des questions Implication est de faire passer un problème mineur au rang de
+  besoin explicite.
+- **Les 4 issues d'un entretien** : Commande / **Advance** (étape suivante
+  concrète) / Continuation / Sans-suite. Viser un **Advance**, pas « demander la
+  vente » ; juger au **comportement**, jamais aux compliments.
+- **Bénéfice recadré (FAB)** : un vrai bénéfice répond à un besoin **explicite
+  déjà exprimé** ; sinon ce n'est qu'un « avantage ». Ne pas déballer les
+  fonctionnalités avant le besoin.
+- **Articulation** : complète `scale-bant-qualification` — SPIN **construit** le
+  « Need » (Implication → coût du statu quo) là où BANT ne fait que le cocher.
+
+> Idées : Neil Rackham, *SPIN Selling* — distillation founder-playbook
+> (MIT © 2026 AgentSeal). Reformulé.
+
 ## Voir aussi (skills plus riches du marketplace)
 
 - `rapidocrm:coaching-pipeline` — application aux deals réels
+- `rapido-forge:scale-bant-qualification` — grille de qualification complémentaire

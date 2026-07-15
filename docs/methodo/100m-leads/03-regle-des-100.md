@@ -43,6 +43,23 @@ quartier pendant 100 jours (contact froid), tracés dans le CRM — au lieu de
 > Le « compteur » du jour (nb d'envois, minutes) se suit dans le CRM / le journal
 > de routines, jamais estimé de mémoire.
 
+## 🆕 Mise à jour marché 2026 (sourcée)
+
+La règle des 100 reste valable, mais le marché 2025-2026 la **nuance** (détail :
+`docs/methodo/etat-de-lart-2026.md`) :
+
+- **Le volume est plafonné par la délivrabilité** en email : ~500/j par boîte
+  Gmail, ~300/j Outlook → au-delà, rotation de boîtes chauffées. Le « 100/jour »
+  ne veut pas dire une seule boîte. Source :
+  [mailpool.ai](https://www.mailpool.ai/blog/deliverability-lessons-from-1-million-cold-emails-sent-in-2025) (2025) — chiffres **INCERTAIN**.
+- **Volume vs signal** : Hormozi mise sur le volume ; les équipes outbound
+  2025-2026 combinent **volume + signaux d'intention** (enrichissement waterfall,
+  timing) pour éviter de brûler des domaines sur des cibles froides. Source :
+  [factors.ai](https://www.factors.ai/blog/clay-vs-apollo-for-outbound) (2026).
+- **Contenu & GEO** : « 100 min de contenu/jour » gagne à viser aussi la
+  **citation par les IA** (réponse en 40-60 mots, fraîcheur) — voir la note GEO de
+  `01-core-four.md`.
+
 ## Frontières
 - **Quel** canal appliquer la règle → `01-core-four.md` / `08-arbres-de-decision.md`.
 - **Scaler** une fois que ça marche → `05-more-better-new.md`.

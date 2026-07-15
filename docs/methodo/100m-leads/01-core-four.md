@@ -50,6 +50,22 @@ On en **choisit un** selon les ressources (voir `08-arbres-de-decision.md`).
 > Chiffres et cadences ne se calculent jamais de tête : passer par le skill
 > `catalogue-kpi` (rapido-startup) pour les taux (voir `04-ltgp-cac.md`).
 
+## 🆕 Mise à jour marché 2026 (sourcée)
+
+Le Core Four (2023) reste le bon cadre, mais une **5e surface** émerge et
+traverse le « contenu » et la « pub » (détail : `docs/methodo/etat-de-lart-2026.md`) :
+
+- **GEO — être cité par les moteurs génératifs** (AI Overviews, ChatGPT,
+  Perplexity) : réponse directe en **40-60 mots**, densité de faits, **schema
+  markup** + ancres `id`, **fraîcheur** du contenu, style déclaratif. C'est du
+  « contenu 1-à-plusieurs » qui vise l'IA plutôt que le seul SEO classique.
+  Source : [frase.io](https://www.frase.io/blog/what-is-generative-engine-optimization-geo) (2026),
+  [seotuners](https://seotuners.com/blog/seo/generative-engine-optimization-geo-in-2025-the-complete-playbook-to-win-ai-overviews-chatgpt-copilot-perplexity/) (2025). Chiffres d'impact **INCERTAIN**.
+- **Outbound par signaux** (contact froid) : cibler par intention plutôt qu'au
+  volume brut — voir la note de `06-aca.md`.
+- **MCP Rapido** : GEO s'exécute via `generation-article-blog` (rapidocms, déjà
+  E-E-A-T/GEO) ; les signaux d'intention manquent côté serveur (cf. M0).
+
 ## Frontières
 - **Quel** canal démarrer selon les ressources → `08-arbres-de-decision.md`.
 - **Scaler** un canal qui marche → `05-more-better-new.md`.

@@ -214,6 +214,28 @@ A single sentence that explains what you do. Use it everywhere.
 
 See: [references/one-liners.md](references/one-liners.md) — open when drafting a one-liner; ~20 industry examples plus three alternative formulas (PSR, BAB, "We Exist Because").
 
+## Enrichment — The 5-second grunt test & the Marketing Roadmap
+
+**The grunt test (5 seconds).** A first-time visitor must be able to answer three questions within about five seconds of landing, without scrolling:
+
+1. What do you offer?
+2. How will it make my life better?
+3. What must I do to buy it?
+
+If any answer isn't obvious above the fold, the message is still too complex. This sharpens the "caveman in 5 seconds" diagnostic row into three concrete checks you can run on any generated site or CMS landing page.
+
+**The Marketing Roadmap (5 assets).** StoryBrand messaging only pays off once it's wired to execution. Build these, in order:
+
+1. A one-liner (see above)
+2. A lead generator — an opt-in asset that captures email addresses
+3. An automated email nurture sequence
+4. Transformation testimonials
+5. A referral system
+
+This connects the BrandScript to the inbound and email-nurture machinery rather than leaving it as copy on a page.
+
+> Ideas: Donald Miller, *Building a StoryBrand* — distilled from founder-playbook (MIT © 2026 AgentSeal). Reworded, no excerpt.
+
 ## Tone and Voice Guidelines
 
 Keep brand voice consistent across channels while adapting to context.

@@ -215,3 +215,24 @@ Google/TikTok/LinkedIn ads, MCP absents).
 
 ## Fichiers produits
 - `docs/MATRICE-COUVERTURE.md` (ce fichier).
+
+---
+
+## Mise à jour M1-ter (distillation founder-playbook, 2026-07-14)
+
+- **Pricing Strategy** : désormais **COUVERT** — `rapido-forge:scale-pricing-strategy`
+  (3 modèles + WTP) **enrichi** par la fiche `docs/methodo/monetizing-innovation/`
+  (segmentation par la valeur, packaging Leaders/Fillers/Killers + Good/Better/Best,
+  pricing comportemental, intégrité du prix). Calculs par `catalogue-kpi` /
+  `money-math-acquisition`.
+- **Qualification / découverte** : `scale-bant-qualification` + `machine-outbound`
+  **complétés** par le patch `scale-spin-selling` (questions Problem, besoins
+  implicite→explicite, Advance) — voir `docs/methodo/patchs/scale-spin-selling.md`.
+- **Positionnement** : `bootcamp-positioning-map` (Perceptual Map) complété par la
+  fiche `obviously-awesome` (5 composantes, 3 styles).
+- **Expérimentation / validation** : `ideation-lean-canvas` + `growth-experiments`
+  complétés par la fiche `lean-startup` (Build-Measure-Learn, innovation accounting).
+- **Sélection de canal** : nouvelle référence `traction` (Bullseye + 19 canaux),
+  complète `core-four-strategie` (aucun équivalent forge : Ansoff ≠ Bullseye).
+
+Verdicts détaillés par livre : `docs/BENCHMARK-FOUNDER-PLAYBOOK.md`.

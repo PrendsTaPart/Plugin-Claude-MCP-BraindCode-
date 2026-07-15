@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-suite
 
+## 1.4.2 — 2026-07-15
+
+- **Anti-collision avec rapido-marketing** : `pilotage-entreprise` déclare le
+  marketing comme **sous-domaine** — si `rapido-marketing` est installé, son volet
+  SENSE marketing **invoque `rapido-marketing:pilotage-marketing`** au lieu de le
+  dupliquer (frontière ajoutée). Règle miroir documentée.
+- `README.md` du plugin créé (description, gouvernance `autonomie.md`, règle
+  anti-collision marketing).
+
 ## 1.4.1 — 2026-07-14
 
 - Clôture couche marque : 5 scénarios de sync KB↔marque consolidés dans

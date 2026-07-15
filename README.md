@@ -7,8 +7,8 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-12-blue)
-![Skills](https://img.shields.io/badge/skills-305-brightgreen)
+![Plugins](https://img.shields.io/badge/plugins-13-blue)
+![Skills](https://img.shields.io/badge/skills-318-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
@@ -48,19 +48,20 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.0 | 15 | 3 | foodeatup, rapidocrm | — |
-| `rapidocrm` | 1.4.1 | 21 | 2 | rapidocrm | — |
-| `rapidocms` | 1.11.0 | 22 | 6 | rapidocms, hyperframes | — |
+| `rapidocrm` | 1.4.3 | 21 | 2 | rapidocrm | — |
+| `rapidocms` | 1.11.1 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.2 | 11 | 2 | rapidorh | — |
-| `rapido-suite` | 1.4.1 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
+| `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-meta-ads` | 1.0.2 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
+| `rapido-meta-ads` | 1.0.3 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
 | `rapido-n8n` | 1.2.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
-| `rapido-forge` | 1.1.0 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
+| `rapido-forge` | 1.1.1 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
+| `rapido-marketing` | 0.15.0 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 
-**Total : 12 plugins, 305 skills, 25 agents.** (`rapido-startup` — finance &
+**Total : 13 plugins, 318 skills, 30 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

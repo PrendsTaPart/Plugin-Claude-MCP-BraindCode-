@@ -52,6 +52,25 @@ porte la mention « hypothèse fondateur, confiance faible ».
 - Créer de la valeur que personne ne veut payer
 - Ignorer que les concurrents peuvent imiter l'océan bleu
 
+## Enrichissement — au-delà d'ERRC
+
+Compléments pour trouver ET valider l'océan bleu :
+
+- **Six Paths** : regarder au-delà de son secteur (industries alternatives,
+  groupes stratégiques, chaîne d'acheteurs, produits complémentaires, appel
+  fonctionnel↔émotionnel, tendances).
+- **Les 3 cercles de non-clients** : « bientôt partis » / « refusants » /
+  « inexplorés » — viser les non-clients avant les clients pour agrandir le marché.
+- **Buyer Utility Map** : 6 étapes du cycle d'usage × 6 leviers d'utilité (36
+  cases) pour repérer les blocages non résolus par le secteur.
+- **Séquence stratégique** (test avant lancement) : Utilité → Prix accessible à la
+  masse → Coût atteignable → Adoption (obstacles). Ne lancer que si les 4 passent.
+- **Honnêteté** : plusieurs cas emblématiques ont ensuite échoué ; le ratio
+  « 86/14 % » est suggestif, non mesuré — à présenter comme tel.
+
+> Idées : Kim & Mauborgne, *Blue Ocean Strategy* — distillation founder-playbook
+> (MIT © 2026 AgentSeal). Reformulé.
+
 ## Données & serveurs MCP
 
 - **RapidoCRM** (`rapidocrm`) — données réelles, lecture d'abord

@@ -57,10 +57,24 @@
 ## Éval — capture de leads (1.4.0)
 
 - **Phrase** : « Comment convertit mon formulaire de contact ? » →
-  `campagne-marketing` étape 7 : funnel vues → clics CTA → soumissions →
+  `campagne-marketing` étape 8 : funnel vues → clics CTA → soumissions →
   prospects, taux PAR ÉTAPE via `taux_conversion_etape` (formule affichée).
 - **Phrase** : « Traite les nouvelles soumissions du formulaire démo » →
   `prospection-pipeline` : `get_formulaire_soumissions`, dédoublonnage
   email puis nom (`rechercher_prospects`, `list_contacts`) AVANT
   `enregistrer_prospect` ; contact déjà connu → `log_activity`, pas de
   doublon.
+
+## Éval — gate délivrabilité (1.4.3)
+
+- **CM-GATE** (campagne bloquée par le gate, mode newsletter) : « Lance ma
+  newsletter à ce segment » **avec rapido-marketing installé** →
+  `campagne-marketing` étape 5 invoque `delivrabilite-email` en mode `newsletter` ;
+  liste sale ou **lien de désinscription absent** → note sous le seuil → **PAS
+  D'ENVOI**, actions correctives listées, rejouer après correction ; hook
+  `garde-envois` inchangé.
+- **CM-DEGRADE** (rapido-marketing absent → checklist minimale) : même demande
+  **sans** le plugin → checklist intégrée déroulée : `recalculer_segment`
+  (dédoublonnage + taille), lien de désinscription présent dans le template,
+  taille du lot confirmée explicitement ; signale que le **gate complet** vient de
+  rapido-marketing ; envoi **confirmé** (`garde-envois`) puis `lancer_campagne`.

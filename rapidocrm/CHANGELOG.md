@@ -1,5 +1,26 @@
 # Changelog — plugin rapidocrm
 
+## 1.4.3 — 2026-07-15
+
+- `campagne-marketing` : **gate délivrabilité conditionnel** avant tout envoi de
+  masse (`lancer_campagne` / `send_newsletter`), nouvelle étape 5 (funnel et suivi
+  décalés en 7/8).
+  - **rapido-marketing présent** : invocation OBLIGATOIRE de `delivrabilite-email`
+    en mode `newsletter` — **lot refusé = pas d'envoi**, aucune dérogation.
+  - **Mode dégradé (rapidocrm autonome)** : checklist minimale intégrée —
+    `recalculer_segment` (dédoublonnage + taille), lien de désinscription présent,
+    taille du lot confirmée — + mention que le gate complet vient de rapido-marketing.
+  - Hook `garde-envois` (confirmation) inchangé dans les deux cas.
+  - Évals CM-GATE et CM-DEGRADE.
+
+## 1.4.2 — 2026-07-15
+
+- Enrichissement `mom-test` (founder-playbook, MIT © 2026 AgentSeal) : ajout du
+  **Filter Test** — si le prospect n'a jamais cherché de solution par lui-même,
+  la douleur ne justifie pas un achat, quel que soit son enthousiasme. Ajout
+  seul, attribution en fin de section. Le type de mauvaise donnée
+  « Idées/Fonctionnalités » n'est pas redupliqué (déjà couvert §3).
+
 ## 1.4.1 — 2026-07-11
 
 - Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,

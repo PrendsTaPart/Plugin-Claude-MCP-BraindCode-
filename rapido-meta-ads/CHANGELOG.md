@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-meta-ads
 
+## 1.0.3 — 2026-07-15
+
+- Enrichissement `hundred-million-offers` (founder-playbook, MIT © 2026
+  AgentSeal) : taxonomie des 4 catégories d'obstacles (manques de connaissance,
+  déficits de compétence, barrières d'environnement, blocages psychologiques)
+  branchée sur l'étape « lister les problèmes » (§3) puis renvoyée vers le Trim
+  & Stack déjà présent. Ajout seul, aucune régression ; attribution en fin de
+  section. Trim & Stack non redupliqué (déjà couvert §2/étape 5).
+
 ## 1.0.2 — 2026-07-11
 
 - Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,

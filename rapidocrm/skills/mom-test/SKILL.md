@@ -197,6 +197,20 @@ See: [references/finding-conversations.md](references/finding-conversations.md) 
 
 See: [references/processing-learning.md](references/processing-learning.md) after a batch of interviews -- the notes-to-beliefs spreadsheet template, team-review cadence, and signals that it's time to stop talking and build.
 
+## Enrichment — The Filter Test
+
+A fast signal for whether a problem is even worth solving: has the person already tried to fix it themselves — searched for a tool, cobbled a workaround, paid for a stopgap? If they've never lifted a finger, the pain isn't strong enough to open a wallet, no matter how hard they nod along.
+
+- Ask "What have you already done about this?" — never "would you use...?"
+- No prior action = weak signal, whatever the enthusiasm
+- An existing workaround = a real, budgeted problem worth building for
+
+This complements §3 (ideas as bad data): a feature request from someone who has never sought a solution is doubly worthless.
+
+*Rapido use case:* in an interview logged in RapidoCRM, tag leads who have never sought a solution as low-priority, whatever they claim.
+
+> Ideas: Rob Fitzpatrick, *The Mom Test* — distilled from founder-playbook (MIT © 2026 AgentSeal). Reworded, no excerpt.
+
 ## Common Mistakes
 
 | Mistake | Why It Fails | Fix |

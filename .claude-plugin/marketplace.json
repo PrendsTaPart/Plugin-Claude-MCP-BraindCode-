@@ -66,6 +66,11 @@
       "name": "rapido-forge",
       "source": "./rapido-forge",
       "description": "StartupsForge (PrendsTaPart) : 180 exercices d'incubateur en 3 parcours (bootcamp 5 jours, idéation, scale) + 4 agents mentors — livrables dans ./rapido-kb/startup/forge/"
+    },
+    {
+      "name": "rapido-marketing",
+      "source": "./rapido-marketing",
+      "description": "Marketing & acquisition Rapido-first : leads, tunnel de conversion, nurturing, publicité et analytics — priorité CRM/CMS/RH, MCP secondaires en repli. Squelette 0.1.0 (reference + garde-fous + hooks), skills à venir."
     }
   ]
 }
