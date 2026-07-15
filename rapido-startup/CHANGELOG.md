@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-startup
 
+## 1.9.2 — 2026-07-15 — KPIs AARRR au catalogue
+
+- `catalogue-kpi/scripts/calcul_kpi.py` : ajout des taux **AARRR** au catalogue
+  (`taux_activation`, `taux_retention`, `taux_referral`) + `part_organique` (part
+  organique vs payante du CA) — pour que `rapidocrm:funnel-aarrr-reel` et
+  `attribution-kpi-marketing` calculent **via le catalogue** (jamais en local).
+  Formules affichées, testées.
+
 ## 1.9.1 — 2026-07-15 — catalogue-kpi source unique des formules
 
 - `catalogue-kpi/SKILL.md` : section **« Source unique des formules »** — ce skill
