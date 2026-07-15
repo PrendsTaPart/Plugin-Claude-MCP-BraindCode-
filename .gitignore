@@ -14,3 +14,6 @@ node_modules/
 
 # Données client — la KB vit chez le client, jamais dans ce dépôt (produit)
 rapido-kb/
+
+# Outils vidéo installés en local par bootstrap_video.py
+.video-tools/
