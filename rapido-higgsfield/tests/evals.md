@@ -1,4 +1,12 @@
-# Évals — plugin rapido-higgsfield (0.7.0)
+# Évals — plugin rapido-higgsfield (0.8.0)
+
+## sites-et-jeux-express
+
+| # | Phrase | Attendu |
+|---|---|---|
+| SJ1 (jeu) | « Fais un mini-jeu concours jouable » | `sites-et-jeux-express` : get_game_creation_instructions **d'abord** → build → zip → `media_upload`/`media_confirm` → `deploy_game` (thumbnail 16:9 + favicon 1:1) ; mécanique via `lancer_jeu_concours_entreprise` (CRM) ; URL au registre `tunnels.md` |
+| SJ2 (routage → Lovable) | « Une landing avec formulaire connecté à mon CRM » | **renvoie** à `rapido-lovable:usine-a-landing` (PRIORITAIRE) — pas un site Higgsfield jetable |
+| SJ3 (update jeu) | « Modifie le jeu que j'ai déployé » | `sites-et-jeux-express` : `deploy_game` **avec le `game_id`** exact (jamais inventé ; sans lui = nouveau jeu silencieux) |
 
 ## voix-et-doublage
 

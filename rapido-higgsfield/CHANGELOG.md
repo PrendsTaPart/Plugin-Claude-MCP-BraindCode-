@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.8.0 — 2026-07-15
+
+- Skill **`sites-et-jeux-express`** (H8) : microsites jetables + jeux jouables.
+  - **Routage en tête** : landing/app connectée CRM → `rapido-lovable:usine-a-landing`
+    (prioritaire) ; microsite jetable / jeu → ici.
+  - Sites : instructions officielles d'abord → create → repo → `deploy_website`
+    (ship = live, **OG complètes avant**) ; `website_secrets` ; `website_db` lecture
+    seule. Jeux : instructions d'abord → build → zip → `media_upload`/`media_confirm`
+    → `deploy_game` (thumbnail 16:9 + favicon 1:1) ; **update = `game_id` exact**
+    (jamais inventé, sinon nouveau jeu silencieux).
+  - Croisement CRM : `lancer_jeu_concours_entreprise` (mécanique officielle) + URL
+    du jeu injectée en campagne. Registre `tunnels.md`. Schémas vérifiés live.
+  - `tests/evals.md` : 3 scénarios (dont SJ2 routage → Lovable).
+
 ## 0.7.0 — 2026-07-15
 
 - Skills **`voix-et-doublage`** + **`videos-explicatives`** (H7).
