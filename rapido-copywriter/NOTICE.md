@@ -15,8 +15,10 @@ redistribue aucun corps de texte** ni exemple citant un créateur/marque réel.
 
 ## Anti-verbatim (règle stricte)
 
-- Les formules de hooks sont des **templates génériques à placeholders** — **aucun** post
-  ou hook réel d'un créateur n'est repris.
+- Les formules de hooks et la **taxonomie des familles** + la **matrice famille × réseau**
+  (`reference/mecanique-des-hooks.md`) sont **re-dérivées maison** en templates génériques à
+  placeholders — **aucun** post ou hook réel d'un créateur n'est repris. Psychologie
+  renvoyée à `rapido-meta-ads:influence-psychology`, jamais dupliquée.
 - L'anti-voix-IA est **re-dérivé pour le français** (les tics anglais ne s'appliquent pas).
 
 ## Exclusions

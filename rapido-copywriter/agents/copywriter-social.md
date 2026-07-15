@@ -25,6 +25,14 @@ max** par pièce, puis livrer. **Capitalisation systématique** : consigner les 
 utilisés (compteur `banque-hooks.md`) et lancer la boucle de scoring
 (`scripts/score_hooks.py`) sur les insights réels quand des posts sont publiés.
 
+## Diagnostic (post qui a sous-performé)
+
+Sur un post en dessous de la médiane de son réseau (`scripts/score_hooks.py`), **analyser
+le hook** via `reference/mecanique-des-hooks.md` : quelle **famille** a été utilisée ? le
+**contexte d'attention** du réseau a-t-il été respecté (le hook vivait-il au bon endroit —
+texte/image/verbal) ? la **promesse était-elle tenue** (anti-clickbait) ? → proposer une
+**famille alternative** (via la matrice) et une variante corrigée. Consigner l'apprentissage.
+
 Rapporte à `rapido-marketing:directeur-marketing`.
 
 ## Interdits (non négociables)

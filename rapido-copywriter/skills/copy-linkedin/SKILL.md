@@ -10,8 +10,9 @@ PERSO** du fondateur (Mo qui poste en son nom) → `rapido-marketing:social-sell
 
 ## Étape 0 — contexte
 
-Lire `reference/grammaires-reseaux.md` (fiche **LinkedIn**), `reference/banque-hooks.md`
-(**piocher les hooks `GAGNANT` d'abord**, sinon NEUTRE), `reference/anti-voix-ia.md`,
+Lire `reference/grammaires-reseaux.md` (fiche **LinkedIn**),
+`reference/mecanique-des-hooks.md` (familles + matrice), `reference/banque-hooks.md`
+(**piocher les hooks/familles `GAGNANT` d'abord**, sinon NEUTRE), `reference/anti-voix-ia.md`,
 `reference/articulations.md`. Charte : `get_brand` + `rapido-kb/`. Si campagne : **pilier**
 du `rapidocms:calendrier-editorial`.
 
@@ -21,12 +22,14 @@ Objectif **funnel** (TOFU/MOFU/BOFU — cf. `rapidocms:funnel-tofu-mofu-bofu`), 
 **preuve réelle** (chiffre/témoignage **du CRM/CMS uniquement — jamais inventé**). Format :
 post texte ou **carrousel PDF**.
 
-## 2. Trois variantes (hooks différents, même fond)
+## 2. Sélection des familles → trois variantes
 
-Écrire **3 variantes** selon la grammaire LinkedIn (hook 1-2 lignes avant « …voir plus »,
-900-1 300 car., une idée par ligne, **pas de lien dans le corps** → commentaire, 3-5
-hashtags en fin, CTA conversationnel). Hooks **différents** (piochés/adaptés de la banque),
-même message de fond.
+**Choisir 3 FAMILLES de hooks** adaptées (objectif × étape funnel × réseau) via la
+**matrice** de `reference/mecanique-des-hooks.md`. Écrire **3 variantes sur 3 familles
+DIFFÉRENTES** (jamais 3 formulations de la même famille), même message de fond. **Chaque
+variante annonce sa famille** en une ligne (ex. « — famille : chiffre-preuve »). Grammaire
+LinkedIn (hook 1-2 lignes avant « …voir plus », 900-1 300 car., une idée par ligne, **pas
+de lien dans le corps** → commentaire, 3-5 hashtags, CTA conversationnel).
 
 ## 3. Passe anti-voix-IA (OBLIGATOIRE)
 

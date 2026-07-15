@@ -10,7 +10,8 @@ Deux grammaires **distinctes** (FB ≠ IG) dans un seul skill. Pages de **marque
 ## Étape 0 — contexte
 
 Lire `reference/grammaires-reseaux.md` (fiches **Facebook** et **Instagram**),
-`reference/banque-hooks.md` (**GAGNANT d'abord**), `reference/anti-voix-ia.md`,
+`reference/mecanique-des-hooks.md` (familles + matrice), `reference/banque-hooks.md`
+(**hooks/familles GAGNANT d'abord**), `reference/anti-voix-ia.md`,
 `reference/articulations.md`. Charte : `get_brand` + `rapido-kb/`. Pilier du
 `rapidocms:calendrier-editorial` si campagne.
 
@@ -20,6 +21,10 @@ Objectif funnel, cible, **preuve réelle** (CRM/CMS — jamais inventée), rése
 format(s) : **post FB**, **caption IG**, **carrousel IG**, **Reel**, **Stories**.
 
 ## 2. Écriture par format (grammaire native)
+
+**Sélection des familles** : pour chaque format, choisir 3 **familles différentes** via la
+matrice de `reference/mecanique-des-hooks.md` (le hook IG vit dans l'image/slide 1 ≤125
+car. ; FB court & local) ; chaque variante **annonce sa famille**.
 
 - **Post Facebook** : **40-120 mots**, natif > lien, **angle local** (résonne pour les
   restaurateurs FoodEatUp), CTA clic doux. 3 variantes (hooks différents).

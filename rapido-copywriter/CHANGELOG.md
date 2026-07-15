@@ -1,5 +1,24 @@
 # Changelog — plugin rapido-copywriter
 
+## 0.6.0 — 2026-07-15 — mécanique des hooks par réseau (familles + matrice + diagnostic)
+
+- `reference/mecanique-des-hooks.md` : la couche de **compréhension** — contexte
+  d'attention par réseau (le hook se lit/se voit/s'entend selon le réseau), **taxonomie de
+  10 familles** (mécanisme + quand + quand éviter, psychologie renvoyée à
+  `rapido-meta-ads:influence-psychology`), **matrice famille × réseau** (déclinaison native
+  + pattern par case), règle anti-clickbait (le hook est un contrat, pas un appât).
+- `reference/banque-hooks.md` : chaque hook gagne **famille**, **contexte** (où il vit) et
+  **contre-indication** ; tags GAGNANT/NEUTRE et compteurs préservés ; section synthèse
+  « familles gagnantes par réseau » (écrite par script).
+- Skills patchés : `copy-linkedin`/`copy-meta`/`copy-tiktok` chargent la mécanique et
+  **sélectionnent 3 familles DIFFÉRENTES** (matrice ; chaque variante annonce sa famille) ;
+  `declinaison-multi-reseaux` — la **famille change selon le réseau** (interdit de traduire
+  le hook LinkedIn tel quel en TikTok) ; agent `copywriter-social` — **diagnostic** d'un
+  post sous-performant (famille/contexte/promesse → famille alternative).
+- `scripts/score_hooks.py` : scoring agrégé **par famille × réseau** (en plus du hook) →
+  « familles gagnantes par réseau ». Métriques réelles uniquement.
+- Évals : +5 cas. NOTICE.md à jour (familles/matrice re-dérivées).
+
 ## 0.5.0 — 2026-07-15 — release (recette + README, feature-complete)
 
 - `docs/RECETTE-COPYWRITER.md` : runbook FoodEatUp « coût caché des ruptures de stock »

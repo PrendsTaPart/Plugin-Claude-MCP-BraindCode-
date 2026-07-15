@@ -34,6 +34,21 @@
 8. **Publication** : aucun réseau publié directement — brouillon CMS (ou export du script
    si pas de compte TikTok connecté).
 
+## Mécanique des hooks — familles & matrice (CW-H)
+
+11. **Sélection de familles** : brief **BOFU LinkedIn** → les **3 familles** proposées
+    sont **cohérentes avec la matrice** (`mecanique-des-hooks.md`) et **différentes**
+    (ex. avant/après, chiffre-preuve, autorité) ; chaque variante annonce sa famille.
+12. **Famille qui change à la déclinaison** : une idée déclinée LinkedIn → TikTok →
+    la **famille change** quand la matrice l'exige (le hook LinkedIn n'est **pas** traduit
+    tel quel en TikTok).
+13. **Promesse non tenue → bloqué** : un hook « curiosité » dont le contenu ne délivre
+    pas la promesse → **refusé** avec explication (changer de famille, anti-clickbait).
+14. **Diagnostic** (agent) : sur un post sous la médiane, l'agent analyse famille +
+    contexte d'attention + promesse et propose une **famille alternative**.
+15. **Scoring par famille** : `score_hooks.py` agrège **par famille × réseau** et sort
+    « familles gagnantes par réseau » (métriques réelles uniquement).
+
 ## Agent `copywriter-social` + boucle hooks (CW4)
 
 9. **Agent** : « produis la semaine sociale de [marque] » → `copywriter-social` délègue

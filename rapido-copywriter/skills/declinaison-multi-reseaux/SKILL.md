@@ -19,10 +19,13 @@ Contenu source possible : un **post existant**, un article
 (`rapidocms:generation-article-blog`), un **transcript** de vidéo/épisode. En extraire
 l'**idée-noyau** (le message, la preuve, le CTA) — le fond commun aux 4 réseaux.
 
-## 2. Quatre déclinaisons natives (délégation)
+## 2. Quatre déclinaisons natives (délégation) — la famille peut CHANGER
 
 Pour chaque réseau, **déléguer au skill dédié** (angle ajusté par grammaire, **pas** un
-raccourci du même texte) :
+raccourci du même texte). **La famille de hook peut/doit changer selon le réseau** — la
+**matrice** de `reference/mecanique-des-hooks.md` arbitre (le contexte d'attention diffère :
+LinkedIn se lit, TikTok se voit en < 3 s). **Interdiction de traduire le hook LinkedIn tel
+quel en TikTok** : re-choisir la famille adaptée au réseau.
 
 - LinkedIn → `copy-linkedin` (storytelling pro, CTA question).
 - Facebook → `copy-meta` (court, local).

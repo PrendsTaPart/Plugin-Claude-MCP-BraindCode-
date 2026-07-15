@@ -10,8 +10,10 @@ Le livrable est un **script de tournage/production**, **pas** une caption. Ton
 
 ## Étape 0 — contexte
 
-Lire `reference/grammaires-reseaux.md` (fiche **TikTok**), `reference/banque-hooks.md`
-(hooks TikTok **GAGNANT d'abord**), `reference/anti-voix-ia.md`, `reference/articulations.md`.
+Lire `reference/grammaires-reseaux.md` (fiche **TikTok**),
+`reference/mecanique-des-hooks.md` (familles + matrice — le TikTok = **triple hook**
+verbal+visuel+texte), `reference/banque-hooks.md` (hooks/familles TikTok **GAGNANT
+d'abord**), `reference/anti-voix-ia.md`, `reference/articulations.md`.
 Charte `get_brand` + `rapido-kb/`.
 
 ## 1. Brief

@@ -54,34 +54,56 @@ def main():
         par_reseau.setdefault(net, []).append(_interactions(p))
     medianes = {net: statistics.median(v) for net, v in par_reseau.items() if v}
 
-    # Agrégat par hook
-    par_hook = {}
+    # Agrégat par hook (hook_id × réseau)
+    par_hook, par_famille = {}, {}
     for p in posts:
-        if not isinstance(p, dict) or not p.get("hook_id"):
+        if not isinstance(p, dict):
             continue
-        hid = str(p["hook_id"])
         net = str(p.get("network") or "?").lower()
-        par_hook.setdefault((hid, net), []).append(_interactions(p))
+        inter = _interactions(p)
+        if p.get("hook_id"):
+            par_hook.setdefault((str(p["hook_id"]), net), []).append(inter)
+        if p.get("family"):
+            par_famille.setdefault((str(p["family"]), net), []).append(inter)
+
+    def _tag(moy, net):
+        med = medianes.get(net)
+        return ("GAGNANT" if (med is not None and moy > med) else "NEUTRE"), med
 
     resultats = {}
     for (hid, net), inters in sorted(par_hook.items()):
         moy = round(sum(inters) / len(inters), 2)
-        med = medianes.get(net)
-        tag = "GAGNANT" if (med is not None and moy > med) else "NEUTRE"
+        tag, med = _tag(moy, net)
         resultats[f"{hid}@{net}"] = {
             "hook_id": hid, "network": net, "tag": tag,
-            "n_posts": len(inters), "moyenne_interactions": moy,
-            "mediane_reseau": med,
+            "n_posts": len(inters), "moyenne_interactions": moy, "mediane_reseau": med,
         }
+
+    # Agrégat PAR FAMILLE × réseau
+    familles = {}
+    gagnantes = {}  # réseau → familles GAGNANT
+    for (fam, net), inters in sorted(par_famille.items()):
+        moy = round(sum(inters) / len(inters), 2)
+        tag, med = _tag(moy, net)
+        familles[f"{fam}@{net}"] = {
+            "famille": fam, "network": net, "tag": tag,
+            "n_posts": len(inters), "moyenne_interactions": moy, "mediane_reseau": med,
+        }
+        if tag == "GAGNANT":
+            gagnantes.setdefault(net, []).append(fam)
 
     print(json.dumps({
         "medianes_reseau": {k: round(v, 2) for k, v in medianes.items()},
         "hooks": resultats,
+        "familles": familles,
+        "familles_gagnantes_par_reseau": gagnantes,
         "formule": "interactions = liked + shares + comments ; "
-                   "GAGNANT si moyenne(hook) > médiane du réseau",
+                   "GAGNANT si moyenne > médiane du réseau (par hook ET par famille)",
     }, ensure_ascii=False, indent=2))
-    print(f"# {len(resultats)} hooks scorés sur {len(posts)} posts "
-          f"({len(medianes)} réseaux) — métriques réelles uniquement.", file=sys.stderr)
+    print(f"# {len(resultats)} hooks, {len(familles)} couples famille×réseau "
+          f"sur {len(posts)} posts ({len(medianes)} réseaux) — métriques réelles "
+          f"uniquement. Écrire la synthèse « familles gagnantes » dans banque-hooks.md "
+          f"+ apprentissages.md.", file=sys.stderr)
     return 0
 
 
