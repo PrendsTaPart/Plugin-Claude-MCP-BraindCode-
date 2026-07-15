@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.2.0 — 2026-07-15
+
+- Skill **`gouvernance-credits`** (H2) : gardien budgétaire du plugin.
+  - `scripts/verifie_budget.py` (stdlib) : verdict **OK / CONFIRMATION REQUISE /
+    BLOQUÉ** — BLOQUÉ si coût > solde ou coût > (plafond − déjà consommé) ;
+    CONFIRMATION si coût > seuil ; formule affichée, somme des `transactions`
+    spend/deduct pour le compteur.
+  - Workflow : `balance` (solde), `transactions` (consommation), **préflight
+    get_cost** (jamais de tête ; cas non préflightables — dubbing/upscale — estimés
+    via la grille H0 et signalés), verdict par script, compteur mensuel tenu à jour.
+  - **Règle transverse** : tout skill du plugin invoque `gouvernance-credits` en
+    préflight dès que la production dépasse le seuil KB (hook `garde-couts` en filet).
+  - `tests/evals.md` : 3 scénarios (dont GC3 blocage pub 15 s sur solde gratuit).
+
 ## 0.1.1 — 2026-07-15
 
 - **Audit live H0** (`docs/AUDIT-MCP-HIGGSFIELD.md` + `docs/GRILLE-COUTS-HIGGSFIELD.md`) :
