@@ -1,6 +1,6 @@
 {
   "name": "rapido-higgsfield",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Usine média IA (Higgsfield) branchée sur l'écosystème Rapido : images 4K/packshots, vidéos génératives et pubs, personnages cohérents (Soul/Elements), voix & doublage, sites & jeux — routage média unifié et gouvernance des coûts en crédits. Squelette v0.1.0 (routage, garde-fous, hooks) ; skills en H2+.",
   "author": {
     "name": "BraindCode",

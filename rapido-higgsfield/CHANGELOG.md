@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.9.0 — 2026-07-15
+
+- Agent **`producteur-studio`** (H9) : l'exécutant média — route, **chiffre avant**
+  (`gouvernance-credits`), produit via H3-H8, critique charte, rapatrie CMS,
+  **récapitule job_ids/asset_ids/coûts**. Interdits : publier, booster (sans PASS au
+  gate), cloner une voix sans consentement, dépasser le plafond. Briefs de
+  `rapidocms:directeur-artistique` + managers M11 ; écarts → `rapidocms:gardien-de-marque`.
+
 ## 0.8.0 — 2026-07-15
 
 - Skill **`sites-et-jeux-express`** (H8) : microsites jetables + jeux jouables.

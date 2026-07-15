@@ -1,4 +1,10 @@
-# Évals — plugin rapido-higgsfield (0.8.0)
+# Évals — plugin rapido-higgsfield (0.9.0)
+
+## Agent — producteur-studio
+
+| Phrase | Attendu |
+|---|---|
+| « Produis toute la vague média de la campagne » | **producteur-studio** : route (`routage-media.md`) → **chiffre AVANT** (`gouvernance-credits`, BLOQUÉ = stop) → produit via H3-H8 → critique charte (grille `rapidocms:studio-visuel-marque`) → rapatrie CMS → **récapitule job_ids/asset_ids/coûts** ; ne publie/booste jamais, pas de clone voix sans consentement, plafond respecté ; briefs de `rapidocms:directeur-artistique` + managers M11 |
 
 ## sites-et-jeux-express
 
