@@ -1,5 +1,27 @@
 # Changelog — plugin rapido-marketing
 
+## 0.11.0 — 2026-07-15
+
+- Skill `sales-intelligence-fireflies` : pipeline qui transforme les transcripts
+  de RDV réels (MCP Fireflies) en playbook d'objections chiffré + hooks de copy.
+  - Schémas Fireflies vérifiés live (`fireflies_get_transcripts` filtré →
+    `fireflies_get_summary`/`fireflies_get_transcript` par ID ;
+    `fireflies_create_soundbite` startTime/endTime en secondes).
+  - `scripts/mine_transcripts.py` (stdlib) : fréquence des objections par catégorie
+    (prix/timing/concurrent/confiance/technique/autorité), questions récurrentes,
+    verbatims horodatés **anonymisés** (fonction `anonymiser` : emails/tél/noms),
+    patterns gagné vs perdu si l'issue CRM est connue — jamais de comptage de tête.
+  - Articulation écrite : `rapido-forge:scale-objections-playbook` = FORMAT,
+    `rapidocrm:mom-test` = grille de lecture (passé/concret) ; SOURCE de données,
+    pas un doublon. Livrables → `objections.md` + hooks pour `redaction-commerciale`
+    et `machine-outbound` ; leçons datées (≥2 occurrences) dans `apprentissages.md`.
+  - Garde-fous : périmètre confirmé AVANT lecture ; transcript = donnée personnelle
+    (KB interne) ; verbatims anonymisés, aucun nom publiable sans accord écrit ;
+    write-backs (`log_activity`, `fireflies_create_soundbite`) confirmés un par un.
+  - Adapté de `docs/methodo/ops/sales-intelligence.md` (gtm-flywheel, MIT ColdIQ).
+- `.mcp.json` : serveur `fireflies` déclaré via `${FIREFLIES_MCP_URL}` (patron
+  portable, comme n8n) ; mode dégradé si absent (import manuel + flag Tunis).
+
 ## 0.10.0 — 2026-07-14
 
 - Couche mémoire sur les primitives EXISTANTES (rapido-kb + tables n8n), aucun

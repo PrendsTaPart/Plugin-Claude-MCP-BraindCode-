@@ -28,6 +28,10 @@
       "type": "http",
       "url": "${N8N_MCP_URL}"
     },
+    "fireflies": {
+      "type": "http",
+      "url": "${FIREFLIES_MCP_URL}"
+    },
     "gmail": {
       "type": "http",
       "url": "https://gmailmcp.googleapis.com/mcp/v1"
