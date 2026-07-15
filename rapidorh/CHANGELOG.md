@@ -1,5 +1,10 @@
 # Changelog — plugin rapidorh
 
+## 1.0.3 — 2026-07-15
+
+- `onboarding-rh-methodo` (patch H9) : renvoi vers `rapido-higgsfield:videos-explicatives`
+  (si installé) pour produire la **vidéo d'accueil J1**.
+
 ## 1.0.2 — 2026-07-11
 
 - Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,

@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-meta-ads
 
+## 1.0.5 — 2026-07-15
+
+- `creatifs-publicitaires` (patch H9) : **3e voie créatif** — Higgsfield premium
+  (packshot 4K, pub vidéo) via `rapido-higgsfield:studio-image-pro`/`usine-video-marketing`
+  si installé, **coût confirmé**, `self_ai_disclosure: OPT_IN`, **gate viral avant boost**.
+
 ## 1.0.4 — 2026-07-15
 
 - **Gate viral** câblé (patch H6) : `lancement-campagne-meta` et

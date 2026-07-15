@@ -59,6 +59,10 @@ Generate a comprehensive onboarding plan for a new team member.
 - [ ] Prepare desk / remote setup instructions
 
 ### Day 1
+> **Vidéo d'accueil J1** : une vidéo de bienvenue peut être produite via
+> `rapido-higgsfield:videos-explicatives` **si le plugin est installé** (script →
+> clips → voix → montage explainer), à montrer au « Welcome and orientation ».
+
 | Time | Activity | With |
 |------|----------|------|
 | 9:00 | Welcome and orientation | Manager |

@@ -48,3 +48,6 @@ mal orthographié crée un doublon : reprendre les noms EXACTS de `list_dishes`.
   `update_recipe`) — la vitrine et le menu imprimé doivent rester cohérents :
   proposer de mettre à jour les deux.
 - Ne pas cacher une catégorie (`show_on_storefront: false`) sans confirmation.
+- **Photos de plats premium** (packshots 4K de la carte) → mode « carte en photos »
+  de `rapido-higgsfield:studio-image-pro` **si installé** (`list_dishes` → packshot
+  par plat, coût du lot confirmé) ; rapatriement puis liaison à la vitrine.
