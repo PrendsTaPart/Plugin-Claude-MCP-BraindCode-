@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-n8n
 
+## 1.3.0 — 2026-07-15 — recettes de vente événementielles
+
+- `reference/recettes-vente.md` : **3 recettes OPS-*** au format des routines
+  marketing (déclencheur, pseudo-nœuds, table mémoire, garde-fous) —
+  **OPS-LEAD-CHAUD** (webhook lead chaud → pipeline Qualifié + créneaux Calendar +
+  brouillon Gmail, jamais de réponse directe ; table `ops_leads_chauds`),
+  **OPS-CLIENT-GAGNE** (devis accepté → deal gagné + acompte + projet RapidoRH +
+  kick-off + bienvenue + relance ambassadeur J+60 ; table `ops_onboardings`),
+  **OPS-ALERTE-CHURN** (hebdo → clients inactifs 30 j, alerte interne priorisée +
+  plan de sauvetage ; table `ops_churn_alertes`).
+- `recettes-metier/SKILL.md` référence `recettes-vente.md` ; les 3 recettes sont
+  enregistrées au **registre unifié** (préfixe `OPS-*`).
+- **Aucun workflow créé sur l'instance** : recettes installables, installation
+  recette par recette sur confirmation via `usine-automatisations`. Toute action
+  visible reste en brouillon ; pas de table mémoire = pas d'installation.
+
 ## 1.2.0 — 2026-07-11
 
 - Nouvelle référence `reference/recette-r7-cash-sentinel.md` : la routine

@@ -16,7 +16,7 @@
 | `VIDEO-*` | Production vidéo éditoriale | `rapido-startup` (`loop-engine-v2`) | actif |
 | `MKT-*` | Marketing (pilotage, sentinelle, board) | `rapido-marketing` | actif |
 | `VENTE-*` | Boucle commerciale (hygiène, relances, revue, expansion) | `rapidocrm` (`pilotage-commercial`) | actif (expansion : PROMPT 3) |
-| `OPS-*` | Workflows événementiels de vente (n8n) | `rapido-n8n` | **réservé** (PROMPT 4) |
+| `OPS-*` | Workflows événementiels de vente (n8n) | `rapido-n8n` (`recettes-metier`) | actif |
 
 ## Table des alias (rétrocompatibilité)
 
@@ -146,12 +146,34 @@
 - **Autonomie** : **niveau 1 max** — propositions préparées, aucune écriture d'office.
 - **Mémoire n8n** : — (journal `rapido-kb/commercial/apprentissages.md`).
 
+### OPS-LEAD-CHAUD
+- **Noms parlés** : « réponds au lead chaud », « lead à fort intent », « nouvelle soumission chaude ».
+- **Cadence** : **événementiel** — webhook sur soumission de formulaire CRM à fort intent.
+- **Propriétaire** : `rapido-n8n` (`recettes-metier`) · **Fichier** : `rapido-n8n/reference/recettes-vente.md`.
+- **Skills délégués** : `usine-automatisations` (installation) ; actions CRM/Calendar/Gmail en brouillon.
+- **Autonomie** : alerte + brouillon — **jamais de réponse directe au prospect**.
+- **Mémoire n8n** : `ops_leads_chauds` (obligatoire).
+
+### OPS-CLIENT-GAGNE
+- **Noms parlés** : « onboarde le client gagné », « devis accepté → lance l'onboarding ».
+- **Cadence** : **événementiel** — devis passé à « accepté ».
+- **Propriétaire** : `rapido-n8n` (`recettes-metier`) · **Fichier** : `rapido-n8n/reference/recettes-vente.md`.
+- **Skills délégués** : `usine-automatisations` ; deal gagné, acompte, projet RapidoRH, kick-off, relance ambassadeur J+60.
+- **Autonomie** : facture/emails en **brouillon confirmé**.
+- **Mémoire n8n** : `ops_onboardings` (obligatoire).
+
+### OPS-ALERTE-CHURN
+- **Noms parlés** : « alerte churn », « clients qui décrochent », « rétention ».
+- **Cadence** : hebdomadaire (Schedule) — mais logique événementielle (signal d'inactivité).
+- **Propriétaire** : `rapido-n8n` (`recettes-metier`) · **Fichier** : `rapido-n8n/reference/recettes-vente.md`.
+- **Skills délégués** : `usine-automatisations` ; alerte interne priorisée + plan de sauvetage.
+- **Autonomie** : alerte **interne** seulement, aucun contact client d'office.
+- **Mémoire n8n** : `ops_churn_alertes` (obligatoire, anti-re-signalement).
+
 ---
 
-## Réservé (prochains lots)
-
-- **`OPS-*`** — workflows événementiels de vente (`rapido-n8n`) : `OPS-LEAD-CHAUD`,
-  `OPS-CLIENT-GAGNE`, `OPS-ALERTE-CHURN` (PROMPT 4).
+> **Toutes les routines/recettes du marketplace sont désormais enregistrées.** Ajout
+> futur : lui donner un id `PRÉFIXE-NOM` et l'inscrire ci-dessus.
 - **`OPS-*`** — workflows événementiels de vente (`rapido-n8n`) : `OPS-LEAD-CHAUD`,
   `OPS-CLIENT-GAGNE`, `OPS-ALERTE-CHURN` (PROMPT 4).
 

@@ -73,3 +73,13 @@ La routine R7 du Loop Engine (plugin rapido-startup) en workflow autonome —
 nodes, CONFIG et étapes d'activation dans
 `${CLAUDE_PLUGIN_ROOT}/reference/recette-r7-cash-sentinel.md`. Publication
 toujours confirmée (hook garde-production).
+
+## Recettes de vente événementielles (OPS-*)
+
+Les trois workflows **événementiels** de la boucle de vente — **OPS-LEAD-CHAUD**
+(réponse au lead chaud), **OPS-CLIENT-GAGNE** (onboarding du client gagné),
+**OPS-ALERTE-CHURN** (sentinelle rétention) — sont décrits dans
+`${CLAUDE_PLUGIN_ROOT}/reference/recettes-vente.md` (déclencheur, pseudo-nœuds,
+table mémoire, garde-fous) et enregistrés au registre unifié
+`reference/registre-routines.md` (préfixe `OPS-*`). Chaque recette a sa **table
+mémoire** obligatoire ; installation **sur confirmation**, recette par recette.
