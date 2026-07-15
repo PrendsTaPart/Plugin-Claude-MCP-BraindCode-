@@ -17,6 +17,9 @@
 | `MKT-*` | Marketing (pilotage, sentinelle, board) | `rapido-marketing` | actif |
 | `VENTE-*` | Boucle commerciale (hygiène, relances, revue, expansion) | `rapidocrm` (`pilotage-commercial`) | actif (expansion : PROMPT 3) |
 | `OPS-*` | Workflows événementiels de vente (n8n) | `rapido-n8n` (`recettes-metier`) | actif |
+| `SEO-*` | Acquisition organique (positions, backlinks, audit) | `rapido-seo` (`pilotage-seo`) | actif |
+| `SEA-*` | Acquisition payante Google (gaspillage, synergie) | `rapido-google-ads` | actif |
+| `TIKTOK-*` | Acquisition payante TikTok | `rapido-tiktok-ads` | actif (si compte) |
 
 ## Table des alias (rétrocompatibilité)
 
@@ -170,6 +173,33 @@
 - **Autonomie** : alerte **interne** seulement, aucun contact client d'office.
 - **Mémoire n8n** : `ops_churn_alertes` (obligatoire, anti-re-signalement).
 
+### SEO-HEBDO
+- **Noms parlés** : « positions de la semaine », « striking distance », « point SEO hebdo ».
+- **Cadence** : hebdomadaire — lundi (cron n8n). **Mémoire n8n** : `seo_positions_journal`.
+- **Propriétaire** : `rapido-seo:pilotage-seo` · **Recette** : `rapido-n8n/reference/recettes-seo.md`.
+- **Contenu** : positions GSC + striking distance + 3 actions contenu. **Rank-tracking
+  récurrent = n8n obligatoire** (coût DataForSEO gouverné).
+- **Autonomie** : alerte + brouillons ; écriture CMS confirmée.
+
+### SEO-MENSUEL
+- **Noms parlés** : « backlinks du mois », « audit technique mensuel », « delta SEO ».
+- **Cadence** : mensuelle. **Mémoire n8n** : `seo_backlinks_journal`.
+- **Propriétaire** : `rapido-seo:pilotage-seo` · **Recette** : `recettes-seo.md`.
+- **Contenu** : backlinks new/lost + delta d'audit technique. Coût DataForSEO annoncé.
+
+### SEA-HEBDO
+- **Noms parlés** : « gaspillage Google Ads », « synergie SEO/SEA de la semaine ».
+- **Cadence** : hebdomadaire. **Mémoire n8n** : `sea_synergie_journal`.
+- **Propriétaire** : `rapido-google-ads` · **Recette** : `recettes-seo.md`.
+- **Contenu** : gaspillage + croisement SEO/SEA (économies, opportunités). **Lecture
+  seule** → actions manuelles.
+
+### TIKTOK-HEBDO (si compte actif)
+- **Noms parlés** : « perf TikTok de la semaine », « arbitrage TikTok/Meta ».
+- **Cadence** : hebdomadaire. **Mémoire n8n** : `tiktok_perf_journal`.
+- **Propriétaire** : `rapido-tiktok-ads` · **Recette** : `recettes-seo.md`.
+- **Contenu** : CPM/CPC/CPA + comparatif vs Meta. Écriture **verrouillée** (inactif + confirmation).
+
 ---
 
 > **Toutes les routines/recettes du marketplace sont désormais enregistrées.** Ajout
@@ -206,6 +236,7 @@
 | LTGP (par canal) | (revenu − coût) ÷ clients | `attribution-kpi-marketing/kpi_marketing.py` | marketing seulement (≠ LTV) |
 | ROI (par canal) | (revenu − dépense) ÷ dépense | `attribution-kpi-marketing` | marketing |
 | Attribution % (par canal) | contacts (1er/dernier point) ÷ total × 100 | `attribution-kpi-marketing` | marketing |
+| Part organique vs payante du CA | CA attribué organique ÷ CA total (et part payante) | `catalogue-kpi` (données `attribution-kpi-marketing` : GA4/GSC/Ads/TikTok) | marketing, board |
 
 > **Frontière** : `catalogue-kpi` = formules & calculs · `attribution-kpi-marketing`
 > = répartition/attribution par canal · `money-math-acquisition` = cadrage décisionnel

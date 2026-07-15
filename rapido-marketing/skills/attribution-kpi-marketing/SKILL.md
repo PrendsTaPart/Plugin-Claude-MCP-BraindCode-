@@ -54,6 +54,16 @@ avec la limite du modèle rappelée.
 - Performance pub détaillée → skill `pilotage-performance-ads`.
 - Money math d'acquisition (LTGP:CAC, seuils) → skill `money-math-acquisition`.
 
+## Sources d'attribution (multi-canal étendu)
+Quand les plugins sont installés, croiser les sources (serveur absent = sauté en le disant) :
+- **GA4** (`run_report`) — trafic et conversions par **source/medium**.
+- **GSC** (`rapido-seo:performance-organique`) — canal **organique** (positions, clics).
+- **Google Ads** (`rapido-google-ads`) — **SEA** (dépense, conversions par campagne).
+- **TikTok Ads** (`rapido-tiktok-ads`) et **Meta** (`rapido-meta-ads`) — **payant social**.
+- KPI **« part organique vs payante du CA »** : CA attribué organique ÷ CA total (et
+  la part payante) — formule au **Registre des KPIs** (`reference/registre-routines.md`),
+  calcul `rapido-startup:catalogue-kpi`.
+
 ## Frontière KPI (source unique des formules)
 - **`rapido-startup:catalogue-kpi` = source de vérité des FORMULES** (CAC, LTV,
   ratio, runway, DSO…). Le CAC calculé ici (`dépense / clients`) est **la même

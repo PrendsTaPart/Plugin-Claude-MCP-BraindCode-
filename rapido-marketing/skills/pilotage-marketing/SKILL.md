@@ -9,6 +9,13 @@ Orchestrateur : il **ne fait rien lui-même**, il diagnostique, priorise, délè
 aux skills/agents d'exécution, capitalise et rend compte. Boucle **Sense → Plan →
 Act → Feed → Report**.
 
+## Anti-collision
+- **`rapido-suite:pilotage-entreprise`** (au-dessus) : voir ci-dessous.
+- **`rapido-seo:pilotage-seo`** (en dessous) : le **sous-domaine SEO/organique**. Si
+  `rapido-seo` est installé, ce skill **invoque `pilotage-seo`** pour son volet
+  organique (SENSE + ACT organique) **au lieu de le dupliquer** — même règle miroir
+  que `pilotage-entreprise ↔ pilotage-marketing`.
+
 ## Anti-collision avec `rapido-suite:pilotage-entreprise`
 Ce skill est le **sous-domaine marketing** du pilotage transverse. **Si
 `rapido-suite` est installé**, `rapido-suite:pilotage-entreprise` **invoque ce
@@ -30,7 +37,13 @@ en le disant) :
 - **KPI réels** → `attribution-kpi-marketing` (attribution par canal, CAC/LTV/ROI).
 - **Pipeline** → `rapidocrm:coaching-pipeline` (deals dormants, étapes, prévision).
 - **Contenus** → `rapidocms:analyse-performance-contenu` (posts, portée, engagement).
-- **Pubs** → `rapido-meta-ads:pilotage-performance-ads` (dépense, ROAS, alertes).
+- **Pubs Meta** → `rapido-meta-ads:pilotage-performance-ads` (dépense, ROAS, alertes).
+- **SEO / organique** → `rapido-seo:pilotage-seo` (positions, striking distance,
+  netlinking) — **si installé**, serveur absent = volet sauté en le disant.
+- **SEA Google** → `rapido-google-ads:pilotage-performance-google-ads` (CPA/ROAS
+  Google, lecture seule) — **si installé**, sinon sauté en le disant.
+- **TikTok** → `rapido-tiktok-ads:pilotage-performance-tiktok` (CPM/CPC/CPA) — **si
+  installé**, sinon sauté en le disant.
 - **Automatisations** → `rapido-n8n:surveillance-automatisations` (échecs n8n récents).
 - **Mémoire** → `./rapido-kb/marketing/apprentissages.md` **récents** (les leçons
   priment) + `benchmarks.md`.
@@ -53,7 +66,10 @@ en le disant) :
   - inbound → agent `inbound-manager` / skill `machine-inbound` ;
   - outbound → agent `outbound-manager` / skill `machine-outbound` ;
   - tunnel → agent `funnel-builder` / skill `tunnel-de-vente-360` ;
-  - paid → skill `rapido-meta-ads:pilotage-performance-ads` ;
+  - paid → **Meta** (`rapido-meta-ads`) **OU Google** (`rapido-google-ads`, lecture →
+    actions manuelles) **OU TikTok** (`rapido-tiktok-ads`, verrouillé) selon
+    l'arbitrage de l'agent `directeur-marketing` (mêmes KPIs via `catalogue-kpi`) ;
+  - organique → `rapido-seo:pilotage-seo` (sous-domaine SEO — voir Anti-collision) ;
   - lecture/analyse → agent `growth-analyst`.
 - Arbitrage stratégique global → agent `directeur-marketing`.
 - **Tout envoi / publication / activation / lancement = confirmation** (garde-envois

@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-marketing
 
+## 0.17.0 — 2026-07-15 — intégration acquisition (SEO/SEA/TikTok)
+
+- `pilotage-marketing` : **SENSE enrichi** — SEO (`rapido-seo:pilotage-seo`), SEA
+  (`rapido-google-ads`), TikTok (`rapido-tiktok-ads`), chacun « si installé, sinon
+  sauté en le disant ». **ACT paid** route désormais Meta OU Google OU TikTok
+  (arbitrage `directeur-marketing`). **Anti-collision** : `pilotage-seo` = sous-domaine
+  organique (règle miroir).
+- `attribution-kpi-marketing` : **sources étendues** (GA4 source/medium, GSC organique,
+  Google Ads, TikTok) + KPI **« part organique vs payante du CA »** (registre des KPIs).
+- `geo-optimization` : anti-collision explicite avec `rapido-seo:recherche-mots-cles`
+  (GEO génératif vs search classique).
+
 ## 0.16.3 — 2026-07-15 — frontière KPI (anti-divergence)
 
 - `attribution-kpi-marketing` : section **« Frontière KPI »** — `catalogue-kpi` est la

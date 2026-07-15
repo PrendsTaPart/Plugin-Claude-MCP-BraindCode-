@@ -55,11 +55,11 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
-| `rapido-n8n` | 1.3.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-n8n` | 1.4.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.1 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.2 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
-| `rapido-marketing` | 0.16.3 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
+| `rapido-marketing` | 0.17.0 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
@@ -72,6 +72,21 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
+
+### Nouveau — Acquisition organique & payante
+
+3 nouveaux plugins branchés sur les boucles existantes (SENSE de `pilotage-marketing`
+enrichi, attribution étendue, registre + recettes n8n) :
+- **`rapido-seo`** (organique) — audit technique, mots-clés, netlinking, GSC/GA4,
+  tendances ; orchestrateur `pilotage-seo` (sous-domaine de `pilotage-marketing`).
+- **`rapido-google-ads`** (SEA, **lecture seule**) — pilotage, audit, mots-clés
+  payants, **synergie SEO/SEA** (chaque euro économisé nourrit le budget test).
+- **`rapido-tiktok-ads`** (**verrouillé argent réel**) — pilotage, lancement 100 %
+  inactif, tendances créatives.
+- **13 nouveaux skills**, routines **`SEO-HEBDO`/`SEO-MENSUEL`/`SEA-HEBDO`/`TIKTOK-HEBDO`**
+  (rank-tracking DataForSEO **en n8n**, coût gouverné), KPI « part organique vs payante ».
+- Coûts **DataForSEO gouvernés** (facturation à l'appel, volume → n8n) ; GA4/Google
+  Ads **read-only** ; fraîcheur GSC (J-3) précisée.
 
 ### Nouveau — Boucle de vente (loop-engineering)
 

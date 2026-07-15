@@ -1,5 +1,33 @@
 # Notes de release
 
+## Acquisition organique & payante (2026-07-15)
+
+3 nouveaux plugins + intégration dans les boucles (SENSE enrichi, attribution étendue,
+registre + recettes n8n) — **13 nouveaux skills, 4 routines**.
+
+- **`rapido-seo` (0.1.0)** — acquisition **organique** : `audit-seo-technique`,
+  `recherche-mots-cles` (≠ `geo-optimization`), `netlinking`, `performance-organique`
+  (GSC+GA4), `tendances-marche`, **`pilotage-seo`** (sous-domaine organique de
+  `pilotage-marketing`). Coûts DataForSEO gouvernés ; GA4/GSC read-only ; fraîcheur GSC dite.
+- **`rapido-google-ads` (0.1.0)** — SEA **lecture seule** : `pilotage-performance-google-ads`,
+  `recherche-mots-cles-sea`, `audit-compte-google-ads`, **`synergie-seo-sea`**. Analyse
+  et recommande (exécution manuelle guidée).
+- **`rapido-tiktok-ads` (0.1.0)** — **verrouillé argent réel** : `pilotage-performance-tiktok`,
+  `lancement-campagne-tiktok` (100 % inactif), `tendances-creatives-tiktok`. Création
+  active **refusée** (hook DENY).
+- **Intégration** : `pilotage-marketing` SENSE (SEO/SEA/TikTok « si installé ») + ACT
+  paid Meta/Google/TikTok ; `attribution-kpi-marketing` sources étendues + KPI « part
+  organique vs payante » ; routines `SEO-HEBDO`/`SEO-MENSUEL`/`SEA-HEBDO`/`TIKTOK-HEBDO`
+  + `rapido-n8n/reference/recettes-seo.md` (rank-tracking DataForSEO **en n8n**).
+- Serveurs SEO/Ads **non encore connectés** → skills écrits d'après les grammaires
+  documentées (pattern « construire d'abord », comme ElevenLabs E1) ; checklist d'accès
+  dans chaque README. **Validation** : valider TOUT VALIDE (20 plugins) ; tester 0/0/0.
+
+Plugins touchés : nouveaux `rapido-seo`/`rapido-google-ads`/`rapido-tiktok-ads` ;
+`rapido-marketing` 0.16.3→0.17.0, `rapido-n8n` 1.3.0→1.4.0.
+
+---
+
 ## Boucle de vente — loop-engineering (2026-07-15)
 
 Complète le loop-engineering du marketplace **sans rien refonder** (loop-engine-v2,

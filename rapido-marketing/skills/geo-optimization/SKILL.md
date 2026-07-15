@@ -54,6 +54,12 @@ accord, le contenu corrigé prêt à publier.
 - Conformité à la marque du contenu corrigé → skill `contenu-conforme-marque`.
 - Angle éditorial / calendrier → skill `calendrier-editorial`.
 
+## Anti-collision avec `rapido-seo:recherche-mots-cles`
+Ce skill = optimisation pour **moteurs GÉNÉRATIFS** (être cité/repris par les
+réponses LLM — GEO). **`rapido-seo:recherche-mots-cles`** = **search classique**
+(volumes Google, difficulté, SERP, contenu). Un besoin « être cité par ChatGPT » →
+ici ; « me positionner sur Google » → rapido-seo. Règle miroir des deux côtés.
+
 ## Garde-fous
 Score **par script** (checklist déterministe), jamais de tête ; chiffres et
 sources **réels** (pas de stat inventée pour « densifier ») ; mise à jour du
