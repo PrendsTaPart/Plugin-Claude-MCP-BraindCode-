@@ -1,5 +1,16 @@
 # Évals — plugin rapido-prompteur (0.3.0)
 
+## Anti-déclenchements (le directeur ne s'invite pas partout)
+
+| Phrase | NE doit PAS router vers | Route correcte |
+|---|---|---|
+| « Écris un post LinkedIn » | `directeur-prompts` (ce n'est pas un prompt de génération média) | `rapidocms:pipeline-contenu-social` |
+| « Génère l'image » avec un **brief net** (produit, angle, format connus) | `directeur-prompts` (pas de détour : le brief est déjà clair) | skill exécutant direct (`rapidocms:prompt-engineering-visuel` ou `rapido-higgsfield:studio-image-pro`) |
+| « Corrige la faute de texte dans ce visuel » | `directeur-prompts` | `rapidocms:prompts-visuels-pro` (protocole zéro faute) |
+
+> Le directeur `directeur-prompts` s'active pour **cadrer un besoin flou / multi-moteurs**
+> ou obtenir des **variantes comparées** — pas pour un brief déjà net ni pour du copy.
+
 ## agent directeur-prompts + boucle d'apprentissage
 
 | # | Phrase | Attendu |
