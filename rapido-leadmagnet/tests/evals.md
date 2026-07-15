@@ -1,4 +1,4 @@
-# Évals — plugin rapido-leadmagnet (0.3.0)
+# Évals — plugin rapido-leadmagnet (0.5.0)
 
 ## Déclenchement (phrases → skill)
 
@@ -7,6 +7,8 @@
 | « Fabrique le lead magnet » / « rédige le guide/la checklist » / « produis l'ebook » / « crée le PDF du lead magnet » | `fabrication-lead-magnet` |
 | « Page du lead magnet » / « landing de capture » / « formulaire pour le guide » / « mets le lead magnet en ligne » | `page-et-capture` |
 | « Lance la campagne du lead magnet » / « fais connaître le guide » / « diffuse le lead magnet » / « campagne de téléchargement » | `campagne-lead-magnet` |
+| « Crée les tâches du lead magnet » / « projet RH de la campagne » / « organise la campagne dans RapidoRH » | `projet-rh-lead-magnet` |
+| Brief « pilote ce lead magnet de bout en bout » | agent `chef-usine-leadmagnet` |
 
 ## Cas `page-et-capture` (4)
 
@@ -46,6 +48,16 @@
    `upload_file_tool` → URL vérifiée → registre `lead-magnets.md`.
 4. **Dégradation renderer** : aucun outil PDF disponible → le dire, livrer le HTML
    print-ready (pas d'échec silencieux, pas de PDF inventé).
+
+## Cas `projet-rh-lead-magnet` + agent (3)
+
+13. **Projet + tâches** : « organise la campagne dans RapidoRH » → projet « LM — {nom} »
+    + Kanban + ~20 tâches (une par livrable, critère de done).
+14. **Affectation dynamique** : agents résolus via `get-users-list-tool` (users
+    `🤖`/`🧠`), assignés par ID — **jamais d'ID en dur** ; fallback `[AGENT:{rôle}]`
+    + humain si pas d'agent-user.
+15. **Agent `chef-usine-leadmagnet`** : orchestre les 9 étapes ; interdits (envoi/pub
+    sans confirmation, fabrication sans conception, sauter un gate, > 1 LM en prod).
 
 ## Garde-fous (hook `garde-budget-ads`, testé au testeur)
 

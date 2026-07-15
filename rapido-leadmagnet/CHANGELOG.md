@@ -1,5 +1,24 @@
 # Changelog — plugin rapido-leadmagnet
 
+## 0.5.0 — 2026-07-15 — projet RH + agent + release (feature-complete)
+
+- Skill **`projet-rh-lead-magnet`** — projet « LM — {nom} » + Kanban + ~20 tâches
+  (une par livrable des 9 étapes), **affectées aux agents IA** résolus
+  dynamiquement via `get-users-list-tool` (jamais d'ID en dur ; fallback
+  `[AGENT:{rôle}]` + humain). Suivi délégué à `rapidorh:revue-projet-hebdo`.
+- Agent **`chef-usine-leadmagnet`** — orchestre les 9 étapes de bout en bout sur
+  brief, tient le projet RH à jour, rapporte à `directeur-marketing`. Interdits :
+  envoi/pub sans confirmation, fabrication sans conception, sauter un gate, > 1 LM
+  en prod.
+- Patchs cross-plugin (rapido-marketing) : `lead-magnet-machine` (→ l'usine
+  exécute), `machine-inbound` (LM = source de capture), `lead-scoring` (tag
+  leadmagnet = signal d'engagement).
+- `docs/RECETTE-LEADMAGNET.md` — runbook FoodEatUp « Checklist HACCP » (6 étapes +
+  grille de relevé). **Recette réelle déférée au client** (crée de la donnée prod +
+  coûts Higgsfield/Meta). Version **0.5.0** feature-complete (4 skills + 1 agent) ;
+  1.0.0 après un run réel.
+- Évals : +3 cas (projet+tâches, affectation dynamique, agent).
+
 ## 0.4.0 — 2026-07-15 — campagne-lead-magnet (organique + payant + nurturing + mesure)
 
 - Skill **`campagne-lead-magnet`** — diffusion complète : **organique** (campagne CMS
