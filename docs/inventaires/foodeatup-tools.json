@@ -1,0 +1,1337 @@
+{
+  "server": "foodeatup",
+  "date": "2026-07-15",
+  "source": "introspection du MCP FoodEatUp connecté (session Claude Code, 2026-07-15)",
+  "tool_count": 111,
+  "tools": [
+    {
+      "name": "add_temperature",
+      "description": "Enregistre une mesure de température d'équipement (HACCP).",
+      "params_required": [
+        "establishment_id",
+        "equipment_id",
+        "temperature"
+      ],
+      "params_optional": [
+        "measured_at"
+      ]
+    },
+    {
+      "name": "add_waitlist",
+      "description": "Ajoute un client à la file d'attente.",
+      "params_required": [
+        "establishment_id",
+        "party_size"
+      ],
+      "params_optional": [
+        "customer_name",
+        "customer_phone"
+      ]
+    },
+    {
+      "name": "adjust_stock",
+      "description": "Ajuste la quantité en stock d'un produit du catalogue (définir ou incrémenter).",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id",
+        "quantity"
+      ],
+      "params_optional": [
+        "mode"
+      ]
+    },
+    {
+      "name": "approve_leave",
+      "description": "Approuve une demande de congé en attente.",
+      "params_required": [
+        "establishment_id",
+        "leave_id"
+      ],
+      "params_optional": [
+        "comments"
+      ]
+    },
+    {
+      "name": "assign_task",
+      "description": "Assigne une tâche à un employé (date/heure/priorité optionnelles).",
+      "params_required": [
+        "establishment_id",
+        "professional_id",
+        "name"
+      ],
+      "params_optional": [
+        "category",
+        "date",
+        "priority",
+        "time"
+      ]
+    },
+    {
+      "name": "cancel_reservation",
+      "description": "Annule une réservation (libère la table).",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "checkin_reservation",
+      "description": "Check-in : installe le client (table occupée) et crée la commande sur place.",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": [
+        "table_id"
+      ]
+    },
+    {
+      "name": "confirm_reservation",
+      "description": "Confirme une réservation (assigne une table si besoin → table réservée).",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "create_category",
+      "description": "Crée une catégorie d'ingrédient, de produit ou de recette (paramètre type). Les catégories de PLAT se gèrent dans l'éditeur de carte.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "color",
+        "description",
+        "icon",
+        "parent_id",
+        "type"
+      ]
+    },
+    {
+      "name": "create_client",
+      "description": "Crée un client pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "nom"
+      ],
+      "params_optional": [
+        "adresse",
+        "code_postal",
+        "email",
+        "genre",
+        "num_tel",
+        "numero_tva",
+        "pays",
+        "prenom",
+        "siret",
+        "status",
+        "ville"
+      ]
+    },
+    {
+      "name": "create_dish",
+      "description": "Ajoute un plat à la carte d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "price"
+      ],
+      "params_optional": [
+        "active",
+        "category_id",
+        "description",
+        "portions",
+        "prep_time",
+        "tva_nature"
+      ]
+    },
+    {
+      "name": "create_dish_category",
+      "description": "Crée une catégorie de PLAT (carte / vitrine), éventuellement en sous-catégorie. Apparaît dans la carte et la vitrine.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "description",
+        "parent_id",
+        "parent_name",
+        "show_on_storefront"
+      ]
+    },
+    {
+      "name": "create_employee",
+      "description": "Crée un nouvel employé pour un établissement avec son planning optionnel.",
+      "params_required": [
+        "establishment_id",
+        "first_name",
+        "last_name",
+        "email",
+        "phone_number"
+      ],
+      "params_optional": [
+        "role",
+        "schedule"
+      ]
+    },
+    {
+      "name": "create_employee_contract",
+      "description": "Crée un contrat de travail pour un employé.",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": [
+        "base_salary",
+        "days_per_week",
+        "end_date",
+        "job_title",
+        "manager_name",
+        "start_date",
+        "type",
+        "weekly_hours"
+      ]
+    },
+    {
+      "name": "create_expense",
+      "description": "Enregistre une dépense (achat) avec ses lignes. Totaux calculés automatiquement.",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "category",
+        "notes",
+        "payment_method",
+        "purchase_date",
+        "status",
+        "supplier_id",
+        "supplier_invoice_reference"
+      ]
+    },
+    {
+      "name": "create_haccp_label",
+      "description": "Crée une étiquette HACCP (DLC). Le numéro de lot est généré automatiquement si absent.",
+      "params_required": [
+        "establishment_id",
+        "ingredient_name"
+      ],
+      "params_optional": [
+        "dlc",
+        "lot_number",
+        "notes",
+        "quantity",
+        "storage_location",
+        "temperature",
+        "type",
+        "unit"
+      ]
+    },
+    {
+      "name": "create_haccp_reception",
+      "description": "Crée un contrôle de réception HACCP manuel (arrivée fournisseur).",
+      "params_required": [
+        "establishment_id",
+        "date_controle",
+        "heure_controle",
+        "etat_livraison"
+      ],
+      "params_optional": [
+        "commentaires",
+        "fournisseur_id",
+        "fournisseur_nom",
+        "non_conformites",
+        "reference_bl",
+        "temperature_produits_frais",
+        "validate"
+      ]
+    },
+    {
+      "name": "create_haccp_tracabilite",
+      "description": "Crée un enregistrement de traçabilité HACCP.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "dlc",
+        "lot",
+        "quantite",
+        "reference_id",
+        "reference_type",
+        "remarques",
+        "type"
+      ]
+    },
+    {
+      "name": "create_hygiene_checklist_validation",
+      "description": "Enregistre une validation de checklist hygiène pour un modèle donné.",
+      "params_required": [
+        "establishment_id",
+        "template_id"
+      ],
+      "params_optional": [
+        "commentaires",
+        "reponses",
+        "statut",
+        "zone_controle"
+      ]
+    },
+    {
+      "name": "create_ingredient",
+      "description": "Crée un nouvel ingrédient pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "unit",
+        "price_per_unit",
+        "quantity_in_stock"
+      ],
+      "params_optional": [
+        "alert_threshold",
+        "calories",
+        "carbs",
+        "cooking_coefficient",
+        "description",
+        "fats",
+        "proteins"
+      ]
+    },
+    {
+      "name": "create_invoice",
+      "description": "Crée une facture (brouillon) avec ses lignes. Totaux calculés automatiquement.",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "client_id",
+        "discount_amount",
+        "due_date",
+        "invoice_date",
+        "notes",
+        "payment_method",
+        "tax_rate"
+      ]
+    },
+    {
+      "name": "create_notification",
+      "description": "Crée une nouvelle notification pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "title",
+        "message"
+      ],
+      "params_optional": [
+        "type"
+      ]
+    },
+    {
+      "name": "create_order",
+      "description": "Crée une commande (génère automatiquement facture + devis). Peut être liée à une table (sur place).",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "channel",
+        "covers",
+        "customer_address",
+        "customer_name",
+        "customer_phone",
+        "notes",
+        "service_mode",
+        "table_id"
+      ]
+    },
+    {
+      "name": "create_product",
+      "description": "Crée un nouveau produit dans le menu d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "price_by_unit",
+        "unit"
+      ],
+      "params_optional": [
+        "description",
+        "is_promotion",
+        "stock_quantity"
+      ]
+    },
+    {
+      "name": "create_production_plan",
+      "description": "Planifie une production (plat ou recette) pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "item_id",
+        "planned_quantity",
+        "planned_date"
+      ],
+      "params_optional": [
+        "notes",
+        "planned_time"
+      ]
+    },
+    {
+      "name": "create_quote",
+      "description": "Crée un devis (brouillon) avec ses lignes. Totaux et acompte calculés automatiquement.",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "advance_percentage",
+        "client_id",
+        "discount_amount",
+        "notes",
+        "payment_method",
+        "quote_date",
+        "tax_rate",
+        "validity_date"
+      ]
+    },
+    {
+      "name": "create_recipe",
+      "description": "Crée une recette COMPLÈTE (ingrédients + étapes + catégories) pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "category_ids",
+        "category_names",
+        "desc",
+        "dificulty",
+        "how_many_people",
+        "ingredients",
+        "margin_basis",
+        "preparation_time",
+        "price_includes_tax",
+        "recommended_price",
+        "steps",
+        "target_margin_rate",
+        "tax_rate"
+      ]
+    },
+    {
+      "name": "create_reservation",
+      "description": "Crée une réservation de table (assigne la meilleure table libre, ou celle choisie / dans la zone demandée).",
+      "params_required": [
+        "establishment_id",
+        "customer_name",
+        "party_size",
+        "date",
+        "time"
+      ],
+      "params_optional": [
+        "customer_email",
+        "customer_phone",
+        "notes",
+        "table_id",
+        "zone"
+      ]
+    },
+    {
+      "name": "create_shift",
+      "description": "Crée un shift (créneau de travail) pour un employé un jour donné, et le publie.",
+      "params_required": [
+        "establishment_id",
+        "professional_id",
+        "day",
+        "start",
+        "end"
+      ],
+      "params_optional": [
+        "break_minutes",
+        "note",
+        "role_label"
+      ]
+    },
+    {
+      "name": "create_supplier",
+      "description": "Crée un nouveau fournisseur pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "adresse",
+        "code_postal",
+        "email",
+        "livraison",
+        "pays",
+        "reliability",
+        "status",
+        "tel",
+        "type",
+        "ville",
+        "website"
+      ]
+    },
+    {
+      "name": "create_supplier_order",
+      "description": "Crée une commande fournisseur.",
+      "params_required": [
+        "establishment_id",
+        "fournisseur_id",
+        "items"
+      ],
+      "params_optional": [
+        "note"
+      ]
+    },
+    {
+      "name": "create_table",
+      "description": "Crée une table dans le plan de salle.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "capacity",
+        "shape",
+        "zone_id"
+      ]
+    },
+    {
+      "name": "create_tva",
+      "description": "Crée un taux de TVA pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "percentage"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "create_zone",
+      "description": "Crée une zone du plan de salle.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "color"
+      ]
+    },
+    {
+      "name": "delete_category",
+      "description": "Supprime une catégorie propre à un établissement (les catégories globales sont protégées).",
+      "params_required": [
+        "establishment_id",
+        "category_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "delete_client",
+      "description": "Supprime un client d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "client_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "delete_dish",
+      "description": "Supprime un plat de la carte d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "dish_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "delete_employee",
+      "description": "Supprime un employé et son planning. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "delete_ingredient",
+      "description": "Supprime un ingrédient d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "ingredient_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "delete_product",
+      "description": "Supprime un produit du catalogue d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "delete_recipe",
+      "description": "Supprime une recette d'un établissement (corbeille / soft delete).",
+      "params_required": [
+        "establishment_id",
+        "recipe_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "finance_summary",
+      "description": "Synthèse financière : CA facturé, encaissé, impayés, dépenses, marge sur une période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date_from",
+        "date_to"
+      ]
+    },
+    {
+      "name": "floor_plan_status",
+      "description": "Vue d'ensemble temps réel du plan de salle : compteurs par statut + chaque table avec sa commande active.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_client",
+      "description": "Retourne le détail d'un client d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "client_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_employee",
+      "description": "Retourne les détails complets d'un employé (profil, rôle, planning, contrat).",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_expense",
+      "description": "Retourne le détail complet d'une dépense (lignes incluses).",
+      "params_required": [
+        "establishment_id",
+        "expense_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_ingredient",
+      "description": "Retourne le détail d'un ingrédient d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "ingredient_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_invoice",
+      "description": "Retourne le détail complet d'une facture (lignes incluses).",
+      "params_required": [
+        "establishment_id",
+        "invoice_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_order",
+      "description": "Détail d'une commande (articles, totaux, facture/devis liés, table).",
+      "params_required": [
+        "establishment_id",
+        "order_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_product",
+      "description": "Retourne le détail d'un produit du catalogue d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_production_ingredients",
+      "description": "Retourne les ingrédients nécessaires pour un plan de production (statut suffisant/manquant).",
+      "params_required": [
+        "establishment_id",
+        "production_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_quote",
+      "description": "Retourne le détail complet d'un devis (lignes incluses).",
+      "params_required": [
+        "establishment_id",
+        "quote_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_recipe",
+      "description": "Retourne le détail d'une recette d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "recipe_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "get_supplier",
+      "description": "Retourne les détails d'un fournisseur spécifique.",
+      "params_required": [
+        "establishment_id",
+        "supplier_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "import_storefront_menu",
+      "description": "Construit TOUTE la carte vitrine en un appel : catégories + sous-catégories + plats + formules éditoriales. Idempotent sur les noms.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "categories",
+        "formules"
+      ]
+    },
+    {
+      "name": "list_attendances",
+      "description": "Liste les pointages (clock in/out) des employés sur une période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date_from",
+        "date_to"
+      ]
+    },
+    {
+      "name": "list_categories",
+      "description": "Liste les catégories d'un établissement (y compris les catégories globales).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_cleaning_actions",
+      "description": "Liste les actions de nettoyage réalisées. Filtres : période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date_from",
+        "date_to",
+        "limit"
+      ]
+    },
+    {
+      "name": "list_cleaning_zones",
+      "description": "Liste les zones de nettoyage (avec leurs postes) d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_clients",
+      "description": "Liste les clients d'un établissement. Filtres : recherche, statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "search",
+        "status"
+      ]
+    },
+    {
+      "name": "list_deliveries",
+      "description": "Liste les livraisons fournisseurs d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ]
+    },
+    {
+      "name": "list_dishes",
+      "description": "Liste les plats de la carte d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "active"
+      ]
+    },
+    {
+      "name": "list_employee_contracts",
+      "description": "Liste les contrats des employés d'un établissement. Filtre : employé.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "employee_id"
+      ]
+    },
+    {
+      "name": "list_employee_documents",
+      "description": "Liste les documents administratifs des employés. Filtre : employé.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "employee_id"
+      ]
+    },
+    {
+      "name": "list_employees",
+      "description": "Liste tous les employés d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_expenses",
+      "description": "Liste les dépenses (achats fournisseurs) d'un établissement. Filtres : statut, recherche.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "search",
+        "status"
+      ]
+    },
+    {
+      "name": "list_haccp_labels",
+      "description": "Liste les étiquettes HACCP (DLC) d'un établissement. Filtre : statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ]
+    },
+    {
+      "name": "list_haccp_reception",
+      "description": "Liste les fiches de réception HACCP d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_haccp_temperatures",
+      "description": "Liste les relevés de températures HACCP. Filtres : période, équipement, type.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "end_date",
+        "equipment_id",
+        "start_date",
+        "type"
+      ]
+    },
+    {
+      "name": "list_haccp_tracabilite",
+      "description": "Liste les enregistrements de traçabilité HACCP d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ]
+    },
+    {
+      "name": "list_hygiene_checklists",
+      "description": "Liste les modèles de checklist hygiène HACCP d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "categorie"
+      ]
+    },
+    {
+      "name": "list_ingredients",
+      "description": "Liste les ingrédients d'un établissement. Filtres : recherche par nom, type.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "search",
+        "type"
+      ]
+    },
+    {
+      "name": "list_invoices",
+      "description": "Liste les factures d'un établissement. Filtres : statut, recherche.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "search",
+        "status"
+      ]
+    },
+    {
+      "name": "list_leaves",
+      "description": "Liste les demandes de congés des employés. Filtre par statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ]
+    },
+    {
+      "name": "list_low_stocks",
+      "description": "Liste les articles en stock dont le niveau est bas (is_low = true).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_notifications",
+      "description": "Liste les notifications d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_orders",
+      "description": "Liste les commandes (tous canaux). Filtres : statut, canal, date.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "channel",
+        "date",
+        "limit",
+        "status"
+      ]
+    },
+    {
+      "name": "list_plannings",
+      "description": "Liste les shifts (planning des horaires) de l'équipe pour une semaine, avec heures et coût estimé.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "week"
+      ]
+    },
+    {
+      "name": "list_production_alerts",
+      "description": "Liste les ingrédients manquants pour les productions planifiées dans les prochains jours.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "days"
+      ]
+    },
+    {
+      "name": "list_production_plans",
+      "description": "Liste les plans de production sur une période donnée.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "end_date",
+        "start_date",
+        "status"
+      ]
+    },
+    {
+      "name": "list_products",
+      "description": "Liste tous les produits d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_quotes",
+      "description": "Liste les devis d'un établissement. Filtre : statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ]
+    },
+    {
+      "name": "list_recipes",
+      "description": "Liste toutes les recettes d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_reservations",
+      "description": "Liste les réservations de table. Filtres : statut, date.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date",
+        "limit",
+        "status"
+      ]
+    },
+    {
+      "name": "list_stocks",
+      "description": "Liste tous les articles en stock d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_suppliers",
+      "description": "Liste tous les fournisseurs d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "name"
+      ]
+    },
+    {
+      "name": "list_tables",
+      "description": "Liste les tables avec leur statut temps réel. Filtre : statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ]
+    },
+    {
+      "name": "list_top_productions",
+      "description": "Liste les plats/recettes les plus produits sur une période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "days"
+      ]
+    },
+    {
+      "name": "list_tva",
+      "description": "Liste les taux de TVA configurés pour un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_units",
+      "description": "Liste les unités de mesure disponibles (référentiel global, lecture seule).",
+      "params_required": [],
+      "params_optional": []
+    },
+    {
+      "name": "list_waitlist",
+      "description": "Liste la file d'attente active (walk-ins en attente / prévenus).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "list_zones",
+      "description": "Liste les zones du plan de salle (Salle, Terrasse...).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "no_show_reservation",
+      "description": "Marque une réservation en no-show (client absent → libère la table).",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "record_cleaning_action",
+      "description": "Enregistre une action de nettoyage réalisée sur un poste.",
+      "params_required": [
+        "establishment_id",
+        "poste_nettoyage_id"
+      ],
+      "params_optional": [
+        "commentaires",
+        "statut"
+      ]
+    },
+    {
+      "name": "reject_leave",
+      "description": "Refuse une demande de congé en attente.",
+      "params_required": [
+        "establishment_id",
+        "leave_id",
+        "reason"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "reservation_availability",
+      "description": "Vérifie la disponibilité d'un créneau : restaurant ouvert + tables libres (anti-double-booking).",
+      "params_required": [
+        "establishment_id",
+        "date",
+        "time",
+        "party_size"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "search_entities",
+      "description": "Résout un nom parlé/écrit vers un ID (produits, ingrédients, plats, équipements, tables, recettes). Fuzzy FR ; si ambigu, demander confirmation.",
+      "params_required": [
+        "establishment_id",
+        "query"
+      ],
+      "params_optional": [
+        "limit",
+        "types"
+      ]
+    },
+    {
+      "name": "seat_waitlist",
+      "description": "Installe un client de la file d'attente sur une table (crée la commande sur place).",
+      "params_required": [
+        "establishment_id",
+        "waitlist_id",
+        "table_id"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "update_category",
+      "description": "Modifie une catégorie d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "category_id"
+      ],
+      "params_optional": [
+        "color",
+        "description",
+        "icon",
+        "is_active",
+        "name",
+        "parent_id"
+      ]
+    },
+    {
+      "name": "update_client",
+      "description": "Modifie un client d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "client_id"
+      ],
+      "params_optional": [
+        "adresse",
+        "code_postal",
+        "email",
+        "nom",
+        "num_tel",
+        "numero_tva",
+        "pays",
+        "prenom",
+        "siret",
+        "status",
+        "ville"
+      ]
+    },
+    {
+      "name": "update_dish",
+      "description": "Modifie un plat de la carte d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "dish_id"
+      ],
+      "params_optional": [
+        "active",
+        "category_id",
+        "description",
+        "name",
+        "portions",
+        "prep_time",
+        "price",
+        "tva_nature"
+      ]
+    },
+    {
+      "name": "update_employee",
+      "description": "Modifie les informations d'un employé (prénom, nom, email, téléphone, rôle).",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": [
+        "email",
+        "first_name",
+        "last_name",
+        "phone_number",
+        "role"
+      ]
+    },
+    {
+      "name": "update_employee_schedule",
+      "description": "Remplace entièrement le planning hebdomadaire d'un employé.",
+      "params_required": [
+        "establishment_id",
+        "employee_id",
+        "schedules"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "update_ingredient",
+      "description": "Modifie un ingrédient (nom, unité, prix, stock, seuil, valeurs nutritionnelles).",
+      "params_required": [
+        "establishment_id",
+        "ingredient_id"
+      ],
+      "params_optional": [
+        "alert_threshold",
+        "calories",
+        "carbs",
+        "cooking_coefficient",
+        "description",
+        "fats",
+        "name",
+        "price_per_unit",
+        "proteins",
+        "quantity_in_stock",
+        "unit"
+      ]
+    },
+    {
+      "name": "update_invoice_status",
+      "description": "Change le statut d'une facture en respectant les transitions légales autorisées (DGFiP).",
+      "params_required": [
+        "establishment_id",
+        "invoice_id",
+        "status"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "update_kds_item_status",
+      "description": "Change le statut cuisine d'un plat d'une commande (pending → in_progress → ready → served). Écrans KDS.",
+      "params_required": [
+        "establishment_id",
+        "item_id",
+        "status"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "update_order_status",
+      "description": "Change le statut d'une commande (répercute sur facture/devis et table).",
+      "params_required": [
+        "establishment_id",
+        "order_id",
+        "status"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "update_product",
+      "description": "Modifie un produit du catalogue (prix, unité, stock, description, nom, promotion).",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id"
+      ],
+      "params_optional": [
+        "description",
+        "is_promotion",
+        "location",
+        "name",
+        "price_by_unit",
+        "ref",
+        "stock_quantity",
+        "unit"
+      ]
+    },
+    {
+      "name": "update_quote_status",
+      "description": "Change le statut d'un devis (brouillon, envoye, accepte, refuse, expire).",
+      "params_required": [
+        "establishment_id",
+        "quote_id",
+        "status"
+      ],
+      "params_optional": []
+    },
+    {
+      "name": "update_recipe",
+      "description": "Modifie une recette (ingredients/steps/catégories resynchronisés uniquement si fournis).",
+      "params_required": [
+        "establishment_id",
+        "recipe_id"
+      ],
+      "params_optional": [
+        "category_ids",
+        "category_names",
+        "desc",
+        "dificulty",
+        "how_many_people",
+        "ingredients",
+        "margin_basis",
+        "name",
+        "preparation_time",
+        "price_includes_tax",
+        "recommended_price",
+        "status",
+        "steps",
+        "target_margin_rate",
+        "tax_rate"
+      ]
+    },
+    {
+      "name": "update_table_status",
+      "description": "Change le statut d'une table (free|reserved|occupied|cleaning|blocked).",
+      "params_required": [
+        "establishment_id",
+        "table_id",
+        "status"
+      ],
+      "params_optional": []
+    }
+  ]
+}
