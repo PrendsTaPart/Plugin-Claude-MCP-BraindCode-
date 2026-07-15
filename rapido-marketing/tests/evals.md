@@ -1,4 +1,20 @@
-# Évals — plugin rapido-marketing (0.3.0)
+# Évals — plugin rapido-marketing (0.4.0)
+
+## social-selling-linkedin
+
+| # | Phrase | Attendu |
+|---|---|---|
+| SS1 | « Aide-moi à prospecter sur LinkedIn » | `social-selling-linkedin` : stratégie profil + cadence contenu (déléguée à `pipeline-contenu-social` sur compte perso confirmé) + **scripts DM prêts à copier** personnalisés (get_entreprise/`account-research`) — **jamais envoyés auto** ; suivi `enregistrer_prospect` confirmé |
+| SS2 | « Optimise mon profil LinkedIn de fondateur » | `social-selling-linkedin` : headline/à-propos alignés ICP+KB, textes prêts à coller |
+| SS3 (anti) | « Programme ce post LinkedIn pour demain » | PAS social-selling → skill `pipeline-contenu-social` (publication programmée) |
+
+## geo-optimization
+
+| # | Phrase | Attendu |
+|---|---|---|
+| GE1 | « Comment être cité par ChatGPT et Perplexity ? » | `geo-optimization` : checklist GEO sourcée (état de l'art) → audit via `audit_geo.py` → corrections + mise à jour CMS confirmée |
+| GE2 | « Audite le GEO de mon article » | `geo-optimization` : `audit_geo.py` → score + critères ok/échec + corrections priorisées (jamais de score de tête) |
+| GE3 (anti) | « Écris-moi un article de blog SEO » | PAS geo-optimization (audit) → skill `generation-article-blog` (production) |
 
 ## icp-generator
 

@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-marketing
 
+## 0.4.0 — 2026-07-14
+
+- 2 skills « visibilité » (comblent des MANQUANT/PARTIEL de la matrice M0) :
+  - `social-selling-linkedin` : périmètre HONNÊTE — RapidoCMS publie sur les
+    comptes connectés mais n'automatise pas les DM LinkedIn (pas de connecteur,
+    M0). Produit stratégie de profil fondateur (ICP+KB), cadence de contenu
+    perso déléguée à pipeline-contenu-social, scripts de connexion/DM PRÊTS À
+    COPIER (jamais envoyés auto, conformité) personnalisés depuis le CRM
+    (get_entreprise/account-research), suivi via enregistrer_prospect confirmé.
+  - `geo-optimization` : checklist GEO déterministe sourcée d'etat-de-lart-2026
+    (§8), audit d'un contenu via scripts/audit_geo.py (score 9 critères :
+    réponse 40-60 mots, densité de faits, sources, schema, ancres, FAQ, auteur,
+    style déclaratif, fraîcheur) → corrections proposées → mise à jour via les
+    outils CMS après confirmation.
+- 1 script stdlib (audit_geo.py) testé ; tests/evals.md : 2 déclenchements +
+  1 anti par skill.
+
 ## 0.3.0 — 2026-07-14
 
 - 2 skills « données » (comblent des MANQUANT de la matrice M0) :
