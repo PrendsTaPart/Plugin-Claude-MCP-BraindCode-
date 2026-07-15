@@ -30,6 +30,13 @@ exposés par le MCP **connecté** (nom + description + paramètres). Contrat du 
 > `{serveur}-tools.json` ; pour comparer un delta, conserver l'ancien et le passer en
 > `--prev` (ou archiver `{serveur}-tools-{date}.json`).
 
+> ⚠️ **Le registre d'outils de la session (ce que voit `ToolSearch`) peut être TRONQUÉ**
+> et ne pas refléter tout ce que le serveur expose (constaté sur FoodEatUp : 111 vus en
+> session vs **164** réels). **Toujours recroiser** le nombre et la liste avec la
+> **console d'autorisations MCP du serveur** (ou sa doc). Un outil connu du serveur mais
+> absent de la session se note dans l'inventaire avec `schema_introspected:false`
+> (nom fiable, paramètres à introspecter plus tard) — il n'est jamais « inventé ».
+
 **b. Croisement** :
 
 ```

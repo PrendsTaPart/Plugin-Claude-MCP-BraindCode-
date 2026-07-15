@@ -1,9 +1,17 @@
 {
   "server": "foodeatup",
   "date": "2026-07-15",
-  "source": "introspection du MCP FoodEatUp connecté (session Claude Code, 2026-07-15)",
-  "tool_count": 111,
+  "source": "111 outils introspectés en direct (session) + 53 outils relevés dans la console d'autorisations MCP FoodEatUp (foodeatup.com/api/mcp, 2026-07-15) — absents du registre de session, schémas à introspecter quand le connecteur les exposera.",
+  "tool_count": 164,
+  "introspected_count": 111,
   "tools": [
+    {
+      "name": "add_site_page",
+      "description": "Ajoute une page au site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
     {
       "name": "add_temperature",
       "description": "Enregistre une mesure de température d'équipement (HACCP).",
@@ -14,7 +22,8 @@
       ],
       "params_optional": [
         "measured_at"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "add_waitlist",
@@ -26,7 +35,15 @@
       "params_optional": [
         "customer_name",
         "customer_phone"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "adjust_points",
+      "description": "Ajuste les points de fidélité d'un client.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "adjust_stock",
@@ -38,7 +55,15 @@
       ],
       "params_optional": [
         "mode"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "apply_site_template",
+      "description": "Applique un modèle de site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "approve_leave",
@@ -49,7 +74,8 @@
       ],
       "params_optional": [
         "comments"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "assign_task",
@@ -64,7 +90,8 @@
         "date",
         "priority",
         "time"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "cancel_reservation",
@@ -73,7 +100,15 @@
         "establishment_id",
         "reservation_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "check_gift_card",
+      "description": "Vérifie une carte cadeau (solde/validité).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "checkin_reservation",
@@ -84,7 +119,15 @@
       ],
       "params_optional": [
         "table_id"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "close_pos_session",
+      "description": "Clôture une session de caisse (rapport Z).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "confirm_reservation",
@@ -93,7 +136,8 @@
         "establishment_id",
         "reservation_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "create_category",
@@ -108,7 +152,8 @@
         "icon",
         "parent_id",
         "type"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_client",
@@ -129,7 +174,8 @@
         "siret",
         "status",
         "ville"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_dish",
@@ -146,7 +192,8 @@
         "portions",
         "prep_time",
         "tva_nature"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_dish_category",
@@ -160,7 +207,8 @@
         "parent_id",
         "parent_name",
         "show_on_storefront"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_employee",
@@ -175,7 +223,8 @@
       "params_optional": [
         "role",
         "schedule"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_employee_contract",
@@ -193,7 +242,8 @@
         "start_date",
         "type",
         "weekly_hours"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_expense",
@@ -210,7 +260,8 @@
         "status",
         "supplier_id",
         "supplier_invoice_reference"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_haccp_label",
@@ -228,7 +279,8 @@
         "temperature",
         "type",
         "unit"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_haccp_reception",
@@ -247,7 +299,8 @@
         "reference_bl",
         "temperature_produits_frais",
         "validate"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_haccp_tracabilite",
@@ -263,7 +316,8 @@
         "reference_type",
         "remarques",
         "type"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_hygiene_checklist_validation",
@@ -277,7 +331,8 @@
         "reponses",
         "statut",
         "zone_controle"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_ingredient",
@@ -297,7 +352,8 @@
         "description",
         "fats",
         "proteins"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_invoice",
@@ -314,7 +370,15 @@
         "notes",
         "payment_method",
         "tax_rate"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_job_offer",
+      "description": "Crée une offre d'emploi.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "create_notification",
@@ -326,7 +390,8 @@
       ],
       "params_optional": [
         "type"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_order",
@@ -344,7 +409,8 @@
         "notes",
         "service_mode",
         "table_id"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_product",
@@ -359,7 +425,8 @@
         "description",
         "is_promotion",
         "stock_quantity"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_production_plan",
@@ -373,7 +440,8 @@
       "params_optional": [
         "notes",
         "planned_time"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_quote",
@@ -391,7 +459,8 @@
         "quote_date",
         "tax_rate",
         "validity_date"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_recipe",
@@ -414,7 +483,8 @@
         "steps",
         "target_margin_rate",
         "tax_rate"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_reservation",
@@ -432,7 +502,8 @@
         "notes",
         "table_id",
         "zone"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_shift",
@@ -448,7 +519,8 @@
         "break_minutes",
         "note",
         "role_label"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_supplier",
@@ -469,7 +541,8 @@
         "type",
         "ville",
         "website"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_supplier_order",
@@ -481,7 +554,8 @@
       ],
       "params_optional": [
         "note"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_table",
@@ -494,7 +568,8 @@
         "capacity",
         "shape",
         "zone_id"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "create_tva",
@@ -504,7 +579,8 @@
         "name",
         "percentage"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "create_zone",
@@ -515,7 +591,8 @@
       ],
       "params_optional": [
         "color"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "delete_category",
@@ -524,7 +601,8 @@
         "establishment_id",
         "category_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "delete_client",
@@ -533,7 +611,8 @@
         "establishment_id",
         "client_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "delete_dish",
@@ -542,7 +621,8 @@
         "establishment_id",
         "dish_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "delete_employee",
@@ -551,7 +631,8 @@
         "establishment_id",
         "employee_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "delete_ingredient",
@@ -560,7 +641,8 @@
         "establishment_id",
         "ingredient_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "delete_product",
@@ -569,7 +651,8 @@
         "establishment_id",
         "establishment_product_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "delete_recipe",
@@ -578,7 +661,8 @@
         "establishment_id",
         "recipe_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "finance_summary",
@@ -589,7 +673,8 @@
       "params_optional": [
         "date_from",
         "date_to"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "floor_plan_status",
@@ -597,7 +682,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_client",
@@ -606,7 +692,22 @@
         "establishment_id",
         "client_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_daily_brief",
+      "description": "Brief quotidien de l'établissement.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_domain_status",
+      "description": "Statut du nom de domaine du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "get_employee",
@@ -615,7 +716,8 @@
         "establishment_id",
         "employee_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_expense",
@@ -624,7 +726,8 @@
         "establishment_id",
         "expense_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_ingredient",
@@ -633,7 +736,8 @@
         "establishment_id",
         "ingredient_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_invoice",
@@ -642,7 +746,22 @@
         "establishment_id",
         "invoice_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_loyalty_account",
+      "description": "Compte de fidélité d'un client.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_loyalty_program",
+      "description": "Programme de fidélité de l'établissement.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "get_order",
@@ -651,7 +770,29 @@
         "establishment_id",
         "order_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_page_content",
+      "description": "Contenu d'une page du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_pos_report",
+      "description": "Rapport de caisse (X/Z).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_pos_session",
+      "description": "Détail d'une session de caisse.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "get_product",
@@ -660,7 +801,8 @@
         "establishment_id",
         "establishment_product_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_production_ingredients",
@@ -669,7 +811,8 @@
         "establishment_id",
         "production_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_quote",
@@ -678,7 +821,8 @@
         "establishment_id",
         "quote_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "get_recipe",
@@ -687,7 +831,36 @@
         "establishment_id",
         "recipe_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_site_pages",
+      "description": "Liste les pages du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_site_stats",
+      "description": "Statistiques de fréquentation du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_site_status",
+      "description": "Statut de publication du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_station_load",
+      "description": "Charge d'un poste (station) en cuisine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "get_supplier",
@@ -696,7 +869,22 @@
         "establishment_id",
         "supplier_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_survey_results",
+      "description": "Résultats d'un sondage.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_wheel_stats",
+      "description": "Statistiques des jeux de roue.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "import_storefront_menu",
@@ -707,7 +895,8 @@
       "params_optional": [
         "categories",
         "formules"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_attendances",
@@ -718,7 +907,15 @@
       "params_optional": [
         "date_from",
         "date_to"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_beverages",
+      "description": "Liste les boissons (carte des boissons).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_categories",
@@ -726,7 +923,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_cleaning_actions",
@@ -738,7 +936,8 @@
         "date_from",
         "date_to",
         "limit"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_cleaning_zones",
@@ -746,7 +945,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_clients",
@@ -758,7 +958,8 @@
         "limit",
         "search",
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_deliveries",
@@ -769,7 +970,15 @@
       "params_optional": [
         "limit",
         "status"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_delivery_zones",
+      "description": "Liste les zones de livraison.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_dishes",
@@ -779,7 +988,8 @@
       ],
       "params_optional": [
         "active"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_employee_contracts",
@@ -789,7 +999,8 @@
       ],
       "params_optional": [
         "employee_id"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_employee_documents",
@@ -799,7 +1010,8 @@
       ],
       "params_optional": [
         "employee_id"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_employees",
@@ -807,7 +1019,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_expenses",
@@ -819,7 +1032,15 @@
         "limit",
         "search",
         "status"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_gift_cards",
+      "description": "Liste les cartes cadeaux.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_haccp_labels",
@@ -830,7 +1051,8 @@
       "params_optional": [
         "limit",
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_haccp_reception",
@@ -838,7 +1060,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_haccp_temperatures",
@@ -851,7 +1074,8 @@
         "equipment_id",
         "start_date",
         "type"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_haccp_tracabilite",
@@ -862,7 +1086,15 @@
       "params_optional": [
         "limit",
         "status"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_happy_hours",
+      "description": "Liste les happy hours.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_hygiene_checklists",
@@ -872,7 +1104,8 @@
       ],
       "params_optional": [
         "categorie"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_ingredients",
@@ -883,7 +1116,8 @@
       "params_optional": [
         "search",
         "type"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_invoices",
@@ -895,7 +1129,15 @@
         "limit",
         "search",
         "status"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_job_applications",
+      "description": "Liste les candidatures reçues.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_leaves",
@@ -905,7 +1147,8 @@
       ],
       "params_optional": [
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_low_stocks",
@@ -913,7 +1156,15 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_loyalty_rewards",
+      "description": "Liste les récompenses de fidélité.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_notifications",
@@ -921,7 +1172,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_orders",
@@ -934,7 +1186,8 @@
         "date",
         "limit",
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_plannings",
@@ -944,7 +1197,29 @@
       ],
       "params_optional": [
         "week"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_pos_payments",
+      "description": "Liste les encaissements d'une session de caisse.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_pos_tabs",
+      "description": "Liste les additions/tabs de caisse ouvertes.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_private_event_requests",
+      "description": "Liste les demandes d'événements privés.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_production_alerts",
@@ -954,7 +1229,8 @@
       ],
       "params_optional": [
         "days"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_production_plans",
@@ -966,7 +1242,8 @@
         "end_date",
         "start_date",
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_products",
@@ -974,7 +1251,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_quotes",
@@ -985,7 +1263,8 @@
       "params_optional": [
         "limit",
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_recipes",
@@ -993,7 +1272,15 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_redemptions",
+      "description": "Liste les utilisations de récompenses de fidélité.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_reservations",
@@ -1005,7 +1292,29 @@
         "date",
         "limit",
         "status"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_reviews",
+      "description": "Liste les avis clients.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_site_leads",
+      "description": "Leads capturés via le site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_site_templates",
+      "description": "Modèles de site vitrine disponibles.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_stocks",
@@ -1013,7 +1322,8 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_suppliers",
@@ -1023,7 +1333,15 @@
       ],
       "params_optional": [
         "name"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_surveys",
+      "description": "Liste les sondages.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_tables",
@@ -1033,7 +1351,8 @@
       ],
       "params_optional": [
         "status"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_top_productions",
@@ -1043,7 +1362,8 @@
       ],
       "params_optional": [
         "days"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_tva",
@@ -1051,13 +1371,15 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_units",
       "description": "Liste les unités de mesure disponibles (référentiel global, lecture seule).",
       "params_required": [],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "list_waitlist",
@@ -1065,7 +1387,15 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_wheel_games",
+      "description": "Liste les jeux de roue (wheel).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "list_zones",
@@ -1073,7 +1403,15 @@
       "params_required": [
         "establishment_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "moderate_review",
+      "description": "Modère un avis client.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "no_show_reservation",
@@ -1082,7 +1420,22 @@
         "establishment_id",
         "reservation_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "open_pos_session",
+      "description": "Ouvre une session de caisse (POS).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "publish_site",
+      "description": "Publie le site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "record_cleaning_action",
@@ -1094,7 +1447,15 @@
       "params_optional": [
         "commentaires",
         "statut"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "record_pos_payment",
+      "description": "Enregistre un encaissement en caisse.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "reject_leave",
@@ -1104,7 +1465,22 @@
         "leave_id",
         "reason"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "remove_beverage_item",
+      "description": "Retire une boisson de la carte.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "reply_review",
+      "description": "Répond à un avis client.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "reservation_availability",
@@ -1115,7 +1491,8 @@
         "time",
         "party_size"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "search_entities",
@@ -1127,7 +1504,8 @@
       "params_optional": [
         "limit",
         "types"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "seat_waitlist",
@@ -1137,7 +1515,29 @@
         "waitlist_id",
         "table_id"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "set_site_theme",
+      "description": "Définit le thème (couleurs/typo) du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "toggle_site_page",
+      "description": "Active/désactive une page du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "update_application_status",
+      "description": "Change le statut d'une candidature.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "update_category",
@@ -1153,7 +1553,8 @@
         "is_active",
         "name",
         "parent_id"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_client",
@@ -1174,7 +1575,8 @@
         "siret",
         "status",
         "ville"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_dish",
@@ -1192,7 +1594,8 @@
         "prep_time",
         "price",
         "tva_nature"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_employee",
@@ -1207,7 +1610,8 @@
         "last_name",
         "phone_number",
         "role"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_employee_schedule",
@@ -1217,7 +1621,15 @@
         "employee_id",
         "schedules"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_event_request_status",
+      "description": "Change le statut d'une demande d'événement privé.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "update_ingredient",
@@ -1238,7 +1650,8 @@
         "proteins",
         "quantity_in_stock",
         "unit"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_invoice_status",
@@ -1248,7 +1661,15 @@
         "invoice_id",
         "status"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_job_offer",
+      "description": "Met à jour une offre d'emploi.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "update_kds_item_status",
@@ -1258,7 +1679,15 @@
         "item_id",
         "status"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_loyalty_program",
+      "description": "Met à jour le programme de fidélité.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "update_order_status",
@@ -1268,7 +1697,8 @@
         "order_id",
         "status"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "update_product",
@@ -1286,7 +1716,8 @@
         "ref",
         "stock_quantity",
         "unit"
-      ]
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_quote_status",
@@ -1296,7 +1727,8 @@
         "quote_id",
         "status"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
     },
     {
       "name": "update_recipe",
@@ -1321,7 +1753,15 @@
         "steps",
         "target_margin_rate",
         "tax_rate"
-      ]
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_section",
+      "description": "Met à jour une section de page du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     },
     {
       "name": "update_table_status",
@@ -1331,7 +1771,50 @@
         "table_id",
         "status"
       ],
-      "params_optional": []
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "upsert_beverage_item",
+      "description": "Crée/met à jour une boisson.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "upsert_delivery_zone",
+      "description": "Crée/met à jour une zone de livraison.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "upsert_happy_hour",
+      "description": "Crée/met à jour un happy hour.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "upsert_loyalty_reward",
+      "description": "Crée/met à jour une récompense de fidélité.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "validate_production",
+      "description": "Valide une production planifiée.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "validate_redemption",
+      "description": "Valide l'utilisation d'une récompense de fidélité.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
     }
   ]
 }

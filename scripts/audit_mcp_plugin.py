@@ -78,14 +78,14 @@ def family_of(name):
         "assign", "cancel", "checkin", "confirm", "record", "reject", "seat",
         "import", "no", "search", "set", "toggle", "apply", "publish", "open",
         "close", "moderate", "reply", "check", "send", "schedule", "remove",
-        "edit", "enregistrer", "deplacer", "lancer", "recalculer", "rechercher",
-        "prospecter", "log",
+        "edit", "upsert", "validate", "enregistrer", "deplacer", "lancer",
+        "recalculer", "rechercher", "prospecter", "log",
     }
     ent = segs[1] if segs[0] in verbs and len(segs) > 1 else segs[0]
-    # normalisation légère du pluriel
+    # normalisation légère du pluriel (sans casser les mots courts : pos, tva…)
     if ent.endswith("ies"):
         ent = ent[:-3] + "y"
-    elif ent.endswith("s") and not ent.endswith("ss"):
+    elif ent.endswith("s") and not ent.endswith("ss") and len(ent) > 4:
         ent = ent[:-1]
     return ent
 
