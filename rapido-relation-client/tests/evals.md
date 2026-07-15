@@ -20,3 +20,11 @@
 ## Garde-fous
 - `garde-envois` : envoi client (`send_email`/`send_sms`/`send_newsletter`/`lancer_campagne`…) → **ask**.
 - Scores `health_score.py` / `rfm.py` : formule affichée, facteurs réels (absent = exclu), jamais de tête.
+
+## Éval — coach-relation-client (0.2.0)
+**5 phrases** : « comment fidéliser mes clients », « améliore l'expérience client »,
+« comment réduire le churn », « active mes utilisateurs SaaS », « transforme mes clients
+en ambassadeurs ». **3 contre-exemples** : « comment vendre à ce prospect » →
+`rapidocrm:coach-de-vente` (vente) ; « traite ce ticket » → `ticket-triage` ; « lance ce
+jeu concours » → `animation-client` (exécution). Route vers cent-premiers-jours /
+sante-client / boucle-nps / influence-psychology / animation-client — ne les duplique pas.
