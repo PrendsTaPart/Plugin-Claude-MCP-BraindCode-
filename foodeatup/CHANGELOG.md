@@ -1,5 +1,21 @@
 # Changelog — plugin foodeatup
 
+## 1.5.2 — 2026-07-15 — sync MCP (série SYNC S1) : retrait des outils fantômes
+
+- `margin-analyzer`, `price-check`, `handle-complaint` : les workflows importés
+  citaient encore, **dans le corps des étapes**, des outils **inexistants** dans
+  l'écosystème (QuickBooks `profit-loss-quickbooks-account`/`company-info`, PayPal
+  `list_transactions`/« Search PayPal », HubSpot) malgré leur table de correspondance
+  — adaptation d'import incomplète, bug silencieux. Étapes retargettées sur les **vrais**
+  outils : coûts via recettes (`get_recipe`, `recette-cout-marge`) + `list_expenses` ;
+  revenus via `finance_summary`/`list_orders`/`list_invoices` (FoodEatUp) et
+  `get_revenue_summary`/`list_factures` (CRM) ; historique client via CRM
+  (`get_contact`, `get_historique_prospect`, `get_loyalty_points`).
+- Références de skills fantômes retirées (`ticket-deflector`, `customer-pulse-check`) ;
+  renvoi vers `rapidocrm:draft-response`. `margin-analyzer/reference/gotchas.md` réécrit
+  en Rapido-natif (sources FoodEatUp/CRM, plus aucune mention PayPal/QuickBooks).
+- Détecté par le harnais d'audit MCP↔plugin (série SYNC S0/S1).
+
 ## 1.5.1 — 2026-07-15
 
 - `carte-vitrine` (patch H9) : renvoi vers le mode « carte en photos » de
