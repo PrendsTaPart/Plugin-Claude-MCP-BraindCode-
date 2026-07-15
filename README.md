@@ -60,7 +60,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.2 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 | `rapido-marketing` | 0.16.1 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
-| `rapido-higgsfield` | 1.0.3 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
+| `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
 | `rapido-elevenlabs` | 0.1.0 | 0 | 0 | ElevenLabs (uvx elevenlabs-mcp), rapidocms | `ELEVENLABS_API_KEY`, `ELEVENLABS_MCP_BASE_PATH` — squelette routage + garde-fous |
