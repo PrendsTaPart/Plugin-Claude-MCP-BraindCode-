@@ -1,6 +1,6 @@
 {
   "name": "rapido-forge",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "StartupsForge (PrendsTaPart) : 180 exercices d'incubateur en 3 parcours — bootcamp 5 jours, roadmap idéation, roadmap scale — pilotés par 4 agents (directeur de programme + 3 mentors). Livrables consignés dans ./rapido-kb/startup/forge/, exécution réelle déléguée aux plugins métier Rapido.",
   "author": {
     "name": "BraindCode",
