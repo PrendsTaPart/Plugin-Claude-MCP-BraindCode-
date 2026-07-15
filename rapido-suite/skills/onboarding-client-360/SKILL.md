@@ -29,12 +29,20 @@ globale au début).
 ## Étape 2 — CMS : initialiser la présence sociale (CONFIRMER d'abord)
 
 1. Vérifier les comptes connectés : `list_connected_accounts`.
-2. Selon le besoin du client :
+2. **Créer la marque du client** (confirmer d'abord) : `get_brand` (anti-doublon)
+   puis, si absente, la créer via le skill `gestion-marques` (`create_brand` :
+   `nom`, `langue`, `slogan`, `couleurs` hex, `font_family` web-safe, `logo` URL
+   publique — hook `valide-charte` en filet). **Importer les assets de base**
+   (au moins le logo) via `bibliotheque-assets` (`upload_file_tool` →
+   `add_asset`). **Consigner le `brand_id`** (et l'`asset_id` du logo) dans le
+   dossier client — récapitulatif final.
+3. Selon le besoin du client :
    - première campagne de contenu : `create_campagne` (CMS) puis posts via
      `create_draft_tool` / `schedule_draft_tool` ;
    - carte digitale : `add_digital_card` + `assign_card_template`
      (template AVEC QR code) ;
-   - respecter la charte : `get_brand` avant tout contenu.
+   - respecter la charte : `get_brand` avant tout contenu (voir
+     `${CLAUDE_PLUGIN_ROOT}/reference/sync-marque.md`).
 
 ## Étape 3 — RH : créer le projet client (CONFIRMER d'abord)
 
@@ -50,9 +58,9 @@ globale au début).
 ## Récapitulatif final OBLIGATOIRE
 
 Terminer par un tableau récapitulatif des objets créés dans CHAQUE système avec
-leurs IDs : CRM (entreprise_id, opportunité), CMS (campagne_id, card_id,
-draft_ids), RH (project_id, task_ids). Mentionner ce qui a été volontairement
-sauté et pourquoi.
+leurs IDs : CRM (entreprise_id, opportunité), CMS (brand_id, asset_id du logo,
+campagne_id, card_id, draft_ids), RH (project_id, task_ids). Mentionner ce qui a
+été volontairement sauté et pourquoi.
 
 ## Garde-fous
 

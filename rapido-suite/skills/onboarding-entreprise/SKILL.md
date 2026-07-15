@@ -93,6 +93,28 @@ Règles d'interview :
    encore marquées `### À COMPLÉTER`) — pas les 8 fichiers in extenso.
 3. Demander validation ; corriger les fichiers concernés si besoin.
 
+## Phase 3 bis — Miroir CMS de la marque (OPTIONNEL)
+
+Une fois `charte-graphique.md` rempli et validé, proposer de créer la **marque
+miroir dans RapidoCMS** (le CMS est le miroir d'exécution ; la KB reste la
+source de vérité). Étapes :
+
+1. **Vérifier la disponibilité** : plugin `rapidocms` installé et MCP joignable
+   (`get_company`). **Absent/indisponible → le signaler et continuer sans
+   bloquer** (l'onboarding n'échoue jamais là-dessus ; on pourra synchroniser
+   plus tard via `mise-a-jour-kb`).
+2. **Mapping validé par l'utilisateur** : montrer le mapping KB → marque avant
+   d'écrire — `nom`, `langue`, `slogan`, `couleurs` (hex de la charte),
+   `font_family` (pile web-safe la plus proche, expliquée), `logo` (URL
+   publique). Déléguer la création au skill **`gestion-marques`** (plugin
+   `rapidocms`, confirmation niveau 2, hook `valide-charte` en filet).
+3. **Consigner la sync dans la KB** : écrire dans `charte-graphique.md` une
+   ligne de pied — `> Miroir CMS : brand_id <id retourné par create_brand> —
+   dernière sync <YYYY-MM-DD>`. C'est cette ligne que `mise-a-jour-kb` relira
+   pour la sync descendante.
+4. **Assets de base** : proposer d'importer le logo via `bibliotheque-assets`
+   (rapidocms) et de le rattacher à la marque — optionnel, non bloquant.
+
 ## Phase 4 — CÂBLAGE
 
 1. Confirmer que la KB est active : les skills et agents la chargent au besoin

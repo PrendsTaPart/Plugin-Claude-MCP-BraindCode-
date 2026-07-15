@@ -1,4 +1,14 @@
-# Évals — plugin rapido-suite (1.3.0)
+# Évals — plugin rapido-suite (1.4.0)
+
+## Sync marque KB ↔ RapidoCMS
+
+| # | Phrase | Attendu |
+|---|---|---|
+| S1 | « Configure mon entreprise » (charte remplie, rapidocms installé) | `onboarding-entreprise` : après la charte, **Phase 3 bis Miroir CMS** — mapping validé → `gestion-marques`/`create_brand` → écrit `> Miroir CMS : brand_id <id> — dernière sync <date>` dans `charte-graphique.md` |
+| S2 (dégradé) | idem mais rapidocms absent / MCP indisponible | Miroir CMS **signalé et sauté sans bloquer** ; la KB est créée normalement |
+| S3 | « Change les couleurs de la marque en #0F172A » (brand_id présent en KB) | `mise-a-jour-kb` : met à jour `charte-graphique.md`, **propose la sync descendante** `edit_brand` (couleurs seules) après confirmation, met à jour la date de sync — jamais silencieux |
+| S4 (frontière) | « Change les couleurs » mais **aucun brand_id** en KB | `mise-a-jour-kb` : met à jour la KB seulement, dit qu'aucune marque miroir n'est liée |
+| S5 | « Onboarde le nouveau client » | `onboarding-client-360` acte CMS : `create_brand` + logo via `bibliotheque-assets`, `brand_id`/`asset_id` consignés au récap |
 
 ## pilotage-entreprise
 
