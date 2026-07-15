@@ -15,12 +15,12 @@ routines récurrentes — pour piloter une entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-23-blue)
-![Skills](https://img.shields.io/badge/skills-370-brightgreen)
-![Agents](https://img.shields.io/badge/agents-34-orange)
+![Skills](https://img.shields.io/badge/skills-372-brightgreen)
+![Agents](https://img.shields.io/badge/agents-35-orange)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins) ·
-[Domaines couverts](#domaines-couverts) · [Les agents IA](#les-agents-ia-32) ·
+[Domaines couverts](#domaines-couverts) · [Les agents IA](#les-agents-ia) ·
 [Les routines (Loop Engine)](#les-routines--le-loop-engine) · [Installation](#installation-5-minutes)
 · [Connecter/héberger les MCP](#connecter-ou-héberger-les-serveurs-mcp) ·
 [Comment l'utiliser](#comment-lutiliser) · [Architecture](#architecture-dun-plugin)
@@ -62,7 +62,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
+| `rapido-lovable` | 1.5.0 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
 | `rapido-n8n` | 1.5.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
@@ -80,7 +80,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Docker **ou** `GMAPS_API_URL`+`GMAPS_API_KEY` (KB) |
 | `rapido-leadmagnet` | 0.5.0 | 4 | 1 | rapidocrm, rapidocms, rapidorh, lovable, facebook-ads | — |
 
-**Total : 23 plugins, 370 skills, 34 agents.** Historique détaillé des vagues :
+**Total : 23 plugins, 372 skills, 35 agents.** Historique détaillé des vagues :
 [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 ## Domaines couverts
@@ -96,11 +96,11 @@ Quel plugin pour quel besoin — installez seulement ce qui vous concerne.
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
 | **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, **usine à lead magnets** (fabrication → capture → campagne → RH → mesure), SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos génératives, montage libre (ffmpeg), voix (ElevenLabs), design, direction de prompts |
-| **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, workflows n8n |
+| **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, **agent embarqué MCP (kit connecteur)**, workflows n8n |
 | **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction` | Pilotage transverse (Loop Engine), finance/trésorerie/board, chef de cabinet (Gmail/Agenda/Drive) |
 | **Incubation** | `rapido-forge` | 181 exercices StartupsForge (bootcamp, idéation, scale) → livrables KB, pontés vers l'opérationnel |
 
-## Les agents IA (32)
+## Les agents IA
 
 Les **agents** sont des personas experts (installés avec leur plugin) qui chargent la
 charte et la KB **avant** d'agir, invoquent les skills au bon moment, citent leurs
@@ -119,7 +119,7 @@ directeur commercial… ») ou ils sont mobilisés par les orchestrateurs.
 | `rapido-meta-ads` | media-buyer |
 | `rapido-forge` | directeur-programme · mentor-bootcamp · mentor-ideation · mentor-scale |
 | `rapido-canva` | studio-creatif |
-| `rapido-lovable` | chef-produit-web |
+| `rapido-lovable` | chef-produit-web · architecte-lovable (kit connecteur MCP) |
 | `rapido-n8n` | architecte-automatisations |
 | `rapido-higgsfield` | producteur-studio |
 | `rapido-prompteur` | directeur-prompts (orchestre la conception de prompts) |

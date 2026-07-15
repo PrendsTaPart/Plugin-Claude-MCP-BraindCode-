@@ -1,5 +1,35 @@
 # Notes de release
 
+## rapido-lovable v2 — kit connecteur MCP + usine MVP (2026-07-15)
+
+Upgrade majeur de `rapido-lovable` (1.1.0 → 1.5.0) : n'importe quel client demande
+« connecte mon site au MCP FoodEatUp » → **toujours les mêmes prompts**, même sécurité,
+même scope. Fondé sur le code de production `academyrapido` (canonisé, pas théorisé).
+
+- **Audit LV0** : `docs/REFERENCE-AGENT-LOVABLE.md` canonise deux patterns de prod —
+  `agent-chat` (RAG Supabase via passerelle Lovable) et **`execute-prompt`** (LE pattern
+  MCP : API Anthropic + `mcp_servers` type url, beta `mcp-client-2025-04-04`, parsing par
+  type). `docs/IMPORTS-LOVABLE-V2.md` : 4 dépôts (awesome-cursorrules CC0, VibeSec
+  Apache-2.0, vibecode-pro-max MIT, lovable-prompt-builder MIT). **Découverte structurante**
+  → `docs/OUTILS-MCP-MANQUANTS.md` §11 : **auth multi-tenant** (token par établissement)
+  = prérequis produit **absolu** (les URLs MCP de prod sont globales, non scopées).
+- **Kit v1** (`reference/kit-connecteur-mcp/`) : `_commun.md` (template edge function
+  durci multi-tenant, 7 points sécurité, critères d'acceptation, versioning) + fiches
+  `foodeatup`/`crm`/`cms`/`rh` (env immuables, familles d'outils, system prompt, scope).
+  `regles-stack-lovable.md` (CC0), `gate-securite.md` (VibeSec adapté, bloquant).
+- **2 skills** : `connecteur-mcp-lovable` (kit → prompts étagés P1-P5), `mvp-lovable`
+  (spec-driven, série P1-P8). **Agent** `architecte-lovable`. Volet **workspace sync**
+  (`sync-marque-lovable` pousse le kit en workspace skill versionné). Patchs
+  `agent-ia-produit`/`usine-a-landing`/`site-restaurant` + `rapido-prompteur:prompt-lovable`.
+- **Sécurité** : clés du **client** (jamais BraindCode), appels **serveur**, **scope
+  injecté serveur**, **écritures confirmées** (symétrie hooks Claude Code), gate VibeSec.
+  Runbook `docs/RECETTE-LOVABLE-V2.md` (GoSushi, établissement démo 2). **Validation** :
+  valider TOUT VALIDE (23 plugins) ; tester 0/0/0.
+
+Plugins touchés : `rapido-lovable` 1.1.0→1.5.0, `rapido-prompteur` 0.3.0→0.3.1.
+
+---
+
 ## Usine à lead magnets (2026-07-15)
 
 Nouveau plugin **`rapido-leadmagnet`** (23e) — l'**usine d'exécution** des lead magnets :

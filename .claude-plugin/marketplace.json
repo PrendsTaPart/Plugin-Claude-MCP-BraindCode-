@@ -40,7 +40,7 @@
     {
       "name": "rapido-lovable",
       "source": "./rapido-lovable",
-      "description": "Apps et agents IA Lovable alimentés par les données Rapido : site restaurant, landing pages, agent IA produit, marque synchronisée"
+      "description": "Apps & sites Lovable alimentés par les données Rapido : landing, site restaurant, MVP multi-pages (spec-driven), et surtout le KIT CONNECTEUR MCP canonique (agent embarqué → FoodEatUp/CRM/CMS/RH via edge function sécurisée, scope serveur, écritures confirmées) + gate sécurité VibeSec. Agent architecte-lovable. 10 skills, 2 agents."
     },
     {
       "name": "rapido-meta-ads",
