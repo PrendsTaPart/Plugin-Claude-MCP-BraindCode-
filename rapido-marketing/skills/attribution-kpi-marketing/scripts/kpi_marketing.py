@@ -47,16 +47,20 @@ def analyser(data):
         attrib = c.get(champ) or 0
         lignes.append({
             "canal": c.get("canal", "?"),
-            "CAC": ratio(dep, cli),                       # coût / client
-            "LTGP": ratio(rev - cout, cli),               # marge brute / client
-            "ROI": ratio(rev - dep, dep),                 # (revenu - dépense)/dépense
+            # CAC = dépense / clients — MÊME formule que catalogue-kpi.cac
+            # (source de vérité : rapido-startup:catalogue-kpi). Ici scopée PAR CANAL.
+            "CAC": ratio(dep, cli),
+            # LTGP = marge brute / client — métrique PROPRE à l'attribution marketing
+            # (≠ LTV de catalogue-kpi = ARPU × marge ÷ churn). Ne pas confondre.
+            "LTGP": ratio(rev - cout, cli),
+            "ROI": ratio(rev - dep, dep),                 # propre au marketing (catalogue-kpi n'a pas de ROI)
             "attribution_pct": round(100 * attrib / total_attrib, 1),
             "modele_attribution": modele,
         })
     return {
         "formules": {
-            "CAC": "dépense / clients",
-            "LTGP": "(revenu_brut - cout_livraison) / clients",
+            "CAC": "dépense / clients  (source : catalogue-kpi ; ici par canal)",
+            "LTGP": "(revenu_brut - cout_livraison) / clients  (propre au marketing ; ≠ LTV)",
             "ROI": "(revenu_brut - dépense) / dépense",
             "attribution_pct": f"contacts ({modele} point) du canal / total * 100",
         },

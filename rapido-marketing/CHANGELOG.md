@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-marketing
 
+## 0.16.3 — 2026-07-15 — frontière KPI (anti-divergence)
+
+- `attribution-kpi-marketing` : section **« Frontière KPI »** — `catalogue-kpi` est la
+  source des formules ; le CAC par canal (`dépense/clients`) est **la même formule**,
+  scopée par canal (pas concurrente). Ce qui est propre au skill : répartition par
+  canal, modèle d'attribution, `LTGP`/`ROI` marketing (≠ LTV).
+- `scripts/kpi_marketing.py` : commentaires **« source : catalogue-kpi »** sur le CAC
+  et distinction explicite `LTGP` ≠ `LTV` (aucun changement de comportement).
+
 ## 0.16.2 — 2026-07-15 — anti-collision ambassadeurs
 
 - **Patch croisé `rapidocrm`** : `lead-getters-systeme` gagne une section
