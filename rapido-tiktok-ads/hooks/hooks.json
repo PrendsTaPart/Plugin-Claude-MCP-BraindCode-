@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__tiktok-ads__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-argent-reel-tiktok.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils tiktok-ads d'écriture ont été appelés avec succès (nom contenant create, add, update, activate, enable), la dernière réponse DOIT contenir un récapitulatif avec : les IDs des entités créées/modifiées, leur STATUT en toutes lettres (INACTIF/DISABLE par défaut, ou ACTIVE si activé sur confirmation), les budgets dans la devise réelle du compte ET le coût maximum estimé pour tout ce qui est ACTIVE, avec le plafond ./rapido-kb/ rappelé. Toute entité créée doit être INACTIVE sauf activation explicitement confirmée. Si ce récapitulatif manque ou omet un statut/budget, bloque en demandant de le compléter. Si aucune écriture tiktok-ads n'a eu lieu, ou si le récapitulatif est complet, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

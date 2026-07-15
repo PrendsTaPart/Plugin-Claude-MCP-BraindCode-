@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "tiktok-ads": {
+      "type": "http",
+      "url": "${TIKTOK_ADS_MCP_URL}"
+    },
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    }
+  }
+}

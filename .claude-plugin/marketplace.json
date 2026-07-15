@@ -101,6 +101,11 @@
       "name": "rapido-google-ads",
       "source": "./rapido-google-ads",
       "description": "SEA Google Ads en LECTURE SEULE (MCP officiel read-only) : pilotage de performance (CPA/ROAS), audit de compte (gaspillage, Quality Score, écarts conversions GA4), mots-clés payants (CPC, SKAG/STAG), synergie SEO/SEA. Analyse et recommande — exécution manuelle guidée, jamais d'écriture promise. 4 skills."
+    },
+    {
+      "name": "rapido-tiktok-ads",
+      "source": "./rapido-tiktok-ads",
+      "description": "TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture) : pilotage de performance (CPM/CPC/CPA, comparatif vs Meta), lancement de campagne 100 % inactif (activation séparée sur confirmation écrite), tendances créatives. Verrous plus stricts que rapido-meta-ads : création active refusée, budgets plafonnés KB. 3 skills."
     }
   ]
 }

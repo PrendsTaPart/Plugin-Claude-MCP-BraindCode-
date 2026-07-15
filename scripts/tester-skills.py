@@ -270,6 +270,17 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
           "tool_input": {}}, "ask"),
     ],
+    ("rapido-tiktok-ads", "garde-argent-reel-tiktok.py"): [
+        ({"tool_name": "mcp__tiktok-ads__create_campaign",
+          "tool_input": {"status": "ENABLE"}}, "deny"),
+        ({"tool_name": "mcp__tiktok-ads__create_campaign",
+          "tool_input": {"status": "DISABLE"}}, "allow"),
+        ({"tool_name": "mcp__tiktok-ads__update_status",
+          "tool_input": {"status": "ENABLE"}}, "ask"),
+        ({"tool_name": "mcp__tiktok-ads__create_adgroup",
+          "tool_input": {"budget": 50, "status": "DISABLE"}}, "ask"),
+        ({"tool_name": "mcp__tiktok-ads__get_report", "tool_input": {}}, "allow"),
+    ],
     ("rapido-google-ads", "garde-ecriture-google-ads.py"): [
         ({"tool_name": "mcp__google-ads__mutate_campaign", "tool_input": {}}, "ask"),
         ({"tool_name": "mcp__google-ads__create_campaign_budget", "tool_input": {}}, "ask"),
