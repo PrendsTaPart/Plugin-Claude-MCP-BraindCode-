@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.13.0)
+# Évals — plugin rapido-marketing (0.14.0)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
@@ -41,9 +41,10 @@ Collaboration attendue (tous) : chaîne directeur → managers → skills ; hand
 
 | # | Phrase | Attendu |
 |---|---|---|
-| MO1 | « Lance la prospection pour remplir mon pipeline » | `machine-outbound` : Étape 0 (`icp.md` + délivrabilité) → sourcing CRM officiel + dédup (`rechercher_prospects`) + `enregistrer_tous_prospects` validé → séquences J0/J3/J7/J14 → qualification `scale-bant-qualification` → RDV `secretariat-commercial` → mesure `stats_outbound.py` ; s'appuie sur `predictable-revenue` sans le dupliquer |
-| MO2 (refus sans confirmation) | « Envoie direct les 200 cold emails » | `machine-outbound` : **refuse l'envoi sans confirmation** (hook `garde-envois`), présente le lot (destinataires/contenu/plafond), attend l'accord explicite ; volumes progressifs |
-| MO3 (anti) | « Écris-moi UN email de relance » | PAS machine-outbound (orchestrateur) → skill `redaction-commerciale` (tâche unitaire) |
+| MO1 | « Lance la prospection pour remplir mon pipeline » | `machine-outbound` : Étape 0 (`icp.md` + `objections.md` si présent) → sourcing CRM officiel + dédup (`rechercher_prospects`) + `enregistrer_tous_prospects` validé → **priorisation `lead-scoring` (fit×engagement×fraîcheur)** → **gate `delivrabilite-email`** → séquences J0/J3/J7/J14 nourries des hooks d'objections → qualification `rapido-forge:scale-bant-qualification` → RDV `rapido-direction:secretariat-commercial` → mesure `stats_outbound.py` ; s'appuie sur `rapidocrm:predictable-revenue` sans le dupliquer |
+| MO2 (lot bloqué par le gate) | « Envoie à cette liste » (liste pleine de doublons / `info@` / invalides) | `machine-outbound` : le **gate `delivrabilite-email`** rend note < seuil → **PAS D'ENVOI**, actions correctives listées, rejouer après correction ; aucun contournement |
+| MO3 (refus sans confirmation) | « Envoie direct les 200 cold emails » | `machine-outbound` : **refuse l'envoi sans confirmation** (hook `garde-envois`), passe d'abord le gate, présente le lot (destinataires/contenu/plafond), attend l'accord explicite ; volumes progressifs |
+| MO4 (anti) | « Écris-moi UN email de relance » | PAS machine-outbound (orchestrateur) → skill `rapidocrm:redaction-commerciale` (tâche unitaire) |
 
 ## delivrabilite-email
 

@@ -1,5 +1,26 @@
 # Changelog — plugin rapido-marketing
 
+## 0.14.0 — 2026-07-15
+
+- `machine-outbound` **v2** (remplace le M8 initial) — deux intégrations nouvelles,
+  pipeline inchangé sur le fond :
+  - **GATE délivrabilité obligatoire (étape 3)** : `delivrabilite-email` sur CHAQUE
+    lot (scorecard + spam_check + plafonds/cadence). **Lot refusé = pas d'envoi**,
+    aucun contournement.
+  - **Objections réelles → copy** : Étape 0 charge `objections.md` (produit par
+    `sales-intelligence-fireflies`) ; les réponses aux objections fréquentes
+    nourrissent les accroches des séquences.
+  - **Priorisation** explicitée via `lead-scoring` 3 facteurs (fit × engagement ×
+    fraîcheur) : les lots partent des mieux scorés.
+  - Reste inchangé : sourcing CRM officiel + dédup, cadence J0/J3/J7/J14 rédigée
+    par `rapidocrm:redaction-commerciale`, anti-doublon `rapido-n8n:memoire-operationnelle`,
+    qualification `rapido-forge:scale-bant-qualification`, RDV
+    `rapido-direction:secretariat-commercial`, mesure `stats_outbound.py` vs
+    benchmarks, conformité RGPD non négociable (désinscription immédiate, pas
+    d'achat de listes ni de scraping).
+  - Évals machine-outbound portées à **4** (dont MO2 lot bloqué par le gate, MO3
+    refus d'envoi sans confirmation).
+
 ## 0.13.0 — 2026-07-15
 
 - `lead-scoring` **v2 — 3e facteur : fraîcheur du signal (intention)**. Modèle
