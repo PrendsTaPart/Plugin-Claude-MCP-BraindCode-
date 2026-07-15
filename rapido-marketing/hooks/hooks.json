@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__rapidocrm__(send_email|send_sms|send_newsletter|lancer_campagne|schedule_email|schedule_sms)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-envois.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__rapidocms__(schedule_draft_tool|cancel_schedules_post)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-envois.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__facebook-ads__(ads_activate_entity|ads_boost_ig_post|ads_update_entity)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-envois.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP marketing d'écriture ont été appelés avec succès (nom contenant send, schedule, create, lancer, add, activate, boost, update), la dernière réponse de l'assistant doit contenir un récapitulatif explicite des objets créés/modifiés avec leurs IDs et, pour tout ENVOI/PUBLICATION/ACTIVATION, les destinataires ou cibles, la date/heure et le coût maximum le cas échéant (campagnes CRM, segments, formulaires, brouillons/posts programmés avec réseau, entités pub avec STATUT PAUSED/ACTIVE et budget). Si ce récapitulatif manque, bloque en demandant de terminer la réponse par un récapitulatif complet. Si aucun outil d'écriture marketing n'a été appelé, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}
