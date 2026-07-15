@@ -1,5 +1,25 @@
 # Changelog — plugin rapido-marketing
 
+## 0.9.0 — 2026-07-14
+
+- Équipe marketing IA : 5 agents (frontmatter conforme au repo — name +
+  description ; whitelist d'outils en section « Périmètre d'outils » comme les
+  agents existants). Zéro doublon : ils DÉLÈGUENT aux rôles CRM/CMS/RH
+  existants (directeur-commercial, responsable-marketing, community-manager,
+  responsable-rh).
+  - `directeur-marketing` : stratégie & arbitrage (OKR→KPI, choix acquisition,
+    validation des plans, budgets — aucune activation sans confirmation),
+    lecture seule, ne produit rien.
+  - `inbound-manager` : pilote machine-inbound (SEO/GEO, blog, newsletter,
+    social, lead magnets, landing) ; volet marque employeur avec responsable-rh.
+  - `outbound-manager` : pilote machine-outbound (ICP, sourcing, séquences,
+    qualification) ; délivrabilité + RGPD non négociables.
+  - `funnel-builder` : exécute tunnel-de-vente-360 acte par acte, récap des IDs.
+  - `growth-analyst` : growth + analytics, LECTURE SEULE, chiffres par script
+    cités, propose sans activer.
+- Section « Collaboration » commune (chaîne de saisine, handoff brief une page,
+  escalade humaine après 2 échecs). tests/evals.md : 1 scénario par agent.
+
 ## 0.8.0 — 2026-07-14
 
 - 2 skills « mesure » (comblent les derniers MANQUANT/PARTIEL M0) :

@@ -1,4 +1,16 @@
-# Évals — plugin rapido-marketing (0.8.0)
+# Évals — plugin rapido-marketing (0.9.0)
+
+## Agents — équipe marketing (délégation sans doublon)
+
+| Phrase | Agent / Attendu |
+|---|---|
+| « Quelle stratégie marketing ce trimestre, quel budget ? » | **directeur-marketing** : cadre OKR→KPI, choisit inbound/outbound/paid selon ICP+budget, valide les plans, **aucune activation sans confirmation** ; ne produit rien lui-même |
+| « Lance l'inbound : blog, SEO, newsletter » | **inbound-manager** : pilote `machine-inbound`, délègue à `generation-article-blog`/`geo-optimization`/`pipeline-contenu-social`/`email-sequence` ; marque employeur en lien avec `responsable-rh` |
+| « Monte la prospection sortante » | **outbound-manager** : pilote `machine-outbound`, délègue à `prospection-pipeline`/`draft-outreach`/`redaction-commerciale`/`secretariat-commercial` ; délivrabilité + RGPD non négociables |
+| « Construis le tunnel du produit X » | **funnel-builder** : exécute `tunnel-de-vente-360` acte par acte, délègue pages/séquences/automatisations/scoring, **récapitule tous les IDs** à chaque acte |
+| « Analyse mon ROI par canal et mes A/B » | **growth-analyst** : LECTURE SEULE, `attribution-kpi-marketing` + `growth-experiments`, chiffres par script cités, **propose sans activer** |
+
+Collaboration attendue (tous) : chaîne directeur → managers → skills ; handoff = brief une page ; 2 échecs → escalade humaine avec diagnostic ; aucun doublon des rôles CRM/CMS/RH existants.
 
 ## attribution-kpi-marketing
 

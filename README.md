@@ -59,9 +59,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.0 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
-| `rapido-marketing` | 0.8.0 | 13 | 0 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) |
+| `rapido-marketing` | 0.9.0 | 13 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) |
 
-**Total : 13 plugins, 318 skills, 25 agents.** (`rapido-startup` — finance &
+**Total : 13 plugins, 318 skills, 30 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

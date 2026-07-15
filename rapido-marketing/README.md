@@ -5,7 +5,7 @@ de leads, le tunnel de conversion, le nurturing, la publicité et l'analytics en
 **priorisant les serveurs Rapido** (CRM → CMS → RH), les MCP secondaires en
 repli seulement.
 
-> **Version 0.8.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
+> **Version 0.9.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
 > **méthodo** (distillation $100M Leads). Les skills d'**exécution**
 > (machine-inbound/outbound, tunnel-de-vente-360) suivent.
 
