@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-gmaps
 
+## 0.4.0 — 2026-07-15 — veille-concurrents + agent chasseur-leads
+
+- Skill **`veille-concurrents-gmaps`** — situer un établissement FoodEatUp face à
+  ses concurrents directs (même catégorie, même zone) : distribution des notes,
+  gamme de prix, affluence, part de concurrents avec livraison/réservation en
+  ligne, inventaire de vignettes (thumbnail only). Rapport daté →
+  `rapido-kb/marketing/veille-concurrents.md` ; angles pour
+  `rapido-meta-ads:veille-ads-concurrents`. **Jamais** de scraping d'avis pour
+  republication/critique.
+- Agent **`chasseur-leads`** — exécution autonome de la chaîne (sourcing → scoring
+  → dédup → import) sur brief d'`outbound-manager` / `directeur-marketing`.
+  Interdits : > 50 fiches sans confirmation, ignorer les garde-fous volume,
+  écraser un champ rempli, score de tête. Capitalise dans benchmarks.md.
+- Patchs cross-plugin (rapido-marketing) : `machine-outbound` mentionne
+  `sourcing-gmaps` comme source amont possible ; `icp-generator` intègre les
+  signaux Maps (note, avis, affluence, sans-système-numérique) au profil ICP.
+- Évals : +3 cas (déclenchement veille, éthique avis, anti-collision sourcing).
+
 ## 0.3.0 — 2026-07-15 — enrichissement + détection opportunités FoodEatUp
 
 - Skill **`enrichissement-fiches`** — compléter/rafraîchir une fiche CRM existante

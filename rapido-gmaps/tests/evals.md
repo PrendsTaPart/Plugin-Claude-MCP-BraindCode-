@@ -1,13 +1,26 @@
-# Évals — plugin rapido-gmaps (0.3.0)
+# Évals — plugin rapido-gmaps (0.4.0)
 
-## Déclenchement (phrases → skill)
+## Déclenchement (phrases → skill / agent)
 
-| Phrase | Skill |
+| Phrase | Skill / agent |
 |---|---|
 | « Trouve-moi des restaurants à Lyon » / « prospecte les cafés de Tunis » | `sourcing-gmaps` |
 | « Sourcing Google Maps » / « leads restauration Paris 11ème » | `sourcing-gmaps` |
 | « Complète la fiche de [X] » / « numéro manquant » / « mets à jour les coordonnées CRM » | `enrichissement-fiches` |
 | « Restaurants sans système numérique » / « prospects FoodEatUp » / « business sans réservation en ligne » | `detection-opportunites` |
+| « Scrape les concurrents de [client] » / « veille concurrentielle zone » | `veille-concurrents-gmaps` |
+| Brief autonome de sourcing (zone + volume + ICP) | agent `chasseur-leads` |
+
+## Cas `veille-concurrents-gmaps` (3)
+
+9. **Déclenchement** : « que proposent les concurrents restaurants du Vieux-Lyon »
+   → scrape même catégorie/zone → rapport d'agrégat (notes, prix, affluence,
+   canaux) dans `veille-concurrents.md`.
+10. **Éthique avis** : la veille **n'extrait pas** les avis pour les republier /
+    critiquer ; seulement des agrégats de positionnement (thumbnail only, aucune
+    reproduction).
+11. **Anti-collision** : « trouve-moi des restos à prospecter » → `sourcing-gmaps`,
+    pas la veille ; « réponds à cet avis client » → `foodeatup` handle-complaint.
 
 ## Cas `enrichissement-fiches` (2)
 
