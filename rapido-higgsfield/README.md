@@ -9,6 +9,11 @@ bibliothèque d'assets), RapidoCRM, RapidoRH et FoodEatUp.
 > coûts/voix. Grille de coûts et signatures : `docs/AUDIT-MCP-HIGGSFIELD.md` +
 > `docs/GRILLE-COUTS-HIGGSFIELD.md`.
 
+> **Prérequis utilisateur : AUCUN.** `marketplace add` + `install` + MCP connectés.
+> Les dépendances de montage (ffmpeg, transcription) sont **auto-installées en local
+> au workspace et confirmées à la première utilisation** (`scripts/bootstrap_video.py`,
+> voir `reference/pieges-montage.md` et `docs/ENV-VIDEO.md`) — rien à installer à la main.
+
 ## Skills (9) & agent (1)
 
 | Skill / agent | Rôle |

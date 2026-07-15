@@ -150,9 +150,13 @@ def install_whisper():
     return r.returncode == 0, (r.stderr[-400:] if r.returncode else "ok")
 
 
-def ecrire_kb(etat, transcription_mode, whisper_model):
+def ecrire_kb(etat, transcription_mode, whisper_model, telechargements=None):
     os.makedirs(KB_DIR, exist_ok=True)
     ffmpeg, ffprobe = resoudre_ffmpeg(etat)
+    dl = telechargements or []
+    dl_section = "\n".join(
+        f"- {d['nom']} — ~{d['taille_mo']} Mo — `{d['emplacement']}`" for d in dl
+    ) or "- (aucun ce tour)"
     contenu = f"""# Outils locaux vidéo (auto-amorçés)
 
 > Écrit par `scripts/bootstrap_video.py`. Fichier KB côté client (gitignoré) —
@@ -170,6 +174,9 @@ def ecrire_kb(etat, transcription_mode, whisper_model):
 - Mode choisi : **{transcription_mode}**
   - `faster-whisper` : local, modèle `{whisper_model}` (téléchargé au 1er usage) ;
   - `scribe` : 100 % distant via MCP ElevenLabs (payant), aucun local.
+
+## Téléchargements effectués ce tour (nom · taille · emplacement)
+{dl_section}
 """
     with open(KB_FILE, "w", encoding="utf-8") as f:
         f.write(contenu)
@@ -217,18 +224,27 @@ def main():
         print("⛔ Confirmation requise : ajouter --yes pour lancer les téléchargements.")
         return 2
 
+    telecharges = []
     if "ffmpeg" in cibles:
         ok, info = install_ffmpeg()
-        print(f"ffmpeg-static : {'OK' if ok else 'ÉCHEC'} {info if not ok else ''}")
+        print(f"ffmpeg : {'OK' if ok else 'ÉCHEC'} {info if not ok else info.get('voie','')}")
+        if ok:
+            telecharges.append({"nom": info.get("voie", "ffmpeg"),
+                                "taille_mo": POIDS["ffmpeg"][1],
+                                "emplacement": info.get("ffmpeg", "?")})
         etat = detect()
     if "whisper" in cibles:
-        ok, info = install_whisper()
+        ok, _info = install_whisper()
         print(f"faster-whisper : {'OK' if ok else 'ÉCHEC'} — modèle {a.whisper_model} au 1er usage")
+        if ok:
+            key = f"whisper-{a.whisper_model}"
+            telecharges.append({"nom": POIDS[key][0], "taille_mo": POIDS[key][1],
+                                "emplacement": "cache faster-whisper (~/.cache) au 1er usage"})
         etat = detect()
 
     mode = a.transcription or ("faster-whisper" if "whisper" in cibles else "scribe")
-    kb = ecrire_kb(etat, mode, a.whisper_model)
-    print(f"✅ Chemins et choix écrits dans {kb}")
+    kb = ecrire_kb(etat, mode, a.whisper_model, telecharges)
+    print(f"✅ Chemins, choix et téléchargements écrits dans {kb}")
     return 0
 
 

@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "Vérifie le tour qui se termine. Si des outils Higgsfield (mcp__huggsfield__*) de génération, de rendu ou de déploiement ont été appelés avec succès, la dernière réponse de l'assistant DOIT contenir un récapitulatif listant : les job_ids et/ou asset_ids produits, le coût réel (ou estimé via get_cost) en crédits, et le devenir de chaque rendu (rapatrié dans RapidoCMS ? brouillon ? en attente). Si ce récapitulatif manque ou omet les IDs ou les coûts, bloque en demandant de le compléter. Si aucun outil Higgsfield de production n'a été appelé, ou si le récapitulatif est complet, autorise l'arrêt."
+            "prompt": "Vérifie le tour qui se termine. Si des outils Higgsfield (mcp__huggsfield__*) de génération, de rendu ou de déploiement ont été appelés avec succès, la dernière réponse de l'assistant DOIT contenir un récapitulatif listant : les job_ids et/ou asset_ids produits, le coût réel (ou estimé via get_cost) en crédits, et le devenir de chaque rendu (rapatrié dans RapidoCMS ? brouillon ? en attente). De plus, si des dépendances de montage ont été téléchargées ce tour (via scripts/bootstrap_video.py), le récapitulatif DOIT lister chaque téléchargement effectué : nom, taille approximative, et emplacement local (cf. rapido-kb/outils-locaux.md). Si ce récapitulatif manque ou omet les IDs, les coûts, ou un téléchargement effectué, bloque en demandant de le compléter. Si aucun outil Higgsfield de production ni téléchargement n'a eu lieu, ou si le récapitulatif est complet, autorise l'arrêt."
           }
         ]
       }

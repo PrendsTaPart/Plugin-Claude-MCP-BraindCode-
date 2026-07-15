@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-higgsfield
 
+## 1.0.1 — 2026-07-15 — DELTA V1 montage
+
+- **README** : « Prérequis utilisateur : AUCUN » (marketplace add + install + MCP ;
+  dépendances de montage auto-installées et confirmées à la 1re utilisation).
+- **`reference/pieges-montage.md`** (nouveau) : une section par OS (conteneur Linux
+  = mesuré ; Windows/macOS = théorique) ; chemins lus dans `rapido-kb/outils-locaux.md`,
+  via `pathlib`, **aucun antislash Windows en dur**.
+- **`reference/garde-fous-media.md`** : §(e) montage local — « temps de rendu selon
+  l'environnement » (à mesurer localement, plus de « CPU Windows »), dépendances
+  auto-installées annoncées/confirmées, chemins via KB.
+- **Hook `Stop`** : le récapitulatif inclut désormais les **téléchargements
+  effectués** (nom, taille, emplacement) en plus des IDs/coûts.
+- `scripts/bootstrap_video.py` : écrit la section « Téléchargements effectués »
+  (nom · taille · emplacement) dans `rapido-kb/outils-locaux.md`.
+
 ## 1.0.0 — 2026-07-15 — RELEASE usine média IA
 
 Première version stable : **9 skills + 1 agent**, audit live H0, garde-fous et

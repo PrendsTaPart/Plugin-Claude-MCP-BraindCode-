@@ -34,3 +34,11 @@ partie ; le reste est contractuel.
   d'un créatif généré par IA), campagne en **PAUSED**, budget confirmé.
 - **Gate viral** (`analyse-video-virale`, H6) **avant tout boost payant** : aucune
   vidéo non passée au gate n'est boostée.
+
+## (e) Montage local — temps & chemins
+- **Temps de rendu variable selon l'environnement** : annoncer que la durée dépend
+  de la machine (à mesurer localement), **jamais** de chiffre présenté comme absolu.
+- **Dépendances auto-installées** (ffmpeg, transcription) : **annoncer les tailles
+  et confirmer une fois** avant tout téléchargement (`scripts/bootstrap_video.py`).
+- **Chemins d'outils** : toujours lus depuis `rapido-kb/outils-locaux.md` (résolus
+  par le bootstrap), via `pathlib` — **aucun antislash Windows en dur**.
