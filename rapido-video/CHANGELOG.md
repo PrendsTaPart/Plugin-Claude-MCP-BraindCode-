@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-video
 
+## 1.0.0 — 2026-07-15 — RELEASE montage 3 étages
+
+- **Release** : 3 étages — montage libre (`montage-express`), motion design
+  (`motion-design-remotion`, mode aperçu sous licence [B] différée), auto-bootstrap
+  zéro-install.
+- **DELTA V5(d) — test vierge RÉUSSI** : environnement vierge → install → 1re
+  invocation → bootstrap (repli imageio-ffmpeg anti github-403) → **montage sans
+  action manuelle**. Recette (a) (épisode 9:16 : titre+concat+logo+sous-titres FR)
+  **prouvée 0 crédit** (≈ 10,7 s, conteneur Linux mesuré).
+- **Recette (a/b/c) réelle** : écarts documentés (`docs/RECETTE-VIDEO.md`) — sources
+  réelles (clips Kling, extrait V1, transcript Fireflies) + crédits doublage → à
+  exécuter en session locale ; aucune donnée fabriquée.
+- Nouvelle recette `title-card` (carton titre via **libass**, `drawtext` absent des
+  builds statiques imageio). README plugin : 3 étages + **tableau licences**.
+- Chronos étiquetés par environnement (Linux mesuré / Windows à mesurer).
+
 ## 0.2.0 — 2026-07-15
 
 - Skill **`motion-design-remotion`** : motion design programmatique (Remotion) aux

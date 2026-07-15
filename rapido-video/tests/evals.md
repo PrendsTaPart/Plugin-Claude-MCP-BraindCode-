@@ -1,4 +1,18 @@
-# Évals — plugin rapido-video (0.2.0)
+# Évals — plugin rapido-video (1.0.0)
+
+## Anti-déclenchements (routage)
+| Phrase | Doit router vers |
+|---|---|
+| « Crée une vidéo de A à Z sans rushes » (tout à générer) | `rapido-higgsfield` (génératif) — pas montage-express |
+| « Vidéo éditoriale maquettée » (presets design, typo animée) | `rapidocms:video-marketing` (HyperFrames) — pas rapido-video |
+| « Anime mon logo en motion design » | `motion-design-remotion` (pas montage-express) ; **mode aperçu** si licence non tranchée |
+
+## Recette clé (docs/RECETTE-VIDEO.md)
+| # | Test | Attendu |
+|---|---|---|
+| RV-d | environnement **vierge** → install → 1re invocation | bootstrap exécuté (confirmations) → montage **réussi SANS action manuelle** (repli imageio-ffmpeg si github bloqué) — **RÉUSSI** (conteneur Linux mesuré) |
+| RV-a | 3 clips → épisode 9:16 (titre+concat+logo+sous-titres+9:16) | chaîne **0 crédit** prouvée (≈ 10,7 s Linux mesuré) ; clips Kling réels + gate viral + #20 = à faire en session |
+
 
 ## motion-design-remotion
 

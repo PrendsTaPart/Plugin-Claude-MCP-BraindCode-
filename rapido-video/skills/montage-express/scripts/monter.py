@@ -193,6 +193,29 @@ def op_burn_srt(a):
             "-c:a", "copy", a.output], out=a.output)
 
 
+def op_title_card(a):
+    """Carton titre 100 % ffmpeg — habillage sans Remotion (mode aperçu/[B]).
+
+    Utilise le filtre `subtitles` (libass, largement présent) plutôt que `drawtext`
+    (libfreetype, absent de certains builds statiques comme imageio-ffmpeg).
+    """
+    import tempfile
+    fs = max(28, a.size)
+    end = f"00:00:{a.duration:06.3f}".replace(".", ",")  # carton titre < 60 s
+    srt = tempfile.NamedTemporaryFile("w", suffix=".srt", delete=False, encoding="utf-8")
+    srt.write(f"1\n00:00:00,000 --> {end}\n{a.text}\n")
+    srt.close()
+    srt_path = srt.name.replace("\\", "/").replace(":", r"\:")
+    # Alignment=5 (ASS) = centre milieu ; couleur en &Hbbggrr&.
+    style = f"FontName={a.font},Fontsize={fs},Alignment=5,PrimaryColour=&HFFFFFF&,Bold=1"
+    run_ff(["-f", "lavfi", "-i", f"color=c={a.bg}:s={a.width}x{a.height}:d={a.duration}:r=30",
+            "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo",
+            "-vf", f"subtitles={srt_path}:force_style='{style}',format=yuv420p",
+            "-shortest", "-c:v", "libx264", "-c:a", "aac", a.output],
+           out=f"{a.output}  (carton titre {a.duration}s)")
+    os.unlink(srt.name)
+
+
 def op_preset(a):
     w, h, fps = PRESETS[a.platform]
     vf = (f"scale={w}:{h}:force_original_aspect_ratio=decrease,"
@@ -238,6 +261,13 @@ def main():
                                   (["--font"], {"default": "DejaVu Sans"}),
                                   (["--size"], {"type": int, "default": 28}),
                                   (["--margin-v"], {"type": int, "default": 170}), outp])
+    add("title-card", op_title_card, [(["--text"], {"required": True}),
+                                      (["--bg"], {"default": "0x111111"}),
+                                      (["--font"], {"default": "DejaVu Sans"}),
+                                      (["--size"], {"type": int, "default": 72}),
+                                      (["--width"], {"type": int, "default": 1080}),
+                                      (["--height"], {"type": int, "default": 1920}),
+                                      (["--duration"], {"type": float, "default": 2.5}), outp])
     add("preset", op_preset, [(["input"], {}), (["--platform"], {"choices": list(PRESETS), "required": True}), outp])
 
     a = p.parse_args()

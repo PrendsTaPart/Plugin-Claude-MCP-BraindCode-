@@ -9,10 +9,20 @@ voir `NOTICE.md` et `docs/DECISION-LICENCES-VIDEO.md`).
 > confirmées à la première utilisation** (`scripts/bootstrap_video.py`) — rien à
 > installer à la main.
 
-## Skill
-| Skill | Rôle |
-|---|---|
-| `montage-express` | concat · coupes · xfade · overlay logo · reframe 9:16/1:1/16:9 (crop/blur) · vitesse · extraction audio · mix voix/musique (sidechain) · suppression des silences · sous-titres Whisper→SRT→burn-in · presets plateforme |
+## Les 3 étages
+| Étage | Skill / mécanisme | Licence |
+|---|---|---|
+| **1. Montage** (libre) | `montage-express` — concat · coupes · xfade · overlay logo · reframe 9:16/1:1/16:9 · carton titre · vitesse · mix voix/musique (sidechain) · suppression des silences · sous-titres Whisper→SRT→burn-in · presets plateforme | **ffmpeg (GPL/LGPL) + Whisper (MIT)** en sous-processus → **embarquable SaaS sans contrainte** |
+| **2. Motion design** | `motion-design-remotion` — 5 gabarits de marque (intro/outro/lower-third/title-card/stat-bar) | **Remotion** : gratuit ≤ 3 employés ; au-delà = Company. **Mode aperçu non commercial tant que la licence n'est pas tranchée** |
+| **3. Auto-bootstrap** | `scripts/bootstrap_video.py` — installe ffmpeg/Whisper (et Remotion sur demande) en local, **annonce + confirme** les tailles | binaires appelés en sous-processus |
+
+### Tableau licences (résumé — détail `docs/DECISION-LICENCES-VIDEO.md`)
+| Composant | Licence | Usage commercial |
+|---|---|---|
+| ffmpeg (sous-processus) | GPL/LGPL | ✅ (agrégation, pas de code lié) |
+| Whisper / faster-whisper | MIT | ✅ |
+| Remotion | Remotion License | ✅ ≤ 3 empl. ; sinon Company (Creators 25 $/siège, Automators ~100 $/mois) |
+| OpenMontage (optionnel) | **AGPL-3.0** | outil séparé seult (jamais fusionné, clause réseau SaaS) |
 
 ## Scripts (recettes — le modèle n'écrit jamais ffmpeg de tête)
 - `skills/montage-express/scripts/monter.py` — wrapper ffmpeg (13 recettes).
