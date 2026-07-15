@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-marketing
 
+## 0.18.3 — 2026-07-15 — pont social-selling → rapido-copywriter
+
+- `social-selling-linkedin` : **volet commentaires semi-auto** (brouillons de commentaires
+  à forte valeur, envoi humain, dédup n8n — jamais d'automatisation d'envoi). Frontière
+  rappelée : profil **perso** ici ; **pages marque** → `rapido-copywriter`.
+
 ## 0.18.2 — 2026-07-15 — ponts vers rapido-leadmagnet
 
 - `lead-magnet-machine` : étape finale « → l'usine `rapido-leadmagnet` exécute »

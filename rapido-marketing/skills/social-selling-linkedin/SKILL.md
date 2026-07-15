@@ -53,6 +53,15 @@ d'invitation/DM personnalisés** + plan de suivi CRM.
 - Recherche du prospect avant le DM → skill `account-research`.
 - Ton du profil et des messages → skill `storybrand-messaging`.
 - Cadence et choix de canal → skill `core-four-strategie`.
+- **Copy des PAGES de marque** (≠ ce profil perso) → `rapido-copywriter` (frontière stricte).
+
+## Commentaires LinkedIn semi-auto (volet)
+
+Pour engager sous les posts cibles : Claude **prépare des brouillons de commentaires à
+forte valeur** (angle, question, apport concret), l'**humain envoie** — jamais
+d'automatisation d'envoi ni d'outil tiers (CGU). Dédup des posts déjà commentés dans une
+table n8n (`memoire-operationnelle`). Reste **strictement** sur le profil perso du
+fondateur (les pages marque = `rapido-copywriter`).
 
 ## Garde-fous
 **Aucune** automatisation d'invitation/DM LinkedIn (conformité) ; publication de
