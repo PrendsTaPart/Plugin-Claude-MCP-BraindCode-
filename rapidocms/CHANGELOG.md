@@ -1,5 +1,14 @@
 # Changelog — plugin rapidocms
 
+## 1.11.2 — 2026-07-15
+
+- `coherence-personnage` : **branche de délégation** vers
+  `rapido-higgsfield:personnages-univers` (si installé) pour la **vidéo / photo
+  réaliste** d'un personnage (Soul/Elements, Kling 3.0) ; ce skill reste la voie
+  `images_to_image`. Le registre `personnages.json` est **partagé** — exemple enrichi
+  des champs `element_id` / `soul_id` (moteur Higgsfield), rétro-compatible (absents =
+  voie CMS inchangée).
+
 ## 1.11.1 — 2026-07-15
 
 Enrichissements founder-playbook (MIT © 2026 AgentSeal) — ajouts seuls,

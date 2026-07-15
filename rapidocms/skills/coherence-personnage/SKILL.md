@@ -102,6 +102,10 @@ registre. Prompt de scène efficace → proposer `add_prompt(type="visuel")`
 ## Frontières
 - Visuel brandé **ponctuel** (logo/produit, sans personnage récurrent) →
   `studio-visuel-marque`.
+- **Vidéo ou photo réaliste** d'un personnage (clip, packshot, univers PronoClip) →
+  déléguer à `rapido-higgsfield:personnages-univers` **si installé** (Soul/Elements,
+  Kling 3.0). Ce skill reste la voie **`images_to_image`** (image brandée cohérente) ;
+  le registre `personnages.json` est **partagé** (il s'y ajoute `element_id`/`soul_id`).
 - Gérer les **fichiers/assets** (import, inventaire) → `bibliotheque-assets` ;
   **identité de marque** → `gestion-marques`.
 - **Rédiger le prompt** finement → `prompt-engineering-visuel` /
