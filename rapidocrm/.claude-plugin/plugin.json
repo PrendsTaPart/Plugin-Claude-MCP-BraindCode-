@@ -5,5 +5,8 @@
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"
-  }
+  },
+  "mcp_requis": [
+    "rapidocrm"
+  ]
 }
