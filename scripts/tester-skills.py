@@ -270,6 +270,12 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
           "tool_input": {}}, "ask"),
     ],
+    ("rapido-google-ads", "garde-ecriture-google-ads.py"): [
+        ({"tool_name": "mcp__google-ads__mutate_campaign", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__google-ads__create_campaign_budget", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__google-ads__search", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__analytics__run_report", "tool_input": {}}, "allow"),
+    ],
     ("rapido-seo", "garde-couts-seo.py"): [
         ({"tool_name": "mcp__dataforseo__backlinks_bulk_summary", "tool_input": {}}, "ask"),
         ({"tool_name": "mcp__dataforseo__serp_organic_live", "tool_input": {}}, "ask"),

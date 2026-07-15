@@ -96,6 +96,11 @@
       "name": "rapido-seo",
       "source": "./rapido-seo",
       "description": "SEO & acquisition organique pilotés par les données : audit technique (DataForSEO OnPage), recherche de mots-clés, netlinking (backlinks), Search Console, GA4, tendances — lecture d'abord, coûts DataForSEO gouvernés. Orchestrateur pilotage-seo, sous-domaine organique de pilotage-marketing. 6 skills."
+    },
+    {
+      "name": "rapido-google-ads",
+      "source": "./rapido-google-ads",
+      "description": "SEA Google Ads en LECTURE SEULE (MCP officiel read-only) : pilotage de performance (CPA/ROAS), audit de compte (gaspillage, Quality Score, écarts conversions GA4), mots-clés payants (CPC, SKAG/STAG), synergie SEO/SEA. Analyse et recommande — exécution manuelle guidée, jamais d'écriture promise. 4 skills."
     }
   ]
 }

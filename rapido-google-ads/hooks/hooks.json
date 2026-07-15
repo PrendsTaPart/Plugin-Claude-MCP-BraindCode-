@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__google-ads__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-ecriture-google-ads.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Ce plugin est LECTURE SEULE : si des recommandations Google Ads ont été produites, chaque chiffre DOIT citer sa donnée source (campagne, période) et les actions proposées DOIVENT être présentées comme À EXÉCUTER MANUELLEMENT dans l'interface Google Ads (instructions écran par écran), jamais comme exécutées. Les budgets proposés respectent les plafonds ./rapido-kb/. Si une recommandation n'est pas sourcée ou est présentée comme une action réalisée, bloque en demandant de corriger ; sinon autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}
