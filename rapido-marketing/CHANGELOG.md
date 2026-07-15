@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-marketing
 
+## 0.6.0 — 2026-07-14
+
+- Nouveau skill orchestrateur `machine-outbound` : la chaîne outbound complète
+  CRM-first, de l'ICP au RDV. S'appuie sur la méthodo `predictable-revenue`
+  (référencée, non dupliquée). Sourcing via workflows CRM officiels
+  (prospecter_*, rechercher_entreprise_siret) + dédup (rechercher_prospects) +
+  enregistrer_tous_prospects validé ; enrichissement (account-research/
+  draft-outreach) priorisé par lead-scoring ; séquences multi-touch
+  J0/J3/J7/J14 (redaction-commerciale + schedule_email), volumes progressifs
+  et plafond, CHAQUE lot confirmé (garde-envois), suivi deplacer_prospect_etape,
+  mémoire anti-doublon via memoire-operationnelle (n8n) ; qualification
+  scale-bant-qualification ; RDV secretariat-commercial ; mesure par
+  scripts/stats_outbound.py (taux par séquence/segment vs benchmarks).
+  Conformité RGPD encodée (consentement, désinscription immédiate, pas d'achat
+  de listes ni scraping hors CRM). Modes dégradés sans n8n/envoi de masse.
+- scripts/stats_outbound.py (stdlib) testé ; tests/evals.md : 3 scénarios
+  (dont 1 refus d'envoi sans confirmation + 1 anti).
+
 ## 0.5.0 — 2026-07-14
 
 - Nouveau skill orchestrateur `machine-inbound` : la chaîne inbound complète
