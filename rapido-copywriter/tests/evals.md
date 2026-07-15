@@ -6,6 +6,8 @@
 |---|---|
 | « Post LinkedIn pour la page » / « carrousel LinkedIn » / « copy LinkedIn de [marque] » | `copy-linkedin` |
 | « Post Facebook/Instagram » / « caption » / « carrousel Insta » / « copy du Reel » | `copy-meta` |
+| « Script TikTok » / « vidéo TikTok pour [marque] » / « hook TikTok » | `copy-tiktok` |
+| « Décline sur les 4 réseaux » / « adapte ce post pour » / « repurpose ce contenu » | `declinaison-multi-reseaux` |
 
 ## Cas `copy-linkedin` + `copy-meta` (4)
 
@@ -18,6 +20,19 @@
    « N'hésitez pas à… ») → **réécriture obligatoire** avant `brand-review`.
 4. **Grammaires distinctes** : FB (40-120 mots, local) ≠ IG (hook < 125 car., 3-8
    hashtags) ; carrousel/Reel → structure + visuel/monteur délégués. Brouillon par compte.
+
+## Cas `copy-tiktok` + `declinaison-multi-reseaux` (4)
+
+5. **Script TikTok** : livrable = **script de tournage** (hook < 3 s, boucle→valeur→
+   payoff→CTA, texte à l'écran horodaté, sous-titres) — **pas** une caption ; anti-voix-IA
+   sur le parlé ; sortie double (génératif / tournage réel).
+6. **Déclinaison complète** : une idée-noyau → 4 déclinaisons **natives** (délégation aux
+   copy-*), lot de brouillons CMS même campagne + calendrier proposé — jamais un
+   copier-coller raccourci.
+7. **Anti-collision montage** : « monte cette vidéo » → `rapido-video:montage-express`
+   (pas copy-tiktok, qui écrit le script).
+8. **Publication** : aucun réseau publié directement — brouillon CMS (ou export du script
+   si pas de compte TikTok connecté).
 
 ## Garde-fous (hook `garde-voix-marque`, testé au testeur)
 

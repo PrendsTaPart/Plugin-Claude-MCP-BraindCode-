@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-copywriter
 
+## 0.3.0 — 2026-07-15 — copy-tiktok + declinaison-multi-reseaux
+
+- Skill **`copy-tiktok`** — le livrable est un **script de tournage** (hook < 3 s,
+  hook→boucle→valeur→payoff→CTA, texte à l'écran horodaté, sous-titres, caption + 3-5
+  hashtags). Anti-voix-IA sur le **parlé** (ton créateur). Sortie double : génératif
+  (`usine-video-marketing` via `directeur-prompts`) ou tournage réel (+ `montage-express`).
+  Déclinaison Reels/Shorts proposée ; brouillon CMS TikTok ou export.
+- Skill **`declinaison-multi-reseaux`** — 1 idée-noyau → 4 déclinaisons **natives**
+  (délégation aux copy-*), lot de brouillons CMS même campagne + calendrier
+  (`calendrier-editorial`). Jamais de copier-coller raccourci.
+- Évals : 4 cas (script TikTok, déclinaison complète, anti-collision montage, publication).
+
 ## 0.2.0 — 2026-07-15 — copy-linkedin + copy-meta
 
 - Skill **`copy-linkedin`** — copy pour les **pages de marque** (frontière stricte vs
