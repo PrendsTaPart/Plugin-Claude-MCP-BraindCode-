@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.15.0)
+# Évals — plugin rapido-marketing (0.16.0)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
