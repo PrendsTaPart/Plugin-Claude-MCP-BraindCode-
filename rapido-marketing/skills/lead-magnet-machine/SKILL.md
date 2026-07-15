@@ -42,6 +42,9 @@ plan de consommation, CTA vers l'offre, liste des points de distribution.
   — à livrer.)*
 - **Diffusion** → skill `pipeline-contenu-social` (rapidocms) ; emails →
   skill `campagne-marketing` (rapidocrm), envoi **confirmé**.
+- **Exécution complète de bout en bout** (fabrication → page → campagne → projet
+  RH → mesure) → l'usine `rapido-leadmagnet:chef-usine-leadmagnet`. **Ce skill
+  CONÇOIT** (7 étapes) ; **l'usine EXÉCUTE** ce qui est conçu.
 
 ## Cas d'usage croisés
 - L'offre que le magnet révèle → skill `hundred-million-offers`.

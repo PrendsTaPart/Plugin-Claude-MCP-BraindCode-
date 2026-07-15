@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-marketing
 
+## 0.18.2 — 2026-07-15 — ponts vers rapido-leadmagnet
+
+- `lead-magnet-machine` : étape finale « → l'usine `rapido-leadmagnet` exécute »
+  (ce skill conçoit, l'usine exécute de bout en bout).
+- `machine-inbound` : le lead magnet (`page-et-capture`) référencé comme source de
+  capture branchée sur la tuyauterie inbound.
+- `lead-scoring` : le tag `leadmagnet:{slug}` = signal d'engagement pondéré.
+- Cross-références documentaires uniquement (aucun changement de logique).
+
 ## 0.18.1 — 2026-07-15 — ponts vers rapido-gmaps
 
 - `machine-outbound` : mentionne `rapido-gmaps:sourcing-gmaps` comme source amont
