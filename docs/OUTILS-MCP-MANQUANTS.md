@@ -44,3 +44,35 @@
 - **Souhait** : un MCP d'enrichissement compte, ou une intégration documentée.
 - **Priorité** : basse (les signaux first-party + `account-research` couvrent le
   besoin courant ; l'intent tiers est un bonus).
+
+## 5. Clé de ré-scrape stable sur une fiche (place_id / cid Google Maps)
+- **Constat** : aucun champ CRM dédié pour stocker `place_id` / `cid` / `data_id`
+  d'une fiche Google Maps (identifiants stables d'un établissement).
+- **Cas d'usage** : `rapido-gmaps:enrichissement-fiches` — re-scraper une fiche
+  existante par son `place_id` pour compléter/rafraîchir ses coordonnées, sans
+  re-chercher par nom (ambigu).
+- **Endpoint souhaité** : champ `place_id` (+ `cid`) sur l'entreprise, ou
+  `set_external_ref(entreprise_id, source, ref)` / `get_by_external_ref(source, ref)`.
+- **Contournement actuel** : stocké en note `log_activity` + tag (non requêtable).
+- **Priorité** : moyenne (débloque l'enrichissement fiable ; contourné en note).
+
+## 6. Score de priorité prospect structuré
+- **Constat** : pas de champ « score » structuré sur une fiche prospect ; le
+  score `rating × log(review_count+1) × signal_opportunite` de `rapido-gmaps` ne
+  peut être ni stocké ni filtré côté CRM.
+- **Cas d'usage** : trier/segmenter les leads sourcés par score ; entraîner
+  `rapido-marketing:icp-generator` sur « quels scores convertissent ».
+- **Endpoint souhaité** : champ numérique `score` (ou `set_lead_score(id, valeur,
+  source)`), filtrable par `rechercher_prospects`.
+- **Contournement actuel** : note + tag de priorité (non requêtable finement).
+- **Priorité** : moyenne.
+
+## 7. Attributs structurés de fiche (popular_times / horaires / répartition avis)
+- **Constat** : pas de réceptacle structuré pour `popular_times`,
+  `reviews_per_rating`, `open_hours`, `about[]` d'une fiche Google Maps.
+- **Cas d'usage** : recommander la **fenêtre d'appel** optimale (affluence),
+  croiser avec `foodeatup:reservation_availability`.
+- **Endpoint souhaité** : bloc `attributs` JSON sur l'entreprise, ou
+  `set_entreprise_attributs(id, {...})`.
+- **Contournement actuel** : note `log_activity` (lecture humaine seulement).
+- **Priorité** : basse (la note libre suffit au premier usage).
