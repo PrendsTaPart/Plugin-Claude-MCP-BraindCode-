@@ -5,6 +5,8 @@
 | Phrase | Skill |
 |---|---|
 | « direction artistique » / « moodboard » / « quel style pour [projet] » / « identité visuelle du site » | `direction-artistique` |
+| « sitemap » / « user flow » / « arborescence » / « wireframes » | `architecture-info` |
+| « maquette » / « écrans hi-fi » / « design system » / « maquette Figma de [projet] » | `studio-maquette` |
 
 ## Cas `direction-artistique` (3)
 
@@ -32,6 +34,17 @@
   police = point de vigilance (9 web-safe au CMS, riche dans le DS).
 - **Gates** : jugement anti-goût-IA, accessibilité WCAG, `prefers-reduced-motion`.
 - **Provenance** : Trystan-SA (reverse-engineered) exclu ; libs d'animation = motifs seuls.
+
+## Cas `architecture-info` + `studio-maquette` (4)
+
+4. **Structure d'abord** : sitemap + flows (FigJam) + wireframes gris **validés avant**
+   toute hi-fi.
+5. **Refus hi-fi sans wireframes** : `studio-maquette` appelé sans wireframes validés →
+   **renvoyer** à `architecture-info`.
+6. **Valeur en dur détectée** : une couleur écrite en dur (hors variable) dans un écran →
+   **corrigée** (les écrans consomment les variables du DS).
+7. **Push DS Lovable confirmé** : DS maison poussé en projet design system Lovable **après
+   confirmation**, versionné (0 DS aujourd'hui → créé ici).
 
 ## Anti-déclenchements (à respecter dans les skills)
 

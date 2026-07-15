@@ -1,5 +1,18 @@
 # Changelog — plugin rapido-design
 
+## 0.3.0 — 2026-07-15 — architecture-info + studio-maquette (DS Figma ↔ Lovable)
+
+- Skill **`architecture-info`** — structure d'abord : sitemap + user flows (FigJam,
+  `figma-generate-diagram`) + wireframes **gris** (`figma-generate-design`), **validés
+  AVANT toute hi-fi** (règle bloquante). Renvoi pédagogie `rapido-forge:ideation-sitemap-generator`.
+- Skill **`studio-maquette`** — prérequis DA + wireframes (sinon renvoyer) → **design
+  system Figma d'abord** (`figma-generate-library`, variables des tokens, clair/sombre,
+  audits WCAG) → écrans hi-fi qui **consomment les variables** (zéro valeur en dur) →
+  **gates** critique (jugement) + a11y (WCAG) → publication (fichier Figma organisé ; DS
+  poussé en **projet design system Lovable** confirmé/versionné ; handoff `figma-design-to-code`
+  ou brief `rapido-lovable:mvp-lovable` enrichi).
+- Évals : 4 cas (structure d'abord, refus hi-fi sans wireframes, valeur en dur, push DS confirmé).
+
 ## 0.2.0 — 2026-07-15 — direction-artistique (DA ↔ charte CMS)
 
 - Skill **`direction-artistique`** — Étape 0 (jugement + **charte existante qui s'impose**),
