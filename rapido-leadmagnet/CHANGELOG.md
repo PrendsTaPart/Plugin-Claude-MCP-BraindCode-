@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-leadmagnet
 
+## 0.2.0 — 2026-07-15 — fabrication-lead-magnet (rédaction + PDF brandé + bibliothèque)
+
+- Skill **`fabrication-lead-magnet`** — du concept validé (`lead-magnet-machine`) au
+  PDF brandé publié dans la bibliothèque CMS : gate d'entrée (pas de fabrication sans
+  conception), rédaction par type (frameworks content-vault francisés), **gate qualité
+  bloquant** (forme d'audit hormozi + frameworks maison `hundred-million-offers`),
+  mise en page (`templates/lead-magnet.html` rempli via `get_brand`) → PDF →
+  `upload_file_tool` → URL vérifiée → registre `rapido-kb/marketing/lead-magnets.md`.
+- `templates/lead-magnet.html` — template print-ready A4 paramétré par la charte
+  (couleurs/police/logo), pattern charte→template→PDF réimplémenté maison (NOTICE).
+- Évals : 4 cas (refus sans conception, gate qualité bloque, chaîne complète,
+  dégradation renderer). Corrections de refs (machine-inbound, social-selling-linkedin,
+  template au lieu d'un skill pdf inexistant).
+
+
 ## 0.1.0 — 2026-07-15 — Squelette (parcours 9 étapes)
 
 - Nouveau plugin **rapido-leadmagnet** (23e du marketplace) — l'**usine d'exécution**

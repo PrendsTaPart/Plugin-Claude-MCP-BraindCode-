@@ -1,7 +1,24 @@
-# Évals — plugin rapido-leadmagnet (0.1.0, squelette)
+# Évals — plugin rapido-leadmagnet (0.2.0)
 
-Stade squelette : garde-fous + fondations. Les évals de déclenchement des skills
-arrivent avec eux (LM2→LM5).
+## Déclenchement (phrases → skill)
+
+| Phrase | Skill |
+|---|---|
+| « Fabrique le lead magnet » / « rédige le guide/la checklist » / « produis l'ebook » / « crée le PDF du lead magnet » | `fabrication-lead-magnet` |
+
+## Cas `fabrication-lead-magnet` (4)
+
+1. **Refus sans conception** : « fabrique le lead magnet » alors qu'aucune sortie
+   de `rapido-marketing:lead-magnet-machine` n'existe → **invoquer d'abord la
+   conception** ; on ne fabrique pas un LM non conçu.
+2. **Gate qualité bloquant** : contenu faible sur la Value Equation (résultat/
+   probabilité/délai/effort) → **score affiché < seuil → mise en page refusée**,
+   corrections proposées, re-audit.
+3. **Chaîne complète** : concept validé → rédaction par type → gate passé →
+   `templates/lead-magnet.html` rempli (charte via `get_brand`) → PDF →
+   `upload_file_tool` → URL vérifiée → registre `lead-magnets.md`.
+4. **Dégradation renderer** : aucun outil PDF disponible → le dire, livrer le HTML
+   print-ready (pas d'échec silencieux, pas de PDF inventé).
 
 ## Garde-fous (hook `garde-budget-ads`, testé au testeur)
 

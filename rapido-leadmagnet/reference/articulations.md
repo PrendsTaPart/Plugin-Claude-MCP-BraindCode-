@@ -36,9 +36,10 @@ réécrire ce qui existe.
 ## Média
 
 - Visuels : `rapidocms:studio-visuel-marque` / `rapido-higgsfield:studio-image-pro`
-  via `rapido-prompteur:directeur-prompts`. Vidéo pub :
+  via l'agent `rapido-prompteur:directeur-prompts`. Vidéo pub :
   `rapido-higgsfield:usine-video-marketing` (+ `rapido-video:montage-express`).
-- PDF : **skill pdf maison** + pattern charte→template (réimplémenté, cf. NOTICE).
+- PDF : **template HTML du plugin** (`templates/lead-magnet.html`) → rendu PDF
+  (pattern charte→template réimplémenté maison, cf. NOTICE).
 
 ## Pédagogie (forge — renvois croisés, pas d'exécution)
 
@@ -50,7 +51,7 @@ réécrire ce qui existe.
 
 - Organique : `rapidocms:pipeline-contenu-social`, `rapidocms:calendrier-editorial`.
   Payant : `rapido-meta-ads:creatifs-publicitaires` + `lancement-campagne-meta` +
-  `pixel-et-retargeting`. Nurturing : `rapido-marketing:email-sequence` derrière le
+  `pixel-et-retargeting`. Nurturing : séquence via `rapido-marketing:machine-inbound` derrière le
   gate `rapido-marketing:delivrabilite-email`.
 
 ## RH

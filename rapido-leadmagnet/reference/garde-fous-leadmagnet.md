@@ -23,7 +23,7 @@ sans ce feu vert.
 Claude prépare les **réponses aux commentaires** et les **DM** (avec le lien) **en
 brouillons** ; l'**humain envoie**. Dédup des commentaires traités dans une **table
 n8n** (`memoire-operationnelle`). **Jamais** d'Unipile ni d'automatisation d'envoi
-LinkedIn (CGU). Cohérent avec `rapidocms:social-selling-linkedin` /
+LinkedIn (CGU). Cohérent avec `rapido-marketing:social-selling-linkedin` /
 `rapido-marketing` selon le canal.
 
 ## 4. Vidéos IA sur Meta

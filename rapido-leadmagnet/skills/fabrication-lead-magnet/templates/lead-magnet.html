@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+  Template lead magnet — rapido-leadmagnet.
+  Pattern charte→template→PDF réimplémenté maison (cf. NOTICE, source MIT
+  pdf-ebook-generator). Le skill fabrication-lead-magnet remplace les {{…}}
+  par la charte (get_brand) et le contenu, puis rend en PDF (renderer local :
+  chromium headless --print-to-pdf, weasyprint, ou équivalent).
+
+  Placeholders :
+    {{PRIMARY}} {{ACCENT}} {{ACCENT_TEXT}} {{TEXT_BODY}} {{TEXT_MUTED}} {{PAGE_BG}}
+    {{FONT_HEADING}} {{FONT_BODY}} {{LOGO_URL}} {{COMPANY}}
+    {{TITLE}} {{SUBTITLE}} {{SECTIONS}} {{CTA_TEXT}} {{CTA_URL}} {{FOOTER}}
+  Aucune couleur/texte en dur : tout vient de la charte de la marque.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --primary:{{PRIMARY}}; --accent:{{ACCENT}}; --accent-text:{{ACCENT_TEXT}};
+    --text-body:{{TEXT_BODY}}; --text-muted:{{TEXT_MUTED}}; --page-bg:{{PAGE_BG}};
+    --font-heading:{{FONT_HEADING}}; --font-body:{{FONT_BODY}};
+  }
+  @page{ size:A4; margin:2.5cm 3cm; }
+  *{ box-sizing:border-box; }
+  body{ font-family:var(--font-body); color:var(--text-body);
+        line-height:1.7; font-size:11pt; margin:0; background:#fff; }
+  h1,h2,h3{ font-family:var(--font-heading); color:var(--primary); line-height:1.2; }
+  h1{ font-size:32pt; margin:0 0 .3em; }
+  h2{ font-size:18pt; margin:1.6em 0 .4em;
+      border-bottom:2px solid var(--accent); padding-bottom:.2em; }
+  h3{ font-size:13pt; margin:1.2em 0 .3em; color:var(--text-body); }
+  a{ color:var(--primary); }
+
+  /* Couverture */
+  .cover{ height:24cm; display:flex; flex-direction:column; justify-content:center;
+          background:var(--page-bg); padding:2cm; page-break-after:always; }
+  .cover img.logo{ max-height:1.6cm; margin-bottom:2cm; }
+  .cover .subtitle{ color:var(--text-muted); font-size:14pt; margin-top:.6em; }
+  .cover .badge{ display:inline-block; background:var(--accent); color:var(--accent-text);
+                 padding:.35em .9em; border-radius:4px; font-family:var(--font-heading);
+                 font-size:10pt; margin-bottom:1.4em; width:max-content; }
+
+  /* Corps */
+  ul{ padding-left:1.2em; } li{ margin:.35em 0; }
+  .check li{ list-style:none; position:relative; padding-left:1.6em; }
+  .check li::before{ content:"✓"; position:absolute; left:0; color:var(--primary);
+                     font-weight:bold; }
+
+  /* CTA final */
+  .cta{ margin-top:2.5em; padding:1.4em; background:var(--page-bg);
+        border-left:4px solid var(--accent); page-break-inside:avoid; }
+  .cta a{ display:inline-block; margin-top:.6em; background:var(--primary);
+          color:#fff; padding:.6em 1.4em; border-radius:5px; text-decoration:none;
+          font-family:var(--font-heading); }
+  footer{ margin-top:3em; color:var(--text-muted); font-size:9pt;
+          border-top:1px solid var(--accent); padding-top:.6em; }
+</style>
+</head>
+<body>
+  <section class="cover">
+    <img class="logo" src="{{LOGO_URL}}" alt="{{COMPANY}}">
+    <span class="badge">{{COMPANY}}</span>
+    <h1>{{TITLE}}</h1>
+    <p class="subtitle">{{SUBTITLE}}</p>
+  </section>
+
+  <main>
+    {{SECTIONS}}
+
+    <div class="cta">
+      <strong>{{CTA_TEXT}}</strong>
+      <a href="{{CTA_URL}}">{{CTA_URL}}</a>
+    </div>
+  </main>
+
+  <footer>{{FOOTER}}</footer>
+</body>
+</html>
