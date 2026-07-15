@@ -41,9 +41,11 @@ Parse arguments:
 
 Using the `margin-analyzer` skill workflow:
 
-1. Pull QuickBooks revenue by product/service for the last 90 days.
-2. Pull COGS or direct costs per product from QuickBooks (if categorized).
-3. Pull PayPal gross sales for the same products to cross-validate.
+1. Récupère les ventes par plat/produit sur 90 jours : FoodEatUp (`finance_summary`,
+   `list_orders`, `list_invoices`) et/ou RapidoCRM (`get_revenue_summary`, `list_factures`).
+2. Récupère le coût de revient par plat depuis les recettes (`get_recipe`,
+   `recette-cout-marge`) + dépenses directes (`list_expenses`).
+3. Croise les deux sources de revenus **sans double-compter** (cf. `margin-analyzer/reference/gotchas.md`).
 4. Calculate current gross margin per product: (revenue − COGS) ÷ revenue.
 
 Build the margin table:
@@ -82,13 +84,17 @@ Produce a plain-language brief (for price increase scenarios) the owner can use 
 
 ## Connector failures
 
-If QuickBooks is unreachable, stop — margin analysis requires QB revenue and cost data. If PayPal is missing, run from QB-only and note "PayPal not connected — cross-validation against PayPal sales skipped."
+Si FoodEatUp est injoignable, s'arrêter — l'analyse de marge exige les ventes et les
+coûts réels. Si le coût de revient manque (plats sans recette), fonctionner sur les
+ventes seules et noter « coût de revient partiel — recettes à compléter ».
 
 ## Approval gates
 
 - **Never recommend a specific price.** Provide data views only — pricing decisions belong to the owner.
-- **Flag if COGS data is incomplete** (many QB setups don't track per-product COGS) and note the gap.
-- **Never update any prices in QB, PayPal, or any connected system.**
+- **Flag if COGS data is incomplete** (plats sans recette rattachée = coût de revient
+  inconnu) and note the gap.
+- **Ne jamais modifier de prix** dans FoodEatUp, le CRM ou tout système connecté
+  (analyse seulement — `update_dish`/`update_product` sont hors de ce skill).
 
 ## Output
 
