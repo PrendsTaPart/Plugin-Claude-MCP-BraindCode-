@@ -1,5 +1,15 @@
 # Changelog — plugin rapido-marketing
 
+## 0.18.1 — 2026-07-15 — ponts vers rapido-gmaps
+
+- `machine-outbound` : mentionne `rapido-gmaps:sourcing-gmaps` comme source amont
+  possible des leads (importés au CRM avant la séquence ; le sourcing du skill
+  reste les workflows CRM).
+- `icp-generator` : intègre les signaux terrain Google Maps (note, avis,
+  affluence, « sans système numérique ») pour valider/affiner l'ICP, via
+  `rapido-gmaps:detection-opportunites` et `benchmarks.md`.
+- Cross-références documentaires uniquement (aucun changement de logique).
+
 ## 0.18.0 — 2026-07-15 — opérations influenceurs
 
 - Skill **`operations-influenceurs`** — le cycle complet d'une collaboration :

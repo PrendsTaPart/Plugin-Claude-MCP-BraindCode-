@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-n8n
 
+## 1.6.0 — 2026-07-15 — recette sourcing Google Maps
+
+- `reference/recettes-gmaps.md` : **GMAPS-HEBDO** (lundi 8h) — sourcing ICP par
+  ville (POST /api/v1/scrape + polling → scoring → dédup → import des nouveaux
+  leads uniquement → résumé). Table mémoire `gmaps_jobs_journal` (anti-re-scraping
+  d'une zone dans la semaine, anti-doublon). Prérequis : mode d'exécution du
+  scraper configuré ; installation sur confirmation, aucun workflow d'office.
+
 ## 1.5.0 — 2026-07-15 — recettes relation client
 
 - `reference/recettes-relation-client.md` : **RC-HEBDO** (support, `rc_support_journal`),

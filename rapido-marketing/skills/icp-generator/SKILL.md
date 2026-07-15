@@ -53,6 +53,9 @@ de prospection** prêt à passer à `prospection-pipeline`.
 - Machine outbound B2B sur l'ICP → skill `predictable-revenue`.
 - Persona (l'individu dans l'entreprise cible) → skills `bootcamp-persona-deep`,
   `ideation-persona-maker`.
+- Signaux chiffrés terrain (note Google, volume d'avis, affluence, « sans système
+  numérique ») pour valider/affiner l'ICP → `rapido-gmaps:detection-opportunites`
+  (taux consignés dans `rapido-kb/marketing/benchmarks.md`).
 
 ## Garde-fous
 Segments **mesurés par script**, jamais estimés ; données CRM live > KB ;

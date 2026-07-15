@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-scraping.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__rapidocrm__enregistrer_tous_prospects",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-scraping.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si un scraping Google Maps a été lancé, la dernière réponse DOIT indiquer : la requête exécutée, le volume de résultats, le mode (Docker local / API SaaS) et le respect des plafonds (résultats/requête, requêtes/jour). Si des fiches CRM ont été créées ou mises à jour, elle DOIT récapituler chaque objet avec son ID, le nombre de doublons écartés par la déduplication, et les tags posés. Si un score de priorité prospect a été donné, la formule (rating × log(review_count+1) × signal) et sa source (script) DOIVENT être rappelées — aucun calcul de tête. Aucune donnée scrapée ne doit être présentée comme certaine si le scrape n'a pas réellement tourné. Si l'un de ces éléments manque, bloque en demandant de compléter ; sinon autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

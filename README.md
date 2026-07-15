@@ -14,9 +14,9 @@ routines récurrentes — pour piloter une entreprise de A à Z.
 > `./rapido-kb/` (jamais commitées). Aucun secret n'est stocké dans le dépôt.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-21-blue)
-![Skills](https://img.shields.io/badge/skills-362-brightgreen)
-![Agents](https://img.shields.io/badge/agents-32-orange)
+![Plugins](https://img.shields.io/badge/plugins-22-blue)
+![Skills](https://img.shields.io/badge/skills-366-brightgreen)
+![Agents](https://img.shields.io/badge/agents-33-orange)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins) ·
@@ -77,8 +77,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads (read-only), dataforseo, analytics (GA4), rapidocrm | `GOOGLE_ADS_MCP_URL`, `DATAFORSEO_AUTH`, `GA4_MCP_URL` |
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
 | `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
+| `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Docker **ou** `GMAPS_API_URL`+`GMAPS_API_KEY` (KB) |
 
-**Total : 21 plugins, 362 skills, 32 agents.** Historique détaillé des vagues :
+**Total : 22 plugins, 366 skills, 33 agents.** Historique détaillé des vagues :
 [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 ## Domaines couverts
@@ -88,7 +89,7 @@ Quel plugin pour quel besoin — installez seulement ce qui vous concerne.
 | Domaine | Plugins | Ce que vous pilotez |
 |---|---|---|
 | **Restaurant** | `foodeatup` | Salle, cuisine (écran KDS), HACCP, achats, réservations |
-| **Ventes & CRM** | `rapidocrm` | Prospection, pipeline, devis/factures, vente terrain (SONCAS, BANT, objections, AARRR), expansion Studio→Agence→SaaS, ambassadeurs |
+| **Ventes & CRM** | `rapidocrm`, `rapido-gmaps` | Prospection, pipeline, devis/factures, vente terrain (SONCAS, BANT, objections, AARRR), expansion Studio→Agence→SaaS, ambassadeurs, **sourcing de leads Google Maps → CRM** (scoring ICP, dédup, opportunités FoodEatUp) |
 | **Relation client** | `rapido-relation-client` | Service client en boucle (SLA), NPS, health score, RFM, 100 premiers jours |
 | **Contenu & marque** | `rapidocms` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels |
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
@@ -122,6 +123,7 @@ directeur commercial… ») ou ils sont mobilisés par les orchestrateurs.
 | `rapido-higgsfield` | producteur-studio |
 | `rapido-prompteur` | directeur-prompts (orchestre la conception de prompts) |
 | `rapido-direction` | assistant-direction |
+| `rapido-gmaps` | chasseur-leads (sourcing autonome sur brief) |
 
 ## Les routines — le Loop Engine
 
@@ -144,6 +146,7 @@ restent des **alias reconnus** (« lance R7 » = `FIN-CASH-SENTINELLE`).
 | **Vente événementielle** `OPS-*` | OPS-LEAD-CHAUD · OPS-CLIENT-GAGNE · OPS-ALERTE-CHURN | webhook / temps réel |
 | **Acquisition** `SEO-*` `SEA-*` `TIKTOK-*` | SEO-HEBDO · SEO-MENSUEL · SEA-HEBDO · TIKTOK-HEBDO | hebdo · mensuel |
 | **Relation client** `RC-*` | RC-HEBDO · RC-NPS-TRIMESTRE · RC-SANTE-MENSUEL | hebdo → trimestriel |
+| **Sourcing** `GMAPS-*` | GMAPS-HEBDO (sourcing Google Maps → CRM) | hebdo |
 
 Chaque routine est **proposée puis installée sur confirmation** (jamais d'exécution
 d'office) ; le récurrent et le volume vivent en **n8n** (recettes dans

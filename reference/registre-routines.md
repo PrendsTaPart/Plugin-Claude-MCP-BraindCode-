@@ -21,6 +21,7 @@
 | `SEA-*` | Acquisition payante Google (gaspillage, synergie) | `rapido-google-ads` | actif |
 | `TIKTOK-*` | Acquisition payante TikTok | `rapido-tiktok-ads` | actif (si compte) |
 | `RC-*` | Relation client (support, NPS, santé) | `rapido-relation-client` | actif |
+| `GMAPS-*` | Sourcing de leads Google Maps → CRM | `rapido-gmaps` (`sourcing-gmaps`) | actif (si mode d'exécution configuré) |
 
 ## Table des alias (rétrocompatibilité)
 
@@ -224,6 +225,18 @@
 - **Noms parlés** : « santé du portefeuille », « health score du mois ».
 - **Cadence** : mensuelle. **Mémoire n8n** : `rc_sante_journal`.
 - **Propriétaire** : `rapido-relation-client:sante-client` · **Recette** : `recettes-relation-client.md`.
+
+### GMAPS-HEBDO
+- **Noms parlés** : « sourcing Google Maps de la semaine », « nouveaux restos de la zone ».
+- **Cadence** : hebdomadaire — lundi 8h (cron n8n). **Mémoire n8n** : `gmaps_jobs_journal`
+  (évite le re-scraping d'une même zone dans la semaine ; n'importe que les nouveaux leads).
+- **Propriétaire** : `rapido-gmaps:sourcing-gmaps` (+ `detection-opportunites` si ICP
+  FoodEatUp) · **Recette** : `rapido-n8n/reference/recettes-gmaps.md`.
+- **Contenu** : pour chaque ville cible de `rapido-kb/scraping-config.md` → scrape ICP →
+  déduplication → import des nouveaux leads uniquement → résumé (N nouveaux, score moyen).
+- **Autonomie** : sourcing + import cadrés par les plafonds ; import en lot confirmé
+  (hook `garde-scraping`). Prérequis : un mode d'exécution configuré (Docker local ou API
+  SaaS) ; sinon la routine ne s'installe pas.
 
 ---
 

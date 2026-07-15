@@ -360,6 +360,24 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocms__upload_file_tool",
           "tool_input": {"type": "image", "file_url": "https://x/a.png"}}, "allow"),
     ],
+    ("rapido-gmaps", "garde-scraping.py"): [
+        # volume de scraping au-delà des seuils → ask
+        ({"tool_name": "Bash",
+          "tool_input": {"command": "docker run gosom/google-maps-scraper -depth 40"}}, "ask"),
+        ({"tool_name": "Bash",
+          "tool_input": {"command": "curl $GMAPS_API_URL/api/v1/scrape -d '{\"max_depth\": 50}'"}}, "ask"),
+        ({"tool_name": "Bash",
+          "tool_input": {"command": "./gms-bin -input q.txt -radius 80"}}, "ask"),
+        # sous les seuils → allow
+        ({"tool_name": "Bash",
+          "tool_input": {"command": "docker run gosom/google-maps-scraper -depth 1"}}, "allow"),
+        # commande non-scraper → allow
+        ({"tool_name": "Bash", "tool_input": {"command": "ls -la"}}, "allow"),
+        # import CRM en lot → ask
+        ({"tool_name": "mcp__rapidocrm__enregistrer_tous_prospects",
+          "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__list_contacts", "tool_input": {}}, "allow"),
+    ],
 }
 
 RX_FRONT = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)

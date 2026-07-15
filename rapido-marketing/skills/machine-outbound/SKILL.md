@@ -108,6 +108,9 @@ de référence change — via `mise-a-jour-kb`. Pas de leçon sans preuve chiffr
 - Objections réelles pour le copy → `sales-intelligence-fireflies`.
 - Rédaction des messages → `rapidocrm:redaction-commerciale`.
 - Définir la cible → `icp-generator`.
+- Source amont possible des leads (importés au CRM avant la séquence) → sourcing
+  direct Google Maps `rapido-gmaps:sourcing-gmaps` (le sourcing de CE skill reste
+  les workflows CRM ; les leads gmaps arrivent déjà en base).
 
 ## Garde-fous
 `icp.md` prérequis ; **gate `delivrabilite-email` sur chaque lot (refus = pas
