@@ -131,3 +131,18 @@
   serveur MCP n'isole pas par token, l'isolation reste imparfaite.
 - **Priorité** : **absolue** — c'est le prérequis qui transforme le kit connecteur en
   **produit vendable** (chaque client son site agentique), pas juste un outil interne.
+
+## 12. Police custom dans la charte CMS (au-delà des 9 web-safe)
+- **Constat (live, D0)** : `edit_brand.font_family` est une **liste FERMÉE de 9 polices
+  web-safe** (Arial, Verdana, Tahoma, Trebuchet MS, Georgia, Times New Roman, Garamond,
+  Courier New, Lucida Console). Impossible de stocker une police riche (Google Font,
+  fonderie) comme identité de marque.
+- **Cas d'usage** : `rapido-design` — la direction artistique choisit souvent une police
+  distinctive ; le CMS (source de vérité) ne peut pas la porter → divergence potentielle
+  entre le DS Figma/Lovable (vraie police) et la charte CMS (approximation).
+- **Souhait** : `font_family` en **texte libre** (nom de police + fallback) ou champ
+  `font_url` (WOFF2/Google Fonts) sur la marque.
+- **Contournement actuel** : la vraie police vit dans le **DS Figma/Lovable** ; le CMS
+  stocke la **plus proche des 9** (documenté dans la charte KB). Le fil rouge couleurs
+  reste intact ; seule la typo est approximée côté CMS.
+- **Priorité** : moyenne (contourné ; gêne la fidélité typographique de marque).
