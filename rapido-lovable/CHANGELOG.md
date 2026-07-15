@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-lovable
 
+## 1.3.0 — 2026-07-15 — connecteur-mcp-lovable (kit → prompts étagés, LV2)
+
+- Skill **`connecteur-mcp-lovable`** — LE skill « connecte le MCP X au site » :
+  Étape 0 (fiche kit du MCP + gate sécurité + règles stack + contexte projet),
+  qualification (MCP, projet neuf/existant, périmètre, credentials CLIENT),
+  génération des **prompts Lovable étagés P1-P5** (secrets/env noms immuables ;
+  edge function scope serveur ; chat UI carte de confirmation ; system prompt +
+  knowledge ; tests d'acceptation), exécution assistée optionnelle (send_message +
+  vérif entre chaque + gate + recette démo), livraison (doc client +
+  connecteurs-installes.md).
+- Interdits : jamais de clé BraindCode chez un client, jamais d'appel client-side,
+  jamais d'écriture sans confirmation UI, pas de promesse d'isolation multi-tenant
+  avant le token par tenant.
+- Évals : 4 cas (chaîne, refus clé BraindCode, refus client-side, multi-tenant
+  honnête) + anti-collisions.
+
 ## 1.2.0 — 2026-07-15 — kit connecteur MCP canonique (v2, LV1)
 
 - `reference/kit-connecteur-mcp/` (kit v1) — source de vérité versionnée : `_commun.md`

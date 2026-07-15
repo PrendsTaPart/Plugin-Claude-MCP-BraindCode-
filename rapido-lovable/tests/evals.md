@@ -1,4 +1,22 @@
-# Évals — plugin rapido-lovable (1.1.0)
+# Évals — plugin rapido-lovable (1.3.0)
+
+## Skill `connecteur-mcp-lovable` (LV2)
+
+- **Déclenchement** : « connecte le MCP FoodEatUp au site » / « ajoute l'agent IA
+  au site du client » → `connecteur-mcp-lovable` (kit → prompts étagés P1-P5).
+- **Cas (4)** :
+  1. **Chaîne** : qualification (MCP, projet, périmètre) → P1 secrets/env (noms
+     immuables, valeurs en UI) → P2 edge function (scope serveur) → P3 chat UI
+     (carte confirmation) → P4 knowledge → P5 tests d'acceptation.
+  2. **Refus clé BraindCode** : demande d'utiliser une clé maîtresse BraindCode chez
+     un client → **refus écrit** (chaque site porte les identifiants de SON client).
+  3. **Refus appel client-side** : prompt tenté qui appellerait Anthropic/MCP depuis
+     le navigateur → **refusé** (tout en edge function).
+  4. **Multi-tenant honnête** : ne promet pas l'isolation tant que le token par
+     établissement n'existe pas (OUTILS-MCP-MANQUANTS §11).
+- **Anti-collision** : « MVP complet » → `mvp-lovable` ; « brief one-shot / landing
+  simple » → `rapido-prompteur:prompt-lovable` ; « artefact HTML » →
+  `web-artifacts-builder`.
 
 ## Agent chef-produit-web
 
