@@ -1,7 +1,19 @@
-# Évals — plugin rapido-design (0.1.0, squelette)
+# Évals — plugin rapido-design (0.2.0)
 
-Stade squelette : pipeline + jugement + garde-fous. Les évals de déclenchement des skills
-arrivent avec eux (D2→D5).
+## Déclenchement
+
+| Phrase | Skill |
+|---|---|
+| « direction artistique » / « moodboard » / « quel style pour [projet] » / « identité visuelle du site » | `direction-artistique` |
+
+## Cas `direction-artistique` (3)
+
+1. **Charte existante s'impose** : le projet a déjà une charte (`get_brand` renvoie une
+   marque) → on la **décline**, on ne propose PAS 3 nouvelles directions.
+2. **3 directions** (marque neuve) : chacune avec intention + palette (tokens nommés) +
+   typo + **un écran de principe Figma** ; filtrées par le jugement anti-goût-IA.
+3. **Sync CMS confirmé** : direction retenue → `create_brand`/`edit_brand` **après
+   confirmation** + `charte-graphique.md` ; la vraie police vit dans le DS (CMS = 9 web-safe).
 
 ## Garde-fous (hook `garde-charte`, testé au testeur)
 

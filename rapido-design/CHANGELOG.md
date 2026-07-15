@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-design
 
+## 0.2.0 — 2026-07-15 — direction-artistique (DA ↔ charte CMS)
+
+- Skill **`direction-artistique`** — Étape 0 (jugement + **charte existante qui s'impose**),
+  3 directions via `rapido-lovable:ui-ux-pro-max` filtrées par le jugement anti-goût-IA
+  (intention + palette tokens + typo + un écran de principe Figma), formalisation en
+  mini-charte (page Fondations), **sync CMS confirmé** (`create_brand`/`edit_brand` +
+  charte KB ; vraie police dans le DS, CMS = 9 web-safe).
+- Évals : 3 cas (charte existante, 3 directions, sync CMS).
+
 ## 0.1.0 — 2026-07-15 — Squelette (pipeline + jugement)
 
 - Nouveau plugin **rapido-design** (25e du marketplace) — studio UX/UI qui orchestre la
