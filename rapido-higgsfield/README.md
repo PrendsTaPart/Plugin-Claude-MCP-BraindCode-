@@ -5,32 +5,36 @@ L'**usine média IA** de l'écosystème Rapido, branchée sur le MCP **Higgsfiel
 Soul/Elements, voix & doublage, sites & jeux) et pontée avec RapidoCMS (marque,
 bibliothèque d'assets), RapidoCRM, RapidoRH et FoodEatUp.
 
-> **Version 0.1.0 — squelette.** Routage média, garde-fous et hooks de coûts/voix.
-> Les **skills de production** arrivent en H2+, après l'audit live **H0**
-> (`docs/AUDIT-MCP-HIGGSFIELD.md` + grille de coûts) qui conditionne leur GO/NO-GO.
+> **Version 1.0.0.** Audit live (H0) + 9 skills + 1 agent + garde-fous et hooks
+> coûts/voix. Grille de coûts et signatures : `docs/AUDIT-MCP-HIGGSFIELD.md` +
+> `docs/GRILLE-COUTS-HIGGSFIELD.md`.
 
-## Socle livré (H1)
+## Skills (9) & agent (1)
 
-| Fichier | Rôle |
+| Skill / agent | Rôle |
 |---|---|
-| `reference/routage-media.md` | arbre de décision unique : Canva / CMS / Higgsfield / HyperFrames / Lovable |
-| `reference/pieges-outils.md` | 9 règles des schémas Higgsfield (medias=UUID, Kling+start_image, XOR hook/ad_reference, brand_kit, get_cost…) |
-| `reference/garde-fous-media.md` | coûts (plafond KB, get_cost, confirmation), voix (droits), marque (charte), publication (OPT_IN, gate viral) |
-| `hooks/` | `garde-couts` (refus si coût non confirmé), `garde-voix` (droits/consentement forcés), Stop récap job_ids/asset_ids |
-| `reference/kb-templates/budget-media.md` | plafond mensuel, seuil de confirmation, compteur (copié dans `rapido-kb/`) |
+| `gouvernance-credits` | gardien budgétaire (verdict OK/CONFIRMATION/BLOQUÉ par script, get_cost) |
+| `studio-image-pro` | images premium brandées (4K, packshot, DTC), pont de marque |
+| `usine-video-marketing` | Marketing Studio (pub vidéo/UGC, hooks/ad_reference, 9:16) |
+| `personnages-univers` ⭐ | cohérence Soul/Elements, pipeline PronoClip (Kling 3.0) |
+| `clips-et-shorts` | Personal Clipper / Shorts Studio / reframe-upscale |
+| `analyse-video-virale` | gate : `video_analysis` + `virality_predictor` → PASS/RETRAVAILLER |
+| `voix-et-doublage` | TTS, doublage 18 langues, clonage encadré (droits) |
+| `videos-explicatives` | montage explainer par blocs (script → clips → voix) |
+| `sites-et-jeux-express` | microsites jetables & jeux jouables (croisement concours CRM) |
+| **agent `producteur-studio`** | exécutant média : route, chiffre, produit, critique, rapatrie, récap |
 
-## Skills prévus (H2+ — après H0)
-`gouvernance-credits` (H2) · `studio-image-pro` (H3) · `usine-video-marketing` (H4)
-· `personnages-univers` (H5, déblocage PronoClip) · `clips-et-shorts` +
-`analyse-video-virale` (H6) · `voix-et-doublage` + `videos-explicatives` (H7) ·
-`sites-et-jeux-express` (H8). Agent `producteur-studio` (H9).
+## Socle
+`reference/routage-media.md` (arbre Canva/CMS/Higgsfield/HyperFrames/Lovable) ·
+`pieges-outils.md` (règles des schémas + confirmations H0) · `garde-fous-media.md`
+(coûts/voix/marque/publication) · hooks `garde-couts`/`garde-voix`/Stop ·
+`kb-templates/budget-media.md`.
 
 ## Connecteur requis
-Le MCP Higgsfield est **requis** (le plugin existe pour lui). Il est déclaré dans
-`.mcp.json` sous le namespace **`huggsfield`** via la variable
-**`HIGGSFIELD_MCP_URL`** ; l'**URL et le transport exacts sont à figer en H0**
-(audit live). Authentification à la charge de l'utilisateur (compte Higgsfield) —
-**aucune clé ni secret dans le dépôt** (règle du marketplace).
+Le MCP Higgsfield est **requis** (le plugin existe pour lui), déclaré dans
+`.mcp.json` sous le namespace **`huggsfield`** via **`HIGGSFIELD_MCP_URL`**.
+Authentification à la charge de l'utilisateur (compte Higgsfield) — **aucune clé ni
+secret dans le dépôt** (règle du marketplace).
 
 ## Garanties
 Tout est **payant en crédits** → `get_cost` préflight + plafond KB + confirmation

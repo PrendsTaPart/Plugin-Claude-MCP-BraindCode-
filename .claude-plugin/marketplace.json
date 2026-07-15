@@ -75,7 +75,7 @@
     {
       "name": "rapido-higgsfield",
       "source": "./rapido-higgsfield",
-      "description": "Usine média IA (Higgsfield) : images 4K & packshots, vidéos génératives & pubs, personnages cohérents, voix & doublage, sites & jeux — routage média unifié et gouvernance des coûts en crédits. Squelette 0.1.0 (routage, garde-fous, hooks), skills en H2+."
+      "description": "Usine média IA (Higgsfield) : images 4K & packshots, vidéos génératives & pubs, personnages cohérents (Soul/Elements, PronoClip), voix & doublage, sites & jeux — routage média unifié et gouvernance des coûts en crédits. 9 skills + agent producteur-studio."
     }
   ]
 }

@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-higgsfield
 
+## 1.0.0 — 2026-07-15 — RELEASE usine média IA
+
+Première version stable : **9 skills + 1 agent**, audit live H0, garde-fous et
+hooks coûts/voix, 7 croisements dans l'écosystème (rapidocms, meta-ads,
+rapido-marketing, foodeatup, rapidorh).
+
+- **Clôture H10** : évals consolidées (par skill + **3 anti-déclenchements** de
+  routage + tests hooks) ; `docs/RECETTE-HIGGSFIELD.md` — la **preuve de bout en
+  bout** est le test de plomberie H0 (réel) ; la **recette vidéo est différée**
+  (solde 80 cr < recette complète, le short 30s ≈ 90 cr) et documentée pour
+  exécution ultérieure sous `gouvernance-credits`.
+- README du plugin finalisé (table des 9 skills + agent).
+- ⚠️ **Tag & Release** : le push de tag est fait **côté utilisateur** (le proxy de
+  session refuse les tags) — `git tag rapido-higgsfield-v1.0.0` + GitHub Release.
+
 ## 0.9.0 — 2026-07-15
 
 - Agent **`producteur-studio`** (H9) : l'exécutant média — route, **chiffre avant**

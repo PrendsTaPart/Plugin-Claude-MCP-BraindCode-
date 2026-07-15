@@ -1,4 +1,16 @@
-# Évals — plugin rapido-higgsfield (0.9.0)
+# Évals — plugin rapido-higgsfield (1.0.0)
+
+## Anti-déclenchements (routage — ne PAS utiliser Higgsfield)
+| Phrase | Doit router vers |
+|---|---|
+| « Décline mon logo en carré simple » | `rapidocms:studio-visuel-marque` (CMS `images_to_image`, moins cher) — pas Higgsfield |
+| « Une landing connectée à mon CRM » | `rapido-lovable:usine-a-landing` (prioritaire) — pas un site Higgsfield jetable |
+| « Un avatar présentateur Mika qui parle » | HeyGen — pas de clonage/voix Higgsfield sans droits |
+
+## Hooks (tests fonctionnels — dans le testeur)
+- `garde-couts` : génération payante **sans** marqueur de coût → **deny** ; avec `get_cost`/`cout_confirme` → allow.
+- `garde-voix` : create_voice / voice_change / dubbing → **ask** (droits) ; autre → allow.
+- Stop : fin de tour sans récap job_ids/asset_ids/coûts → bloquée (prompt).
 
 ## Agent — producteur-studio
 
