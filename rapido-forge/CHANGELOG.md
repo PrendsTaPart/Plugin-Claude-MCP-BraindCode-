@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-forge
 
+## 1.1.1 — 2026-07-14
+
+- Enrichissement `scale-spin-selling` (SPIN, Rackham) : besoin implicite→explicite,
+  les 4 issues d'entretien + l'Advance, bénéfice (FAB) recadré, articulation
+  scale-bant-qualification. Ajouts seuls, contenu maison inchangé.
+- Enrichissement `scale-blue-ocean` (Kim & Mauborgne) : Six Paths, 3 cercles de
+  non-clients, Buyer Utility Map, séquence stratégique, caveats d'honnêteté.
+  Distillation founder-playbook (MIT © 2026 AgentSeal), reformulé.
+
 ## 1.1.0 — 2026-07-10
 
 - **Taxonomie** : chaque skill porte `tags` (1-3, taxonomie FERMÉE à 12 :
