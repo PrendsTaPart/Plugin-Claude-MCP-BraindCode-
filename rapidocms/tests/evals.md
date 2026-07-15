@@ -54,6 +54,18 @@
 - Frontière : « crée une nouvelle marque » / « change les couleurs » →
   `gestion-marques` (identité), pas bibliotheque-assets (fichiers).
 
+## studio-visuel-marque
+
+| Phrase | Attendu |
+|---|---|
+| « Fais-moi un visuel avec notre logo pour la promo » | `studio-visuel-marque` : `get_brand` (marque cible + logo/couleurs) → `list_all_files` (logo + 1-2 assets, ≤3, <5 Mo, URL publique) → prompt décrivant le rôle de chaque image (logo à ne pas déformer) → `images_to_image` size `hd` → critique PASS/FAIL vs charte → capitalisation + brouillon `pipeline-contenu-social` proposés (jamais publié) |
+| « Le logo est devenu bleu sur le rendu, corrige » (boucle corrective) | rendu fautif repassé en **1re référence** + références d'origine, prompt correctif chirurgical (« remets le logo blanc d'origine, ne touche à rien d'autre »), re-critique ; **max 2 itérations** puis proposer un changement d'approche |
+| « Un visuel aux couleurs de la marque, sans image de base » (routage) | **aucune référence** → `generate_image` via `prompt-engineering-visuel` (le dire), PAS `images_to_image` ; couleurs hex de la charte, pas de logo inventé |
+| « Décline ce visuel façon template Canva » (routage) | délégué au plugin **rapido-canva** ; studio-visuel-marque ne force pas `images_to_image` quand l'utilisateur cite Canva |
+
+- Frontière : import/inventaire d'assets → `bibliotheque-assets` ; identité de
+  marque → `gestion-marques`.
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

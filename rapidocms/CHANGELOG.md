@@ -1,5 +1,19 @@
 # Changelog — plugin rapidocms
 
+## 1.6.0 — 2026-07-14
+
+- Nouveau skill `studio-visuel-marque` (vitrine) : génère des visuels qui
+  intègrent le VRAI logo et les VRAIS assets de la marque via
+  `images_to_image` — résolution marque (`get_brand`), sélection minimale de
+  références (logo + 1-2 assets, ≤3, <5 Mo, URL publique), prompt décrivant
+  le rôle de chaque image (délégué à prompt-engineering-visuel /
+  prompts-visuels-pro), critique PASS/FAIL vs charte, boucle corrective
+  chirurgicale (max 2 itérations), capitalisation (upload/add_asset/add_prompt)
+  et brouillon via pipeline-contenu-social — jamais de publication directe.
+- Routage encodé : références → images_to_image ; aucune → generate_image ;
+  Canva cité → plugin rapido-canva.
+- tests/evals.md : 4 scénarios (dont boucle corrective + 2 de routage).
+
 ## 1.5.0 — 2026-07-14
 
 - Nouveau skill `bibliotheque-assets` : import (URL publique, nommage imposé
