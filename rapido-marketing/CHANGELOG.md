@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-marketing
 
+## 0.16.1 — 2026-07-15
+
+- `tunnel-de-vente-360` (patch V5) : Acte 2 — **héros vidéo de landing monté
+  localement (0 crédit)** via `rapido-video:montage-express` si les rushes existent ;
+  génératif via `rapido-higgsfield` (coût confirmé).
+
 ## 0.16.0 — 2026-07-15
 
 - **Croisements Higgsfield** (patch H9) : `tunnel-de-vente-360` Acte 2 (héros vidéo
