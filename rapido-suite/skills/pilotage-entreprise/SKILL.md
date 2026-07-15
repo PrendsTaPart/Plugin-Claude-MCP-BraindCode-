@@ -26,7 +26,9 @@ mon entreprise » suffit.
 1. **SENSE** (lecture seule, tous domaines) — finance (factures, impayés,
    devis, dépenses — agent `cfo-virtuel`), ventes (pipeline, deals
    dormants, devis expirants, RDV), marketing (posts planifiés vs publiés,
-   insights 7 j, campagnes, funnel formulaires/CTA), équipe (dailies,
+   insights 7 j, campagnes, funnel formulaires/CTA — **si `rapido-marketing`
+   est installé, déléguer ce volet à `rapido-marketing:pilotage-marketing`
+   au lieu de le refaire**), équipe (dailies,
    tâches bloquées, surcharge), restaurant si `establishment_id` en KB
    (HACCP, réservations, stocks, productions), automatisations (échecs n8n
    7 j).
@@ -53,6 +55,8 @@ mon entreprise » suffit.
   `business-pulse` (photo rapide), `comite-de-direction` (CODIR),
   routines R4-R9 (`loop-engine-v2`, plugin rapido-startup).
 - Un LANCEMENT de projet de zéro → `lancement-projet-360`.
+- **Sous-domaine marketing** → `rapido-marketing:pilotage-marketing` (s'il est
+  installé) : ce skill l'**invoque** pour le volet marketing, il ne le duplique pas.
 - Ce skill est la boucle TRANSVERSE d'une session de pilotage.
 
 ## Garde-fous
