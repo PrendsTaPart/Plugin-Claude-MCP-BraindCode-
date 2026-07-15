@@ -1,5 +1,22 @@
 # Changelog — plugin rapido-marketing
 
+## 0.2.0 — 2026-07-14
+
+- 4 skills **méthodo** (distillation de `docs/methodo/100m-leads/`, attribution
+  Hormozi *$100M Leads* 2023, contenu reformulé, citations < 15 mots) :
+  - `core-four-strategie` : choix de canal + cadence (règle des 100) + critère
+    de maîtrise + scaling More Better New (fiches 01/03/05/08).
+  - `lead-magnet-machine` : conception d'aimant à prospects en 7 étapes +
+    nommage + distribution (fiche 02).
+  - `money-math-acquisition` : LTGP:CAC + acquisition financée client, tout
+    calcul délégué à `catalogue-kpi` (fiche 04).
+  - `lead-getters-systeme` : parrainage/employés/agences/affiliés selon
+    maturité (fiche 07).
+- Chaque skill DÉLÈGUE l'exécution (skills existants nommés précisément ;
+  exécuteurs transverses machine-inbound/outbound/tunnel-de-vente-360 à livrer)
+  et liste ses cas d'usage croisés. tests/evals.md : 2 déclenchements +
+  1 anti-déclenchement par skill.
+
 ## 0.1.0 — 2026-07-14
 
 - Squelette du plugin **rapido-marketing** (slug immuable) : marketing &

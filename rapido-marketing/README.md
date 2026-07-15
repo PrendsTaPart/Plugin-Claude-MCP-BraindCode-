@@ -5,9 +5,9 @@ de leads, le tunnel de conversion, le nurturing, la publicité et l'analytics en
 **priorisant les serveurs Rapido** (CRM → CMS → RH), les MCP secondaires en
 repli seulement.
 
-> **Version 0.1.0 — squelette.** Ce plugin fournit pour l'instant le socle
-> (priorité MCP, garde-fous, pièges d'outils, hooks déterministes). Les skills
-> sont ajoutés dans les versions suivantes.
+> **Version 0.2.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
+> **méthodo** (distillation $100M Leads). Les skills d'**exécution**
+> (machine-inbound/outbound, tunnel-de-vente-360) suivent.
 
 ## Socle (livré en 0.1.0)
 
@@ -18,11 +18,14 @@ repli seulement.
 | `reference/pieges-outils.md` | pièges des outils marketing des 3 serveurs (repris de M0) |
 | `hooks/` | `garde-envois` (confirmation forcée sur tout envoi) + Stop récap-actions |
 
-## Skills prévus (à venir — voir `docs/MATRICE-COUVERTURE.md`)
+## Skills (✅ = livré ; autres à venir — voir `docs/MATRICE-COUVERTURE.md`)
 
 | Skill prévu | Comble |
 |---|---|
-| `acquisition-100m-leads` | fiches `docs/methodo/100m-leads/` → skill exécutable |
+| `core-four-strategie` ✅ | choix de canal + cadence + scaling (fiches 01/03/05/08) |
+| `lead-magnet-machine` ✅ | aimant à prospects en 7 étapes (fiche 02) |
+| `money-math-acquisition` ✅ | LTGP:CAC, acquisition financée client (fiche 04) |
+| `lead-getters-systeme` ✅ | parrainage/employés/agences/affiliés (fiche 07) |
 | `icp-builder` | ICP (MANQUANT M0) — firmographies via CRM |
 | `lead-scoring` | scoring Fit×Engagement (dépend d'un tool score backend) |
 | `attribution-canal` | orchestration `get_conversion_par_canal` (multi-touch à venir) |
