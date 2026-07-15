@@ -91,6 +91,11 @@ avant `edit_brand` et pour charger l'identité avant de générer un contenu (§
 - **contenu-conforme-marque** : l'étape 0 lit désormais `get_brand` **+ les assets de la marque
   cible**. KB = source de vérité ; écart KB ↔ serveur → le signaler et proposer la synchro via
   `mise-a-jour-kb`.
+- **`rapido-design:direction-artistique`** (sync DA bidirectionnel) : quand une refonte fait
+  **évoluer** l'identité (nouvelle direction artistique), la charte remonte ici — `edit_brand`
+  (couleurs/logo/slogan) / `create_brand` **après confirmation niveau 2**. Le CMS **reste la
+  source de vérité** : la DA propose, l'écriture marque se fait par ce skill (`font_family` =
+  la plus proche des 9 web-safe, la vraie police vivant dans le design system Figma/Lovable).
 - **video-marketing** + **prompts-visuels-pro** : les **logos viennent des assets de marque**
   (URL publique via `get_brand`/`list_all_files`), plus des « logos GitHub ».
 

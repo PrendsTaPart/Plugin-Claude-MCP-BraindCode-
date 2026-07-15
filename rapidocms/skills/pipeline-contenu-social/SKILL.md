@@ -61,3 +61,11 @@ la charte sert de repli et pour les règles non exposées par l'API.
   action destructrice, confirmation explicite obligatoire.
 - Ne jamais publier/planifier un visuel généré sans l'avoir montré ou décrit à
   l'utilisateur pour validation.
+
+## Déclinaison multi-réseaux (rapido-copywriter)
+
+À chaque brouillon produit, **proposer la déclinaison** vers les autres réseaux via
+`rapido-copywriter:declinaison-multi-reseaux` (une grammaire native par réseau, jamais un
+copier-coller raccourci). La copy sociale par réseau est produite par
+`rapido-copywriter` (grammaires datées + banque de hooks + anti-voix-IA) ; ce skill reste
+l'**exécution** (brouillon → planification → insights).

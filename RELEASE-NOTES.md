@@ -1,5 +1,150 @@
 # Notes de release
 
+## Studio UX/UI — rapido-design (2026-07-15)
+
+Nouveau plugin **`rapido-design`** (25e) — le **studio UX/UI** qui orchestre toute la
+chaîne **charte → direction artistique → sitemap/flows → maquettes hi-fi Figma → design
+system → MVP Lovable animé**, avec **les mêmes tokens du début à la fin**.
+
+- **Audit D0** (`docs/IMPORTS-DESIGN.md`, `docs/PASSERELLES-REELLES.md`) : 5 dépôts **MIT**
+  relus (hue, styleseed, qiaomu, work-with-design-systems, figgo) — Trystan-SA
+  (reverse-engineered) **exclu**. Passerelles **vérifiées en direct** : charte CMS → Figma
+  OK (**`font_family` = 9 web-safe** ; la vraie police vit dans le DS), mécanisme
+  design system Lovable validé (0 DS dans le workspace → créé par le pipeline).
+- **Fondations** : `pipeline-design.md` (7 étapes), `passerelles.md` (CMS↔Figma↔Lovable
+  outil par outil), `jugement-design.md` (**anti-goût-IA** : gradients violets,
+  glassmorphism, cartes clonées… + quand dire non), `motifs-animation.md` (sobriété +
+  `prefers-reduced-motion`), hook `garde-charte`.
+- **4 skills** : `direction-artistique` (DA ↔ charte CMS, la charte existante **prime**),
+  `architecture-info` (structure **validée avant tout pixel**), `studio-maquette` (**DS
+  Figma d'abord**, écrans qui **consomment les variables**, gates critique + WCAG, handoff
+  Lovable), `animations-web` (motion sobre, `prefers-reduced-motion` **obligatoire**).
+  **Agent** `directeur-ux` (tient le fil rouge des tokens, **zéro divergence**).
+- **Articulation** (patchs croisés) : `rapido-lovable:mvp-lovable` (le MVP démarre du DS
+  Lovable), `ui-ux-pro-max` (bibliothèque de styles vs pipeline qui l'exploite),
+  `rapido-prompteur:prompt-lovable` (tokens du DS), `rapidocms:gestion-marques` (sync DA
+  bidirectionnel). Runbook `docs/RECETTE-DESIGN.md`. **Validation** : TOUT VALIDE
+  (25 plugins) ; tester 0/0/0.
+
+## Copywriter 4 réseaux (2026-07-15)
+
+Nouveau plugin **`rapido-copywriter`** (24e) — le copywriter **LinkedIn · Facebook ·
+Instagram · TikTok** : il connaît chaque réseau, produit la copy plateforme par
+plateforme et **apprend de ses vrais résultats**.
+
+- **Audit CW0** (`docs/IMPORTS-COPYWRITER.md`) : 3 dépôts **MIT** relus (linkedin-skills,
+  social-media-skills, social-creative-director) avec anti-verbatim renforcé (hooks
+  re-dérivés, humanizer francisé). **Relevé live décisif** : `post_insights` expose par
+  réseau exactement **`liked`/`shares`/`views`/`comments`** → ce qui fonde le scoring.
+- **Fondations** : `grammaires-reseaux.md` (4 fiches **datées**, révision trimestrielle),
+  `banque-hooks.md` (patterns par réseau, tag GAGNANT/NEUTRE + compteur), `anti-voix-ia.md`
+  (tics **français** + passe finale), `articulations.md` (frontières).
+- **4 skills** : `copy-linkedin`, `copy-meta` (FB+IG), `copy-tiktok` (script de tournage),
+  `declinaison-multi-reseaux` (1 idée → 4 déclinaisons natives). **Agent**
+  `copywriter-social`. **Boucle** `scripts/score_hooks.py` (interactions = liked + shares
+  + comments ; GAGNANT si > médiane du réseau — aucune métrique inventée).
+- **Garde-fous** : gate voix de marque + passe anti-voix-IA obligatoires, hook
+  `garde-voix-marque`, **brouillons CMS uniquement (jamais de publication directe)**,
+  anti-clickbait, preuves réelles, hooks re-dérivés. **Frontière stricte** : profil perso
+  = `social-selling-linkedin` ; pages marque = ce plugin. Runbook
+  `docs/RECETTE-COPYWRITER.md`. **Validation** : valider TOUT VALIDE (24 plugins) ;
+  tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-copywriter` ; `rapidocms` 1.11.6→1.11.7,
+`rapido-marketing` 0.18.2→0.18.3.
+
+---
+
+## rapido-lovable v2 — kit connecteur MCP + usine MVP (2026-07-15)
+
+Upgrade majeur de `rapido-lovable` (1.1.0 → 1.5.0) : n'importe quel client demande
+« connecte mon site au MCP FoodEatUp » → **toujours les mêmes prompts**, même sécurité,
+même scope. Fondé sur le code de production `academyrapido` (canonisé, pas théorisé).
+
+- **Audit LV0** : `docs/REFERENCE-AGENT-LOVABLE.md` canonise deux patterns de prod —
+  `agent-chat` (RAG Supabase via passerelle Lovable) et **`execute-prompt`** (LE pattern
+  MCP : API Anthropic + `mcp_servers` type url, beta `mcp-client-2025-04-04`, parsing par
+  type). `docs/IMPORTS-LOVABLE-V2.md` : 4 dépôts (awesome-cursorrules CC0, VibeSec
+  Apache-2.0, vibecode-pro-max MIT, lovable-prompt-builder MIT). **Découverte structurante**
+  → `docs/OUTILS-MCP-MANQUANTS.md` §11 : **auth multi-tenant** (token par établissement)
+  = prérequis produit **absolu** (les URLs MCP de prod sont globales, non scopées).
+- **Kit v1** (`reference/kit-connecteur-mcp/`) : `_commun.md` (template edge function
+  durci multi-tenant, 7 points sécurité, critères d'acceptation, versioning) + fiches
+  `foodeatup`/`crm`/`cms`/`rh` (env immuables, familles d'outils, system prompt, scope).
+  `regles-stack-lovable.md` (CC0), `gate-securite.md` (VibeSec adapté, bloquant).
+- **2 skills** : `connecteur-mcp-lovable` (kit → prompts étagés P1-P5), `mvp-lovable`
+  (spec-driven, série P1-P8). **Agent** `architecte-lovable`. Volet **workspace sync**
+  (`sync-marque-lovable` pousse le kit en workspace skill versionné). Patchs
+  `agent-ia-produit`/`usine-a-landing`/`site-restaurant` + `rapido-prompteur:prompt-lovable`.
+- **Sécurité** : clés du **client** (jamais BraindCode), appels **serveur**, **scope
+  injecté serveur**, **écritures confirmées** (symétrie hooks Claude Code), gate VibeSec.
+  Runbook `docs/RECETTE-LOVABLE-V2.md` (GoSushi, établissement démo 2). **Validation** :
+  valider TOUT VALIDE (23 plugins) ; tester 0/0/0.
+
+Plugins touchés : `rapido-lovable` 1.1.0→1.5.0, `rapido-prompteur` 0.3.0→0.3.1.
+
+---
+
+## Usine à lead magnets (2026-07-15)
+
+Nouveau plugin **`rapido-leadmagnet`** (23e) — l'**usine d'exécution** des lead magnets :
+la conception reste à `rapido-marketing:lead-magnet-machine`, l'usine **fabrique →
+capture → diffuse → organise en RH → mesure**, en orchestrant les skills existants.
+
+- **Audit d'abord** (`docs/IMPORTS-LEADMAGNET.md`) : 5 dépôts **MIT** relus (verdicts +
+  anti-verbatim ; GPL AI-eBook exclu) et **inventaire MCP réel** décisif — **pas de
+  `create_formulaire`/`create_cta`** (lecture seule), `create_editor_template` supporte
+  `landing_page` (formulaire intégré prouvé en prod), et **les agents IA sont de vrais
+  users RH** (assignation directe). 3 décisions : **Route B Lovable** (landing+capture),
+  **LinkedIn semi-auto**, **formulaire Lovable mode B**.
+- **4 skills** : `fabrication-lead-magnet` (rédaction + **gate qualité** + PDF brandé
+  `templates/lead-magnet.html` → bibliothèque CMS), `page-et-capture` (landing Lovable +
+  segment `LM-{slug}` + pipeline + livraison + **test de bout en bout** + **RGPD
+  bloquant**), `campagne-lead-magnet` (organique + Meta **PAUSED** + nurturing **gated** +
+  mesure `scripts/stats_leadmagnet.py`), `projet-rh-lead-magnet` (~20 tâches **affectées
+  aux agents IA** résolus dynamiquement). Agent **`chef-usine-leadmagnet`**.
+- **Garde-fous** : hook `garde-budget-ads` (Meta PAUSED + coût max), RGPD/double opt-in,
+  gate délivrabilité, LinkedIn semi-auto, `self_ai_disclosure`, **un seul LM en prod à la
+  fois**. `NOTICE.md` (5 sources MIT francisées).
+- **Ponts** `rapido-marketing` (`lead-magnet-machine` → l'usine exécute ; `machine-inbound`
+  source de capture ; `lead-scoring` tag = signal d'engagement) + 3 outils au
+  `docs/OUTILS-MCP-MANQUANTS.md`. Runbook `docs/RECETTE-LEADMAGNET.md` (checklist HACCP,
+  **recette réelle déférée au client**). Livré **0.5.0** feature-complete (4 skills +
+  1 agent) ; **1.0.0** après un run réel. **Validation** : valider TOUT VALIDE
+  (23 plugins) ; tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-leadmagnet` ; `rapido-marketing` 0.18.1→0.18.2.
+
+---
+
+## Sourcing Google Maps → CRM (2026-07-15)
+
+Nouveau plugin **`rapido-gmaps`** (22e) — le **chaînon manquant de la prospection** :
+sourcer des leads depuis Google Maps (`gosom/google-maps-scraper`, MIT), les scorer,
+dédupliquer et verser dans le pipeline RapidoCRM.
+
+- **Audit d'abord** (`docs/AUDIT-GMAPS.md`) : chaîne technique **prouvée en session**
+  (build natif Go, driver Playwright reconstruit, Chromium, moteur scrapemate) ; seul
+  l'**egress navigateur vers Google Maps** est bloqué par le bac à sable → mesures de
+  scrape réelles **déférées** au poste/VPS du client. Struct `Entry`, contrat API et
+  mapping CRM **vérifiés sur source**.
+- **4 skills** : `sourcing-gmaps` (requête → scrape → scoring → dédup → import confirmé),
+  `enrichissement-fiches` (diff, jamais d'écrasement silencieux), `detection-opportunites`
+  (ICP FoodEatUp, signal « sans système numérique »), `veille-concurrents-gmaps`. Agent
+  **`chasseur-leads`**. **Scoring par script** `score_leads_gmaps.py`
+  (`rating × ln(avis+1) × signal`).
+- **Deux modes d'exécution** (Docker local **ou** API SaaS auto-hébergée), hook
+  `garde-scraping` (volume + import en lot), CGU/RGPD (emails B2B + opt-out, plafonds,
+  déduplication obligatoire). Routine **`GMAPS-HEBDO`** (n8n `recettes-gmaps.md` + registre
+  unifié `GMAPS-*`). 3 outils au `docs/OUTILS-MCP-MANQUANTS.md`. Runbook
+  `docs/RECETTE-GMAPS.md`. Livré **0.5.0** feature-complete. **Validation** : valider
+  TOUT VALIDE ; tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-gmaps` ; `rapido-marketing` 0.18.0→0.18.1,
+`rapido-n8n` 1.5.0→1.6.0.
+
+---
+
 ## Commercial & relation client (2026-07-15)
 
 Le pont **forge → opérations** : appliquer les méthodes (SONCAS, AARRR, BANT, NPS,

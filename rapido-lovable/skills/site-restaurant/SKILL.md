@@ -53,3 +53,10 @@ l'`establishment_id` (FoodEatUp). KB : `charte-graphique.md`,
 - Réservation : le site ne contourne JAMAIS la machine à états des tables —
   il ne fait que disponibilité + création ; le reste vit dans FoodEatUp.
 - Pas de données personnelles clients dans le code ou le contenu du site.
+
+## Ajouter l'agent réservation/assistant (option)
+
+Pour un agent qui répond et agit via le MCP FoodEatUp (disponibilités, réservation
+confirmée), **déléguer à `connecteur-mcp-lovable`** (kit `reference/kit-connecteur-mcp/foodeatup.md`,
+gate `reference/gate-securite.md`) — scope établissement injecté serveur, écritures
+confirmées. Ne pas réimplémenter le branchement ici.

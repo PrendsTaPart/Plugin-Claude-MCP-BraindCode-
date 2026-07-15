@@ -14,13 +14,13 @@ routines récurrentes — pour piloter une entreprise de A à Z.
 > `./rapido-kb/` (jamais commitées). Aucun secret n'est stocké dans le dépôt.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-22-blue)
-![Skills](https://img.shields.io/badge/skills-366-brightgreen)
-![Agents](https://img.shields.io/badge/agents-33-orange)
+![Plugins](https://img.shields.io/badge/plugins-25-blue)
+![Skills](https://img.shields.io/badge/skills-380-brightgreen)
+![Agents](https://img.shields.io/badge/agents-37-orange)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins) ·
-[Domaines couverts](#domaines-couverts) · [Les agents IA](#les-agents-ia-32) ·
+[Domaines couverts](#domaines-couverts) · [Les agents IA](#les-agents-ia) ·
 [Les routines (Loop Engine)](#les-routines--le-loop-engine) · [Installation](#installation-5-minutes)
 · [Connecter/héberger les MCP](#connecter-ou-héberger-les-serveurs-mcp) ·
 [Comment l'utiliser](#comment-lutiliser) · [Architecture](#architecture-dun-plugin)
@@ -58,28 +58,31 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.1 | 15 | 3 | foodeatup, rapidocrm | — |
 | `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | — |
-| `rapidocms` | 1.11.6 | 22 | 6 | rapidocms, hyperframes | — |
+| `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
-| `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
+| `rapido-lovable` | 1.5.1 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
-| `rapido-n8n` | 1.5.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-n8n` | 1.6.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.3 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
-| `rapido-marketing` | 0.18.0 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
+| `rapido-marketing` | 0.18.3 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
-| `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
+| `rapido-prompteur` | 0.3.2 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
 | `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs (local `uvx` ou passerelle HTTP), rapidocms | `ELEVENLABS_API_KEY` + `ELEVENLABS_MCP_BASE_PATH` (local) **ou** `ELEVENLABS_MCP_URL` + `ELEVENLABS_MCP_TOKEN` (passerelle) — squelette |
 | `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics (GA4), rapidocms, rapidocrm | `DATAFORSEO_AUTH`, `GSC_MCP_URL`, `GA4_MCP_URL` |
 | `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads (read-only), dataforseo, analytics (GA4), rapidocrm | `GOOGLE_ADS_MCP_URL`, `DATAFORSEO_AUTH`, `GA4_MCP_URL` |
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
 | `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 | `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Docker **ou** `GMAPS_API_URL`+`GMAPS_API_KEY` (KB) |
+| `rapido-leadmagnet` | 0.5.0 | 4 | 1 | rapidocrm, rapidocms, rapidorh, lovable, facebook-ads | — |
+| `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | — |
+| `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable (Figma = serveur de session) | — |
 
-**Total : 22 plugins, 366 skills, 33 agents.** Historique détaillé des vagues :
+**Total : 25 plugins, 380 skills, 37 agents.** Historique détaillé des vagues :
 [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 ## Domaines couverts
@@ -91,15 +94,15 @@ Quel plugin pour quel besoin — installez seulement ce qui vous concerne.
 | **Restaurant** | `foodeatup` | Salle, cuisine (écran KDS), HACCP, achats, réservations |
 | **Ventes & CRM** | `rapidocrm`, `rapido-gmaps` | Prospection, pipeline, devis/factures, vente terrain (SONCAS, BANT, objections, AARRR), expansion Studio→Agence→SaaS, ambassadeurs, **sourcing de leads Google Maps → CRM** (scoring ICP, dédup, opportunités FoodEatUp) |
 | **Relation client** | `rapido-relation-client` | Service client en boucle (SLA), NPS, health score, RFM, 100 premiers jours |
-| **Contenu & marque** | `rapidocms` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels |
+| **Contenu & marque** | `rapidocms`, `rapido-copywriter` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels, **copy 4 réseaux** (grammaires natives, banque de hooks, anti-voix-IA) |
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
-| **Marketing & acquisition** | `rapido-marketing`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
+| **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, **usine à lead magnets** (fabrication → capture → campagne → RH → mesure), SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos génératives, montage libre (ffmpeg), voix (ElevenLabs), design, direction de prompts |
-| **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, workflows n8n |
+| **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, **agent embarqué MCP (kit connecteur)**, workflows n8n |
 | **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction` | Pilotage transverse (Loop Engine), finance/trésorerie/board, chef de cabinet (Gmail/Agenda/Drive) |
 | **Incubation** | `rapido-forge` | 181 exercices StartupsForge (bootcamp, idéation, scale) → livrables KB, pontés vers l'opérationnel |
 
-## Les agents IA (32)
+## Les agents IA
 
 Les **agents** sont des personas experts (installés avec leur plugin) qui chargent la
 charte et la KB **avant** d'agir, invoquent les skills au bon moment, citent leurs
@@ -118,12 +121,14 @@ directeur commercial… ») ou ils sont mobilisés par les orchestrateurs.
 | `rapido-meta-ads` | media-buyer |
 | `rapido-forge` | directeur-programme · mentor-bootcamp · mentor-ideation · mentor-scale |
 | `rapido-canva` | studio-creatif |
-| `rapido-lovable` | chef-produit-web |
+| `rapido-lovable` | chef-produit-web · architecte-lovable (kit connecteur MCP) |
+| `rapido-copywriter` | copywriter-social (directeur de création 4 réseaux) |
 | `rapido-n8n` | architecte-automatisations |
 | `rapido-higgsfield` | producteur-studio |
 | `rapido-prompteur` | directeur-prompts (orchestre la conception de prompts) |
 | `rapido-direction` | assistant-direction |
 | `rapido-gmaps` | chasseur-leads (sourcing autonome sur brief) |
+| `rapido-leadmagnet` | chef-usine-leadmagnet (orchestre les 9 étapes) |
 
 ## Les routines — le Loop Engine
 

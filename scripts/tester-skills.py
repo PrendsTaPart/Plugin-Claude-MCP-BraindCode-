@@ -360,6 +360,24 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocms__upload_file_tool",
           "tool_input": {"type": "image", "file_url": "https://x/a.png"}}, "allow"),
     ],
+    ("rapido-design", "garde-charte.py"): [
+        ({"tool_name": "mcp__Figma__generate_figma_design", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__Figma__use_figma", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__Lovable__create_project", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__RapidoCMS__get_brand", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-copywriter", "garde-voix-marque.py"): [
+        ({"tool_name": "mcp__rapidocms__create_draft_tool", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocms__list_scheduled_posts", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__rapidocms__get_brand", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-leadmagnet", "garde-budget-ads.py"): [
+        ({"tool_name": "mcp__facebook-ads__ads_create_campaign", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__facebook-ads__ads_activate_entity", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__facebook-ads__ads_boost_ig_post", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__facebook-ads__ads_get_ad_accounts", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__enregistrer_prospect", "tool_input": {}}, "allow"),
+    ],
     ("rapido-gmaps", "garde-scraping.py"): [
         # volume de scraping au-delà des seuils → ask
         ({"tool_name": "Bash",

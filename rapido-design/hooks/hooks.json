@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__Figma__(generate_figma_design|create_new_file|use_figma)|mcp__Lovable__create_project",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-charte.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si un travail de design a été produit, la dernière réponse DOIT récapituler : les fichiers Figma créés/modifiés et les tokens (couleurs/typo) utilisés, les liens (Figma/FigJam/Lovable), les gates passés (jugement/critique, accessibilité WCAG, prefers-reduced-motion pour toute animation), et confirmer que les valeurs viennent de la charte (get_brand) — aucune valeur en dur, aucune divergence de tokens CMS→Figma→Lovable. Toute écriture charte CMS (edit_brand) ou push de design system Lovable doit avoir été confirmée. Si un élément manque, bloque en demandant de compléter ; sinon autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

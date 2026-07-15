@@ -63,6 +63,9 @@ répartition par tranche, plan d'actions par tranche. Modèle cité (poids de
 - Enrichir les signaux d'actualité → `rapidocrm:account-research`.
 - Prendre les RDV des leads chauds → `rapido-direction:secretariat-commercial`.
 - Nurturing des tièdes → `machine-inbound`.
+- **Signal d'engagement** : le tag `leadmagnet:{slug}` (posé par
+  `rapido-leadmagnet:page-et-capture`) marque un lead qui a téléchargé un lead
+  magnet → **pondérer positivement** l'axe engagement du score.
 
 ## Garde-fous
 Score **par script**, pondérations et **validités éditables et affichées** ;

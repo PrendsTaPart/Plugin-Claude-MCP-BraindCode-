@@ -1,5 +1,72 @@
 # Changelog — plugin rapido-lovable
 
+## 1.5.1 — 2026-07-15 — articulation avec le pipeline rapido-design
+
+- `mvp-lovable` : quand un travail de design précède le build, **le MVP démarre du design
+  system Lovable** produit par `rapido-design:studio-maquette` (`create_project` avec
+  `design_systems`) et reprend **les mêmes tokens** — zéro divergence. Passerelle ajoutée.
+- `ui-ux-pro-max` : articulation écrite — ce skill est la **bibliothèque de styles**,
+  `rapido-design` est le **pipeline** qui l'exploite de bout en bout (DA → maquettes → DS → MVP).
+
+## 1.5.0 — 2026-07-15 — workspace sync + agent architecte-lovable (LV4)
+
+- `sync-marque-lovable` : **volet kit** — pousse le connecteur en **workspace skill**
+  Lovable (`create_workspace_skill` « rapido-mcp-connect », condensé du kit ≤ 100k) +
+  `set_workspace_knowledge` (méthode maison ≤ 10k), **versionné** (numéro du kit), push
+  **sur confirmation** (touche tous les projets).
+- Agent **`architecte-lovable`** : orchestre brief → spec (`mvp-lovable`) → prompts →
+  branchement (`connecteur-mcp-lovable`) → recette + gate. Interdits (clé en dur/BraindCode,
+  client-side, mise en ligne sans confirmation, hors scope, sauter le gate).
+- Patchs : `agent-ia-produit` (consomme le kit, mode C canonisé), `usine-a-landing` &
+  `site-restaurant` (« ajouter l'agent embarqué » → `connecteur-mcp-lovable`).
+- Évals : agent + volet sync.
+
+## 1.4.0 — 2026-07-15 — mvp-lovable (spec-driven, série P1-P8, LV3)
+
+- Skill **`mvp-lovable`** — du brief au MVP multi-pages : **SPEC d'abord**
+  (`templates/spec-mvp.md` → `docs/specs/{projet}.md`, validée avant tout prompt),
+  design system (charte + `ui-ux-pro-max`), **série P1-P8** (fondations → pages →
+  données/formulaires mode B → agent embarqué délégué à `connecteur-mcp-lovable` →
+  SEO/perfs/a11y → recette + gate sécurité + mise en ligne confirmée), exécution
+  assistée optionnelle, capitalisation KB. Frontière : one-shot = `prompt-lovable`,
+  verticaux = `usine-a-landing`/`site-restaurant`.
+- `templates/spec-mvp.md` (méthode spec-driven, cf. NOTICE).
+- Évals : 4 cas (spec d'abord, délégation MCP, routage vertical, mise en ligne
+  confirmée).
+
+## 1.3.0 — 2026-07-15 — connecteur-mcp-lovable (kit → prompts étagés, LV2)
+
+- Skill **`connecteur-mcp-lovable`** — LE skill « connecte le MCP X au site » :
+  Étape 0 (fiche kit du MCP + gate sécurité + règles stack + contexte projet),
+  qualification (MCP, projet neuf/existant, périmètre, credentials CLIENT),
+  génération des **prompts Lovable étagés P1-P5** (secrets/env noms immuables ;
+  edge function scope serveur ; chat UI carte de confirmation ; system prompt +
+  knowledge ; tests d'acceptation), exécution assistée optionnelle (send_message +
+  vérif entre chaque + gate + recette démo), livraison (doc client +
+  connecteurs-installes.md).
+- Interdits : jamais de clé BraindCode chez un client, jamais d'appel client-side,
+  jamais d'écriture sans confirmation UI, pas de promesse d'isolation multi-tenant
+  avant le token par tenant.
+- Évals : 4 cas (chaîne, refus clé BraindCode, refus client-side, multi-tenant
+  honnête) + anti-collisions.
+
+## 1.2.0 — 2026-07-15 — kit connecteur MCP canonique (v2, LV1)
+
+- `reference/kit-connecteur-mcp/` (kit v1) — source de vérité versionnée : `_commun.md`
+  (template edge function canonisé depuis academyrapido:execute-prompt — API Anthropic +
+  mcp_servers type url, beta mcp-client-2025-04-04, parsing PAR TYPE, rate-limits, filtre
+  injection, scope injecté serveur, écritures confirmées, 7 points sécurité, versioning) +
+  une fiche par MCP (`foodeatup`, `crm`, `cms`, `rh` : env immuables, familles d'outils
+  autorisées, system prompt, scope).
+- `reference/regles-stack-lovable.md` (awesome-cursorrules CC0, francisé) : règles
+  React/TS/Tailwind/shadcn/Supabase injectées dans chaque prompt.
+- `reference/gate-securite.md` (VibeSec Apache-2.0, adapté/modifié) : checklist bloquante
+  « agent + clés MCP » (secrets hors bundle, appels serveur, scope, écritures confirmées).
+- `NOTICE.md` (CC0/Apache-2.0/MIT, modifications VibeSec signalées) ; patch
+  `architecture-lovable.md` (section kit canonique).
+- Fondé sur l'audit LV0 (`docs/REFERENCE-AGENT-LOVABLE.md`, `docs/IMPORTS-LOVABLE-V2.md`)
+  et la spec auth multi-tenant (`docs/OUTILS-MCP-MANQUANTS.md` §11). Skills LV2→LV5 à venir.
+
 ## 1.1.0 — 2026-07-10
 
 - Premier agent du plugin : `chef-produit-web` — cadre le brief AVANT de

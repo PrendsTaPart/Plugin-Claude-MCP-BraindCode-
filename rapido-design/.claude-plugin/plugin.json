@@ -1,0 +1,9 @@
+{
+  "name": "rapido-design",
+  "version": "0.5.0",
+  "description": "Le studio UX/UI : orchestre la chaîne charte CMS → direction artistique → sitemap/flows → maquettes hi-fi Figma → design system → MVP Lovable animé, avec les mêmes tokens du début à la fin. Jugement design (anti-goût-IA), gates accessibilité WCAG et prefers-reduced-motion.",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  }
+}

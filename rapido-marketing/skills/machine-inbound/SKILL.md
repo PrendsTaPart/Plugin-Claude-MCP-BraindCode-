@@ -52,6 +52,9 @@ d'exécution et pose les garde-fous, KPI et modes dégradés. Voie Rapido d'abor
   webhook soumission → create_contact → enregistrer_prospect).
 - **Garde-fous** : consentement **RGPD** vérifié avant tout ajout à une séquence.
 - **Mode dégradé** : n8n absent → capture **manuelle confirmée** au fil de l'eau.
+- **Source de capture référencée** : un lead magnet
+  (`rapido-leadmagnet:page-et-capture`) est une source de capture branchée sur cette
+  tuyauterie (soumission → prospect + tag `leadmagnet:{slug}` + segment).
 
 ### 4. Nurturing
 - **Séquence conçue** par skill `email-sequence` (rapidocms, méthodo), **exécutée**

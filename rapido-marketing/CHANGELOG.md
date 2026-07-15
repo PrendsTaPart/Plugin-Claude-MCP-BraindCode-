@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-marketing
 
+## 0.18.3 — 2026-07-15 — pont social-selling → rapido-copywriter
+
+- `social-selling-linkedin` : **volet commentaires semi-auto** (brouillons de commentaires
+  à forte valeur, envoi humain, dédup n8n — jamais d'automatisation d'envoi). Frontière
+  rappelée : profil **perso** ici ; **pages marque** → `rapido-copywriter`.
+
+## 0.18.2 — 2026-07-15 — ponts vers rapido-leadmagnet
+
+- `lead-magnet-machine` : étape finale « → l'usine `rapido-leadmagnet` exécute »
+  (ce skill conçoit, l'usine exécute de bout en bout).
+- `machine-inbound` : le lead magnet (`page-et-capture`) référencé comme source de
+  capture branchée sur la tuyauterie inbound.
+- `lead-scoring` : le tag `leadmagnet:{slug}` = signal d'engagement pondéré.
+- Cross-références documentaires uniquement (aucun changement de logique).
+
 ## 0.18.1 — 2026-07-15 — ponts vers rapido-gmaps
 
 - `machine-outbound` : mentionne `rapido-gmaps:sourcing-gmaps` comme source amont

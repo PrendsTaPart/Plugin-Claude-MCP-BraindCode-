@@ -43,6 +43,10 @@ confirmer côté backend Tunis »), ne rien inventer.
 - Couleurs **en hex exact**, police(s), logo (URL/asset réel), ton, densité.
 - Style **générique** décrit (« minimalisme premium, beaucoup de blanc ») —
   **jamais** « façon [marque/site connu] » (interdits ci-dessous).
+- **Tokens** : quand un vrai design system existe (produit par
+  `rapido-design:studio-maquette` : charte → variables Figma → DS Lovable), le brief
+  **pointe ces tokens** (mêmes couleurs/typo/spacing) au lieu de re-décrire un style — le
+  MVP démarre du DS, **zéro divergence**. Sinon, on s'en tient à la charte `get_brand`.
 
 ### 4. Données & MODE B (formulaire → CRM)
 - **Mode B** = l'app déployée agit vraiment : le **formulaire crée le prospect
@@ -87,6 +91,12 @@ confirmer côté backend Tunis »), ne rien inventer.
 | **`prompt-lovable`** (ici) | « prompt Lovable », « brief pour le site/app/landing » | **écrit le brief** outillé marque + CRM |
 | `rapido-forge:ideation-lovable-prompt` | parcours **idéation StartupsForge** (débutant) | version **idéation** (générer le code de son site en apprenant) |
 | `rapido-lovable:usine-a-landing` / `site-restaurant` | « construis / déploie la landing / le site resto » | **construisent** l'app (mode B, analytics) |
+| `rapido-lovable:connecteur-mcp-lovable` | brief incluant un **agent embarqué connecté à un MCP** | **kit canonique** (edge function, sécurité, scope) — y déléguer le volet MCP |
+
+> **Brief incluant un MCP** : pour tout site/app avec un **agent embarqué** qui agit sur
+> un serveur MCP (FoodEatUp/CRM/CMS/RH), le volet connexion se délègue au **kit** via
+> `rapido-lovable:connecteur-mcp-lovable` (jamais de clé dans le brief, appels serveur,
+> scope verrouillé).
 
 > Renvoi croisé : si la demande relève de l'**idéation** (apprendre, explorer une
 > idée de produit), router vers `rapido-forge:ideation-lovable-prompt`. Si elle

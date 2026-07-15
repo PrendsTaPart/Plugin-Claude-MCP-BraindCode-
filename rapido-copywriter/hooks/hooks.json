@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__rapidocms__create_draft_tool",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-voix-marque.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si de la copy sociale a été produite, la dernière réponse DOIT récapituler : les copies/variantes produites par réseau, les brouillons CMS créés avec leurs IDs et le compte/réseau, les hooks utilisés (consignés au compteur de la banque), et confirmer que la passe anti-voix-ia et le gate brand-review ont été passés. Toute preuve/chiffre doit venir des données réelles CRM/CMS (jamais inventé). Aucune publication directe (brouillons uniquement). Si un élément manque, bloque en demandant de compléter ; sinon autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

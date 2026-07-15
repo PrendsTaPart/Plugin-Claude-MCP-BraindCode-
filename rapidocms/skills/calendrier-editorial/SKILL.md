@@ -49,3 +49,10 @@ tous les posts.
   plan plutôt que planifier l'échec.
 - Fin de mois : proposer le skill `analyse-performance-contenu` pour ajuster le
   calendrier suivant.
+
+## Grammaires par réseau (rapido-copywriter)
+
+Pour la répartition des **formats par réseau** (LinkedIn/Facebook/Instagram/TikTok) et les
+fenêtres de publication, s'appuyer sur `rapido-copywriter/reference/grammaires-reseaux.md`
+(fiches datées, révisées trimestriellement). La production de copy par réseau se délègue
+aux skills `rapido-copywriter:copy-linkedin`/`copy-meta`/`copy-tiktok`.

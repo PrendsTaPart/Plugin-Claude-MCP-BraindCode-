@@ -76,3 +76,24 @@ réel (données MCP), palette hex exacte (KB), structure de pages, contraintes
 (mobile-first, accessibilité). L'agent Lovable ne connaît ni la KB ni les MCP
 Rapido par défaut — tout ce qui doit être respecté doit être DANS le message
 (ou dans le knowledge du workspace — voir skill sync-marque-lovable).
+
+## LE KIT CONNECTEUR MCP — source canonique (v2)
+
+Le **Mode B/C (agent embarqué connecté à un MCP)** ne se réimprovise plus : il est
+**canonisé** dans `reference/kit-connecteur-mcp/` (v1) — une fiche par MCP (`foodeatup`,
+`crm`, `cms`, `rh`) + `_commun.md` (template d'edge function, system prompt, spec UI,
+critères d'acceptation, **7 points sécurité**, versioning). Fondé sur le code de
+production `academyrapido:execute-prompt` (`docs/REFERENCE-AGENT-LOVABLE.md`).
+
+- **Toujours** partir du kit pour brancher un MCP (skill `connecteur-mcp-lovable`, LV2) :
+  variables d'env **immuables**, appel **serveur** Anthropic + `mcp_servers` type url,
+  parsing **par type**, **scope injecté serveur**, **écritures confirmées**.
+- **Règles de stack** (`reference/regles-stack-lovable.md`, CC0) injectées dans chaque
+  prompt ; **gate sécurité** (`reference/gate-securite.md`, VibeSec adapté) **bloquant**
+  avant livraison.
+- ⚠️ **Multi-tenant** : le kit est écrit prêt (`<MCP>_MCP_TOKEN`, `SCOPE_ID`) mais
+  l'isolation dure dépend de l'auth par tenant côté serveur Rapido
+  (`docs/OUTILS-MCP-MANQUANTS.md` §11). Ne jamais promettre l'isolation tant que le token
+  par établissement n'est pas livré.
+- Distribution en 3 endroits synchronisés (repo → workspace skill Lovable → knowledge
+  projet), versionnée (LV4).

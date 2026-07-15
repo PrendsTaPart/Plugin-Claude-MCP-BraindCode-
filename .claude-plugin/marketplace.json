@@ -40,7 +40,7 @@
     {
       "name": "rapido-lovable",
       "source": "./rapido-lovable",
-      "description": "Apps et agents IA Lovable alimentés par les données Rapido : site restaurant, landing pages, agent IA produit, marque synchronisée"
+      "description": "Apps & sites Lovable alimentés par les données Rapido : landing, site restaurant, MVP multi-pages (spec-driven), et surtout le KIT CONNECTEUR MCP canonique (agent embarqué → FoodEatUp/CRM/CMS/RH via edge function sécurisée, scope serveur, écritures confirmées) + gate sécurité VibeSec. Agent architecte-lovable. 10 skills, 2 agents."
     },
     {
       "name": "rapido-meta-ads",
@@ -115,7 +115,22 @@
     {
       "name": "rapido-gmaps",
       "source": "./rapido-gmaps",
-      "description": "Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS), scoring ICP par script, déduplication obligatoire, détection d'opportunités FoodEatUp (business sans système numérique), enrichissement de fiches, veille concurrentielle. Garde-fous CGU/RGPD déterministes. Squelette — skills en cours."
+      "description": "Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS), scoring ICP par script, déduplication obligatoire, détection d'opportunités FoodEatUp (business sans système numérique), enrichissement de fiches, veille concurrentielle. Garde-fous CGU/RGPD déterministes. 4 skills + agent chasseur-leads + routine GMAPS-HEBDO."
+    },
+    {
+      "name": "rapido-leadmagnet",
+      "source": "./rapido-leadmagnet",
+      "description": "L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (Lovable → segment + pipeline CRM), campagne multi-canal (organique + payant PAUSED + nurturing + mesure) et projet RH (tâches affectées aux agents IA). Exécute ce que rapido-marketing:lead-magnet-machine a conçu. Garde-fous RGPD/délivrabilité/budget."
+    },
+    {
+      "name": "rapido-copywriter",
+      "source": "./rapido-copywriter",
+      "description": "Le copywriter LinkedIn · Facebook · Instagram · TikTok : grammaires natives par réseau (datées, révision trimestrielle), banque de hooks vivante taguée par les vrais insights CMS, passe anti-voix-IA francisée, boucle d'apprentissage. Brouillons CMS par réseau (jamais de publication directe), gate voix de marque obligatoire. 4 skills + agent copywriter-social + boucle score_hooks."
+    },
+    {
+      "name": "rapido-design",
+      "source": "./rapido-design",
+      "description": "Le studio UX/UI : orchestre la chaîne charte CMS → direction artistique → sitemap/flows (FigJam) → maquettes hi-fi + design system Figma → MVP Lovable → animations, avec les mêmes tokens du début à la fin. Jugement design anti-goût-IA, gates accessibilité WCAG et prefers-reduced-motion."
     }
   ]
 }
