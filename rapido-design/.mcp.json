@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "lovable": {
+      "type": "http",
+      "url": "https://mcp.lovable.dev"
+    }
+  }
+}
