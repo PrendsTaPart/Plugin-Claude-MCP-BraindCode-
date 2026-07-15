@@ -83,6 +83,12 @@ SEO/SEA), **TIKTOK-HEBDO** — sont décrites dans
 mémoire, garde-fous) et enregistrées au registre unifié. Le **volume DataForSEO vit
 en n8n**, jamais en conversationnel.
 
+## Recettes relation client (RC-*)
+
+Les routines **RC-HEBDO** (support), **RC-NPS-TRIMESTRE**, **RC-SANTE-MENSUEL** sont
+décrites dans `${CLAUDE_PLUGIN_ROOT}/reference/recettes-relation-client.md` (table
+mémoire incluse) et enregistrées au registre unifié. Installation sur confirmation.
+
 ## Recettes de vente événementielles (OPS-*)
 
 Les trois workflows **événementiels** de la boucle de vente — **OPS-LEAD-CHAUD**

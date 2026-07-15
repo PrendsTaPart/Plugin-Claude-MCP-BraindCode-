@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-n8n
 
+## 1.5.0 — 2026-07-15 — recettes relation client
+
+- `reference/recettes-relation-client.md` : **RC-HEBDO** (support, `rc_support_journal`),
+  **RC-NPS-TRIMESTRE** (`rc_nps_vagues`), **RC-SANTE-MENSUEL** (health score,
+  `rc_sante_journal`). `recettes-metier/SKILL.md` référence le fichier ; recettes au
+  registre unifié (`RC-*`). Installation sur confirmation.
+
 ## 1.4.0 — 2026-07-15 — recettes d'acquisition (SEO/SEA/TikTok)
 
 - `reference/recettes-seo.md` : **4 recettes** — **SEO-HEBDO** (positions GSC +
