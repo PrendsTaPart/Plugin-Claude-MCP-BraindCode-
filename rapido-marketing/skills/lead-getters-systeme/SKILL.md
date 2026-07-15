@@ -42,6 +42,13 @@ plan de tracking, condition de passage au type suivant.
 - **Employés (former, suivre)** → skills RH (`create-project-tool`,
   `create-task-tool`) et `detection-surcharge` (rapidorh).
 
+## Anti-collision avec `rapidocrm:programme-ambassadeurs`
+Ce skill **choisit le TYPE** de programme (parrainage / affiliation / ambassadeurs /
+apporteurs pro) selon la maturité et **cadre** la stratégie — il ne l'opère pas. Une
+fois le **programme ambassadeurs BraindCode** décidé (10 % client / 20 % apporteur),
+son **exécution** (éligibilité, propositions, suivi des commissions, relances J+60)
+revient à `rapidocrm:programme-ambassadeurs`. Règle miroir documentée dans les deux SKILL.md.
+
 ## Cas d'usage croisés
 - Amplifier le bouche-à-oreille → skill `contagious` (STEPPS).
 - Rôles d'une machine commerciale (SDR/AE/CSM) → skill `predictable-revenue`.

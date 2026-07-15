@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-marketing
 
+## 0.16.2 — 2026-07-15 — anti-collision ambassadeurs
+
+- **Patch croisé `rapidocrm`** : `lead-getters-systeme` gagne une section
+  **anti-collision** avec `rapidocrm:programme-ambassadeurs` — lui choisit le **TYPE**
+  de programme (stratégie), l'exécution du programme ambassadeurs BraindCode (10 %/20 %)
+  revient à `rapidocrm:programme-ambassadeurs`. Règle miroir.
+
 ## 0.16.1 — 2026-07-15
 
 - `tunnel-de-vente-360` (patch V5) : Acte 2 — **héros vidéo de landing monté
