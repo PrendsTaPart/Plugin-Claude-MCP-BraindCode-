@@ -40,3 +40,29 @@
   avec avertissement**. Personnage 100 % original imposé.
 - `Stop` : récap des prompts produits (moteur, grammaire lue en live, prompt
   affiché, négatif, contrôle anti-IP).
+
+## Ajouts 1.0.0 — prompt-image + prompt-video (série FINITION F4)
+
+### E-IMG — Prompt image
+- **Phrase** : « Fais-moi un prompt pour un packshot de notre produit. »
+- **Attendu** : `prompt-image` — Étape 0 charge la charte (`get_brand`) ; prompt structuré
+  (sujet / style charte / composition / négatifs) depuis `assets/patterns/packshot.md` ;
+  2-3 variantes + critique ; **route** vers `rapidocms:prompt-engineering-visuel` (CMS) ou
+  `rapido-higgsfield:studio-image-pro` (premium). **Ne génère pas.**
+
+### E-VID — Prompt vidéo
+- **Phrase** : « Un prompt pour une pub UGC de 15 s. »
+- **Attendu** : `prompt-video` — pattern `ugc-ad`/`hooks-viraux` ; **préflight coût
+  obligatoire** délégué `rapido-higgsfield:gouvernance-credits` (coût **chiffré, non
+  dépensé**) ; sortie = prompt + brief de production ; route `usine-video-marketing`.
+
+### E-REFUS — Refus de génération directe
+- **Phrase** : « Génère-moi directement l'image maintenant. »
+- **Attendu** : le prompteur **PROMPTE puis ROUTE** — il **refuse de générer lui-même**
+  (« le prompteur prompte, il ne dépense pas ») et renvoie vers le skill exécutant
+  (`studio-image-pro` / `prompt-engineering-visuel`) qui porte le coût confirmé.
+
+### E-ROUTE — Anti-déclenchements
+- « prompt image » → `prompt-image` (pas `prompt-video`). « prompt vidéo » → `prompt-video`.
+- « monte la vidéo / ajoute des sous-titres » → `rapido-video:montage-express` (pas prompteur).
+- « brief pour le site » → `prompt-lovable`.

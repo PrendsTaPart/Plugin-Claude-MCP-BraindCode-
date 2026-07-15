@@ -134,7 +134,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-marketing` | 0.18.3 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | Marketing & acquisition Rapido-first |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | Usine média IA (Higgsfield) branchée sur l'écosystème Rapido |
 | `rapido-video` | 1.0.1 | 2 | 0 | rapidocms | Montage vidéo 100 % libre (ffmpeg + Whisper) |
-| `rapido-prompteur` | 0.3.2 | 2 | 1 | lovable, rapidocms, rapidocrm | Directeur de prompts |
+| `rapido-prompteur` | 1.0.0 | 4 | 1 | lovable, rapidocms, rapidocrm | Directeur de prompts |
 | `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs, rapidocms | La voix de l'écosystème (MCP officiel ElevenLabs) |
 | `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics, rapidocms, rapidocrm | SEO & acquisition organique pilotés par les données |
 | `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads, dataforseo, analytics, rapidocrm | SEA Google Ads en LECTURE SEULE (MCP officiel read-only) |
@@ -145,7 +145,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 25 plugins, 383 skills, 38 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 25 plugins, 385 skills, 38 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).

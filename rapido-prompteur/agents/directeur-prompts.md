@@ -61,11 +61,10 @@ Puis : **recommandation** d'une variante, **skill exécutant** cible, et
 
 ## Délégation aux skills exécutants (tu prépares, ils produisent)
 
-| Besoin | Skill exécutant |
+| Besoin | Skill (méthode → exécution) |
 |---|---|
-| Image brandée courante (RapidoCMS) | `rapidocms:prompt-engineering-visuel` (+ `rapidocms:prompts-visuels-pro` pour négatif/texte) |
-| Image premium / packshot 4K (Higgsfield) | `rapido-higgsfield:studio-image-pro` |
-| Vidéo pub / UGC (Higgsfield) | `rapido-higgsfield:usine-video-marketing` |
+| **Prompt image** (packshot, portrait, visuel de marque) | `prompt-image` → `rapidocms:prompt-engineering-visuel` (CMS) ou `rapido-higgsfield:studio-image-pro` (premium) |
+| **Prompt vidéo** (pub, UGC, explainer, personnage) | `prompt-video` → `rapido-higgsfield:usine-video-marketing` / `videos-explicatives` (coût confirmé) |
 | Personnage cohérent | `prompt-personnage` → `rapidocms:coherence-personnage` ou `rapido-higgsfield:personnages-univers` |
 | Web / app / landing (Lovable) | `prompt-lovable` → builders `rapido-lovable` |
 | Montage libre / sous-titres | `rapido-video:montage-express` |
