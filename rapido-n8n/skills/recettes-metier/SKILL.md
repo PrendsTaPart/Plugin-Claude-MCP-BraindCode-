@@ -74,6 +74,15 @@ nodes, CONFIG et étapes d'activation dans
 `${CLAUDE_PLUGIN_ROOT}/reference/recette-r7-cash-sentinel.md`. Publication
 toujours confirmée (hook garde-production).
 
+## Recettes d'acquisition (SEO-* / SEA-* / TIKTOK-*)
+
+Les routines d'acquisition — **SEO-HEBDO** / **SEO-MENSUEL** (rank-tracking + backlinks
+DataForSEO **en n8n obligatoire**, coût gouverné), **SEA-HEBDO** (gaspillage + synergie
+SEO/SEA), **TIKTOK-HEBDO** — sont décrites dans
+`${CLAUDE_PLUGIN_ROOT}/reference/recettes-seo.md` (déclencheur, pseudo-nœuds, table
+mémoire, garde-fous) et enregistrées au registre unifié. Le **volume DataForSEO vit
+en n8n**, jamais en conversationnel.
+
 ## Recettes de vente événementielles (OPS-*)
 
 Les trois workflows **événementiels** de la boucle de vente — **OPS-LEAD-CHAUD**

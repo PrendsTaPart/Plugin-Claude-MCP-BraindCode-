@@ -1,5 +1,16 @@
 # Changelog — plugin rapido-n8n
 
+## 1.4.0 — 2026-07-15 — recettes d'acquisition (SEO/SEA/TikTok)
+
+- `reference/recettes-seo.md` : **4 recettes** — **SEO-HEBDO** (positions GSC +
+  striking distance, table `seo_positions_journal`), **SEO-MENSUEL** (backlinks
+  new/lost + audit delta, `seo_backlinks_journal`), **SEA-HEBDO** (gaspillage +
+  synergie SEO/SEA, `sea_synergie_journal`), **TIKTOK-HEBDO** (perf + arbitrage,
+  `tiktok_perf_journal`). Le **rank-tracking DataForSEO vit en n8n** (coût gouverné),
+  jamais en conversationnel.
+- `recettes-metier/SKILL.md` référence `recettes-seo.md` ; recettes au registre unifié
+  (`SEO-*`/`SEA-*`/`TIKTOK-*`). Installation sur confirmation, aucun workflow d'office.
+
 ## 1.3.0 — 2026-07-15 — recettes de vente événementielles
 
 - `reference/recettes-vente.md` : **3 recettes OPS-*** au format des routines
