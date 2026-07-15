@@ -28,6 +28,12 @@ LEXIQUE = [
 RE_LIEN = re.compile(r"https?://\S+")
 RE_MOT = re.compile(r"\b[\wàâäéèêëïîôöùûüç'-]+\b", re.IGNORECASE)
 RE_PROMESSE = re.compile(r"(?:x\s?\d+|\d+\s?%|\+\d+\s?%|\d+\s?(?:€|\$|k€|k\$))", re.IGNORECASE)
+# Présence d'un lien/mention de désinscription (obligatoire en envoi de masse ;
+# bloquant en mode newsletter — l'appelant décide).
+RE_DESINSCRIPTION = re.compile(
+    r"désinscri|desinscri|désabonn|desabonn|unsubscribe|opt[-\s]?out|"
+    r"ne\s+plus\s+recevoir|gérer\s+mes\s+préférences",
+    re.IGNORECASE)
 
 
 def analyser(data):
@@ -48,6 +54,7 @@ def analyser(data):
 
     exclamations = texte.count("!")
     promesses = RE_PROMESSE.findall(texte)
+    lien_desinscription = bool(RE_DESINSCRIPTION.search(texte))
 
     # Points de risque (formule affichée).
     points = (
@@ -70,6 +77,8 @@ def analyser(data):
         signalements.append(f"Ponctuation agressive ({exclamations} points d'exclamation).")
     if promesses:
         signalements.append(f"Promesses chiffrées agressives : {', '.join(sorted(set(promesses)))}.")
+    if not lien_desinscription:
+        signalements.append("Lien de désinscription non détecté (obligatoire en envoi de masse ; bloquant en mode newsletter).")
 
     return {
         "formule": "points = |lexique| + 2*(densite_liens>0.03) + 2*(taux_maj>0.1) + (excl>=3) + |promesses| ; élevé>=6, moyen>=3, sinon faible",
@@ -80,6 +89,7 @@ def analyser(data):
             "mots_majuscules": len(mots_majuscules), "taux_majuscules": taux_majuscules,
             "exclamations": exclamations,
             "promesses_chiffrees": sorted(set(promesses)),
+            "lien_desinscription": lien_desinscription,
         },
         "points": points,
         "note_risque": note,

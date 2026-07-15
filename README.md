@@ -59,7 +59,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.1 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
-| `rapido-marketing` | 0.14.0 | 15 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar, fireflies | `N8N_MCP_URL`, `FIREFLIES_MCP_URL` (optionnels) |
+| `rapido-marketing` | 0.14.1 | 15 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar, fireflies | `N8N_MCP_URL`, `FIREFLIES_MCP_URL` (optionnels) |
 
 **Total : 13 plugins, 318 skills, 30 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines

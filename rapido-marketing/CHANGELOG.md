@@ -1,5 +1,18 @@
 # Changelog — plugin rapido-marketing
 
+## 0.14.1 — 2026-07-15
+
+- `delivrabilite-email` : **paramètre de MODE** au contrat du skill.
+  - **`outbound`** (défaut) : gate complet inchangé (scorecard + spam_check +
+    plafonds + cadence/warmup).
+  - **`newsletter`** (base opt-in) : scorecard d'hygiène (doublons/formats/rôle) +
+    spam_check + **présence du lien de désinscription (bloquante)** + taille vs
+    plafond ; **pas de règles de warmup/cadence**.
+  - **Même seuil de refus, mêmes scripts** (aucune duplication) : `spam_check.py`
+    gagne un contrôle `lien_desinscription` (détection stem FR/EN), exploité comme
+    bloquant en mode newsletter ; `scorecard_liste.py` inchangé.
+  - Prépare le câblage conditionnel côté `rapidocrm:campagne-marketing`.
+
 ## 0.14.0 — 2026-07-15
 
 - `machine-outbound` **v2** (remplace le M8 initial) — deux intégrations nouvelles,

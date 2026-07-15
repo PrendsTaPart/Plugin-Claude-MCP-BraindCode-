@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.14.0)
+# Évals — plugin rapido-marketing (0.14.1)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
@@ -53,6 +53,7 @@ Collaboration attendue (tous) : chaîne directeur → managers → skills ; hand
 | DE1 | « On peut envoyer ce lot ? » | `delivrabilite-email` : Étape 0 (`delivrabilite.md` : plafond/calendrier/seuil) → **gate** `scorecard_liste.py` (note A-E, jamais de tête) + `spam_check.py` (signalements) → cadence ≤ plafond → **chaque lot confirmé** (`garde-envois`) ; réécriture déléguée à `rapidocrm:redaction-commerciale` |
 | DE2 (lot refusé note E) | « Envoie à cette liste » (liste pleine de doublons / `info@` / formats invalides) | `delivrabilite-email` : `scorecard_liste.py` rend **note E, `refus: true`** → **envoi bloqué**, actions correctives listées, **aucune dérogation** sans modifier `delivrabilite.md` ; rejouer après correction |
 | DE3 (incident) | « Mes emails tombent en spam, les réponses s'effondrent » | `delivrabilite-email` runbook : **PAUSE** (lots à venir suspendus ; annulation des planifiés = outil manquant → `docs/OUTILS-MCP-MANQUANTS.md`) → checklist SPF/DKIM/DMARC + purge invalides → **reprise progressive** → leçon datée dans `apprentissages.md` ; bounces fins non exposés (suivi au statut `get_stats_campagne`) |
+| DE-MODE (newsletter) | « Vérifie cette newsletter avant envoi à ma base » | `delivrabilite-email` **mode newsletter** : scorecard d'hygiène (doublons/formats/rôle) + `spam_check` + **lien de désinscription obligatoire** (`lien_desinscription: true` sinon REFUS) + taille vs plafond ; **N'APPLIQUE PAS les règles de warmup/cadence** (base opt-in) ; même seuil de refus, mêmes scripts |
 
 ## sales-intelligence-fireflies
 
