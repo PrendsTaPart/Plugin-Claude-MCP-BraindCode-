@@ -7,7 +7,7 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-13-blue)
+![Plugins](https://img.shields.io/badge/plugins-14-blue)
 ![Skills](https://img.shields.io/badge/skills-318-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
@@ -60,6 +60,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.1 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 | `rapido-marketing` | 0.15.0 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
+| `rapido-higgsfield` | 0.1.0 | 0 | 0 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` (à figer en H0) |
 
 **Total : 13 plugins, 318 skills, 30 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines

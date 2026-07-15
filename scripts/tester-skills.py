@@ -247,6 +247,19 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocms__remove_asset",
           "tool_input": {"asset_id": 12}}, "ask"),
     ],
+    ("rapido-higgsfield", "garde-couts.py"): [
+        ({"tool_name": "mcp__huggsfield__generate_video", "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__huggsfield__generate_video",
+          "tool_input": {"get_cost": True}}, "allow"),
+        ({"tool_name": "mcp__huggsfield__generate_image",
+          "tool_input": {"cout_confirme": True}}, "allow"),
+        ({"tool_name": "mcp__huggsfield__show_medias", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-higgsfield", "garde-voix.py"): [
+        ({"tool_name": "mcp__huggsfield__create_voice", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__huggsfield__dubbing", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__huggsfield__generate_image", "tool_input": {}}, "allow"),
+    ],
     ("rapido-marketing", "garde-envois.py"): [
         ({"tool_name": "mcp__rapidocrm__send_newsletter",
           "tool_input": {"entreprise_id": 1}}, "ask"),
