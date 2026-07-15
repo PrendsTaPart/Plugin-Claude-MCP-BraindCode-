@@ -1,5 +1,30 @@
 # Changelog — plugin rapido-marketing
 
+## 0.15.0 — 2026-07-15
+
+- Skill **`pilotage-marketing`** (orchestrateur) : boucle **Sense → Plan → Act →
+  Feed → Report**, gouvernée par `rapido-suite/reference/autonomie.md` si présent,
+  **sinon mode prudent** (tout écrit confirmé).
+  - **SENSE** : `attribution-kpi-marketing`, `rapidocrm:coaching-pipeline`,
+    `rapidocms:analyse-performance-contenu`, `rapido-meta-ads:pilotage-performance-ads`,
+    `rapido-n8n:surveillance-automatisations`, `apprentissages.md`.
+  - **PLAN** : `scripts/prioriser_actions.py` (ICE + allocation par machine +
+    **détection de doublons** vs Kanban RapidoRH / interne, jamais de tête) ;
+    règle de **coût IA** (`reference/cout-ia.md` : calcul→script, jugement→modèle,
+    volume→routine n8n).
+  - **ACT** : délégation aux agents M11 / skills, chaque action sensible confirmée.
+  - **FEED** : capitalisation (`rapido-suite:mise-a-jour-kb`), **2 échecs → escalade
+    humaine**, mise à jour du Kanban.
+  - **REPORT** : une page (KPI vs objectifs, actions, décisions, prochaine
+    itération, récap des IDs).
+- **Routines n8n** (`reference/routines.md`, proposées puis installées sur
+  confirmation via `rapido-n8n:usine-automatisations`) : **R-MKT-HEBDO** (rapport
+  pilotage lundi), **R-MKT-QUOTIDIEN** (sentinelle leads > 24 h + soumissions
+  orphelines), **R-MKT-MENSUEL** (board attribution + benchmarks) — chacune avec
+  son workflow et sa table mémoire.
+- **Anti-collision** : `pilotage-marketing` déclaré **sous-domaine** de
+  `rapido-suite:pilotage-entreprise` (règle miroir dans les deux README).
+
 ## 0.14.2 — 2026-07-15
 
 - **Fireflies devient un connecteur OPTIONNEL documenté, plus une dépendance.**

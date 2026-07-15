@@ -37,6 +37,9 @@ repli seulement.
 | `tunnel-de-vente-360` ✅ | flagship : conçoit + construit le tunnel en 5 actes |
 | `attribution-kpi-marketing` ✅ | attribution single-touch + CAC/LTV/ROI par canal (script) |
 | `growth-experiments` ✅ | backlog ICE + verdict A/B par script (PASS/FAIL/INCONCLUSIF) |
+| `sales-intelligence-fireflies` ✅ | mining d'objections depuis les RDV réels (Fireflies, connecteur optionnel) |
+| `delivrabilite-email` ✅ | gate pré-envoi (outbound/newsletter) + runbook incident |
+| `pilotage-marketing` ✅ | orchestrateur Sense→Plan→Act→Feed→Report + routines n8n |
 | `attribution-canal` | orchestration `get_conversion_par_canal` (multi-touch à venir) |
 | `tunnel-conversion` | landing → formulaire/CTA → segment → email → stats |
 | `sequences-nurturing` | speed-to-lead + nurture multicanal via n8n |
@@ -68,6 +71,13 @@ skill fonctionne en mode dégradé s'il est absent.
   n'est **pas** listé dans `.mcp.json` : il reste optionnel et local à
   l'utilisateur. Sans lui, `sales-intelligence-fireflies` explique comment
   l'ajouter puis s'arrête proprement (aucun appel d'outil, aucune erreur brute).
+
+## Anti-collision avec rapido-suite
+`pilotage-marketing` est le **sous-domaine marketing** de
+`rapido-suite:pilotage-entreprise`. Si les **deux plugins sont installés**, la
+suite **invoque `pilotage-marketing`** pour son volet marketing au lieu de le
+dupliquer. Invoqué seul, `pilotage-marketing` pilote le marketing de bout en bout.
+(Règle miroir dans le README de rapido-suite.)
 
 ## Garanties
 Tout envoi (email/SMS/newsletter/campagne/publication/activation pub) demande

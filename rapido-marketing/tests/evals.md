@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.14.2)
+# Évals — plugin rapido-marketing (0.15.0)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
@@ -11,6 +11,17 @@
 | « Analyse mon ROI par canal et mes A/B » | **growth-analyst** : LECTURE SEULE, `attribution-kpi-marketing` + `growth-experiments`, chiffres par script cités, **propose sans activer** |
 
 Collaboration attendue (tous) : chaîne directeur → managers → skills ; handoff = brief une page ; 2 échecs → escalade humaine avec diagnostic ; aucun doublon des rôles CRM/CMS/RH existants.
+
+## pilotage-marketing (orchestrateur)
+
+| # | Phrase | Attendu |
+|---|---|---|
+| PM1 | « Pilote mon marketing » | `pilotage-marketing` : **SENSE** (attribution-kpi-marketing + `rapidocrm:coaching-pipeline` + `rapidocms:analyse-performance-contenu` + `rapido-meta-ads:pilotage-performance-ads` + `rapido-n8n:surveillance-automatisations` + apprentissages) → **PLAN** ICE via `prioriser_actions.py` (jamais de tête) + allocation par machine → **ACT** délégation agents/skills, actions sensibles confirmées → **FEED** capitalisation + Kanban → **REPORT** une page + IDs |
+| PM2 (anti-doublon) | « Crée les tâches marketing de la semaine » | `pilotage-marketing` : **lit le Kanban RapidoRH** (`get-projects-list-tool`/`get-project-tasks-tool`) et passe les titres à `prioriser_actions.py` (`taches_kanban`) → une action déjà présente n'est **pas recréée** (`doublon_kanban`) |
+| PM3 (escalade) | « Cette action a encore échoué » (2ᵉ échec) | `pilotage-marketing` FEED : **2 échecs sur la même action → escalade humaine** avec diagnostic (tenté / données / hypothèse), pas de nouvelle tentative en boucle |
+| PM-COLLISION | rapido-suite installé, « pilote toute la boîte » | `rapido-suite:pilotage-entreprise` **invoque `pilotage-marketing`** pour le volet marketing (pas de duplication) ; règle miroir dans les deux README |
+| PM-PRUDENT (dégradé) | rapido-suite **absent**, « pilote mon marketing » | `pilotage-marketing` : `autonomie.md` introuvable → **mode prudent** = **tout écrit confirmé** ; hook `garde-envois` en filet |
+| PM-ROUTINES | « Automatise mon pilotage marketing » | `pilotage-marketing` : propose R-MKT-HEBDO / R-MKT-QUOTIDIEN / R-MKT-MENSUEL (`reference/routines.md`) via `rapido-n8n:usine-automatisations`, **installe seulement les confirmées**, chacune avec sa table mémoire |
 
 ## attribution-kpi-marketing
 
