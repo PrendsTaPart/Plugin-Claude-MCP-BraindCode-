@@ -17,3 +17,11 @@ rapido-kb/
 
 # Outils vidéo installés en local par bootstrap_video.py
 .video-tools/
+
+# Dépôts clonés lors des audits d'import (jamais commités)
+/repos/
+repos-audit/
+
+# Sorties de tests éphémères
+*.tmp
+tests/tmp/
