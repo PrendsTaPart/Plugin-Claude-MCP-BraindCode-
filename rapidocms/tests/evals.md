@@ -43,6 +43,17 @@
 - Frontière : « uploade le logo » → `contenu-conforme-marque` (assets),
   pas gestion-marques.
 
+## bibliotheque-assets
+
+| Phrase | Attendu |
+|---|---|
+| « Importe ce logo et rattache-le à Braindcode » (avec URL publique) | `bibliotheque-assets` : `upload_file_tool` (nom conforme `braindcode-logo-...-vN`, `type=image`) → `list_all_files` pour **résoudre l'asset_id réel** (l'upload n'en renvoie pas) → `get_brand` (confirmer `brand_id`) → `add_asset` ; aucun id inventé |
+| « Quels visuels officiels me manquent pour Pronoclip ? » | `bibliotheque-assets` : `get_brand` (noms des assets) → **`audit_assets.py`** (jamais de calcul de tête) → restitue `manquants` + `plan_import` + `non_conformes`, propose l'import |
+| « Détache la mascotte de la marque » | `bibliotheque-assets` : `get_brand` → prendre l'**`id` du LIEN** dans `assets[]` (pas l'id du fichier) → **confirmation** → `remove_asset` ; rappelle que le fichier reste dans la bibliothèque |
+
+- Frontière : « crée une nouvelle marque » / « change les couleurs » →
+  `gestion-marques` (identité), pas bibliotheque-assets (fichiers).
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

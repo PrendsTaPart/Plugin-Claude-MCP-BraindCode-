@@ -1,5 +1,22 @@
 # Changelog — plugin rapidocms
 
+## 1.5.0 — 2026-07-14
+
+- Nouveau skill `bibliotheque-assets` : import (URL publique, nommage imposé
+  `{marque}-{type}-{variante}-vN`), inventaire, rattachement/détachement des
+  assets à la bonne marque, et **audit de complétude** par script. Fondé sur
+  une vérification live des outils (upload sans id → `list_all_files` pour
+  résoudre l'`asset_id` ; `remove_asset` prend l'id du LIEN, pas du fichier).
+- Nouveau `reference/outils-marque.md` : contrat live du cluster marque &
+  assets (get_brand renvoie un tableau + `assets[]`, create_brand renvoie
+  l'`id`, pas de validation hex serveur, `search` de list_all_files ne filtre
+  pas, aucun outil de suppression de fichier).
+- Nouveau `scripts/audit_assets.py` (stdlib) : compare la checklist canonique
+  des 9 types d'assets aux assets rattachés, sort manquants / non conformes /
+  plan d'import — l'écart n'est jamais calculé de tête.
+- tests/evals.md : 3 scénarios bibliotheque-assets (import→rattachement,
+  audit complétude, détachement) + frontière vs gestion-marques.
+
 ## 1.4.1 — 2026-07-11
 
 - Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,
