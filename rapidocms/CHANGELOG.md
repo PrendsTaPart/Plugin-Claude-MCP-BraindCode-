@@ -1,5 +1,13 @@
 # Changelog — plugin rapidocms
 
+## 1.11.3 — 2026-07-15
+
+- **Croisements Higgsfield** (patch H9) : `studio-visuel-marque` route le
+  **premium/4K/pub/photo réaliste** vers `rapido-higgsfield:studio-image-pro`
+  (si installé ; le brandé courant reste sur `images_to_image`) ; `video-marketing`
+  distingue **éditorial maquetté (HyperFrames)** vs **génératif** (délégué à
+  `rapido-higgsfield:usine-video-marketing`/`personnages-univers`).
+
 ## 1.11.2 — 2026-07-15
 
 - `coherence-personnage` : **branche de délégation** vers

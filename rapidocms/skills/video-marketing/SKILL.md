@@ -64,3 +64,7 @@ publique), plus du repo GitHub.
   (`npx skills add heygen-com/hyperframes`) — relayer ce message tel quel.
 - Contenu : ton et accroches de la KB, pas de données personnelles clients
   dans une vidéo publique, chiffres avec source uniquement.
+- **HyperFrames vs Higgsfield** : ce skill = vidéo **éditoriale maquettée**
+  (presets design, typographie animée, HeyGen). Pour une vidéo **générative** (pub
+  produit, personnages, shorts, clip Kling), déléguer à
+  `rapido-higgsfield:usine-video-marketing` / `personnages-univers` **si installé**.

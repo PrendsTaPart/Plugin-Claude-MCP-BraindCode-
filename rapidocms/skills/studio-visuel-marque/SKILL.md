@@ -28,6 +28,9 @@ interdits jamais inventés.
   `prompt-engineering-visuel`), en le disant.
 - L'utilisateur **cite Canva** (template, gabarit précis) → déléguer au plugin
   **rapido-canva**.
+- **Premium / 4K / packshot pub / texte incrusté complexe / photo réaliste** →
+  déléguer à `rapido-higgsfield:studio-image-pro` **si le plugin est installé**
+  (voie image premium, coût en crédits chiffré avant). Le brandé courant reste ici.
 
 ## Pipeline (chaque étape annoncée à l'utilisateur)
 
