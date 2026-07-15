@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-marketing
 
+## 0.3.0 — 2026-07-14
+
+- 2 skills « données » (comblent des MANQUANT de la matrice M0) :
+  - `icp-generator` : profil d'ENTREPRISE cible (≠ persona → délégué à
+    bootcamp-persona-deep/ideation-persona-maker) fondé sur l'analyse des
+    clients gagnés (`analyse_clients.py`, stdlib — fréquences par secteur/
+    taille/canal, jamais de tête), croisé KB → `rapido-kb/marketing/icp.md` +
+    critères de prospection et `create_segment` (confirmé).
+  - `lead-scoring` : modèle transparent 2 axes (fit ICP × engagement) éditable
+    dans `rapido-kb/marketing/scoring.md`, calcul par `score_leads.py` (stdlib)
+    sur données CRM réelles, tableau scoré + 3 actions par tranche (chaud → RDV
+    via secretariat-commercial, tiède → nurturing, froid → réactivation) ;
+    écriture CRM (étape/tâche) UNIQUEMENT après confirmation. Note M0 : pas de
+    champ de score natif côté serveur (à demander au backend).
+- 2 scripts stdlib testés ; tests/evals.md : 2 déclenchements + 1 anti par skill.
+
 ## 0.2.0 — 2026-07-14
 
 - 4 skills **méthodo** (distillation de `docs/methodo/100m-leads/`, attribution

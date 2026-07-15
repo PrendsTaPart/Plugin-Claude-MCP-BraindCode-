@@ -1,4 +1,20 @@
-# Évals — plugin rapido-marketing (0.2.0)
+# Évals — plugin rapido-marketing (0.3.0)
+
+## icp-generator
+
+| # | Phrase | Attendu |
+|---|---|---|
+| IC1 | « Définis mon ICP » | `icp-generator` : analyse des clients gagnés (`list_entreprises`/`get_top_clients`) via `analyse_clients.py` (jamais de tête) → croise KB → `rapido-kb/marketing/icp.md` + critères prospection ; `create_segment` confirmé |
+| IC2 | « Quelles entreprises cibler ? » | `icp-generator` : segments priorisés + signaux d'achat + critères de disqualification, fondés sur les données |
+| IC3 (anti) | « Décris le persona de mon acheteur » | PAS icp-generator (= entreprise) → skill `bootcamp-persona-deep` / `ideation-persona-maker` (persona = individu) |
+
+## lead-scoring
+
+| # | Phrase | Attendu |
+|---|---|---|
+| LS1 | « Score mes leads » | `lead-scoring` : modèle 2 axes (fit×engagement) de `scoring.md` → `score_leads.py` sur données CRM réelles → tableau scoré + 3 actions/tranche ; écriture CRM confirmée |
+| LS2 | « Quels prospects prioriser cette semaine ? » | `lead-scoring` : tranches chaud/tiède/froid, chaud → RDV via `secretariat-commercial`, froid → réactivation via `campagne-marketing` |
+| LS3 (anti) | « Définis les critères de mon client idéal » | PAS lead-scoring → skill `icp-generator` (définit l'axe fit en amont) |
 
 Chaque skill méthodo : 2 déclenchements + 1 anti-déclenchement.
 

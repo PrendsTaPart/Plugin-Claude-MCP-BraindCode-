@@ -5,7 +5,7 @@ de leads, le tunnel de conversion, le nurturing, la publicité et l'analytics en
 **priorisant les serveurs Rapido** (CRM → CMS → RH), les MCP secondaires en
 repli seulement.
 
-> **Version 0.2.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
+> **Version 0.3.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
 > **méthodo** (distillation $100M Leads). Les skills d'**exécution**
 > (machine-inbound/outbound, tunnel-de-vente-360) suivent.
 
@@ -26,8 +26,8 @@ repli seulement.
 | `lead-magnet-machine` ✅ | aimant à prospects en 7 étapes (fiche 02) |
 | `money-math-acquisition` ✅ | LTGP:CAC, acquisition financée client (fiche 04) |
 | `lead-getters-systeme` ✅ | parrainage/employés/agences/affiliés (fiche 07) |
-| `icp-builder` | ICP (MANQUANT M0) — firmographies via CRM |
-| `lead-scoring` | scoring Fit×Engagement (dépend d'un tool score backend) |
+| `icp-generator` ✅ | ICP entreprise fondé sur les clients gagnés (script) |
+| `lead-scoring` ✅ | scoring fit×engagement par script (écriture CRM confirmée) |
 | `attribution-canal` | orchestration `get_conversion_par_canal` (multi-touch à venir) |
 | `tunnel-conversion` | landing → formulaire/CTA → segment → email → stats |
 | `sequences-nurturing` | speed-to-lead + nurture multicanal via n8n |
