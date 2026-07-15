@@ -39,3 +39,6 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`,
 - Budget du plan comparé au plafond maison (hook `plafond-budget`).
 - Booster un post qui performe déjà organiquement : rappeler que le boost
   hérite du post (pas de modification possible du texte après coup).
+- **Gate viral (vidéo IA)** : booster un post **vidéo généré par IA**
+  (Higgsfield) exige un **PASS** au gate `rapido-higgsfield:analyse-video-virale`
+  (si le plugin est installé) — aucun boost payant sur une vidéo non passée au gate.
