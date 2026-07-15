@@ -76,3 +76,36 @@
   `set_entreprise_attributs(id, {...})`.
 - **Contournement actuel** : note `log_activity` (lecture humaine seulement).
 - **Priorité** : basse (la note libre suffit au premier usage).
+
+## 8. Création de formulaire de capture (RapidoCRM)
+- **Constat (live, LM0)** : côté formulaires, seuls `list_formulaires` et
+  `get_formulaire_soumissions` sont exposés (**lecture**) ; **aucun `create_formulaire`**.
+  `list_formulaires` → 0 formulaire.
+- **Cas d'usage** : `rapido-leadmagnet:page-et-capture` — créer le formulaire de capture
+  d'un lead magnet et câbler la soumission au pipeline, sans passer par Lovable.
+- **Endpoint souhaité** : `create_formulaire(nom, champs[], consentement_rgpd:bool
+  (checkbox non pré-cochée), redirect_url, webhook)` → à la soumission, déclenche
+  `enregistrer_prospect` + tag + segment.
+- **Contournement actuel** : **Lovable mode B** (`usine-a-landing` → `enregistrer_prospect`)
+  ou formulaire intégré d'une landing `create_editor_template` (câblage à confirmer).
+- **Priorité** : haute (débloque la capture native CRM de bout en bout).
+
+## 9. Création de CTA tracké (RapidoCRM)
+- **Constat (live, LM0)** : `list_cta` expose le **suivi** de clics (lecture) ; **aucun
+  `create_cta`**. `list_cta` → 0.
+- **Cas d'usage** : CTA « Télécharger le guide » tracké sur la landing du lead magnet.
+- **Endpoint souhaité** : `create_cta(libelle, url_cible, campagne_id?)` → id trackable
+  par `list_cta`.
+- **Contournement actuel** : CTA en dur dans le HTML de la landing (tracking via
+  paramètres UTM + soumission formulaire) ; pas de compteur natif tant que la création
+  n'existe pas.
+- **Priorité** : moyenne.
+
+## 10. Câblage formulaire intégré → prospect d'une landing `create_editor_template`
+- **Constat (live, LM0)** : `create_editor_template` crée une `landing_page` depuis du
+  HTML (formulaire intégré prouvé en prod, ex. template id=7), mais le **câblage
+  automatique soumission → prospect** n'est pas garanti sans `create_formulaire`/webhook.
+- **Cas d'usage** : Route A 100 % native (landing CRM + capture) sans Lovable.
+- **Souhait** : confirmer/documenter le mécanisme de capture d'un formulaire intégré
+  publié dans l'éditeur CRM (ou exposer un webhook de soumission).
+- **Priorité** : haute (débloque la Route A totalement native).
