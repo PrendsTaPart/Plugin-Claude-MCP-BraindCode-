@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-leadmagnet
 
+## 0.4.0 — 2026-07-15 — campagne-lead-magnet (organique + payant + nurturing + mesure)
+
+- Skill **`campagne-lead-magnet`** — diffusion complète : **organique** (campagne CMS
+  + série de posts via `pipeline-contenu-social`/`calendrier-editorial` ; LinkedIn
+  « commente pour recevoir » **semi-auto** brouillons + dédup n8n), **payant** (vidéo
+  `usine-video-marketing` self_ai_disclosure + `montage-express` ; visuels
+  `creatifs-publicitaires` ; Meta `lancement-campagne-meta` + `pixel-et-retargeting`
+  **TOUT PAUSED**), **nurturing** (J0/J2/J5 via `machine-inbound`, **gate
+  `delivrabilite-email` obligatoire** avant chaque lot), **mesure** par script.
+- `scripts/stats_leadmagnet.py` (stdlib) : CPL, taux de conversion landing, taux de
+  clic CTA, conversion RDV — formules affichées, dénominateur nul = « — » (jamais
+  inventé). Vérifié (210/140 → CPL 1.5 ; 140/1000 → 14 %).
+- Évals : 4 cas (refus activation ads, gate délivrabilité, mesure par script,
+  LinkedIn semi-auto).
+
 ## 0.3.0 — 2026-07-15 — page-et-capture (landing + formulaire + segment + pipeline)
 
 - Skill **`page-et-capture`** — la landing (Route B Lovable mode B via

@@ -6,6 +6,7 @@
 |---|---|
 | « Fabrique le lead magnet » / « rédige le guide/la checklist » / « produis l'ebook » / « crée le PDF du lead magnet » | `fabrication-lead-magnet` |
 | « Page du lead magnet » / « landing de capture » / « formulaire pour le guide » / « mets le lead magnet en ligne » | `page-et-capture` |
+| « Lance la campagne du lead magnet » / « fais connaître le guide » / « diffuse le lead magnet » / « campagne de téléchargement » | `campagne-lead-magnet` |
 
 ## Cas `page-et-capture` (4)
 
@@ -18,6 +19,19 @@
    **refus de publier**, renvoyer corriger.
 8. **Route** : capture via Lovable mode B (soumission → `enregistrer_prospect`) ;
    Route A CRM = vitrine optionnelle, pas la capture.
+
+## Cas `campagne-lead-magnet` (4)
+
+9. **Refus activation ads** : campagne Meta créée puis demande d'activation sans
+   confirmation écrite séparée → hook `garde-budget-ads` force la confirmation
+   (PAUSED + coût max).
+10. **Gate délivrabilité bloquant** : lancer la séquence de nurturing sans passer
+    `rapido-marketing:delivrabilite-email` → **bloqué** jusqu'au feu vert.
+11. **Mesure par script** : CPL/conv. landing/CTA/RDV calculés par
+    `scripts/stats_leadmagnet.py` (formules affichées). Vérifié : 210/140 → CPL 1.5 ;
+    140/1000 → 14 % ; dénominateur nul → « — » (jamais inventé).
+12. **LinkedIn semi-auto** : réponses + DM en brouillons, envoi humain, dédup n8n ;
+    jamais Unipile ni envoi automatisé.
 
 ## Cas `fabrication-lead-magnet` (4)
 
