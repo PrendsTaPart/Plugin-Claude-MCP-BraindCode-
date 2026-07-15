@@ -58,6 +58,13 @@ Toujours **branché sur la marque** (RapidoCMS) et **chiffré avant** (crédits)
 - **Confirmer le coût TOTAL du lot** (`gouvernance-credits`) **avant** de lancer :
   N plats × coût unitaire. Puis rapatriement CMS + liaison `foodeatup:carte-vitrine`.
 
+## Brief flou → directeur-prompts
+Si le brief est **flou** (moteur/angle indécis, pas de charte claire, besoin de
+variantes comparées), **proposer de passer d'abord par l'agent
+`rapido-prompteur:directeur-prompts`** : il lit la grammaire des moteurs en direct,
+produit 3 variantes cadrées (paramètres + coût + références) et **délègue ici**
+l'exécution. Un brief **net** (produit, angle, format connus) va directement à ce skill.
+
 ## Garde-fous
 Routage vérifié (brandé simple → CMS ; print → Canva) ; **charte KB prime** ;
 coût **préflighté**, lot FoodEatUp **confirmé en total** ; `medias` = media_id
