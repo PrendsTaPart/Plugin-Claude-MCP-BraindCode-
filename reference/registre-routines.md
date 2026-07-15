@@ -20,6 +20,7 @@
 | `SEO-*` | Acquisition organique (positions, backlinks, audit) | `rapido-seo` (`pilotage-seo`) | actif |
 | `SEA-*` | Acquisition payante Google (gaspillage, synergie) | `rapido-google-ads` | actif |
 | `TIKTOK-*` | Acquisition payante TikTok | `rapido-tiktok-ads` | actif (si compte) |
+| `RC-*` | Relation client (support, NPS, santé) | `rapido-relation-client` | actif |
 
 ## Table des alias (rétrocompatibilité)
 
@@ -199,6 +200,21 @@
 - **Cadence** : hebdomadaire. **Mémoire n8n** : `tiktok_perf_journal`.
 - **Propriétaire** : `rapido-tiktok-ads` · **Recette** : `recettes-seo.md`.
 - **Contenu** : CPM/CPC/CPA + comparatif vs Meta. Écriture **verrouillée** (inactif + confirmation).
+
+### RC-HEBDO
+- **Noms parlés** : « point service client hebdo », « SLA de la semaine ».
+- **Cadence** : hebdomadaire — lundi. **Mémoire n8n** : `rc_support_journal`.
+- **Propriétaire** : `rapido-relation-client:pilotage-service-client` · **Recette** : `rapido-n8n/reference/recettes-relation-client.md`.
+
+### RC-NPS-TRIMESTRE
+- **Noms parlés** : « vague NPS », « mesure la satisfaction ce trimestre ».
+- **Cadence** : trimestrielle. **Mémoire n8n** : `rc_nps_vagues`.
+- **Propriétaire** : `rapido-relation-client:boucle-nps` · **Recette** : `recettes-relation-client.md`.
+
+### RC-SANTE-MENSUEL
+- **Noms parlés** : « santé du portefeuille », « health score du mois ».
+- **Cadence** : mensuelle. **Mémoire n8n** : `rc_sante_journal`.
+- **Propriétaire** : `rapido-relation-client:sante-client` · **Recette** : `recettes-relation-client.md`.
 
 ---
 

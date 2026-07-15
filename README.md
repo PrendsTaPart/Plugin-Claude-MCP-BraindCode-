@@ -7,7 +7,7 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-20-blue)
+![Plugins](https://img.shields.io/badge/plugins-21-blue)
 ![Skills](https://img.shields.io/badge/skills-350-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
@@ -55,7 +55,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
-| `rapido-n8n` | 1.4.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-n8n` | 1.5.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.2 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
@@ -67,8 +67,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics (GA4), rapidocms, rapidocrm | `DATAFORSEO_AUTH`, `GSC_MCP_URL`, `GA4_MCP_URL` |
 | `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads (read-only), dataforseo, analytics (GA4), rapidocrm | `GOOGLE_ADS_MCP_URL`, `DATAFORSEO_AUTH`, `GA4_MCP_URL` |
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
+| `rapido-relation-client` | 0.1.0 | 5 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 
-**Total : 20 plugins, 355 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 21 plugins, 360 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

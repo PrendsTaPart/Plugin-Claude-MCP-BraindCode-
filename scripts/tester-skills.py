@@ -287,6 +287,10 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__google-ads__search", "tool_input": {}}, "allow"),
         ({"tool_name": "mcp__analytics__run_report", "tool_input": {}}, "allow"),
     ],
+    ("rapido-relation-client", "garde-envois.py"): [
+        ({"tool_name": "mcp__rapidocrm__send_email", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__lancer_sondage_entreprise", "tool_input": {}}, "ask"),
+    ],
     ("rapido-seo", "garde-couts-seo.py"): [
         ({"tool_name": "mcp__dataforseo__backlinks_bulk_summary", "tool_input": {}}, "ask"),
         ({"tool_name": "mcp__dataforseo__serp_organic_live", "tool_input": {}}, "ask"),
