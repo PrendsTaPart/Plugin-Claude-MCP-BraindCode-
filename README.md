@@ -14,9 +14,9 @@ routines récurrentes — pour piloter une entreprise de A à Z.
 > `./rapido-kb/` (jamais commitées). Aucun secret n'est stocké dans le dépôt.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-22-blue)
-![Skills](https://img.shields.io/badge/skills-366-brightgreen)
-![Agents](https://img.shields.io/badge/agents-33-orange)
+![Plugins](https://img.shields.io/badge/plugins-23-blue)
+![Skills](https://img.shields.io/badge/skills-370-brightgreen)
+![Agents](https://img.shields.io/badge/agents-34-orange)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins) ·
@@ -78,8 +78,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
 | `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 | `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Docker **ou** `GMAPS_API_URL`+`GMAPS_API_KEY` (KB) |
+| `rapido-leadmagnet` | 0.5.0 | 4 | 1 | rapidocrm, rapidocms, rapidorh, lovable, facebook-ads | — |
 
-**Total : 22 plugins, 366 skills, 33 agents.** Historique détaillé des vagues :
+**Total : 23 plugins, 370 skills, 34 agents.** Historique détaillé des vagues :
 [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 ## Domaines couverts
@@ -93,7 +94,7 @@ Quel plugin pour quel besoin — installez seulement ce qui vous concerne.
 | **Relation client** | `rapido-relation-client` | Service client en boucle (SLA), NPS, health score, RFM, 100 premiers jours |
 | **Contenu & marque** | `rapidocms` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels |
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
-| **Marketing & acquisition** | `rapido-marketing`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
+| **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, **usine à lead magnets** (fabrication → capture → campagne → RH → mesure), SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos génératives, montage libre (ffmpeg), voix (ElevenLabs), design, direction de prompts |
 | **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, workflows n8n |
 | **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction` | Pilotage transverse (Loop Engine), finance/trésorerie/board, chef de cabinet (Gmail/Agenda/Drive) |
@@ -124,6 +125,7 @@ directeur commercial… ») ou ils sont mobilisés par les orchestrateurs.
 | `rapido-prompteur` | directeur-prompts (orchestre la conception de prompts) |
 | `rapido-direction` | assistant-direction |
 | `rapido-gmaps` | chasseur-leads (sourcing autonome sur brief) |
+| `rapido-leadmagnet` | chef-usine-leadmagnet (orchestre les 9 étapes) |
 
 ## Les routines — le Loop Engine
 

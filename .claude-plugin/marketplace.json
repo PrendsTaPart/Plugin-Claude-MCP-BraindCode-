@@ -120,7 +120,7 @@
     {
       "name": "rapido-leadmagnet",
       "source": "./rapido-leadmagnet",
-      "description": "L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (Lovable → segment + pipeline CRM), campagne multi-canal (organique + payant PAUSED + nurturing + mesure) et projet RH (tâches affectées aux agents IA). Exécute ce que rapido-marketing:lead-magnet-machine a conçu. Garde-fous RGPD/délivrabilité/budget. Squelette — skills en cours."
+      "description": "L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (Lovable → segment + pipeline CRM), campagne multi-canal (organique + payant PAUSED + nurturing + mesure) et projet RH (tâches affectées aux agents IA). Exécute ce que rapido-marketing:lead-magnet-machine a conçu. Garde-fous RGPD/délivrabilité/budget."
     }
   ]
 }
