@@ -1,5 +1,65 @@
 # Notes de release
 
+## Usine à lead magnets (2026-07-15)
+
+Nouveau plugin **`rapido-leadmagnet`** (23e) — l'**usine d'exécution** des lead magnets :
+la conception reste à `rapido-marketing:lead-magnet-machine`, l'usine **fabrique →
+capture → diffuse → organise en RH → mesure**, en orchestrant les skills existants.
+
+- **Audit d'abord** (`docs/IMPORTS-LEADMAGNET.md`) : 5 dépôts **MIT** relus (verdicts +
+  anti-verbatim ; GPL AI-eBook exclu) et **inventaire MCP réel** décisif — **pas de
+  `create_formulaire`/`create_cta`** (lecture seule), `create_editor_template` supporte
+  `landing_page` (formulaire intégré prouvé en prod), et **les agents IA sont de vrais
+  users RH** (assignation directe). 3 décisions : **Route B Lovable** (landing+capture),
+  **LinkedIn semi-auto**, **formulaire Lovable mode B**.
+- **4 skills** : `fabrication-lead-magnet` (rédaction + **gate qualité** + PDF brandé
+  `templates/lead-magnet.html` → bibliothèque CMS), `page-et-capture` (landing Lovable +
+  segment `LM-{slug}` + pipeline + livraison + **test de bout en bout** + **RGPD
+  bloquant**), `campagne-lead-magnet` (organique + Meta **PAUSED** + nurturing **gated** +
+  mesure `scripts/stats_leadmagnet.py`), `projet-rh-lead-magnet` (~20 tâches **affectées
+  aux agents IA** résolus dynamiquement). Agent **`chef-usine-leadmagnet`**.
+- **Garde-fous** : hook `garde-budget-ads` (Meta PAUSED + coût max), RGPD/double opt-in,
+  gate délivrabilité, LinkedIn semi-auto, `self_ai_disclosure`, **un seul LM en prod à la
+  fois**. `NOTICE.md` (5 sources MIT francisées).
+- **Ponts** `rapido-marketing` (`lead-magnet-machine` → l'usine exécute ; `machine-inbound`
+  source de capture ; `lead-scoring` tag = signal d'engagement) + 3 outils au
+  `docs/OUTILS-MCP-MANQUANTS.md`. Runbook `docs/RECETTE-LEADMAGNET.md` (checklist HACCP,
+  **recette réelle déférée au client**). Livré **0.5.0** feature-complete (4 skills +
+  1 agent) ; **1.0.0** après un run réel. **Validation** : valider TOUT VALIDE
+  (23 plugins) ; tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-leadmagnet` ; `rapido-marketing` 0.18.1→0.18.2.
+
+---
+
+## Sourcing Google Maps → CRM (2026-07-15)
+
+Nouveau plugin **`rapido-gmaps`** (22e) — le **chaînon manquant de la prospection** :
+sourcer des leads depuis Google Maps (`gosom/google-maps-scraper`, MIT), les scorer,
+dédupliquer et verser dans le pipeline RapidoCRM.
+
+- **Audit d'abord** (`docs/AUDIT-GMAPS.md`) : chaîne technique **prouvée en session**
+  (build natif Go, driver Playwright reconstruit, Chromium, moteur scrapemate) ; seul
+  l'**egress navigateur vers Google Maps** est bloqué par le bac à sable → mesures de
+  scrape réelles **déférées** au poste/VPS du client. Struct `Entry`, contrat API et
+  mapping CRM **vérifiés sur source**.
+- **4 skills** : `sourcing-gmaps` (requête → scrape → scoring → dédup → import confirmé),
+  `enrichissement-fiches` (diff, jamais d'écrasement silencieux), `detection-opportunites`
+  (ICP FoodEatUp, signal « sans système numérique »), `veille-concurrents-gmaps`. Agent
+  **`chasseur-leads`**. **Scoring par script** `score_leads_gmaps.py`
+  (`rating × ln(avis+1) × signal`).
+- **Deux modes d'exécution** (Docker local **ou** API SaaS auto-hébergée), hook
+  `garde-scraping` (volume + import en lot), CGU/RGPD (emails B2B + opt-out, plafonds,
+  déduplication obligatoire). Routine **`GMAPS-HEBDO`** (n8n `recettes-gmaps.md` + registre
+  unifié `GMAPS-*`). 3 outils au `docs/OUTILS-MCP-MANQUANTS.md`. Runbook
+  `docs/RECETTE-GMAPS.md`. Livré **0.5.0** feature-complete. **Validation** : valider
+  TOUT VALIDE ; tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-gmaps` ; `rapido-marketing` 0.18.0→0.18.1,
+`rapido-n8n` 1.5.0→1.6.0.
+
+---
+
 ## Commercial & relation client (2026-07-15)
 
 Le pont **forge → opérations** : appliquer les méthodes (SONCAS, AARRR, BANT, NPS,

@@ -115,7 +115,7 @@
     {
       "name": "rapido-gmaps",
       "source": "./rapido-gmaps",
-      "description": "Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS), scoring ICP par script, déduplication obligatoire, détection d'opportunités FoodEatUp (business sans système numérique), enrichissement de fiches, veille concurrentielle. Garde-fous CGU/RGPD déterministes. Squelette — skills en cours."
+      "description": "Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS), scoring ICP par script, déduplication obligatoire, détection d'opportunités FoodEatUp (business sans système numérique), enrichissement de fiches, veille concurrentielle. Garde-fous CGU/RGPD déterministes. 4 skills + agent chasseur-leads + routine GMAPS-HEBDO."
     },
     {
       "name": "rapido-leadmagnet",
