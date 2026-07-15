@@ -48,7 +48,9 @@ jamais inventés.
    piège #3 ; sans start_image → `seedance_2_0`).
 4. Post-prod : `reframe` **9:16** si besoin → `upscale_video`.
 5. **Gate viral** → `analyse-video-virale` (H6, à venir) avant tout boost.
-6. `upload_file_tool` (CMS, nommage `{marque}-{personnage}-scene-vN`) → brouillon
+6. **Assemblage de l'épisode → `rapido-video:montage-express` (0 crédit)** : concat des
+   clips, intro/outro (habillage), sous-titres FR burn-in, reframe 9:16. Puis
+   `upload_file_tool` (CMS, nommage `{marque}-{personnage}-scene-vN`) → brouillon
    rattaché à la **campagne PronoClip (#20)** via `rapidocms:pipeline-contenu-social`.
 
 ## Évolution du canon

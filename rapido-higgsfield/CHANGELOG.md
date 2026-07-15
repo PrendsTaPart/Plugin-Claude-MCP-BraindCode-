@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-higgsfield
 
+## 1.0.2 — 2026-07-15 — croisements rapido-video
+
+- **Croisements montage local** (patch V5) : la voie **0 crédit** de `rapido-video`
+  prime dès que des médias réels existent.
+  - `clips-et-shorts` : rushes existants → `rapido-video:montage-express` ;
+    `shorts_studio` réservé au **restyle génératif**.
+  - `videos-explicatives` : **assemblage local par défaut** (`rapido-video:montage-express`
+    + habillage `motion-design-remotion` en mode aperçu) ; `explainer_video` seulement
+    si tout est génératif.
+  - `personnages-univers` : le pipeline PronoClip **assemble l'épisode via
+    `rapido-video:montage-express`** (concat + intro/outro + sous-titres + 9:16).
+
 ## 1.0.1 — 2026-07-15 — DELTA V1 montage
 
 - **README** : « Prérequis utilisateur : AUCUN » (marketplace add + install + MCP ;

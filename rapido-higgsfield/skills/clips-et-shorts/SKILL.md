@@ -12,6 +12,12 @@ Décliner et restyler des vidéos existantes. **Chiffré avant** (un short = ~90
 - `${CLAUDE_PLUGIN_ROOT}/reference/routage-media.md` + `garde-fous-media.md`.
 - `gouvernance-credits` : préflight (shorts coûteux ; `reframe` a un get_cost).
 
+## Routage en tête
+- **Si les rushes existent déjà** (couper/assembler/sous-titrer/reframe des médias
+  réels) → **`rapido-video:montage-express` (0 crédit)**, pas Shorts Studio.
+- **Shorts Studio** (ci-dessous) est réservé au **restyle génératif** (changer le
+  look d'une vidéo via un preset IA) — payant.
+
 ## Trois chaînes
 ### (a) Personal Clipper — YouTube → clips
 - `personal_clipper_create` : **URLs YouTube** → N clips sous-titrés. **Demander

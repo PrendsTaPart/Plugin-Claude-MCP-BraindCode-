@@ -19,9 +19,11 @@ chiffré et confirmé avant l'assemblage.**
 2. **Clips par bloc** : vidéo générée par bloc (voie `usine-video-marketing` /
    `personnages-univers` selon le besoin) ou images animées.
 3. **Voix par bloc** : `voix-et-doublage` (TTS `seed_audio`, ou doublage si multilingue).
-4. **Assemblage** : modèle `explainer_video` (via la génération vidéo) — `items[]`
-   ordonnés (clip + prise de voix par bloc), fenêtres fixes, **sous-titres burn-in**
-   (transcrits de la voix), police adaptée. Préflight/chiffrage puis confirmation.
+4. **Assemblage** — **par défaut : local, 0 crédit** via `rapido-video:montage-express`
+   (concat des blocs + sous-titres burn-in) + habillage `rapido-video:motion-design-remotion`
+   (intro/outro/lower-third ; en **mode aperçu** tant que la licence Remotion n'est pas
+   tranchée). Le modèle `explainer_video` Higgsfield n'est utilisé **que si tout est
+   génératif** (aucun média réel à assembler) — préflight/chiffrage puis confirmation.
 5. **Rapatriement** : `upload_file_tool` (CMS) → brouillon via
    `rapidocms:pipeline-contenu-social` (jamais publié directement).
 
