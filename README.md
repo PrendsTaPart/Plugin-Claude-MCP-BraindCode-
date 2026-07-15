@@ -8,7 +8,7 @@ entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-12-blue)
-![Skills](https://img.shields.io/badge/skills-304-brightgreen)
+![Skills](https://img.shields.io/badge/skills-305-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
@@ -49,7 +49,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.0 | 15 | 3 | foodeatup, rapidocrm | — |
 | `rapidocrm` | 1.4.1 | 21 | 2 | rapidocrm | — |
-| `rapidocms` | 1.6.0 | 21 | 5 | rapidocms, hyperframes | — |
+| `rapidocms` | 1.7.0 | 22 | 5 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.2 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.3.0 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
@@ -60,7 +60,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.0 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 
-**Total : 12 plugins, 304 skills, 24 agents.** (`rapido-startup` — finance &
+**Total : 12 plugins, 305 skills, 24 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
@@ -303,7 +303,7 @@ distribués avec le plugin.
 
 ## Skills tiers et attributions
 
-41 des 304 skills sont importés de dépôts open source, adaptés aux
+41 des 305 skills sont importés de dépôts open source, adaptés aux
 conventions Rapido (mentions MCP/KB, renvois vers les skills d'exécution,
 renommages anti-collision). Provenance détaillée — commit, chemin d'origine,
 modifications locales — dans l'`ATTRIBUTIONS.md` de chaque plugin concerné ;

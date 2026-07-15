@@ -66,6 +66,17 @@
 - Frontière : import/inventaire d'assets → `bibliotheque-assets` ; identité de
   marque → `gestion-marques`.
 
+## coherence-personnage
+
+| Phrase | Attendu |
+|---|---|
+| « Crée notre mascotte oiseau origami et garde-la cohérente » | `coherence-personnage` : `description_canonique` posée → 1-3 portraits canoniques (`{marque}-{perso}-canon-{angle}-v1`) via upload → `add_asset` (brand_id résolu par `get_brand`) → enregistrement dans `./rapido-kb/personnages.json` (jamais dans le dépôt) |
+| « Nouvelle scène avec Origami sur un skate » | lit le registre → passe **1-3 portraits canoniques en référence** à `images_to_image` + prompt « personnage des images 1-2, identique : proportions/couleurs/style » ; **jamais** `generate_image` seul sur un perso récurrent ; critique PASS/FAIL vs canon |
+| « Le bec a changé de forme, corrige » (boucle) | rendu fautif en **1re référence** + portraits canoniques, prompt correctif chirurgical, re-critique vs canon, **max 2 itérations** puis proposer un autre portrait/angle |
+
+- Frontière : visuel brandé ponctuel (sans perso récurrent) →
+  `studio-visuel-marque` ; import d'assets → `bibliotheque-assets`.
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

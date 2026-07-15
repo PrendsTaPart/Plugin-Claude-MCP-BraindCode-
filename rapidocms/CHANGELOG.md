@@ -1,5 +1,19 @@
 # Changelog — plugin rapidocms
 
+## 1.7.0 — 2026-07-14
+
+- Nouveau skill `coherence-personnage` : cohérence visuelle d'un personnage
+  récurrent (mascotte, avatar, personnage anime) via un registre de portraits
+  canoniques `./rapido-kb/personnages.json` (côté client) + génération TOUJOURS
+  guidée par 1-3 portraits en référence à `images_to_image`. Interdit de
+  générer un personnage récurrent sans référence (dérive). Versionnage du canon
+  (vN, ancien conservé), critique vs canon + boucle corrective (max 2, comme
+  studio-visuel-marque).
+- Exemple annoté `reference/personnages.exemple.json` (le vrai registre reste
+  dans la KB client, jamais dans le dépôt).
+- tests/evals.md : 3 scénarios (création canon, nouvelle scène, boucle
+  corrective).
+
 ## 1.6.0 — 2026-07-14
 
 - Nouveau skill `studio-visuel-marque` (vitrine) : génère des visuels qui

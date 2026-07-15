@@ -1,0 +1,44 @@
+{
+  "_fichier": "EXEMPLE — le vrai registre vit dans ./rapido-kb/personnages.json (côté client, jamais dans ce dépôt).",
+  "_schema": "personnages[]: { nom, marque, brand_id, description_canonique, version_active, portraits[] }",
+  "personnages": [
+    {
+      "nom": "Origami",
+      "marque": "braindcode",
+      "brand_id": 14,
+      "description_canonique": "Oiseau en origami géométrique, papier bleu #0052FF, plis nets et anguleux, œil rond noir unique, bec triangulaire, fond neutre. Style épuré, ombres douces.",
+      "version_active": "v1",
+      "portraits": [
+        {
+          "_note": "1 à 3 portraits canoniques MAX servent de références à images_to_image",
+          "asset_id": 624,
+          "url": "https://rapido-software.s3.eu-west-3.amazonaws.com/rapidosoftware/cms/bibliotheque/braindcode-origami-canon-face-v1",
+          "angle": "face",
+          "version": "v1"
+        },
+        {
+          "asset_id": 625,
+          "url": "https://rapido-software.s3.eu-west-3.amazonaws.com/rapidosoftware/cms/bibliotheque/braindcode-origami-canon-troisquarts-v1",
+          "angle": "trois-quarts",
+          "version": "v1"
+        }
+      ]
+    },
+    {
+      "nom": "Pronoclip-kun",
+      "marque": "pronoclip",
+      "brand_id": 0,
+      "_note_brand_id": "0 = à résoudre via get_brand avant tout rattachement — jamais inventé",
+      "description_canonique": "Personnage style anime, cheveux bleu nuit en pics, veste de sport, expression déterminée, line-art net, palette froide.",
+      "version_active": "v1",
+      "portraits": [
+        {
+          "asset_id": 0,
+          "url": "https://.../pronoclip-pronoclip-kun-canon-face-v1",
+          "angle": "face",
+          "version": "v1"
+        }
+      ]
+    }
+  ]
+}
