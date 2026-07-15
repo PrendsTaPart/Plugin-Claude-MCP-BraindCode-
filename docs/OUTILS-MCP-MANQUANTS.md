@@ -35,3 +35,12 @@
 - **Endpoint souhaité** : `cancel_scheduled_email(id)` (analogue au tool
   d'annulation de posts planifiés de RapidoCMS).
 - **Priorité** : haute (sécurité d'envoi).
+
+## 4. Données d'intent tierces (enrichissement compte)
+- **Constat** : pas de provider d'intent externe (ZoomInfo / Bombora / 6sense —
+  techno installée, intent tiers, signaux d'achat marché) exposé côté Rapido.
+- **Cas d'usage** : enrichir l'axe **intention** du skill `lead-scoring` au-delà
+  des signaux first-party + actualité `account-research`.
+- **Souhait** : un MCP d'enrichissement compte, ou une intégration documentée.
+- **Priorité** : basse (les signaux first-party + `account-research` couvrent le
+  besoin courant ; l'intent tiers est un bonus).

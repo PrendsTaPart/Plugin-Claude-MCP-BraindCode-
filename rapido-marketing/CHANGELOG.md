@@ -1,5 +1,30 @@
 # Changelog — plugin rapido-marketing
 
+## 0.13.0 — 2026-07-15
+
+- `lead-scoring` **v2 — 3e facteur : fraîcheur du signal (intention)**. Modèle
+  passé de 2 axes (fit × engagement) à **fit × engagement × fraîcheur** :
+  - `reference/kb-templates/signaux.md` (nouveau) : catalogue de signaux
+    **observables par NOS sources uniquement** (soumissions `get_formulaire_soumissions`,
+    clics `list_cta`, réponses `get_interaction_stats`, mouvements `get_pipeline`/
+    `get_historique_prospect`, actualité via `rapidocrm:account-research` : levée,
+    recrutement, changement de poste) — chaque signal : source MCP, poids, **durée
+    de validité**. Adapté de `docs/methodo/ops/signaux-intention.md` (gtm-flywheel,
+    MIT ColdIQ).
+  - `scripts/score_leads.py` : axe **intention** = `poids × fraîcheur`,
+    `fraîcheur = max(0, 1 − âge/validité)` (signal périmé → 0 ; occurrence la plus
+    récente par type — pas de double compte avec l'engagement) ; formule et
+    fraîcheur affichées, jamais de score de tête.
+  - `reference/kb-templates/scoring.md` : bloc `intention` (poids + validités) ajouté.
+  - Sortie : **file de priorisation du jour** + 3 actions/tranche (chaud →
+    `rapido-direction:secretariat-commercial` ; tiède → `machine-inbound` ; froid →
+    `rapidocrm:campagne-marketing`) ; écritures CRM après confirmation.
+  - Intent tiers (ZoomInfo/Bombora/6sense) = MCP manquant →
+    `docs/OUTILS-MCP-MANQUANTS.md` (entrée 4).
+- `icp-generator` : **inchangé** (déjà conforme — ICP = entreprise, analyse des
+  clients gagnés via `analyse_clients.py`, `icp.md`, traduction prospection +
+  `create_segment` après confirmation). Ce lot remplace le M5 initial.
+
 ## 0.12.0 — 2026-07-15
 
 - Skill `delivrabilite-email` : **gate obligatoire avant tout lot d'envoi** +

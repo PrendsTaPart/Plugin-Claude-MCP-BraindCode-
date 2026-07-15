@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.12.0)
+# Évals — plugin rapido-marketing (0.13.0)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
@@ -97,8 +97,9 @@ Collaboration attendue (tous) : chaîne directeur → managers → skills ; hand
 
 | # | Phrase | Attendu |
 |---|---|---|
-| LS1 | « Score mes leads » | `lead-scoring` : modèle 2 axes (fit×engagement) de `scoring.md` → `score_leads.py` sur données CRM réelles → tableau scoré + 3 actions/tranche ; écriture CRM confirmée |
-| LS2 | « Quels prospects prioriser cette semaine ? » | `lead-scoring` : tranches chaud/tiède/froid, chaud → RDV via `secretariat-commercial`, froid → réactivation via `campagne-marketing` |
+| LS1 | « Score mes leads » | `lead-scoring` : modèle **3 facteurs** (fit×engagement×fraîcheur) de `scoring.md`+`signaux.md` → `score_leads.py` (formule + fraîcheur affichées, jamais de tête) sur données CRM réelles → **file de priorisation du jour** + 3 actions/tranche ; écriture CRM confirmée |
+| LS2 | « Quels prospects prioriser aujourd'hui ? » | `lead-scoring` : tranches chaud/tiède/froid, chaud → RDV `rapido-direction:secretariat-commercial`, tiède → nurturing `machine-inbound`, froid → réactivation `rapidocrm:campagne-marketing` ; signaux datés via `rapidocrm:account-research` |
+| LS4 (fraîcheur) | « Ce lead a rempli un formulaire il y a 3 mois, il est toujours chaud ? » | `lead-scoring` : signal **périmé** (âge > validité `signaux.md`) → **intention 0** via `score_leads.py`, ne remonte pas artificiellement le score ; occurrence la plus récente/type seulement |
 | LS3 (anti) | « Définis les critères de mon client idéal » | PAS lead-scoring → skill `icp-generator` (définit l'axe fit en amont) |
 
 Chaque skill méthodo : 2 déclenchements + 1 anti-déclenchement.
