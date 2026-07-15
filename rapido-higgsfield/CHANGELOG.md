@@ -1,5 +1,19 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.7.0 — 2026-07-15
+
+- Skills **`voix-et-doublage`** + **`videos-explicatives`** (H7).
+  - `voix-et-doublage` : TTS (`seed_audio`/`text2speech_v2`), **doublage 18 langues**
+    (`dubbing` — cas FoodEatUp V1-V6 fra→eng/ara/spa), `voice_change`, clonage
+    **encadré droits/consentement** (hook `garde-voix`, clone asynchrone). Routage
+    Mika→HeyGen. Coûts non préflightables (dubbing/clone) signalés comme estimation.
+  - `videos-explicatives` : pipeline par blocs — script (`rapidocms:content-creation-methodo`)
+    → clips → voix (`voix-et-doublage`) → assemblage `explainer_video` (sous-titres
+    burn-in), **coût total confirmé avant assemblage** ; croisements onboarding RH,
+    FoodEatUp Academy, synthèse webinar Fireflies. Brouillon CMS.
+  - Schémas vérifiés live (voice_change, create_voice, dubbing). `tests/evals.md` :
+    5 scénarios (dont VD2 refus clonage sans droits).
+
 ## 0.6.0 — 2026-07-15
 
 - Skills **`clips-et-shorts`** + **`analyse-video-virale`** (H6).
