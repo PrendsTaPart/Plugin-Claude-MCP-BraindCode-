@@ -57,6 +57,13 @@ cher — H0 : pub 15s ≈ 75 crédits), **jamais publiée directement**.
 - Avant de booster, passer la vidéo au gate → `analyse-video-virale` (H6, à venir) :
   aucun boost payant Meta sur une vidéo non passée au gate.
 
+## Brief flou → directeur-prompts
+Si le brief vidéo est **flou** (hook/format/ton indécis, pas de charte, besoin de
+variantes), **proposer de passer d'abord par l'agent
+`rapido-prompteur:directeur-prompts`** : il cadre 3 variantes (paramètres lus en
+direct + coût + références) puis **délègue ici** l'exécution. Un brief **net** va
+directement à ce skill.
+
 ## Garde-fous
 Coût **préflighté**, **BLOQUÉ = pas de génération** ; `9:16` par défaut ;
 hooks/settings **XOR** ad_reference ; avatars/produits **liés explicitement** ;

@@ -88,6 +88,16 @@ upload (`upload_file_tool`), puis PROPOSER la capitalisation (`add_prompt` —
 le négatif fait partie du prompt sauvegardé ; titre « type — sujet — style »,
 gestion : skill `bibliotheque-prompts`).
 
+## Patterns & variante multi-moteurs
+
+- **Patterns d'usage** : consulter les fiches `assets/patterns/` du plugin
+  `rapido-prompteur` pour la structure positive de départ (le négatif et le
+  protocole zéro faute restent gérés ici).
+- **Variante multi-moteurs** : si la demande implique de **choisir le moteur** ou
+  de comparer des **variantes** entre RapidoCMS / Higgsfield / Canva, déléguer à
+  l'agent `rapido-prompteur:directeur-prompts` (grammaire lue en direct, 3
+  variantes, délégation) — puis revenir ici pour le négatif et le zéro faute.
+
 ## Pièges
 
 - Un négatif trop long dilue : 15-25 termes ciblés, pas 60.

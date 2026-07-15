@@ -49,7 +49,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.1 | 15 | 3 | foodeatup, rapidocrm | — |
 | `rapidocrm` | 1.4.3 | 21 | 2 | rapidocrm | — |
-| `rapidocms` | 1.11.4 | 22 | 6 | rapidocms, hyperframes | — |
+| `rapidocms` | 1.11.5 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
@@ -58,13 +58,13 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-n8n` | 1.2.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
-| `rapido-forge` | 1.1.1 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
+| `rapido-forge` | 1.1.2 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 | `rapido-marketing` | 0.16.1 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
-| `rapido-higgsfield` | 1.0.2 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
+| `rapido-higgsfield` | 1.0.3 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
-| `rapido-prompteur` | 0.2.0 | 2 | 0 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — reference + patterns + hooks |
+| `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
 
-**Total : 16 plugins, 334 skills, 31 agents.** (`rapido-startup` — finance &
+**Total : 16 plugins, 334 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

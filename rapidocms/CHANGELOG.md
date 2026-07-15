@@ -1,5 +1,14 @@
 # Changelog — plugin rapidocms
 
+## 1.11.5 — 2026-07-15
+
+- **Patch croisé `rapido-prompteur`** : `prompt-engineering-visuel` et
+  `prompts-visuels-pro` renvoient désormais aux **patterns** `assets/patterns/`
+  du plugin `rapido-prompteur` et **délèguent la variante multi-moteurs** (choix
+  RapidoCMS / Higgsfield / Canva, variantes comparées) à l'agent
+  `rapido-prompteur:directeur-prompts`. Le négatif et le protocole zéro faute
+  restent gérés dans `prompts-visuels-pro` (pas de doublon).
+
 ## 1.11.4 — 2026-07-15
 
 - `video-marketing` (patch V5) : **branche `rapido-video`** ajoutée à l'arbre de

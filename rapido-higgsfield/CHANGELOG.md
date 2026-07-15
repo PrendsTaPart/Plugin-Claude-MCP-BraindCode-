@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-higgsfield
 
+## 1.0.3 — 2026-07-15 — renvoi directeur-prompts
+
+- **Patch croisé `rapido-prompteur`** : `studio-image-pro` et `usine-video-marketing`
+  proposent de **passer d'abord par l'agent `rapido-prompteur:directeur-prompts`**
+  quand le **brief est flou** (moteur/angle/format indécis, variantes à comparer) —
+  l'agent cadre 3 variantes puis délègue l'exécution à ces skills. Un brief net va
+  directement au skill exécutant.
+
 ## 1.0.2 — 2026-07-15 — croisements rapido-video
 
 - **Croisements montage local** (patch V5) : la voie **0 crédit** de `rapido-video`

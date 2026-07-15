@@ -67,5 +67,9 @@ clés en sortent, proposer de mettre à jour
 
 ## Voir aussi (skills plus riches du marketplace)
 
+- **`rapido-prompteur:prompt-lovable`** — la **version outillée** du prompt Lovable :
+  branché sur la marque (`get_brand`) et le CRM (mode B, formulaire → prospect),
+  avec critères d'acceptation testables. Ce skill-ci = **parcours idéation**
+  (apprendre en construisant) ; pour un brief prêt à exécuter marque + CRM, y renvoyer.
 - `rapido-lovable:frontend-design` — direction visuelle
 - `rapido-lovable:ui-ux-pro-max` — styles, palettes, typos

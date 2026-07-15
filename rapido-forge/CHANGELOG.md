@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-forge
 
+## 1.1.2 — 2026-07-15
+
+- **Patch croisé `rapido-prompteur`** : `ideation-lovable-prompt` renvoie vers
+  `rapido-prompteur:prompt-lovable` pour la **version outillée** (brief branché
+  marque `get_brand` + CRM mode B + critères testables). Déclencheurs distincts :
+  ici = parcours idéation StartupsForge ; là = brief prêt à exécuter.
+
 ## 1.1.1 — 2026-07-14
 
 - Enrichissement `scale-spin-selling` (SPIN, Rackham) : besoin implicite→explicite,
