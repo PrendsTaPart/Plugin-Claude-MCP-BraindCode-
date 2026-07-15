@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.4.0 — 2026-07-15
+
+- Skill **`usine-video-marketing`** (H4) : chaîne Marketing Studio (pub vidéo/UGC).
+  - Produit via `show_marketing_studio` fetch (URL réelle : site Rapido, carte
+    FoodEatUp, landing CRM) ou create manuel ; `product` vs `webproduct`.
+  - Composition **hooks/settings XOR `ad_reference`** (« refais cette pub » :
+    `video_analysis` → blueprint) ; **avatar_ids/product_ids liés explicitement**
+    (ne se propagent pas depuis l'ad_reference — piège H0).
+  - Génération `marketing_studio_video` **9:16 par défaut**, **préflight coût**
+    (`gouvernance-credits`, BLOQUÉ = pas de génération) ; post-prod `reframe`/`upscale_video`.
+  - Sorties (jamais automatiques) : brouillon CMS (`pipeline-contenu-social`) et/ou
+    créatif Meta (`rapido-meta-ads:creatifs-publicitaires`, **self_ai_disclosure
+    OPT_IN**, PAUSED, budget confirmé) ; **gate viral avant tout boost** (H6).
+  - `tests/evals.md` : 4 scénarios (dont UVM2 ad_reference, UVM3 sortie Meta, UVM4 blocage).
+
 ## 0.3.0 — 2026-07-15
 
 - Skill **`studio-image-pro`** (H3) : images premium brandées (Higgsfield).

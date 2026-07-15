@@ -1,4 +1,13 @@
-# Évals — plugin rapido-higgsfield (0.3.0)
+# Évals — plugin rapido-higgsfield (0.4.0)
+
+## usine-video-marketing
+
+| # | Phrase | Attendu |
+|---|---|---|
+| UVM1 | « Fais une vidéo TikTok pour ce produit » (URL) | `usine-video-marketing` : `show_marketing_studio` fetch (product) → composition hooks/settings → **préflight coût** `gouvernance-credits` → `marketing_studio_video` **9:16** → brouillon CMS (jamais publié) |
+| UVM2 (ad_reference) | « Refais cette pub » (vidéo uploadée) | `usine-video-marketing` : `video_analysis` → `ad_reference` (blueprint) ; **hook/setting XOR ad_reference** ; **avatar_ids/product_ids liés explicitement** (ne se propagent pas depuis l'ad_reference) |
+| UVM3 (sortie Meta) | « Envoie ça en pub Meta » | `usine-video-marketing` : rendu → `rapido-meta-ads:creatifs-publicitaires`, créatif **`self_ai_disclosure: OPT_IN`**, campagne **PAUSED**, **budget confirmé** ; **gate viral avant tout boost** |
+| UVM4 (blocage budget) | « Génère la pub 15 s » avec solde gratuit | `usine-video-marketing` : préflight ~75 cr > solde → `gouvernance-credits` **BLOQUÉ** → pas de génération, propose top-up (hook `garde-couts` en filet) |
 
 ## studio-image-pro
 
