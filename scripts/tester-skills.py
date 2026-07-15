@@ -60,7 +60,18 @@ list_top_productions list_tva list_units list_waitlist list_zones no_show_reserv
 record_cleaning_action reject_leave reservation_availability search_entities seat_waitlist
 update_category update_client update_dish update_employee update_employee_schedule
 update_ingredient update_invoice_status update_kds_item_status update_order_status update_product
-update_quote_status update_recipe update_table_status validate_production""".split()),
+update_quote_status update_recipe update_table_status validate_production
+add_site_page apply_site_template check_gift_card close_pos_session create_job_offer
+get_daily_brief get_domain_status get_loyalty_account get_loyalty_program get_page_content
+get_pos_report get_pos_session get_site_pages get_site_stats get_site_status get_station_load
+get_survey_results get_wheel_stats list_beverages list_delivery_zones list_gift_cards
+list_happy_hours list_job_applications list_loyalty_rewards list_pos_payments list_pos_tabs
+list_private_event_requests list_redemptions list_reviews list_site_leads list_site_templates
+list_surveys list_wheel_games moderate_review open_pos_session publish_site record_pos_payment
+remove_beverage_item reply_review set_site_theme toggle_site_page update_application_status
+update_event_request_status update_job_offer update_loyalty_program update_section
+upsert_beverage_item upsert_delivery_zone upsert_happy_hour upsert_loyalty_reward
+validate_redemption adjust_points""".split()),
     "rapidocrm": set("""ajouter_prospect_pipeline close_opportunity create_campagne
 create_commercial create_contact create_contrat create_contrat_template create_depense
 create_devis create_editor_template create_entreprise create_evenement create_facture
@@ -224,6 +235,16 @@ TESTS_HOOKS = {
     ],
 }
 TESTS_HOOKS_EXTRAS = {
+    # foodeatup — argent/points/public sensibles ajoutés au matcher (série SYNC S1)
+    ("foodeatup", "garde-destructif.py"): [
+        ({"tool_name": "mcp__foodeatup__adjust_points",
+          "tool_input": {"email": "x@y.z", "points": 100, "motif": "geste"}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__record_pos_payment",
+          "tool_input": {"order_id": 1, "amount": 20, "method": "carte"}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__publish_site", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__delete_client",
+          "tool_input": {"client_id": 1}}, "ask"),
+    ],
     ("rapidocrm", "garde-destructif.py"): [
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",
           "tool_input": {"statut": "brouillon"}}, "deny"),
