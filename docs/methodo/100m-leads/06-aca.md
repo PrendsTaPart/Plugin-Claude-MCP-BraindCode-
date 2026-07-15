@@ -59,6 +59,29 @@ pas un SMS groupé impersonnel.
 > Envoi = action visible par le client : brouillon d'abord, envoi après accord
 > (gouvernance des skills rapidocrm).
 
+## 🆕 Mise à jour marché 2026 (sourcée)
+
+Le livre (2023) ne traite ni la délivrabilité ni le ciblage par signaux —
+compléments 2025-2026 (détail + sources : `docs/methodo/etat-de-lart-2026.md`) :
+
+- **Délivrabilité (email froid)** : chauffer un domaine neuf (**5-10 msg/jour**,
+  montée sur 4-6 semaines), plafonner (~**500/j Gmail, 300/j Outlook**) et
+  **répartir sur plusieurs boîtes** ; viser **≥ 85 % de placement en boîte de
+  réception**. Le « 100 emails/jour » de la règle des 100 se répartit sur
+  plusieurs boîtes chauffées, jamais une seule. Source :
+  [instantly.ai](https://instantly.ai/blog/how-to-achieve-90-cold-email-deliverability-in-2025/) (2025),
+  [lemlist](https://www.lemlist.com/blog/warm-up-email-account) (2025). Chiffres
+  **INCERTAIN** (varient par secteur).
+- **Signal-led outbound** : contacter au **bon moment** (changement de poste,
+  visite site, actualité) plutôt qu'au volume aveugle ; enrichissement
+  *waterfall*. Source : [clay.com](https://www.clay.com/blog/clay-apollo) (2025).
+- **Speed-to-lead** : répondre à un lead entrant en **< 60 s** (patron GoHighLevel)
+  renforce le « la vitesse gagne » du livre. Source :
+  [grow-highlevel.com](https://grow-highlevel.com/post/gohighlevel-lead-nurturing-automation-workflows) (2026).
+- **MCP Rapido** : le CRM (`schedule_email`) **n'a pas** de warmup/rotation
+  (→ outil externe ou backend, cf. M0) ; le speed-to-lead se câble en **webhook
+  n8n** sur `get_formulaire_soumissions`.
+
 ## Frontières
 - **Transformer** ces conversations en programme de référencement →
   `07-lead-getters.md`.
