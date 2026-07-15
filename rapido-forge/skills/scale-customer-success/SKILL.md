@@ -68,3 +68,7 @@ clés en sortent, proposer de mettre à jour
 
 - `rapidocrm:draft-response` — réponses clients délicates
 - `rapidocrm:ticket-triage` — triage des tickets
+
+## Passer à l'opérationnel
+
+Cet exercice conçoit la méthode ; pour l'**appliquer aux données réelles** (fiches CRM, pipeline, factures…), passer à **`rapido-relation-client:pilotage-service-client`** — il **lit ce livrable forge** (`./rapido-kb/startup/forge/`) comme base, puis agit sur les données MCP. Voir `reference/pont-forge-operations.md`.

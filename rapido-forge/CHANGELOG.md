@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-forge
 
+## 1.1.3 — 2026-07-15 — pont forge → opérations
+
+- **Pontage forge → opérationnel** : 12 skills forge gagnent une section **« Passer à
+  l'opérationnel »** pointant vers le skill métier qui applique la méthode aux données
+  réelles (`scale-soncas → rapidocrm:preparation-rdv`, `scale-funnel-aarrr →
+  funnel-aarrr-reel`, `scale-referral-program → programme-ambassadeurs`,
+  `scale-upsell-crosssell → expansion-clients`, etc.). Règle complète :
+  `reference/pont-forge-operations.md` (racine). Aucun autre changement dans les skills.
+
 ## 1.1.2 — 2026-07-15
 
 - **Patch croisé `rapido-prompteur`** : `ideation-lovable-prompt` renvoie vers
