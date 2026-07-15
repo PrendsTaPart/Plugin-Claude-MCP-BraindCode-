@@ -1,5 +1,35 @@
 # Changelog — plugin rapido-suite
 
+## 1.4.1 — 2026-07-14
+
+- Clôture couche marque : 5 scénarios de sync KB↔marque consolidés dans
+  tests/evals.md (déclencheur → skill → séquence outils → garde-fous, dont
+  dégradé sans rapidocms et frontière sans brand_id). Aucun changement de
+  comportement (patch documentaire/tests).
+
+## 1.4.0 — 2026-07-14
+
+Branchement de la base de connaissance sur la couche marque RapidoCMS (la KB
+reste PRIORITAIRE ; le CMS est le miroir d'exécution) :
+
+- `onboarding-entreprise` : nouvelle Phase 3 bis « Miroir CMS » (optionnelle,
+  non bloquante) — après la charte, proposer la création de la marque via le
+  skill `gestion-marques` (rapidocms), mapping validé par l'utilisateur, puis
+  écrire `> Miroir CMS : brand_id <id> — dernière sync <date>` dans
+  `charte-graphique.md`. Plugin rapidocms absent / MCP indisponible → signalé,
+  on continue.
+- `mise-a-jour-kb` : sync DESCENDANTE — quand une modif touche
+  charte-graphique.md (couleurs/logo/slogan/fonts) et qu'un brand_id est en KB,
+  proposer `edit_brand` des seuls champs modifiés après confirmation, puis
+  mettre à jour la date de sync. Jamais de sync silencieuse.
+- `onboarding-client-360` : acte CMS crée aussi la marque du client
+  (`create_brand`) + importe le logo via `bibliotheque-assets`, brand_id et
+  asset_id consignés au récapitulatif.
+- `reference/sync-marque.md` (nouveau) : note courte renvoyant à
+  `rapidocms/reference/outils-marque.md` (règles non dupliquées).
+- tests/evals.md : 5 scénarios de sync (dont dégradé sans rapidocms et
+  frontière sans brand_id).
+
 ## 1.3.0 — 2026-07-11
 
 - Nouveau skill `pilotage-entreprise` : « Pilote mon entreprise » — le

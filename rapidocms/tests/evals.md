@@ -43,6 +43,98 @@
 - Frontière : « uploade le logo » → `contenu-conforme-marque` (assets),
   pas gestion-marques.
 
+## bibliotheque-assets
+
+| Phrase | Attendu |
+|---|---|
+| « Importe ce logo et rattache-le à Braindcode » (avec URL publique) | `bibliotheque-assets` : `upload_file_tool` (nom conforme `braindcode-logo-...-vN`, `type=image`) → `list_all_files` pour **résoudre l'asset_id réel** (l'upload n'en renvoie pas) → `get_brand` (confirmer `brand_id`) → `add_asset` ; aucun id inventé |
+| « Quels visuels officiels me manquent pour Pronoclip ? » | `bibliotheque-assets` : `get_brand` (noms des assets) → **`audit_assets.py`** (jamais de calcul de tête) → restitue `manquants` + `plan_import` + `non_conformes`, propose l'import |
+| « Détache la mascotte de la marque » | `bibliotheque-assets` : `get_brand` → prendre l'**`id` du LIEN** dans `assets[]` (pas l'id du fichier) → **confirmation** → `remove_asset` ; rappelle que le fichier reste dans la bibliothèque |
+
+- Frontière : « crée une nouvelle marque » / « change les couleurs » →
+  `gestion-marques` (identité), pas bibliotheque-assets (fichiers).
+
+## studio-visuel-marque
+
+| Phrase | Attendu |
+|---|---|
+| « Fais-moi un visuel avec notre logo pour la promo » | `studio-visuel-marque` : `get_brand` (marque cible + logo/couleurs) → `list_all_files` (logo + 1-2 assets, ≤3, <5 Mo, URL publique) → prompt décrivant le rôle de chaque image (logo à ne pas déformer) → `images_to_image` size `hd` → critique PASS/FAIL vs charte → capitalisation + brouillon `pipeline-contenu-social` proposés (jamais publié) |
+| « Le logo est devenu bleu sur le rendu, corrige » (boucle corrective) | rendu fautif repassé en **1re référence** + références d'origine, prompt correctif chirurgical (« remets le logo blanc d'origine, ne touche à rien d'autre »), re-critique ; **max 2 itérations** puis proposer un changement d'approche |
+| « Un visuel aux couleurs de la marque, sans image de base » (routage) | **aucune référence** → `generate_image` via `prompt-engineering-visuel` (le dire), PAS `images_to_image` ; couleurs hex de la charte, pas de logo inventé |
+| « Décline ce visuel façon template Canva » (routage) | délégué au plugin **rapido-canva** ; studio-visuel-marque ne force pas `images_to_image` quand l'utilisateur cite Canva |
+
+- Frontière : import/inventaire d'assets → `bibliotheque-assets` ; identité de
+  marque → `gestion-marques`.
+
+## coherence-personnage
+
+| Phrase | Attendu |
+|---|---|
+| « Crée notre mascotte oiseau origami et garde-la cohérente » | `coherence-personnage` : `description_canonique` posée → 1-3 portraits canoniques (`{marque}-{perso}-canon-{angle}-v1`) via upload → `add_asset` (brand_id résolu par `get_brand`) → enregistrement dans `./rapido-kb/personnages.json` (jamais dans le dépôt) |
+| « Nouvelle scène avec Origami sur un skate » | lit le registre → passe **1-3 portraits canoniques en référence** à `images_to_image` + prompt « personnage des images 1-2, identique : proportions/couleurs/style » ; **jamais** `generate_image` seul sur un perso récurrent ; critique PASS/FAIL vs canon |
+| « Le bec a changé de forme, corrige » (boucle) | rendu fautif en **1re référence** + portraits canoniques, prompt correctif chirurgical, re-critique vs canon, **max 2 itérations** puis proposer un autre portrait/angle |
+
+- Frontière : visuel brandé ponctuel (sans perso récurrent) →
+  `studio-visuel-marque` ; import d'assets → `bibliotheque-assets`.
+
+## Branchement couche marque (mises à jour 1.8.0)
+
+| Phrase | Attendu |
+|---|---|
+| « Prépare un post Insta avec notre logo » | `pipeline-contenu-social` étape visuel → **arbre de décision** : marque a un logo → `studio-visuel-marque` (pas `generate_image`) ; rendu **rattaché au brouillon** (`media_url`) |
+| « Un post avec un fond abstrait, sans logo » | `pipeline-contenu-social` → branche (b) `generate_image` (générique, sans référence) |
+| « Fais ça dans un template Canva » | `pipeline-contenu-social` / prompting → branche (c) délégation **rapido-canva** |
+| « Applique ma marque à ce visuel » (KB dit #0052FF, CMS dit #1A73E8) | `contenu-conforme-marque` : résout les URLs réelles (`get_brand`+`list_all_files`), **signale la divergence** couleur KB↔CMS, propose la sync via `gestion-marques`, applique la KB (prioritaire) en attendant — **jamais d'écrasement silencieux** |
+| « Décline ce visuel avec le logo en 3 versions » | `prompt-engineering-visuel` § références : `images_to_image`, **mêmes images**, seul le texte du prompt change ; logo « ne pas déformer/recolorer » |
+| « Il y a une faute dans le texte du visuel » | `prompts-visuels-pro` **protocole v2** : rendu fautif repassé en référence `images_to_image`, correction **du texte seul** charte inchangée ; fallback v1 (`generate_image`) si le serveur refuse le rendu en référence |
+
+## Agents — couche marque (1.9.0)
+
+| Phrase | Agent / Attendu |
+|---|---|
+| « Fais-moi la déclinaison brandée de ce visuel pour les 4 réseaux » | **directeur-artistique v2** : Étape 0 (contenu-conforme-marque + outils-marque) → choisit la route (brandé + assets → `studio-visuel-marque`/`images_to_image`) → critique PASS/FAIL systématique + boucle corrective → capitalise le prompt → **ne publie ni ne supprime** (délègue au flux avec confirmation) |
+| « Audite la conformité de mes marques » | **gardien-de-marque** : LECTURE SEULE — pour chaque `get_brand`, écarts charte KB↔CMS (couleurs/fonts/logo/slogan), complétude assets via `audit_assets.py` (jamais de tête), revue `list_drafts_tool` → **rapport d'écarts classés 🔴/🟠/🟡 + correctif proposé**, cite la KB, n'écrit (`edit_brand`/`add_asset`) que sur validation |
+
+## Hooks déterministes (couche marque, 1.10.0)
+
+Cas testés stdin par `scripts/tester-skills.py` (deny = exit 2 + stderr, ask =
+JSON `permissionDecision`, allow = exit 0) :
+
+| Outil + entrée | Hook | Verdict |
+|---|---|---|
+| `create_brand` couleurs `"bleu"` | valide_charte_hook | **deny** (nom, pas un hex) |
+| `create_brand` couleurs `"#00F"` | valide_charte_hook | **deny** (hex court, 6 chiffres requis) |
+| `create_brand` couleurs `"#0055FF,#FFFFFF"` | valide_charte_hook | **allow** |
+| `create_brand` font_family `"Montserrat"` | valide_charte_hook | **deny** (hors enum web-safe) |
+| `create_brand` logo `"/tmp/logo.png"` | valide_charte_hook | **deny** (pas http/https) |
+| `images_to_image` images `"/tmp/a.png"` | valide_charte_hook | **deny** (chemin local) |
+| `images_to_image` 4 URLs | valide_charte_hook | **deny** (> limite mesurée 3) |
+| `upload_file_tool` type `"audio"` | valide_charte_hook | **deny** (type ∉ image/video/doc) |
+| `delete_brand` / `remove_asset` sans confirmation | garde-destructif | **ask** (confirmation forcée) |
+
+## Recette couche marque — scénarios structurés (release 1.11.0)
+
+Format : phrase → skill → séquence d'outils MCP → garde-fous.
+
+| Phrase | Skill | Séquence outils | Garde-fous |
+|---|---|---|---|
+| « Crée une marque pour ma 2e enseigne » | gestion-marques | `get_brand` (anti-doublon) → `create_brand` | `valide-charte` (couleurs/font/URL), confirmation niveau 2, Stop récap `brand_id` |
+| « Importe ce logo et rattache-le à Braindcode » | bibliotheque-assets | `upload_file_tool` → `list_all_files` (résoudre `asset_id`) → `get_brand` → `add_asset` | `valide-charte` (type/file_url), aucun id inventé |
+| « Fais un visuel avec notre logo » | studio-visuel-marque | `get_brand` → `list_all_files` → `images_to_image` (hd) → critique PASS/FAIL | ≤3 réf <5 Mo (`valide-charte`), pas de publication directe |
+| « Nouvelle scène avec Origami » | coherence-personnage | lire `personnages.json` → `images_to_image` (1-3 portraits) → critique vs canon | JAMAIS de génération sans référence canonique |
+| « Prépare un post Insta avec notre logo » | pipeline-contenu-social | `list_connected_accounts` → route → `studio-visuel-marque` → `upload_file_tool` → `create_draft_tool` → `schedule_draft_tool` | confirmation date/heure, `media_source:"biblio"`, rendu rattaché au brouillon |
+| « Applique ma marque » (KB #0052FF vs CMS #1A73E8) | contenu-conforme-marque | `get_brand` + `list_all_files` (URLs réelles) → signale divergence | KB prioritaire, sync proposée via gestion-marques, jamais d'écrasement |
+| « Génère un visuel du burger » (sans logo) | prompt-engineering-visuel | `list_prompts` → `generate_image` → critique charte | palette hex de la charte, pas de texte incrusté |
+| « Il y a une faute dans le texte du visuel » | prompts-visuels-pro | `images_to_image` (rendu fautif en réf, v2) | correction du texte seul, fallback v1 (`generate_image`) si refus serveur |
+| « Configure mon entreprise » (charte remplie) | rapido-suite:onboarding-entreprise | interview → Phase 3 bis `create_brand` (via gestion-marques) → écrit `brand_id` en KB | Miroir CMS non bloquant si rapidocms/MCP absent |
+
+### Anti-déclenchement (NE DOIVENT PAS déclencher studio-visuel-marque)
+
+| Phrase | Attendu | Pourquoi PAS studio-visuel-marque |
+|---|---|---|
+| « Décline ce visuel dans un template Canva » | déléguer au plugin `rapido-canva` | Canva explicite = branche (c) du routage, pas `images_to_image` |
+| « Génère une illustration abstraite, sans logo ni marque » | `generate_image` via `prompt-engineering-visuel` | aucun asset de marque à intégrer = branche (b), pas de référence |
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

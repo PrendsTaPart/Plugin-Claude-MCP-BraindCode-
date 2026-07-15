@@ -60,9 +60,19 @@ existe ; sinon l'ajouter en fin de prompt sous la forme
    `[espace négatif en haut/bas/gauche]` prévu dans la composition, poser le
    texte en post-production.
 4. **Vérification APRÈS génération** : relire le rendu caractère par
-   caractère. Une lettre déformée, un accent manquant = REJET, itération sur
-   le bloc texte uniquement.
-5. **2 itérations max** sur le texte incrusté, puis bascule obligatoire en
+   caractère. Une lettre déformée, un accent manquant = REJET.
+5. **Correction chirurgicale du texte — protocole v2 (par défaut)** : NE PAS
+   tout regénérer. Repasser **le rendu fautif lui-même en référence** via
+   `images_to_image(images="<url du rendu fautif>", prompt=…)` avec une
+   instruction ciblée sur le **texte seul** : « corrige uniquement le texte en
+   `"Menu du Jour"` (orthographe exacte), **ne change RIEN d'autre** :
+   composition, couleurs, logo, style identiques ». La charte reste inchangée
+   (mêmes hex). C'est la même mécanique que la boucle corrective de
+   `studio-visuel-marque`.
+   - **Fallback** : si le serveur **refuse le rendu en référence** (erreur, ou
+     `images_to_image` indisponible), revenir au protocole v1 — regénérer via
+     `generate_image` en itérant sur le **bloc texte uniquement**.
+6. **2 itérations max** sur le texte incrusté, puis bascule obligatoire en
    post-production. Ne jamais publier un « presque bon ».
 
 ## Livrable type (à produire pour chaque demande)

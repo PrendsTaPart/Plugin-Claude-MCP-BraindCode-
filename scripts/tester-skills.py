@@ -236,11 +236,45 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",
           "tool_input": {"statut": "brouillon"}}, "deny"),
     ],
-    # delete_prompt est attrapé par le motif delete_.* du matcher rapidocms —
-    # test explicite pour figer cette couverture (audit 2026-07-10).
+    # delete_prompt / delete_brand sont attrapés par le motif delete_.* du
+    # matcher rapidocms ; remove_asset est explicite — tests pour figer la
+    # couverture (audit 2026-07-10, étendu couche marque 2026-07-14).
     ("rapidocms", "garde-destructif.py"): [
         ({"tool_name": "mcp__rapidocms__delete_prompt",
           "tool_input": {"prompt_id": 1}}, "ask"),
+        ({"tool_name": "mcp__rapidocms__delete_brand",
+          "tool_input": {"brand_id": 14}}, "ask"),
+        ({"tool_name": "mcp__rapidocms__remove_asset",
+          "tool_input": {"asset_id": 12}}, "ask"),
+    ],
+    ("rapidocms", "valide_charte_hook.py"): [
+        # couleurs
+        ({"tool_name": "mcp__rapidocms__create_brand",
+          "tool_input": {"couleurs": "bleu"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__create_brand",
+          "tool_input": {"couleurs": "#00F"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__create_brand",
+          "tool_input": {"couleurs": "#0055FF,#FFFFFF"}}, "allow"),
+        # font_family
+        ({"tool_name": "mcp__rapidocms__create_brand",
+          "tool_input": {"font_family": "Montserrat"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__edit_brand",
+          "tool_input": {"brand_id": 1, "font_family": "Arial, sans-serif"}}, "allow"),
+        # logo / site_web http(s)
+        ({"tool_name": "mcp__rapidocms__create_brand",
+          "tool_input": {"logo": "/tmp/logo.png"}}, "deny"),
+        # images_to_image
+        ({"tool_name": "mcp__rapidocms__images_to_image",
+          "tool_input": {"images": "/tmp/a.png"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__images_to_image",
+          "tool_input": {"images": "https://x/a.png,https://x/b.png"}}, "allow"),
+        ({"tool_name": "mcp__rapidocms__images_to_image",
+          "tool_input": {"images": "https://x/a.png,https://x/b.png,https://x/c.png,https://x/d.png"}}, "deny"),
+        # upload_file_tool
+        ({"tool_name": "mcp__rapidocms__upload_file_tool",
+          "tool_input": {"type": "audio", "file_url": "https://x/a.mp3"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__upload_file_tool",
+          "tool_input": {"type": "image", "file_url": "https://x/a.png"}}, "allow"),
     ],
 }
 

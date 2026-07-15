@@ -1,5 +1,138 @@
 # Changelog — plugin rapidocms
 
+## 1.11.0 — 2026-07-14 — RELEASE couche marque
+
+Entrée consolidée de la vague « couche marque RapidoCMS » (détail par sous-
+version 1.5.0 → 1.10.0 ci-dessous).
+
+- **Skills ajoutés** : `bibliotheque-assets` (import/inventaire/rattachement +
+  audit de complétude), `studio-visuel-marque` (visuels brandés via
+  `images_to_image`), `coherence-personnage` (portraits canoniques).
+- **Skills modifiés** : `gestion-marques` (contrat live), `pipeline-contenu-social`,
+  `contenu-conforme-marque`, `prompt-engineering-visuel`, `prompts-visuels-pro`
+  (branchés sur la couche marque).
+- **Agents** : `directeur-artistique` v2 (exécution visuelle), `gardien-de-marque`
+  (nouveau, audit de conformité lecture seule).
+- **Hooks** : `valide-charte` (refus format couleurs/font/URL/images_to_image/
+  upload avant appel), garde-destructif étendu (delete_brand/prompt, remove_asset),
+  Stop récap étendu à la couche marque.
+- **Socle** : `reference/outils-marque.md`, `scripts/audit_assets.py`,
+  `personnages.exemple.json`.
+- **Changement de comportement clé** : la génération de visuel n'appelle plus
+  `generate_image` par défaut — arbre de routage **assets présents →
+  `images_to_image` (brandé) ; sans référence → `generate_image` ; Canva →
+  plugin rapido-canva**. Limite `images_to_image` = 3 références (vérifiée en
+  direct), imposée par le hook.
+- Recette de release exécutée en réel : `docs/RECETTE-MARQUE.md`.
+
+## 1.10.0 — 2026-07-14
+
+- Nouveau hook PreToolUse `valide-charte` (`hooks/scripts/valide_charte_hook.py`,
+  stdlib, sans réseau, < 1 s) : REFUSE avant l'appel une écriture malformée —
+  `create_brand`/`edit_brand` (couleurs hors `^#hex6(,#hex6)*$`, font_family
+  hors des 9 stacks web-safe, logo/site_web sans http(s)), `images_to_image`
+  (référence sans http(s), espace, ou > limite mesurée de 3), `upload_file_tool`
+  (type ∉ image/video/doc, file_url sans http(s)). Messages d'erreur
+  pédagogiques rappelant le format attendu.
+- Hook Stop récap-actions étendu à la couche marque : le récapitulatif de fin
+  de tour doit nommer marques (brand_id), assets rattachés/détachés (asset_id)
+  et fichiers uploadés (nom + file_url).
+- garde-destructif : couverture de `delete_brand`, `delete_prompt` (motif
+  `delete_.*`) et `remove_asset` (explicite) figée par des tests dédiés.
+- tests : cas hooks ajoutés dans scripts/tester-skills.py (couleurs bleu/#00F/
+  #0055FF,#FFFFFF, font Montserrat, image locale, delete_brand) + tableau
+  récapitulatif dans tests/evals.md.
+
+## 1.9.0 — 2026-07-14
+
+- `agents/directeur-artistique` **v2** : passe de « juge visuel » à
+  **responsable de l'exécution visuelle**. Périmètre outils élargi à la couche
+  marque complète (get_brand, list_all_files, generate_image, images_to_image,
+  upload_file_tool, add_prompt/list_prompts + lecture des brouillons). Choisit
+  la route de génération (arbre de décision de pipeline-contenu-social),
+  applique la critique charte de studio-visuel-marque, pilote la boucle
+  corrective, capitalise les prompts gagnants. Étape 0 = contenu-conforme-marque
+  + reference/outils-marque.md. **Ne publie ni ne supprime jamais** (délègue au
+  flux avec confirmation humaine).
+- `agents/gardien-de-marque` **(nouveau)** : gouvernance de marque transverse,
+  **lecture seule par défaut**. Routine d'audit par marque (conformité charte
+  KB↔CMS, complétude des assets via scripts/audit_assets.py, revue des
+  brouillons récents). Livrable : rapport de conformité avec écarts classés
+  bloquant/majeur/mineur + correctif proposé. N'écrit (edit_brand, add_asset)
+  que sur validation explicite ; ton factuel et chiffré, cite la KB.
+- tests/evals.md : 1 scénario par agent.
+
+## 1.8.0 — 2026-07-14
+
+Branchement des 4 skills existants sur la nouvelle couche marque/assets
+(modifications ciblées, comportements existants conservés) :
+
+- `pipeline-contenu-social` : l'étape visuel n'appelle plus `generate_image`
+  par défaut — arbre de décision (a) brandé + assets → `studio-visuel-marque`
+  (perso récurrent → `coherence-personnage`) ; (b) générique sans référence →
+  `generate_image` ; (c) Canva → plugin `rapido-canva`. Le rendu retenu est
+  rattaché au brouillon (`media_url`).
+- `contenu-conforme-marque` : ordre des sources inchangé (KB prioritaire >
+  get_brand > repli) + résolution des **URLs réelles** (logo/assets) via
+  `get_brand`+`list_all_files` à l'exécution, et **détection de divergence
+  KB↔CMS** (couleurs, logo, slogan) → signalée, sync proposée via
+  `gestion-marques`, jamais d'écrasement silencieux.
+- `prompt-engineering-visuel` : nouvelle section « Prompting avec références
+  (images_to_image) » — rôle de chaque image, contraintes de préservation du
+  logo, variantes à références constantes, règle de routage generate_image vs
+  images_to_image.
+- `prompts-visuels-pro` : protocole zéro faute **v2** — un texte fautif se
+  corrige en repassant le rendu en référence (`images_to_image`, correction
+  chirurgicale du texte seul, charte inchangée) ; protocole v1
+  (`generate_image`) conservé en fallback si le serveur refuse le rendu en
+  référence.
+- tests/evals.md : section « Branchement couche marque » (6 scénarios).
+
+## 1.7.0 — 2026-07-14
+
+- Nouveau skill `coherence-personnage` : cohérence visuelle d'un personnage
+  récurrent (mascotte, avatar, personnage anime) via un registre de portraits
+  canoniques `./rapido-kb/personnages.json` (côté client) + génération TOUJOURS
+  guidée par 1-3 portraits en référence à `images_to_image`. Interdit de
+  générer un personnage récurrent sans référence (dérive). Versionnage du canon
+  (vN, ancien conservé), critique vs canon + boucle corrective (max 2, comme
+  studio-visuel-marque).
+- Exemple annoté `reference/personnages.exemple.json` (le vrai registre reste
+  dans la KB client, jamais dans le dépôt).
+- tests/evals.md : 3 scénarios (création canon, nouvelle scène, boucle
+  corrective).
+
+## 1.6.0 — 2026-07-14
+
+- Nouveau skill `studio-visuel-marque` (vitrine) : génère des visuels qui
+  intègrent le VRAI logo et les VRAIS assets de la marque via
+  `images_to_image` — résolution marque (`get_brand`), sélection minimale de
+  références (logo + 1-2 assets, ≤3, <5 Mo, URL publique), prompt décrivant
+  le rôle de chaque image (délégué à prompt-engineering-visuel /
+  prompts-visuels-pro), critique PASS/FAIL vs charte, boucle corrective
+  chirurgicale (max 2 itérations), capitalisation (upload/add_asset/add_prompt)
+  et brouillon via pipeline-contenu-social — jamais de publication directe.
+- Routage encodé : références → images_to_image ; aucune → generate_image ;
+  Canva cité → plugin rapido-canva.
+- tests/evals.md : 4 scénarios (dont boucle corrective + 2 de routage).
+
+## 1.5.0 — 2026-07-14
+
+- Nouveau skill `bibliotheque-assets` : import (URL publique, nommage imposé
+  `{marque}-{type}-{variante}-vN`), inventaire, rattachement/détachement des
+  assets à la bonne marque, et **audit de complétude** par script. Fondé sur
+  une vérification live des outils (upload sans id → `list_all_files` pour
+  résoudre l'`asset_id` ; `remove_asset` prend l'id du LIEN, pas du fichier).
+- Nouveau `reference/outils-marque.md` : contrat live du cluster marque &
+  assets (get_brand renvoie un tableau + `assets[]`, create_brand renvoie
+  l'`id`, pas de validation hex serveur, `search` de list_all_files ne filtre
+  pas, aucun outil de suppression de fichier).
+- Nouveau `scripts/audit_assets.py` (stdlib) : compare la checklist canonique
+  des 9 types d'assets aux assets rattachés, sort manquants / non conformes /
+  plan d'import — l'écart n'est jamais calculé de tête.
+- tests/evals.md : 3 scénarios bibliotheque-assets (import→rattachement,
+  audit complétude, détachement) + frontière vs gestion-marques.
+
 ## 1.4.1 — 2026-07-11
 
 - Vestige d'import retiré : la ligne « see CONNECTORS.md » (lien mort,

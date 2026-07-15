@@ -42,6 +42,23 @@ Un changement peut toucher plusieurs fichiers — les traiter tous.
 6. **Récapituler** : fichiers modifiés + résumé de chaque changement ; rappeler
    de committer `./rapido-kb/` si le client le versionne.
 
+## Sync descendante KB → marque RapidoCMS
+
+Quand la modification touche `charte-graphique.md` sur **couleurs, logo,
+slogan ou fonts** ET que `charte-graphique.md` contient une ligne
+`> Miroir CMS : brand_id <id> — …` (posée à l'onboarding) :
+
+1. **Proposer la sync descendante** (jamais silencieuse) : montrer le diff
+   KB → CMS (ex. « couleurs KB `#0052FF` → mettre à jour la marque `#14` ? »).
+2. Après **confirmation**, déléguer à `gestion-marques`/`edit_brand` (plugin
+   `rapidocms`) **les seuls champs modifiés** (`couleurs`, `logo`, `slogan`,
+   `font_family`) — le hook `valide-charte` valide le format en filet.
+3. **Mettre à jour la date de sync** dans la ligne « Miroir CMS » de
+   `charte-graphique.md` (`— dernière sync <YYYY-MM-DD>`).
+4. Pas de `brand_id` dans la KB, ou plugin `rapidocms`/MCP indisponible → le
+   dire et s'arrêter à la mise à jour KB (la KB reste prioritaire ; la sync se
+   fera plus tard). Voir `${CLAUDE_PLUGIN_ROOT}/reference/sync-marque.md`.
+
 ## Garde-fous
 
 - Ne jamais inventer la nouvelle valeur (prix, seuil…) : elle vient de

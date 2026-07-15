@@ -40,6 +40,30 @@ Construire chaque prompt `generate_image` avec :
 
 `size` : `hd` pour publication, `standard` pour itérer vite.
 
+## Prompting avec références (`images_to_image`)
+
+Dès qu'un **asset réel doit apparaître** (logo, produit, mascotte, personnage),
+la génération passe par `images_to_image` (1 à 3 URLs publiques, **< 5 Mo**
+chacune) — pas `generate_image`. Le prompt se construit alors différemment :
+
+- **Décrire chaque image d'entrée et son rôle**, dans l'ordre où elles sont
+  passées : « **image 1 = logo officiel** à intégrer en [position] ; **image 2 =
+  produit**, sujet principal ; image 3 = texture de fond ».
+- **Contraintes de préservation** explicites sur les assets : « **ne pas
+  déformer ni recolorer le logo**, respecter sa zone de protection, garder ses
+  proportions » ; pour un personnage : « mêmes traits, mêmes couleurs, même
+  style que les références ».
+- **Variantes à références CONSTANTES** : pour décliner, **garder les mêmes
+  images** et **ne changer que le texte du prompt** (décor, cadrage, ambiance) —
+  c'est ce qui garantit que le logo/personnage reste identique d'une variante à
+  l'autre.
+
+**Règle de routage** :
+- asset réel à intégrer / visuel brandé → `images_to_image` (piloté par
+  `studio-visuel-marque` ; personnage récurrent → `coherence-personnage`) ;
+- visuel **générique sans référence** → `generate_image` (les 6 blocs ci-dessus) ;
+- template Canva demandé → plugin `rapido-canva`.
+
 ## Workflow
 
 1. **Brief** : sujet, réseau/format de destination, objectif du visuel.
