@@ -9,6 +9,15 @@
             "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
           }
         ]
+      },
+      {
+        "matcher": "mcp__rapidocms__(create_brand|edit_brand|images_to_image|upload_file_tool)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/valide_charte_hook.py\""
+          }
+        ]
       }
     ],
     "Stop": [
@@ -16,7 +25,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture ont été appelés avec succès (nom contenant create, edit, delete, add, schedule, cancel, remove, upload, generate, assign), la dernière réponse de l'assistant doit contenir un récapitulatif explicite des objets créés/modifiés avec leurs IDs (brouillons, posts programmés avec date/heure/réseau, campagnes, cartes, fichiers). Si ce récapitulatif manque, bloque en demandant de terminer la réponse par un récapitulatif listant chaque objet créé/modifié et son ID. Si aucun outil d'écriture n'a été appelé, ou si le récapitulatif est présent, autorise l'arrêt."
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture ont été appelés avec succès (nom contenant create, edit, delete, add, schedule, cancel, remove, upload, generate, assign), la dernière réponse de l'assistant doit contenir un récapitulatif explicite des objets créés/modifiés avec leurs IDs (brouillons, posts programmés avec date/heure/réseau, campagnes, cartes, fichiers, ET pour la couche marque : marques créées/éditées avec brand_id, assets rattachés/détachés avec asset_id, fichiers uploadés avec leur nom et file_url). Si ce récapitulatif manque, bloque en demandant de terminer la réponse par un récapitulatif listant chaque objet créé/modifié et son ID. Si aucun outil d'écriture n'a été appelé, ou si le récapitulatif est présent, autorise l'arrêt."
           }
         ]
       }

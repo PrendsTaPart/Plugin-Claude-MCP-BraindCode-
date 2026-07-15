@@ -95,6 +95,23 @@
 | « Fais-moi la déclinaison brandée de ce visuel pour les 4 réseaux » | **directeur-artistique v2** : Étape 0 (contenu-conforme-marque + outils-marque) → choisit la route (brandé + assets → `studio-visuel-marque`/`images_to_image`) → critique PASS/FAIL systématique + boucle corrective → capitalise le prompt → **ne publie ni ne supprime** (délègue au flux avec confirmation) |
 | « Audite la conformité de mes marques » | **gardien-de-marque** : LECTURE SEULE — pour chaque `get_brand`, écarts charte KB↔CMS (couleurs/fonts/logo/slogan), complétude assets via `audit_assets.py` (jamais de tête), revue `list_drafts_tool` → **rapport d'écarts classés 🔴/🟠/🟡 + correctif proposé**, cite la KB, n'écrit (`edit_brand`/`add_asset`) que sur validation |
 
+## Hooks déterministes (couche marque, 1.10.0)
+
+Cas testés stdin par `scripts/tester-skills.py` (deny = exit 2 + stderr, ask =
+JSON `permissionDecision`, allow = exit 0) :
+
+| Outil + entrée | Hook | Verdict |
+|---|---|---|
+| `create_brand` couleurs `"bleu"` | valide_charte_hook | **deny** (nom, pas un hex) |
+| `create_brand` couleurs `"#00F"` | valide_charte_hook | **deny** (hex court, 6 chiffres requis) |
+| `create_brand` couleurs `"#0055FF,#FFFFFF"` | valide_charte_hook | **allow** |
+| `create_brand` font_family `"Montserrat"` | valide_charte_hook | **deny** (hors enum web-safe) |
+| `create_brand` logo `"/tmp/logo.png"` | valide_charte_hook | **deny** (pas http/https) |
+| `images_to_image` images `"/tmp/a.png"` | valide_charte_hook | **deny** (chemin local) |
+| `images_to_image` 4 URLs | valide_charte_hook | **deny** (> limite mesurée 3) |
+| `upload_file_tool` type `"audio"` | valide_charte_hook | **deny** (type ∉ image/video/doc) |
+| `delete_brand` / `remove_asset` sans confirmation | garde-destructif | **ask** (confirmation forcée) |
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

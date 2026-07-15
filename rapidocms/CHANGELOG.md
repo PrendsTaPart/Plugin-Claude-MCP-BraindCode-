@@ -1,5 +1,23 @@
 # Changelog — plugin rapidocms
 
+## 1.10.0 — 2026-07-14
+
+- Nouveau hook PreToolUse `valide-charte` (`hooks/scripts/valide_charte_hook.py`,
+  stdlib, sans réseau, < 1 s) : REFUSE avant l'appel une écriture malformée —
+  `create_brand`/`edit_brand` (couleurs hors `^#hex6(,#hex6)*$`, font_family
+  hors des 9 stacks web-safe, logo/site_web sans http(s)), `images_to_image`
+  (référence sans http(s), espace, ou > limite mesurée de 3), `upload_file_tool`
+  (type ∉ image/video/doc, file_url sans http(s)). Messages d'erreur
+  pédagogiques rappelant le format attendu.
+- Hook Stop récap-actions étendu à la couche marque : le récapitulatif de fin
+  de tour doit nommer marques (brand_id), assets rattachés/détachés (asset_id)
+  et fichiers uploadés (nom + file_url).
+- garde-destructif : couverture de `delete_brand`, `delete_prompt` (motif
+  `delete_.*`) et `remove_asset` (explicite) figée par des tests dédiés.
+- tests : cas hooks ajoutés dans scripts/tester-skills.py (couleurs bleu/#00F/
+  #0055FF,#FFFFFF, font Montserrat, image locale, delete_brand) + tableau
+  récapitulatif dans tests/evals.md.
+
 ## 1.9.0 — 2026-07-14
 
 - `agents/directeur-artistique` **v2** : passe de « juge visuel » à
