@@ -270,6 +270,14 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
           "tool_input": {}}, "ask"),
     ],
+    ("rapido-seo", "garde-couts-seo.py"): [
+        ({"tool_name": "mcp__dataforseo__backlinks_bulk_summary", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__dataforseo__serp_organic_live", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__dataforseo__backlinks_bulk_summary",
+          "tool_input": {"cout_confirme": True}}, "allow"),
+        ({"tool_name": "mcp__gsc__search_analytics", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__analytics__run_report", "tool_input": {}}, "allow"),
+    ],
     ("rapido-elevenlabs", "garde-couts.py"): [
         ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "ask"),
         ({"tool_name": "mcp__ElevenLabs__text_to_speech",

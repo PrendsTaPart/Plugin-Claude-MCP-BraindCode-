@@ -91,6 +91,11 @@
       "name": "rapido-elevenlabs",
       "source": "./rapido-elevenlabs",
       "description": "La voix de l'écosystème (MCP officiel ElevenLabs) : voix off & narration, transcription Scribe (diarisation), identité vocale de marque, clonage sous consentement, sound design & musique autorisée, agents vocaux téléphoniques (Jarvis, pont FoodEatUp/Twilio). Squelette (routage audio + garde-fous coûts/voix/appels ; connexion locale stdio ou passerelle HTTP), skills en E2+ après l'audit live E0-local."
+    },
+    {
+      "name": "rapido-seo",
+      "source": "./rapido-seo",
+      "description": "SEO & acquisition organique pilotés par les données : audit technique (DataForSEO OnPage), recherche de mots-clés, netlinking (backlinks), Search Console, GA4, tendances — lecture d'abord, coûts DataForSEO gouvernés. Orchestrateur pilotage-seo, sous-domaine organique de pilotage-marketing. 6 skills."
     }
   ]
 }

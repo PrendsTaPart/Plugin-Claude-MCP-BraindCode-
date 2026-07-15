@@ -7,8 +7,8 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-17-blue)
-![Skills](https://img.shields.io/badge/skills-337-brightgreen)
+![Plugins](https://img.shields.io/badge/plugins-18-blue)
+![Skills](https://img.shields.io/badge/skills-343-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
@@ -64,8 +64,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
 | `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs (local `uvx` ou passerelle HTTP), rapidocms | `ELEVENLABS_API_KEY` + `ELEVENLABS_MCP_BASE_PATH` (local) **ou** `ELEVENLABS_MCP_URL` + `ELEVENLABS_MCP_TOKEN` (passerelle) — squelette |
+| `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics (GA4), rapidocms, rapidocrm | `DATAFORSEO_AUTH`, `GSC_MCP_URL`, `GA4_MCP_URL` |
 
-**Total : 17 plugins, 337 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 18 plugins, 343 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)

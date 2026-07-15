@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__dataforseo__(backlinks_.*|serp_.*|dataforseo_labs_.*|keywords_data_.*|on_page_.*|content_analysis_.*|domain_analytics_.*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-couts-seo.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des requêtes DataForSEO facturées (backlinks, serp, labs, keywords_data, on_page…) ont été exécutées, la dernière réponse DOIT indiquer le coût réel/estimé consommé (unités × tarif) et rappeler le plafond mensuel. Si des données GSC ont été restituées, la fraîcheur (retard J-2/J-3, requêtes rares anonymisées) DOIT être précisée. Si une écriture CMS (correction de contenu) a été déclenchée, elle doit avoir été confirmée et son ID récapitulé. Rappeler que GA4 et Google Ads MCP sont en lecture seule (aucune écriture promise). Si l'un de ces éléments manque, bloque en demandant de compléter ; sinon autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}
