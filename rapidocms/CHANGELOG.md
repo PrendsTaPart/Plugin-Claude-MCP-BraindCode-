@@ -1,5 +1,12 @@
 # Changelog — plugin rapidocms
 
+## 1.11.8 — 2026-07-15 — sync DA bidirectionnel (rapido-design)
+
+- `gestion-marques` : intégration du **sync direction artistique** bidirectionnel — quand
+  `rapido-design:direction-artistique` fait évoluer l'identité, la charte remonte ici
+  (`edit_brand`/`create_brand` **après confirmation niveau 2**). Le CMS **reste la source de
+  vérité** ; `font_family` = la plus proche des 9 web-safe, la vraie police vivant dans le DS.
+
 ## 1.11.7 — 2026-07-15 — ponts vers rapido-copywriter
 
 - `pipeline-contenu-social` : proposer la **déclinaison multi-réseaux**
