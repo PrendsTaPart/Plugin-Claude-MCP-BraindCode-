@@ -1,9 +1,9 @@
 {
   "server": "foodeatup",
   "date": "2026-07-15",
-  "source": "111 outils introspectés en direct (session) + 53 outils relevés dans la console d'autorisations MCP FoodEatUp (foodeatup.com/api/mcp, 2026-07-15) — absents du registre de session, schémas à introspecter quand le connecteur les exposera.",
+  "source": "111 introspectés en direct + 24 schémas réels des familles prioritaires (site vitrine, fidélité, caisse, avis — fournis 2026-07-15) + 29 noms console à réintrospecter (schema_introspected:false).",
   "tool_count": 164,
-  "introspected_count": 111,
+  "introspected_count": 135,
   "tools": [
     {
       "name": "add_site_page",
@@ -41,9 +41,15 @@
     {
       "name": "adjust_points",
       "description": "Ajuste les points de fidélité d'un client.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "email",
+        "points",
+        "motif"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true,
+      "native_guard": "serveur : plafond ±1000, motif obligatoire, journalisé."
     },
     {
       "name": "adjust_stock",
@@ -61,9 +67,14 @@
     {
       "name": "apply_site_template",
       "description": "Applique un modèle de site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "slug",
+        "confirm"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true,
+      "native_guard": "confirm:true exigé (serveur) — résumer avant."
     },
     {
       "name": "approve_leave",
@@ -106,9 +117,12 @@
     {
       "name": "check_gift_card",
       "description": "Vérifie une carte cadeau (solde/validité).",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "code"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "checkin_reservation",
@@ -127,7 +141,8 @@
       "description": "Clôture une session de caisse (rapport Z).",
       "params_required": [],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": false,
+      "native_guard": "confirm:true exigé (serveur) — clôture Z."
     },
     {
       "name": "confirm_reservation",
@@ -759,9 +774,11 @@
     {
       "name": "get_loyalty_program",
       "description": "Programme de fidélité de l'établissement.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "get_order",
@@ -776,23 +793,32 @@
     {
       "name": "get_page_content",
       "description": "Contenu d'une page du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "page_slug"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "get_pos_report",
       "description": "Rapport de caisse (X/Z).",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "session_id"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "get_pos_session",
       "description": "Détail d'une session de caisse.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "get_product",
@@ -844,16 +870,20 @@
     {
       "name": "get_site_stats",
       "description": "Statistiques de fréquentation du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "get_site_status",
       "description": "Statut de publication du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "get_station_load",
@@ -882,9 +912,12 @@
     {
       "name": "get_wheel_stats",
       "description": "Statistiques des jeux de roue.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "wheel_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "import_storefront_menu",
@@ -1038,9 +1071,13 @@
     {
       "name": "list_gift_cards",
       "description": "Liste les cartes cadeaux.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_haccp_labels",
@@ -1162,9 +1199,11 @@
     {
       "name": "list_loyalty_rewards",
       "description": "Liste les récompenses de fidélité.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "list_notifications",
@@ -1203,9 +1242,12 @@
     {
       "name": "list_pos_payments",
       "description": "Liste les encaissements d'une session de caisse.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "order_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "list_pos_tabs",
@@ -1278,9 +1320,13 @@
     {
       "name": "list_redemptions",
       "description": "Liste les utilisations de récompenses de fidélité.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_reservations",
@@ -1305,16 +1351,22 @@
     {
       "name": "list_site_leads",
       "description": "Leads capturés via le site vitrine.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "source"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_site_templates",
       "description": "Modèles de site vitrine disponibles.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "list_stocks",
@@ -1409,9 +1461,13 @@
     {
       "name": "moderate_review",
       "description": "Modère un avis client.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "review_id",
+        "action"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "no_show_reservation",
@@ -1426,16 +1482,21 @@
     {
       "name": "open_pos_session",
       "description": "Ouvre une session de caisse (POS).",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "opening_float",
+        "operator_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "publish_site",
       "description": "Publie le site vitrine.",
       "params_required": [],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": false,
+      "native_guard": "confirm:true exigé (serveur)."
     },
     {
       "name": "record_cleaning_action",
@@ -1453,9 +1514,18 @@
     {
       "name": "record_pos_payment",
       "description": "Enregistre un encaissement en caisse.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id",
+        "order_id",
+        "amount",
+        "method",
+        "operator_id"
+      ],
+      "params_optional": [
+        "tendered"
+      ],
+      "schema_introspected": true,
+      "native_guard": "method ∈ {especes,carte,titre_restaurant,cheque} ; titre_restaurant = pas de rendu."
     },
     {
       "name": "reject_leave",
@@ -1521,16 +1591,23 @@
     {
       "name": "set_site_theme",
       "description": "Définit le thème (couleurs/typo) du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "tokens"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "toggle_site_page",
       "description": "Active/désactive une page du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "page_slug",
+        "publish"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "update_application_status",
@@ -1685,9 +1762,17 @@
     {
       "name": "update_loyalty_program",
       "description": "Met à jour le programme de fidélité.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "active",
+        "earn_mode",
+        "earn_rate",
+        "points_validity_months",
+        "visit_points"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "update_order_status",
@@ -1798,9 +1883,20 @@
     {
       "name": "upsert_loyalty_reward",
       "description": "Crée/met à jour une récompense de fidélité.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id",
+        "kind",
+        "label",
+        "points_cost"
+      ],
+      "params_optional": [
+        "reward_id",
+        "plat_id",
+        "amount",
+        "stock",
+        "active"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "validate_production",
@@ -1812,9 +1908,13 @@
     {
       "name": "validate_redemption",
       "description": "Valide l'utilisation d'une récompense de fidélité.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "code"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true,
+      "native_guard": "usage unique — dédup portée par le serveur."
     }
   ]
 }
