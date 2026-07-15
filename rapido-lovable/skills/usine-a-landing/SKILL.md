@@ -51,3 +51,10 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et
   raison (si base : `enable_database` une fois, écritures confirmées).
 - Une landing par objectif : refuser la page fourre-tout (proposer d'en faire
   deux).
+
+## Ajouter un agent embarqué (option)
+
+Pour brancher un MCP (chat qui agit sur FoodEatUp/CRM/CMS/RH) sur la landing, **déléguer
+à `connecteur-mcp-lovable`** (kit canonique `reference/kit-connecteur-mcp/`, gate sécurité
+`reference/gate-securite.md`). La capture (mode B) reste inchangée ; l'agent embarqué
+(mode C) est **canonisé** par le kit — jamais réimplémenté ici.

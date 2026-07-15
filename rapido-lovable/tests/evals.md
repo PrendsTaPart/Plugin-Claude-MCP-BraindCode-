@@ -1,4 +1,12 @@
-# Évals — plugin rapido-lovable (1.4.0)
+# Évals — plugin rapido-lovable (1.5.0)
+
+## Agent `architecte-lovable` + volet sync (LV4)
+
+- **Agent** : « pilote la construction du site agentique de [client] » →
+  `architecte-lovable` orchestre brief → spec → prompts → `connecteur-mcp-lovable` →
+  gate. Interdits respectés (clé, client-side, mise en ligne sans confirmation, scope).
+- **Sync** : `sync-marque-lovable` pousse le kit en workspace skill « rapido-mcp-connect »
+  (versionné, ≤100k) + knowledge (≤10k) — **confirmation** avant push (tous les projets).
 
 ## Skill `mvp-lovable` (LV3)
 

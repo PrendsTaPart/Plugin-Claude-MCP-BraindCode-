@@ -1,5 +1,18 @@
 # Changelog — plugin rapido-lovable
 
+## 1.5.0 — 2026-07-15 — workspace sync + agent architecte-lovable (LV4)
+
+- `sync-marque-lovable` : **volet kit** — pousse le connecteur en **workspace skill**
+  Lovable (`create_workspace_skill` « rapido-mcp-connect », condensé du kit ≤ 100k) +
+  `set_workspace_knowledge` (méthode maison ≤ 10k), **versionné** (numéro du kit), push
+  **sur confirmation** (touche tous les projets).
+- Agent **`architecte-lovable`** : orchestre brief → spec (`mvp-lovable`) → prompts →
+  branchement (`connecteur-mcp-lovable`) → recette + gate. Interdits (clé en dur/BraindCode,
+  client-side, mise en ligne sans confirmation, hors scope, sauter le gate).
+- Patchs : `agent-ia-produit` (consomme le kit, mode C canonisé), `usine-a-landing` &
+  `site-restaurant` (« ajouter l'agent embarqué » → `connecteur-mcp-lovable`).
+- Évals : agent + volet sync.
+
 ## 1.4.0 — 2026-07-15 — mvp-lovable (spec-driven, série P1-P8, LV3)
 
 - Skill **`mvp-lovable`** — du brief au MVP multi-pages : **SPEC d'abord**

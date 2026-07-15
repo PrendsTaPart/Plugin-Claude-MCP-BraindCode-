@@ -63,3 +63,12 @@ KB : `ton-et-accroches.md` (voix de l'agent), `produits-services.md` et
   guidés, jamais avant.
 - Pas de données personnelles en dur dans le code, le prompt ou les exemples ;
   le system prompt ne contient pas de secrets.
+
+## Kit connecteur MCP (source canonique, v2)
+
+Le branchement MCP (edge function, secrets, scope, écritures confirmées) suit désormais
+**le kit** `reference/kit-connecteur-mcp/` — ne pas réimplémenter le pattern localement.
+Pour câbler un MCP sur l'agent embarqué, **déléguer à `connecteur-mcp-lovable`** (prompts
+étagés P1-P5) et **passer le gate** `reference/gate-securite.md` avant livraison. Rappels
+non négociables : clés du **client** uniquement, appels **serveur**, **scope injecté
+serveur**, **écritures confirmées** dans l'UI.

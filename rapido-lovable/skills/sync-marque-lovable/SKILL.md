@@ -48,3 +48,21 @@ marque vide.
   (`mise-a-jour-kb` → proposer ce skill dans la foulée).
 - Le knowledge ne contient ni secrets ni données personnelles — c'est de
   l'instruction de marque, pas des données.
+
+## Volet kit — pousser le connecteur MCP en workspace skill (v2)
+
+Au-delà de la marque, ce skill synchronise **la méthode maison** dans le workspace
+Lovable pour que l'agent Lovable câble les MCP **pareil partout** :
+
+1. **Skill workspace** : `create_workspace_skill` (ou `update_workspace_skill` si
+   présent — lire `get_workspace_skill` d'abord) nommé **`rapido-mcp-connect`**, contenu =
+   **condensé du kit** (`reference/kit-connecteur-mcp/_commun.md` : env immuables, pattern
+   d'edge function, 7 points sécurité, critères d'acceptation) — **≤ 100 000 caractères**.
+2. **Knowledge workspace** : `set_workspace_knowledge` (fusion après
+   `get_workspace_knowledge`) = méthode maison résumée (**≤ 10 000 caractères**).
+3. **Versionné** : le SKILL.md workspace porte le **numéro du kit** (« Kit vN ») ;
+   `update_workspace_skill` à chaque évolution du kit (routine documentée).
+4. **Confirmation avant tout push** : cela touche **tous les projets** du workspace →
+   accord explicite requis.
+
+Les secrets ne sont **jamais** poussés (le knowledge = instruction, pas de données/clés).
