@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.5.0 — 2026-07-15
+
+- Skill **`personnages-univers`** ⭐ (H5) — cohérence de personnage industrialisée
+  (Soul + Elements), successeur technique de `rapidocms:coherence-personnage` pour
+  la voie premium/vidéo. **Débloque le pipeline PronoClip.**
+  - Registre `personnages.json` inchangé, **enrichi** de `element_id` / `soul_id`
+    (portraits canoniques toujours en assets CMS).
+  - Arbre **Element** (défaut : instantané, multi-sujets, non-humains, Kling/Seedance ;
+    `<<<element_id>>>` dans le prompt) vs **Soul** (humain réel, 5-20 photos, 1 soul_id/gen,
+    droits/consentement, sur demande explicite).
+  - **Pipeline PronoClip** : portrait → `start_image` + `<<<element_id>>>` →
+    **préflight coût** (`gouvernance-credits`, BLOQUÉ = pas de génération) → `kling3_0`
+    (start_image obligatoire, sinon `seedance_2_0`) → `reframe` 9:16 → `upscale_video`
+    → gate viral (H6) → brouillon CMS rattaché à la campagne PronoClip (#20).
+  - Schémas vérifiés live : `show_reference_elements` (Elements), `show_characters` (Soul).
+  - `tests/evals.md` : 4 scénarios (dont PU3 PronoClip dry-run get_cost, PU4 frontière CMS).
+  - 🎯 Clôt le pending « character consistency PronoClip ».
+
 ## 0.4.0 — 2026-07-15
 
 - Skill **`usine-video-marketing`** (H4) : chaîne Marketing Studio (pub vidéo/UGC).

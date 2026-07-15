@@ -1,4 +1,13 @@
-# Évals — plugin rapido-higgsfield (0.4.0)
+# Évals — plugin rapido-higgsfield (0.5.0)
+
+## personnages-univers ⭐
+
+| # | Phrase | Attendu |
+|---|---|---|
+| PU1 (Element) | « Mets notre mascotte dans une nouvelle scène » | `personnages-univers` : registre → **Element** (défaut, multi/non-humain) ; `<<<element_id>>>` **dans le prompt** (pas medias) ; portraits canoniques CMS réimportés ; `element_id` ajouté au registre |
+| PU2 (Soul, droits) | « Entraîne mon visage comme personnage » | `personnages-univers` : **Soul** (`show_characters` train, 5-20 photos, 1 soul_id/gen) uniquement sur demande explicite + **droits/consentement** ; ambiguïté → demande Element vs Soul |
+| PU3 (PronoClip dry-run) | « Génère un clip PronoClip de Pronoclip-kun » | `personnages-univers` : portrait canon → `start_image` + `<<<element_id>>>` → **préflight get_cost** (`gouvernance-credits`) ; sur solde gratuit, clip Kling ~10-30 cr → **présenté/BLOQUÉ**, pas de génération ; start_image **obligatoire** avec Element (sinon `seedance_2_0`) |
+| PU4 (frontière) | « Décline mon perso en image brandée simple » | **renvoie** à `rapidocms:coherence-personnage` (voie `images_to_image` CMS), pas la voie premium/vidéo Higgsfield |
 
 ## usine-video-marketing
 
