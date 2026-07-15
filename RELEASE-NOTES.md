@@ -1,5 +1,34 @@
 # Notes de release
 
+## Commercial & relation client (2026-07-15)
+
+Le pont **forge → opérations** : appliquer les méthodes (SONCAS, AARRR, BANT, NPS,
+100 jours…) aux **données MCP réelles**, sans dupliquer les exercices forge ni les livres.
+
+- **Pont forge → opérations** (`reference/pont-forge-operations.md`) : tout skill
+  opérationnel **lit le livrable forge** correspondant ; 12 skills forge pointent vers
+  leur skill opérationnel (tous existent désormais).
+- **`rapidocrm` (1.7.0)** — vente terrain : `preparation-rdv` (SONCAS opérationnel),
+  `qualification-deals` (BANT/MEDDIC, multi-threading), `coach-de-vente` (routeur
+  multi-livres), `playbook-objections-vivant`, `funnel-aarrr-reel` (AARRR via catalogue-kpi).
+- **`rapido-relation-client` (0.2.0)** — nouveau plugin (21e) : `pilotage-service-client`
+  (SLA), `boucle-nps`, `sante-client` (health score script), `cent-premiers-jours`
+  (100 jours), `segmentation-rfm`, `coach-relation-client` (routeur fidélité). Routines
+  `RC-HEBDO`/`RC-NPS-TRIMESTRE`/`RC-SANTE-MENSUEL`.
+- **`rapido-marketing` (0.18.0)** — `operations-influenceurs` (sourcing → brief → contrat
+  → tracking → ROI), routine `MKT-INFLUENCE-MENSUEL`.
+- **`catalogue-kpi`** enrichi (source unique) : taux **AARRR** (activation/rétention/
+  referral), **NPS**, **ROI**, part organique/payante. Health score = script composite
+  plugin-spécifique (documenté au registre des KPIs).
+- La **boucle se ferme** : 100 premiers jours → NPS promoteur → ambassadeur → nouveaux
+  leads → preparation-rdv → … **Validation** : valider TOUT VALIDE (21 plugins) ; tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-relation-client` ; `rapidocrm` 1.6.0→1.7.0,
+`rapido-marketing` 0.17.0→0.18.0, `rapido-forge` 1.1.2→1.1.3, `rapido-startup`
+1.9.1→1.9.3, `rapido-n8n` 1.4.0→1.5.0.
+
+---
+
 ## Acquisition organique & payante (2026-07-15)
 
 3 nouveaux plugins + intégration dans les boucles (SENSE enrichi, attribution étendue,

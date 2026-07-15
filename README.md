@@ -57,7 +57,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
 | `rapido-n8n` | 1.5.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
-| `rapido-startup` | 1.9.2 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
+| `rapido-startup` | 1.9.3 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 | `rapido-marketing` | 0.18.0 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
@@ -67,12 +67,25 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics (GA4), rapidocms, rapidocrm | `DATAFORSEO_AUTH`, `GSC_MCP_URL`, `GA4_MCP_URL` |
 | `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads (read-only), dataforseo, analytics (GA4), rapidocrm | `GOOGLE_ADS_MCP_URL`, `DATAFORSEO_AUTH`, `GA4_MCP_URL` |
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
-| `rapido-relation-client` | 0.1.0 | 5 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
+| `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 
-**Total : 21 plugins, 361 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 21 plugins, 362 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
+
+### Nouveau — Commercial & relation client (pont forge → opérations)
+
+Les méthodes de vente/fidélité (forge, livres) appliquées aux **données MCP réelles** :
+- **Pont forge → opérations** (`reference/pont-forge-operations.md`) : l'opérationnel lit
+  le livrable forge ; 12 skills forge pointent vers leur skill opérationnel.
+- **Vente terrain** (`rapidocrm`) : `preparation-rdv` (SONCAS), `qualification-deals`
+  (BANT/MEDDIC), `coach-de-vente` (routeur multi-livres), `playbook-objections-vivant`,
+  `funnel-aarrr-reel`.
+- **`rapido-relation-client`** (nouveau, 21e) : service client en boucle, NPS, health
+  score, RFM, 100 premiers jours, coach fidélité.
+- **`operations-influenceurs`** (`rapido-marketing`) : sourcing → brief → contrat →
+  tracking → ROI. `catalogue-kpi` enrichi (AARRR, NPS, ROI).
 
 ### Nouveau — Acquisition organique & payante
 

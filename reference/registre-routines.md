@@ -262,6 +262,10 @@
 | ROI (par canal) | (revenu − dépense) ÷ dépense | `attribution-kpi-marketing` | marketing |
 | Attribution % (par canal) | contacts (1er/dernier point) ÷ total × 100 | `attribution-kpi-marketing` | marketing |
 | Part organique vs payante du CA | CA attribué organique ÷ CA total (et part payante) | `catalogue-kpi` (données `attribution-kpi-marketing` : GA4/GSC/Ads/TikTok) | marketing, board |
+| Taux AARRR (activation/rétention/referral) | activés÷nouveaux · actifs fin÷début · leads parrainage÷total | `catalogue-kpi` | `rapidocrm:funnel-aarrr-reel` |
+| NPS | (% promoteurs − % détracteurs) | `catalogue-kpi` | `rapido-relation-client:boucle-nps` |
+| ROI (générique) | (gain − coût) ÷ coût | `catalogue-kpi` | `operations-influenceurs` (ROI influenceur), campagnes |
+| Health score (composite) | Σ(facteur normalisé × poids) ÷ Σpoids × 100 | `rapido-relation-client:sante-client/scripts/health_score.py` (composite plugin-spécifique) | `rapido-relation-client:sante-client` |
 
 > **Frontière** : `catalogue-kpi` = formules & calculs · `attribution-kpi-marketing`
 > = répartition/attribution par canal · `money-math-acquisition` = cadrage décisionnel
