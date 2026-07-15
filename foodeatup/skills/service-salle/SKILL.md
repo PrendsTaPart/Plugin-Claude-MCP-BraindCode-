@@ -63,3 +63,10 @@ service). Ne jamais sauter un état ni installer un client sur une table non lib
   au statut `free` ou `reserved` pour lui.
 - Confirmation utilisateur obligatoire avant `cancel_reservation` et
   `no_show_reservation`.
+
+## Fichier clients (ajout SYNC S1)
+
+Gérer le fichier clients du restaurant : `create_client` (`nom` requis ; email/téléphone/
+adresse optionnels), `get_client`, `list_clients` (recherche, statut), `update_client`.
+**`delete_client` = irréversible → confirmation** (hook `garde-destructif`). Le CRM
+(plugin rapidocrm) reste la référence B2B ; ici, c'est le fichier resto.

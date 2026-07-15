@@ -79,3 +79,7 @@ avant d'écrire — jamais les 4 sur un seul accord.
   passage corrige, il ne duplique pas — mais seulement si les noms matchent.
 - Récapitulatif final par chantier avec les IDs créés (catégories, plats,
   zones, tables, employés, relevés) — exigé aussi par le hook de fin de tour.
+
+## Taux de TVA (ajout SYNC S1)
+
+Configurer les taux à l'installation : `create_tva` (`name`, `percentage`), `list_tva`.

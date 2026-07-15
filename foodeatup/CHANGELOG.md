@@ -1,5 +1,16 @@
 # Changelog — plugin foodeatup
 
+## 1.6.1 — 2026-07-15 — extensions CRUD (série SYNC S1)
+
+- Couverture des primitives CRUD dormantes ajoutée aux skills existants (schémas déjà
+  connus) : `service-salle` (fichier clients : create/get/list/update/**delete**_client),
+  `reappro-fournisseurs` (produits create/get/update/**delete** + create_supplier),
+  `recette-cout-marge` (ingrédients CRUD + **delete_recipe**), `carte-vitrine` (create_dish/
+  create_dish_category/**delete_dish**), `planning-equipe` (get/update/**delete**_employee),
+  `onboarding-restaurateur` (create_tva/list_tva), `gestion-commandes` (get_invoice).
+- Les suppressions restent gatées par le hook `garde-destructif` (`delete_.*` → confirmation).
+
+
 ## 1.6.0 — 2026-07-15 — familles dormantes activées (série SYNC S1)
 
 - Inventaire serveur corrigé à **164 outils** (le registre de session n'en exposait

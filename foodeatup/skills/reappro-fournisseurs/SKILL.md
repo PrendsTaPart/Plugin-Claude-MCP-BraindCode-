@@ -54,3 +54,9 @@ description: Utiliser quand l'utilisateur parle de stock bas, de commande fourni
   ne pas entrer en stock une livraison `non_conforme` sans accord de l'utilisateur.
 - `mode: increment` pour une réception partielle ou totale ; `mode: set` réservé aux
   inventaires (confirmer avant, car il écrase la valeur existante).
+
+## Catalogue produits & fournisseur (ajout SYNC S1)
+
+Catalogue produits/épicerie : `create_product` (`name`, `price_by_unit`, `unit`),
+`get_product`, `update_product`, **`delete_product` = confirmation**. Créer un
+fournisseur : `create_supplier` (`name`) — complète `get_supplier`/`list_suppliers`.

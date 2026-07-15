@@ -56,3 +56,9 @@ description: Utiliser quand l'utilisateur veut créer une recette, calculer le c
   ingrédient nouveau, ou laisser le prix existant faire foi.
 - Si la marge obtenue est inférieure à la marge cible annoncée, le signaler
   explicitement et proposer un ajustement (prix, portions, ingrédients).
+
+## Fiches ingrédients (ajout SYNC S1)
+
+CRUD ingrédient qui alimente le coût de revient : `create_ingredient` (`name`, `unit`,
+`price_per_unit`, `quantity_in_stock`), `get_ingredient`, `update_ingredient` (prix,
+seuil). **`delete_ingredient` et `delete_recipe` = confirmation** (hook `garde-destructif`).

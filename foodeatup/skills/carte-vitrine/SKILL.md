@@ -51,3 +51,9 @@ mal orthographié crée un doublon : reprendre les noms EXACTS de `list_dishes`.
 - **Photos de plats premium** (packshots 4K de la carte) → mode « carte en photos »
   de `rapido-higgsfield:studio-image-pro` **si installé** (`list_dishes` → packshot
   par plat, coût du lot confirmé) ; rapatriement puis liaison à la vitrine.
+
+## Plats à l'unité (ajout SYNC S1)
+
+En plus de `import_storefront_menu` (en masse) : `create_dish` (`name`, `price`),
+`create_dish_category` (`name`), et **`delete_dish` = confirmation**. `update_dish`
+est déjà utilisé.

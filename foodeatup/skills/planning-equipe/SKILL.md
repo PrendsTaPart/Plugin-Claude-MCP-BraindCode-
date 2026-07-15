@@ -79,3 +79,9 @@ description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horair
 - Données sensibles : jamais de création de contrat sans confirmation
   explicite ; les salaires ne s'affichent que sur demande directe, jamais
   dans une vue d'équipe ou une analyse de charge.
+
+## Fiche employé (ajout SYNC S1)
+
+Consulter/éditer une fiche : `get_employee`, `update_employee` (prénom, nom, email,
+téléphone, rôle). **`delete_employee` = offboarding, confirmation** (hook). Création
+(`create_employee`, `create_employee_contract`) déjà couverte.
