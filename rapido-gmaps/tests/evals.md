@@ -1,4 +1,4 @@
-# Évals — plugin rapido-gmaps (0.2.0)
+# Évals — plugin rapido-gmaps (0.3.0)
 
 ## Déclenchement (phrases → skill)
 
@@ -6,6 +6,25 @@
 |---|---|
 | « Trouve-moi des restaurants à Lyon » / « prospecte les cafés de Tunis » | `sourcing-gmaps` |
 | « Sourcing Google Maps » / « leads restauration Paris 11ème » | `sourcing-gmaps` |
+| « Complète la fiche de [X] » / « numéro manquant » / « mets à jour les coordonnées CRM » | `enrichissement-fiches` |
+| « Restaurants sans système numérique » / « prospects FoodEatUp » / « business sans réservation en ligne » | `detection-opportunites` |
+
+## Cas `enrichissement-fiches` (2)
+
+5. **Non-écrasement** : fiche CRM avec un email déjà rempli, Maps renvoie un email
+   **différent** → afficher **les deux**, laisser l'utilisateur choisir. Jamais
+   d'écrasement automatique.
+6. **Champ vide complété** : fiche sans téléphone, Maps trouve le numéro → proposé,
+   `update_entreprise` / `create_contact` après confirmation champ par champ.
+
+## Cas `detection-opportunites` (2)
+
+7. **Filtre ICP + signal** : « restaurants sans système numérique à Paris 10ème »
+   → scoring avec `--min-rating 3.5 --min-reviews 20 --categories restaurant,café,
+   traiteur`, flag « SANS SYSTÈME NUMÉRIQUE » (`signal_opportunite` ×1.5) mis en
+   avant, tag `opportunite-foodeatup`.
+8. **Anti-collision** : « trouve-moi des restaurants à Lyon » (sans critère
+   FoodEatUp) → `sourcing-gmaps` générique, pas `detection-opportunites`.
 
 ## Cas `sourcing-gmaps` (4)
 

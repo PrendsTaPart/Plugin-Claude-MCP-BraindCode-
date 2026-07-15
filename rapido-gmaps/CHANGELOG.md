@@ -1,5 +1,23 @@
 # Changelog — plugin rapido-gmaps
 
+## 0.3.0 — 2026-07-15 — enrichissement + détection opportunités FoodEatUp
+
+- Skill **`enrichissement-fiches`** — compléter/rafraîchir une fiche CRM existante
+  (téléphone, site, email manquants) par un scrape ciblé `"{nom} {ville}"` →
+  **diff** → `update_entreprise` / `create_contact` **champ par champ après
+  confirmation**. Jamais d'écrasement silencieux d'un champ rempli ; email
+  divergent → les deux affichés, choix utilisateur. Mémorise `place_id` (note/tag).
+- Skill **`detection-opportunites`** — cas phare FoodEatUp : délègue à
+  `sourcing-gmaps` avec l'ICP (restauration, note ≥ 3.5, avis ≥ 20 — surchargé par
+  `rapido-kb/marketing/icp.md`), met en avant le flag **« SANS SYSTÈME NUMÉRIQUE »**
+  (bonus `signal_opportunite` ×1.5), tag `opportunite-foodeatup`, handoff outbound,
+  statistique de session → benchmarks.md.
+- `score_leads_gmaps.py` : les filtres ICP (`--min-rating`, `--min-reviews`,
+  `--categories`) étaient déjà intégrés au scorer (0.2.0) — réutilisés tels quels
+  par la détection, aucun patch nécessaire.
+- Évals : +4 cas (déclenchements enrichissement/détection, non-écrasement,
+  filtre ICP).
+
 ## 0.2.0 — 2026-07-15 — sourcing-gmaps (Google Maps → pipeline CRM)
 
 - Skill **`sourcing-gmaps`** — de la requête Google Maps au pipeline CRM en
