@@ -1,10 +1,23 @@
-# Évals — plugin rapido-leadmagnet (0.2.0)
+# Évals — plugin rapido-leadmagnet (0.3.0)
 
 ## Déclenchement (phrases → skill)
 
 | Phrase | Skill |
 |---|---|
 | « Fabrique le lead magnet » / « rédige le guide/la checklist » / « produis l'ebook » / « crée le PDF du lead magnet » | `fabrication-lead-magnet` |
+| « Page du lead magnet » / « landing de capture » / « formulaire pour le guide » / « mets le lead magnet en ligne » | `page-et-capture` |
+
+## Cas `page-et-capture` (4)
+
+5. **PDF absent** : « mets le lead magnet en ligne » sans URL PDF au registre →
+   renvoyer à `fabrication-lead-magnet` (pas de page sans ressource à livrer).
+6. **Test de bout en bout** : soumission d'un email de test → prospect créé +
+   segment `LM-{slug}` + tag + email reçu + PDF téléchargeable → **consigné** ;
+   tant que le test n'est pas vert, la page n'est pas « prête ».
+7. **Refus RGPD** : formulaire sans checkbox de consentement (ou pré-cochée) →
+   **refus de publier**, renvoyer corriger.
+8. **Route** : capture via Lovable mode B (soumission → `enregistrer_prospect`) ;
+   Route A CRM = vitrine optionnelle, pas la capture.
 
 ## Cas `fabrication-lead-magnet` (4)
 

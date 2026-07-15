@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-leadmagnet
 
+## 0.3.0 — 2026-07-15 — page-et-capture (landing + formulaire + segment + pipeline)
+
+- Skill **`page-et-capture`** — la landing (Route B Lovable mode B via
+  `usine-a-landing`), le formulaire (consentement RGPD non pré-coché), le segment
+  `LM-{slug}`, le pipeline (`enregistrer_prospect` → `ajouter_prospect_pipeline`
+  étape « Lead entrant » + tag `leadmagnet:{slug}`), la livraison (email
+  transactionnel `create_template_email`/`send_email` + page merci, double opt-in
+  optionnel) et un **test de bout en bout obligatoire** avant « page prête ».
+- Route A CRM (`create_editor_template` landing_page) documentée en option vitrine
+  (capture reste Lovable tant que `create_formulaire` absent — LM0).
+- Évals : 4 cas (PDF absent, test bout-en-bout, refus RGPD, route).
+
 ## 0.2.0 — 2026-07-15 — fabrication-lead-magnet (rédaction + PDF brandé + bibliothèque)
 
 - Skill **`fabrication-lead-magnet`** — du concept validé (`lead-magnet-machine`) au
