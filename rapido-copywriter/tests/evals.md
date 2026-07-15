@@ -34,6 +34,16 @@
 8. **Publication** : aucun réseau publié directement — brouillon CMS (ou export du script
    si pas de compte TikTok connecté).
 
+## Agent `copywriter-social` + boucle hooks (CW4)
+
+9. **Agent** : « produis la semaine sociale de [marque] » → `copywriter-social` délègue
+   aux 4 skills, critique/itère (2 max), consigne les hooks. Interdits respectés
+   (publication directe, stats inventées, hooks verbatim, gates, profil perso).
+10. **Boucle de scoring** : `scripts/score_hooks.py` calcule `interactions = liked +
+    shares + comments` par réseau, tague **GAGNANT** si moyenne du hook > médiane du
+    réseau. Vérifié : LinkedIn médiane 24 → L1 (28.5) GAGNANT, L2 (3) NEUTRE. **Aucune
+    métrique inventée** (uniquement liked/shares/comments/views exposées par CMS).
+
 ## Garde-fous (hook `garde-voix-marque`, testé au testeur)
 
 | Entrée | Décision attendue |

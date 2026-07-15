@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-copywriter
 
+## 0.4.0 — 2026-07-15 — agent copywriter-social + boucle hooks gagnants
+
+- Agent **`copywriter-social`** — directeur de création : du brief au lot de brouillons
+  multi-réseaux (délégations aux 4 skills), exigence (2 itérations max, critique
+  argumentée), capitalisation. Interdits (publication directe, stats inventées, hooks
+  verbatim, contourner les gates, toucher au profil perso). Rapporte à directeur-marketing.
+- `scripts/score_hooks.py` (stdlib) — boucle d'apprentissage : `interactions = liked +
+  shares + comments` par réseau (les seules métriques CMS exposées), tag **GAGNANT** si
+  moyenne du hook > **médiane du réseau**. Aucun score inventé. Vérifié.
+- Patchs cross-plugin : `pipeline-contenu-social` (déclinaison multi-réseaux proposée),
+  `calendrier-editorial` (grammaires par réseau référencées), `content-creation-methodo`
+  (recentré blog/email/landing, social délégué), `social-selling-linkedin` (commentaires
+  semi-auto).
+- Évals : +2 cas (agent, boucle de scoring).
+
 ## 0.3.0 — 2026-07-15 — copy-tiktok + declinaison-multi-reseaux
 
 - Skill **`copy-tiktok`** — le livrable est un **script de tournage** (hook < 3 s,
