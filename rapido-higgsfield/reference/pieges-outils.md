@@ -35,7 +35,22 @@ compléter par l'audit H0** (`docs/AUDIT-MCP-HIGGSFIELD.md`, `docs/GRILLE-COUTS-
    plugin les appellent directement. Le connecteur Higgsfield est **requis** (voir
    README / `.mcp.json` `${HIGGSFIELD_MCP_URL}`).
 
-> H0 figera : catalogue exact des modèles (image/vidéo/audio/3d) et leurs
-> `aspect_ratios`/paramètres, limites d'images de référence par modèle, et la
-> **grille de coûts** par livrable type. Tant que H0 n'a pas tourné, aucun skill de
-> production n'est livré (H2+).
+## Confirmations H0 (audit live 2026-07-15 — voir `docs/AUDIT-MCP-HIGGSFIELD.md`)
+10. **`model`, `prompt`, `medias`, `get_cost` vont DANS `params`** pour
+    `generate_image`/`generate_video`/`generate_audio`/`generate_3d` — pas au niveau
+    racine (sinon erreur `params.model undefined`). `shorts_studio_create`, `dubbing`,
+    `upscale_*` ont chacun leur propre forme.
+11. **`get_cost: true`** marche sur image/vidéo/audio/3d et `shorts_studio_create`
+    (avec `duration_seconds`) ; **PAS** sur `dubbing` ni `upscale_video` ;
+    `upscale_image` exige un `image_id` résoluble même pour l'estimation → pour ces
+    cas, estimer via `GRILLE-COUTS-HIGGSFIELD.md` + confirmer.
+12. **Génération asynchrone** : la réponse est `status: pending` + un `id` (job) ;
+    récupérer l'URL via `job_display(id)` (une fois) → `results.rawUrl`. Ne pas poller.
+13. **Alias de modèle** : `nano_banana_pro` s'exécute comme `nano_banana_2` (normal).
+14. **Budget réel** : le plan par défaut est **gratuit (10 crédits)**. Images ≤ 4 cr
+    et audio ≤ 1 cr sont faisables ; **toute vidéo (10-90 cr) exige un top-up**. La
+    grille de coûts fait foi (`docs/GRILLE-COUTS-HIGGSFIELD.md`).
+
+> Reste ouvert (non exécuté par budget, à confirmer en H5) : comportement exact de
+> Kling 3.0 + Element **sans** `start_image`. Le catalogue complet des modèles et
+> leurs coûts est figé dans `docs/AUDIT-MCP-HIGGSFIELD.md` + la grille.

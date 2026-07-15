@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-higgsfield
 
+## 0.1.1 — 2026-07-15
+
+- **Audit live H0** (`docs/AUDIT-MCP-HIGGSFIELD.md` + `docs/GRILLE-COUTS-HIGGSFIELD.md`) :
+  catalogue des modèles (image/vidéo/audio/3d) relevé via `models_explore`, grille de
+  coûts via `get_cost` (préflight) + 1 image réelle, **test de plomberie CMS↔Higgsfield
+  réussi dans les deux sens** (media_import_url → generate_image → upload_file_tool).
+- `reference/pieges-outils.md` : section **Confirmations H0** (params-nesting, `get_cost`
+  supporté/non supporté, génération asynchrone via `job_display`, alias `nano_banana_pro`
+  →`nano_banana_2`, **budget réel = plan gratuit 10 crédits**).
+- GO/NO-GO figé : H2→H9 **GO** (coût nul à construire) ; **H4/H5/H6/H10 bloqués budget**
+  (vidéos/shorts = 10-90 crédits, top-up requis) — détail dans l'audit.
+
 ## 0.1.0 — 2026-07-15
 
 - **Squelette du plugin** (routage média, garde-fous, hooks) — les skills de
