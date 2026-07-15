@@ -156,3 +156,10 @@ Guidelines and frameworks for creating effective marketing content across channe
 - At the end of blog posts (after you have earned the reader's trust)
 - In-line within content when contextually relevant (e.g., a related guide mention)
 - Repeat the primary CTA at the bottom of long-form pages
+
+## Périmètre (recentrage v2)
+
+Ce skill couvre désormais **blog / email / landing**. La création de contenu **social**
+(LinkedIn, Facebook, Instagram, TikTok — grammaires natives, hooks, anti-voix-IA) est
+**déléguée à `rapido-copywriter`** (skills `copy-linkedin`/`copy-meta`/`copy-tiktok` +
+`declinaison-multi-reseaux`). Pour un besoin social, y router.

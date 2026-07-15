@@ -1,5 +1,15 @@
 # Changelog — plugin rapidocms
 
+## 1.11.7 — 2026-07-15 — ponts vers rapido-copywriter
+
+- `pipeline-contenu-social` : proposer la **déclinaison multi-réseaux**
+  (`rapido-copywriter:declinaison-multi-reseaux`) à chaque brouillon ; la copy sociale par
+  réseau vient de `rapido-copywriter`, ce skill reste l'exécution.
+- `calendrier-editorial` : référence les **grammaires par réseau**
+  (`rapido-copywriter/reference/grammaires-reseaux.md`) pour la répartition des formats.
+- `content-creation-methodo` : **recentré blog/email/landing** ; le **social** est délégué
+  à `rapido-copywriter`.
+
 ## 1.11.6 — 2026-07-15
 
 - **Patch croisé `rapido-elevenlabs`** : `reference/charte-graphique.md` gagne une
