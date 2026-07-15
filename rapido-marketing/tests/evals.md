@@ -1,4 +1,12 @@
-# Évals — plugin rapido-marketing (0.4.0)
+# Évals — plugin rapido-marketing (0.5.0)
+
+## machine-inbound
+
+| # | Phrase | Attendu |
+|---|---|---|
+| MI1 | « Mets en place ma machine à leads entrants » | `machine-inbound` : Étape 0 exige `icp.md` (sinon `icp-generator` d'abord) → enchaîne contenu (`calendrier-editorial`/`generation-article-blog`/`geo-optimization`), lead magnet (`lead-magnet-machine` + landing), capture CRM, nurturing, `lead-scoring`, handoff `secretariat-commercial`, mesure une page, projet RH ; tout envoi confirmé |
+| MI2 (mode dégradé) | « Fais l'inbound mais je n'ai pas Lovable » | `machine-inbound` : page de capture en **voie 1** `create_editor_template` type landing_page (RapidoCRM), signale l'absence de Lovable, **ne bloque pas** |
+| MI3 (anti) | « Écris juste un article de blog » | PAS machine-inbound (orchestrateur) → skill `generation-article-blog` (tâche unitaire) |
 
 ## social-selling-linkedin
 

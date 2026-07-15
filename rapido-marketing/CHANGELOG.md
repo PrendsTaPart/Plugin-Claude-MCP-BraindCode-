@@ -1,5 +1,20 @@
 # Changelog — plugin rapido-marketing
 
+## 0.5.0 — 2026-07-14
+
+- Nouveau skill orchestrateur `machine-inbound` : la chaîne inbound complète
+  CMS-first, du contenu au RDV. 7 étapes, chacune avec outils MCP exacts,
+  garde-fous, KPI et mode dégradé — 100 % en délégation (calendrier-editorial,
+  generation-article-blog, geo-optimization, pipeline-contenu-social,
+  orchestration-campagne, lead-magnet-machine, usine-a-landing/create_editor_
+  template, usine-automatisations, email-sequence, lead-scoring,
+  secretariat-commercial, setup-projet/flux-kanban). Étape 0 exige
+  rapido-kb/marketing/icp.md (sinon icp-generator d'abord) ; aucun envoi/
+  publication sans confirmation (hook garde-envois) ; chaque exécution
+  alimente apprentissages.md (1-3 leçons datées). Mode dégradé sans Lovable :
+  page de capture en voie 1 (create_editor_template landing_page).
+- tests/evals.md : 3 scénarios (dont 1 mode dégradé sans Lovable + 1 anti).
+
 ## 0.4.0 — 2026-07-14
 
 - 2 skills « visibilité » (comblent des MANQUANT/PARTIEL de la matrice M0) :
