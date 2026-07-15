@@ -88,3 +88,7 @@ Compléments issus de la recherche de Rackham, au-delà des 4 types de questions
 
 - `rapidocrm:coaching-pipeline` — application aux deals réels
 - `rapido-forge:scale-bant-qualification` — grille de qualification complémentaire
+
+## Passer à l'opérationnel
+
+Cet exercice conçoit la méthode ; pour l'**appliquer aux données réelles** (fiches CRM, pipeline, factures…), passer à **`rapidocrm:coach-de-vente`** — il **lit ce livrable forge** (`./rapido-kb/startup/forge/`) comme base, puis agit sur les données MCP. Voir `reference/pont-forge-operations.md`.

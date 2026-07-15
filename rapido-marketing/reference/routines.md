@@ -1,5 +1,9 @@
 # Routines marketing récurrentes (n8n)
 
+> **Identifiants canoniques** (registre unifié `reference/registre-routines.md`,
+> racine du monorepo, fait foi) : `MKT-HEBDO`, `MKT-QUOTIDIEN`, `MKT-MENSUEL`. Les
+> noms `R-MKT-*` ci-dessous restent des **alias reconnus** (rétrocompatibilité).
+
 Trois routines pilotées par `pilotage-marketing`, **proposées puis installées sur
 confirmation** via `rapido-n8n:usine-automatisations`. Chacune a son workflow n8n
 et sa **table mémoire** (mémoire d'exécution = tables n8n, cf. `reference/memoire.md`) ;

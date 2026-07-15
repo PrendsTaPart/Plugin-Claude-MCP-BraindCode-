@@ -73,3 +73,28 @@ La routine R7 du Loop Engine (plugin rapido-startup) en workflow autonome —
 nodes, CONFIG et étapes d'activation dans
 `${CLAUDE_PLUGIN_ROOT}/reference/recette-r7-cash-sentinel.md`. Publication
 toujours confirmée (hook garde-production).
+
+## Recettes d'acquisition (SEO-* / SEA-* / TIKTOK-*)
+
+Les routines d'acquisition — **SEO-HEBDO** / **SEO-MENSUEL** (rank-tracking + backlinks
+DataForSEO **en n8n obligatoire**, coût gouverné), **SEA-HEBDO** (gaspillage + synergie
+SEO/SEA), **TIKTOK-HEBDO** — sont décrites dans
+`${CLAUDE_PLUGIN_ROOT}/reference/recettes-seo.md` (déclencheur, pseudo-nœuds, table
+mémoire, garde-fous) et enregistrées au registre unifié. Le **volume DataForSEO vit
+en n8n**, jamais en conversationnel.
+
+## Recettes relation client (RC-*)
+
+Les routines **RC-HEBDO** (support), **RC-NPS-TRIMESTRE**, **RC-SANTE-MENSUEL** sont
+décrites dans `${CLAUDE_PLUGIN_ROOT}/reference/recettes-relation-client.md` (table
+mémoire incluse) et enregistrées au registre unifié. Installation sur confirmation.
+
+## Recettes de vente événementielles (OPS-*)
+
+Les trois workflows **événementiels** de la boucle de vente — **OPS-LEAD-CHAUD**
+(réponse au lead chaud), **OPS-CLIENT-GAGNE** (onboarding du client gagné),
+**OPS-ALERTE-CHURN** (sentinelle rétention) — sont décrits dans
+`${CLAUDE_PLUGIN_ROOT}/reference/recettes-vente.md` (déclencheur, pseudo-nœuds,
+table mémoire, garde-fous) et enregistrés au registre unifié
+`reference/registre-routines.md` (préfixe `OPS-*`). Chaque recette a sa **table
+mémoire** obligatoire ; installation **sur confirmation**, recette par recette.

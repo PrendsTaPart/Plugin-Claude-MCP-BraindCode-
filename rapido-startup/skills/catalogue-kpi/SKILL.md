@@ -63,3 +63,17 @@ catalogue, pas calculer de tête.
   pas de verdict inventé.
 - Données partielles (serveur absent, période incomplète) : le dire, ne pas
   extrapoler.
+
+## Source unique des formules (anti-divergence)
+Ce skill est la **source de vérité des formules KPI** du marketplace. Tout autre
+skill qui a besoin d'un CAC, LTV, ratio, coverage, runway, DSO… **reprend la formule
+d'ici** (mêmes définitions), jamais une variante locale :
+- `rapido-marketing:attribution-kpi-marketing` : son CAC par canal = `dépense/clients`
+  (**même formule**) ; ce qui lui est propre = la **répartition/attribution par canal**
+  (que ce skill ne fait pas) + `LTGP`/`ROI` marketing (≠ LTV).
+- `rapido-marketing:money-math-acquisition` : **délègue** tout calcul ici.
+- `rapidocrm:pilotage-commercial`, routines `VENTE-*`, Loop Engine : coverage et
+  ratios **calculés ici**, jamais de tête.
+
+Le **Registre des KPIs** (`reference/registre-routines.md`) liste chaque KPI, sa
+formule canonique, son script propriétaire et les skills autorisés à le citer.

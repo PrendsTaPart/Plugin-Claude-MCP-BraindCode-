@@ -64,3 +64,7 @@ porte la mention « hypothèse fondateur, confiance faible ».
 dans SON répertoire de travail — jamais dans le plugin). Si des chiffres
 clés en sortent, proposer de mettre à jour
 `./rapido-kb/startup/business-plan/hypotheses.md` (source + date).
+
+## Passer à l'opérationnel
+
+Cet exercice conçoit la méthode ; pour l'**appliquer aux données réelles** (fiches CRM, pipeline, factures…), passer à **`rapido-marketing:operations-influenceurs`** — il **lit ce livrable forge** (`./rapido-kb/startup/forge/`) comme base, puis agit sur les données MCP. Voir `reference/pont-forge-operations.md`.

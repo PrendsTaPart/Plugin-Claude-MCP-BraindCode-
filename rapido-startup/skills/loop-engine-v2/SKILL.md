@@ -9,6 +9,13 @@ Chaque routine est un fichier autonome dans `references/routines/`, avec un
 **bloc CONFIG interchangeable en tête** (pattern client-resellable : le même
 fichier sert tous les clients, seule la CONFIG et la KB changent).
 
+> **Registre unifié** : le catalogue canonique de TOUTES les routines du
+> marketplace (avec identifiants préfixés par domaine) est `reference/registre-routines.md`
+> **à la racine du monorepo** — il fait foi. Les noms `R4…R9` de ce moteur restent
+> des **alias reconnus** (rétrocompatibilité) : `R4 = FIN-CFO-HEBDO`, `R5 = STARTUP-BUILDER`,
+> `R6 = GROWTH-LOOP`, `R7 = FIN-CASH-SENTINELLE`, `R8 = FIN-BOARD-MENSUEL`,
+> `R9 = VIDEO-FACTORY`. Les deux formes déclenchent la même routine.
+
 ## Étape 0 — Références (obligatoire)
 
 Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md` et SURTOUT
@@ -18,12 +25,12 @@ routine a le droit de faire seule). Seuils : `./rapido-kb/` prime.
 ## Workflow
 
 1. **Identifier la routine** demandée :
-   - « R4 », « routine du lundi », « revue finance » → `R4-CFO-WEEKLY.md`
-   - « R5 », « avancement startup », « delta d'exécution » → `R5-STARTUP-BUILDER.md`
-   - « R6 », « boucle growth », « expérience de la semaine » → `R6-GROWTH-LOOP.md`
-   - « R7 », « sentinelle cash », « surveille ma trésorerie » → `R7-CASH-SENTINEL.md`
-   - « R8 », « board mensuel », « pack investisseurs » → `R8-MONTHLY-BOARD.md`
-   - « R9 », « épisode du jour », « vidéo du jour », « video factory » →
+   - « R4 » / « FIN-CFO-HEBDO », « routine du lundi », « revue finance » → `R4-CFO-WEEKLY.md`
+   - « R5 » / « STARTUP-BUILDER », « avancement startup », « delta d'exécution » → `R5-STARTUP-BUILDER.md`
+   - « R6 » / « GROWTH-LOOP », « boucle growth », « expérience de la semaine » → `R6-GROWTH-LOOP.md`
+   - « R7 » / « FIN-CASH-SENTINELLE », « sentinelle cash », « surveille ma trésorerie » → `R7-CASH-SENTINEL.md`
+   - « R8 » / « FIN-BOARD-MENSUEL », « board mensuel », « pack investisseurs » → `R8-MONTHLY-BOARD.md`
+   - « R9 » / « VIDEO-FACTORY », « épisode du jour », « vidéo du jour », « video factory » →
      `R9-VIDEO-FACTORY.md`
    Ambigu → demander laquelle (ou proposer la séquence hebdo R4→R5→R6).
 2. **Charger le fichier de routine** et appliquer sa CONFIG : les valeurs de

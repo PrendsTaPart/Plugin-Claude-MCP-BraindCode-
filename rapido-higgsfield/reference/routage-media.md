@@ -17,13 +17,19 @@ produire, pour éviter les doublons et router au bon endroit.
 | **Avatar présentateur Mika** (visage parlant) | **HeyGen** | (HeyGen, hors Higgsfield) |
 | **App / landing connectée au CRM** (formulaires, prospects) | **Lovable** (PRIORITAIRE) | `rapido-lovable:usine-a-landing` |
 | **Microsite jetable / page événement / JEU jouable** | **Higgsfield** websites/games | `sites-et-jeux-express` (H8) |
-| **Voix off / doublage / clonage** (sur médias Higgsfield) | **Higgsfield** audio | `voix-et-doublage` (H7) |
+| **Voix off / narration / clonage / agents vocaux / SFX / musique** | **ElevenLabs** | `rapido-elevenlabs:*` (routage `rapido-elevenlabs/reference/routage-audio.md`) |
+| **Audio DANS un pipeline vidéo Higgsfield** (voix d'un rendu Higgsfield) | **Higgsfield** `generate_audio` | `voix-et-doublage` (H7) |
+| **Doublage** | **selon la grille E0** (ElevenLabs `dubbing` vs Higgsfield `dubbing`) | à trancher — `rapido-elevenlabs` / `voix-et-doublage` |
+| **Transcription** | Whisper local (défaut gratuit) / **Scribe** (diarisation, multi-locuteurs) / **Fireflies** (réunions) | `rapido-video` / `rapido-elevenlabs:transcription-scribe` / `rapido-marketing` |
 
 ## Règles de tranchage
 - **Brandé simple** (logo + variante) → **reste sur CMS** `images_to_image`, ne
   PAS aller sur Higgsfield (coût crédits inutile).
 - **Landing CRM** → **Lovable**, jamais un site Higgsfield (qui est jetable).
 - **Avatar Mika** → **HeyGen**, jamais un clonage Higgsfield sans droits.
+- **Son** → **ElevenLabs** (`rapido-elevenlabs`) pour voix off, narration, clonage,
+  agents vocaux, SFX/musique ; `generate_audio` Higgsfield **seulement** pour l'audio
+  d'un rendu produit dans un pipeline Higgsfield. Détail : `routage-audio.md`.
 - **Éditorial maquetté** (typo animée, presets) → **HyperFrames**, pas de vidéo
   générative Higgsfield.
 - Higgsfield = **la voie premium** : photo réaliste, 4K, vidéo générative, pubs,

@@ -1,5 +1,57 @@
 # Changelog — plugin rapidocrm
 
+## 1.7.0 — 2026-07-15 — vente terrain opérationnelle (pont forge → ops)
+
+- **5 skills** appliquant les méthodes forge aux **données MCP réelles** (pont
+  `reference/pont-forge-operations.md`) : `preparation-rdv` (SONCAS opérationnel :
+  fiche CRM + profil SONCAS sourcé + SPIN + objectif de sortie, notes `log_activity`
+  confirmées), `qualification-deals` (BANT/MEDDIC sur le pipeline, multi-threading ;
+  anti-collision `coaching-pipeline`), `coach-de-vente` (routeur multi-livres SPIN/
+  Challenger/Gap/Fanatical/Voss/Cialdini — **synthétise et route**, ne duplique pas
+  `negotiation`/`influence-psychology`), `playbook-objections-vivant` (objections
+  réelles Fireflies/CRM/deals perdus → `./rapido-kb/commercial/objections.md`
+  incrémental ; frontière `hundred-million-offers`), `funnel-aarrr-reel` (AARRR sur
+  données MCP, **formules `catalogue-kpi`**, étape fuyante + 3 actions routées).
+- Évals 5+3 par skill. Chaque skill lit le livrable forge (ou dit son absence).
+
+## 1.6.0 — 2026-07-15 — boucle d'expansion (upsell + ambassadeurs)
+
+- Skill **`expansion-clients`** — le tunnel **Studio → Agence → SaaS** à 3 transitions
+  à signaux réels : livrables Studio terminés (Kanban RapidoRH à Done), projet agence
+  à J-15, client SaaS actif 3+ mois. Proposition déléguée à `redaction-commerciale`,
+  `create_devis` après confirmation, relance J+7 — tout en brouillon ; fourchettes/
+  paliers depuis `./rapido-kb/offres.md`.
+- Skill **`programme-ambassadeurs`** — opère le programme **10 % client / 20 %
+  apporteur** : éligibilité (6+ mois, factures payées, satisfaction), proposition
+  convertible en crédits, suivi via `get_loyalty_points` (plafonds serveur ; aucun
+  ajustement inventé), relance J+60. **Anti-collision** avec
+  `rapido-marketing:lead-getters-systeme` (lui = choisit le TYPE ; moi = opère le
+  programme existant) — documentée dans les deux SKILL.md.
+- Routine **`VENTE-EXPANSION`** (hebdo jeudi) : scan des 3 signaux + éligibles
+  ambassadeurs → opportunités de la semaine, propositions préparées. Enregistrée au
+  registre unifié.
+- Évals : 5 phrases + 3 contre-exemples par skill (non-collision).
+
+## 1.5.0 — 2026-07-15 — pilotage-commercial (la boucle de vente)
+
+- Skill **`pilotage-commercial`** — l'orchestrateur de la boucle commerciale
+  (hygiène → relances → conversion → encaissement), sur le modèle EXACT de
+  `rapido-marketing:pilotage-marketing` : cycle **Sense → Plan → Act → Feed →
+  Report**, gouvernance `autonomie.md`, **calculs délégués à
+  `rapido-startup:catalogue-kpi` (jamais de calcul local)**, priorisation
+  valeur×probabilité×urgence, anti-doublon Kanban RapidoRH avant création. Envois en
+  brouillon confirmé (`garde-envois`). **Anti-collision** explicite : sous-domaine de
+  `rapido-suite:pilotage-entreprise` ; distinct de `coaching-pipeline` (revue
+  ponctuelle) et de `pilotage-marketing` (génère les leads ; moi je convertis).
+- **3 routines `VENTE-*`** au format CONFIG interchangeable de loop-engine
+  (`references/routines/`) : **VENTE-HYGIENE** (hebdo lundi, score /100 pondéré
+  40/30/20/10, niveau 0), **VENTE-RELANCES** (quotidien 14h, brouillons + table
+  mémoire `vente_relances_journal` anti-double-relance), **VENTE-REVUE** (hebdo lundi,
+  couverture = pipeline pondéré ÷ objectif via catalogue-kpi). Enregistrées au
+  **registre unifié** `reference/registre-routines.md`.
+- Évals : 5 phrases déclenchantes + 3 contre-exemples (non-collision coaching-pipeline
+  / pilotage-marketing / pilotage-entreprise).
+
 ## 1.4.3 — 2026-07-15
 
 - `campagne-marketing` : **gate délivrabilité conditionnel** avant tout envoi de

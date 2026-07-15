@@ -1,5 +1,13 @@
 # Changelog — plugin rapido-higgsfield
 
+## 1.0.4 — 2026-07-15 — branche audio ElevenLabs
+
+- **Patch croisé `rapido-elevenlabs`** : `reference/routage-media.md` intègre la
+  **branche son** — voix off / narration / clonage / agents vocaux / SFX / musique
+  → **ElevenLabs** (`rapido-elevenlabs`) ; `generate_audio` Higgsfield réservé à
+  l'audio d'un rendu DANS un pipeline Higgsfield ; **transcription 3 étages**
+  (Whisper local / Scribe / Fireflies) ; **doublage** à trancher via la grille E0.
+
 ## 1.0.3 — 2026-07-15 — renvoi directeur-prompts
 
 - **Patch croisé `rapido-prompteur`** : `studio-image-pro` et `usine-video-marketing`

@@ -1,3 +1,94 @@
+# Notes de release
+
+## Commercial & relation client (2026-07-15)
+
+Le pont **forge → opérations** : appliquer les méthodes (SONCAS, AARRR, BANT, NPS,
+100 jours…) aux **données MCP réelles**, sans dupliquer les exercices forge ni les livres.
+
+- **Pont forge → opérations** (`reference/pont-forge-operations.md`) : tout skill
+  opérationnel **lit le livrable forge** correspondant ; 12 skills forge pointent vers
+  leur skill opérationnel (tous existent désormais).
+- **`rapidocrm` (1.7.0)** — vente terrain : `preparation-rdv` (SONCAS opérationnel),
+  `qualification-deals` (BANT/MEDDIC, multi-threading), `coach-de-vente` (routeur
+  multi-livres), `playbook-objections-vivant`, `funnel-aarrr-reel` (AARRR via catalogue-kpi).
+- **`rapido-relation-client` (0.2.0)** — nouveau plugin (21e) : `pilotage-service-client`
+  (SLA), `boucle-nps`, `sante-client` (health score script), `cent-premiers-jours`
+  (100 jours), `segmentation-rfm`, `coach-relation-client` (routeur fidélité). Routines
+  `RC-HEBDO`/`RC-NPS-TRIMESTRE`/`RC-SANTE-MENSUEL`.
+- **`rapido-marketing` (0.18.0)** — `operations-influenceurs` (sourcing → brief → contrat
+  → tracking → ROI), routine `MKT-INFLUENCE-MENSUEL`.
+- **`catalogue-kpi`** enrichi (source unique) : taux **AARRR** (activation/rétention/
+  referral), **NPS**, **ROI**, part organique/payante. Health score = script composite
+  plugin-spécifique (documenté au registre des KPIs).
+- La **boucle se ferme** : 100 premiers jours → NPS promoteur → ambassadeur → nouveaux
+  leads → preparation-rdv → … **Validation** : valider TOUT VALIDE (21 plugins) ; tester 0/0/0.
+
+Plugins touchés : nouveau `rapido-relation-client` ; `rapidocrm` 1.6.0→1.7.0,
+`rapido-marketing` 0.17.0→0.18.0, `rapido-forge` 1.1.2→1.1.3, `rapido-startup`
+1.9.1→1.9.3, `rapido-n8n` 1.4.0→1.5.0.
+
+---
+
+## Acquisition organique & payante (2026-07-15)
+
+3 nouveaux plugins + intégration dans les boucles (SENSE enrichi, attribution étendue,
+registre + recettes n8n) — **13 nouveaux skills, 4 routines**.
+
+- **`rapido-seo` (0.1.0)** — acquisition **organique** : `audit-seo-technique`,
+  `recherche-mots-cles` (≠ `geo-optimization`), `netlinking`, `performance-organique`
+  (GSC+GA4), `tendances-marche`, **`pilotage-seo`** (sous-domaine organique de
+  `pilotage-marketing`). Coûts DataForSEO gouvernés ; GA4/GSC read-only ; fraîcheur GSC dite.
+- **`rapido-google-ads` (0.1.0)** — SEA **lecture seule** : `pilotage-performance-google-ads`,
+  `recherche-mots-cles-sea`, `audit-compte-google-ads`, **`synergie-seo-sea`**. Analyse
+  et recommande (exécution manuelle guidée).
+- **`rapido-tiktok-ads` (0.1.0)** — **verrouillé argent réel** : `pilotage-performance-tiktok`,
+  `lancement-campagne-tiktok` (100 % inactif), `tendances-creatives-tiktok`. Création
+  active **refusée** (hook DENY).
+- **Intégration** : `pilotage-marketing` SENSE (SEO/SEA/TikTok « si installé ») + ACT
+  paid Meta/Google/TikTok ; `attribution-kpi-marketing` sources étendues + KPI « part
+  organique vs payante » ; routines `SEO-HEBDO`/`SEO-MENSUEL`/`SEA-HEBDO`/`TIKTOK-HEBDO`
+  + `rapido-n8n/reference/recettes-seo.md` (rank-tracking DataForSEO **en n8n**).
+- Serveurs SEO/Ads **non encore connectés** → skills écrits d'après les grammaires
+  documentées (pattern « construire d'abord », comme ElevenLabs E1) ; checklist d'accès
+  dans chaque README. **Validation** : valider TOUT VALIDE (20 plugins) ; tester 0/0/0.
+
+Plugins touchés : nouveaux `rapido-seo`/`rapido-google-ads`/`rapido-tiktok-ads` ;
+`rapido-marketing` 0.16.3→0.17.0, `rapido-n8n` 1.3.0→1.4.0.
+
+---
+
+## Boucle de vente — loop-engineering (2026-07-15)
+
+Complète le loop-engineering du marketplace **sans rien refonder** (loop-engine-v2,
+pilotage-marketing, autonomie.md et hooks inchangés — tout s'y branche).
+
+- **Registre unifié des routines** (`reference/registre-routines.md`) — catalogue
+  canonique préfixé par domaine (`FIN-*`/`STARTUP-*`/`GROWTH-*`/`VIDEO-*`/`MKT-*`/
+  `VENTE-*`/`OPS-*`) ; anciens noms `R4…R9`, `R-MKT-*` conservés en **alias**
+  (rétrocompatibilité, aucun déclencheur cassé). **Registre des KPIs** : source unique
+  des formules = `rapido-startup:catalogue-kpi`.
+- **`rapidocrm:pilotage-commercial`** (`1.6.0`) — orchestrateur de la boucle
+  commerciale (Sense→Plan→Act→Feed→Report), calculs délégués à `catalogue-kpi`.
+  Routines **`VENTE-HYGIENE`** (hygiène /100), **`VENTE-RELANCES`** (relances
+  quotidiennes, table `vente_relances_journal`), **`VENTE-REVUE`** (couverture).
+- **`rapidocrm:expansion-clients`** + **`programme-ambassadeurs`** — tunnel
+  Studio→Agence→SaaS + programme 10 %/20 %, routine **`VENTE-EXPANSION`**.
+- **`rapido-n8n` (`1.3.0`)** — recettes événementielles **`OPS-LEAD-CHAUD`**,
+  **`OPS-CLIENT-GAGNE`**, **`OPS-ALERTE-CHURN`** (tables mémoire obligatoires ;
+  installées sur confirmation, aucun workflow créé d'office).
+- **KPI anti-divergence** — `catalogue-kpi` décrété source des formules ;
+  `attribution-kpi-marketing` réduit à ce qui lui est propre (attribution par canal,
+  LTGP/ROI ≠ LTV), commentaires « source : catalogue-kpi ».
+- Descriptions `marketplace.json` périmées corrigées (rapido-startup, rapido-marketing).
+- **Validation** : `valider-plugins.py` TOUT VALIDE (17 plugins) ; `tester-skills.py`
+  0 FAIL/0 WARN/0 INFO ; dry-run lecture seule « pilote mon commercial » →
+  `get_stats_pipeline_global` OK (chaîne SENSE résolue, données réelles).
+
+Plugins touchés : `rapidocrm` 1.4.3→1.6.0, `rapido-n8n` 1.2.0→1.3.0,
+`rapido-marketing` 0.16.1→0.16.3, `rapido-startup` 1.9.0→1.9.1.
+
+---
+
 # Notes de release — v1.0.0 (2026-07-10)
 
 ## Ajout — rapido-forge 1.1.0 (2026-07-10)

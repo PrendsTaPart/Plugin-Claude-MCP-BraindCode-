@@ -154,3 +154,17 @@ Chaque skill méthodo : 2 déclenchements + 1 anti-déclenchement.
 - Tout envoi/publication/activation → hook `garde-envois` (confirmation forcée).
 - RGPD (consentement/effacement) avant séquence ou audience.
 - KPI/score par script (`catalogue-kpi`), jamais de tête.
+
+## Éval — operations-influenceurs (0.18.0)
+
+**5 phrases** (→ `operations-influenceurs`) :
+1. « Lance une campagne d'influence »
+2. « Trouve des micro-influenceurs pour la restauration »
+3. « ROI de mes influenceurs »
+4. « Opère ma collaboration avec cet influenceur »
+5. « Suis les codes promo de mes influenceurs »
+
+**3 contre-exemples** :
+- « Quel type de programme d'apport choisir » → **`lead-getters-systeme`** (stratégie/type).
+- « Conçois ma stratégie d'influence (exercice) » → **`rapido-forge:scale-influencer-marketing`**.
+- « Prépare le post sponsorisé / le contenu » → **`rapidocms:pipeline-contenu-social`** / `contenu-conforme-marque`.

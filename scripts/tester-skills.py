@@ -270,6 +270,50 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity",
           "tool_input": {}}, "ask"),
     ],
+    ("rapido-tiktok-ads", "garde-argent-reel-tiktok.py"): [
+        ({"tool_name": "mcp__tiktok-ads__create_campaign",
+          "tool_input": {"status": "ENABLE"}}, "deny"),
+        ({"tool_name": "mcp__tiktok-ads__create_campaign",
+          "tool_input": {"status": "DISABLE"}}, "allow"),
+        ({"tool_name": "mcp__tiktok-ads__update_status",
+          "tool_input": {"status": "ENABLE"}}, "ask"),
+        ({"tool_name": "mcp__tiktok-ads__create_adgroup",
+          "tool_input": {"budget": 50, "status": "DISABLE"}}, "ask"),
+        ({"tool_name": "mcp__tiktok-ads__get_report", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-google-ads", "garde-ecriture-google-ads.py"): [
+        ({"tool_name": "mcp__google-ads__mutate_campaign", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__google-ads__create_campaign_budget", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__google-ads__search", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__analytics__run_report", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-relation-client", "garde-envois.py"): [
+        ({"tool_name": "mcp__rapidocrm__send_email", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__lancer_sondage_entreprise", "tool_input": {}}, "ask"),
+    ],
+    ("rapido-seo", "garde-couts-seo.py"): [
+        ({"tool_name": "mcp__dataforseo__backlinks_bulk_summary", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__dataforseo__serp_organic_live", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__dataforseo__backlinks_bulk_summary",
+          "tool_input": {"cout_confirme": True}}, "allow"),
+        ({"tool_name": "mcp__gsc__search_analytics", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__analytics__run_report", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-elevenlabs", "garde-couts.py"): [
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech",
+          "tool_input": {"cout_confirme": True}}, "allow"),
+        ({"tool_name": "mcp__ElevenLabs__list_voices", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-elevenlabs", "garde-voix.py"): [
+        ({"tool_name": "mcp__ElevenLabs__voice_clone", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__voice_design", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "allow"),
+    ],
+    ("rapido-elevenlabs", "garde-appels.py"): [
+        ({"tool_name": "mcp__ElevenLabs__make_outbound_call", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__ElevenLabs__text_to_speech", "tool_input": {}}, "allow"),
+    ],
     ("rapido-prompteur", "anti-ip.py"): [
         # prompt propre → allow
         ({"tool_name": "mcp__huggsfield__generate_image",

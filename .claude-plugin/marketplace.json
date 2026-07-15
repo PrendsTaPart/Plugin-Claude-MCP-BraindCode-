@@ -60,7 +60,7 @@
     {
       "name": "rapido-startup",
       "source": "./rapido-startup",
-      "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup. Skills à venir"
+      "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup, prévisionnel et board. Moteur de routines loop-engine-v2 (FIN-*/STARTUP-*/GROWTH-*/VIDEO-*, ex-R4→R9) + catalogue-kpi (source des formules). 5 skills, 2 agents (coach-startup, cfo-virtuel)."
     },
     {
       "name": "rapido-forge",
@@ -70,7 +70,7 @@
     {
       "name": "rapido-marketing",
       "source": "./rapido-marketing",
-      "description": "Marketing & acquisition Rapido-first : leads, tunnel de conversion, nurturing, publicité et analytics — priorité CRM/CMS/RH, MCP secondaires en repli. Squelette 0.1.0 (reference + garde-fous + hooks), skills à venir."
+      "description": "Marketing & acquisition Rapido-first : leads, tunnel de conversion, nurturing, publicité et analytics — priorité CRM/CMS/RH, MCP secondaires en repli. Orchestrateur pilotage-marketing + routines MKT-HEBDO/QUOTIDIEN/MENSUEL (ex-R-MKT-*). 16 skills, 5 agents."
     },
     {
       "name": "rapido-higgsfield",
@@ -86,6 +86,31 @@
       "name": "rapido-prompteur",
       "source": "./rapido-prompteur",
       "description": "Directeur de prompts : l'agent directeur-prompts orchestre la conception de prompts (image/vidéo/web/audio) pour Higgsfield, RapidoCMS, Lovable et Canva — il prompte, il ne produit pas. Règle d'or — la grammaire se LIT en direct (models_explore, pièges, doc). Boucle d'apprentissage (métriques réelles → GAGNANT/NEUTRE). 2 skills (prompt-lovable, prompt-personnage) + patterns francisés + garde anti-IP."
+    },
+    {
+      "name": "rapido-elevenlabs",
+      "source": "./rapido-elevenlabs",
+      "description": "La voix de l'écosystème (MCP officiel ElevenLabs) : voix off & narration, transcription Scribe (diarisation), identité vocale de marque, clonage sous consentement, sound design & musique autorisée, agents vocaux téléphoniques (Jarvis, pont FoodEatUp/Twilio). Squelette (routage audio + garde-fous coûts/voix/appels ; connexion locale stdio ou passerelle HTTP), skills en E2+ après l'audit live E0-local."
+    },
+    {
+      "name": "rapido-seo",
+      "source": "./rapido-seo",
+      "description": "SEO & acquisition organique pilotés par les données : audit technique (DataForSEO OnPage), recherche de mots-clés, netlinking (backlinks), Search Console, GA4, tendances — lecture d'abord, coûts DataForSEO gouvernés. Orchestrateur pilotage-seo, sous-domaine organique de pilotage-marketing. 6 skills."
+    },
+    {
+      "name": "rapido-google-ads",
+      "source": "./rapido-google-ads",
+      "description": "SEA Google Ads en LECTURE SEULE (MCP officiel read-only) : pilotage de performance (CPA/ROAS), audit de compte (gaspillage, Quality Score, écarts conversions GA4), mots-clés payants (CPC, SKAG/STAG), synergie SEO/SEA. Analyse et recommande — exécution manuelle guidée, jamais d'écriture promise. 4 skills."
+    },
+    {
+      "name": "rapido-tiktok-ads",
+      "source": "./rapido-tiktok-ads",
+      "description": "TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture) : pilotage de performance (CPM/CPC/CPA, comparatif vs Meta), lancement de campagne 100 % inactif (activation séparée sur confirmation écrite), tendances créatives. Verrous plus stricts que rapido-meta-ads : création active refusée, budgets plafonnés KB. 3 skills."
+    },
+    {
+      "name": "rapido-relation-client",
+      "source": "./rapido-relation-client",
+      "description": "Service client, fidélité et santé client en boucle : SLA & pilotage support, NPS actionné, health score composite, segmentation RFM, 100 premiers jours — orchestré sur RapidoCRM/FoodEatUp. Délègue triage/rédaction/animation aux skills existants. 5 skills, 3 routines, scores par script."
     }
   ]
 }

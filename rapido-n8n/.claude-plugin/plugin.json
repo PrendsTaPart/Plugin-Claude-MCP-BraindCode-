@@ -1,6 +1,6 @@
 {
   "name": "rapido-n8n",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "description": "Automatisations n8n sur l'instance du client : usine à workflows (cycle SDK complet), recettes métier Rapido prêtes à déployer, surveillance des exécutions, mémoire opérationnelle — tâche ponctuelle = Claude, tâche récurrente = workflow n8n",
   "author": {
     "name": "BraindCode",

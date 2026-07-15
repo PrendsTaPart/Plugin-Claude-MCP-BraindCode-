@@ -78,3 +78,79 @@
   (dédoublonnage + taille), lien de désinscription présent dans le template,
   taille du lot confirmée explicitement ; signale que le **gate complet** vient de
   rapido-marketing ; envoi **confirmé** (`garde-envois`) puis `lancer_campagne`.
+
+## Éval — pilotage-commercial (1.5.0)
+
+**5 phrases déclenchantes** (→ `pilotage-commercial`) :
+1. « Pilote mon commercial »
+2. « Fais le point ventes / la boucle commerciale »
+3. « Sense → Plan → Report sur mes ventes »
+4. « Où en est ma conversion, qu'est-ce que je relance en priorité cette semaine »
+5. « Lance la revue commerciale du lundi » (VENTE-REVUE)
+
+**3 contre-exemples** (NE doivent PAS déclencher `pilotage-commercial`) :
+- « Où en sont mes deals ? » (revue ponctuelle) → **`coaching-pipeline`** (pas la boucle orchestrée).
+- « Génère-moi des leads / remplis le haut du tunnel » → **`rapido-marketing:pilotage-marketing`** (génération, pas conversion).
+- « Fais le point global de la boîte » → **`rapido-suite:pilotage-entreprise`** (transverse ; il invoque pilotage-commercial pour le volet ventes, sans le dupliquer).
+
+> Frontière : `coaching-pipeline` = revue ponctuelle des deals ; `pilotage-commercial`
+> = la boucle complète (hygiène → relances → revue → capitalisation, routines VENTE-*).
+> `pilotage-marketing` génère, `pilotage-commercial` convertit.
+
+## Éval — expansion-clients (1.6.0)
+
+**5 phrases** (→ `expansion-clients`) :
+1. « Fais monter mes clients en gamme / upsell »
+2. « Qui est prêt à passer de Studio à Agence ? »
+3. « Mes projets agence bientôt livrés à qui proposer le SaaS »
+4. « Quels clients SaaS actifs peuvent monter de palier »
+5. « Pilote le tunnel Studio → Agence → SaaS »
+
+**3 contre-exemples** :
+- « Transforme mes bons clients en apporteurs » → **`programme-ambassadeurs`** (parrainage, pas montée en gamme).
+- « Quel type de programme de parrainage mettre en place » → **`rapido-marketing:lead-getters-systeme`** (choix stratégique du type).
+- « Relance mes devis qui expirent » → **`devis-facture-relance`** / routine VENTE-RELANCES.
+
+## Éval — programme-ambassadeurs (1.6.0)
+
+**5 phrases** (→ `programme-ambassadeurs`) :
+1. « Opère mon programme ambassadeurs »
+2. « Qui est éligible au parrainage 10/20 »
+3. « Suis les commissions de mes apporteurs »
+4. « Relance mes ambassadeurs »
+5. « Transforme mes clients satisfaits en apporteurs BraindCode »
+
+**3 contre-exemples** :
+- « Quel type de programme d'affiliation choisir » → **`rapido-marketing:lead-getters-systeme`** (stratégie/type).
+- « Fais monter ce client au palier supérieur » → **`expansion-clients`** (montée en gamme).
+- « Envoie la newsletter aux ambassadeurs » → **`campagne-marketing`** + gate délivrabilité (envoi de masse).
+
+## Éval — vente terrain opérationnelle (1.7.0)
+
+**preparation-rdv** — 5 : « prépare mon RDV avec X », « je vois ce client demain »,
+« profil SONCAS de ce contact », « fiche de prépa entretien », « mon argumentaire pour X ».
+Contre-ex : « où en sont mes deals » → `coaching-pipeline` ; « écris-lui un email » →
+`redaction-commerciale` ; « teste mon idée business » → `mom-test`.
+
+**qualification-deals** — 5 : « qualifie mon pipeline », « ce deal est-il solide »,
+« BANT de mes deals », « quels deals sont fragiles », « lesquels je pousse/sors ».
+Contre-ex : « quoi relancer / deals dormants » → `coaching-pipeline` ; « la boucle
+commerciale complète » → `pilotage-commercial` ; « méthode de revue de pipeline » →
+`pipeline-review-methodo`.
+
+**coach-de-vente** — 5 : « comment vendre à ce prospect », « quelle approche de vente »,
+« il ne répond plus je fais quoi », « coach de vente », « quelle méthode pour ce deal ».
+Contre-ex : « négocie le prix / il dit trop cher, je négocie » → `negotiation` (Voss) ;
+« quels leviers de persuasion » → `rapido-meta-ads:influence-psychology` ; « rédige l'email
+de vente » → `redaction-commerciale`.
+
+**playbook-objections-vivant** — 5 : « playbook d'objections », « quelles objections
+reviennent », « comment répondre à c'est trop cher », « objections par produit »,
+« mets à jour mes réponses aux objections ». Contre-ex : « refais mon offre face à trop
+cher » → `rapido-meta-ads:hundred-million-offers` (redessine l'OFFRE) ; « négocie ce
+prix » → `negotiation` ; « écris la réponse » → `redaction-commerciale`.
+
+**funnel-aarrr-reel** — 5 : « mon funnel AARRR », « métriques pirates », « où fuit mon
+funnel », « taux d'activation/rétention réels », « mon funnel chiffré ». Contre-ex :
+« conçois mon funnel AARRR (exercice) » → `rapido-forge:scale-funnel-aarrr` ; « donne-moi
+une formule KPT » → `catalogue-kpi` ; « pilote mon marketing » → `pilotage-marketing`.

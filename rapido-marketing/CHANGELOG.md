@@ -1,5 +1,48 @@
 # Changelog — plugin rapido-marketing
 
+## 0.18.0 — 2026-07-15 — opérations influenceurs
+
+- Skill **`operations-influenceurs`** — le cycle complet d'une collaboration :
+  **sourcing** (grille KB + recherche → entreprises CRM taguées « influenceur »),
+  **brief** (délégué `rapidocms:contenu-conforme-marque` ; mentions légales de
+  transparence obligatoires), **contrat** (délégué `rapidocrm:contrats-clients`),
+  **tracking** (code promo/UTM par influenceur), **ROI** (coût vs CA attribué via
+  `catalogue-kpi` → `./rapido-kb/marketing/influenceurs.md`). Pont forge
+  `scale-influencer-marketing`.
+- **Frontières** documentées : `scale-influencer-marketing` (stratégie, exercice) /
+  `lead-getters-systeme` (choix du type) / `operations-influenceurs` (opérer). Note
+  ajoutée à `lead-getters-systeme`.
+- Routine **`MKT-INFLUENCE-MENSUEL`** (revue ROI + décision par influenceur) au registre.
+  Évals 5+3.
+
+## 0.17.0 — 2026-07-15 — intégration acquisition (SEO/SEA/TikTok)
+
+- `pilotage-marketing` : **SENSE enrichi** — SEO (`rapido-seo:pilotage-seo`), SEA
+  (`rapido-google-ads`), TikTok (`rapido-tiktok-ads`), chacun « si installé, sinon
+  sauté en le disant ». **ACT paid** route désormais Meta OU Google OU TikTok
+  (arbitrage `directeur-marketing`). **Anti-collision** : `pilotage-seo` = sous-domaine
+  organique (règle miroir).
+- `attribution-kpi-marketing` : **sources étendues** (GA4 source/medium, GSC organique,
+  Google Ads, TikTok) + KPI **« part organique vs payante du CA »** (registre des KPIs).
+- `geo-optimization` : anti-collision explicite avec `rapido-seo:recherche-mots-cles`
+  (GEO génératif vs search classique).
+
+## 0.16.3 — 2026-07-15 — frontière KPI (anti-divergence)
+
+- `attribution-kpi-marketing` : section **« Frontière KPI »** — `catalogue-kpi` est la
+  source des formules ; le CAC par canal (`dépense/clients`) est **la même formule**,
+  scopée par canal (pas concurrente). Ce qui est propre au skill : répartition par
+  canal, modèle d'attribution, `LTGP`/`ROI` marketing (≠ LTV).
+- `scripts/kpi_marketing.py` : commentaires **« source : catalogue-kpi »** sur le CAC
+  et distinction explicite `LTGP` ≠ `LTV` (aucun changement de comportement).
+
+## 0.16.2 — 2026-07-15 — anti-collision ambassadeurs
+
+- **Patch croisé `rapidocrm`** : `lead-getters-systeme` gagne une section
+  **anti-collision** avec `rapidocrm:programme-ambassadeurs` — lui choisit le **TYPE**
+  de programme (stratégie), l'exécution du programme ambassadeurs BraindCode (10 %/20 %)
+  revient à `rapidocrm:programme-ambassadeurs`. Règle miroir.
+
 ## 0.16.1 — 2026-07-15
 
 - `tunnel-de-vente-360` (patch V5) : Acte 2 — **héros vidéo de landing monté

@@ -67,3 +67,7 @@ clés en sortent, proposer de mettre à jour
 ## Voir aussi (skills plus riches du marketplace)
 
 - `rapidocrm:redaction-commerciale` — ton selon l'étape du funnel
+
+## Passer à l'opérationnel
+
+Cet exercice conçoit la méthode ; pour l'**appliquer aux données réelles** (fiches CRM, pipeline, factures…), passer à **`rapidocrm:coach-de-vente`** — il **lit ce livrable forge** (`./rapido-kb/startup/forge/`) comme base, puis agit sur les données MCP. Voir `reference/pont-forge-operations.md`.

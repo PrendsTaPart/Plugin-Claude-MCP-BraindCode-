@@ -67,3 +67,7 @@ clés en sortent, proposer de mettre à jour
 ## Voir aussi (skills plus riches du marketplace)
 
 - `rapidocrm:redaction-commerciale` — adaptation du copy au profil
+
+## Passer à l'opérationnel
+
+Cet exercice conçoit la méthode ; pour l'**appliquer aux données réelles** (fiches CRM, pipeline, factures…), passer à **`rapidocrm:preparation-rdv`** — il **lit ce livrable forge** (`./rapido-kb/startup/forge/`) comme base, puis agit sur les données MCP. Voir `reference/pont-forge-operations.md`.

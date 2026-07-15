@@ -54,6 +54,29 @@ avec la limite du modèle rappelée.
 - Performance pub détaillée → skill `pilotage-performance-ads`.
 - Money math d'acquisition (LTGP:CAC, seuils) → skill `money-math-acquisition`.
 
+## Sources d'attribution (multi-canal étendu)
+Quand les plugins sont installés, croiser les sources (serveur absent = sauté en le disant) :
+- **GA4** (`run_report`) — trafic et conversions par **source/medium**.
+- **GSC** (`rapido-seo:performance-organique`) — canal **organique** (positions, clics).
+- **Google Ads** (`rapido-google-ads`) — **SEA** (dépense, conversions par campagne).
+- **TikTok Ads** (`rapido-tiktok-ads`) et **Meta** (`rapido-meta-ads`) — **payant social**.
+- KPI **« part organique vs payante du CA »** : CA attribué organique ÷ CA total (et
+  la part payante) — formule au **Registre des KPIs** (`reference/registre-routines.md`),
+  calcul `rapido-startup:catalogue-kpi`.
+
+## Frontière KPI (source unique des formules)
+- **`rapido-startup:catalogue-kpi` = source de vérité des FORMULES** (CAC, LTV,
+  ratio, runway, DSO…). Le CAC calculé ici (`dépense / clients`) est **la même
+  formule** que `catalogue-kpi.cac`, simplement **scopée par canal** — pas une
+  formule concurrente.
+- **Ce skill = ce qui lui est PROPRE** : la **répartition par canal** et le **modèle
+  d'attribution** (single-touch premier/dernier point) — que `catalogue-kpi` ne fait
+  pas. `LTGP` (marge brute/client) et `ROI` par canal sont **propres au marketing**
+  (≠ LTV). Voir le **Registre des KPIs** de `reference/registre-routines.md`.
+- **`money-math-acquisition`** = cadrage décisionnel (combien dépenser, LTGP:CAC) —
+  calculs **délégués** au script KPI, jamais recalculés de tête.
+
 ## Garde-fous
-Attribution **single-touch assumée** (limites dites) ; KPI **par script** ;
-données live > KB ; aucune donnée inventée ; benchmarks datés.
+Attribution **single-touch assumée** (limites dites) ; KPI **par script**, **formules
+de `catalogue-kpi` (source unique)** ; données live > KB ; aucune donnée inventée ;
+benchmarks datés.

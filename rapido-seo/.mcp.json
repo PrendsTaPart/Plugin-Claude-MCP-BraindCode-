@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "dataforseo": {
+      "type": "http",
+      "url": "https://mcp.dataforseo.com/mcp",
+      "headers": {
+        "Authorization": "Basic ${DATAFORSEO_AUTH}"
+      }
+    },
+    "gsc": {
+      "type": "http",
+      "url": "${GSC_MCP_URL}"
+    },
+    "analytics": {
+      "type": "http",
+      "url": "${GA4_MCP_URL}"
+    },
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    }
+  }
+}

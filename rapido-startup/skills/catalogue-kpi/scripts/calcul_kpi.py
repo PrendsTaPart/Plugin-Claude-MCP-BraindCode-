@@ -137,6 +137,55 @@ def taux_conversion_etape(passes, entres):
     return round(float(passes) / entres, 4)
 
 
+# ------------------------------------------------------------ AARRR (funnel pirate)
+def taux_activation(actives, nouveaux):
+    """Activation = utilisateurs ayant fait l'action clé ÷ nouveaux inscrits."""
+    nouveaux = float(nouveaux)
+    if nouveaux <= 0:
+        return None
+    return round(float(actives) / nouveaux, 4)
+
+
+def taux_retention(actifs_fin, actifs_debut):
+    """Rétention = clients actifs en fin de période ÷ actifs en début (cohorte)."""
+    actifs_debut = float(actifs_debut)
+    if actifs_debut <= 0:
+        return None
+    return round(float(actifs_fin) / actifs_debut, 4)
+
+
+def taux_referral(leads_parrainage, leads_total):
+    """Referral = leads issus du parrainage ÷ total des leads."""
+    leads_total = float(leads_total)
+    if leads_total <= 0:
+        return None
+    return round(float(leads_parrainage) / leads_total, 4)
+
+
+def part_organique(ca_organique, ca_total):
+    """Part organique du CA = CA attribué organique ÷ CA total (la part payante = 1 − ce ratio)."""
+    ca_total = float(ca_total)
+    if ca_total <= 0:
+        return None
+    return round(float(ca_organique) / ca_total, 4)
+
+
+def nps(promoteurs, detracteurs, repondants):
+    """NPS = (% promoteurs − % détracteurs), en points (−100 à +100)."""
+    repondants = float(repondants)
+    if repondants <= 0:
+        return None
+    return round((float(promoteurs) - float(detracteurs)) / repondants * 100, 1)
+
+
+def roi(gain, cout):
+    """ROI = (gain − coût) ÷ coût (ex. CA attribué à un influenceur vs coût de la collab)."""
+    cout = float(cout)
+    if cout <= 0:
+        return None
+    return round((float(gain) - cout) / cout, 2)
+
+
 # ------------------------------------------------------------ dispatch & seuils
 FORMULES = {
     "mrr": (mrr, "MRR = Σ abonnements normalisés au mois (annuel ÷ 12) = {valeur}"),
@@ -162,6 +211,12 @@ FORMULES = {
     "charge_vs_contrat": (charge_vs_contrat, "charge = réalisées ÷ contractuelles = {heures_realisees} ÷ {heures_contractuelles} = {valeur}"),
     "cout_revient_projet": (cout_revient_projet, "coût de revient = heures × taux chargé + coûts directs = {heures} × {taux_horaire_charge} + {couts_directs} = {valeur}"),
     "taux_conversion_etape": (taux_conversion_etape, "conversion étape = passés ÷ entrés = {passes} ÷ {entres} = {valeur}"),
+    "taux_activation": (taux_activation, "activation = activés ÷ nouveaux = {actives} ÷ {nouveaux} = {valeur}"),
+    "taux_retention": (taux_retention, "rétention = actifs fin ÷ actifs début = {actifs_fin} ÷ {actifs_debut} = {valeur}"),
+    "taux_referral": (taux_referral, "referral = leads parrainage ÷ total leads = {leads_parrainage} ÷ {leads_total} = {valeur}"),
+    "part_organique": (part_organique, "part organique = CA organique ÷ CA total = {ca_organique} ÷ {ca_total} = {valeur}"),
+    "nps": (nps, "NPS = (% promoteurs − % détracteurs) = ({promoteurs} − {detracteurs}) ÷ {repondants} × 100 = {valeur}"),
+    "roi": (roi, "ROI = (gain − coût) ÷ coût = ({gain} − {cout}) ÷ {cout} = {valeur}"),
 }
 
 # Seuils par défaut (= reference/seuils-defaut.md) — la KB PRIME toujours :

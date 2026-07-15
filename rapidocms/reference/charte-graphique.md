@@ -51,6 +51,22 @@ superlatifs. (Le ton réel du client vient de la KB ou de `get_brand`.)
 ### Don't
 - Jargon interne, promesses chiffrées non vérifiées, majuscules criardes.
 
+## Identité vocale (voix de marque)
+
+La marque a des couleurs, un logo… et une **voix**. Symétrie avec `brand_id` :
+
+- **`voice_id`** : [id ElevenLabs de la voix de la marque] (repli : aucune → à créer
+  via `rapido-elevenlabs:identite-vocale-marque`).
+- **params** : `stability` / `similarity` / `style` figés après tests.
+- **modèle** : Multilingual v2/v3 (final) · Flash (brouillon).
+- **usages** : voix off, posts audio, narration, agent vocal.
+- **source / consentement** : voice design | clonage (consentement écrit archivé, chemin cité).
+
+> Toute narration/voix off d'une marque utilise **SA** voix (cohérence vocale =
+> cohérence de marque). Fiche complète : `rapido-elevenlabs/reference/identite-vocale.md`.
+> Voix d'un **personnage** (narrateur PronoClip) → `rapido-kb/personnages.json`, à côté
+> d'`element_id`/`soul_id`.
+
 ## Application par outil
 
 - `generate_image` : intégrer les couleurs primaire/secondaire dans le `prompt` ;

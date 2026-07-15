@@ -7,8 +7,8 @@ garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
 entreprise de A à Z.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-16-blue)
-![Skills](https://img.shields.io/badge/skills-318-brightgreen)
+![Plugins](https://img.shields.io/badge/plugins-21-blue)
+![Skills](https://img.shields.io/badge/skills-350-brightgreen)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
 **Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
@@ -48,26 +48,76 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | Plugin | Version | Skills | Agents | Serveurs MCP requis | Variables d'env |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.1 | 15 | 3 | foodeatup, rapidocrm | — |
-| `rapidocrm` | 1.4.3 | 21 | 2 | rapidocrm | — |
-| `rapidocms` | 1.11.5 | 22 | 6 | rapidocms, hyperframes | — |
+| `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | — |
+| `rapidocms` | 1.11.6 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.3 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
-| `rapido-n8n` | 1.2.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
+| `rapido-n8n` | 1.5.0 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | `N8N_MCP_URL` |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | `N8N_MCP_URL` |
-| `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
-| `rapido-forge` | 1.1.2 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
-| `rapido-marketing` | 0.16.1 | 16 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
-| `rapido-higgsfield` | 1.0.3 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
+| `rapido-startup` | 1.9.3 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
+| `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
+| `rapido-marketing` | 0.18.0 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | `N8N_MCP_URL` (optionnel) ; Fireflies = connecteur optionnel (voir README plugin) |
+| `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | `HIGGSFIELD_MCP_URL` |
 | `rapido-video` | 1.0.0 | 2 | 0 | rapidocms (huggsfield optionnel) | **Prérequis : aucun** — ffmpeg/Whisper/Remotion auto-installés |
 | `rapido-prompteur` | 0.3.0 | 2 | 1 | lovable, rapidocms, rapidocrm (orchestre aussi huggsfield, canva) | **Prérequis : aucun** — agent + skills + patterns + hooks |
+| `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs (local `uvx` ou passerelle HTTP), rapidocms | `ELEVENLABS_API_KEY` + `ELEVENLABS_MCP_BASE_PATH` (local) **ou** `ELEVENLABS_MCP_URL` + `ELEVENLABS_MCP_TOKEN` (passerelle) — squelette |
+| `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics (GA4), rapidocms, rapidocrm | `DATAFORSEO_AUTH`, `GSC_MCP_URL`, `GA4_MCP_URL` |
+| `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads (read-only), dataforseo, analytics (GA4), rapidocrm | `GOOGLE_ADS_MCP_URL`, `DATAFORSEO_AUTH`, `GA4_MCP_URL` |
+| `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
+| `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 
-**Total : 16 plugins, 334 skills, 32 agents.** (`rapido-startup` — finance &
+**Total : 21 plugins, 362 skills, 32 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
+
+### Nouveau — Commercial & relation client (pont forge → opérations)
+
+Les méthodes de vente/fidélité (forge, livres) appliquées aux **données MCP réelles** :
+- **Pont forge → opérations** (`reference/pont-forge-operations.md`) : l'opérationnel lit
+  le livrable forge ; 12 skills forge pointent vers leur skill opérationnel.
+- **Vente terrain** (`rapidocrm`) : `preparation-rdv` (SONCAS), `qualification-deals`
+  (BANT/MEDDIC), `coach-de-vente` (routeur multi-livres), `playbook-objections-vivant`,
+  `funnel-aarrr-reel`.
+- **`rapido-relation-client`** (nouveau, 21e) : service client en boucle, NPS, health
+  score, RFM, 100 premiers jours, coach fidélité.
+- **`operations-influenceurs`** (`rapido-marketing`) : sourcing → brief → contrat →
+  tracking → ROI. `catalogue-kpi` enrichi (AARRR, NPS, ROI).
+
+### Nouveau — Acquisition organique & payante
+
+3 nouveaux plugins branchés sur les boucles existantes (SENSE de `pilotage-marketing`
+enrichi, attribution étendue, registre + recettes n8n) :
+- **`rapido-seo`** (organique) — audit technique, mots-clés, netlinking, GSC/GA4,
+  tendances ; orchestrateur `pilotage-seo` (sous-domaine de `pilotage-marketing`).
+- **`rapido-google-ads`** (SEA, **lecture seule**) — pilotage, audit, mots-clés
+  payants, **synergie SEO/SEA** (chaque euro économisé nourrit le budget test).
+- **`rapido-tiktok-ads`** (**verrouillé argent réel**) — pilotage, lancement 100 %
+  inactif, tendances créatives.
+- **13 nouveaux skills**, routines **`SEO-HEBDO`/`SEO-MENSUEL`/`SEA-HEBDO`/`TIKTOK-HEBDO`**
+  (rank-tracking DataForSEO **en n8n**, coût gouverné), KPI « part organique vs payante ».
+- Coûts **DataForSEO gouvernés** (facturation à l'appel, volume → n8n) ; GA4/Google
+  Ads **read-only** ; fraîcheur GSC (J-3) précisée.
+
+### Nouveau — Boucle de vente (loop-engineering)
+
+Le loop-engineering du marketplace est complété par la **boucle commerciale** —
+de l'hygiène des données à l'encaissement, sans rien refonder :
+- **Registre unifié des routines** (`reference/registre-routines.md`) : un
+  identifiant canonique par domaine (`FIN-*`, `STARTUP-*`, `GROWTH-*`, `VIDEO-*`,
+  `MKT-*`, `VENTE-*`, `OPS-*`) — les anciens noms (`R4…R9`, `R-MKT-*`) restent des
+  alias. Plus d'ambiguïté sur « lance R5 ». Inclut un **Registre des KPIs** (source
+  unique des formules : `catalogue-kpi`).
+- **`rapidocrm:pilotage-commercial`** — l'orchestrateur de la vente (Sense → Plan →
+  Act → Feed → Report), miroir de `pilotage-marketing` (qui génère les leads ; lui
+  les convertit). Routines **`VENTE-HYGIENE`** / **`VENTE-RELANCES`** / **`VENTE-REVUE`**.
+- **`rapidocrm:expansion-clients`** (tunnel Studio → Agence → SaaS) et
+  **`rapidocrm:programme-ambassadeurs`** (10 %/20 %), routine **`VENTE-EXPANSION`**.
+- **`rapido-n8n`** recettes événementielles **`OPS-LEAD-CHAUD`** / **`OPS-CLIENT-GAGNE`**
+  / **`OPS-ALERTE-CHURN`** — vendre pendant qu'on dort (installées sur confirmation).
 
 Nouveau : **`rapido-forge`** (StartupsForge / PrendsTaPart) — 180 exercices
 d'incubateur en 3 parcours (bootcamp 5 jours, roadmap idéation, roadmap

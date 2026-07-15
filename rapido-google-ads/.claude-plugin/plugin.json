@@ -1,0 +1,9 @@
+{
+  "name": "rapido-google-ads",
+  "version": "0.1.0",
+  "description": "SEA Google Ads en LECTURE SEULE (MCP officiel read-only) : pilotage de performance, audit de compte, mots-clés payants, synergie SEO/SEA. Analyse et recommande (exécution manuelle guidée dans Google Ads) — jamais d'écriture promise. Calqué sur rapido-meta-ads.",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  }
+}
