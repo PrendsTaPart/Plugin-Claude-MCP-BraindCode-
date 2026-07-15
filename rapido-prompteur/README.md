@@ -13,10 +13,12 @@ il ne remplace pas** les skills prompts existants (cf. `docs/IMPORTS-PROMPTEUR.m
 > changent sans préavis — la seule source fiable est le moteur lui-même. Détail :
 > `reference/grammaire-des-moteurs.md` (tableau moteur → où lire, à **coût nul**).
 
-## Contenu (squelette 0.1.0)
+## Contenu (0.2.0)
 
 | Élément | Rôle |
 |---|---|
+| `skills/prompt-lovable/` | Brief Lovable structuré (rôle → pages → design charte → mode B CRM → interdits → critères testables) |
+| `skills/prompt-personnage/` | Banque de traits combinatoire → prompts de scène cohérents avec le canon (routage CMS/Higgsfield) |
 | `reference/grammaire-des-moteurs.md` | Règle d'or + tableau moteur → où lire ses contraintes en live |
 | `reference/regles-de-construction.md` | Anatomie d'un prompt par média + INTERDITS (IP/artistes) + délégations |
 | `reference/ip-a-risque.md` | Liste maison des IP/marques/artistes à risque (source du garde anti-IP) |
@@ -42,7 +44,13 @@ il ne remplace pas** les skills prompts existants (cf. `docs/IMPORTS-PROMPTEUR.m
 - **Aucune IP tierce, aucun style d'artiste vivant, aucun personnage sous licence.**
 - **Données réelles uniquement** (charte via `get_brand`/KB ; manque → « backend Tunis »).
 
-## Skills — à venir
+## Skills
 
-Le plugin est un **squelette** (reference + patterns + hooks). Les skills
-(`directeur-prompts`, etc.) seront ajoutés dans une prochaine itération.
+- **`prompt-lovable`** — « prompt Lovable », « brief pour le site/app/landing ».
+  Brief structuré branché marque (`get_brand`) + CRM (mode B). Distinct de
+  `rapido-forge:ideation-lovable-prompt` (idéation) et des builders `rapido-lovable`.
+- **`prompt-personnage`** — banque de traits combinatoire (canon verrouillé + axes
+  de scène) → prompts cohérents ; routage `rapidocms:coherence-personnage` (image)
+  ou `rapido-higgsfield:personnages-univers` (réaliste/vidéo) ; boucle d'apprentissage.
+
+D'autres skills (ex. `directeur-prompts` orchestrateur) pourront s'ajouter.

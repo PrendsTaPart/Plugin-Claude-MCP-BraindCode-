@@ -1,7 +1,7 @@
 {
   "name": "rapido-prompteur",
-  "version": "0.1.0",
-  "description": "Directeur de prompts : orchestre la conception de prompts (image, vidéo, web, audio) pour Higgsfield, RapidoCMS, Lovable et Canva. Règle d'or — la grammaire d'un moteur se LIT à chaque session (models_explore, pièges, doc Lovable), jamais de mémoire. Patterns francisés par usage, garde-fou anti-IP tierce/artiste vivant. Squelette 0.1.0 (reference + patterns + hooks), skills à venir.",
+  "version": "0.2.0",
+  "description": "Directeur de prompts : orchestre la conception de prompts (image, vidéo, web, audio) pour Higgsfield, RapidoCMS, Lovable et Canva. Règle d'or — la grammaire d'un moteur se LIT à chaque session (models_explore, pièges, doc Lovable), jamais de mémoire. Patterns francisés par usage, garde-fou anti-IP tierce/artiste vivant. 2 skills (prompt-lovable brief marque+CRM, prompt-personnage banque de traits combinatoire) + reference + patterns + hooks.",
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"

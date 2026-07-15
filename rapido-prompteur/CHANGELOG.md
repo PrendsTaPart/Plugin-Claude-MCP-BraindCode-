@@ -1,5 +1,31 @@
 # Changelog — plugin rapido-prompteur
 
+## 0.2.0 — 2026-07-15 — Skills prompt-lovable + prompt-personnage
+
+- Skill **`prompt-lovable`** — produit un **brief Lovable structuré** (6 sections :
+  rôle & objectif → pages & sections → design system imposé par la charte
+  (`get_brand`/KB, hex/police/logo) → données & **mode B** (formulaire → CRM
+  `enregistrer_prospect`, contraintes `rapido-lovable:usine-a-landing` /
+  `site-restaurant`) → **interdits** (pas de `localStorage` métier, clé côté serveur,
+  parse par nom, données réelles) → **critères d'acceptation testables**). Doc
+  Lovable **lue en ligne** (aucun system prompt divulgué). Articulation avec
+  `rapido-forge:ideation-lovable-prompt` (idéation) et les builders `rapido-lovable`
+  (construction) — déclencheurs distincts, renvois croisés. Source pattern
+  `web-apps` (KingLeoJr **MIT** francisé).
+- Skill **`prompt-personnage`** — réimplémentation **maison** de la « banque de
+  traits combinatoire » (concept inspiré de `huangserva`, **sans licence → zéro
+  copie**) : banque `rapido-kb/traits-personnages.md` (traits de canon VERROUILLÉS
+  + axes de scène VARIABLES), liée au registre `personnages.json` → **génération
+  combinatoire** de prompts de scène cohérents avec le canon → **routage média**
+  (`rapidocms:coherence-personnage` image brandée / `rapido-higgsfield:personnages-univers`
+  réaliste-vidéo) → **boucle d'apprentissage** (chaque combinaison validée enrichit
+  la banque + `add_prompt`).
+- **Banque de traits d'exemple** `reference/traits-personnages.exemple.md` : mascotte
+  BraindCode « Origami » (`#0052FF`) + PronoClip « Pronoclip-kun » (cohérente avec
+  le canon `coherence-personnage`).
+- `.mcp.json` : serveurs orchestrés déclarés (`lovable`, `rapidocms`, `rapidocrm`).
+- **4 évals** (PL1/PL2, PP1/PP2). Bump 0.1.0 → 0.2.0.
+
 ## 0.1.0 — 2026-07-15 — Squelette + patterns francisés
 
 - Nouveau plugin **rapido-prompteur** (16e du marketplace) — **directeur de
