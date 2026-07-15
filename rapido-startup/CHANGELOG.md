@@ -1,5 +1,17 @@
 # Changelog — plugin rapido-startup
 
+## 1.9.1 — 2026-07-15 — catalogue-kpi source unique des formules
+
+- `catalogue-kpi/SKILL.md` : section **« Source unique des formules »** — ce skill
+  est la source de vérité des formules KPI ; tout autre skill reprend la formule
+  d'ici (jamais de variante locale). Frontière explicite avec
+  `attribution-kpi-marketing` (répartition par canal) et `money-math-acquisition`
+  (cadrage, calculs délégués).
+- **Registre des KPIs** ajouté au registre unifié racine `reference/registre-routines.md`
+  (chaque KPI : formule canonique, script propriétaire, skills autorisés) + audit des
+  seuils en dur (conclusion : occurrences ~toutes pédagogiques ou déjà KB-sourcées ;
+  aucun seuil de décision opérationnel à déloger).
+
 ## 1.9.0 — 2026-07-11
 
 - R7 CASH-SENTINEL précisé : la phase Plan intègre la **projection

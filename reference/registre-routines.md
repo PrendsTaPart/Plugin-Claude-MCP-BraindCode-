@@ -184,6 +184,40 @@
 
 ## Registre des KPIs
 
-> Rempli par le **PROMPT 5** (source unique des formules : `rapido-startup:catalogue-kpi`).
-> Chaque KPI y aura sa formule canonique, son script propriétaire et les skills
-> autorisés à le citer.
+> **Source unique des formules : `rapido-startup:catalogue-kpi`**
+> (`scripts/calcul_kpi.py`). Aucun autre script ne recalcule un KPI déjà couvert
+> avec une formule différente — sinon chiffres divergents en CODIR. Un skill peut
+> **citer** un KPI ; il ne redéfinit pas sa formule.
+
+| KPI | Formule canonique | Script propriétaire | Skills autorisés à le citer |
+|---|---|---|---|
+| MRR | Σ montants (annuel ÷ 12) | `catalogue-kpi/calcul_kpi.py` | loop-engine (FIN-*), pilotage-* |
+| CAC | dépenses acquisition ÷ nouveaux clients | `catalogue-kpi` | `attribution-kpi-marketing` (par canal, **même formule**), `money-math-acquisition`, pilotage-* |
+| LTV | ARPU × marge brute ÷ churn mensuel | `catalogue-kpi` | money-math, board |
+| LTV:CAC | LTV ÷ CAC | `catalogue-kpi` | money-math, board |
+| CAC payback | CAC ÷ (ARPU × marge), en mois | `catalogue-kpi` | money-math |
+| Marge brute | (CA − coûts directs) ÷ CA | `catalogue-kpi` | FIN-*, food-cost |
+| Burn net | dépenses − encaissements | `catalogue-kpi` | FIN-CFO-HEBDO, FIN-CASH-SENTINELLE |
+| Runway | trésorerie ÷ burn net | `catalogue-kpi` | FIN-CASH-SENTINELLE, board |
+| DSO | créances ÷ CA × jours | `catalogue-kpi` | FIN-CFO-HEBDO |
+| Vélocité pipeline | opp × conv × panier ÷ cycle | `catalogue-kpi` | GROWTH-LOOP, pilotage-commercial |
+| Couverture pipeline | pipeline pondéré ÷ objectif | `catalogue-kpi` | `pilotage-commercial`, VENTE-REVUE |
+| **Propres au marketing** (hors catalogue-kpi) | | | |
+| LTGP (par canal) | (revenu − coût) ÷ clients | `attribution-kpi-marketing/kpi_marketing.py` | marketing seulement (≠ LTV) |
+| ROI (par canal) | (revenu − dépense) ÷ dépense | `attribution-kpi-marketing` | marketing |
+| Attribution % (par canal) | contacts (1er/dernier point) ÷ total × 100 | `attribution-kpi-marketing` | marketing |
+
+> **Frontière** : `catalogue-kpi` = formules & calculs · `attribution-kpi-marketing`
+> = répartition/attribution par canal · `money-math-acquisition` = cadrage décisionnel
+> (calculs délégués).
+
+## Audit des seuils en dur (2026-07-15)
+Passe `grep '€|%|mois'` sur les `SKILL.md` : la grande majorité des occurrences sont
+**pédagogiques** (les 181 skills d'incubateur `rapido-forge` enseignent des
+heuristiques : « runway confortable 12-18 mois », « garde 50 %+ au seed » — ce sont
+des **leçons**, pas des seuils de décision client) ou déjà **sourcées KB** (« seuils :
+`./rapido-kb/` prime »). **Aucun seuil de décision opérationnel** n'a été trouvé codé
+en dur là où il devrait vivre dans `./rapido-kb/` : les skills opérationnels
+(loop-engine, pilotage-*, VENTE-*) lisent déjà leurs seuils depuis la KB (défauts
+explicitement étiquetés « défaut si absent »). Règle maintenue : un seuil de
+**décision** vit dans `./rapido-kb/` ; un seuil **pédagogique** reste dans le texte.
