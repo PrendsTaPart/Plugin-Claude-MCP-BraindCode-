@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-prompteur
 
+## 0.3.1 — 2026-07-15 — pont vers le kit connecteur MCP
+
+- `prompt-lovable` : tout brief incluant un **agent embarqué connecté à un MCP** délègue
+  le volet connexion à `rapido-lovable:connecteur-mcp-lovable` (kit canonique — clés hors
+  brief, appels serveur, scope verrouillé).
+
 ## 0.3.0 — 2026-07-15 — Agent directeur-prompts + boucle d'apprentissage
 
 - Agent **`directeur-prompts`** — du besoin au **prompt exécutable** : étape 0

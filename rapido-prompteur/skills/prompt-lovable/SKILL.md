@@ -87,6 +87,12 @@ confirmer côté backend Tunis »), ne rien inventer.
 | **`prompt-lovable`** (ici) | « prompt Lovable », « brief pour le site/app/landing » | **écrit le brief** outillé marque + CRM |
 | `rapido-forge:ideation-lovable-prompt` | parcours **idéation StartupsForge** (débutant) | version **idéation** (générer le code de son site en apprenant) |
 | `rapido-lovable:usine-a-landing` / `site-restaurant` | « construis / déploie la landing / le site resto » | **construisent** l'app (mode B, analytics) |
+| `rapido-lovable:connecteur-mcp-lovable` | brief incluant un **agent embarqué connecté à un MCP** | **kit canonique** (edge function, sécurité, scope) — y déléguer le volet MCP |
+
+> **Brief incluant un MCP** : pour tout site/app avec un **agent embarqué** qui agit sur
+> un serveur MCP (FoodEatUp/CRM/CMS/RH), le volet connexion se délègue au **kit** via
+> `rapido-lovable:connecteur-mcp-lovable` (jamais de clé dans le brief, appels serveur,
+> scope verrouillé).
 
 > Renvoi croisé : si la demande relève de l'**idéation** (apprendre, explorer une
 > idée de produit), router vers `rapido-forge:ideation-lovable-prompt`. Si elle
