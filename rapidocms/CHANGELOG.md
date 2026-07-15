@@ -1,5 +1,12 @@
 # Changelog — plugin rapidocms
 
+## 1.11.4 — 2026-07-15
+
+- `video-marketing` (patch V5) : **branche `rapido-video`** ajoutée à l'arbre de
+  routage vidéo — montage de médias réels (couper/assembler/sous-titrer/reframe) →
+  `rapido-video:montage-express` (0 crédit) ; éditorial maquetté = ici (HyperFrames) ;
+  génératif = `rapido-higgsfield`.
+
 ## 1.11.3 — 2026-07-15
 
 - **Croisements Higgsfield** (patch H9) : `studio-visuel-marque` route le
