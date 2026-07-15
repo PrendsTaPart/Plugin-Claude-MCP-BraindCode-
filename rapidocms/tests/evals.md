@@ -88,6 +88,13 @@
 | « Décline ce visuel avec le logo en 3 versions » | `prompt-engineering-visuel` § références : `images_to_image`, **mêmes images**, seul le texte du prompt change ; logo « ne pas déformer/recolorer » |
 | « Il y a une faute dans le texte du visuel » | `prompts-visuels-pro` **protocole v2** : rendu fautif repassé en référence `images_to_image`, correction **du texte seul** charte inchangée ; fallback v1 (`generate_image`) si le serveur refuse le rendu en référence |
 
+## Agents — couche marque (1.9.0)
+
+| Phrase | Agent / Attendu |
+|---|---|
+| « Fais-moi la déclinaison brandée de ce visuel pour les 4 réseaux » | **directeur-artistique v2** : Étape 0 (contenu-conforme-marque + outils-marque) → choisit la route (brandé + assets → `studio-visuel-marque`/`images_to_image`) → critique PASS/FAIL systématique + boucle corrective → capitalise le prompt → **ne publie ni ne supprime** (délègue au flux avec confirmation) |
+| « Audite la conformité de mes marques » | **gardien-de-marque** : LECTURE SEULE — pour chaque `get_brand`, écarts charte KB↔CMS (couleurs/fonts/logo/slogan), complétude assets via `audit_assets.py` (jamais de tête), revue `list_drafts_tool` → **rapport d'écarts classés 🔴/🟠/🟡 + correctif proposé**, cite la KB, n'écrit (`edit_brand`/`add_asset`) que sur validation |
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

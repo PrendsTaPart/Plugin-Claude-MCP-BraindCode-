@@ -1,5 +1,24 @@
 # Changelog — plugin rapidocms
 
+## 1.9.0 — 2026-07-14
+
+- `agents/directeur-artistique` **v2** : passe de « juge visuel » à
+  **responsable de l'exécution visuelle**. Périmètre outils élargi à la couche
+  marque complète (get_brand, list_all_files, generate_image, images_to_image,
+  upload_file_tool, add_prompt/list_prompts + lecture des brouillons). Choisit
+  la route de génération (arbre de décision de pipeline-contenu-social),
+  applique la critique charte de studio-visuel-marque, pilote la boucle
+  corrective, capitalise les prompts gagnants. Étape 0 = contenu-conforme-marque
+  + reference/outils-marque.md. **Ne publie ni ne supprime jamais** (délègue au
+  flux avec confirmation humaine).
+- `agents/gardien-de-marque` **(nouveau)** : gouvernance de marque transverse,
+  **lecture seule par défaut**. Routine d'audit par marque (conformité charte
+  KB↔CMS, complétude des assets via scripts/audit_assets.py, revue des
+  brouillons récents). Livrable : rapport de conformité avec écarts classés
+  bloquant/majeur/mineur + correctif proposé. N'écrit (edit_brand, add_asset)
+  que sur validation explicite ; ton factuel et chiffré, cite la KB.
+- tests/evals.md : 1 scénario par agent.
+
 ## 1.8.0 — 2026-07-14
 
 Branchement des 4 skills existants sur la nouvelle couche marque/assets

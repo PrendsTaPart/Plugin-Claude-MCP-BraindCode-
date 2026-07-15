@@ -49,7 +49,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.0 | 15 | 3 | foodeatup, rapidocrm | — |
 | `rapidocrm` | 1.4.1 | 21 | 2 | rapidocrm | — |
-| `rapidocms` | 1.8.0 | 22 | 5 | rapidocms, hyperframes | — |
+| `rapidocms` | 1.9.0 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.2 | 11 | 2 | rapidorh | — |
 | `rapido-suite` | 1.3.0 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
@@ -60,7 +60,7 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-startup` | 1.9.0 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | — |
 | `rapido-forge` | 1.1.0 | 181 | 4 | rapidocrm, rapidocms, rapidorh | — |
 
-**Total : 12 plugins, 305 skills, 24 agents.** (`rapido-startup` — finance &
+**Total : 12 plugins, 305 skills, 25 agents.** (`rapido-startup` — finance &
 création de startup : interview BP, KPI, prévisionnel, exécution, routines
 Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
 cfo-virtuel.)
