@@ -170,6 +170,22 @@ def part_organique(ca_organique, ca_total):
     return round(float(ca_organique) / ca_total, 4)
 
 
+def nps(promoteurs, detracteurs, repondants):
+    """NPS = (% promoteurs − % détracteurs), en points (−100 à +100)."""
+    repondants = float(repondants)
+    if repondants <= 0:
+        return None
+    return round((float(promoteurs) - float(detracteurs)) / repondants * 100, 1)
+
+
+def roi(gain, cout):
+    """ROI = (gain − coût) ÷ coût (ex. CA attribué à un influenceur vs coût de la collab)."""
+    cout = float(cout)
+    if cout <= 0:
+        return None
+    return round((float(gain) - cout) / cout, 2)
+
+
 # ------------------------------------------------------------ dispatch & seuils
 FORMULES = {
     "mrr": (mrr, "MRR = Σ abonnements normalisés au mois (annuel ÷ 12) = {valeur}"),
@@ -199,6 +215,8 @@ FORMULES = {
     "taux_retention": (taux_retention, "rétention = actifs fin ÷ actifs début = {actifs_fin} ÷ {actifs_debut} = {valeur}"),
     "taux_referral": (taux_referral, "referral = leads parrainage ÷ total leads = {leads_parrainage} ÷ {leads_total} = {valeur}"),
     "part_organique": (part_organique, "part organique = CA organique ÷ CA total = {ca_organique} ÷ {ca_total} = {valeur}"),
+    "nps": (nps, "NPS = (% promoteurs − % détracteurs) = ({promoteurs} − {detracteurs}) ÷ {repondants} × 100 = {valeur}"),
+    "roi": (roi, "ROI = (gain − coût) ÷ coût = ({gain} − {cout}) ÷ {cout} = {valeur}"),
 }
 
 # Seuils par défaut (= reference/seuils-defaut.md) — la KB PRIME toujours :

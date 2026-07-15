@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-startup
 
+## 1.9.3 — 2026-07-15 — KPIs NPS & ROI au catalogue
+
+- `catalogue-kpi/scripts/calcul_kpi.py` : ajout de `nps` (% promoteurs − % détracteurs)
+  et `roi` ((gain − coût) ÷ coût) au catalogue — pour `rapido-relation-client:boucle-nps`
+  et `rapido-marketing:operations-influenceurs` (ROI influenceur). Formules affichées, testées.
+
 ## 1.9.2 — 2026-07-15 — KPIs AARRR au catalogue
 
 - `catalogue-kpi/scripts/calcul_kpi.py` : ajout des taux **AARRR** au catalogue
