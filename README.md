@@ -1,20 +1,29 @@
 # Marketplace Rapido — Plugins Claude Code
 
-Marketplace de plugins Claude Code pour les systèmes Rapido (FoodEatUp,
-RapidoCRM, RapidoCMS, RapidoRh) et leurs outils satellites (Canva, Lovable,
-Meta Ads, n8n, Google Workspace) : des skills métier, des agents et des
-garde-fous déterministes par-dessus vos serveurs MCP, pour piloter une
-entreprise de A à Z.
+Marketplace de **plugins Claude Code** pour les systèmes Rapido (FoodEatUp,
+RapidoCRM, RapidoCMS, RapidoRh) et leurs outils satellites (Google Workspace,
+Stripe, Canva, Lovable, Meta/Google/TikTok Ads, SEO/DataForSEO, Higgsfield,
+ElevenLabs, n8n…) : des **skills métier**, des **agents IA** et des **garde-fous
+déterministes** par-dessus vos serveurs **MCP**, plus un **Loop Engine** de
+routines récurrentes — pour piloter une entreprise de A à Z.
+
+> **Pour un agent IA qui lit ce dépôt** : chaque plugin est autonome
+> (`<plugin>/.claude-plugin/plugin.json`, `.mcp.json`, `skills/*/SKILL.md`,
+> `agents/*.md`, `hooks/`). Le catalogue des routines et des KPIs canoniques est
+> `reference/registre-routines.md`. Les données du client vivent hors dépôt dans
+> `./rapido-kb/` (jamais commitées). Aucun secret n'est stocké dans le dépôt.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-21-blue)
-![Skills](https://img.shields.io/badge/skills-350-brightgreen)
+![Skills](https://img.shields.io/badge/skills-362-brightgreen)
+![Agents](https://img.shields.io/badge/agents-32-orange)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 
-**Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins)
-· [Installation](#installation-5-minutes) · [Connecter les serveurs
-MCP](#connecter-les-serveurs-mcp--guide-par-serveur) · [Comment
-l'utiliser](#comment-lutiliser) · [Architecture](#architecture-dun-plugin)
+**Sommaire** : [À quoi ça sert](#à-quoi-ça-sert) · [Les plugins](#les-plugins) ·
+[Domaines couverts](#domaines-couverts) · [Les agents IA](#les-agents-ia-32) ·
+[Les routines (Loop Engine)](#les-routines--le-loop-engine) · [Installation](#installation-5-minutes)
+· [Connecter/héberger les MCP](#connecter-ou-héberger-les-serveurs-mcp) ·
+[Comment l'utiliser](#comment-lutiliser) · [Architecture](#architecture-dun-plugin)
 · [Garde-fous](#garde-fous-intégrés) · [Licence](#licence)
 
 ## À quoi ça sert
@@ -69,68 +78,78 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads (R/W verrouillé), rapidocms, rapidocrm | `TIKTOK_ADS_MCP_URL` |
 | `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | — |
 
-**Total : 21 plugins, 362 skills, 32 agents.** (`rapido-startup` — finance &
-création de startup : interview BP, KPI, prévisionnel, exécution, routines
-Loop Engine R4-R8, avec les 2 agents les plus récents : coach-startup +
-cfo-virtuel.)
+**Total : 21 plugins, 362 skills, 32 agents.** Historique détaillé des vagues :
+[`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
-### Nouveau — Commercial & relation client (pont forge → opérations)
+## Domaines couverts
 
-Les méthodes de vente/fidélité (forge, livres) appliquées aux **données MCP réelles** :
-- **Pont forge → opérations** (`reference/pont-forge-operations.md`) : l'opérationnel lit
-  le livrable forge ; 12 skills forge pointent vers leur skill opérationnel.
-- **Vente terrain** (`rapidocrm`) : `preparation-rdv` (SONCAS), `qualification-deals`
-  (BANT/MEDDIC), `coach-de-vente` (routeur multi-livres), `playbook-objections-vivant`,
-  `funnel-aarrr-reel`.
-- **`rapido-relation-client`** (nouveau, 21e) : service client en boucle, NPS, health
-  score, RFM, 100 premiers jours, coach fidélité.
-- **`operations-influenceurs`** (`rapido-marketing`) : sourcing → brief → contrat →
-  tracking → ROI. `catalogue-kpi` enrichi (AARRR, NPS, ROI).
+Quel plugin pour quel besoin — installez seulement ce qui vous concerne.
 
-### Nouveau — Acquisition organique & payante
+| Domaine | Plugins | Ce que vous pilotez |
+|---|---|---|
+| **Restaurant** | `foodeatup` | Salle, cuisine (écran KDS), HACCP, achats, réservations |
+| **Ventes & CRM** | `rapidocrm` | Prospection, pipeline, devis/factures, vente terrain (SONCAS, BANT, objections, AARRR), expansion Studio→Agence→SaaS, ambassadeurs |
+| **Relation client** | `rapido-relation-client` | Service client en boucle (SLA), NPS, health score, RFM, 100 premiers jours |
+| **Contenu & marque** | `rapidocms` | Réseaux sociaux, visuels, cartes digitales, multi-marques, prompts visuels |
+| **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
+| **Marketing & acquisition** | `rapido-marketing`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, SEO organique, SEA Google, TikTok, publicité Meta, influenceurs |
+| **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos génératives, montage libre (ffmpeg), voix (ElevenLabs), design, direction de prompts |
+| **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, workflows n8n |
+| **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction` | Pilotage transverse (Loop Engine), finance/trésorerie/board, chef de cabinet (Gmail/Agenda/Drive) |
+| **Incubation** | `rapido-forge` | 181 exercices StartupsForge (bootcamp, idéation, scale) → livrables KB, pontés vers l'opérationnel |
 
-3 nouveaux plugins branchés sur les boucles existantes (SENSE de `pilotage-marketing`
-enrichi, attribution étendue, registre + recettes n8n) :
-- **`rapido-seo`** (organique) — audit technique, mots-clés, netlinking, GSC/GA4,
-  tendances ; orchestrateur `pilotage-seo` (sous-domaine de `pilotage-marketing`).
-- **`rapido-google-ads`** (SEA, **lecture seule**) — pilotage, audit, mots-clés
-  payants, **synergie SEO/SEA** (chaque euro économisé nourrit le budget test).
-- **`rapido-tiktok-ads`** (**verrouillé argent réel**) — pilotage, lancement 100 %
-  inactif, tendances créatives.
-- **13 nouveaux skills**, routines **`SEO-HEBDO`/`SEO-MENSUEL`/`SEA-HEBDO`/`TIKTOK-HEBDO`**
-  (rank-tracking DataForSEO **en n8n**, coût gouverné), KPI « part organique vs payante ».
-- Coûts **DataForSEO gouvernés** (facturation à l'appel, volume → n8n) ; GA4/Google
-  Ads **read-only** ; fraîcheur GSC (J-3) précisée.
+## Les agents IA (32)
 
-### Nouveau — Boucle de vente (loop-engineering)
+Les **agents** sont des personas experts (installés avec leur plugin) qui chargent la
+charte et la KB **avant** d'agir, invoquent les skills au bon moment, citent leurs
+sources et respectent les garde-fous. On les invoque par leur rôle (« demande au
+directeur commercial… ») ou ils sont mobilisés par les orchestrateurs.
 
-Le loop-engineering du marketplace est complété par la **boucle commerciale** —
-de l'hygiène des données à l'encaissement, sans rien refonder :
-- **Registre unifié des routines** (`reference/registre-routines.md`) : un
-  identifiant canonique par domaine (`FIN-*`, `STARTUP-*`, `GROWTH-*`, `VIDEO-*`,
-  `MKT-*`, `VENTE-*`, `OPS-*`) — les anciens noms (`R4…R9`, `R-MKT-*`) restent des
-  alias. Plus d'ambiguïté sur « lance R5 ». Inclut un **Registre des KPIs** (source
-  unique des formules : `catalogue-kpi`).
-- **`rapidocrm:pilotage-commercial`** — l'orchestrateur de la vente (Sense → Plan →
-  Act → Feed → Report), miroir de `pilotage-marketing` (qui génère les leads ; lui
-  les convertit). Routines **`VENTE-HYGIENE`** / **`VENTE-RELANCES`** / **`VENTE-REVUE`**.
-- **`rapidocrm:expansion-clients`** (tunnel Studio → Agence → SaaS) et
-  **`rapidocrm:programme-ambassadeurs`** (10 %/20 %), routine **`VENTE-EXPANSION`**.
-- **`rapido-n8n`** recettes événementielles **`OPS-LEAD-CHAUD`** / **`OPS-CLIENT-GAGNE`**
-  / **`OPS-ALERTE-CHURN`** — vendre pendant qu'on dort (installées sur confirmation).
+| Plugin | Agents |
+|---|---|
+| `foodeatup` | chef-restaurateur · chef-cuisine · chef-de-pass |
+| `rapidocrm` | directeur-commercial · sdr-prospection |
+| `rapidocms` | directeur-artistique · community-manager · gardien-de-marque · gestionnaire-marques · responsable-marketing · prompt-designer |
+| `rapidorh` | responsable-rh · chef-de-projet |
+| `rapido-suite` | directeur-general (orchestrateur transverse) |
+| `rapido-startup` | cfo-virtuel · coach-startup |
+| `rapido-marketing` | directeur-marketing · growth-analyst · inbound-manager · outbound-manager · funnel-builder |
+| `rapido-meta-ads` | media-buyer |
+| `rapido-forge` | directeur-programme · mentor-bootcamp · mentor-ideation · mentor-scale |
+| `rapido-canva` | studio-creatif |
+| `rapido-lovable` | chef-produit-web |
+| `rapido-n8n` | architecte-automatisations |
+| `rapido-higgsfield` | producteur-studio |
+| `rapido-prompteur` | directeur-prompts (orchestre la conception de prompts) |
+| `rapido-direction` | assistant-direction |
 
-Nouveau : **`rapido-forge`** (StartupsForge / PrendsTaPart) — 180 exercices
-d'incubateur en 3 parcours (bootcamp 5 jours, roadmap idéation, roadmap
-scale) pilotés par un directeur de programme et 3 mentors ; livrables dans
-`./rapido-kb/startup/forge/`, exécution réelle déléguée aux plugins métier.
+## Les routines — le Loop Engine
 
-Nouveautés de la vague du 2026-07-10 : `gestion-marques` + agent
-`gestionnaire-marques` (rapidocms, multi-enseignes), `animation-client` et
-`gestion-depenses` (rapidocrm), `coordination-cuisine` (foodeatup, écran
-cuisine KDS), routine `R9-VIDEO-FACTORY` (rapido-startup, épisode vidéo du
-jour) — et l'audit de vérité clos : 100 % des outils des 3 serveurs Rapido
-couverts ou ignorés volontairement avec raison
-(`reference/audit-tools-2026-07-10.md`).
+Le marketplace exécute des **routines récurrentes** selon le cycle **Sense → Plan →
+Act → Feed → Report** (diagnostiquer → prioriser → déléguer → capitaliser → rapport
+une page). Calculs **par script** (`rapido-startup:catalogue-kpi`, **source unique des
+formules**), écritures **confirmées**, mémoire d'exécution en **tables n8n**. Catalogue
+canonique (id, alias, cadence, plugin, skills délégués, table mémoire) :
+[`reference/registre-routines.md`](reference/registre-routines.md).
+
+Les identifiants sont **préfixés par domaine** ; les anciens noms `R4…R9` et `R-MKT-*`
+restent des **alias reconnus** (« lance R7 » = `FIN-CASH-SENTINELLE`).
+
+| Domaine | Routines | Cadence |
+|---|---|---|
+| **Finance** `FIN-*` | FIN-CFO-HEBDO (R4) · FIN-CASH-SENTINELLE (R7) · FIN-BOARD-MENSUEL (R8) | hebdo · quotidien · mensuel |
+| **Startup / Growth** | STARTUP-BUILDER (R5) · GROWTH-LOOP (R6) · VIDEO-FACTORY (R9) | hebdo · quotidien |
+| **Marketing** `MKT-*` | MKT-HEBDO · MKT-QUOTIDIEN · MKT-MENSUEL · MKT-INFLUENCE-MENSUEL | hebdo → mensuel |
+| **Vente** `VENTE-*` | VENTE-HYGIENE · VENTE-RELANCES · VENTE-REVUE · VENTE-EXPANSION | hebdo · quotidien |
+| **Vente événementielle** `OPS-*` | OPS-LEAD-CHAUD · OPS-CLIENT-GAGNE · OPS-ALERTE-CHURN | webhook / temps réel |
+| **Acquisition** `SEO-*` `SEA-*` `TIKTOK-*` | SEO-HEBDO · SEO-MENSUEL · SEA-HEBDO · TIKTOK-HEBDO | hebdo · mensuel |
+| **Relation client** `RC-*` | RC-HEBDO · RC-NPS-TRIMESTRE · RC-SANTE-MENSUEL | hebdo → trimestriel |
+
+Chaque routine est **proposée puis installée sur confirmation** (jamais d'exécution
+d'office) ; le récurrent et le volume vivent en **n8n** (recettes dans
+`rapido-n8n/reference/`), pas en appels conversationnels. Le **registre des KPIs** (même
+fichier) fixe la formule canonique de chaque indicateur (CAC, LTV, runway, DSO, AARRR,
+NPS, ROI, part organique/payante…), calculée par `catalogue-kpi` — aucun calcul « de tête ».
 
 ## Installation (5 minutes)
 
@@ -157,18 +176,30 @@ couverts ou ignorés volontairement avec raison
 Test en local depuis un clone : `/plugin marketplace add ./<dossier-du-clone>`
 depuis le dossier parent, puis les mêmes `install`.
 
-## Connecter les serveurs MCP — guide par serveur
+## Connecter ou héberger les serveurs MCP
 
 Chaque plugin déclare ses serveurs dans son `.mcp.json` — **vous vous
-connectez à VOS comptes**, rien n'est partagé. Après chaque connexion,
-vérifiez avec `/mcp` (la commande liste l'état de tous les serveurs).
-**Règle générale** : un serveur optionnel non connecté ne casse rien — le
-skill saute le volet EN LE DISANT (dégradation propre).
+connectez à VOS comptes**, rien n'est partagé, **aucune clé n'est stockée dans
+le dépôt** (uniquement des noms de variables d'environnement). Après chaque
+connexion, vérifiez avec `/mcp` (la commande liste l'état de tous les serveurs).
+**Règle générale** : un serveur optionnel non connecté ne casse rien — le skill
+saute le volet EN LE DISANT (dégradation propre).
 
-### Les 4 serveurs Rapido (FoodEatUp, RapidoCRM, RapidoCMS, RapidoRh)
+Les serveurs se rangent en **trois niveaux d'effort** :
+
+- **A. Natifs Rapido** — rien à faire, l'URL est déjà là, connexion OAuth au
+  premier appel.
+- **B. Satellites officiels** — connecteurs hébergés par l'éditeur, OAuth au
+  premier appel, aucune URL ni clé à fournir (sauf n8n/Higgsfield qui pointent
+  vers VOTRE instance).
+- **C. À héberger ou clé en variable d'env** — serveurs que vous auto-hébergez
+  ou dont l'accès passe par une clé/URL exportée avant de lancer Claude Code.
+
+### A. Serveurs natifs Rapido — FoodEatUp, RapidoCRM, RapidoCMS, RapidoRh
 
 Utilisés par : foodeatup, rapidocrm, rapidocms, rapidorh, rapido-suite,
-rapido-forge, rapido-direction, rapido-startup et les plugins satellites.
+rapido-forge, rapido-direction, rapido-startup, rapido-relation-client et les
+plugins satellites. **Aucune clé, aucune URL à fournir.**
 
 1. Rien à installer : les URLs produit sont déjà dans les `.mcp.json`
    (`foodeatup.com/api/mcp`, `crm.rapidosoftware.com/mcp`,
@@ -181,41 +212,43 @@ rapido-forge, rapido-direction, rapido-startup et les plugins satellites.
    utilisation (notez-le dans `rapido-kb/entreprise.md` pour ne plus le
    ressaisir).
 
-### Google — Gmail, Calendar, Drive (plugin rapido-direction)
+### B. Satellites officiels (OAuth au premier appel)
 
-1. Au premier usage d'un outil Google, OAuth individuel dans le
-   navigateur : autorisez le compte Google de VOTRE choix.
-2. Gmail est volontairement « **brouillons seulement** » : le serveur ne
-   sait pas envoyer — rien ne part sans vous.
-3. Guide détaillé et dépannage : `rapido-direction/README-installation.md`.
+Connecteurs hébergés par l'éditeur : OAuth individuel au premier usage, rien à
+exporter (sauf les deux URLs d'instance signalées).
 
-### n8n (rapido-n8n ; volets optionnels de rapido-direction et rapido-suite)
+| Serveur | Plugin(s) | Connexion | À savoir |
+|---|---|---|---|
+| **Gmail / Google Calendar / Google Drive** | rapido-direction, rapido-marketing | OAuth Google au 1ᵉʳ appel | Gmail = **brouillons seulement**, rien ne part sans vous |
+| **Stripe** (`mcp.stripe.com`) | rapido-startup | OAuth Stripe | Écriture interdite en routine, confirmée hors routine (hook `garde-stripe-write`) ; montants en centimes |
+| **Canva** | rapido-canva | OAuth Canva | — |
+| **Lovable** | rapido-lovable, rapido-prompteur | OAuth workspace | Chaque message consomme des **crédits** (l'agent cadre avant de construire) |
+| **Meta / Facebook Ads** | rapido-meta-ads | OAuth Meta Business | Campagnes créées en **PAUSED** + plafond budget (hooks `plafond-budget` + `garde-argent-reel`) |
+| **HyperFrames (HeyGen)** | rapidocms (vidéo) | OAuth HeyGen | Rendu vidéo **payant** (confirmation niveau 3) |
+| **Higgsfield** | rapido-higgsfield | URL d'instance | `export HIGGSFIELD_MCP_URL=…` avant de lancer (génération payante) |
+| **n8n** | rapido-n8n ; volets optionnels de rapido-direction, rapido-suite, rapido-marketing | URL d'instance | `export N8N_MCP_URL=https://<instance>/mcp-server/http` ; sans elle, dégradation propre. Guide : `rapido-n8n/README-installation.md` |
 
-1. Activez le serveur MCP de VOTRE instance n8n (n8n ≥ 1.x, MCP Server
-   activé dans les settings de l'instance).
-2. Exportez l'URL AVANT de lancer Claude Code :
-   `export N8N_MCP_URL=https://<votre-instance>/mcp-server/http`
-3. Sans cette variable, les volets n8n se sautent proprement (le skill le
-   dit). Guide : `rapido-n8n/README-installation.md`.
+### C. À héberger ou clé en variable d'environnement
 
-### Stripe (plugin rapido-startup)
+Ces serveurs **ne sont pas encore connectés par défaut** : vous les auto-hébergez
+ou vous fournissez une clé/URL en variable d'env AVANT de lancer Claude Code. Les
+skills correspondants sont écrits d'après les grammaires documentées (pattern
+« construire d'abord » — comme le squelette ElevenLabs) et **se dégradent
+proprement** tant que le serveur est absent. **Aucune clé n'est écrite dans le
+dépôt.** Détails d'accès dans le README de chaque plugin.
 
-1. Connecteur officiel `https://mcp.stripe.com` — OAuth Stripe au premier
-   usage (choisissez le bon compte/environnement).
-2. Lecture d'abord : toute ÉCRITURE Stripe est interdite dans les routines
-   et confirmée explicitement hors routine (hook garde-stripe-write).
-3. Les montants Stripe sont en centimes — les skills convertissent avant
-   tout calcul (scripts, formule affichée).
+| Serveur | Plugin(s) | Variable(s) d'env | Hébergement / accès |
+|---|---|---|---|
+| **ElevenLabs** (voix) | rapido-elevenlabs | `ELEVENLABS_API_KEY` + `ELEVENLABS_MCP_BASE_PATH` (mode **local `uvx`**) **ou** `ELEVENLABS_MCP_URL` + `ELEVENLABS_MCP_TOKEN` (mode **passerelle HTTP**) | Local : `uvx elevenlabs-mcp` avec votre clé API. Passerelle : votre serveur HTTP. Génération payante — voir `docs/PREREQUIS-E5.md` |
+| **DataForSEO** (SEO/SERP) | rapido-seo, rapido-google-ads | `DATAFORSEO_AUTH` (Basic auth) | Serveur hébergé `mcp.dataforseo.com/mcp`, **pay-as-you-go** — coûts gouvernés par le hook SEO |
+| **Google Search Console (GSC)** | rapido-seo | `GSC_MCP_URL` | Serveur **auto-hébergé**, lecture seule ; fraîcheur des données GSC annoncée dans le skill |
+| **Google Analytics 4 (GA4)** | rapido-seo, rapido-google-ads | `GA4_MCP_URL` | Serveur **auto-hébergé**, scope `analytics.readonly` (lecture seule) |
+| **Google Ads** | rapido-google-ads | `GOOGLE_ADS_MCP_URL` | **Lecture seule** ; nécessite developer token + OAuth Google Ads. Analyse et recommande, exécution manuelle guidée |
+| **TikTok Ads** | rapido-tiktok-ads | `TIKTOK_ADS_MCP_URL` | R/W **verrouillé argent réel** : création active **refusée** (hook DENY), budgets en confirmation. OAuth TikTok Business |
 
-### Canva (rapido-canva) · Lovable (rapido-lovable) · Meta Ads (rapido-meta-ads) · HyperFrames (rapidocms vidéo)
-
-1. Connecteurs OAuth respectifs au premier usage : compte Canva, compte
-   Lovable (workspace), compte Meta Business, compte HeyGen.
-2. À savoir : chaque message envoyé à **Lovable** consomme des crédits du
-   workspace (l'agent chef-produit-web cadre AVANT de construire) ; les
-   campagnes **Meta** se créent toujours en PAUSED avec plafond de budget
-   (hooks plafond-budget + garde-argent-reel) ; le rendu vidéo
-   **HyperFrames** est payant (confirmation niveau 3).
+> **`rapido-video`** n'a besoin d'**aucun serveur MCP externe** : le montage
+> libre (ffmpeg / Whisper / Remotion) s'auto-installe localement. Il branche
+> seulement `rapidocms` (et `huggsfield` en option) pour publier.
 
 ### Dépannage rapide
 
@@ -357,7 +390,7 @@ distribués avec le plugin.
 
 ## Skills tiers et attributions
 
-41 des 305 skills sont importés de dépôts open source, adaptés aux
+41 des 362 skills sont importés de dépôts open source, adaptés aux
 conventions Rapido (mentions MCP/KB, renvois vers les skills d'exécution,
 renommages anti-collision). Provenance détaillée — commit, chemin d'origine,
 modifications locales — dans l'`ATTRIBUTIONS.md` de chaque plugin concerné ;
