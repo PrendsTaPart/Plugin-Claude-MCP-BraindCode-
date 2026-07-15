@@ -76,6 +76,11 @@
       "name": "rapido-higgsfield",
       "source": "./rapido-higgsfield",
       "description": "Usine média IA (Higgsfield) : images 4K & packshots, vidéos génératives & pubs, personnages cohérents (Soul/Elements, PronoClip), voix & doublage, sites & jeux — routage média unifié et gouvernance des coûts en crédits. 9 skills + agent producteur-studio."
+    },
+    {
+      "name": "rapido-video",
+      "source": "./rapido-video",
+      "description": "Montage vidéo 100 % libre (ffmpeg + Whisper) : concat, coupes, xfade, reframe 9:16/1:1/16:9, overlay logo, sous-titres burn-in, suppression des silences — zéro crédit, embarquable en SaaS. Dépendances auto-installées par l'agent."
     }
   ]
 }

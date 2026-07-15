@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    }
+  }
+}

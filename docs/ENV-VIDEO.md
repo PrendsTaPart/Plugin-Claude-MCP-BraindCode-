@@ -32,9 +32,9 @@ python3 scripts/bootstrap_video.py --transcription scribe --yes  # OU mode 100 %
   burn-in 0,77 s · 9:16 2,33 s · transcription tiny 0,56 s. Sortie 1080×1920 valide.
 
 ## Windows (PowerShell) — **THÉORIQUE, à mesurer en session locale**
-- **Node/Python** : `winget install OpenJS.NodeJS.LTS` et `winget install Python.Python.3.12`
-  (ou déjà présents). Le bootstrap n'a besoin **que de node+python** ; il installe
-  ffmpeg/whisper lui-même — **aucun `winget install ffmpeg` requis**.
+- **Zéro installation manuelle.** node/python sont fournis par l'environnement
+  d'exécution (Claude Code) ; le bootstrap installe **ffmpeg + whisper lui-même** —
+  **aucun `winget install` requis**, aucun guide manuel.
 - **ffmpeg** : `ffmpeg-static` pose un `ffmpeg.exe` sous
   `.video-tools\node_modules\ffmpeg-static\ffmpeg.exe` ; repli
   `imageio-ffmpeg` → `...\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-*.exe`.
@@ -48,7 +48,8 @@ python3 scripts/bootstrap_video.py --transcription scribe --yes  # OU mode 100 %
   Windows diffère du conteneur ; ne pas transposer les chiffres Linux.
 
 ## macOS — **THÉORIQUE**
-- Node/Python via `brew` ou déjà présents. Bootstrap identique.
+- **Zéro installation manuelle** : node/python fournis par l'environnement ; le
+  bootstrap installe ffmpeg/whisper. Aucun `brew install` requis.
 - ffmpeg : `imageio-ffmpeg` fournit un binaire macOS (arm64/x86_64) ; sur Apple
   Silicon, vérifier l'arch du wheel. Gatekeeper peut demander d'autoriser le binaire.
 - **Chronos** : à mesurer en session locale.
