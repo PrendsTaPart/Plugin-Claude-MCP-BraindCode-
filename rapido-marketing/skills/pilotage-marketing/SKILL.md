@@ -78,7 +78,10 @@ en le disant) :
 Proposer les 3 routines de `reference/routines.md` via
 `rapido-n8n:usine-automatisations` : **R-MKT-HEBDO** (lundi : rapport pilotage),
 **R-MKT-QUOTIDIEN** (sentinelle leads > 24 h + soumissions orphelines),
-**R-MKT-MENSUEL** (board attribution + benchmarks + décisions). Chaque routine a
+**R-MKT-MENSUEL** (board attribution + benchmarks + décisions). Ces trois noms sont
+des **alias** des identifiants canoniques `MKT-HEBDO` / `MKT-QUOTIDIEN` / `MKT-MENSUEL`
+du registre unifié `reference/registre-routines.md` (racine du monorepo, fait foi) —
+les deux formes déclenchent la même routine. Chaque routine a
 sa table mémoire ; installer **seulement** celles confirmées.
 
 ## Garde-fous

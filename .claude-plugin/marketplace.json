@@ -60,7 +60,7 @@
     {
       "name": "rapido-startup",
       "source": "./rapido-startup",
-      "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup. Skills à venir"
+      "description": "Finance & création de startup : Stripe (lecture d'abord) croisé avec les 4 serveurs Rapido — trésorerie, unit economics, benchmarks startup, prévisionnel et board. Moteur de routines loop-engine-v2 (FIN-*/STARTUP-*/GROWTH-*/VIDEO-*, ex-R4→R9) + catalogue-kpi (source des formules). 5 skills, 2 agents (coach-startup, cfo-virtuel)."
     },
     {
       "name": "rapido-forge",
@@ -70,7 +70,7 @@
     {
       "name": "rapido-marketing",
       "source": "./rapido-marketing",
-      "description": "Marketing & acquisition Rapido-first : leads, tunnel de conversion, nurturing, publicité et analytics — priorité CRM/CMS/RH, MCP secondaires en repli. Squelette 0.1.0 (reference + garde-fous + hooks), skills à venir."
+      "description": "Marketing & acquisition Rapido-first : leads, tunnel de conversion, nurturing, publicité et analytics — priorité CRM/CMS/RH, MCP secondaires en repli. Orchestrateur pilotage-marketing + routines MKT-HEBDO/QUOTIDIEN/MENSUEL (ex-R-MKT-*). 16 skills, 5 agents."
     },
     {
       "name": "rapido-higgsfield",
@@ -90,7 +90,7 @@
     {
       "name": "rapido-elevenlabs",
       "source": "./rapido-elevenlabs",
-      "description": "La voix de l'écosystème (MCP officiel ElevenLabs) : voix off & narration, transcription Scribe (diarisation), identité vocale de marque, clonage sous consentement, sound design & musique autorisée, agents vocaux téléphoniques (Jarvis, pont FoodEatUp/Twilio). Squelette 0.1.0 (routage audio + garde-fous coûts/voix/appels), skills en E2+ après l'audit live E0."
+      "description": "La voix de l'écosystème (MCP officiel ElevenLabs) : voix off & narration, transcription Scribe (diarisation), identité vocale de marque, clonage sous consentement, sound design & musique autorisée, agents vocaux téléphoniques (Jarvis, pont FoodEatUp/Twilio). Squelette (routage audio + garde-fous coûts/voix/appels ; connexion locale stdio ou passerelle HTTP), skills en E2+ après l'audit live E0-local."
     }
   ]
 }
