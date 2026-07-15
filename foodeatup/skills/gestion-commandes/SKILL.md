@@ -72,3 +72,8 @@ confirmation explicite de l'utilisateur.
   commande active y figure) — ne pas en créer une en double.
 - Récapituler en fin de séquence : commandes créées (IDs), changements de
   statut, impacts table/facture.
+
+## Détail facture (ajout SYNC S1)
+
+`get_invoice` (`invoice_id`) : détail complet d'une facture (lignes) — complète
+`create_invoice`/`list_invoices`/`update_invoice_status`.

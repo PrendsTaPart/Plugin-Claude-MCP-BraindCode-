@@ -191,3 +191,41 @@ echo '{"tool_name":"mcp__foodeatup__create_employee_contract","tool_input":{}}' 
   | python3 foodeatup/hooks/scripts/garde-destructif.py
 # Attendu : JSON permissionDecision "ask", exit 0
 ```
+
+## Ajouts 1.6.0 — série SYNC S1 (fidélité, caisse, site vitrine, gérant digital)
+
+### E-FID — Fidélité restaurant
+
+- **Phrase** : « Ajoute 200 points à ce client pour s'excuser du retard. »
+- **Attendu** : `fidelite-restaurant` (étape 3) — `adjust_points` avec `motif`
+  obligatoire, **confirmation** avant écriture (hook `garde-destructif` → ask),
+  respect du plafond serveur ±1000. « Crée une récompense plat offert » → `upsert_loyalty_reward`
+  `kind=product` + `plat_id` réel. « Valide ce bon » → `validate_redemption` (usage unique).
+
+### E-POS — Caisse du jour
+
+- **Phrase** : « Encaisse la table 5, 42 € en carte. »
+- **Attendu** : `caisse-du-jour` — `record_pos_payment` (`order_id`, `amount`, `method=carte`,
+  `operator_id`) **confirmé** (argent réel, hook → ask) ; note soldée quand reste dû = 0.
+  « Fais le Z » → clôture `close_pos_session` avec `confirm:true` **après récap** (jamais d'office).
+  `titre_restaurant` → pas de rendu.
+
+### E-SITE — Site vitrine
+
+- **Phrase** : « Publie mon site » / « applique le template bistrot ».
+- **Attendu** : `site-vitrine-foodeatup` — `get_site_status` d'abord ; `publish_site` /
+  `apply_site_template` **résumés puis confirmés** (`confirm:true` serveur + hook → ask,
+  jamais d'office) ; thème depuis les tokens de la charte ; leads → CRM.
+
+### E-GERANT — Agent gérant-digital
+
+- **Attendu** : orchestre `site-vitrine-foodeatup` + `fidelite-restaurant` + volet avis,
+  charge la charte avant d'agir, route les leads vers le CRM, **confirme** tout ce qui est
+  public (publication, réponse avis) ou touche l'argent/les points.
+
+## Anti-déclenchements (série SYNC S1)
+
+- « Génère un visuel pour ma carte de fidélité » → `rapidocms:studio-visuel-marque`.
+- « Lance une campagne emailing de fidélité » → `rapidocrm:campagne-marketing`.
+- « Construis un MVP/app sur mesure » → `rapido-lovable:mvp-lovable` (pas `site-vitrine-foodeatup`).
+- « Ajoute un plat à la carte » → `carte-vitrine` (pas `site-vitrine-foodeatup`).

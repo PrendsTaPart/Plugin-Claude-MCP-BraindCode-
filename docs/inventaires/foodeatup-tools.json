@@ -1,0 +1,1920 @@
+{
+  "server": "foodeatup",
+  "date": "2026-07-15",
+  "source": "111 introspectés en direct + 24 schémas réels des familles prioritaires (site vitrine, fidélité, caisse, avis — fournis 2026-07-15) + 29 noms console à réintrospecter (schema_introspected:false).",
+  "tool_count": 164,
+  "introspected_count": 135,
+  "tools": [
+    {
+      "name": "add_site_page",
+      "description": "Ajoute une page au site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "add_temperature",
+      "description": "Enregistre une mesure de température d'équipement (HACCP).",
+      "params_required": [
+        "establishment_id",
+        "equipment_id",
+        "temperature"
+      ],
+      "params_optional": [
+        "measured_at"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "add_waitlist",
+      "description": "Ajoute un client à la file d'attente.",
+      "params_required": [
+        "establishment_id",
+        "party_size"
+      ],
+      "params_optional": [
+        "customer_name",
+        "customer_phone"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "adjust_points",
+      "description": "Ajuste les points de fidélité d'un client.",
+      "params_required": [
+        "establishment_id",
+        "email",
+        "points",
+        "motif"
+      ],
+      "params_optional": [],
+      "schema_introspected": true,
+      "native_guard": "serveur : plafond ±1000, motif obligatoire, journalisé."
+    },
+    {
+      "name": "adjust_stock",
+      "description": "Ajuste la quantité en stock d'un produit du catalogue (définir ou incrémenter).",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id",
+        "quantity"
+      ],
+      "params_optional": [
+        "mode"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "apply_site_template",
+      "description": "Applique un modèle de site vitrine.",
+      "params_required": [
+        "establishment_id",
+        "slug",
+        "confirm"
+      ],
+      "params_optional": [],
+      "schema_introspected": true,
+      "native_guard": "confirm:true exigé (serveur) — résumer avant."
+    },
+    {
+      "name": "approve_leave",
+      "description": "Approuve une demande de congé en attente.",
+      "params_required": [
+        "establishment_id",
+        "leave_id"
+      ],
+      "params_optional": [
+        "comments"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "assign_task",
+      "description": "Assigne une tâche à un employé (date/heure/priorité optionnelles).",
+      "params_required": [
+        "establishment_id",
+        "professional_id",
+        "name"
+      ],
+      "params_optional": [
+        "category",
+        "date",
+        "priority",
+        "time"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "cancel_reservation",
+      "description": "Annule une réservation (libère la table).",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "check_gift_card",
+      "description": "Vérifie une carte cadeau (solde/validité).",
+      "params_required": [
+        "establishment_id",
+        "code"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "checkin_reservation",
+      "description": "Check-in : installe le client (table occupée) et crée la commande sur place.",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": [
+        "table_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "close_pos_session",
+      "description": "Clôture une session de caisse (rapport Z).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false,
+      "native_guard": "confirm:true exigé (serveur) — clôture Z."
+    },
+    {
+      "name": "confirm_reservation",
+      "description": "Confirme une réservation (assigne une table si besoin → table réservée).",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_category",
+      "description": "Crée une catégorie d'ingrédient, de produit ou de recette (paramètre type). Les catégories de PLAT se gèrent dans l'éditeur de carte.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "color",
+        "description",
+        "icon",
+        "parent_id",
+        "type"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_client",
+      "description": "Crée un client pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "nom"
+      ],
+      "params_optional": [
+        "adresse",
+        "code_postal",
+        "email",
+        "genre",
+        "num_tel",
+        "numero_tva",
+        "pays",
+        "prenom",
+        "siret",
+        "status",
+        "ville"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_dish",
+      "description": "Ajoute un plat à la carte d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "price"
+      ],
+      "params_optional": [
+        "active",
+        "category_id",
+        "description",
+        "portions",
+        "prep_time",
+        "tva_nature"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_dish_category",
+      "description": "Crée une catégorie de PLAT (carte / vitrine), éventuellement en sous-catégorie. Apparaît dans la carte et la vitrine.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "description",
+        "parent_id",
+        "parent_name",
+        "show_on_storefront"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_employee",
+      "description": "Crée un nouvel employé pour un établissement avec son planning optionnel.",
+      "params_required": [
+        "establishment_id",
+        "first_name",
+        "last_name",
+        "email",
+        "phone_number"
+      ],
+      "params_optional": [
+        "role",
+        "schedule"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_employee_contract",
+      "description": "Crée un contrat de travail pour un employé.",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": [
+        "base_salary",
+        "days_per_week",
+        "end_date",
+        "job_title",
+        "manager_name",
+        "start_date",
+        "type",
+        "weekly_hours"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_expense",
+      "description": "Enregistre une dépense (achat) avec ses lignes. Totaux calculés automatiquement.",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "category",
+        "notes",
+        "payment_method",
+        "purchase_date",
+        "status",
+        "supplier_id",
+        "supplier_invoice_reference"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_haccp_label",
+      "description": "Crée une étiquette HACCP (DLC). Le numéro de lot est généré automatiquement si absent.",
+      "params_required": [
+        "establishment_id",
+        "ingredient_name"
+      ],
+      "params_optional": [
+        "dlc",
+        "lot_number",
+        "notes",
+        "quantity",
+        "storage_location",
+        "temperature",
+        "type",
+        "unit"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_haccp_reception",
+      "description": "Crée un contrôle de réception HACCP manuel (arrivée fournisseur).",
+      "params_required": [
+        "establishment_id",
+        "date_controle",
+        "heure_controle",
+        "etat_livraison"
+      ],
+      "params_optional": [
+        "commentaires",
+        "fournisseur_id",
+        "fournisseur_nom",
+        "non_conformites",
+        "reference_bl",
+        "temperature_produits_frais",
+        "validate"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_haccp_tracabilite",
+      "description": "Crée un enregistrement de traçabilité HACCP.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "dlc",
+        "lot",
+        "quantite",
+        "reference_id",
+        "reference_type",
+        "remarques",
+        "type"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_hygiene_checklist_validation",
+      "description": "Enregistre une validation de checklist hygiène pour un modèle donné.",
+      "params_required": [
+        "establishment_id",
+        "template_id"
+      ],
+      "params_optional": [
+        "commentaires",
+        "reponses",
+        "statut",
+        "zone_controle"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_ingredient",
+      "description": "Crée un nouvel ingrédient pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "unit",
+        "price_per_unit",
+        "quantity_in_stock"
+      ],
+      "params_optional": [
+        "alert_threshold",
+        "calories",
+        "carbs",
+        "cooking_coefficient",
+        "description",
+        "fats",
+        "proteins"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_invoice",
+      "description": "Crée une facture (brouillon) avec ses lignes. Totaux calculés automatiquement.",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "client_id",
+        "discount_amount",
+        "due_date",
+        "invoice_date",
+        "notes",
+        "payment_method",
+        "tax_rate"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_job_offer",
+      "description": "Crée une offre d'emploi.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "create_notification",
+      "description": "Crée une nouvelle notification pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "title",
+        "message"
+      ],
+      "params_optional": [
+        "type"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_order",
+      "description": "Crée une commande (génère automatiquement facture + devis). Peut être liée à une table (sur place).",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "channel",
+        "covers",
+        "customer_address",
+        "customer_name",
+        "customer_phone",
+        "notes",
+        "service_mode",
+        "table_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_product",
+      "description": "Crée un nouveau produit dans le menu d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "price_by_unit",
+        "unit"
+      ],
+      "params_optional": [
+        "description",
+        "is_promotion",
+        "stock_quantity"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_production_plan",
+      "description": "Planifie une production (plat ou recette) pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "item_id",
+        "planned_quantity",
+        "planned_date"
+      ],
+      "params_optional": [
+        "notes",
+        "planned_time"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_quote",
+      "description": "Crée un devis (brouillon) avec ses lignes. Totaux et acompte calculés automatiquement.",
+      "params_required": [
+        "establishment_id",
+        "items"
+      ],
+      "params_optional": [
+        "advance_percentage",
+        "client_id",
+        "discount_amount",
+        "notes",
+        "payment_method",
+        "quote_date",
+        "tax_rate",
+        "validity_date"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_recipe",
+      "description": "Crée une recette COMPLÈTE (ingrédients + étapes + catégories) pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "category_ids",
+        "category_names",
+        "desc",
+        "dificulty",
+        "how_many_people",
+        "ingredients",
+        "margin_basis",
+        "preparation_time",
+        "price_includes_tax",
+        "recommended_price",
+        "steps",
+        "target_margin_rate",
+        "tax_rate"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_reservation",
+      "description": "Crée une réservation de table (assigne la meilleure table libre, ou celle choisie / dans la zone demandée).",
+      "params_required": [
+        "establishment_id",
+        "customer_name",
+        "party_size",
+        "date",
+        "time"
+      ],
+      "params_optional": [
+        "customer_email",
+        "customer_phone",
+        "notes",
+        "table_id",
+        "zone"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_shift",
+      "description": "Crée un shift (créneau de travail) pour un employé un jour donné, et le publie.",
+      "params_required": [
+        "establishment_id",
+        "professional_id",
+        "day",
+        "start",
+        "end"
+      ],
+      "params_optional": [
+        "break_minutes",
+        "note",
+        "role_label"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_supplier",
+      "description": "Crée un nouveau fournisseur pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "adresse",
+        "code_postal",
+        "email",
+        "livraison",
+        "pays",
+        "reliability",
+        "status",
+        "tel",
+        "type",
+        "ville",
+        "website"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_supplier_order",
+      "description": "Crée une commande fournisseur.",
+      "params_required": [
+        "establishment_id",
+        "fournisseur_id",
+        "items"
+      ],
+      "params_optional": [
+        "note"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_table",
+      "description": "Crée une table dans le plan de salle.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "capacity",
+        "shape",
+        "zone_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_tva",
+      "description": "Crée un taux de TVA pour un établissement.",
+      "params_required": [
+        "establishment_id",
+        "name",
+        "percentage"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "create_zone",
+      "description": "Crée une zone du plan de salle.",
+      "params_required": [
+        "establishment_id",
+        "name"
+      ],
+      "params_optional": [
+        "color"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_category",
+      "description": "Supprime une catégorie propre à un établissement (les catégories globales sont protégées).",
+      "params_required": [
+        "establishment_id",
+        "category_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_client",
+      "description": "Supprime un client d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "client_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_dish",
+      "description": "Supprime un plat de la carte d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "dish_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_employee",
+      "description": "Supprime un employé et son planning. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_ingredient",
+      "description": "Supprime un ingrédient d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "ingredient_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_product",
+      "description": "Supprime un produit du catalogue d'un établissement. Action irréversible.",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "delete_recipe",
+      "description": "Supprime une recette d'un établissement (corbeille / soft delete).",
+      "params_required": [
+        "establishment_id",
+        "recipe_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "finance_summary",
+      "description": "Synthèse financière : CA facturé, encaissé, impayés, dépenses, marge sur une période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date_from",
+        "date_to"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "floor_plan_status",
+      "description": "Vue d'ensemble temps réel du plan de salle : compteurs par statut + chaque table avec sa commande active.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_client",
+      "description": "Retourne le détail d'un client d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "client_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_daily_brief",
+      "description": "Brief quotidien de l'établissement.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_domain_status",
+      "description": "Statut du nom de domaine du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_employee",
+      "description": "Retourne les détails complets d'un employé (profil, rôle, planning, contrat).",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_expense",
+      "description": "Retourne le détail complet d'une dépense (lignes incluses).",
+      "params_required": [
+        "establishment_id",
+        "expense_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_ingredient",
+      "description": "Retourne le détail d'un ingrédient d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "ingredient_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_invoice",
+      "description": "Retourne le détail complet d'une facture (lignes incluses).",
+      "params_required": [
+        "establishment_id",
+        "invoice_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_loyalty_account",
+      "description": "Compte de fidélité d'un client.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_loyalty_program",
+      "description": "Programme de fidélité de l'établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_order",
+      "description": "Détail d'une commande (articles, totaux, facture/devis liés, table).",
+      "params_required": [
+        "establishment_id",
+        "order_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_page_content",
+      "description": "Contenu d'une page du site vitrine.",
+      "params_required": [
+        "establishment_id",
+        "page_slug"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_pos_report",
+      "description": "Rapport de caisse (X/Z).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "session_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_pos_session",
+      "description": "Détail d'une session de caisse.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_product",
+      "description": "Retourne le détail d'un produit du catalogue d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_production_ingredients",
+      "description": "Retourne les ingrédients nécessaires pour un plan de production (statut suffisant/manquant).",
+      "params_required": [
+        "establishment_id",
+        "production_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_quote",
+      "description": "Retourne le détail complet d'un devis (lignes incluses).",
+      "params_required": [
+        "establishment_id",
+        "quote_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_recipe",
+      "description": "Retourne le détail d'une recette d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "recipe_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_site_pages",
+      "description": "Liste les pages du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_site_stats",
+      "description": "Statistiques de fréquentation du site vitrine.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_site_status",
+      "description": "Statut de publication du site vitrine.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_station_load",
+      "description": "Charge d'un poste (station) en cuisine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_supplier",
+      "description": "Retourne les détails d'un fournisseur spécifique.",
+      "params_required": [
+        "establishment_id",
+        "supplier_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "get_survey_results",
+      "description": "Résultats d'un sondage.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "get_wheel_stats",
+      "description": "Statistiques des jeux de roue.",
+      "params_required": [
+        "establishment_id",
+        "wheel_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "import_storefront_menu",
+      "description": "Construit TOUTE la carte vitrine en un appel : catégories + sous-catégories + plats + formules éditoriales. Idempotent sur les noms.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "categories",
+        "formules"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_attendances",
+      "description": "Liste les pointages (clock in/out) des employés sur une période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date_from",
+        "date_to"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_beverages",
+      "description": "Liste les boissons (carte des boissons).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_categories",
+      "description": "Liste les catégories d'un établissement (y compris les catégories globales).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_cleaning_actions",
+      "description": "Liste les actions de nettoyage réalisées. Filtres : période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date_from",
+        "date_to",
+        "limit"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_cleaning_zones",
+      "description": "Liste les zones de nettoyage (avec leurs postes) d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_clients",
+      "description": "Liste les clients d'un établissement. Filtres : recherche, statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "search",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_deliveries",
+      "description": "Liste les livraisons fournisseurs d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_delivery_zones",
+      "description": "Liste les zones de livraison.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_dishes",
+      "description": "Liste les plats de la carte d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "active"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_employee_contracts",
+      "description": "Liste les contrats des employés d'un établissement. Filtre : employé.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "employee_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_employee_documents",
+      "description": "Liste les documents administratifs des employés. Filtre : employé.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "employee_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_employees",
+      "description": "Liste tous les employés d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_expenses",
+      "description": "Liste les dépenses (achats fournisseurs) d'un établissement. Filtres : statut, recherche.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "search",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_gift_cards",
+      "description": "Liste les cartes cadeaux.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_haccp_labels",
+      "description": "Liste les étiquettes HACCP (DLC) d'un établissement. Filtre : statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_haccp_reception",
+      "description": "Liste les fiches de réception HACCP d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_haccp_temperatures",
+      "description": "Liste les relevés de températures HACCP. Filtres : période, équipement, type.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "end_date",
+        "equipment_id",
+        "start_date",
+        "type"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_haccp_tracabilite",
+      "description": "Liste les enregistrements de traçabilité HACCP d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_happy_hours",
+      "description": "Liste les happy hours.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_hygiene_checklists",
+      "description": "Liste les modèles de checklist hygiène HACCP d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "categorie"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_ingredients",
+      "description": "Liste les ingrédients d'un établissement. Filtres : recherche par nom, type.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "search",
+        "type"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_invoices",
+      "description": "Liste les factures d'un établissement. Filtres : statut, recherche.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "search",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_job_applications",
+      "description": "Liste les candidatures reçues.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_leaves",
+      "description": "Liste les demandes de congés des employés. Filtre par statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_low_stocks",
+      "description": "Liste les articles en stock dont le niveau est bas (is_low = true).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_loyalty_rewards",
+      "description": "Liste les récompenses de fidélité.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_notifications",
+      "description": "Liste les notifications d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_orders",
+      "description": "Liste les commandes (tous canaux). Filtres : statut, canal, date.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "channel",
+        "date",
+        "limit",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_plannings",
+      "description": "Liste les shifts (planning des horaires) de l'équipe pour une semaine, avec heures et coût estimé.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "week"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_pos_payments",
+      "description": "Liste les encaissements d'une session de caisse.",
+      "params_required": [
+        "establishment_id",
+        "order_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_pos_tabs",
+      "description": "Liste les additions/tabs de caisse ouvertes.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_private_event_requests",
+      "description": "Liste les demandes d'événements privés.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_production_alerts",
+      "description": "Liste les ingrédients manquants pour les productions planifiées dans les prochains jours.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "days"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_production_plans",
+      "description": "Liste les plans de production sur une période donnée.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "end_date",
+        "start_date",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_products",
+      "description": "Liste tous les produits d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_quotes",
+      "description": "Liste les devis d'un établissement. Filtre : statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "limit",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_recipes",
+      "description": "Liste toutes les recettes d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_redemptions",
+      "description": "Liste les utilisations de récompenses de fidélité.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_reservations",
+      "description": "Liste les réservations de table. Filtres : statut, date.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "date",
+        "limit",
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_reviews",
+      "description": "Liste les avis clients.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_site_leads",
+      "description": "Leads capturés via le site vitrine.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "source"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_site_templates",
+      "description": "Modèles de site vitrine disponibles.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_stocks",
+      "description": "Liste tous les articles en stock d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_suppliers",
+      "description": "Liste tous les fournisseurs d'un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "name"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_surveys",
+      "description": "Liste les sondages.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_tables",
+      "description": "Liste les tables avec leur statut temps réel. Filtre : statut.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "status"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_top_productions",
+      "description": "Liste les plats/recettes les plus produits sur une période.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "days"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_tva",
+      "description": "Liste les taux de TVA configurés pour un établissement.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_units",
+      "description": "Liste les unités de mesure disponibles (référentiel global, lecture seule).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_waitlist",
+      "description": "Liste la file d'attente active (walk-ins en attente / prévenus).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "list_wheel_games",
+      "description": "Liste les jeux de roue (wheel).",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "list_zones",
+      "description": "Liste les zones du plan de salle (Salle, Terrasse...).",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "moderate_review",
+      "description": "Modère un avis client.",
+      "params_required": [
+        "establishment_id",
+        "review_id",
+        "action"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "no_show_reservation",
+      "description": "Marque une réservation en no-show (client absent → libère la table).",
+      "params_required": [
+        "establishment_id",
+        "reservation_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "open_pos_session",
+      "description": "Ouvre une session de caisse (POS).",
+      "params_required": [
+        "establishment_id",
+        "opening_float",
+        "operator_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "publish_site",
+      "description": "Publie le site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false,
+      "native_guard": "confirm:true exigé (serveur)."
+    },
+    {
+      "name": "record_cleaning_action",
+      "description": "Enregistre une action de nettoyage réalisée sur un poste.",
+      "params_required": [
+        "establishment_id",
+        "poste_nettoyage_id"
+      ],
+      "params_optional": [
+        "commentaires",
+        "statut"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "record_pos_payment",
+      "description": "Enregistre un encaissement en caisse.",
+      "params_required": [
+        "establishment_id",
+        "order_id",
+        "amount",
+        "method",
+        "operator_id"
+      ],
+      "params_optional": [
+        "tendered"
+      ],
+      "schema_introspected": true,
+      "native_guard": "method ∈ {especes,carte,titre_restaurant,cheque} ; titre_restaurant = pas de rendu."
+    },
+    {
+      "name": "reject_leave",
+      "description": "Refuse une demande de congé en attente.",
+      "params_required": [
+        "establishment_id",
+        "leave_id",
+        "reason"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "remove_beverage_item",
+      "description": "Retire une boisson de la carte.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "reply_review",
+      "description": "Répond à un avis client.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "reservation_availability",
+      "description": "Vérifie la disponibilité d'un créneau : restaurant ouvert + tables libres (anti-double-booking).",
+      "params_required": [
+        "establishment_id",
+        "date",
+        "time",
+        "party_size"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "search_entities",
+      "description": "Résout un nom parlé/écrit vers un ID (produits, ingrédients, plats, équipements, tables, recettes). Fuzzy FR ; si ambigu, demander confirmation.",
+      "params_required": [
+        "establishment_id",
+        "query"
+      ],
+      "params_optional": [
+        "limit",
+        "types"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "seat_waitlist",
+      "description": "Installe un client de la file d'attente sur une table (crée la commande sur place).",
+      "params_required": [
+        "establishment_id",
+        "waitlist_id",
+        "table_id"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "set_site_theme",
+      "description": "Définit le thème (couleurs/typo) du site vitrine.",
+      "params_required": [
+        "establishment_id",
+        "tokens"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "toggle_site_page",
+      "description": "Active/désactive une page du site vitrine.",
+      "params_required": [
+        "establishment_id",
+        "page_slug",
+        "publish"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_application_status",
+      "description": "Change le statut d'une candidature.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "update_category",
+      "description": "Modifie une catégorie d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "category_id"
+      ],
+      "params_optional": [
+        "color",
+        "description",
+        "icon",
+        "is_active",
+        "name",
+        "parent_id"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_client",
+      "description": "Modifie un client d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "client_id"
+      ],
+      "params_optional": [
+        "adresse",
+        "code_postal",
+        "email",
+        "nom",
+        "num_tel",
+        "numero_tva",
+        "pays",
+        "prenom",
+        "siret",
+        "status",
+        "ville"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_dish",
+      "description": "Modifie un plat de la carte d'un établissement.",
+      "params_required": [
+        "establishment_id",
+        "dish_id"
+      ],
+      "params_optional": [
+        "active",
+        "category_id",
+        "description",
+        "name",
+        "portions",
+        "prep_time",
+        "price",
+        "tva_nature"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_employee",
+      "description": "Modifie les informations d'un employé (prénom, nom, email, téléphone, rôle).",
+      "params_required": [
+        "establishment_id",
+        "employee_id"
+      ],
+      "params_optional": [
+        "email",
+        "first_name",
+        "last_name",
+        "phone_number",
+        "role"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_employee_schedule",
+      "description": "Remplace entièrement le planning hebdomadaire d'un employé.",
+      "params_required": [
+        "establishment_id",
+        "employee_id",
+        "schedules"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_event_request_status",
+      "description": "Change le statut d'une demande d'événement privé.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "update_ingredient",
+      "description": "Modifie un ingrédient (nom, unité, prix, stock, seuil, valeurs nutritionnelles).",
+      "params_required": [
+        "establishment_id",
+        "ingredient_id"
+      ],
+      "params_optional": [
+        "alert_threshold",
+        "calories",
+        "carbs",
+        "cooking_coefficient",
+        "description",
+        "fats",
+        "name",
+        "price_per_unit",
+        "proteins",
+        "quantity_in_stock",
+        "unit"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_invoice_status",
+      "description": "Change le statut d'une facture en respectant les transitions légales autorisées (DGFiP).",
+      "params_required": [
+        "establishment_id",
+        "invoice_id",
+        "status"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_job_offer",
+      "description": "Met à jour une offre d'emploi.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "update_kds_item_status",
+      "description": "Change le statut cuisine d'un plat d'une commande (pending → in_progress → ready → served). Écrans KDS.",
+      "params_required": [
+        "establishment_id",
+        "item_id",
+        "status"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_loyalty_program",
+      "description": "Met à jour le programme de fidélité.",
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "active",
+        "earn_mode",
+        "earn_rate",
+        "points_validity_months",
+        "visit_points"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_order_status",
+      "description": "Change le statut d'une commande (répercute sur facture/devis et table).",
+      "params_required": [
+        "establishment_id",
+        "order_id",
+        "status"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_product",
+      "description": "Modifie un produit du catalogue (prix, unité, stock, description, nom, promotion).",
+      "params_required": [
+        "establishment_id",
+        "establishment_product_id"
+      ],
+      "params_optional": [
+        "description",
+        "is_promotion",
+        "location",
+        "name",
+        "price_by_unit",
+        "ref",
+        "stock_quantity",
+        "unit"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_quote_status",
+      "description": "Change le statut d'un devis (brouillon, envoye, accepte, refuse, expire).",
+      "params_required": [
+        "establishment_id",
+        "quote_id",
+        "status"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_recipe",
+      "description": "Modifie une recette (ingredients/steps/catégories resynchronisés uniquement si fournis).",
+      "params_required": [
+        "establishment_id",
+        "recipe_id"
+      ],
+      "params_optional": [
+        "category_ids",
+        "category_names",
+        "desc",
+        "dificulty",
+        "how_many_people",
+        "ingredients",
+        "margin_basis",
+        "name",
+        "preparation_time",
+        "price_includes_tax",
+        "recommended_price",
+        "status",
+        "steps",
+        "target_margin_rate",
+        "tax_rate"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "update_section",
+      "description": "Met à jour une section de page du site vitrine.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "update_table_status",
+      "description": "Change le statut d'une table (free|reserved|occupied|cleaning|blocked).",
+      "params_required": [
+        "establishment_id",
+        "table_id",
+        "status"
+      ],
+      "params_optional": [],
+      "schema_introspected": true
+    },
+    {
+      "name": "upsert_beverage_item",
+      "description": "Crée/met à jour une boisson.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "upsert_delivery_zone",
+      "description": "Crée/met à jour une zone de livraison.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "upsert_happy_hour",
+      "description": "Crée/met à jour un happy hour.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "upsert_loyalty_reward",
+      "description": "Crée/met à jour une récompense de fidélité.",
+      "params_required": [
+        "establishment_id",
+        "kind",
+        "label",
+        "points_cost"
+      ],
+      "params_optional": [
+        "reward_id",
+        "plat_id",
+        "amount",
+        "stock",
+        "active"
+      ],
+      "schema_introspected": true
+    },
+    {
+      "name": "validate_production",
+      "description": "Valide une production planifiée.",
+      "params_required": [],
+      "params_optional": [],
+      "schema_introspected": false
+    },
+    {
+      "name": "validate_redemption",
+      "description": "Valide l'utilisation d'une récompense de fidélité.",
+      "params_required": [
+        "establishment_id",
+        "code"
+      ],
+      "params_optional": [],
+      "schema_introspected": true,
+      "native_guard": "usage unique — dédup portée par le serveur."
+    }
+  ]
+}

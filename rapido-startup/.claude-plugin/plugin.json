@@ -5,5 +5,13 @@
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"
-  }
+  },
+  "mcp_requis": [
+    "stripe",
+    "rapidocrm",
+    "rapidocms",
+    "rapidorh",
+    "foodeatup",
+    "google-calendar"
+  ]
 }

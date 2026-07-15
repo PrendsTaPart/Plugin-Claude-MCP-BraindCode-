@@ -46,8 +46,10 @@ description: Utiliser quand l'utilisateur veut … # en français, déclencheurs
 
 **Skill importé d'un dépôt open source** : copier la LICENSE de la source
 dans le dossier du skill, documenter provenance/commit/modifications dans
-l'`ATTRIBUTIONS.md` du plugin, renommer en cas de collision de `name`, et
-purger les artefacts (`__pycache__/`, `*.pyc`, `node_modules/`, `.DS_Store`).
+l'`ATTRIBUTIONS.md` du plugin (fichier équivalent : `NOTICE.md` pour les
+plugins récents — même rôle, un seul des deux par plugin), renommer en cas de
+collision de `name`, et purger les artefacts (`__pycache__/`, `*.pyc`,
+`node_modules/`, `.DS_Store`).
 
 ## Proposer un plugin
 

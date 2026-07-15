@@ -30,26 +30,31 @@ maison de `./rapido-kb/processus-internes.md` priment (les citer).
 Run the complaint resolution workflow by chaining two skills. Read the complaint, gather context, draft a response, and suggest a fix so it doesn't happen again.
 
 Parse arguments:
-- `EMAIL_OR_TICKET_ID` (optional) — Gmail thread ID, HubSpot ticket ID, or "latest" to pull the most recent unresolved complaint. If omitted, ask the owner to paste the complaint text.
+- `EMAIL_OR_TICKET_ID` (optional) — ID de fil email (rapido-direction), ID de ticket
+  CRM, ou "latest" pour la plainte non résolue la plus récente. Sinon, demander à
+  l'exploitant de coller le texte de la plainte.
 
-## Step 1 — Load the complaint (ticket-deflector)
+## Step 1 — Load the complaint
 
-Using the `ticket-deflector` skill workflow:
+Récupérer la plainte :
 
-1. If an ID was given: pull the full thread from Gmail or HubSpot.
-2. If "latest": pull the most recent unresolved HubSpot ticket or Gmail thread tagged as complaint/support.
+1. If an ID was given: charger le fil depuis la boîte mail (plugin rapido-direction) ou le ticket CRM.
+2. If "latest": prendre la plainte non résolue la plus récente (email support / activité CRM).
 3. If neither: ask the owner to paste the complaint text directly.
 4. Identify: customer name, order/account info, what they're upset about, what they're asking for.
 
 ## Step 2 — Pull context
 
-1. Search HubSpot for the customer's history: past purchases, prior complaints, deal stage, lifetime value.
-2. Search PayPal for relevant transaction: order status, refund history, dispute status.
+1. Historique client : RapidoCRM (`get_contact`, `get_historique_prospect`,
+   `get_loyalty_points`) et/ou FoodEatUp (`get_client` + `list_orders` du client).
+2. Commande concernée : FoodEatUp `list_orders` / `get_order` (statut), `list_invoices`
+   (paiement/avoir) — pas de PayPal/Stripe dans cet écosystème.
 3. Summarize: "This is a {new/returning} customer, ${lifetime_value} in purchases, {0/N} prior complaints. Their current issue is {one sentence}."
 
-## Step 3 — Draft response (ticket-deflector)
+## Step 3 — Draft response
 
-Using the `ticket-deflector` skill workflow for tone-matched response:
+Pour une réponse au ton juste, s'appuyer sur `rapidocrm:draft-response` (situations
+client délicates). Sinon, rédiger directement :
 
 1. Draft a reply matched to the severity and the customer's history:
    - First-time complainers with high LTV → empathetic, generous
@@ -58,15 +63,19 @@ Using the `ticket-deflector` skill workflow for tone-matched response:
 2. Include: acknowledgment, explanation (if known), resolution offer, next step.
 3. Present the draft to the owner. Do NOT send.
 
-## Step 4 — Suggest operational fix (customer-pulse)
+## Step 4 — Suggest operational fix
 
-1. Check if this complaint matches a known theme (from prior `/customer-pulse-check` runs or similar complaints in HubSpot).
+1. Vérifier si la plainte recoupe un thème connu (plaintes similaires déjà tracées dans
+   le CRM via `log_activity`, ou notes `./rapido-kb/`).
 2. If it's a pattern: "This is the {Nth} complaint about {issue} this month. Consider: {specific operational change}."
 3. If it's isolated: "This looks like a one-off. No pattern detected."
 
 ## Connector failures
 
-If Gmail and HubSpot are both unreachable, ask the owner to paste the complaint text — the skill works with manual input. If PayPal is missing, skip transaction lookup and note "PayPal not connected — order status unavailable, working from complaint text only."
+Si le CRM et la boîte mail (rapido-direction) sont injoignables, demander à l'exploitant
+de coller le texte de la plainte — le skill fonctionne en saisie manuelle. Si FoodEatUp
+est injoignable, sauter la recherche de commande et noter « statut de commande
+indisponible — travail à partir du texte de la plainte uniquement ».
 
 ## Approval gates
 

@@ -1,5 +1,52 @@
 # Changelog — plugin foodeatup
 
+## 1.6.1 — 2026-07-15 — extensions CRUD (série SYNC S1)
+
+- Couverture des primitives CRUD dormantes ajoutée aux skills existants (schémas déjà
+  connus) : `service-salle` (fichier clients : create/get/list/update/**delete**_client),
+  `reappro-fournisseurs` (produits create/get/update/**delete** + create_supplier),
+  `recette-cout-marge` (ingrédients CRUD + **delete_recipe**), `carte-vitrine` (create_dish/
+  create_dish_category/**delete_dish**), `planning-equipe` (get/update/**delete**_employee),
+  `onboarding-restaurateur` (create_tva/list_tva), `gestion-commandes` (get_invoice).
+- Les suppressions restent gatées par le hook `garde-destructif` (`delete_.*` → confirmation).
+
+
+## 1.6.0 — 2026-07-15 — familles dormantes activées (série SYNC S1)
+
+- Inventaire serveur corrigé à **164 outils** (le registre de session n'en exposait
+  que 111). Nouveaux skills sur schémas réels (option 2) :
+- Skill **`fidelite-restaurant`** — programme de fidélité, points, récompenses,
+  redemptions, cartes cadeaux ; garde-fous serveur reflétés (`adjust_points` ±1000/motif,
+  `validate_redemption` usage unique, `update_loyalty_program` = tous clients).
+- Skill **`caisse-du-jour`** — session POS : ouverture, encaissements
+  (`record_pos_payment`, enum modes, `titre_restaurant` sans rendu), rapport X/Z,
+  clôture Z (`confirm:true` serveur, jamais d'office).
+- Skill **`site-vitrine-foodeatup`** — pages, thème (tokens de la charte), templates,
+  publication (`apply_site_template`/`publish_site` = `confirm:true`), stats, leads → CRM.
+- Agent **`gerant-digital`** — orchestre présence en ligne (site + fidélité + avis + leads).
+- Hook `garde-destructif` étendu : `adjust_points`, `record_pos_payment`,
+  `close_pos_session`, `publish_site`, `apply_site_template`, `update_loyalty_program`,
+  `moderate_review`, `reply_review` → confirmation (`ask`), testés au testeur.
+- **Reste à faire** (schémas à réintrospecter, non inventés) : familles recrutement,
+  offre (happy hours/livraison/boissons), avis complet (`list_reviews`/`reply_review`),
+  et 29 outils au total ; extensions CRUD (client/produit/ingrédient…) à venir.
+
+## 1.5.2 — 2026-07-15 — sync MCP (série SYNC S1) : retrait des outils fantômes
+
+- `margin-analyzer`, `price-check`, `handle-complaint` : les workflows importés
+  citaient encore, **dans le corps des étapes**, des outils **inexistants** dans
+  l'écosystème (QuickBooks `profit-loss-quickbooks-account`/`company-info`, PayPal
+  `list_transactions`/« Search PayPal », HubSpot) malgré leur table de correspondance
+  — adaptation d'import incomplète, bug silencieux. Étapes retargettées sur les **vrais**
+  outils : coûts via recettes (`get_recipe`, `recette-cout-marge`) + `list_expenses` ;
+  revenus via `finance_summary`/`list_orders`/`list_invoices` (FoodEatUp) et
+  `get_revenue_summary`/`list_factures` (CRM) ; historique client via CRM
+  (`get_contact`, `get_historique_prospect`, `get_loyalty_points`).
+- Références de skills fantômes retirées (`ticket-deflector`, `customer-pulse-check`) ;
+  renvoi vers `rapidocrm:draft-response`. `margin-analyzer/reference/gotchas.md` réécrit
+  en Rapido-natif (sources FoodEatUp/CRM, plus aucune mention PayPal/QuickBooks).
+- Détecté par le harnais d'audit MCP↔plugin (série SYNC S0/S1).
+
 ## 1.5.1 — 2026-07-15
 
 - `carte-vitrine` (patch H9) : renvoi vers le mode « carte en photos » de

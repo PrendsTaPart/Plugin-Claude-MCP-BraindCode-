@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__foodeatup__(delete_.*|create_employee_contract|update_employee_schedule)",
+        "matcher": "mcp__foodeatup__(delete_.*|create_employee_contract|update_employee_schedule|adjust_points|record_pos_payment|close_pos_session|publish_site|apply_site_template|update_loyalty_program|moderate_review|reply_review)",
         "hooks": [
           {
             "type": "command",
