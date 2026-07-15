@@ -1,5 +1,27 @@
 # Changelog — plugin rapido-marketing
 
+## 0.12.0 — 2026-07-15
+
+- Skill `delivrabilite-email` : **gate obligatoire avant tout lot d'envoi** +
+  runbook incident. Exécution via RapidoCRM.
+  - `scripts/scorecard_liste.py` (stdlib) : doublons, emails de rôle, formats
+    invalides, diversité des titres, concentration de domaines, taille vs plafond
+    → **note A-E + `refus`** si sous le seuil KB (formule affichée, jamais de tête).
+  - `scripts/spam_check.py` (stdlib) : lexique à risque FR/EN, densité de liens,
+    majuscules, promesses chiffrées → signalements + note de risque ; **réécriture
+    déléguée** à `rapidocrm:redaction-commerciale` (pas de doublon).
+  - `reference/kb-templates/delivrabilite.md` : plafond quotidien, calendrier de
+    montée en charge (warmup), seuil de note minimale, règles de pause — copié
+    dans `./rapido-kb/marketing/` à la 1re exécution.
+  - **Invocation obligatoire** posée dans `machine-outbound` (avant tout lot ;
+    câblage `rapidocrm:campagne-marketing` prévu M8-v2).
+  - Suivi post-envoi sur ce que le serveur expose (`get_stats_campagne`) ;
+    **bounces/plaintes fins non exposés** → consigné dans le nouveau
+    `docs/OUTILS-MCP-MANQUANTS.md` (télémétrie délivrabilité, warmup/rotation,
+    annulation d'envoi planifié) avec spec pour Tunis.
+  - Adapté de `docs/methodo/ops/delivrabilite-email.md` + `cold-email-cadence.md`
+    (coldoutboundskills, MIT GrowthEngineX).
+
 ## 0.11.0 — 2026-07-15
 
 - Skill `sales-intelligence-fireflies` : pipeline qui transforme les transcripts

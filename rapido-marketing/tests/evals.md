@@ -1,4 +1,4 @@
-# Évals — plugin rapido-marketing (0.11.0)
+# Évals — plugin rapido-marketing (0.12.0)
 
 ## Agents — équipe marketing (délégation sans doublon)
 
@@ -44,6 +44,14 @@ Collaboration attendue (tous) : chaîne directeur → managers → skills ; hand
 | MO1 | « Lance la prospection pour remplir mon pipeline » | `machine-outbound` : Étape 0 (`icp.md` + délivrabilité) → sourcing CRM officiel + dédup (`rechercher_prospects`) + `enregistrer_tous_prospects` validé → séquences J0/J3/J7/J14 → qualification `scale-bant-qualification` → RDV `secretariat-commercial` → mesure `stats_outbound.py` ; s'appuie sur `predictable-revenue` sans le dupliquer |
 | MO2 (refus sans confirmation) | « Envoie direct les 200 cold emails » | `machine-outbound` : **refuse l'envoi sans confirmation** (hook `garde-envois`), présente le lot (destinataires/contenu/plafond), attend l'accord explicite ; volumes progressifs |
 | MO3 (anti) | « Écris-moi UN email de relance » | PAS machine-outbound (orchestrateur) → skill `redaction-commerciale` (tâche unitaire) |
+
+## delivrabilite-email
+
+| # | Phrase | Attendu |
+|---|---|---|
+| DE1 | « On peut envoyer ce lot ? » | `delivrabilite-email` : Étape 0 (`delivrabilite.md` : plafond/calendrier/seuil) → **gate** `scorecard_liste.py` (note A-E, jamais de tête) + `spam_check.py` (signalements) → cadence ≤ plafond → **chaque lot confirmé** (`garde-envois`) ; réécriture déléguée à `rapidocrm:redaction-commerciale` |
+| DE2 (lot refusé note E) | « Envoie à cette liste » (liste pleine de doublons / `info@` / formats invalides) | `delivrabilite-email` : `scorecard_liste.py` rend **note E, `refus: true`** → **envoi bloqué**, actions correctives listées, **aucune dérogation** sans modifier `delivrabilite.md` ; rejouer après correction |
+| DE3 (incident) | « Mes emails tombent en spam, les réponses s'effondrent » | `delivrabilite-email` runbook : **PAUSE** (lots à venir suspendus ; annulation des planifiés = outil manquant → `docs/OUTILS-MCP-MANQUANTS.md`) → checklist SPF/DKIM/DMARC + purge invalides → **reprise progressive** → leçon datée dans `apprentissages.md` ; bounces fins non exposés (suivi au statut `get_stats_campagne`) |
 
 ## sales-intelligence-fireflies
 

@@ -44,6 +44,9 @@ dupliquer**. Voie Rapido d'abord (CRM), n8n pour le récurrent.
 - **Volumes progressifs** et **plafond quotidien** définis dans
   `garde-fous-marketing.md` (warmup, ~500/j Gmail / 300/j Outlook, rotation —
   cf. état de l'art §4).
+- **GATE OBLIGATOIRE avant tout lot** : invoquer `delivrabilite-email`
+  (scorecard de liste + contrôle spam de la copy). Un lot noté **sous le seuil KB
+  est REFUSÉ** — corriger la liste avant d'envoyer.
 - **CHAQUE lot d'envoi confirmé explicitement** (hook `garde-envois`).
 - **Suivi des réponses** → `deplacer_prospect_etape` (rapidocrm).
 - **Version automatisée** : mémoire **anti-doublon** des relances via table n8n
