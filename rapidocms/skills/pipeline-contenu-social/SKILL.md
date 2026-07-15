@@ -19,10 +19,19 @@ la charte sert de repli et pour les règles non exposées par l'API.
    compte cible : `page_id` (pages), `profile_id` ou `open_id` selon le réseau —
    c'est lui qui sert d'`account_id` à l'étape 3. Si plusieurs comptes correspondent,
    demander lequel utiliser.
-2. **Visuel (optionnel)** — générer avec `generate_image` (`prompt`, `size` = hd |
-   standard), puis uploader dans la bibliothèque avec `upload_file_tool` (`type` =
-   image | video | doc, `name`, `file_url` = URL publique). Appliquer la charte de
-   marque (voir skill contenu-conforme-marque : `get_brand`).
+2. **Visuel (optionnel)** — **arbre de décision** (ne plus appeler
+   `generate_image` par défaut) :
+   - (a) le visuel doit être **brandé** ET la marque a un **logo / des assets**
+     (`get_brand` → logo, `list_all_files`) → invoquer **studio-visuel-marque**
+     (intègre les vrais assets via `images_to_image`, avec critique charte). Un
+     **personnage récurrent** → `coherence-personnage`.
+   - (b) visuel **générique sans référence** → `generate_image` (`prompt`,
+     `size` = hd | standard), charte appliquée (voir `contenu-conforme-marque`).
+   - (c) l'utilisateur **demande Canva** (template/gabarit) → **déléguer au
+     plugin `rapido-canva`**.
+   Dans tous les cas, uploader le rendu retenu avec `upload_file_tool` (`type` =
+   image | video | doc, `name`, `file_url` = URL publique) puis **rattacher son
+   `media_url` au brouillon** (étape 3).
 3. **Brouillon** — `create_draft_tool`, un appel PAR réseau ciblé :
    - `post_name`, `social_type` ∈ linkedin | facebook | instagram | tiktok,
      `account_id` (étape 1), `post_type` ∈ media | text | mediatext ;

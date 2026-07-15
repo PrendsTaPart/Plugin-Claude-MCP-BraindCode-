@@ -77,6 +77,17 @@
 - Frontière : visuel brandé ponctuel (sans perso récurrent) →
   `studio-visuel-marque` ; import d'assets → `bibliotheque-assets`.
 
+## Branchement couche marque (mises à jour 1.8.0)
+
+| Phrase | Attendu |
+|---|---|
+| « Prépare un post Insta avec notre logo » | `pipeline-contenu-social` étape visuel → **arbre de décision** : marque a un logo → `studio-visuel-marque` (pas `generate_image`) ; rendu **rattaché au brouillon** (`media_url`) |
+| « Un post avec un fond abstrait, sans logo » | `pipeline-contenu-social` → branche (b) `generate_image` (générique, sans référence) |
+| « Fais ça dans un template Canva » | `pipeline-contenu-social` / prompting → branche (c) délégation **rapido-canva** |
+| « Applique ma marque à ce visuel » (KB dit #0052FF, CMS dit #1A73E8) | `contenu-conforme-marque` : résout les URLs réelles (`get_brand`+`list_all_files`), **signale la divergence** couleur KB↔CMS, propose la sync via `gestion-marques`, applique la KB (prioritaire) en attendant — **jamais d'écrasement silencieux** |
+| « Décline ce visuel avec le logo en 3 versions » | `prompt-engineering-visuel` § références : `images_to_image`, **mêmes images**, seul le texte du prompt change ; logo « ne pas déformer/recolorer » |
+| « Il y a une faute dans le texte du visuel » | `prompts-visuels-pro` **protocole v2** : rendu fautif repassé en référence `images_to_image`, correction **du texte seul** charte inchangée ; fallback v1 (`generate_image`) si le serveur refuse le rendu en référence |
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

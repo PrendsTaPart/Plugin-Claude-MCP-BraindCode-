@@ -37,6 +37,25 @@ d'écart KB ↔ serveur, le signaler. Le cycle de vie des marques
 3. **Vérifier avant livraison** : couleurs exactes (codes hex de `get_brand`, pas
    d'approximation), logo présent quand pertinent, ton homogène.
 
+## Résolution live des URLs & divergence KB ↔ CMS
+
+L'**ordre des sources ne change pas** : `./rapido-kb/charte-graphique.md`
+(**PRIORITAIRE**) → `get_brand`/`get_company` (live) → repli générique (signalé).
+Ce qui s'ajoute, au moment de l'exécution :
+
+1. **Résoudre les URLs RÉELLES** des assets à utiliser (logo, visuels) :
+   `get_brand` (logo + `assets[]`) puis `list_all_files` pour l'`file_url`
+   publique exacte — ne jamais improviser une URL ni réutiliser un chemin de
+   mémoire. C'est cette URL réelle qui part dans le prompt (studio-visuel-marque)
+   ou le `media_url`/`image_url`.
+2. **Détecter la divergence KB ↔ CMS** sur **couleurs, logo, slogan** : comparer
+   la valeur KB (source de vérité) à la valeur `get_brand` (serveur). En cas
+   d'écart, **le SIGNALER explicitement** (« ta KB dit `#0052FF`, la marque CMS
+   dit `#1A73E8` ») et **proposer la synchronisation via `gestion-marques`**
+   (`edit_brand`) — **jamais d'écrasement silencieux**, dans un sens comme dans
+   l'autre. Tant que l'utilisateur n'a pas tranché, appliquer la KB (prioritaire)
+   et le dire.
+
 ## Assets de marque (logos officiels)
 
 La marque porte désormais ses ASSETS (schémas vérifiés serveur) :

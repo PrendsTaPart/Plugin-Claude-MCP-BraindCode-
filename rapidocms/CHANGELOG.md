@@ -1,5 +1,31 @@
 # Changelog — plugin rapidocms
 
+## 1.8.0 — 2026-07-14
+
+Branchement des 4 skills existants sur la nouvelle couche marque/assets
+(modifications ciblées, comportements existants conservés) :
+
+- `pipeline-contenu-social` : l'étape visuel n'appelle plus `generate_image`
+  par défaut — arbre de décision (a) brandé + assets → `studio-visuel-marque`
+  (perso récurrent → `coherence-personnage`) ; (b) générique sans référence →
+  `generate_image` ; (c) Canva → plugin `rapido-canva`. Le rendu retenu est
+  rattaché au brouillon (`media_url`).
+- `contenu-conforme-marque` : ordre des sources inchangé (KB prioritaire >
+  get_brand > repli) + résolution des **URLs réelles** (logo/assets) via
+  `get_brand`+`list_all_files` à l'exécution, et **détection de divergence
+  KB↔CMS** (couleurs, logo, slogan) → signalée, sync proposée via
+  `gestion-marques`, jamais d'écrasement silencieux.
+- `prompt-engineering-visuel` : nouvelle section « Prompting avec références
+  (images_to_image) » — rôle de chaque image, contraintes de préservation du
+  logo, variantes à références constantes, règle de routage generate_image vs
+  images_to_image.
+- `prompts-visuels-pro` : protocole zéro faute **v2** — un texte fautif se
+  corrige en repassant le rendu en référence (`images_to_image`, correction
+  chirurgicale du texte seul, charte inchangée) ; protocole v1
+  (`generate_image`) conservé en fallback si le serveur refuse le rendu en
+  référence.
+- tests/evals.md : section « Branchement couche marque » (6 scénarios).
+
 ## 1.7.0 — 2026-07-14
 
 - Nouveau skill `coherence-personnage` : cohérence visuelle d'un personnage
