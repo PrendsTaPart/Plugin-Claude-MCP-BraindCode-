@@ -112,6 +112,29 @@ JSON `permissionDecision`, allow = exit 0) :
 | `upload_file_tool` type `"audio"` | valide_charte_hook | **deny** (type ∉ image/video/doc) |
 | `delete_brand` / `remove_asset` sans confirmation | garde-destructif | **ask** (confirmation forcée) |
 
+## Recette couche marque — scénarios structurés (release 1.11.0)
+
+Format : phrase → skill → séquence d'outils MCP → garde-fous.
+
+| Phrase | Skill | Séquence outils | Garde-fous |
+|---|---|---|---|
+| « Crée une marque pour ma 2e enseigne » | gestion-marques | `get_brand` (anti-doublon) → `create_brand` | `valide-charte` (couleurs/font/URL), confirmation niveau 2, Stop récap `brand_id` |
+| « Importe ce logo et rattache-le à Braindcode » | bibliotheque-assets | `upload_file_tool` → `list_all_files` (résoudre `asset_id`) → `get_brand` → `add_asset` | `valide-charte` (type/file_url), aucun id inventé |
+| « Fais un visuel avec notre logo » | studio-visuel-marque | `get_brand` → `list_all_files` → `images_to_image` (hd) → critique PASS/FAIL | ≤3 réf <5 Mo (`valide-charte`), pas de publication directe |
+| « Nouvelle scène avec Origami » | coherence-personnage | lire `personnages.json` → `images_to_image` (1-3 portraits) → critique vs canon | JAMAIS de génération sans référence canonique |
+| « Prépare un post Insta avec notre logo » | pipeline-contenu-social | `list_connected_accounts` → route → `studio-visuel-marque` → `upload_file_tool` → `create_draft_tool` → `schedule_draft_tool` | confirmation date/heure, `media_source:"biblio"`, rendu rattaché au brouillon |
+| « Applique ma marque » (KB #0052FF vs CMS #1A73E8) | contenu-conforme-marque | `get_brand` + `list_all_files` (URLs réelles) → signale divergence | KB prioritaire, sync proposée via gestion-marques, jamais d'écrasement |
+| « Génère un visuel du burger » (sans logo) | prompt-engineering-visuel | `list_prompts` → `generate_image` → critique charte | palette hex de la charte, pas de texte incrusté |
+| « Il y a une faute dans le texte du visuel » | prompts-visuels-pro | `images_to_image` (rendu fautif en réf, v2) | correction du texte seul, fallback v1 (`generate_image`) si refus serveur |
+| « Configure mon entreprise » (charte remplie) | rapido-suite:onboarding-entreprise | interview → Phase 3 bis `create_brand` (via gestion-marques) → écrit `brand_id` en KB | Miroir CMS non bloquant si rapidocms/MCP absent |
+
+### Anti-déclenchement (NE DOIVENT PAS déclencher studio-visuel-marque)
+
+| Phrase | Attendu | Pourquoi PAS studio-visuel-marque |
+|---|---|---|
+| « Décline ce visuel dans un template Canva » | déléguer au plugin `rapido-canva` | Canva explicite = branche (c) du routage, pas `images_to_image` |
+| « Génère une illustration abstraite, sans logo ni marque » | `generate_image` via `prompt-engineering-visuel` | aucun asset de marque à intégrer = branche (b), pas de référence |
+
 ## Non-régression (comportements existants inchangés)
 
 - **NR1 — « Prépare et planifie un post LinkedIn »** : pipeline-contenu-social

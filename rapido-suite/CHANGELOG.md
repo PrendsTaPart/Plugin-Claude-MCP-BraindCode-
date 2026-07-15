@@ -1,5 +1,12 @@
 # Changelog — plugin rapido-suite
 
+## 1.4.1 — 2026-07-14
+
+- Clôture couche marque : 5 scénarios de sync KB↔marque consolidés dans
+  tests/evals.md (déclencheur → skill → séquence outils → garde-fous, dont
+  dégradé sans rapidocms et frontière sans brand_id). Aucun changement de
+  comportement (patch documentaire/tests).
+
 ## 1.4.0 — 2026-07-14
 
 Branchement de la base de connaissance sur la couche marque RapidoCMS (la KB

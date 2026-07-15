@@ -1,5 +1,30 @@
 # Changelog — plugin rapidocms
 
+## 1.11.0 — 2026-07-14 — RELEASE couche marque
+
+Entrée consolidée de la vague « couche marque RapidoCMS » (détail par sous-
+version 1.5.0 → 1.10.0 ci-dessous).
+
+- **Skills ajoutés** : `bibliotheque-assets` (import/inventaire/rattachement +
+  audit de complétude), `studio-visuel-marque` (visuels brandés via
+  `images_to_image`), `coherence-personnage` (portraits canoniques).
+- **Skills modifiés** : `gestion-marques` (contrat live), `pipeline-contenu-social`,
+  `contenu-conforme-marque`, `prompt-engineering-visuel`, `prompts-visuels-pro`
+  (branchés sur la couche marque).
+- **Agents** : `directeur-artistique` v2 (exécution visuelle), `gardien-de-marque`
+  (nouveau, audit de conformité lecture seule).
+- **Hooks** : `valide-charte` (refus format couleurs/font/URL/images_to_image/
+  upload avant appel), garde-destructif étendu (delete_brand/prompt, remove_asset),
+  Stop récap étendu à la couche marque.
+- **Socle** : `reference/outils-marque.md`, `scripts/audit_assets.py`,
+  `personnages.exemple.json`.
+- **Changement de comportement clé** : la génération de visuel n'appelle plus
+  `generate_image` par défaut — arbre de routage **assets présents →
+  `images_to_image` (brandé) ; sans référence → `generate_image` ; Canva →
+  plugin rapido-canva**. Limite `images_to_image` = 3 références (vérifiée en
+  direct), imposée par le hook.
+- Recette de release exécutée en réel : `docs/RECETTE-MARQUE.md`.
+
 ## 1.10.0 — 2026-07-14
 
 - Nouveau hook PreToolUse `valide-charte` (`hooks/scripts/valide_charte_hook.py`,

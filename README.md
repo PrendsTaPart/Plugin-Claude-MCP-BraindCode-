@@ -49,9 +49,9 @@ Chiffres lus depuis les fichiers du dépôt : version dans
 |---|---|---|---|---|---|
 | `foodeatup` | 1.5.0 | 15 | 3 | foodeatup, rapidocrm | — |
 | `rapidocrm` | 1.4.1 | 21 | 2 | rapidocrm | — |
-| `rapidocms` | 1.10.0 | 22 | 6 | rapidocms, hyperframes | — |
+| `rapidocms` | 1.11.0 | 22 | 6 | rapidocms, hyperframes | — |
 | `rapidorh` | 1.0.2 | 11 | 2 | rapidorh | — |
-| `rapido-suite` | 1.4.0 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
+| `rapido-suite` | 1.4.1 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | `N8N_MCP_URL` (optionnel) |
 | `rapido-canva` | 1.0.1 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-lovable` | 1.1.0 | 8 | 1 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | — |
 | `rapido-meta-ads` | 1.0.2 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | — |
