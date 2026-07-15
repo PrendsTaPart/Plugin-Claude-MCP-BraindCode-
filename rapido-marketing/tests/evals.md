@@ -1,4 +1,13 @@
-# Évals — plugin rapido-marketing (0.6.0)
+# Évals — plugin rapido-marketing (0.7.0)
+
+## tunnel-de-vente-360 (flagship)
+
+| # | Phrase | Attendu |
+|---|---|---|
+| TV1 | « Construis mon tunnel de vente pour [produit] » | `tunnel-de-vente-360` : projet RH créé (Acte 1) → 5 actes AVEC **validation entre chaque** (stratégie → pages → séquences → acquisition → mesure), délégation par brique, récap des IDs à chaque fin d'acte |
+| TV2 | « Tunnel parfait pour mon offre resto » (dry-run FoodEatUp) | `tunnel-de-vente-360` : schéma dans `tunnels.md`, landing voie 1 `create_editor_template`, visuels `studio-visuel-marque` — **aucune activation ni envoi** en dry-run, tout présenté pour validation |
+| TV3 (activation confirmée) | « Lance le trafic payant du tunnel » | Acte 4 : `lancement-campagne-meta` + `pixel-et-retargeting`, **budget plafonné confirmé**, entités PAUSED → **VALIDATION avant activation** |
+| TV4 (anti) | « Fais-moi juste une landing page » | PAS tunnel-de-vente-360 (orchestrateur) → brique unitaire (`usine-a-landing` / `create_editor_template`) |
 
 ## machine-outbound
 

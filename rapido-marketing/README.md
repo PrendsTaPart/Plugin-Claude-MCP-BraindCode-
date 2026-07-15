@@ -5,7 +5,7 @@ de leads, le tunnel de conversion, le nurturing, la publicité et l'analytics en
 **priorisant les serveurs Rapido** (CRM → CMS → RH), les MCP secondaires en
 repli seulement.
 
-> **Version 0.6.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
+> **Version 0.7.0.** Socle (priorité MCP, garde-fous, hooks) + 4 skills
 > **méthodo** (distillation $100M Leads). Les skills d'**exécution**
 > (machine-inbound/outbound, tunnel-de-vente-360) suivent.
 
@@ -32,6 +32,7 @@ repli seulement.
 | `geo-optimization` ✅ | audit GEO déterministe + corrections (script) |
 | `machine-inbound` ✅ | orchestrateur inbound CMS-first (contenu → RDV) |
 | `machine-outbound` ✅ | orchestrateur outbound CRM-first (ICP → RDV) |
+| `tunnel-de-vente-360` ✅ | flagship : conçoit + construit le tunnel en 5 actes |
 | `attribution-canal` | orchestration `get_conversion_par_canal` (multi-touch à venir) |
 | `tunnel-conversion` | landing → formulaire/CTA → segment → email → stats |
 | `sequences-nurturing` | speed-to-lead + nurture multicanal via n8n |

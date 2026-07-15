@@ -1,5 +1,25 @@
 # Changelog — plugin rapido-marketing
 
+## 0.7.0 — 2026-07-14
+
+- Nouveau skill orchestrateur FLAGSHIP `tunnel-de-vente-360` : conçoit ET
+  construit un tunnel de vente complet pour un produit, Rapido-first, en 5
+  ACTES avec validation OBLIGATOIRE entre chaque (pattern lancement-projet-360).
+  Acte 1 Stratégie (offre/value ladder via lead-magnet-machine/
+  hundred-million-offers, icp-generator, funnel-tofu-mofu-bofu/
+  storybrand-messaging → schéma dans tunnels.md) ; Acte 2 Pages
+  (create_editor_template landing / usine-a-landing, formulaire + CTA trackés,
+  visuels studio-visuel-marque) ; Acte 3 Séquences (email-sequence,
+  devis-facture-relance, usine-automatisations/memoire-operationnelle, rien
+  activé sans confirmation) ; Acte 4 Acquisition (machine-inbound/outbound,
+  lancement-campagne-meta/pixel-et-retargeting, budget plafonné confirmé) ;
+  Acte 5 Mesure (scripts/funnel_metrics.py : taux par passage + goulot,
+  A/B via ideation-growth-experiments, apprentissages.md, registre tunnels.md
+  avec IDs réels). Transversal : projet Kanban RapidoRH (setup-projet/
+  flux-kanban), récap des IDs à chaque fin d'acte.
+- scripts/funnel_metrics.py (stdlib) testé ; tests/evals.md : 4 scénarios
+  (dont tunnel FoodEatUp en dry-run + activation confirmée + anti).
+
 ## 0.6.0 — 2026-07-14
 
 - Nouveau skill orchestrateur `machine-outbound` : la chaîne outbound complète
