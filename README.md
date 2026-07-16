@@ -135,11 +135,11 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | Usine média IA (Higgsfield) branchée sur l'écosystème Rapido |
 | `rapido-video` | 1.0.1 | 2 | 0 | rapidocms | Montage vidéo 100 % libre (ffmpeg + Whisper) |
 | `rapido-prompteur` | 1.0.0 | 4 | 1 | lovable, rapidocms, rapidocrm | Directeur de prompts |
-| `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs, rapidocms | La voix de l'écosystème (MCP officiel ElevenLabs) |
-| `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics, rapidocms, rapidocrm | SEO & acquisition organique pilotés par les données |
-| `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads, dataforseo, analytics, rapidocrm | SEA Google Ads en LECTURE SEULE (MCP officiel read-only) |
-| `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads, rapidocms, rapidocrm | TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture). Pilotage de performance, lancement de ca… |
-| `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | Service client, fidélité et santé client en boucle |
+| `rapido-elevenlabs` | 0.1.1 | 0 | 0 | ElevenLabs, rapidocms | Préversion — en attente de la connexion locale ElevenLabs. La voix de l'écosystème (MCP officiel ElevenLabs) |
+| `rapido-seo` | 0.1.0 | 6 | 0 | dataforseo, gsc, analytics, rapidocms, rapidocrm | (bêta) SEO & acquisition organique pilotés par les données |
+| `rapido-google-ads` | 0.1.0 | 4 | 0 | google-ads, dataforseo, analytics, rapidocrm | (bêta) SEA Google Ads en LECTURE SEULE (MCP officiel read-only) |
+| `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads, rapidocms, rapidocrm | (bêta) TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture). Pilotage de performance, lancemen… |
+| `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | (bêta) Service client, fidélité et santé client en boucle |
 | `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Sourcing de leads Google Maps → pipeline RapidoCRM |
 | `rapido-leadmagnet` | 0.5.0 | 4 | 1 | rapidocrm, rapidocms, rapidorh, lovable, facebook-ads | L'usine à lead magnets de bout en bout |
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |

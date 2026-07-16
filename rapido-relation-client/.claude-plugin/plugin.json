@@ -1,7 +1,7 @@
 {
   "name": "rapido-relation-client",
   "version": "0.2.0",
-  "description": "Service client, fidélité et santé client en boucle : SLA, CSAT/NPS, health score, sauvetages et 100 premiers jours — orchestré sur RapidoCRM et FoodEatUp. Délègue triage et rédaction aux skills existants (ticket-triage, draft-response, animation-client).",
+  "description": "(bêta) Service client, fidélité et santé client en boucle : SLA, CSAT/NPS, health score, sauvetages et 100 premiers jours — orchestré sur RapidoCRM et FoodEatUp. Délègue triage et rédaction aux skills existants (ticket-triage, draft-response, animation-client).",
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"
