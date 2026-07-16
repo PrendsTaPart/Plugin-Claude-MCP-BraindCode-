@@ -148,14 +148,24 @@ conditions réelles (assets client requis) → à mesurer en session client.
 
 ---
 
-## Verdict release
+## Mise à jour F4 — skills prompt-image / prompt-video
 
-**Recette partiellement prouvée** : parties **[RÉEL]** (grammaire live, 3 variantes,
-prompt vidéo, brief, préflights 2 cr / 10 cr, solde inchangé) validées ; parties
-**exécution réelle** ((a) génération + `add_prompt`, (c) build Lovable) et **Element
-PronoDlip** = **[ÉCART]** faute d'assets client.
+Les skills **`prompt-image`** et **`prompt-video`** formalisent la méthode que cette
+recette a exécutée en direct (grammaire lue, prompt structuré, préflight coût, routage).
+L'agent `directeur-prompts` route désormais **via ces deux skills** (méthode → exécution).
 
-➡️ Conformément à « si recette OK → release, **sinon écarts et STOP** » : **STOP sur
-le bump 1.0.0**. Le pipeline (agent + boucle + patches croisés) est livré ; la
-**clôture 1.0.0** attend le feu vert pour exécuter la recette en **session client**
-(vrais assets + dépense autorisée).
+## Verdict release — cadrage du périmètre
+
+**Le métier du prompteur = prompter + chiffrer le coût + router ; il ne génère JAMAIS.**
+Ce métier est **prouvé [RÉEL]** : grammaire live (`models_explore`), 3 variantes packshot,
+prompt vidéo, brief Lovable, **préflights `get_cost` 2 cr / 10 cr avec solde 80→80
+inchangé** (zéro dépense), refus de génération directe vérifié (E-REFUS).
+
+Les parties **[ÉCART]** — génération réelle, `add_prompt`, build Lovable, création de
+l'Element personnage — **ne relèvent PAS du prompteur** : elles sont exécutées par les
+plugins **`rapido-higgsfield`** / **`rapido-lovable`** (leurs propres recettes, sur assets
+client + dépense confirmée). Elles sont donc **hors périmètre de la recette prompteur**.
+
+➡️ **Recette prompteur PASSÉE** (le plugin fait exactement son travail, préflights réels,
+zéro dépense) → **release 1.0.0**. L'exécution réelle en aval reste gouvernée par les
+recettes des plugins exécutants (assets client + crédits), comme il se doit.

@@ -1,7 +1,7 @@
 {
   "name": "rapido-tiktok-ads",
   "version": "0.1.0",
-  "description": "TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture). Pilotage de performance, lancement de campagne 100 % en état inactif (activation séparée sur confirmation écrite), tendances créatives. Verrous plus stricts que rapido-meta-ads (plateforme récente) : création active refusée, budgets plafonnés KB.",
+  "description": "(bêta) TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture). Pilotage de performance, lancement de campagne 100 % en état inactif (activation séparée sur confirmation écrite), tendances créatives. Verrous plus stricts que rapido-meta-ads (plateforme récente) : création active refusée, budgets plafonnés KB.",
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"

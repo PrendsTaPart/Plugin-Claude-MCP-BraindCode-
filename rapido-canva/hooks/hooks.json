@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__[Cc]anva__(export-design|publish-brand-template)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-canva.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture Canva ont été appelés avec succès (nom contenant create, copy, export, publish, merge, resize, move, upload, comment, reply), la dernière réponse doit contenir un récapitulatif explicite des objets créés/modifiés (design, dossier, export, template) avec leurs identifiants et/ou URLs. Si ce récapitulatif manque, bloque en demandant de terminer par ce récapitulatif. Si aucune écriture n'a eu lieu, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "rapido-video",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Montage vidéo 100 % libre (ffmpeg + Whisper) : concat, coupes, transitions, reframe 9:16/1:1/16:9, overlay logo, sous-titres burn-in, suppression des silences — zéro crédit, embarquable en SaaS sans contrainte. Dépendances auto-installées par l'agent (aucune installation utilisateur).",
   "author": {
     "name": "BraindCode",

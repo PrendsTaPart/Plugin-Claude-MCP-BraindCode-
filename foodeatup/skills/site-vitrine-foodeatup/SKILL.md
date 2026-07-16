@@ -20,9 +20,11 @@ tokens** de la marque — pont `rapido-design`/`rapido-lovable`. Rien d'inventé
 - `get_page_content` (`page_slug`) : relire une page (sections + props) avant de la
   modifier.
 - `toggle_site_page` (paramètres `page_slug` + publier/dépublier) : bascule **une** page.
-- Ajout d'une page du catalogue (about, faq, allergens, gallery, jobs, boissons…) et
-  édition fine d'une section : `add_site_page` / `update_section` — **schémas à finaliser
-  (réintrospection)**, ne pas inventer leurs paramètres.
+- `add_site_page` (`type` ∈ about, faq, allergens, gallery, jobs, beverages, private,
+  producers, delivery, press, giftcards) : active une page du catalogue, **créée en
+  brouillon** (puis `publish_site` pour la mettre en ligne).
+- `update_section` (`section_id`, `props` en **fusion partielle**, ex. `{title, text}`) :
+  édite une section de page.
 
 ## 2. Thème & templates
 
@@ -36,9 +38,10 @@ tokens** de la marque — pont `rapido-design`/`rapido-lovable`. Rien d'inventé
 
 ## 3. Mise en ligne
 
-Publier l'ensemble des pages brouillon : `publish_site` (**`confirm:true` exigé côté
-serveur** — schéma exact à finaliser). Récapituler les pages concernées **puis** publier.
-Vérifier le domaine (DNS/SSL) via `get_domain_status` (schéma à finaliser).
+Publier l'ensemble des pages brouillon : `publish_site` (`establishment_id`, `confirm`) —
+**`confirm:true` exigé côté serveur**. Récapituler les pages brouillon concernées **puis**
+publier (jamais `confirm:true` d'office). Vérifier le domaine (DNS/SSL) via
+`get_domain_status`.
 
 ## 4. Performance & leads
 
@@ -59,5 +62,3 @@ Vérifier le domaine (DNS/SSL) via `get_domain_status` (schéma à finaliser).
   `confirm:true` + hook `garde-destructif`) ; `confirm:true` **jamais** posé d'office.
 - **Fil des tokens** : le thème reprend la charte de la marque, zéro valeur en dur inventée.
 - **Leads → CRM** ; **rien d'inventé** (stats, leads, pages viennent du serveur).
-- Outils à schéma non finalisé (`add_site_page`, `update_section`, `publish_site`,
-  `get_domain_status`) : **réintrospecter avant d'en fixer les paramètres**.

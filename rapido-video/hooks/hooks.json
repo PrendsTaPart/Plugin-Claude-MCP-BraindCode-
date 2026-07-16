@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-video.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si des outils MCP d'écriture (RapidoCMS : create_draft_tool, schedule_draft_tool, upload_file_tool, add_prompt…) ont été appelés avec succès, la dernière réponse doit contenir un récapitulatif explicite des objets créés/modifiés (brouillon, planification, asset) avec leurs identifiants. Si ce récapitulatif manque, bloque en demandant de terminer par ce récapitulatif. Si aucune écriture n'a eu lieu, ou si le récapitulatif est présent, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

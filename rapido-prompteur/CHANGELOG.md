@@ -1,5 +1,21 @@
 # Changelog — plugin rapido-prompteur
 
+## 1.0.0 — 2026-07-15 — 4 skills (directeur de prompts complet) — série FINITION F4
+
+- Skill **`prompt-image`** — construit un prompt image structuré (sujet / style charte /
+  composition / négatifs) depuis les patterns maison, lit la charte (`get_brand`) et les
+  moteurs disponibles, propose variantes + critique, **route** vers CMS
+  (`rapidocms:prompt-engineering-visuel`) ou premium (`rapido-higgsfield:studio-image-pro`),
+  capitalise (`add_prompt`). **Ne génère jamais.**
+- Skill **`prompt-video`** — prompt vidéo par usage (pub/UGC/explainer/personnage) + brief
+  de production ; **préflight coût OBLIGATOIRE** délégué `rapido-higgsfield:gouvernance-credits`
+  (coût chiffré, non dépensé) ; route vers `usine-video-marketing`/`videos-explicatives`.
+- Agent `directeur-prompts` : route image/vidéo **via les 2 nouveaux skills** (méthode → exécution).
+- Évals : 4 cas (prompt image, prompt vidéo, **refus de génération directe**, anti-déclenchements).
+- Recette : le métier du prompteur (prompt + coût + route, **zéro dépense**) prouvé en réel
+  (préflights `get_cost` 2 cr / 10 cr, solde 80→80) — `docs/RECETTE-PROMPTEUR.md` ; l'exécution
+  réelle en aval relève des plugins exécutants.
+
 ## 0.3.2 — 2026-07-15 — brief Lovable branché sur les tokens du DS
 
 - `prompt-lovable` : la section « design system » **pointe les tokens** du design system

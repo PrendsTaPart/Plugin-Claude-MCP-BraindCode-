@@ -1,16 +1,19 @@
 {
   "server": "foodeatup",
   "date": "2026-07-15",
-  "source": "111 introspectés en direct + 24 schémas réels des familles prioritaires (site vitrine, fidélité, caisse, avis — fournis 2026-07-15) + 29 noms console à réintrospecter (schema_introspected:false).",
+  "source": "135 outils introspectés (111 initiaux + 24 familles prioritaires) + 8 outils parqués réintrospectés (site/caisse/avis, 2026-07-15, F3) = 143/164 ; 21 restants à réintrospecter (recrutement, offre, sondages/roue, divers).",
   "tool_count": 164,
-  "introspected_count": 135,
+  "introspected_count": 143,
   "tools": [
     {
       "name": "add_site_page",
       "description": "Ajoute une page au site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "type"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "add_temperature",
@@ -139,9 +142,15 @@
     {
       "name": "close_pos_session",
       "description": "Clôture une session de caisse (rapport Z).",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false,
+      "params_required": [
+        "establishment_id",
+        "operator_id",
+        "confirm"
+      ],
+      "params_optional": [
+        "counted_cash"
+      ],
+      "schema_introspected": true,
       "native_guard": "confirm:true exigé (serveur) — clôture Z."
     },
     {
@@ -720,9 +729,11 @@
     {
       "name": "get_domain_status",
       "description": "Statut du nom de domaine du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "get_employee",
@@ -1252,9 +1263,11 @@
     {
       "name": "list_pos_tabs",
       "description": "Liste les additions/tabs de caisse ouvertes.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "list_private_event_requests",
@@ -1344,9 +1357,14 @@
     {
       "name": "list_reviews",
       "description": "Liste les avis clients.",
-      "params_required": [],
-      "params_optional": [],
-      "schema_introspected": false
+      "params_required": [
+        "establishment_id"
+      ],
+      "params_optional": [
+        "rating",
+        "status"
+      ],
+      "schema_introspected": true
     },
     {
       "name": "list_site_leads",
@@ -1493,9 +1511,12 @@
     {
       "name": "publish_site",
       "description": "Publie le site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "confirm"
+      ],
       "params_optional": [],
-      "schema_introspected": false,
+      "schema_introspected": true,
       "native_guard": "confirm:true exigé (serveur)."
     },
     {
@@ -1548,9 +1569,13 @@
     {
       "name": "reply_review",
       "description": "Répond à un avis client.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "review_id",
+        "body"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "reservation_availability",
@@ -1844,9 +1869,13 @@
     {
       "name": "update_section",
       "description": "Met à jour une section de page du site vitrine.",
-      "params_required": [],
+      "params_required": [
+        "establishment_id",
+        "section_id",
+        "props"
+      ],
       "params_optional": [],
-      "schema_introspected": false
+      "schema_introspected": true
     },
     {
       "name": "update_table_status",

@@ -27,12 +27,16 @@ Faire vivre trois surfaces cohérentes, chacune via son skill :
 (`rapidocrm:get_loyalty_points`). Charte & tokens → `rapido-design` quand le site est
 refondu.
 
+**Hors périmètre : la caisse (POS).** Les encaissements et la clôture Z relèvent de
+l'**exploitation** (skill `caisse-du-jour`, agents `chef-restaurateur`/`chef-de-pass`),
+pas de la présence en ligne — ne pas l'orchestrer ici.
+
 ## Interdits (non négociables)
 
 - **Publier / mettre en ligne sans confirmation** : `publish_site`, `apply_site_template`
   (écrasent/exposent) — résumer **puis** confirmer, jamais `confirm:true` d'office.
-- **Toucher les points ou l'argent sans confirmation** : `adjust_points` (±1000, motif),
-  `update_loyalty_program` (tous les clients), encaissements/clôture caisse.
+- **Toucher les points sans confirmation** : `adjust_points` (±1000, motif),
+  `update_loyalty_program` (affecte tous les clients).
 - **Répondre publiquement à un avis** sans validation (réponse = brouillon d'abord).
 - **Valeur en dur** dans le thème (hors tokens de la charte) ; **rien d'inventé**
   (stats, soldes, leads viennent des outils).

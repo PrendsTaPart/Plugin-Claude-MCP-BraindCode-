@@ -41,4 +41,4 @@ Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KD
 
 ## Version & conventions
 
-v1.5.1 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
+v1.7.0 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
