@@ -1,0 +1,59 @@
+{
+  "collections": [
+    {
+      "id": "vente-saas",
+      "nom": "Vendre votre SaaS",
+      "accroche": "Du ciblage au pilotage : le parcours complet d'un éditeur, prouvé sur FoodEatUp.",
+      "profil": "editeur-saas",
+      "ordre": 1,
+      "total": 46,
+      "etapes": [
+        {
+          "id": "A",
+          "nom": "Cibler",
+          "resume": "savoir à qui vendre"
+        },
+        {
+          "id": "B",
+          "nom": "Prospecter",
+          "resume": "l'outbound qui respecte les gens"
+        },
+        {
+          "id": "C",
+          "nom": "Attirer",
+          "resume": "l'inbound et la preuve"
+        },
+        {
+          "id": "D",
+          "nom": "Qualifier & préparer",
+          "resume": "ne plus arriver les mains vides"
+        },
+        {
+          "id": "E",
+          "nom": "Démontrer & répondre",
+          "resume": "la démo et les objections"
+        },
+        {
+          "id": "F",
+          "nom": "Proposer & closer",
+          "resume": "du devis à la signature"
+        },
+        {
+          "id": "G",
+          "nom": "Onboarder",
+          "resume": "le client signé devient un client lancé"
+        },
+        {
+          "id": "H",
+          "nom": "Fidéliser & étendre",
+          "resume": "le revenu qui reste et qui grandit"
+        },
+        {
+          "id": "I",
+          "nom": "Piloter",
+          "resume": "la machine de vente vue d'en haut"
+        }
+      ]
+    }
+  ]
+}

@@ -346,20 +346,39 @@ def harvest_routines(mcp_by_plugin, entries, seen, stats):
 REQUIRED = ("id", "type", "titre", "prompt", "mcps", "autonomie", "profil")
 
 
-def load_fusion():
-    if not os.path.exists(FUSION_FILE):
-        return [], "absent"
-    try:
-        data = json.load(open(FUSION_FILE, encoding="utf-8"))
-    except Exception as e:
-        return [], f"illisible ({e})"
+COLLECTIONS_DIR = os.path.join(ROOT, "data", "prompts-collections")
+
+
+def _items_from(path):
+    """Charge une source de fusion (liste nue, {prompts:[…]} ou {entries:[…]})."""
+    data = json.load(open(path, encoding="utf-8"))
     if isinstance(data, dict):
-        items = data.get("prompts") or data.get("entries") or []
-    elif isinstance(data, list):
-        items = data
+        return data.get("prompts") or data.get("entries") or []
+    if isinstance(data, list):
+        return data
+    return []
+
+
+def load_fusion():
+    """Retourne [(source_label, [items], state), …] pour toutes les sources écrites main :
+    data/prompts-orchestrations.json + data/prompts-collections/*.json."""
+    sources = []
+    # Orchestrations + sessions (§4)
+    if os.path.exists(FUSION_FILE):
+        try:
+            sources.append(("orchestrations-main", _items_from(FUSION_FILE), "chargé"))
+        except Exception as e:
+            sources.append(("orchestrations-main", [], f"illisible ({e})"))
     else:
-        items = []
-    return items, "chargé"
+        sources.append(("orchestrations-main", [], "absent"))
+    # Collections thématiques
+    for path in sorted(glob.glob(os.path.join(COLLECTIONS_DIR, "*.json"))):
+        label = "collection:" + os.path.splitext(os.path.basename(path))[0]
+        try:
+            sources.append((label, _items_from(path), "chargé"))
+        except Exception as e:
+            sources.append((label, [], f"illisible ({e})"))
+    return sources
 
 
 def validate(entry):
@@ -394,20 +413,25 @@ def main():
 
     moisson_total = len(entries)
 
-    # Fusion
-    fusion_items, fusion_state = load_fusion()
+    # Fusion — sources écrites main (orchestrations + collections)
+    fusion_sources = load_fusion()
     fused = 0
-    for it in fusion_items:
-        ok, _ = validate(it)
-        if not ok:
-            continue
-        eid = it["id"]
-        if eid in seen:
-            continue
-        seen.add(eid)
-        it.setdefault("source", "orchestrations-main")
-        entries.append(it)
-        fused += 1
+    fusion_detail = []          # (label, state, ajoutées)
+    for label, items, state in fusion_sources:
+        added = 0
+        for it in items:
+            ok, _ = validate(it)
+            if not ok:
+                continue
+            eid = it["id"]
+            if eid in seen:
+                continue
+            seen.add(eid)
+            it.setdefault("source", label)
+            entries.append(it)
+            added += 1
+            fused += 1
+        fusion_detail.append((label, state, added))
 
     # Validation finale du schéma
     valid, invalid = [], []
@@ -489,8 +513,9 @@ def main():
     lignes.append(f"- Skills — repli générique (ni guillemet ni clause) : **{stats['skill_fallback']}**")
     lignes.append(f"- Agents moissonnés (×3 prompts) : **{stats['agents']}**")
     lignes.append(f"- Routines moissonnées (×2 prompts) : **{stats['routines']}**")
-    lignes.append(f"- Fusion `data/prompts-orchestrations.json` : **{fusion_state}** "
-                  f"→ {fused} entrée(s) ajoutée(s)")
+    lignes.append(f"- **Fusion sources écrites main** → {fused} entrée(s) ajoutée(s) :")
+    for label, state, added in fusion_detail:
+        lignes.append(f"    - `{label}` : **{state}** → {added}")
     if invalid:
         lignes.append(f"- Entrées écartées à la validation du schéma : **{len(invalid)}**")
     lignes.append("")
@@ -498,12 +523,21 @@ def main():
         lignes.append("## Ce qui manque pour atteindre 1000 (à produire côté source, pas à gonfler)")
         lignes.append("")
         manque = []
-        if fusion_state == "absent":
+        orch = [s for (lbl, s, _) in fusion_detail if lbl == "orchestrations-main"]
+        if orch and orch[0] == "absent":
             manque.append(
                 "- **`data/prompts-orchestrations.json` non fourni.** C'est la brique "
                 "« orchestrations + sessions » écrite à la main (§4 de la mission). "
-                f"Elle doit apporter le complément (~{ecart} entrées) : scénarios "
+                "Elle apportera un complément une fois rédigée : scénarios "
                 "multi-skills, playbooks de session, parcours guidés par profil.")
+        collections_fournies = [lbl for (lbl, s, _) in fusion_detail
+                                if lbl.startswith("collection:") and s == "chargé"]
+        manque.append(
+            "- **Collections restantes** : "
+            f"{len(collections_fournies)} collection(s) fournie(s) "
+            f"({', '.join(l.split(':', 1)[1] for l in collections_fournies) or '—'}). "
+            "Les 3 autres annoncées (routines, boucles, sessions-loop) restent à "
+            "déposer dans `data/prompts-collections/` pour compléter les 139 attendues.")
         manque.append(
             "- **Skills sans phrase déclencheuse explicite** : sur les 385 skills, "
             f"seuls {stats['skill_quotes']} déclencheurs « … » ont été trouvés dans les "
@@ -533,7 +567,8 @@ def main():
     print("Moisson    : quotes=%d besoin=%d fallback=%d agents=%d routines=%d"
           % (stats['skill_quotes'], stats['skill_besoin'], stats['skill_fallback'],
              stats['agents'], stats['routines']))
-    print("Fusion     :", fusion_state, "→", fused, "ajout(s)")
+    print("Fusion     :", fused, "ajout(s) —",
+          ", ".join(f"{lbl}:{added}" for lbl, _, added in fusion_detail))
     if invalid:
         print("Écartées   :", len(invalid))
     print("→", out_json)
