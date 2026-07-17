@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-n8n
 
+## 1.6.2 — 2026-07-17 — taux d'échec par workflow pour la boucle d'amélioration
+
+- `surveillance-automatisations` : la restitution expose désormais le **taux d'échec 7 j
+  PAR workflow** (échecs ÷ exécutions), format attendu par la fiche « boucle 15 »
+  (`rapido-startup:amelioration-des-routines`) — pas seulement le taux global.
+
 ## 1.6.1 — 2026-07-17 — backlog recettes « routines »
 
 - `reference/backlog-recettes-routines.md` : liste les **12 routines badgées 🤖** de

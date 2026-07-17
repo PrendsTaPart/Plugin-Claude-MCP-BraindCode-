@@ -34,8 +34,13 @@ expliquer `N8N_MCP_URL` + renvoyer vers `README-installation.md`.
    🤖 AUTOMATISATIONS — 7 derniers jours
    Actifs : N (registre à jour : oui/non)
    Taux de succès global : X % | exécutions : S succès / E échecs
+   Taux d'échec par workflow (7 j) : {workflow} = échecs ÷ exécutions = Y %
    Échecs à traiter : workflow | cause probable | correctif proposé
    ```
+   > Le **taux d'échec 7 j par workflow** est le format attendu par la fiche
+   > d'amélioration « boucle 15 » (`rapido-startup:amelioration-des-routines` /
+   > `data/prompts-collections/boucles.json`) : le fournir workflow par workflow,
+   > pas seulement en global.
 
 ## Garde-fous
 
