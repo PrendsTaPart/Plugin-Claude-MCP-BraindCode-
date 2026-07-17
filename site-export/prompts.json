@@ -1,18 +1,19 @@
 {
   "version": 1,
-  "total": 858,
+  "total": 878,
   "cible": 1000,
   "par_type": {
-    "skill": 637,
+    "skill": 641,
     "agent": 114,
     "routine": 90,
+    "boucle": 16,
     "orchestration": 15,
     "session": 2
   },
   "par_profil": {
-    "restaurateur": 55,
+    "restaurateur": 59,
     "tous": 500,
-    "fondateur": 257,
+    "fondateur": 273,
     "editeur-saas": 46
   },
   "prompts": [
@@ -7073,6 +7074,74 @@
       "source": "rapido-seo"
     },
     {
+      "id": "ad6c6ab04cb6",
+      "type": "skill",
+      "titre": "Amelioration des routines",
+      "prompt": "améliore la routine {X}",
+      "mcps": [
+        "stripe",
+        "rapidocrm",
+        "rapidocms",
+        "rapidorh",
+        "foodeatup",
+        "google-calendar"
+      ],
+      "autonomie": 0,
+      "profil": "fondateur",
+      "source": "rapido-startup"
+    },
+    {
+      "id": "ed6bd806312b",
+      "type": "skill",
+      "titre": "Amelioration des routines",
+      "prompt": "la boucle d'amélioration",
+      "mcps": [
+        "stripe",
+        "rapidocrm",
+        "rapidocms",
+        "rapidorh",
+        "foodeatup",
+        "google-calendar"
+      ],
+      "autonomie": 0,
+      "profil": "fondateur",
+      "source": "rapido-startup"
+    },
+    {
+      "id": "46d0259e9017",
+      "type": "skill",
+      "titre": "Amelioration des routines",
+      "prompt": "est-ce que mes routines servent",
+      "mcps": [
+        "stripe",
+        "rapidocrm",
+        "rapidocms",
+        "rapidorh",
+        "foodeatup",
+        "google-calendar"
+      ],
+      "autonomie": 0,
+      "profil": "fondateur",
+      "source": "rapido-startup"
+    },
+    {
+      "id": "a6155ba809ff",
+      "type": "skill",
+      "titre": "Amelioration des routines",
+      "prompt": "tribunal des routines",
+      "mcps": [
+        "stripe",
+        "rapidocrm",
+        "rapidocms",
+        "rapidorh",
+        "foodeatup",
+        "google-calendar"
+      ],
+      "autonomie": 0,
+      "profil": "fondateur",
+      "source": "rapido-startup"
+    },
+    {
       "id": "c3c24f5f1cae",
       "type": "skill",
       "titre": "Catalogue KPI",
@@ -11459,6 +11528,415 @@
       "act_max": "sourcing + import cadrés par les plafonds ; import en lot confirmé"
     },
     {
+      "id": "fdf252290c5a",
+      "type": "boucle",
+      "titre": "La relance qui encaisse",
+      "prompt": "Mesure l'efficacité de mes relances d'impayés sur 30 j : requêtes `list_factures` (statuts et dates) + activités de relance sur les fiches. Formule : taux d'encaissement post-relance = factures payées ≤ 7 j après relance ÷ relances envoyées ; DSO = Σ(jours de retard × montant) ÷ Σ montants. Script obligatoire, formules affichées. Si taux < seuil KB (défaut proposé 40 %) : propose UNE modification — avancer la première relance à J+5, OU durcir le ton du 2e rappel, OU basculer les récidivistes en SMS. J'applique, tu journalises et re-mesures dans 30 j.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "taux d'encaissement post-relance ; DSO",
+      "formule": "taux d'encaissement post-relance = factures payées ≤ 7 j après relance ÷ relances envoyées ; DSO = Σ(jours de retard × montant) ÷ Σ montants",
+      "requetes_mcp": [
+        "list_factures"
+      ],
+      "periode_mesure": "30 j",
+      "routine_cible": "b0cb5952dda4",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 16
+    },
+    {
+      "id": "a8c728f98f49",
+      "type": "boucle",
+      "titre": "Le devis relancé au bon moment",
+      "prompt": "Sur 60 j : `list_devis` par statut et dates. Formules : conversion post-relance = devis acceptés après relance ÷ devis relancés ; délai médian d'acceptation. Si le délai médian < ma fenêtre de relance : propose de relancer à J-{délai médian − 2} avant expiration au lieu de J-7. Une modification, journal, re-mesure.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "conversion post-relance ; délai médian d'acceptation",
+      "formule": "conversion post-relance = devis acceptés après relance ÷ devis relancés ; délai médian d'acceptation",
+      "requetes_mcp": [
+        "list_devis"
+      ],
+      "periode_mesure": "60 j",
+      "routine_cible": "142ca03aaf89",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 14
+    },
+    {
+      "id": "6270a70f187b",
+      "type": "boucle",
+      "titre": "Le score qui prédit vraiment",
+      "prompt": "Précision du scoring sur 30 j : `list_rdvs` + pipeline croisés avec les “top du jour” journalisés. Formule : précision = tops convertis en RDV ÷ tops présentés. Si < seuil (proposé 25 %) : ajuste UNE pondération (fit OU engagement OU fraîcheur) de ±10 points, annonce l'ancienne et la nouvelle, re-mesure 30 j.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "précision du scoring",
+      "formule": "précision = tops convertis en RDV ÷ tops présentés",
+      "requetes_mcp": [
+        "list_rdvs"
+      ],
+      "periode_mesure": "30 j",
+      "routine_cible": "f84dd68ddba9",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 13
+    },
+    {
+      "id": "0b8d8089c76f",
+      "type": "boucle",
+      "titre": "Le forecast qui se trompe de combien",
+      "prompt": "Compare les 3 derniers forecasts journalisés au réel (`get_revenue_summary`). Formule : erreur = |prévu − réel| ÷ réel, par scénario. Si le “probable” dévie > 20 % deux mois de suite : propose de recalibrer les probabilités par étape du pipeline depuis les taux de passage réels (`get_stats_pipeline_global`).",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "kpi": "erreur de forecast par scénario",
+      "formule": "erreur = |prévu − réel| ÷ réel, par scénario",
+      "requetes_mcp": [
+        "get_revenue_summary",
+        "get_stats_pipeline_global"
+      ],
+      "periode_mesure": "3 derniers forecasts (2 mois)",
+      "routine_cible": "ec3dff706ff2",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 18
+    },
+    {
+      "id": "465d88b44722",
+      "type": "boucle",
+      "titre": "La sentinelle ni sourde ni parano",
+      "prompt": "Sur 30 j de journal : alertes émises vs suites données. Formules : taux de faux positifs = alertes sans action nécessaire ÷ alertes ; incident manqué = découvert/retard critique non alerté (compte). Si faux positifs > 50 % : propose de desserrer LE seuil le plus bruyant de processus-internes.md (valeur actuelle → proposée) ; si un incident manqué : resserrer. Jamais les deux en même temps.",
+      "mcps": [
+        "rapidocrm",
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "taux de faux positifs ; incident manqué",
+      "formule": "taux de faux positifs = alertes sans action nécessaire ÷ alertes ; incident manqué = découvert/retard critique non alerté (compte)",
+      "requetes_mcp": [],
+      "periode_mesure": "30 j",
+      "routine_cible": "e132c4f4928c",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 33
+    },
+    {
+      "id": "207fff8ccc1b",
+      "type": "boucle",
+      "titre": "Le calendrier qui apprend le mois suivant",
+      "prompt": "Bilan du mois : `post_insights` + `ingishts_campagne` sur les 30 posts. Formules : taux de production = publiés à l'heure ÷ planifiés ; engagement médian PAR PILIER et PAR RÉSEAU (médiane, pas moyenne). Décision pour le calendrier du mois prochain : ±20 % de part au pilier le plus/moins performant (UNE bascule), et si production < 80 % → diagnostiquer d'abord la tournée (boucle n°9) avant de réduire le volume.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "taux de production ; engagement médian par pilier/réseau",
+      "formule": "taux de production = publiés à l'heure ÷ planifiés ; engagement médian PAR PILIER et PAR RÉSEAU (médiane, pas moyenne)",
+      "requetes_mcp": [
+        "post_insights",
+        "ingishts_campagne"
+      ],
+      "periode_mesure": "30 j (mois)",
+      "routine_cible": "c35e4336c323",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 7
+    },
+    {
+      "id": "4b36a460e634",
+      "type": "boucle",
+      "titre": "La séquence qui convertit étape par étape",
+      "prompt": "Stats de la campagne (`get_stats_campagne`) + soumissions (`get_formulaire_soumissions`) + RDV créés. Formules : ouverture, réponse et conversion PAR ÉTAPE (J0, J2, J5). Ajuste l'étape la plus faible : objet OU délai (J2→J3) OU contenu — une seule, gate délivrabilité rejoué avant tout envoi du lot suivant.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "kpi": "ouverture/réponse/conversion par étape",
+      "formule": "ouverture, réponse et conversion PAR ÉTAPE (J0, J2, J5)",
+      "requetes_mcp": [
+        "get_stats_campagne",
+        "get_formulaire_soumissions"
+      ],
+      "periode_mesure": "campagne (J0/J2/J5)",
+      "routine_cible": null,
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles"
+    },
+    {
+      "id": "179fc170050d",
+      "type": "boucle",
+      "titre": "La pub jugée sur le CPA, pas sur les clics",
+      "prompt": "Sur 14 j : dépense et résultats par campagne (insights Meta/Google/TikTok). Formule : CPA réel = dépense ÷ conversions ; part de budget au-dessus du CPA cible KB. Si > 30 % du budget sur des campagnes hors cible : propose UNE action — pause proposée de la pire (jamais exécutée seule), OU réallocation, OU nouveau créatif à tester.",
+      "mcps": [
+        "facebook-ads",
+        "google-ads",
+        "tiktok-ads"
+      ],
+      "cibles": [
+        "rapido-meta-ads",
+        "rapido-google-ads",
+        "rapido-tiktok-ads"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "kpi": "CPA réel ; part de budget hors cible",
+      "formule": "CPA réel = dépense ÷ conversions ; part de budget au-dessus du CPA cible KB",
+      "requetes_mcp": [],
+      "periode_mesure": "14 j",
+      "routine_cible": "12d457cda66a",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 27
+    },
+    {
+      "id": "dfab830bf622",
+      "type": "boucle",
+      "titre": "La chasse qui vise mieux",
+      "prompt": "Rendement du sourcing 30 j : injectés (tag recette) → RDV (`list_rdvs`). Formule : rendement = RDV ÷ injectés. Si < seuil (proposé 5 %) : ajuste UN critère — la zone, OU le filtre signal_opportunite, OU le plafond — et compare les scores moyens des convertis vs non-convertis pour choisir lequel.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-gmaps"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "rendement du sourcing",
+      "formule": "rendement = RDV ÷ injectés",
+      "requetes_mcp": [
+        "list_rdvs"
+      ],
+      "periode_mesure": "30 j",
+      "routine_cible": "7e6ea0b164d8",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 29
+    },
+    {
+      "id": "4b007a0f2786",
+      "type": "boucle",
+      "titre": "La tournée qui débloque",
+      "prompt": "Sur 7 j : `get-project-tasks` + commentaires de tournée. Formules : taux d'exécution = faites ÷ prévues du jour ; taux de blocage = bloquées ÷ prévues, avec les MOTIFS de blocage regroupés. Si blocages > 20 % et motif dominant “prompt flou” : réécris les prompts-en-commentaire du type fautif (avant/après montrés) ; si motif “niveau 3” : c'est normal, propose plutôt un créneau de validation groupée à {heure}.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "taux d'exécution ; taux de blocage",
+      "formule": "taux d'exécution = faites ÷ prévues du jour ; taux de blocage = bloquées ÷ prévues, avec les MOTIFS de blocage regroupés",
+      "requetes_mcp": [
+        "get-project-tasks"
+      ],
+      "periode_mesure": "7 j",
+      "routine_cible": "e65ffdd6639c",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 1
+    },
+    {
+      "id": "4369b16ae7e5",
+      "type": "boucle",
+      "titre": "Le HACCP sans trou",
+      "prompt": "Complétude 14 j : `list_haccp_temperatures` vs équipements × 2 relevés/jour. Formules : complétude = relevés faits ÷ attendus ; heure médiane de saisie vs heure de rappel. Si complétude < 95 % : décale LE rappel le plus manqué vers l'heure médiane réelle de saisie (+ le dire à l'équipe), re-mesure 14 j.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 2,
+      "kpi": "complétude HACCP ; heure médiane de saisie",
+      "formule": "complétude = relevés faits ÷ attendus ; heure médiane de saisie vs heure de rappel",
+      "requetes_mcp": [
+        "list_haccp_temperatures"
+      ],
+      "periode_mesure": "14 j",
+      "routine_cible": "efdb1bd4c9df",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 21
+    },
+    {
+      "id": "c12e27d758f0",
+      "type": "boucle",
+      "titre": "Les avis qui remontent la note",
+      "prompt": "Sur 90 j : `list_reviews` (notes, dates, réponses). Formules : délai médian de réponse ; note moyenne glissante 30 j vs 90 j ; part d'avis répondus. Si délai > 48 h : propose le passage de la routine hebdo → biquotidienne en période de volume ; si la note 30 j < 90 j : sors les 3 plats/motifs les plus cités et route vers l'ingénierie de carte.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 1,
+      "kpi": "délai médian de réponse ; note glissante 30 j vs 90 j",
+      "formule": "délai médian de réponse ; note moyenne glissante 30 j vs 90 j ; part d'avis répondus",
+      "requetes_mcp": [
+        "list_reviews"
+      ],
+      "periode_mesure": "90 j",
+      "routine_cible": "4e7b328be6bc",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 24
+    },
+    {
+      "id": "ceb959ff59e4",
+      "type": "boucle",
+      "titre": "La fidélité qui fait vraiment revenir",
+      "prompt": "Sur 60 j : clients rappelés (segment) croisés avec leurs commandes/réservations ≤ 14 j après rappel. Formule : taux de retour = revenus ÷ rappelés. Si < seuil (proposé 10 %) : change UNE variable — la récompense (points), OU le délai de dormance (30 j → 21 j), OU le jour ciblé — et garde l'ancienne cohorte comme témoin.",
+      "mcps": [
+        "foodeatup",
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 2,
+      "kpi": "taux de retour",
+      "formule": "taux de retour = revenus ÷ rappelés",
+      "requetes_mcp": [],
+      "periode_mesure": "60 j",
+      "routine_cible": "f6fd0e3251fc",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 26
+    },
+    {
+      "id": "8546977841f1",
+      "type": "boucle",
+      "titre": "La commande fournisseur ni trop ni trop peu",
+      "prompt": "Sur 30 j : commandes fournisseurs vs ruptures constatées (`list_low_stocks` historisé) et invendus signalés en production. Formules : ruptures évitées = alertes suivies d'une commande ≤ 24 h ÷ alertes ; sur-stock proxy = lignes commandées non consommées à J+14 (ANNONCÉ comme proxy). Ajuste LE seuil de réappro de l'ingrédient le plus fautif, pas tous.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 2,
+      "kpi": "ruptures évitées ; sur-stock proxy",
+      "formule": "ruptures évitées = alertes suivies d'une commande ≤ 24 h ÷ alertes ; sur-stock proxy = lignes commandées non consommées à J+14 (ANNONCÉ comme proxy)",
+      "requetes_mcp": [
+        "list_low_stocks"
+      ],
+      "periode_mesure": "30 j",
+      "routine_cible": "89c5622d0b6d",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 22
+    },
+    {
+      "id": "3d492d972cf4",
+      "type": "boucle",
+      "titre": "Les workflows qui ne cassent plus en silence",
+      "prompt": "Sur 7 j : `search_executions` (échecs par workflow). Formules : taux d'échec = échecs ÷ exécutions par workflow ; délai médian de correction (journal). Tout workflow > 5 % d'échec : diagnostic, correctif proposé, et si l'erreur est récurrente → mémoire opérationnelle (table de dédup) plutôt qu'un retry aveugle.",
+      "mcps": [
+        "n8n"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "kpi": "taux d'échec par workflow ; délai médian de correction",
+      "formule": "taux d'échec = échecs ÷ exécutions par workflow ; délai médian de correction (journal)",
+      "requetes_mcp": [
+        "search_executions"
+      ],
+      "periode_mesure": "7 j",
+      "routine_cible": "cd79fbaecb6b",
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles",
+      "routine_cible_num": 38
+    },
+    {
+      "id": "bd79311de074",
+      "type": "boucle",
+      "titre": "Le tribunal trimestriel des routines",
+      "prompt": "Passe TOUTES mes routines actives au tribunal : pour chacune — utilisée ? (occurrences au journal), utile ? (son KPI de fiche vs seuil), coûteuse ? (temps de session, crédits). Verdicts proposés : garder / ajuster (laquelle des variables) / suspendre. Rappelle la règle : une routine qu'on n'ajuste jamais est une routine qu'on ne regarde plus. Je tranche routine par routine.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "kpi": "utilisée ? / utile ? / coûteuse ?",
+      "formule": "utilisée ? (occurrences au journal) ; utile ? (KPI de fiche vs seuil) ; coûteuse ? (temps de session, crédits)",
+      "requetes_mcp": [],
+      "periode_mesure": "trimestriel",
+      "routine_cible": null,
+      "tags": [
+        "boucles"
+      ],
+      "collection": "boucles",
+      "source": "collection:boucles"
+    },
+    {
       "id": "e65ffdd6639c",
       "type": "routine",
       "titre": "La tournée des agents",
@@ -11481,7 +11959,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h"
+      "heure": "9h",
+      "boucle": "4b007a0f2786"
     },
     {
       "id": "6076af497a03",
@@ -11619,7 +12098,8 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "9h",
-      "featured": true
+      "featured": true,
+      "boucle": "207fff8ccc1b"
     },
     {
       "id": "b9643238b899",
@@ -11756,7 +12236,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "8h45"
+      "heure": "8h45",
+      "boucle": "6270a70f187b"
     },
     {
       "id": "142ca03aaf89",
@@ -11779,7 +12260,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h30"
+      "heure": "9h30",
+      "boucle": "a8c728f98f49"
     },
     {
       "id": "a3a74417c10f",
@@ -11824,7 +12306,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "fdf252290c5a"
     },
     {
       "id": "6d60a39b2d1e",
@@ -11870,7 +12353,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "0b8d8089c76f"
     },
     {
       "id": "12bbb81927c6",
@@ -11938,7 +12422,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h et 15h"
+      "heure": "9h et 15h",
+      "boucle": "4369b16ae7e5"
     },
     {
       "id": "89c5622d0b6d",
@@ -11961,7 +12446,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "18h"
+      "heure": "18h",
+      "boucle": "8546977841f1"
     },
     {
       "id": "22219a7a4c1f",
@@ -12006,7 +12492,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "c12e27d758f0"
     },
     {
       "id": "7376c5d72e3a",
@@ -12051,7 +12538,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "ceb959ff59e4"
     },
     {
       "id": "12d457cda66a",
@@ -12080,7 +12568,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h15"
+      "heure": "9h15",
+      "boucle": "179fc170050d"
     },
     {
       "id": "18ae80251ec6",
@@ -12108,7 +12597,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "179fc170050d"
     },
     {
       "id": "7e6ea0b164d8",
@@ -12133,7 +12623,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "routine_source": "GMAPS-HEBDO"
+      "routine_source": "GMAPS-HEBDO",
+      "boucle": "dfab830bf622"
     },
     {
       "id": "8d4ffbbac141",
@@ -12227,7 +12718,8 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "7h30",
-      "routine_source": "R7"
+      "routine_source": "R7",
+      "boucle": "465d88b44722"
     },
     {
       "id": "afe83536795f",
@@ -12347,7 +12839,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "3d492d972cf4"
     },
     {
       "id": "dec18b7e2405",

@@ -73,6 +73,22 @@
         "mensuel",
         "trimestriel"
       ]
+    },
+    {
+      "id": "boucles",
+      "nom": "Les boucles qui s'améliorent",
+      "accroche": "Chaque routine est mesurée, jugée sur formule, et ajustée — une variable à la fois.",
+      "profil": "tous",
+      "ordre": 3,
+      "total": 16,
+      "protocole": [
+        "mesurer",
+        "calculer",
+        "juger",
+        "ajuster",
+        "journaliser"
+      ],
+      "liee_a": "routines"
     }
   ]
 }

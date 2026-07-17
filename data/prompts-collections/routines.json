@@ -25,7 +25,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h"
+      "heure": "9h",
+      "boucle": "4b007a0f2786"
     },
     {
       "id": "6076af497a03",
@@ -163,7 +164,8 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "9h",
-      "featured": true
+      "featured": true,
+      "boucle": "207fff8ccc1b"
     },
     {
       "id": "b9643238b899",
@@ -300,7 +302,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "8h45"
+      "heure": "8h45",
+      "boucle": "6270a70f187b"
     },
     {
       "id": "142ca03aaf89",
@@ -323,7 +326,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h30"
+      "heure": "9h30",
+      "boucle": "a8c728f98f49"
     },
     {
       "id": "a3a74417c10f",
@@ -368,7 +372,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "fdf252290c5a"
     },
     {
       "id": "6d60a39b2d1e",
@@ -414,7 +419,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "0b8d8089c76f"
     },
     {
       "id": "12bbb81927c6",
@@ -482,7 +488,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h et 15h"
+      "heure": "9h et 15h",
+      "boucle": "4369b16ae7e5"
     },
     {
       "id": "89c5622d0b6d",
@@ -505,7 +512,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "18h"
+      "heure": "18h",
+      "boucle": "8546977841f1"
     },
     {
       "id": "22219a7a4c1f",
@@ -550,7 +558,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "c12e27d758f0"
     },
     {
       "id": "7376c5d72e3a",
@@ -595,7 +604,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "ceb959ff59e4"
     },
     {
       "id": "12d457cda66a",
@@ -624,7 +634,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "9h15"
+      "heure": "9h15",
+      "boucle": "179fc170050d"
     },
     {
       "id": "18ae80251ec6",
@@ -652,7 +663,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "179fc170050d"
     },
     {
       "id": "7e6ea0b164d8",
@@ -677,7 +689,8 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "routine_source": "GMAPS-HEBDO"
+      "routine_source": "GMAPS-HEBDO",
+      "boucle": "dfab830bf622"
     },
     {
       "id": "8d4ffbbac141",
@@ -771,7 +784,8 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "7h30",
-      "routine_source": "R7"
+      "routine_source": "R7",
+      "boucle": "465d88b44722"
     },
     {
       "id": "afe83536795f",
@@ -891,7 +905,8 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "boucle": "3d492d972cf4"
     }
   ]
 }

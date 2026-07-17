@@ -146,3 +146,19 @@
   stocke la **plus proche des 9** (documenté dans la charte KB). Le fil rouge couleurs
   reste intact ; seule la typo est approximée côté CMS.
 - **Priorité** : moyenne (contourné ; gêne la fidélité typographique de marque).
+
+## 13. Historisation des stocks bas (FoodEatUp) — pour la boucle d'amélioration n°14
+- **Constat (inventaire, 164 outils)** : `list_low_stocks` renvoie un **instantané** des
+  stocks sous seuil au moment de l'appel ; `list_stocks` / `adjust_stock` gèrent l'état
+  courant. **Aucun outil ne renvoie une série temporelle** des ruptures/alertes de stock
+  (historique daté sur 30 j).
+- **Cas d'usage** : boucle d'amélioration **n°14** (« La commande fournisseur ni trop ni
+  trop peu ») veut mesurer *ruptures évitées = alertes suivies d'une commande ≤ 24 h ÷
+  alertes* sur 30 j — impossible sans historique des alertes de stock.
+- **Souhait** : un outil `list_stock_alerts_history` (ou paramètre `since`/`from`/`to` sur
+  `list_low_stocks`) renvoyant les alertes datées sur une fenêtre.
+- **Contournement actuel** : la boucle **ANNONCE le proxy** (« lignes commandées non
+  consommées à J+14 » comme proxy de sur-stock) et journalise elle-même les snapshots
+  quotidiens dans `./rapido-kb/` pour reconstituer un historique — **jamais de proxy
+  silencieux** (protocole `boucle-amelioration.md`).
+- **Priorité** : moyenne (contourné par journalisation locale ; natif = mesure fiable).
