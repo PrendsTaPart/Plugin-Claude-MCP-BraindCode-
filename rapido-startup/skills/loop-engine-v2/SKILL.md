@@ -39,7 +39,10 @@ routine a le droit de faire seule). Seuils : `./rapido-kb/` prime.
    **Sense** (collecter — lecture seule) → **Plan** (analyser, prioriser) →
    **Act** (préparer/exécuter selon le niveau d'autonomie de
    `reference/autonomie.md` — confirmations sur tout envoi/écriture) →
-   **Feed** (mettre à jour la mémoire : journaux `./rapido-kb/startup/`) →
+   **Feed** (mettre à jour la mémoire : journaux `./rapido-kb/startup/` ; **la phase
+   Feed alimente la fiche d'amélioration de la routine** — KPI du jour dans
+   `routines-journal.md`, exploité par le skill `amelioration-des-routines` /
+   `reference/boucle-amelioration.md`) →
    **Report** (restitution au format de la routine + récap des IDs).
 4. **Tous les calculs chiffrés passent par le skill `catalogue-kpi`**
    (scripts/calcul_kpi.py — formule affichée, hook « KPI sans script »

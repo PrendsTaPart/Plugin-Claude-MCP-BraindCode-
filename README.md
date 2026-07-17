@@ -127,9 +127,9 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-canva` | 1.0.2 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | Design Canva alimenté par les données Rapido |
 | `rapido-lovable` | 1.5.2 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | Apps et agents IA Lovable alimentés par les données Rapido |
 | `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido |
-| `rapido-n8n` | 1.6.1 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | Automatisations n8n sur l'instance du client |
+| `rapido-n8n` | 1.6.2 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | Automatisations n8n sur l'instance du client |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | Chef de cabinet du dirigeant |
-| `rapido-startup` | 1.9.3 | 5 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | Finance & création de startup |
+| `rapido-startup` | 1.10.0 | 6 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | Finance & création de startup |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | StartupsForge (PrendsTaPart) |
 | `rapido-marketing` | 0.18.3 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | Marketing & acquisition Rapido-first |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | Usine média IA (Higgsfield) branchée sur l'écosystème Rapido |
@@ -145,7 +145,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 25 plugins, 386 skills, 38 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 25 plugins, 387 skills, 38 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).

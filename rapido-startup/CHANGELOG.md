@@ -1,5 +1,24 @@
 # Changelog — plugin rapido-startup
 
+## 1.10.0 — 2026-07-17 — boucle d'amélioration (Loop Engineering réflexif)
+
+- **`reference/boucle-amelioration.md`** : protocole en 5 temps — MESURER (requêtes MCP
+  de la fiche, jamais d'autre source) → CALCULER (`calcul_kpi.py`, formule affichée, pas
+  de moyenne silencieuse) → JUGER (seuil KB ; absent = proposé, jamais inventé) → AJUSTER
+  (**UNE variable par cycle** ; niveau 1 proposé, 2 confirmé, **3 jamais**) → JOURNALISER
+  (avant/après + date de re-mesure). Règle d'or : une seule variable à la fois.
+- **`skills/amelioration-des-routines`** : « améliore la routine {X} », « la boucle
+  d'amélioration », « est-ce que mes routines servent », « tribunal des routines ». Charge
+  la fiche de la routine (`data/prompts-collections/boucles.json`), exécute les 5 temps ;
+  mode TRIBUNAL trimestriel (utilisée ? / utile ? / coûteuse ? → garder/ajuster/suspendre,
+  décision à l'utilisateur). Donnée MCP absente → « pas de visibilité » + OUTILS-MCP-MANQUANTS,
+  proxy annoncé, jamais silencieux.
+- **`loop-engine-v2`** : la phase Feed alimente désormais la fiche d'amélioration
+  (KPI du jour au journal, exploité par la boucle).
+- Tests : Éval 10 (seuil absent → proposition ; deux modifs → refus « une à la fois » ;
+  donnée absente → OUTILS-MCP-MANQUANTS ; niveau 3 jamais ; journal avant/après).
+- Bump 1.9.3 → 1.10.0.
+
 ## 1.9.3 — 2026-07-15 — KPIs NPS & ROI au catalogue
 
 - `catalogue-kpi/scripts/calcul_kpi.py` : ajout de `nps` (% promoteurs − % détracteurs)

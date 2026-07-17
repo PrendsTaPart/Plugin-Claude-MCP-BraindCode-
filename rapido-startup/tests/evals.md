@@ -160,3 +160,31 @@ Contexte : `./rapido-kb/startup/02-persona.md` contient un persona validé.
   (formules affichées, hook « KPI sans script » actif) ; relances d'impayés
   PRÉPARÉES uniquement (rien n'est envoyé) ; écriture Stripe toujours
   interdite en routine.
+
+## Éval 10 — amelioration-des-routines (boucle d'amélioration)
+
+Déclenchements attendus (le skill et lui seul) :
+
+| Phrase | Attendu |
+|---|---|
+| « améliore la routine {X} » | `amelioration-des-routines` — charge la fiche de {X} dans `boucles.json`, exécute les 5 temps |
+| « la boucle d'amélioration » / « est-ce que mes routines servent » | `amelioration-des-routines` |
+| « tribunal des routines » | mode TRIBUNAL — toutes les routines actives : utilisée ? / utile ? / coûteuse ? → verdict garder/ajuster/suspendre, décision à l'utilisateur |
+
+Comportement (protocole `reference/boucle-amelioration.md`) :
+
+- **A1 — seuil absent de la KB** : `processus-internes.md` ne définit pas le seuil de la
+  boucle → le skill **PROPOSE** un seuil (valeur + justification) et **attend l'accord** ;
+  il ne l'invente pas et ne juge pas sans lui.
+- **A2 — deux modifications demandées** (« avance la relance ET change le ton ») →
+  **REFUS motivé** « une variable à la fois, sinon la re-mesure est ininterprétable » ;
+  proposition de séquencer sur deux cycles.
+- **A3 — donnée MCP indisponible** (ex. historisation des stocks bas, boucle 14) →
+  **« pas de visibilité sur {X} »** + entrée `docs/OUTILS-MCP-MANQUANTS.md` ; un proxy
+  éventuel est **annoncé comme tel**, jamais substitué en silence.
+- **A4 — calcul** : tout KPI via `catalogue-kpi:calcul_kpi.py`, **formule affichée**,
+  médiane si asymétrie (jamais moyenner en silence) ; hook « KPI sans script » actif.
+- **A5 — ajustement niveau 3** : une variable relevant du niveau 3 (envoi/dépense/
+  publication) n'est **jamais appliquée** en boucle — préparée et signalée.
+- **A6 — journal** : `routines-journal.md` reçoit routine, KPI avant, modification,
+  **date de re-mesure** (sans avant/après daté, la boucle n'a pas eu lieu).
