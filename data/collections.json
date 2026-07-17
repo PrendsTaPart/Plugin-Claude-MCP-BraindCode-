@@ -54,6 +54,25 @@
           "resume": "la machine de vente vue d'en haut"
         }
       ]
+    },
+    {
+      "id": "routines",
+      "nom": "Le récurrent qui tourne",
+      "accroche": "Tous les lundis, tous les matins — planifié, gouverné, récapitulé.",
+      "profil": "tous",
+      "ordre": 2,
+      "total": 38,
+      "modes": {
+        "n8n": "Tourne sans Claude, au planning (via usine-automatisations).",
+        "session": "Vous la lancez, Claude exécute sous gouvernance d'autonomie.",
+        "mixte": "Rappel/relevé automatique (n8n) + exécution en session."
+      },
+      "frequences": [
+        "quotidien",
+        "hebdo",
+        "mensuel",
+        "trimestriel"
+      ]
     }
   ]
 }
