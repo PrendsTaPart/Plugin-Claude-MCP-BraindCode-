@@ -1,16 +1,19 @@
 {
   "version": 1,
-  "total": 770,
+  "total": 816,
   "cible": 1000,
   "par_type": {
-    "skill": 606,
+    "skill": 633,
     "agent": 114,
-    "routine": 50
+    "routine": 52,
+    "orchestration": 15,
+    "session": 2
   },
   "par_profil": {
     "restaurateur": 48,
     "tous": 496,
-    "fondateur": 226
+    "fondateur": 226,
+    "editeur-saas": 46
   },
   "prompts": [
     {
@@ -11406,6 +11409,1020 @@
       "profil": "tous",
       "source": "rapido-gmaps",
       "act_max": "sourcing + import cadrés par les plafonds ; import en lot confirmé"
+    },
+    {
+      "id": "dec18b7e2405",
+      "type": "orchestration",
+      "titre": "Mon client idéal, depuis mes vrais clients",
+      "prompt": "Construis l'ICP de {logiciel} à partir des clients réellement gagnés dans le CRM : secteur, taille, signaux d'achat — et écris-le dans la base de connaissance.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-A",
+        "vente-saas"
+      ],
+      "etape": "A",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "5a637e7c167a",
+      "type": "orchestration",
+      "titre": "La chasse sur la carte",
+      "prompt": "Source 50 {métier} à {ville} depuis Google Maps, garde ceux qui sont bien notés SANS réservation ni commande en ligne, score-les sur mon ICP et montre-moi le top 10 avant d'injecter au pipeline.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-gmaps"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-A",
+        "vente-saas"
+      ],
+      "etape": "A",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "5c645e620786",
+      "type": "skill",
+      "titre": "Le concurrent aux rayons X",
+      "prompt": "Analyse ce que fait {concurrent} : ses pubs actives, son positionnement, ses prix visibles — et sors-moi 3 angles où {logiciel} gagne.",
+      "mcps": [
+        "facebook-ads",
+        "web"
+      ],
+      "cibles": [
+        "rapido-meta-ads"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-A",
+        "vente-saas"
+      ],
+      "etape": "A",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "310746d7321f",
+      "type": "skill",
+      "titre": "La zone qui a besoin de nous",
+      "prompt": "Fais la veille concurrentielle des {métier} de {ville} : qui a déjà un outil digital, qui n'en a pas — et dis-moi où {logiciel} entre le plus facilement.",
+      "mcps": [],
+      "cibles": [
+        "rapido-gmaps"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-A",
+        "vente-saas"
+      ],
+      "etape": "A",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "ae03c0443588",
+      "type": "skill",
+      "titre": "Le segment prêt à écouter",
+      "prompt": "Crée le segment CRM “{métier} — {ville} — sans outil” depuis les prospects sourcés, pour la campagne de la semaine.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-A",
+        "vente-saas"
+      ],
+      "etape": "A",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "3db73e3ce6ca",
+      "type": "skill",
+      "titre": "Le premier email qui ne sent pas le robot",
+      "prompt": "Écris le cold email pour {prospect} : recherche sa fiche et son actualité, une accroche sur SON problème, {logiciel} en une phrase, un CTA doux — en brouillon.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-B",
+        "vente-saas"
+      ],
+      "etape": "B",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "e1424fb5820b",
+      "type": "orchestration",
+      "titre": "La séquence complète, gate compris",
+      "prompt": "Monte ma machine outbound pour {offre} : liste vérifiée en délivrabilité, séquence 3 touches nourrie des objections réelles, envois par lots que JE confirme.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-B",
+        "vente-saas"
+      ],
+      "etape": "B",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "bad9fa8ef845",
+      "type": "skill",
+      "titre": "La relance qui rebondit",
+      "prompt": "{Prospect} n'a pas répondu depuis 7 jours : relis l'échange, propose 2 relances — une utile (ressource), une directe (créneau) — je choisis.",
+      "mcps": [
+        "rapidocrm",
+        "gmail"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-B",
+        "vente-saas"
+      ],
+      "etape": "B",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "8633f0372a98",
+      "type": "skill",
+      "titre": "Le social selling du fondateur",
+      "prompt": "Prépare ma semaine LinkedIn de fondateur de {logiciel} : 3 posts avec mon histoire de {métier} devenu éditeur, et 5 commentaires à forte valeur en brouillon.",
+      "mcps": [],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-B",
+        "vente-saas"
+      ],
+      "etape": "B",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "7ec8f7c091b6",
+      "type": "skill",
+      "titre": "Le lot du jour, priorisé",
+      "prompt": "Score mes leads : fit ICP × engagement × fraîcheur — donne-moi les 10 à appeler aujourd'hui avec la raison en une ligne.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-B",
+        "vente-saas"
+      ],
+      "etape": "B",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "bf020c05fb42",
+      "type": "routine",
+      "titre": "La prospection qui tourne seule",
+      "prompt": "Installe la routine hebdo : sourcing plafonné le lundi, scoring, dédup, et le récap m'attend mardi matin — injection toujours sur mon OK.",
+      "mcps": [
+        "n8n"
+      ],
+      "cibles": [
+        "rapido-gmaps"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-B",
+        "vente-saas"
+      ],
+      "etape": "B",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "426b42351ac5",
+      "type": "orchestration",
+      "titre": "Le lead magnet qui qualifie",
+      "prompt": "Fabrique le lead magnet “{titre — ex. Checklist HACCP : les 15 contrôles quotidiens}” : PDF brandé, page de capture, segment dédié, séquence J0/J2/J5 en brouillon.",
+      "mcps": [
+        "rapidocms",
+        "rapidocrm",
+        "lovable"
+      ],
+      "cibles": [
+        "rapido-leadmagnet"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-C",
+        "vente-saas"
+      ],
+      "etape": "C",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "7fcd2ba07503",
+      "type": "skill",
+      "titre": "L'article qui répond à la vraie question",
+      "prompt": "Écris l'article SEO “Combien coûte {problème du métier} ?” optimisé Google et citations IA, dans notre ton, avec le CTA vers la démo.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [
+        "rapido-seo"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-C",
+        "vente-saas"
+      ],
+      "etape": "C",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "1da8b3a30fd4",
+      "type": "orchestration",
+      "titre": "Une idée, quatre réseaux",
+      "prompt": "Prends “{idée — ex. le coût caché des ruptures de stock}” et décline-la nativement : LinkedIn, Facebook local, carrousel Instagram, script TikTok — brouillons rattachés à la campagne {logiciel}.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [
+        "rapido-copywriter"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-C",
+        "vente-saas"
+      ],
+      "etape": "C",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "012addd6e958",
+      "type": "skill",
+      "titre": "La preuve en vidéo",
+      "prompt": "Prépare la vidéo verticale “{logiciel} en 60 secondes” : hook métier, 3 écrans du produit, CTA démo — chiffre le coût AVANT de générer.",
+      "mcps": [
+        "huggsfield"
+      ],
+      "cibles": [
+        "rapido-higgsfield"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-C",
+        "vente-saas"
+      ],
+      "etape": "C",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "2c849a04da00",
+      "type": "orchestration",
+      "titre": "La pub qui attend mon feu vert",
+      "prompt": "Monte la campagne Meta “{offre} pour {métier}” : audience lookalike de mes clients, créatif à la charte, {budget}€/jour — tout en pause.",
+      "mcps": [
+        "facebook-ads",
+        "rapidocrm",
+        "rapidocms"
+      ],
+      "cibles": [
+        "rapido-meta-ads"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-C",
+        "vente-saas"
+      ],
+      "etape": "C",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "6d5dcb59cec1",
+      "type": "skill",
+      "titre": "Le tri BANT sans tableur",
+      "prompt": "Passe mon pipeline au crible : budget, décideur, besoin, timing — dis-moi quels deals pousser, garder, sortir.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-D",
+        "vente-saas"
+      ],
+      "etape": "D",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "893f4825040c",
+      "type": "skill",
+      "titre": "Tout savoir avant d'appeler",
+      "prompt": "Recherche {prospect} : son établissement, ses avis, son actualité, sa fiche CRM — et le résumé en 10 lignes avec l'angle d'attaque.",
+      "mcps": [
+        "rapidocrm",
+        "web"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-D",
+        "vente-saas"
+      ],
+      "etape": "D",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "cdd63500dbaa",
+      "type": "skill",
+      "titre": "La fiche de RDV complète",
+      "prompt": "Je vois {prospect} demain : profil SONCAS probable, questions SPIN, ses objections attendues avec nos réponses, et l'objectif de sortie.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-D",
+        "vente-saas"
+      ],
+      "etape": "D",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "ebc98400c86a",
+      "type": "orchestration",
+      "titre": "Le créneau sans ping-pong",
+      "prompt": "{Prospect} veut une démo : lis le fil, propose 3 créneaux réels, prépare la réponse — à sa confirmation, crée l'événement et le RDV CRM.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-direction"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-D",
+        "vente-saas"
+      ],
+      "etape": "D",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "027ea8fa99c8",
+      "type": "skill",
+      "titre": "Le mom test avant de construire",
+      "prompt": "Prépare 8 questions Mom Test pour valider {hypothèse produit} auprès de mes prospects — du passé et du concret, jamais d'intentions.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-forge"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-D",
+        "vente-saas"
+      ],
+      "etape": "D",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "7e877d1358bd",
+      "type": "skill",
+      "titre": "Le script de démo en 7 étapes",
+      "prompt": "Écris mon script de démo {logiciel} pour un {métier} : ouverture sur SA journée, 3 moments “waouh” du produit, transitions naturelles, close doux.",
+      "mcps": [],
+      "cibles": [
+        "rapido-forge"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-E",
+        "vente-saas"
+      ],
+      "etape": "E",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "61ebd2d39ce4",
+      "type": "skill",
+      "titre": "“C'est trop cher”",
+      "prompt": "{Prospect} trouve {logiciel} trop cher à {prix}€/mois : reformule, chiffre ce que lui coûte le problème aujourd'hui, et donne-moi 2 réponses — valeur et garantie.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-meta-ads"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-E",
+        "vente-saas"
+      ],
+      "etape": "E",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "f1c33f09e98b",
+      "type": "orchestration",
+      "titre": "Le playbook qui apprend",
+      "prompt": "Analyse mes 10 derniers RDV enregistrés : quelles objections reviennent, à quelle étape, et mets à jour le playbook avec les réponses qui ont marché.",
+      "mcps": [
+        "fireflies",
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-E",
+        "vente-saas"
+      ],
+      "etape": "E",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "a5e5b701cb0d",
+      "type": "skill",
+      "titre": "L'offre irrésistible",
+      "prompt": "Restructure {offre} façon Grand Slam : valeur empilée, garantie qui inverse le risque, rareté honnête, nouveau nom — 3 versions.",
+      "mcps": [],
+      "cibles": [
+        "rapido-meta-ads"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-E",
+        "vente-saas"
+      ],
+      "etape": "E",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "8ae8a38d0cc9",
+      "type": "skill",
+      "titre": "“Ils ne bougent plus”",
+      "prompt": "{Prospect} est silencieux après la démo : diagnostic de la situation, la méthode adaptée, et le message exact à envoyer — en brouillon.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-E",
+        "vente-saas"
+      ],
+      "etape": "E",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "db1146807a56",
+      "type": "orchestration",
+      "titre": "La proposition qui reprend SES mots",
+      "prompt": "Rédige la proposition pour {prospect} : son contexte avec ses mots du RDV, {offre} en 3 briques, {prix}, prochaine étape datée — et le devis CRM en brouillon.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-F",
+        "vente-saas"
+      ],
+      "etape": "F",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "9f2260f7f78b",
+      "type": "orchestration",
+      "titre": "Le support de vente à la charte",
+      "prompt": "Prépare la présentation commerciale {logiciel} pour {prospect} : données du deal, arguments de la KB, design Canva à la charte — liée à sa fiche.",
+      "mcps": [
+        "canva",
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-canva"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-F",
+        "vente-saas"
+      ],
+      "etape": "F",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "68fa6177f5c8",
+      "type": "skill",
+      "titre": "Le contrat sans avocat de couloir",
+      "prompt": "Génère le contrat depuis notre template, personnalisé pour {prospect}, envoie-le pour signature — et programme la relance J+5 si silence.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-F",
+        "vente-saas"
+      ],
+      "etape": "F",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "7d446beb46ba",
+      "type": "skill",
+      "titre": "Les devis qui expirent",
+      "prompt": "Liste mes devis qui expirent sous 7 jours, l'historique de chacun, et prépare la relance au bon ton — courtoise ou ferme selon le client.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-F",
+        "vente-saas"
+      ],
+      "etape": "F",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "5205168a0246",
+      "type": "skill",
+      "titre": "La revue de pipeline du vendredi",
+      "prompt": "Revue complète : deals dormants, étapes engorgées, dates de closing douteuses — et UNE prochaine action par deal.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-F",
+        "vente-saas"
+      ],
+      "etape": "F",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "0ac4d65f9fcb",
+      "type": "skill",
+      "titre": "Le forecast sans café",
+      "prompt": "Forecast du trimestre : commit, probable, upside, écart à l'objectif, couverture de pipeline — formules affichées.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-F",
+        "vente-saas"
+      ],
+      "etape": "F",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "0fb1c636506c",
+      "type": "orchestration",
+      "titre": "Le kick-off complet en une validation",
+      "prompt": "{Client} a signé : entreprise au CRM à jour, projet RH avec kanban, tâches d'installation de {logiciel}, email de bienvenue — récap groupé, je valide tout d'un coup.",
+      "mcps": [
+        "rapidocrm",
+        "rapidorh"
+      ],
+      "cibles": [
+        "rapidocrm",
+        "rapidorh"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-G",
+        "vente-saas"
+      ],
+      "etape": "G",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "06270afcde62",
+      "type": "skill",
+      "titre": "L'installation du restaurateur",
+      "prompt": "Lance l'onboarding {logiciel} de {client} : sa carte importée, ses zones et tables, son équipe, son premier relevé HACCP — étape par étape avec sa confirmation.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [
+        "foodeatup"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-G",
+        "vente-saas"
+      ],
+      "etape": "G",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "3ac1348058cf",
+      "type": "orchestration",
+      "titre": "Les 100 premiers jours sans churn",
+      "prompt": "Construis le plan 100 jours de {client} : jalons J+1/J+7/J+30/J+60/J+90 en tâches, messages de jalon en brouillon, signaux d'alerte définis.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [
+        "rapido-relation-client",
+        "rapidorh"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-G",
+        "vente-saas"
+      ],
+      "etape": "G",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "974c73e28afa",
+      "type": "orchestration",
+      "titre": "Le site du client, avec son agent",
+      "prompt": "Crée le site vitrine de {client} branché sur SON {logiciel} : réservations en ligne, agent qui répond sur ses stocks — d'abord sur l'établissement de démo.",
+      "mcps": [
+        "lovable",
+        "foodeatup"
+      ],
+      "cibles": [
+        "rapido-lovable",
+        "foodeatup"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-G",
+        "vente-saas"
+      ],
+      "etape": "G",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "6089fae6fcda",
+      "type": "skill",
+      "titre": "La santé du portefeuille",
+      "prompt": "Health score de tous mes clients {logiciel} : activité, paiements, tickets, NPS — portefeuille trié vert/orange/rouge et LA prochaine action par client rouge.",
+      "mcps": [],
+      "cibles": [
+        "rapido-relation-client"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-H",
+        "vente-saas"
+      ],
+      "etape": "H",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "22be4f4dce25",
+      "type": "orchestration",
+      "titre": "Le NPS qui déclenche",
+      "prompt": "Lance la vague NPS, segmente promoteurs/passifs/détracteurs, et prépare l'action par segment : sauvetage, geste, demande d'avis.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-relation-client"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-H",
+        "vente-saas"
+      ],
+      "etape": "H",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "7f283a1dc663",
+      "type": "skill",
+      "titre": "L'upsell au bon moment",
+      "prompt": "Détecte mes clients prêts à monter en gamme : signaux réels d'usage, prépare la proposition et le devis {offre supérieure} — relance J+7 planifiée.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-H",
+        "vente-saas"
+      ],
+      "etape": "H",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "94ee0142a88d",
+      "type": "skill",
+      "titre": "Les ambassadeurs qui vendent pour moi",
+      "prompt": "Identifie mes clients promoteurs éligibles au parrainage, prépare l'invitation au programme et le suivi des commissions.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-H",
+        "vente-saas"
+      ],
+      "etape": "H",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "58940c245d9f",
+      "type": "orchestration",
+      "titre": "Le client qui s'éloigne",
+      "prompt": "{Client} n'a pas utilisé {logiciel} depuis 21 jours : croise son historique, diagnostique, et prépare la reprise de contact — utile, pas culpabilisante.",
+      "mcps": [
+        "rapidocrm",
+        "foodeatup"
+      ],
+      "cibles": [
+        "rapidocrm",
+        "foodeatup"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-H",
+        "vente-saas"
+      ],
+      "etape": "H",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "1ba23f3baf96",
+      "type": "session",
+      "titre": "Le point commercial complet",
+      "prompt": "Pilote mon commercial : hygiène des données, relances, conversion, encaissement — priorise par valeur × probabilité × urgence, prépare, je valide groupé.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-I",
+        "vente-saas"
+      ],
+      "etape": "I",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "1fb3c4cc8054",
+      "type": "skill",
+      "titre": "Le funnel qui fuit où ?",
+      "prompt": "Calcule mon AARRR réel de {logiciel} : acquisition → revenu sur les données CRM, l'étape la plus fuyante, et 3 actions routées.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapidocrm"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-I",
+        "vente-saas"
+      ],
+      "etape": "I",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "5a921424b563",
+      "type": "skill",
+      "titre": "D'où viennent mes clients",
+      "prompt": "Attribution du trimestre : leads et clients par canal, CAC et LTV par script avec formules, et la recommandation d'allocation.",
+      "mcps": [],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 0,
+      "niveau": "lecture",
+      "tags": [
+        "etape-I",
+        "vente-saas"
+      ],
+      "etape": "I",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "4bb7963b0e15",
+      "type": "routine",
+      "titre": "Le CFO du lundi",
+      "prompt": "Routine CFO : encaissé, impayés, MRR de {logiciel}, runway — relances préparées, alertes si seuil franchi, rien d'envoyé sans moi.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 1,
+      "niveau": "préparation",
+      "tags": [
+        "etape-I",
+        "vente-saas"
+      ],
+      "etape": "I",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
+    },
+    {
+      "id": "cf42f99a0d04",
+      "type": "session",
+      "titre": "Le tour complet de l'éditeur",
+      "prompt": "Pilote mon entreprise : ventes {logiciel}, contenu, équipe, finances — 3 priorités chiffrées, actions préparées, une validation, le rapport d'une page.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "editeur-saas",
+      "autonomie": 2,
+      "niveau": "écriture confirmée",
+      "tags": [
+        "etape-I",
+        "vente-saas"
+      ],
+      "etape": "I",
+      "collection": "vente-saas",
+      "source": "collection:vente-saas"
     }
   ]
 }
