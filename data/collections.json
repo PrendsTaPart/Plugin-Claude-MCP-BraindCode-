@@ -89,6 +89,27 @@
         "journaliser"
       ],
       "liee_a": "routines"
+    },
+    {
+      "id": "sessions-loop",
+      "nom": "Les sessions de pilotage",
+      "accroche": "Vous décidez quand. Sense → Report, et rien ne part sans vous.",
+      "profil": "tous",
+      "ordre": 4,
+      "total": 21,
+      "groupes": [
+        "transverse",
+        "domaine",
+        "chantier",
+        "decision"
+      ],
+      "phases": [
+        "sense",
+        "plan",
+        "act",
+        "feed",
+        "report"
+      ]
     }
   ]
 }

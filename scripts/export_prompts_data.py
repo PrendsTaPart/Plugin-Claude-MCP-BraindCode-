@@ -448,6 +448,7 @@ def main():
         for m in e["mcps"]:
             by_mcp[m] += 1
     by_auto = Counter(e["autonomie"] for e in entries)
+    by_collection = Counter(e["collection"] for e in entries if e.get("collection"))
 
     total = len(entries)
 
@@ -485,6 +486,18 @@ def main():
     for t, n in by_type.most_common():
         lignes.append(f"| {t} | {n} |")
     lignes.append("")
+    if by_collection:
+        lignes.append("## Par collection (prompts écrits main)")
+        lignes.append("")
+        lignes.append("| Collection | Entrées |")
+        lignes.append("|---|---|")
+        tot_coll = 0
+        for c, n in by_collection.most_common():
+            lignes.append(f"| {c} | {n} |")
+            tot_coll += n
+        lignes.append(f"| **Total collections** | **{tot_coll}** |")
+        lignes.append(f"| moisson (skills/agents/routines) | {total - tot_coll} |")
+        lignes.append("")
     lignes.append("## Par profil")
     lignes.append("")
     lignes.append("| Profil | Entrées |")
@@ -563,6 +576,7 @@ def main():
     print("=" * 60)
     print("Par type   :", dict(by_type))
     print("Par profil :", dict(by_profil))
+    print("Par collec :", dict(by_collection))
     print("Par auto   :", dict(sorted(by_auto.items())))
     print("Moisson    : quotes=%d besoin=%d fallback=%d agents=%d routines=%d"
           % (stats['skill_quotes'], stats['skill_besoin'], stats['skill_fallback'],
