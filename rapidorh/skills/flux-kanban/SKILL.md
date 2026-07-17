@@ -22,6 +22,13 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
    `due_date` YYYY-MM-DD, `assigned_users` = IDs via `get-users-list-tool`,
    `priority` TÂCHE : 0 = Urgent, 1 = Moyenne (défaut), 2 = Faible).
    - Attention : échelle inversée par rapport à la priorité projet (1-3, 1=basse).
+   - **Tâche destinée à un AGENT** → proposer le **format relais**
+     (`${CLAUDE_PLUGIN_ROOT}/reference/relais-par-tache.md`) : titre préfixé
+     `[AGENT:{nom}]` (ou `assigned_users` = utilisateur-agent si RH V2), et une
+     `description` contenant le **bloc RELAIS** (PROMPT résolu, LIVRABLE, DONE,
+     AUTONOMIE, ROUTINE). C'est ce bloc que lira `tournee-des-agents` ; sans lui,
+     la tâche sera **bloquée** en tournée, pas exécutée. Même bloc pour une tâche
+     **employé** : le PROMPT devient son brief.
 4. **Déplacer une tâche** — `move-task-tool` (`project_id`, `task_id`,
    `from_list`, `to_list`).
    - Retrouver le `task_id` et sa colonne actuelle via `get-project-tasks-tool`

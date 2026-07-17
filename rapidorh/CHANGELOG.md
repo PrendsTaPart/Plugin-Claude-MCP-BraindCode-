@@ -1,5 +1,25 @@
 # Changelog — plugin rapidorh
 
+## 1.1.0 — 2026-07-17
+
+- **`reference/relais-par-tache.md`** : convention de délégation par tâche Kanban —
+  assignation (`assigned_users` utilisateur-agent si RH V2, sinon préfixe
+  `[AGENT:{nom}]`), bloc RELAIS dans la `description` (PROMPT résolu, LIVRABLE, DONE,
+  AUTONOMIE, ROUTINE d'origine). Tâches employés au même format (le PROMPT = leur brief).
+  Note outils vérifiée : pas de commentaire ni d'`update-task` côté serveur → le brief
+  vit dans la `description` à la création.
+- **`skills/tournee-des-agents`** : « fais la tournée des agents », « réalise les tâches
+  du jour », « exécute les tâches IA d'aujourd'hui ». Lit les tâches À faire du jour
+  assignées aux agents, exécute le PROMPT du relais **dans la limite du niveau
+  d'autonomie** (niveau 3 = jamais en tournée : préparé + signalé), déplace la carte
+  (Fait / Validation), bloque toute tâche au relais absent/ambigu (aucune interprétation),
+  récap faites / en validation / bloquées avec IDs.
+- **`reference/autonomie.md`** : rappel local des 4 niveaux + comportement en tournée
+  (source de vérité : `rapido-startup`).
+- **`flux-kanban`** : création d'une tâche pour un agent → propose le format relais.
+- Tests : R5 (déclenchements tournée), T1 niveau 3 refusé en tournée, T2 niveau 2 →
+  Validation, T3/T4 relais absent/placeholder = blocage, T5 format relais à la création.
+
 ## 1.0.3 — 2026-07-15
 
 - `onboarding-rh-methodo` (patch H9) : renvoi vers `rapido-higgsfield:videos-explicatives`

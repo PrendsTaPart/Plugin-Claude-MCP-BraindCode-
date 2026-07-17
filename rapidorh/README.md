@@ -2,7 +2,7 @@
 
 RapidoRh : projets, Kanban, dailies (rapports journaliers), onboarding des employés et rôles — avec agents chef-de-projet et responsable-rh.
 
-## Skills (11)
+## Skills (12)
 
 | Skill | Quand l'utiliser |
 |---|---|
@@ -17,6 +17,7 @@ RapidoRh : projets, Kanban, dailies (rapports journaliers), onboarding des emplo
 | `recruiting-pipeline` | Un point recrutement — pipeline de candidats, combien de candidatures, statut des embauches —… |
 | `revue-projet-hebdo` | Où en est le projet, une revue hebdo projet ou l'avancement |
 | `setup-projet` | Créer un projet ou parle d'un nouveau projet dans RapidoRh |
+| `tournee-des-agents` | « fais la tournée des agents », « réalise les tâches du jour », « exécute les tâches IA d'aujourd'hui » — exécute les tâches Kanban confiées aux agents, dans la limite d'autonomie |
 
 ## Agents (2)
 
@@ -30,7 +31,8 @@ RapidoRh : projets, Kanban, dailies (rapports journaliers), onboarding des emplo
 ## Déclencheurs (exemples réels)
 
 - « aide-moi à embaucher »
+- « fais la tournée des agents »
 
 ## Version & conventions
 
-v1.0.3 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
+v1.1.0 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
