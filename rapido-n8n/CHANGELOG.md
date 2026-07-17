@@ -1,5 +1,14 @@
 # Changelog — plugin rapido-n8n
 
+## 1.6.1 — 2026-07-17 — backlog recettes « routines »
+
+- `reference/backlog-recettes-routines.md` : liste les **12 routines badgées 🤖** de
+  la collection `routines` (data/prompts-collections/routines.json) **sans recette n8n
+  existante**, avec la nature du workflow attendu (rappel / relevé / rapport / alerte /
+  détection / scoring), les règles communes (mémoire anti-doublon, gouvernance
+  d'autonomie, seuils KB) et une priorité suggérée. `#33 (R7)` déjà couverte par
+  `recette-r7-cash-sentinel.md`.
+
 ## 1.6.0 — 2026-07-15 — recette sourcing Google Maps
 
 - `reference/recettes-gmaps.md` : **GMAPS-HEBDO** (lundi 8h) — sourcing ICP par

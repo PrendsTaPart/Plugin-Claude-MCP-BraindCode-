@@ -1,18 +1,18 @@
 {
   "version": 1,
-  "total": 816,
+  "total": 858,
   "cible": 1000,
   "par_type": {
-    "skill": 633,
+    "skill": 637,
     "agent": 114,
-    "routine": 52,
+    "routine": 90,
     "orchestration": 15,
     "session": 2
   },
   "par_profil": {
-    "restaurateur": 48,
-    "tous": 496,
-    "fondateur": 226,
+    "restaurateur": 55,
+    "tous": 500,
+    "fondateur": 257,
     "editeur-saas": 46
   },
   "prompts": [
@@ -8864,6 +8864,54 @@
       "source": "rapidorh"
     },
     {
+      "id": "48d642b2675b",
+      "type": "skill",
+      "titre": "Tournee des agents",
+      "prompt": "fais la tournée des agents",
+      "mcps": [
+        "rapidorh"
+      ],
+      "autonomie": 0,
+      "profil": "tous",
+      "source": "rapidorh"
+    },
+    {
+      "id": "b49a0cffbe8a",
+      "type": "skill",
+      "titre": "Tournee des agents",
+      "prompt": "réalise les tâches du jour",
+      "mcps": [
+        "rapidorh"
+      ],
+      "autonomie": 0,
+      "profil": "tous",
+      "source": "rapidorh"
+    },
+    {
+      "id": "e48d511acc89",
+      "type": "skill",
+      "titre": "Tournee des agents",
+      "prompt": "exécute les tâches IA d'aujourd'hui",
+      "mcps": [
+        "rapidorh"
+      ],
+      "autonomie": 0,
+      "profil": "tous",
+      "source": "rapidorh"
+    },
+    {
+      "id": "12ce1a729bc1",
+      "type": "skill",
+      "titre": "Tournee des agents",
+      "prompt": "Exécuter les tâches du jour confiées aux agents sur le Kanban RapidoRh.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "autonomie": 0,
+      "profil": "tous",
+      "source": "rapidorh"
+    },
+    {
       "id": "69a7d77a4ab0",
       "type": "agent",
       "titre": "Chef cuisine",
@@ -11409,6 +11457,897 @@
       "profil": "tous",
       "source": "rapido-gmaps",
       "act_max": "sourcing + import cadrés par les plafonds ; import en lot confirmé"
+    },
+    {
+      "id": "e65ffdd6639c",
+      "type": "routine",
+      "titre": "La tournée des agents",
+      "prompt": "Fais la tournée des agents : exécute chaque tâche du jour selon son prompt en commentaire, déplace les cartes, et donne-moi le récap faites/en validation/bloquées.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "frequence": "quotidien",
+      "mode": "mixte",
+      "cadence": "Quotidien 9h",
+      "tags": [
+        "routines",
+        "quotidien",
+        "mixte"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "9h"
+    },
+    {
+      "id": "6076af497a03",
+      "type": "routine",
+      "titre": "Le daily sans effort",
+      "prompt": "Crée mon daily du jour depuis les tâches déplacées et les heures, dans les règles du serveur.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "frequence": "quotidien",
+      "mode": "session",
+      "cadence": "Quotidien 18h",
+      "tags": [
+        "routines",
+        "quotidien",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "18h"
+    },
+    {
+      "id": "dc979f423c4a",
+      "type": "routine",
+      "titre": "Où en est le projet",
+      "prompt": "Revue hebdo du projet {projet} : avancement par colonne, blocages, retards, les dailies de la semaine — et 3 actions.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "hebdo",
+      "mode": "n8n",
+      "cadence": "Vendredi 16h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "16h"
+    },
+    {
+      "id": "5412c8e75f94",
+      "type": "routine",
+      "titre": "Qui déborde",
+      "prompt": "Croise les heures des dailies et les contrats : qui est surchargé, quelles tâches ouvertes rééquilibrer — propositions, j'arbitre.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Lundi 8h30",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "8h30"
+    },
+    {
+      "id": "aab4634e3769",
+      "type": "routine",
+      "titre": "Le people report",
+      "prompt": "Rapport RH du mois : effectifs, charge, risques — une page pour la direction.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "mensuel",
+      "mode": "n8n",
+      "cadence": "Mensuel (1er)",
+      "tags": [
+        "routines",
+        "mensuel",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "b1b30b90b827",
+      "type": "routine",
+      "titre": "Le pipeline de recrutement",
+      "prompt": "Point recrutement : candidatures par offre, statuts à faire avancer, relances candidats en brouillon.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "c35e4336c323",
+      "type": "routine",
+      "titre": "Le calendrier qui se distribue tout seul",
+      "prompt": "Réalise le calendrier éditorial de 30 posts du mois pour {marque} : piliers, formats variés, brouillons planifiés rattachés à la campagne — PUIS crée le projet RH “Édito {mois}” et une tâche par post, assignée à l'agent compétent (copy → copywriter-social, visuel → prompt-designer, vidéo → producteur-studio) ou à l'employé, avec le prompt exact en commentaire, datée du jour de production.",
+      "mcps": [
+        "rapidocms",
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "1er lundi du mois 9h",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "9h",
+      "featured": true
+    },
+    {
+      "id": "b9643238b899",
+      "type": "routine",
+      "titre": "Les stats du soir",
+      "prompt": "Relève les insights des posts publiés aujourd'hui, tague les hooks gagnants dans la banque, une ligne d'apprentissage.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "quotidien",
+      "mode": "mixte",
+      "cadence": "Quotidien 18h30",
+      "tags": [
+        "routines",
+        "quotidien",
+        "mixte"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "18h30"
+    },
+    {
+      "id": "09acb1d61d68",
+      "type": "routine",
+      "titre": "La semaine de contenu vérifiée",
+      "prompt": "Contrôle les 7 prochains jours : brouillons planifiés vs trous du calendrier, propose de quoi combler — brouillons seulement.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Lundi 10h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "10h"
+    },
+    {
+      "id": "722762662c7c",
+      "type": "routine",
+      "titre": "Le bilan contenu",
+      "prompt": "Analyse du mois : posts qui ont marché, patterns par réseau, 3 recommandations pour le mois prochain.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel (dernier vendredi)",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "d0ccba004e18",
+      "type": "routine",
+      "titre": "Les grammaires à jour",
+      "prompt": "Révise les fiches grammaires des 4 réseaux avec les tendances du trimestre — chaque fiche datée.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [
+        "rapido-seo"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "trimestriel",
+      "mode": "session",
+      "cadence": "Trimestriel",
+      "tags": [
+        "routines",
+        "trimestriel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "d2fbcf8100be",
+      "type": "routine",
+      "titre": "L'article de la semaine",
+      "prompt": "Écris l'article SEO du calendrier sur “{sujet de la semaine}”, score qualité, visuel, publication en brouillon + relais social.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "f84dd68ddba9",
+      "type": "routine",
+      "titre": "Les leads de la nuit",
+      "prompt": "Score les nouveaux leads : fit ICP × engagement × fraîcheur — le top du jour avec la raison en une ligne.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "quotidien",
+      "mode": "n8n",
+      "cadence": "Quotidien 8h45",
+      "tags": [
+        "routines",
+        "quotidien",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "8h45"
+    },
+    {
+      "id": "142ca03aaf89",
+      "type": "routine",
+      "titre": "Les devis qui expirent",
+      "prompt": "Devis expirant sous 7 jours : historique, relance au ton adapté en brouillon.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "quotidien",
+      "mode": "mixte",
+      "cadence": "Quotidien 9h30",
+      "tags": [
+        "routines",
+        "quotidien",
+        "mixte"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "9h30"
+    },
+    {
+      "id": "a3a74417c10f",
+      "type": "routine",
+      "titre": "La revue de pipeline",
+      "prompt": "Deals dormants, étapes engorgées, closing douteux — une prochaine action par deal.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Lundi 11h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "11h"
+    },
+    {
+      "id": "b0cb5952dda4",
+      "type": "routine",
+      "titre": "Les impayés au bon ton",
+      "prompt": "Factures en retard : classe par ancienneté, ton gradué selon l'historique, relances en brouillon — envoi sur mon OK.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Mardi et jeudi",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "6d60a39b2d1e",
+      "type": "routine",
+      "titre": "La facturation du mois",
+      "prompt": "Prépare les factures récurrentes du mois depuis les contrats actifs, récap groupé avant création.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel (1er)",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "ec3dff706ff2",
+      "type": "routine",
+      "titre": "Le forecast",
+      "prompt": "Forecast fin de mois : commit/probable/upside, écart à l'objectif, couverture — formules affichées.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel (25)",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "12bbb81927c6",
+      "type": "routine",
+      "titre": "Les RDV de la semaine préparés",
+      "prompt": "Pour chaque RDV des 5 prochains jours : fiche de préparation (SONCAS, SPIN, objections attendues) en commentaire du RDV.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "abb46cd64476",
+      "type": "routine",
+      "titre": "Le briefing du patron",
+      "prompt": "Briefing du jour : HACCP, réservations, staffing, productions, stocks — les 3 priorités.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 0,
+      "frequence": "quotidien",
+      "mode": "n8n",
+      "cadence": "Quotidien 8h",
+      "tags": [
+        "routines",
+        "quotidien",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "8h"
+    },
+    {
+      "id": "efdb1bd4c9df",
+      "type": "routine",
+      "titre": "Les températures sans oubli",
+      "prompt": "Rappel des relevés HACCP : équipements à contrôler, saisie guidée — jamais de valeur inventée.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 2,
+      "frequence": "quotidien",
+      "mode": "mixte",
+      "cadence": "Quotidien 9h et 15h",
+      "tags": [
+        "routines",
+        "quotidien",
+        "mixte"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "9h et 15h"
+    },
+    {
+      "id": "89c5622d0b6d",
+      "type": "routine",
+      "titre": "La semaine servie d'avance",
+      "prompt": "Croise les réservations de la semaine, le planning d'équipe et les stocks bas : trous de planning signalés, commande fournisseur préparée.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Dimanche 18h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "18h"
+    },
+    {
+      "id": "22219a7a4c1f",
+      "type": "routine",
+      "titre": "La caisse propre",
+      "prompt": "Rapport X de la session, écarts signalés — la clôture Z reste ta confirmation.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 0,
+      "frequence": "quotidien",
+      "mode": "n8n",
+      "cadence": "Quotidien 23h",
+      "tags": [
+        "routines",
+        "quotidien",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "23h"
+    },
+    {
+      "id": "4e7b328be6bc",
+      "type": "routine",
+      "titre": "Les avis de la semaine",
+      "prompt": "Avis reçus : modération proposée, réponses en brouillon au ton maison, le plat le plus cité en négatif → fiche marge.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo (lundi)",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "7376c5d72e3a",
+      "type": "routine",
+      "titre": "L'ingénierie de carte",
+      "prompt": "Matrice popularité × marge sur le mois : stars, dilemmes, poids morts — et 3 décisions de carte proposées.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 0,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "f6fd0e3251fc",
+      "type": "routine",
+      "titre": "La fidélité qui rappelle",
+      "prompt": "Clients fidèles absents depuis 30 jours : campagne de rappel avec récompense, en brouillon.",
+      "mcps": [
+        "foodeatup",
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo (mardi)",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "12d457cda66a",
+      "type": "routine",
+      "titre": "Les pubs sous contrôle",
+      "prompt": "Dépense et coût par résultat des campagnes actives vs seuils KB : alerte si dérive — aucune modification seule.",
+      "mcps": [
+        "facebook-ads",
+        "google-ads",
+        "tiktok-ads"
+      ],
+      "cibles": [
+        "rapido-meta-ads",
+        "rapido-google-ads",
+        "rapido-tiktok-ads"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "quotidien",
+      "mode": "n8n",
+      "cadence": "Quotidien 9h15",
+      "tags": [
+        "routines",
+        "quotidien",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "9h15"
+    },
+    {
+      "id": "18ae80251ec6",
+      "type": "routine",
+      "titre": "Le point performance ads",
+      "prompt": "3 constats, 3 actions classées par opportunité sur Meta/Google/TikTok — exécution sur ton OK.",
+      "mcps": [
+        "facebook-ads",
+        "google-ads",
+        "tiktok-ads"
+      ],
+      "cibles": [
+        "rapido-meta-ads",
+        "rapido-google-ads",
+        "rapido-tiktok-ads"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo (mercredi)",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "7e6ea0b164d8",
+      "type": "routine",
+      "titre": "La chasse GMaps",
+      "prompt": "Sourcing plafonné de la zone {ville} : scoring, dédup, top 10 présenté — injection confirmée.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-gmaps"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "routine_source": "GMAPS-HEBDO"
+    },
+    {
+      "id": "8d4ffbbac141",
+      "type": "routine",
+      "titre": "La veille concurrents",
+      "prompt": "Pubs actives de {concurrents} : angles, offres, nouveautés — le contre-angle proposé.",
+      "mcps": [
+        "facebook-ads"
+      ],
+      "cibles": [
+        "rapido-meta-ads"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "hebdo",
+      "mode": "mixte",
+      "cadence": "Hebdo (jeudi)",
+      "tags": [
+        "routines",
+        "hebdo",
+        "mixte"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "ad00c26c3d7a",
+      "type": "routine",
+      "titre": "L'attribution honnête",
+      "prompt": "D'où viennent les clients du mois : canaux, CAC, LTV par script — recommandation d'allocation.",
+      "mcps": [],
+      "cibles": [
+        "rapido-marketing"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
+    },
+    {
+      "id": "f3f881bb7062",
+      "type": "routine",
+      "titre": "Le monday brief",
+      "prompt": "Une page : trésorerie, ventes, pipeline, la semaine, le top 3.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "hebdo",
+      "mode": "mixte",
+      "cadence": "Lundi 8h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "mixte"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "8h"
+    },
+    {
+      "id": "e132c4f4928c",
+      "type": "routine",
+      "titre": "La sentinelle cash (R7)",
+      "prompt": "Seuils de trésorerie et factures critiques : alerte seulement, aucune écriture.",
+      "mcps": [
+        "rapidocrm",
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "quotidien",
+      "mode": "n8n",
+      "cadence": "Quotidien 7h30",
+      "tags": [
+        "routines",
+        "quotidien",
+        "n8n"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "7h30",
+      "routine_source": "R7"
+    },
+    {
+      "id": "afe83536795f",
+      "type": "routine",
+      "titre": "Le CFO hebdo (R4)",
+      "prompt": "Encaissé, impayés, dépenses, runway — relances préparées, rien d'envoyé.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Lundi 9h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "9h",
+      "routine_source": "R4"
+    },
+    {
+      "id": "048a9a7e74d8",
+      "type": "routine",
+      "titre": "Le board pack (R8)",
+      "prompt": "Le board du mois : chiffres avec formules, décisions, jalon calendrier confirmé.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel (1er)",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "routine_source": "R8"
+    },
+    {
+      "id": "a812b75a2f7b",
+      "type": "routine",
+      "titre": "La revue hebdo business",
+      "prompt": "Le tour des 4 serveurs en lecture seule : la synthèse exécutive du vendredi.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Vendredi 17h",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "heure": "17h"
+    },
+    {
+      "id": "ab40396c5c10",
+      "type": "routine",
+      "titre": "L'épisode de la semaine (R9)",
+      "prompt": "L'épisode préparé : brief, composition, preview — rendu payant et publication à toi.",
+      "mcps": [
+        "huggsfield",
+        "rapidocms"
+      ],
+      "cibles": [
+        "rapido-higgsfield"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "hebdo",
+      "mode": "session",
+      "cadence": "Hebdo",
+      "tags": [
+        "routines",
+        "hebdo",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines",
+      "routine_source": "R9"
+    },
+    {
+      "id": "cd79fbaecb6b",
+      "type": "routine",
+      "titre": "L'audit qui garde le système honnête",
+      "prompt": "Relance l'audit MCP ↔ plugins sur les 4 serveurs : références mortes, outils orphelins — le rapport, et les correctifs si besoin.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "frequence": "mensuel",
+      "mode": "session",
+      "cadence": "Mensuel",
+      "tags": [
+        "routines",
+        "mensuel",
+        "session"
+      ],
+      "collection": "routines",
+      "source": "collection:routines"
     },
     {
       "id": "dec18b7e2405",
