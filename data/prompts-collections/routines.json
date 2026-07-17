@@ -165,7 +165,13 @@
       "source": "collection:routines",
       "heure": "9h",
       "featured": true,
-      "boucle": "207fff8ccc1b"
+      "boucle": "207fff8ccc1b",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "b9643238b899",
@@ -188,7 +194,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "18h30"
+      "heure": "18h30",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "09acb1d61d68",
@@ -211,7 +223,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "10h"
+      "heure": "10h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "722762662c7c",
@@ -233,7 +251,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "d0ccba004e18",
@@ -257,7 +281,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "d2fbcf8100be",
@@ -279,7 +309,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "f84dd68ddba9",
@@ -303,7 +339,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "8h45",
-      "boucle": "6270a70f187b"
+      "boucle": "6270a70f187b",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "142ca03aaf89",
@@ -327,7 +369,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "9h30",
-      "boucle": "a8c728f98f49"
+      "boucle": "a8c728f98f49",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "a3a74417c10f",
@@ -350,7 +398,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "11h"
+      "heure": "11h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "b0cb5952dda4",
@@ -373,7 +427,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "fdf252290c5a"
+      "boucle": "fdf252290c5a",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "6d60a39b2d1e",
@@ -395,7 +455,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "ec3dff706ff2",
@@ -420,7 +486,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "0b8d8089c76f"
+      "boucle": "0b8d8089c76f",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "12bbb81927c6",
@@ -442,7 +514,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "abb46cd64476",
@@ -465,7 +543,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "8h"
+      "heure": "8h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "efdb1bd4c9df",
@@ -489,7 +573,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "9h et 15h",
-      "boucle": "4369b16ae7e5"
+      "boucle": "4369b16ae7e5",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "89c5622d0b6d",
@@ -513,7 +603,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "18h",
-      "boucle": "8546977841f1"
+      "boucle": "8546977841f1",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "22219a7a4c1f",
@@ -536,7 +632,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "23h"
+      "heure": "23h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "4e7b328be6bc",
@@ -559,7 +661,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "c12e27d758f0"
+      "boucle": "c12e27d758f0",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "7376c5d72e3a",
@@ -581,7 +689,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "f6fd0e3251fc",
@@ -605,7 +719,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "ceb959ff59e4"
+      "boucle": "ceb959ff59e4",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "12d457cda66a",
@@ -906,7 +1026,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "3d492d972cf4"
+      "boucle": "3d492d972cf4",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "ef07dfa8fa26"
+        }
+      ]
     }
   ]
 }

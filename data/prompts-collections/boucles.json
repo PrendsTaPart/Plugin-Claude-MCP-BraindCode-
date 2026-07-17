@@ -25,7 +25,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 16
+      "routine_cible_num": 16,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "a8c728f98f49",
@@ -50,7 +56,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 14
+      "routine_cible_num": 14,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "6270a70f187b",
@@ -77,7 +89,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 13
+      "routine_cible_num": 13,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "0b8d8089c76f",
@@ -105,7 +123,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 18
+      "routine_cible_num": 18,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "465d88b44722",
@@ -155,7 +179,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 7
+      "routine_cible_num": 7,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "4b36a460e634",
@@ -182,7 +212,13 @@
         "boucles"
       ],
       "collection": "boucles",
-      "source": "collection:boucles"
+      "source": "collection:boucles",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "179fc170050d",
@@ -211,7 +247,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 27
+      "routine_cible_num": 27,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "dfab830bf622",
@@ -288,7 +330,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 21
+      "routine_cible_num": 21,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "c12e27d758f0",
@@ -313,7 +361,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 24
+      "routine_cible_num": 24,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "ceb959ff59e4",
@@ -337,7 +391,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 26
+      "routine_cible_num": 26,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "8546977841f1",
@@ -362,7 +422,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 22
+      "routine_cible_num": 22,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "3d492d972cf4",
@@ -409,7 +475,13 @@
         "boucles"
       ],
       "collection": "boucles",
-      "source": "collection:boucles"
+      "source": "collection:boucles",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "f47c335cda57"
+        }
+      ]
     }
   ]
 }

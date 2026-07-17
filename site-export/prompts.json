@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "total": 878,
+  "total": 899,
   "cible": 1000,
   "par_type": {
     "skill": 641,
     "agent": 114,
     "routine": 90,
     "boucle": 16,
-    "orchestration": 15,
-    "session": 2
+    "session": 23,
+    "orchestration": 15
   },
   "par_profil": {
-    "restaurateur": 59,
+    "restaurateur": 60,
     "tous": 500,
-    "fondateur": 273,
+    "fondateur": 293,
     "editeur-saas": 46
   },
   "prompts": [
@@ -11550,7 +11550,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 16
+      "routine_cible_num": 16,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "a8c728f98f49",
@@ -11575,7 +11581,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 14
+      "routine_cible_num": 14,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "6270a70f187b",
@@ -11602,7 +11614,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 13
+      "routine_cible_num": 13,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "0b8d8089c76f",
@@ -11630,7 +11648,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 18
+      "routine_cible_num": 18,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "465d88b44722",
@@ -11680,7 +11704,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 7
+      "routine_cible_num": 7,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "4b36a460e634",
@@ -11707,7 +11737,13 @@
         "boucles"
       ],
       "collection": "boucles",
-      "source": "collection:boucles"
+      "source": "collection:boucles",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "179fc170050d",
@@ -11736,7 +11772,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 27
+      "routine_cible_num": 27,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "dfab830bf622",
@@ -11813,7 +11855,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 21
+      "routine_cible_num": 21,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "c12e27d758f0",
@@ -11838,7 +11886,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 24
+      "routine_cible_num": 24,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "ceb959ff59e4",
@@ -11862,7 +11916,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 26
+      "routine_cible_num": 26,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "8546977841f1",
@@ -11887,7 +11947,13 @@
       ],
       "collection": "boucles",
       "source": "collection:boucles",
-      "routine_cible_num": 22
+      "routine_cible_num": 22,
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "3d492d972cf4",
@@ -11934,7 +12000,13 @@
         "boucles"
       ],
       "collection": "boucles",
-      "source": "collection:boucles"
+      "source": "collection:boucles",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "f47c335cda57"
+        }
+      ]
     },
     {
       "id": "e65ffdd6639c",
@@ -12099,7 +12171,13 @@
       "source": "collection:routines",
       "heure": "9h",
       "featured": true,
-      "boucle": "207fff8ccc1b"
+      "boucle": "207fff8ccc1b",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "b9643238b899",
@@ -12122,7 +12200,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "18h30"
+      "heure": "18h30",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "09acb1d61d68",
@@ -12145,7 +12229,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "10h"
+      "heure": "10h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "722762662c7c",
@@ -12167,7 +12257,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "d0ccba004e18",
@@ -12191,7 +12287,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "d2fbcf8100be",
@@ -12213,7 +12315,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "d93b1e03cc0b"
+        }
+      ]
     },
     {
       "id": "f84dd68ddba9",
@@ -12237,7 +12345,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "8h45",
-      "boucle": "6270a70f187b"
+      "boucle": "6270a70f187b",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "142ca03aaf89",
@@ -12261,7 +12375,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "9h30",
-      "boucle": "a8c728f98f49"
+      "boucle": "a8c728f98f49",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "a3a74417c10f",
@@ -12284,7 +12404,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "11h"
+      "heure": "11h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "b0cb5952dda4",
@@ -12307,7 +12433,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "fdf252290c5a"
+      "boucle": "fdf252290c5a",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "6d60a39b2d1e",
@@ -12329,7 +12461,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "ec3dff706ff2",
@@ -12354,7 +12492,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "0b8d8089c76f"
+      "boucle": "0b8d8089c76f",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "12bbb81927c6",
@@ -12376,7 +12520,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "55bda2ddd8b6"
+        }
+      ]
     },
     {
       "id": "abb46cd64476",
@@ -12399,7 +12549,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "8h"
+      "heure": "8h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "efdb1bd4c9df",
@@ -12423,7 +12579,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "9h et 15h",
-      "boucle": "4369b16ae7e5"
+      "boucle": "4369b16ae7e5",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "89c5622d0b6d",
@@ -12447,7 +12609,13 @@
       "collection": "routines",
       "source": "collection:routines",
       "heure": "18h",
-      "boucle": "8546977841f1"
+      "boucle": "8546977841f1",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "22219a7a4c1f",
@@ -12470,7 +12638,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "heure": "23h"
+      "heure": "23h",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "4e7b328be6bc",
@@ -12493,7 +12667,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "c12e27d758f0"
+      "boucle": "c12e27d758f0",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "7376c5d72e3a",
@@ -12515,7 +12695,13 @@
         "session"
       ],
       "collection": "routines",
-      "source": "collection:routines"
+      "source": "collection:routines",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "f6fd0e3251fc",
@@ -12539,7 +12725,13 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "ceb959ff59e4"
+      "boucle": "ceb959ff59e4",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "bcffdc4c755b"
+        }
+      ]
     },
     {
       "id": "12d457cda66a",
@@ -12840,7 +13032,801 @@
       ],
       "collection": "routines",
       "source": "collection:routines",
-      "boucle": "3d492d972cf4"
+      "boucle": "3d492d972cf4",
+      "liens": [
+        {
+          "collection": "sessions-loop",
+          "id": "ef07dfa8fa26"
+        }
+      ]
+    },
+    {
+      "id": "4d93684f2e9c",
+      "type": "session",
+      "titre": "Le tour complet",
+      "prompt": "Pilote mon entreprise : Sense sur les 4 serveurs + n8n, croise les signaux, 3 priorités chiffrées par script, prépare tous les livrables, UNE validation groupée, rapport d'une page avec les IDs.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "transverse",
+      "duree_indicative": "30-45 min",
+      "a_valider": "le lot d'écritures groupé",
+      "phases": {
+        "sense": "Lecture seule des 4 serveurs + n8n : finance, ventes/pipeline, contenus, conformité/resto, exécutions.",
+        "plan": "KPI par script (catalogue-kpi, formules affichées) → 3 priorités chiffrées, chaque action avec son niveau.",
+        "act": "Préparer TOUS les livrables en brouillon (relances, posts, tâches) — une seule validation groupée.",
+        "feed": "Trace datée dans routines-journal.md (fait/décidé/reporté + IDs).",
+        "report": "Une page : chiffres clés | alertes | 3 priorités | ce qui attend ta validation."
+      },
+      "source_skill": "rapido-suite:pilotage-entreprise",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "transverse"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "07328a288455",
+      "type": "session",
+      "titre": "Le pouls en 5 minutes",
+      "prompt": "Business pulse : trésorerie, tendance ventes, pipeline, engagements de la semaine, LA chose à traiter aujourd'hui — une page, lecture seule.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "groupe": "transverse",
+      "duree_indicative": "5 min",
+      "a_valider": "rien",
+      "phases": {
+        "sense": "Trésorerie, tendance ventes, pipeline, engagements de la semaine — lecture seule.",
+        "plan": "Dégager LA chose à traiter aujourd'hui.",
+        "act": "Aucune écriture (niveau 0).",
+        "feed": "Aucune (lecture éphémère).",
+        "report": "Une page pouls."
+      },
+      "source_skill": "rapido-suite:business-pulse",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "transverse"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "871c8c9164f7",
+      "type": "session",
+      "titre": "Le brief du lundi",
+      "prompt": "Monday brief : trésorerie, ventes, pipeline, la semaine à venir, top 3 — rien que la page.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "groupe": "transverse",
+      "duree_indicative": "10 min",
+      "a_valider": "rien",
+      "phases": {
+        "sense": "Trésorerie, ventes, pipeline, semaine à venir — lecture.",
+        "plan": "Top 3 de la semaine.",
+        "act": "Rien (niveau 0).",
+        "feed": "—",
+        "report": "La page brief."
+      },
+      "source_skill": "rapido-suite:monday-brief",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "transverse"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "8ac935b38ffb",
+      "type": "session",
+      "titre": "La revue du vendredi",
+      "prompt": "Revue hebdo business : le tour des 4 serveurs en lecture seule, la synthèse exécutive, les 3 signaux de la semaine.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "groupe": "transverse",
+      "duree_indicative": "15 min",
+      "a_valider": "rien",
+      "phases": {
+        "sense": "Tour des 4 serveurs en lecture seule.",
+        "plan": "3 signaux de la semaine, synthèse exécutive.",
+        "act": "Rien.",
+        "feed": "—",
+        "report": "Synthèse exécutive du vendredi."
+      },
+      "source_skill": "rapido-suite:revue-hebdo-business",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "transverse"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "b858e6f109a4",
+      "type": "session",
+      "titre": "Le CODIR sans préparation",
+      "prompt": "Prépare mon comité de direction : une page par domaine, les arbitrages inter-domaines proposés, et les slides Canva à la charte.",
+      "mcps": [
+        "canva"
+      ],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "transverse",
+      "duree_indicative": "30 min",
+      "a_valider": "les slides avant export",
+      "phases": {
+        "sense": "Une page de données par domaine (finance/ventes/marketing/équipe/resto).",
+        "plan": "Arbitrages inter-domaines proposés.",
+        "act": "Slides Canva à la charte préparées — validées avant export.",
+        "feed": "Décisions consignées.",
+        "report": "Pack CODIR (une page/domaine + slides)."
+      },
+      "source_skill": "rapido-suite:comite-de-direction",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "transverse"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "9a7ef84a6aa8",
+      "type": "session",
+      "titre": "La journée du dirigeant",
+      "prompt": "Ma journée : emails triés avec brouillons de réponse, agenda triple (Calendar + CRM + resto), alertes business et n8n — une page, 3 priorités.",
+      "mcps": [],
+      "cibles": [
+        "rapido-direction",
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "transverse",
+      "duree_indicative": "10 min",
+      "a_valider": "chaque envoi d'email",
+      "phases": {
+        "sense": "Emails, agenda triple (Calendar + CRM + resto), alertes business et n8n.",
+        "plan": "3 priorités du jour.",
+        "act": "Brouillons de réponse email préparés — chaque envoi validé.",
+        "feed": "—",
+        "report": "Une page journée."
+      },
+      "source_skill": "rapido-direction:journee-du-dirigeant",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "transverse"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "55bda2ddd8b6",
+      "type": "session",
+      "titre": "Le point ventes complet",
+      "prompt": "Pilote mon commercial : hygiène des données, relances devis/impayés, conversion, encaissement — priorisé valeur × probabilité × urgence, actions préparées, validation groupée, rapport.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "domaine",
+      "duree_indicative": "25 min",
+      "a_valider": "relances + écritures CRM",
+      "phases": {
+        "sense": "Hygiène des données CRM, devis/impayés, RDV, conversion, encaissement.",
+        "plan": "Priorisation valeur × probabilité × urgence.",
+        "act": "Relances et écritures CRM préparées — validation groupée.",
+        "feed": "Journal commercial daté (IDs).",
+        "report": "Rapport ventes une page."
+      },
+      "source_skill": "rapidocrm:pilotage-commercial",
+      "liens": [
+        {
+          "collection": "routines",
+          "id": "f84dd68ddba9"
+        },
+        {
+          "collection": "routines",
+          "id": "142ca03aaf89"
+        },
+        {
+          "collection": "routines",
+          "id": "a3a74417c10f"
+        },
+        {
+          "collection": "routines",
+          "id": "b0cb5952dda4"
+        },
+        {
+          "collection": "routines",
+          "id": "6d60a39b2d1e"
+        },
+        {
+          "collection": "routines",
+          "id": "ec3dff706ff2"
+        },
+        {
+          "collection": "routines",
+          "id": "12bbb81927c6"
+        },
+        {
+          "collection": "boucles",
+          "id": "fdf252290c5a"
+        },
+        {
+          "collection": "boucles",
+          "id": "a8c728f98f49"
+        },
+        {
+          "collection": "boucles",
+          "id": "6270a70f187b"
+        },
+        {
+          "collection": "boucles",
+          "id": "0b8d8089c76f"
+        }
+      ],
+      "tags": [
+        "sessions-loop",
+        "domaine"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "d93b1e03cc0b",
+      "type": "session",
+      "titre": "Le point marketing",
+      "prompt": "Pilote mon marketing : KPI, pipeline de contenus, campagnes et pubs, priorisation ICE, délégation aux machines, rapport une page.",
+      "mcps": [
+        "rapidocms",
+        "facebook-ads"
+      ],
+      "cibles": [
+        "rapido-marketing",
+        "rapido-meta-ads"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "domaine",
+      "duree_indicative": "25 min",
+      "a_valider": "tout envoi/activation",
+      "phases": {
+        "sense": "KPI marketing, pipeline de contenus, campagnes et pubs.",
+        "plan": "Priorisation ICE.",
+        "act": "Délégation aux machines préparée — tout envoi/activation validé.",
+        "feed": "Journal marketing.",
+        "report": "Rapport marketing une page."
+      },
+      "source_skill": "rapido-marketing:pilotage-marketing",
+      "liens": [
+        {
+          "collection": "routines",
+          "id": "c35e4336c323"
+        },
+        {
+          "collection": "routines",
+          "id": "b9643238b899"
+        },
+        {
+          "collection": "routines",
+          "id": "09acb1d61d68"
+        },
+        {
+          "collection": "routines",
+          "id": "722762662c7c"
+        },
+        {
+          "collection": "routines",
+          "id": "d0ccba004e18"
+        },
+        {
+          "collection": "routines",
+          "id": "d2fbcf8100be"
+        },
+        {
+          "collection": "boucles",
+          "id": "207fff8ccc1b"
+        },
+        {
+          "collection": "boucles",
+          "id": "4b36a460e634"
+        },
+        {
+          "collection": "boucles",
+          "id": "179fc170050d"
+        }
+      ],
+      "tags": [
+        "sessions-loop",
+        "domaine"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "2e3ca5a59ac0",
+      "type": "session",
+      "titre": "Le point SEO",
+      "prompt": "Pilote mon SEO : audit technique, positions et striking distance, netlinking, tendances — priorisé par impact, actions routées.",
+      "mcps": [
+        "rapidocms"
+      ],
+      "cibles": [
+        "rapido-seo"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "domaine",
+      "duree_indicative": "20 min",
+      "a_valider": "les modifications de contenu",
+      "phases": {
+        "sense": "Audit technique, positions et striking distance, netlinking, tendances.",
+        "plan": "Priorisation par impact.",
+        "act": "Actions de contenu routées — modifications validées.",
+        "feed": "Journal SEO.",
+        "report": "Rapport SEO priorisé."
+      },
+      "source_skill": "rapido-seo:pilotage-seo",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "domaine"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "188518a05d73",
+      "type": "session",
+      "titre": "Le point service client",
+      "prompt": "Pilote mon support : tickets par priorité vs SLA, réclamations, problèmes récurrents consolidés — réponses préparées.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [
+        "rapido-relation-client"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "domaine",
+      "duree_indicative": "15 min",
+      "a_valider": "chaque réponse client",
+      "phases": {
+        "sense": "Tickets par priorité vs SLA, réclamations, problèmes récurrents.",
+        "plan": "Consolidation des récurrences.",
+        "act": "Réponses préparées — chaque réponse client validée.",
+        "feed": "Journal support.",
+        "report": "Rapport support une page."
+      },
+      "source_skill": "rapido-relation-client:pilotage-service-client",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "domaine"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "bcffdc4c755b",
+      "type": "session",
+      "titre": "Le point restaurant",
+      "prompt": "Fais le point complet du restaurant : conformité du jour, salle et réservations, marges de la semaine, stocks et productions, avis récents — les 3 décisions à prendre.",
+      "mcps": [
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "restaurateur",
+      "autonomie": 1,
+      "groupe": "domaine",
+      "duree_indicative": "15 min",
+      "a_valider": "commandes et réponses aux avis",
+      "phases": {
+        "sense": "Conformité du jour, salle et réservations, marges de la semaine, stocks/productions, avis récents.",
+        "plan": "Les 3 décisions à prendre.",
+        "act": "Commandes et réponses aux avis préparées — validées.",
+        "feed": "Journal resto.",
+        "report": "Point restaurant (3 décisions)."
+      },
+      "source_skill": "foodeatup:briefing-du-jour",
+      "liens": [
+        {
+          "collection": "routines",
+          "id": "abb46cd64476"
+        },
+        {
+          "collection": "routines",
+          "id": "efdb1bd4c9df"
+        },
+        {
+          "collection": "routines",
+          "id": "89c5622d0b6d"
+        },
+        {
+          "collection": "routines",
+          "id": "22219a7a4c1f"
+        },
+        {
+          "collection": "routines",
+          "id": "4e7b328be6bc"
+        },
+        {
+          "collection": "routines",
+          "id": "7376c5d72e3a"
+        },
+        {
+          "collection": "routines",
+          "id": "f6fd0e3251fc"
+        },
+        {
+          "collection": "boucles",
+          "id": "4369b16ae7e5"
+        },
+        {
+          "collection": "boucles",
+          "id": "c12e27d758f0"
+        },
+        {
+          "collection": "boucles",
+          "id": "ceb959ff59e4"
+        },
+        {
+          "collection": "boucles",
+          "id": "8546977841f1"
+        }
+      ],
+      "tags": [
+        "sessions-loop",
+        "domaine"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "f52ecb96bee0",
+      "type": "session",
+      "titre": "La boîte apprend qui je suis",
+      "prompt": "Onboarding entreprise : interviewe-moi et construis ma base de connaissance complète (les 8 fichiers) — c'est elle que tous les agents liront ensuite.",
+      "mcps": [],
+      "cibles": [
+        "rapido-suite"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "chantier",
+      "duree_indicative": "45-60 min",
+      "a_valider": "chaque fichier de la KB",
+      "phases": {
+        "sense": "Interview guidée du dirigeant (activité, offre, cibles, charte, process…).",
+        "plan": "Structurer les 8 fichiers de la base de connaissance.",
+        "act": "Écrire chaque fichier KB — chacun validé.",
+        "feed": "KB versionnée dans ./rapido-kb/.",
+        "report": "KB complète (8 fichiers) prête pour tous les agents."
+      },
+      "source_skill": "rapido-suite:onboarding-entreprise",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "chantier"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "4635e82f0fba",
+      "type": "session",
+      "titre": "Le lancement de A à Z",
+      "prompt": "Lancement projet 360 pour {idée} : méthodologie puis exécution en 5 actes — validation entre chaque acte, rien ne s'enchaîne sans moi.",
+      "mcps": [],
+      "cibles": [
+        "rapido-forge",
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "chantier",
+      "duree_indicative": "plusieurs sessions",
+      "a_valider": "chaque acte",
+      "phases": {
+        "sense": "Cadrage de l'idée {idée}.",
+        "plan": "Méthodologie puis 5 actes d'exécution.",
+        "act": "Exécuter acte par acte — validation entre chaque acte.",
+        "feed": "Journal de lancement.",
+        "report": "État d'avancement par acte."
+      },
+      "source_skill": "rapido-suite:lancement-projet-360",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "chantier"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "5e2cd1caa8f9",
+      "type": "session",
+      "titre": "Le client signé, l'entreprise prête",
+      "prompt": "Onboarding client 360 pour {client} : CRM, CMS, RH orchestrés de bout en bout — récap groupé avant les écritures.",
+      "mcps": [
+        "rapidocrm",
+        "rapidocms",
+        "rapidorh"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "chantier",
+      "duree_indicative": "20 min",
+      "a_valider": "le lot d'écritures",
+      "phases": {
+        "sense": "Données du client signé (CRM/CMS/RH).",
+        "plan": "Orchestration de bout en bout (entreprise, projet, comptes).",
+        "act": "Écritures CRM+CMS+RH — récap groupé avant le lot.",
+        "feed": "Mapping objets ↔ IDs.",
+        "report": "Client prêt (récap des IDs)."
+      },
+      "source_skill": "rapido-suite:onboarding-client-360",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "chantier"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "3cbdd7ab2926",
+      "type": "session",
+      "titre": "Le dossier fondateur",
+      "prompt": "Dossier startup 360 : structure vision, persona, marché, offre, pitch — publié dans la bibliothèque et les projets.",
+      "mcps": [
+        "rapidocms",
+        "rapidorh"
+      ],
+      "cibles": [
+        "rapido-suite"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "chantier",
+      "duree_indicative": "45 min",
+      "a_valider": "chaque document",
+      "phases": {
+        "sense": "Vision, persona, marché, offre, pitch.",
+        "plan": "Structurer le dossier fondateur.",
+        "act": "Publier chaque document (bibliothèque + projets) — chacun validé.",
+        "feed": "Dossier versionné.",
+        "report": "Dossier 360 publié."
+      },
+      "source_skill": "rapido-suite:dossier-startup-360",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "chantier"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "9c52009e8cee",
+      "type": "session",
+      "titre": "Le business plan en interview",
+      "prompt": "Mène l'interview business plan en 9 phases pour {projet} et construis le dossier complet, prévisionnel compris — formules affichées.",
+      "mcps": [],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "chantier",
+      "duree_indicative": "60-90 min",
+      "a_valider": "chaque phase validée",
+      "phases": {
+        "sense": "Interview 9 phases pour {projet}.",
+        "plan": "Hypothèses sourcées, prévisionnel (formules affichées).",
+        "act": "Construire le dossier complet — chaque phase validée.",
+        "feed": "hypotheses.md + business-plan/.",
+        "report": "Business plan + prévisionnel."
+      },
+      "source_skill": "rapido-startup:interview-business-plan",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "chantier"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "43cabd131334",
+      "type": "session",
+      "titre": "Du plan à l'exécution",
+      "prompt": "Prends mon business plan et crée le projet d'exécution : toutes les tâches de création et de gestion, prêtes dans le Kanban.",
+      "mcps": [
+        "rapidorh"
+      ],
+      "cibles": [
+        "rapido-startup"
+      ],
+      "profil": "fondateur",
+      "autonomie": 2,
+      "groupe": "chantier",
+      "duree_indicative": "20 min",
+      "a_valider": "la création des tâches",
+      "phases": {
+        "sense": "Lecture du business plan (./rapido-kb/startup/business-plan/).",
+        "plan": "WBS adapté (vertical/équipe/budget), présenté avant écriture.",
+        "act": "Créer les tâches Kanban (IDs réels) — création validée.",
+        "feed": "plan-execution.md (mapping tâche ↔ ID).",
+        "report": "Projet d'exécution prêt (récap IDs)."
+      },
+      "source_skill": "rapido-startup:plan-execution-startup",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "chantier"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "f1a73e34cd79",
+      "type": "session",
+      "titre": "Est-ce que je peux payer les salaires ?",
+      "prompt": "Cash-flow snapshot : projection 30/60/90 jours avec bandes de confiance et risques NOMMÉS, depuis les encaissements/décaissements réels.",
+      "mcps": [
+        "rapidocrm",
+        "foodeatup"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 0,
+      "groupe": "decision",
+      "duree_indicative": "10 min",
+      "a_valider": "rien — c'est une lecture",
+      "phases": {
+        "sense": "Encaissements/décaissements réels.",
+        "plan": "Projection 30/60/90 j avec bandes de confiance, risques nommés.",
+        "act": "Aucune écriture (lecture).",
+        "feed": "—",
+        "report": "Snapshot de trésorerie (30/60/90 j)."
+      },
+      "source_skill": "rapido-suite:cash-flow-snapshot",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "decision"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "5e859be3ce57",
+      "type": "session",
+      "titre": "Qui me doit de l'argent, et on fait quoi",
+      "prompt": "Invoice chase : les impayés classés, le ton gradué par client, les relances prêtes — j'envoie après lecture.",
+      "mcps": [
+        "rapidocrm"
+      ],
+      "cibles": [],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "decision",
+      "duree_indicative": "10 min",
+      "a_valider": "chaque envoi",
+      "phases": {
+        "sense": "Impayés classés (ancienneté, historique).",
+        "plan": "Ton gradué par client.",
+        "act": "Relances prêtes — chaque envoi validé.",
+        "feed": "Journal de relance (anti-double).",
+        "report": "Liste des impayés + relances prêtes."
+      },
+      "source_skill": "rapidocrm:devis-facture-relance",
+      "liens": [],
+      "tags": [
+        "sessions-loop",
+        "decision"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "f47c335cda57",
+      "type": "session",
+      "titre": "Le tribunal des routines",
+      "prompt": "Passe toutes mes routines au tribunal : utilisée, utile, coûteuse — verdicts proposés, je tranche routine par routine.",
+      "mcps": [],
+      "cibles": [
+        "rapido-startup",
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "decision",
+      "duree_indicative": "20 min",
+      "a_valider": "chaque verdict",
+      "phases": {
+        "sense": "Journal des routines (occurrences), KPI de fiche, coûts.",
+        "plan": "Utilisée ? utile ? coûteuse ? par routine.",
+        "act": "Verdicts proposés (garder/ajuster/suspendre) — chaque verdict tranché par toi.",
+        "feed": "routines-journal.md.",
+        "report": "Tribunal : verdict par routine."
+      },
+      "source_skill": "rapido-startup:amelioration-des-routines",
+      "liens": [
+        {
+          "collection": "boucles",
+          "id": "bd79311de074"
+        }
+      ],
+      "tags": [
+        "sessions-loop",
+        "decision"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
+    },
+    {
+      "id": "ef07dfa8fa26",
+      "type": "session",
+      "titre": "Le système est-il encore honnête ?",
+      "prompt": "Relance l'audit MCP ↔ plugins sur les 4 serveurs : références mortes, outils dormants, deltas — le rapport et les correctifs proposés.",
+      "mcps": [],
+      "cibles": [
+        "tous"
+      ],
+      "profil": "fondateur",
+      "autonomie": 1,
+      "groupe": "decision",
+      "duree_indicative": "20 min",
+      "a_valider": "chaque correctif",
+      "phases": {
+        "sense": "Audit MCP ↔ plugins sur les 4 serveurs (scripts/audit_mcp_plugin.py + docs/inventaires).",
+        "plan": "Références mortes, outils dormants, deltas.",
+        "act": "Correctifs proposés — chaque correctif validé.",
+        "feed": "docs/audits/.",
+        "report": "Rapport d'audit + correctifs proposés."
+      },
+      "source_skill": "scripts/audit_mcp_plugin.py (harnais d'audit)",
+      "liens": [
+        {
+          "collection": "routines",
+          "id": "cd79fbaecb6b"
+        }
+      ],
+      "tags": [
+        "sessions-loop",
+        "decision"
+      ],
+      "collection": "sessions-loop",
+      "source": "collection:sessions-loop"
     },
     {
       "id": "dec18b7e2405",
