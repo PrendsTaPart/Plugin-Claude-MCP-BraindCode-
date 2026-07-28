@@ -52,6 +52,11 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
 6. **Plan de nettoyage** — le contrôle du jour inclut désormais le nettoyage :
    - `list_cleaning_zones` (`establishment_id`) : zones et leurs POSTES de
      nettoyage — c'est le référentiel de ce qui est attendu ;
+   - référentiel incomplet ? `create_cleaning_zone` ajoute une zone et ses
+     postes (paramétrage : à faire UNE fois, sur description de l'utilisateur,
+     pas pendant le rush) ; de même `create_equipment` déclare un nouvel
+     équipement froid AVANT son premier relevé (`add_temperature` exige un
+     `equipment_id` existant) ;
    - pour chaque poste que l'utilisateur CONFIRME avoir nettoyé,
      `record_cleaning_action` (`establishment_id`, `poste_nettoyage_id` — l'ID
      du POSTE, pas de la zone ; `statut` défaut `complete`, `commentaires`
@@ -66,6 +71,9 @@ description: Utiliser quand l'utilisateur parle de relevé de température, HACC
    - `list_haccp_tracabilite` (`status` « complété » / « non complété ») :
      signaler les enregistrements NON complétés — c'est un trou de
      traçabilité en cas de contrôle ;
+   - `complete_haccp_tracabilite` (`tracabilite_id`) : clore un enregistrement
+     ouvert quand l'utilisateur CONFIRME les informations manquantes — avec la
+     date réelle de l'acte, jamais une complétion de complaisance ;
    - `list_haccp_labels` (`status` ∈ created, printed, validated, used) :
      le registre des étiquettes DLC émises (créées mais jamais imprimées =
      à signaler).

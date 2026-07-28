@@ -7,8 +7,8 @@ satellites — via des **skills métier**, des **personas experts** et des
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-26-blue)
-![Skills](https://img.shields.io/badge/skills-397-brightgreen)
-![Agents](https://img.shields.io/badge/agents-41-orange)
+![Skills](https://img.shields.io/badge/skills-401-brightgreen)
+![Agents](https://img.shields.io/badge/agents-42-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -119,7 +119,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.7.0 | 18 | 4 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
+| `foodeatup` | 1.8.0 | 22 | 5 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
 | `foodeatup-boucles` | 0.1.0 | 10 | 3 | foodeatup, rapidocrm | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
 | `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
@@ -146,7 +146,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 26 plugins, 397 skills, 41 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 26 plugins, 401 skills, 42 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).

@@ -33,6 +33,10 @@ avant d'écrire — jamais les 4 sur un seul accord.
    - Vérifier l'existant d'abord : `list_dishes` + `list_categories` —
      `import_storefront_menu` est IDEMPOTENT sur les NOMS (reprendre les noms
      exacts, sinon doublons).
+   - Catalogue produits (stock/achats, distinct de la carte) : `create_category`
+     / `update_category` pour les familles de produits, `list_units` pour les
+     unités de mesure disponibles (kg, L, pièce…) — les référentiels se posent
+     ici, avant les premiers produits et ingrédients.
    - Faire valider l'arborescence complète (catégories + plats + prix +
      formules), puis UN SEUL appel : `import_storefront_menu`
      (`establishment_id`, `categories`, `formules`).

@@ -55,6 +55,10 @@ confirme l'envoi.
    commande en cours depuis plus que le seuil maison
    (`./rapido-kb/processus-internes.md`, défaut 15 min) : « ⏱ table 7
    attend depuis 18 min ». Proposer l'action, ne pas la décider.
+6. **Charge par poste** — `get_station_load` (`establishment_id`) : la file
+   de chaque poste (grill, froid, pâtisserie…). Un poste qui déborde pendant
+   que les autres respirent = proposer de re-séquencer les lancements, pas
+   d'empiler. À lire avant d'annoncer un temps d'attente à la salle.
 
 ## Mode coup de feu
 

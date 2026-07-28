@@ -17,6 +17,8 @@ tokens** de la marque — pont `rapido-design`/`rapido-lovable`. Rien d'inventé
 
 ## 1. Structure & contenu
 
+- `get_site_pages` : la liste des pages du site avec leur état
+  (publiée/brouillon) — le sommaire à lire avant de naviguer page par page.
 - `get_page_content` (`page_slug`) : relire une page (sections + props) avant de la
   modifier.
 - `toggle_site_page` (paramètres `page_slug` + publier/dépublier) : bascule **une** page.

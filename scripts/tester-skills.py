@@ -230,6 +230,13 @@ TESTS_HOOKS_EXTRAS = {
     ],
     # foodeatup — argent/points/public sensibles ajoutés au matcher (série SYNC S1)
     ("foodeatup", "garde-destructif.py"): [
+        # envois réels et réécritures de carte ajoutés au matcher (couverture campagnes)
+        ({"tool_name": "mcp__foodeatup__launch_campaign",
+          "tool_input": {"campaign_id": 1}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__submit_whatsapp_template",
+          "tool_input": {"template_id": 1}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__import_storefront_menu",
+          "tool_input": {"establishment_id": 1}}, "ask"),
         ({"tool_name": "mcp__foodeatup__adjust_points",
           "tool_input": {"email": "x@y.z", "points": 100, "motif": "geste"}}, "ask"),
         ({"tool_name": "mcp__foodeatup__record_pos_payment",
