@@ -25,3 +25,6 @@ repos-audit/
 # Sorties de tests éphémères
 *.tmp
 tests/tmp/
+
+# Journaux locaux des hooks (garde-fou et écritures MCP du plugin foodeatup-boucles)
+.claude/logs/

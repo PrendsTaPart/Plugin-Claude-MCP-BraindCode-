@@ -28,6 +28,15 @@ jobs:
       - name: Batterie de tests skills/agents/hooks (tester-skills.py)
         run: python3 scripts/tester-skills.py
 
+      - name: Contrôles supplémentaires P5.1 (similarité, secrets, outils MCP, carto, carte)
+        run: python3 scripts/controles-supplementaires.py
+
+      - name: Carte marketplace à jour (generer-carte-boucles.py, échoue si plugin non classé)
+        run: |
+          python3 scripts/generer-carte-boucles.py
+          git diff --exit-code foodeatup-boucles/reference/carte-marketplace.md \
+            || { echo "carte-marketplace.md obsolète : relancer scripts/generer-carte-boucles.py et commiter"; exit 1; }
+
       - name: Catalogue forge (graphe de prérequis sans cycle)
         run: python3 scripts/forge_catalogue.py --check
 
