@@ -34,6 +34,12 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
 3. **Ajouter au pipeline** — `ajouter_prospect_pipeline` avec `entreprise_id` OU
    `contact_id` (pipeline par défaut si `pipeline_id` absent ; `etape_id` pour une
    étape précise).
+   - Fiche à créer directement (client apporté, partenaire — pas un prospect
+     entrant) : `create_entreprise` / `create_contact` après dédoublonnage
+     (étape 2), jamais en remplacement du flux `enregistrer_prospect`.
+   - Capture entrante : `create_formulaire` crée le formulaire de collecte
+     (champs validés par l'utilisateur) dont les soumissions
+     (`get_formulaire_soumissions`) alimentent ensuite ce workflow.
 4. **Assigner un responsable** — renseigner `responsable_id` dans
    `ajouter_prospect_pipeline` (retrouver l'ID via `list_commerciaux`). Si aucun
    responsable n'est indiqué, demander à l'utilisateur plutôt que d'assigner au hasard.

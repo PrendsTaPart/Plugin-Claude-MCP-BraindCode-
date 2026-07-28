@@ -1,5 +1,29 @@
 # Changelog — plugin rapidocrm
 
+## 1.8.0 — 2026-07-28 — couverture complète des 110 outils MCP (agent vocal, catalogue produits)
+
+- **2 nouveaux skills** : `agent-vocal-crm` (configuration de l'agent vocal,
+  appels réels et tournées de prospection vocale TOUJOURS confirmés, plages
+  légales de démarchage), `catalogue-produits-crm` (référentiel
+  produits/services qui alimente devis et factures).
+- **Nouvel agent** `commercial-vocal` (pilote de l'agent vocal : script,
+  ciblage, conformité, débrief — jamais d'appel sans confirmation humaine).
+- Skills existants complétés : `list_segments` + `get_contacts_segment`
+  (campagne-marketing), `create_sondage` + `create_jeu_concours`
+  (animation-client — la création est désormais exposée par le serveur),
+  `create_contact`/`create_entreprise`/`create_formulaire`
+  (prospection-pipeline), `list_rdvs` (agenda-rdv), `create_user`
+  (performance-commerciale).
+- **Garde-fou renforcé** : send_email, send_sms, send_newsletter,
+  schedule_email, schedule_sms, lancer_campagne, appeler_entreprise_vocal,
+  prospecter_et_appeler_vocal et enregistrer_tous_prospects ajoutés au
+  matcher PreToolUse (envois et appels réels → confirmation) + 5 tests.
+- CI : catalogue rapidocrm chargé depuis la liste versionnée live
+  docs/inventaires/rapidocrm-tools-live.txt (110 outils ; l'embarqué en
+  connaissait 103), contrôle d'outils inexistants étendu à rapidocrm/.
+- Bilan : les 110 outils du serveur MCP live ont un mode d'emploi
+  opérationnel dans le plugin (0 outil non couvert).
+
 ## 1.7.0 — 2026-07-15 — vente terrain opérationnelle (pont forge → ops)
 
 - **5 skills** appliquant les méthodes forge aux **données MCP réelles** (pont

@@ -19,7 +19,7 @@ Phrases qui déclenchent le bon skill :
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `rapidocrm` | 1.7.0 | 29 | RapidoCRM : prospection, pipeline, campagnes marketing, devis/factures, communication client, performance commerciale — avec agents direc… |
+| `rapidocrm` | 1.8.0 | 31 | RapidoCRM : prospection, pipeline, campagnes marketing, devis/factures, communication client, performance commerciale — avec agents direc… |
 | `rapido-relation-client` | 0.2.0 | 6 | (bêta) Service client, fidélité et santé client en boucle : SLA, CSAT/NPS, health score, sauvetages et 100 premiers jours — orchestré sur… |
 | `rapido-gmaps` | 0.5.0 | 4 | Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS auto-h… |
 

@@ -38,12 +38,12 @@ RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Les catalogues vivent côté serveur : ces listes servent aux AVERTISSEMENTS,
 # jamais à un échec bloquant.
 
-def _charger_catalogue_foodeatup():
-    chemin = os.path.join(RACINE, "docs", "inventaires", "foodeatup-tools-live.txt")
+def _charger_catalogue_live(fichier, minimum):
+    chemin = os.path.join(RACINE, "docs", "inventaires", fichier)
     with open(chemin, encoding="utf-8") as f:
         outils = {l.strip() for l in f if l.strip() and not l.startswith("#")}
-    if len(outils) < 100:
-        raise SystemExit(f"catalogue foodeatup suspect : {len(outils)} outils dans {chemin}")
+    if len(outils) < minimum:
+        raise SystemExit(f"catalogue suspect : {len(outils)} outils dans {chemin}")
     return outils
 
 
@@ -51,31 +51,9 @@ CATALOGUE = {
     # foodeatup : chargé depuis la liste versionnée live (177 outils, 2026-07-28).
     # Mode fermé : si le fichier manque, on échoue bruyamment plutôt que de
     # valider contre une liste vide.
-    "foodeatup": _charger_catalogue_foodeatup(),
-    "rapidocrm": set("""ajouter_prospect_pipeline close_opportunity create_campagne
-create_commercial create_contact create_contrat create_contrat_template create_depense
-create_devis create_editor_template create_entreprise create_evenement create_facture
-create_product create_rdv create_segment create_task create_template_email
-create_template_sms create_user delete_commercial delete_contact delete_contrat
-delete_contrat_template delete_editor_template delete_entreprise delete_product
-delete_template_email delete_template_sms deplacer_prospect_etape enregistrer_prospect
-enregistrer_tous_prospects get_commercial get_contact get_contacts_segment get_contrat
-get_conversion_par_canal get_dashboard_general_stats get_dashboard_kpis get_entreprise
-get_facture get_formulaire_soumissions get_historique_prospect get_interaction_stats
-get_loyalty_points get_pipeline get_product get_revenue_summary get_sondage_resultats
-get_stats_campagne get_stats_pipeline get_stats_pipeline_global get_template
-get_today_schedule get_top_clients get_user get_user_performance lancer_campagne
-lancer_jeu_concours_entreprise lancer_sondage_entreprise list_campagnes
-list_commerciaux list_contacts list_contrat_templates list_contrats list_cta
-list_depenses list_devis list_editor_templates list_entreprises list_evenements
-list_factures list_formulaires list_jeux_concours list_newsletters list_products
-list_rdvs list_segments list_sondages list_templates_email list_templates_sms
-list_users log_activity prospecter_entreprise prospecter_maps prospecter_prospect
-recalculer_segment rechercher_entreprise_siret rechercher_prospects schedule_email
-schedule_sms search_entreprises send_email send_newsletter send_sms
-set_commercial_status update_commercial_objectifs update_commercial_profil
-update_contact update_contrat_status update_contrat_template update_entreprise
-update_product""".split()),
+    "foodeatup": _charger_catalogue_live("foodeatup-tools-live.txt", 100),
+    # rapidocrm : liste versionnée live (110 outils, 2026-07-28), mode fermé si absente.
+    "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
     "rapidocms": set("""add_asset add_card_page_link add_digital_card add_post_campagne add_prompt
 assign_card_template cancel_schedules_post create_campagne create_draft_tool
 create_post_template delete_campagne delete_card_page_link delete_digital_card
@@ -252,6 +230,17 @@ TESTS_HOOKS_EXTRAS = {
           "tool_input": {"statut": "payee"}}, "ask"),
         ({"tool_name": "mcp__rapidocrm__create_depense",
           "tool_input": {"entreprise_id": 1, "total_ht": 100}}, "ask"),
+        # envois réels et appels vocaux ajoutés au matcher (couverture 110 outils)
+        ({"tool_name": "mcp__rapidocrm__send_email",
+          "tool_input": {"contact_id": 1}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__lancer_campagne",
+          "tool_input": {"campagne_id": 1}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__appeler_entreprise_vocal",
+          "tool_input": {"entreprise_id": 1}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__prospecter_et_appeler_vocal",
+          "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__enregistrer_tous_prospects",
+          "tool_input": {}}, "ask"),
     ],
     # foodeatup-boucles — garde fail-closed : la confirmation vient de l'humain,
     # les champs confirm/confirmed posés par le modèle sont ignorés (audit P2.1).

@@ -150,7 +150,9 @@ RX_TOKEN = re.compile(r"`([a-z][a-z0-9_]{2,})`")
 RX_FORME_OUTIL = re.compile(
     r"^(?:list|get|create|update|delete|add|upsert|check|record|validate|complete|"
     r"confirm|cancel|seat|open|close|launch|submit|toggle|apply|publish|import|"
-    r"adjust|approve|reject|assign|moderate|reply|propose|remove|no)_[a-z0-9_]+$")
+    r"adjust|approve|reject|assign|moderate|reply|propose|remove|no|"
+    r"lancer|enregistrer|deplacer|prospecter|recalculer|rechercher|ajouter|"
+    r"appeler|schedule|send|set|log|search)_[a-z0-9_]+$")
 # auto-test : un outil inventé doit être signalé, un vrai non
 assert RX_FORME_OUTIL.match("delete_wheel_game"), "auto-test OUTILS : forme non reconnue"
 # Les plugins foodeatup* déclarent aussi rapidocrm : leurs outils sont légitimes.
@@ -162,9 +164,11 @@ _ts = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ts)
 AUTRES_SERVEURS = set().union(*(v for k, v in _ts.CATALOGUE.items()
                                 if k != "foodeatup"))
+# rapidocrm/ est contrôlé de la même façon, contre sa propre liste live
+# (chargée par tester-skills) unie aux autres catalogues.
 if live:
     for f in fichiers_suivis():
-        if not (f.startswith(("foodeatup/", "foodeatup-boucles/"))
+        if not (f.startswith(("foodeatup/", "foodeatup-boucles/", "rapidocrm/"))
                 and f.endswith(".md")):
             continue
         if f.endswith("CHANGELOG.md"):

@@ -20,8 +20,11 @@ depuis `cibles-personas.md`. Jamais d'ID inventé : tout part d'un `list_*`.
 1. **Modèles d'abord** : `list_sondages` (avec leurs statistiques de
    participation) pour repérer le MODÈLE à utiliser — ne JAMAIS inventer un
    `modele_sondage_id` (c'est l'ID `sondage_companie.id` renvoyé par la
-   liste). Aucun modèle adapté → le dire, proposer d'en créer un côté
-   interface RapidoCRM (pas d'outil de création de modèle exposé).
+   liste). Aucun modèle adapté → `create_sondage` en crée un (questions
+   validées par l'utilisateur avant écriture) ; même logique côté jeux :
+   `list_jeux_concours` d'abord, `create_jeu_concours` si aucun modèle ne
+   convient (lots et mécanique validés — un jeu créé reste inerte tant qu'il
+   n'est pas lancé).
 2. **Lancer** — `lancer_sondage_entreprise` (`modele_sondage_id` +
    `entreprise_id`, vérifié via `get_entreprise`/`list_entreprises`) —
    APRÈS confirmation avec récapitulatif : modèle, entreprise cible, ce que

@@ -45,7 +45,9 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
 - **Entrée** — `create_commercial` (`nom`, `prenom`, `email` requis ;
   objectifs mensuels `nombre_appel`/`nombre_RDV`/`nombre_contrat`/
   `nombre_email`/`nombre_sms`/`nombre_prospection`, `disponible`) — après
-  récapitulatif confirmé.
+  récapitulatif confirmé. Un compte utilisateur CRM (accès à l'outil, rôle)
+  est distinct de la fiche commercial : `create_user` le crée, sur demande
+  explicite et récapitulé (email, rôle) — jamais en effet de bord.
 - **Profil** — `update_commercial_profil` (`id` requis ; ne passer que les
   champs qui changent).
 - **Sortie** — `delete_commercial` (`id`, **`confirm: true` exigé par le
