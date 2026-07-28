@@ -1,5 +1,26 @@
 # Changelog — plugin foodeatup
 
+## 1.8.0 — 2026-07-28 — couverture complète des 177 outils MCP (campagnes, boissons, recrutement, événements)
+
+- **4 nouveaux skills** : `campagnes-restaurant` (segments RFM, création/lancement
+  confirmé de campagnes, templates WhatsApp, stats réelles, règle des 10 contacts),
+  `boissons-offres-livraison` (carte des boissons, happy hours, zones de livraison),
+  `recrutement-restaurant` (offres d'emploi, candidatures, statuts), `evenements-prives`
+  (demandes de privatisation → faisabilité → devis → réservation → facture).
+- **Nouvel agent** `responsable-evenements` (privatisations de bout en bout,
+  ni caisse ni lancement de campagne).
+- Skills existants complétés avec les outils encore muets : `get_daily_brief`
+  (briefing-du-jour, étape 0), `get_station_load` (coordination-cuisine),
+  `get_loyalty_account` (fidelite-restaurant), `get_site_pages`
+  (site-vitrine-foodeatup), `complete_haccp_tracabilite` + `create_cleaning_zone` +
+  `create_equipment` (haccp-conformite-quotidienne), `create_category` /
+  `update_category` / `list_units` (onboarding-restaurateur).
+- Garde-fou : `launch_campaign`, `submit_whatsapp_template` et
+  `import_storefront_menu` ajoutés au matcher PreToolUse (envois réels /
+  réécriture de carte → confirmation), tests fonctionnels ajoutés.
+- Bilan : les 177 outils du serveur MCP live ont désormais un mode d'emploi
+  opérationnel dans le plugin (0 outil non couvert).
+
 ## 1.7.0 — 2026-07-15 — familles site / caisse / fidélité / avis complètes (série FINITION F3)
 
 - 8 outils parqués **réintrospectés** (schémas réels) et intégrés : `add_site_page`

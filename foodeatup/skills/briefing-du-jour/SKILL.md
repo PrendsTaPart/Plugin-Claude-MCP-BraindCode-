@@ -15,6 +15,10 @@ description: Utiliser quand l'utilisateur demande le briefing du jour, « ma jou
 
 Dérouler dans l'ordre des priorités maison (HACCP > client > rentabilité) :
 
+0. **Cadre du jour — UN appel serveur** — `get_daily_brief`
+   (`establishment_id`) : le brief agrégé côté serveur (alertes du jour,
+   établissement actif). Il ouvre la collecte mais ne la remplace pas — les
+   étapes suivantes vérifient le détail dans chaque registre.
 1. **Notifications non lues** — `list_notifications` (`establishment_id`
    seul ; pas de filtre serveur : filtrer les non lues dans la réponse) —
    elles ouvrent le briefing : ce sont les alertes déposées par le système

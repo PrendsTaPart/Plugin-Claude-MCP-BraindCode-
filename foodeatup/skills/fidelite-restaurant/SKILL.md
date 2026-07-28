@@ -21,6 +21,9 @@ soldes et catalogues viennent des outils, jamais estimés.
   validité des points, points par visite.
 - `list_loyalty_rewards` (catalogue + stock), `list_redemptions` (bons émis/utilisés),
   `list_gift_cards` (cartes vendues, encaissé, soldes).
+- `get_loyalty_account` (`email` du client) : le compte individuel — solde de
+  points réel, historique. TOUJOURS le lire avant d'annoncer un solde à un
+  client ou de proposer un geste (`adjust_points`) : jamais de solde de tête.
 
 ## 2. Configurer / faire évoluer le programme
 
