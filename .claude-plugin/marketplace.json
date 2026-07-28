@@ -22,6 +22,13 @@
       "category": "restaurant"
     },
     {
+      "name": "foodeatup-iris",
+      "source": "./foodeatup-iris",
+      "description": "Iris, l'agent communication : détecte les raisons de publier dans les données d'exploitation FoodEatUp, fabrique visuels (RapidoCMS) et vidéos virales de plats (Higgsfield) — brouillons uniquement, validation humaine obligatoire",
+      "version": "0.1.0",
+      "category": "restaurant"
+    },
+    {
       "name": "rapidocrm",
       "source": "./rapidocrm",
       "description": "CRM : prospection, pipeline, facturation, marketing",

@@ -171,6 +171,8 @@ AUTRES_SERVEURS = set().union(*(v for k, v in _ts.CATALOGUE.items()
 PERIMETRES = [
     (("foodeatup/", "foodeatup-boucles/"), live,
      "outils foodeatup uniquement (plugin découplé de RapidoCRM)"),
+    (("foodeatup-iris/",), live | _ts.CATALOGUE.get("rapidocms", set()),
+     "outils foodeatup + rapidocms (Higgsfield : noms hors motif, non contrôlés)"),
     (("rapidocrm/",), _ts.CATALOGUE.get("rapidocrm", set()) | AUTRES_SERVEURS | live,
      f"liste live rapidocrm + catalogues"),
 ]

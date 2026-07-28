@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-26-blue)
-![Skills](https://img.shields.io/badge/skills-403-brightgreen)
-![Agents](https://img.shields.io/badge/agents-43-orange)
+![Plugins](https://img.shields.io/badge/plugins-27-blue)
+![Skills](https://img.shields.io/badge/skills-409-brightgreen)
+![Agents](https://img.shields.io/badge/agents-44-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -121,6 +121,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 |---|---|---|---|---|---|
 | `foodeatup` | 1.9.0 | 22 | 5 | foodeatup | Gestion restaurant FoodEatUp |
 | `foodeatup-boucles` | 0.2.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
+| `foodeatup-iris` | 0.1.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |
@@ -146,7 +147,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 26 plugins, 403 skills, 43 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 27 plugins, 409 skills, 44 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).

@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__[Rr]apido[Cc][Mm][Ss]__(schedule_draft_tool|cancel_schedules_post|add_post_campagne)|mcp__huggsfield__(generate_video|upscale_video|motion_control|dubbing|tiktok_publish)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-iris.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vérifie le tour qui se termine. Si un contenu Iris a été proposé (visuel, vidéo, post, campagne) sans sa RAISON en une phrase (« Parce que… » fondée sur une donnée FoodEatUp lue), bloque en demandant d'ajouter la raison à chaque proposition. Si une génération payante a été faite sans annonce préalable du coût en crédits, bloque en demandant de récapituler les crédits consommés. Sinon, autorise l'arrêt."
+          }
+        ]
+      }
+    ]
+  }
+}

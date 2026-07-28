@@ -19,7 +19,7 @@ RX_FRONT = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 # en « autres » avec un avertissement : compléter le dico, pas la carte à la main.
 DOMAINES = {
     "Restaurant (FoodEatUp)": {
-        "plugins": ["foodeatup", "foodeatup-boucles"],
+        "plugins": ["foodeatup", "foodeatup-boucles", "foodeatup-iris"],
         "phrases": ["« fais le briefing du jour de mon restaurant »",
                     "« où en sont mes 8 boucles ? »",
                     "« détecte les incohérences entre ma com et mon stock »"],

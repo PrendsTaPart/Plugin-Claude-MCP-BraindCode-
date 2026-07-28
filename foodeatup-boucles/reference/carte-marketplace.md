@@ -9,6 +9,7 @@
 |---|---|---|---|
 | `foodeatup` | 1.9.0 | 22 | Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — … |
 | `foodeatup-boucles` | 0.2.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
+| `foodeatup-iris` | 0.1.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
 
 Phrases qui déclenchent le bon skill :
 - « fais le briefing du jour de mon restaurant »

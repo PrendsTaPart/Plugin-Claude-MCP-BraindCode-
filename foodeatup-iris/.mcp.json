@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "foodeatup": {
+      "type": "http",
+      "url": "https://foodeatup.com/api/mcp"
+    },
     "rapidocms": {
       "type": "http",
       "url": "https://cms.rapidosoftware.com/mcp"

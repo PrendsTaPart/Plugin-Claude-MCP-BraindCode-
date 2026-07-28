@@ -54,6 +54,8 @@ CATALOGUE = {
     "foodeatup": _charger_catalogue_live("foodeatup-tools-live.txt", 100),
     # rapidocrm : liste versionnée live (110 outils, 2026-07-28), mode fermé si absente.
     "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
+    # huggsfield (Higgsfield) : liste versionnée live (81 outils, 2026-07-28).
+    "huggsfield": _charger_catalogue_live("huggsfield-tools-live.txt", 60),
     "rapidocms": set("""add_asset add_card_page_link add_digital_card add_post_campagne add_prompt
 assign_card_template cancel_schedules_post create_campagne create_draft_tool
 create_post_template delete_campagne delete_card_page_link delete_digital_card
@@ -256,6 +258,15 @@ TESTS_HOOKS_EXTRAS = {
           "tool_input": {"confirmed": True}}, "allow"),
         ({"tool_name": "mcp__foodeatup__create_reservation", "tool_input": {}}, "allow"),
         ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
+    ],
+    # foodeatup-iris — jamais de publication auto ; crédits confirmés avant
+    ("foodeatup-iris", "garde-iris.py"): [
+        ({"tool_name": "mcp__rapidocms__schedule_draft_tool", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__huggsfield__tiktok_publish", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__huggsfield__generate_video", "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__huggsfield__generate_video",
+          "tool_input": {"cout_confirme": True}}, "allow"),
+        ({"tool_name": "mcp__foodeatup__list_stocks", "tool_input": {}}, "allow"),
     ],
     # journal d'écritures : jamais bloquant (allow = exit 0 sans décision)
     ("foodeatup-boucles", "journal-ecritures.py"): [
