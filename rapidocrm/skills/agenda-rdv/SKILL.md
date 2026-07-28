@@ -14,7 +14,8 @@ règles pendant toute l'exécution (IDs, confirmations, données, formats, erreu
 
 1. **Consulter l'agenda d'abord** — `get_today_schedule` (`periode` ∈ today |
    tomorrow | week) : rendez-vous et événements existants. TOUJOURS vérifier
-   les conflits de créneau avant de créer un RDV.
+   les conflits de créneau avant de créer un RDV. Au-delà de la semaine ou pour
+   filtrer (par entreprise, par statut), `list_rdvs` donne la liste complète.
 2. **Prendre un RDV** — `create_rdv` (`entreprise_id`, `titre`,
    `date_debut`/`date_fin` au format `YYYY-MM-DD HH:MM:SS`, `type` ∈
    Visioconférence | Téléphonique | Présentiel) :

@@ -1,13 +1,12 @@
 {
   "name": "foodeatup-boucles",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité, comptabilité) et détection des incohérences au croisement gestion × vente",
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"
   },
   "mcp_requis": [
-    "foodeatup",
-    "rapidocrm"
+    "foodeatup"
   ]
 }

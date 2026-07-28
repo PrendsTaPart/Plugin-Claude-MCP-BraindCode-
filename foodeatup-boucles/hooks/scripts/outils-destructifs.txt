@@ -1,5 +1,7 @@
 # Outils MCP destructifs/irréversibles interceptés par garde-destructif-boucles.py.
 # Format : <serveur>:<outil> (serveur en minuscules), un par ligne, # = commentaire.
+# Périmètre : serveur foodeatup uniquement — le plugin est découplé de RapidoCRM
+# (FoodEatUp a ses propres outils CRM : clients, campagnes, WhatsApp, jeux, sondages).
 # Source : docs/boucles-vs-outils.md (colonne « confirm requis »). Si ce fichier
 # est absent ou illisible, le garde-fou BLOQUE toute écriture (mode fermé).
 #
@@ -26,25 +28,3 @@ foodeatup:create_employee_contract
 foodeatup:update_employee_schedule
 foodeatup:moderate_review
 foodeatup:reply_review
-# --- rapidocrm : envois réels (emails, SMS, appels, campagnes)
-rapidocrm:send_email
-rapidocrm:send_sms
-rapidocrm:send_newsletter
-rapidocrm:schedule_email
-rapidocrm:schedule_sms
-rapidocrm:lancer_campagne
-rapidocrm:lancer_jeu_concours_entreprise
-rapidocrm:lancer_sondage_entreprise
-rapidocrm:appeler_entreprise_vocal
-rapidocrm:prospecter_et_appeler_vocal
-# --- rapidocrm : suppressions et imports en masse
-rapidocrm:delete_contact
-rapidocrm:delete_entreprise
-rapidocrm:delete_commercial
-rapidocrm:delete_contrat
-rapidocrm:delete_contrat_template
-rapidocrm:delete_editor_template
-rapidocrm:delete_product
-rapidocrm:delete_template_email
-rapidocrm:delete_template_sms
-rapidocrm:enregistrer_tous_prospects

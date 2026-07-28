@@ -1,12 +1,12 @@
 ---
 name: handle-complaint
-description: Utiliser quand un client se plaint (email, avis, ticket) et qu'il faut traiter la réclamation de bout en bout : contexte récupéré, réponse rédigée, correctif opérationnel proposé. Accepte un email ou un ID de ticket en argument. S'appuie sur les MCP foodeatup/rapidocrm pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand un client se plaint (email, avis, ticket) et qu'il faut traiter la réclamation de bout en bout : contexte récupéré, réponse rédigée, correctif opérationnel proposé. Accepte un email ou un ID de ticket en argument. S'appuie sur le MCP foodeatup pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
 source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 allowed-tools: Read, WebFetch, Bash
 ---
 
-> Nécessite les MCP **foodeatup** ET **rapidocrm** (tous deux déclarés dans
-> le `.mcp.json` du plugin).
+> Nécessite le MCP **foodeatup** (déclaré dans le `.mcp.json` du plugin).
+> Découplé de RapidoCRM : FoodEatUp porte ses propres outils CRM.
 
 ## Adaptation Rapido (lire d'abord)
 
@@ -15,12 +15,12 @@ systématiquement ses outils par les équivalents Rapido :
 
 | Outil cité dans ce skill | Équivalent à utiliser ici |
 |---|---|
-| QuickBooks / PayPal / Square / Stripe (finances, ventes) | FoodEatUp : `finance_summary`, `list_orders`, `list_invoices`, `list_expenses` ; RapidoCRM : `get_revenue_summary`, `list_factures`, `list_depenses` |
-| HubSpot (CRM, pipeline) | RapidoCRM : `get_pipeline`, `get_entreprise`, `get_historique_prospect`, `list_devis`, `log_activity` |
-| Gmail (envoi d'emails) | RapidoCRM : `send_email` / `schedule_email` (confirmation avant envoi) ; ou brouillons via le plugin rapido-direction |
-| Google Drive / Calendar | plugin rapido-direction (`coffre-documents`, agenda) ou RapidoCRM `agenda-rdv` |
+| QuickBooks / PayPal / Square / Stripe (finances, ventes) | FoodEatUp : `finance_summary`, `list_orders`, `list_invoices`, `list_expenses` |
+| HubSpot (CRM, pipeline) | FoodEatUp : `get_client`, `list_clients`, `list_quotes` (devis restaurant) — le pipeline B2B relève du plugin rapidocrm, hors périmètre ici |
+| Gmail (envoi d'emails) | brouillons via le plugin rapido-direction ; réponse à un avis public : `reply_review` (confirmée) |
+| Google Drive / Calendar | plugin rapido-direction (`coffre-documents`, agenda) |
 | Slack (notifications) | pas d'équivalent — restituer dans la conversation, ou notification via un workflow n8n (plugin rapido-n8n) |
-| Zendesk / Shopify | pas d'équivalent direct — support : `log_activity` (CRM) ; vente en ligne : carte vitrine FoodEatUp |
+| Zendesk / Shopify | pas d'équivalent direct — support : noter l'échange sur la fiche client (`update_client`) ; vente en ligne : carte vitrine FoodEatUp |
 | CSV uploads | inutile si les MCP répondent — les données viennent des serveurs |
 
 Les seuils, cadences et benchmarks du skill sont des DÉFAUTS US : les seuils
@@ -45,16 +45,17 @@ Récupérer la plainte :
 
 ## Step 2 — Pull context
 
-1. Historique client : RapidoCRM (`get_contact`, `get_historique_prospect`,
-   `get_loyalty_points`) et/ou FoodEatUp (`get_client` + `list_orders` du client).
+1. Historique client : FoodEatUp — `get_client`, `list_orders` du client,
+   `get_loyalty_account` (ancienneté, points, gestes déjà faits).
 2. Commande concernée : FoodEatUp `list_orders` / `get_order` (statut), `list_invoices`
    (paiement/avoir) — pas de PayPal/Stripe dans cet écosystème.
 3. Summarize: "This is a {new/returning} customer, ${lifetime_value} in purchases, {0/N} prior complaints. Their current issue is {one sentence}."
 
 ## Step 3 — Draft response
 
-Pour une réponse au ton juste, s'appuyer sur `rapidocrm:draft-response` (situations
-client délicates). Sinon, rédiger directement :
+Pour une réponse au ton juste, si le plugin rapidocrm est installé, son skill
+`draft-response` (situations client délicates) peut aider. Sinon, rédiger
+directement :
 
 1. Draft a reply matched to the severity and the customer's history:
    - First-time complainers with high LTV → empathetic, generous
@@ -66,7 +67,7 @@ client délicates). Sinon, rédiger directement :
 ## Step 4 — Suggest operational fix
 
 1. Vérifier si la plainte recoupe un thème connu (plaintes similaires déjà tracées dans
-   le CRM via `log_activity`, ou notes `./rapido-kb/`).
+   la fiche client (`update_client`), ou notes `./rapido-kb/`).
 2. If it's a pattern: "This is the {Nth} complaint about {issue} this month. Consider: {specific operational change}."
 3. If it's isolated: "This looks like a one-off. No pattern detected."
 

@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__rapidocrm__(delete_.*|update_invoice_status|update_contrat_status|close_opportunity|lancer_sondage_entreprise|lancer_jeu_concours_entreprise|create_depense)",
+        "matcher": "mcp__rapidocrm__(delete_.*|update_invoice_status|update_contrat_status|close_opportunity|lancer_sondage_entreprise|lancer_jeu_concours_entreprise|create_depense|send_email|send_sms|send_newsletter|schedule_email|schedule_sms|lancer_campagne|appeler_entreprise_vocal|prospecter_et_appeler_vocal|enregistrer_tous_prospects)",
         "hooks": [
           {
             "type": "command",

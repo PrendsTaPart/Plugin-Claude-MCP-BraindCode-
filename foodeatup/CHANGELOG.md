@@ -1,5 +1,21 @@
 # Changelog — plugin foodeatup
 
+## 1.9.0 — 2026-07-28 — découplage RapidoCRM : FoodEatUp utilise SES outils CRM
+
+- **RapidoCRM retiré** de `.mcp.json` et de `mcp_requis` : FoodEatUp expose ses
+  propres outils CRM (clients, segments RFM, campagnes, WhatsApp, jeux,
+  sondages) — les outils RapidoCRM ne sont plus connectés à ce plugin, ce qui
+  supprime les conflits de routage entre les deux serveurs.
+- Skills réécrits en FoodEatUp-only : `handle-complaint` (historique via
+  `get_client`/`get_loyalty_account`, notes via `update_client`),
+  `margin-analyzer` + gotchas (une seule source de CA, périmètre explicite),
+  `price-check`, `fidelite-restaurant` (croisement CRM retiré, renvoi vers
+  `campagnes-restaurant`), `site-vitrine-foodeatup` (leads convertis via
+  `create_client`, plus de routage CRM), agent `gerant-digital`.
+- Les renvois « → plugin rapidocrm » restent (routage anti-conflit), mais plus
+  aucun OUTIL CRM n'est cité : contrôlé en CI (périmètre strict
+  foodeatup*/ = outils foodeatup uniquement, controles-supplementaires.py).
+
 ## 1.8.0 — 2026-07-28 — couverture complète des 177 outils MCP (campagnes, boissons, recrutement, événements)
 
 - **4 nouveaux skills** : `campagnes-restaurant` (segments RFM, création/lancement

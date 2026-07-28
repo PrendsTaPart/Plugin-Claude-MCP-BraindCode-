@@ -3,6 +3,10 @@
     "rapidocms": {
       "type": "http",
       "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "huggsfield": {
+      "type": "http",
+      "url": "${HIGGSFIELD_MCP_URL}"
     }
   }
 }

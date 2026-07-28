@@ -13,12 +13,15 @@ contenu visible (templates, contenus de campagne).
 
 ## Workflow
 
-1. **Créer le segment cible** — `create_segment` (`nom` requis ; filtres
+1. **Créer le segment cible** — `list_segments` D'ABORD (réutiliser un segment
+   existant avant d'en créer un), puis `create_segment` (`nom` requis ; filtres
    `domaine_contient`, `ville_contient` ; `description` ; `recalculer: true` pour
    calculer immédiatement).
 2. **Recalculer et vérifier la taille** — `recalculer_segment` (`segment_id` ou
    `segment_nom`) : annoncer le nombre de contacts/entreprises trouvés à
    l'utilisateur. Si le segment est vide, ajuster les filtres avant de continuer.
+   `get_contacts_segment` donne la liste nominative réelle — la relire avant un
+   envoi (c'est elle qui reçoit, pas le chiffre agrégé).
 3. **Créer la campagne** — `create_campagne` (`nom`, `canal` ∈ email | sms |
    newsletter | multicanal | evenement, `segment_id`, `objectif`, `date_debut`,
    `date_fin`, `budget` ; `statut` initial : `brouillon` ou `planifiee`).

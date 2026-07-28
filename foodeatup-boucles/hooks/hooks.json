@@ -12,7 +12,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "mcp__[Ff]oodeatup__.*|mcp__[Rr]apido[Cc][Rr][Mm]__.*",
+        "matcher": "mcp__[Ff]oodeatup__.*",
         "hooks": [
           {
             "type": "command",
@@ -23,7 +23,7 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "mcp__[Ff]oodeatup__.*|mcp__[Rr]apido[Cc][Rr][Mm]__.*",
+        "matcher": "mcp__[Ff]oodeatup__.*",
         "hooks": [
           {
             "type": "command",

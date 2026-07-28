@@ -7,8 +7,9 @@
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `foodeatup` | 1.8.0 | 22 | Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — … |
-| `foodeatup-boucles` | 0.1.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
+| `foodeatup` | 1.9.0 | 22 | Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — … |
+| `foodeatup-boucles` | 0.2.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
+| `foodeatup-iris` | 0.1.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
 
 Phrases qui déclenchent le bon skill :
 - « fais le briefing du jour de mon restaurant »
@@ -19,7 +20,7 @@ Phrases qui déclenchent le bon skill :
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `rapidocrm` | 1.7.0 | 29 | RapidoCRM : prospection, pipeline, campagnes marketing, devis/factures, communication client, performance commerciale — avec agents direc… |
+| `rapidocrm` | 1.8.0 | 31 | RapidoCRM : prospection, pipeline, campagnes marketing, devis/factures, communication client, performance commerciale — avec agents direc… |
 | `rapido-relation-client` | 0.2.0 | 6 | (bêta) Service client, fidélité et santé client en boucle : SLA, CSAT/NPS, health score, sauvetages et 100 premiers jours — orchestré sur… |
 | `rapido-gmaps` | 0.5.0 | 4 | Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS auto-h… |
 

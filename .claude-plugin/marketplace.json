@@ -11,13 +11,20 @@
       "name": "foodeatup",
       "source": "./foodeatup",
       "description": "Gestion restaurant (HACCP, salle, cuisine, achats)",
-      "version": "1.8.0",
+      "version": "1.9.0",
       "category": "restaurant"
     },
     {
       "name": "foodeatup-boucles",
       "source": "./foodeatup-boucles",
       "description": "Les 8 boucles du livre blanc FoodEatUp : diagnostic par boucle, croisement gestion × vente, garde-fou destructif fail-closed, journal d'écritures — complément du plugin foodeatup",
+      "version": "0.2.0",
+      "category": "restaurant"
+    },
+    {
+      "name": "foodeatup-iris",
+      "source": "./foodeatup-iris",
+      "description": "Iris, l'agent communication : détecte les raisons de publier dans les données d'exploitation FoodEatUp, fabrique visuels (RapidoCMS) et vidéos virales de plats (Higgsfield) — brouillons uniquement, validation humaine obligatoire",
       "version": "0.1.0",
       "category": "restaurant"
     },
@@ -25,7 +32,7 @@
       "name": "rapidocrm",
       "source": "./rapidocrm",
       "description": "CRM : prospection, pipeline, facturation, marketing",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "category": "ventes-crm"
     },
     {

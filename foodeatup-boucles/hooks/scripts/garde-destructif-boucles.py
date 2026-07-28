@@ -24,21 +24,12 @@ LISTE = os.path.join(ICI, "outils-destructifs.txt")
 LECTURE_PREFIXES = ("list_", "get_", "check_")
 LECTURE_NOMMEES = {
     "finance_summary", "floor_plan_status", "reservation_availability",
-    "search_entities", "rechercher_prospects", "rechercher_entreprise_siret",
-    "search_entreprises",
+    "search_entities",
 }
 
 # Effet réel des outils les plus sensibles, pour un message de blocage parlant.
 EFFETS = {
     "launch_campaign": "lance un envoi réel de campagne aux destinataires du segment",
-    "send_email": "envoie un email réel au(x) destinataire(s)",
-    "send_sms": "envoie un SMS réel au(x) destinataire(s)",
-    "send_newsletter": "envoie une newsletter réelle à toute la liste",
-    "lancer_campagne": "lance un envoi réel de campagne CRM",
-    "schedule_email": "programme un envoi d'email réel",
-    "schedule_sms": "programme un envoi de SMS réel",
-    "appeler_entreprise_vocal": "déclenche un appel téléphonique réel par agent vocal",
-    "prospecter_et_appeler_vocal": "déclenche des appels téléphoniques réels en série",
     "publish_site": "publie le site vitrine en ligne, visible du public",
     "apply_site_template": "remplace la mise en page du site publié",
     "close_pos_session": "clôture de caisse (Z) irréversible",
@@ -51,7 +42,6 @@ EFFETS = {
     "update_employee_schedule": "modifie le planning contractuel d'un employé",
     "moderate_review": "modère un avis client public",
     "reply_review": "publie une réponse publique à un avis",
-    "enregistrer_tous_prospects": "importe tous les prospects trouvés dans le CRM",
 }
 
 

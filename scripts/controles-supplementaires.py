@@ -150,7 +150,9 @@ RX_TOKEN = re.compile(r"`([a-z][a-z0-9_]{2,})`")
 RX_FORME_OUTIL = re.compile(
     r"^(?:list|get|create|update|delete|add|upsert|check|record|validate|complete|"
     r"confirm|cancel|seat|open|close|launch|submit|toggle|apply|publish|import|"
-    r"adjust|approve|reject|assign|moderate|reply|propose|remove|no)_[a-z0-9_]+$")
+    r"adjust|approve|reject|assign|moderate|reply|propose|remove|no|"
+    r"lancer|enregistrer|deplacer|prospecter|recalculer|rechercher|ajouter|"
+    r"appeler|schedule|send|set|log|search)_[a-z0-9_]+$")
 # auto-test : un outil inventé doit être signalé, un vrai non
 assert RX_FORME_OUTIL.match("delete_wheel_game"), "auto-test OUTILS : forme non reconnue"
 # Les plugins foodeatup* déclarent aussi rapidocrm : leurs outils sont légitimes.
@@ -162,18 +164,31 @@ _ts = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ts)
 AUTRES_SERVEURS = set().union(*(v for k, v in _ts.CATALOGUE.items()
                                 if k != "foodeatup"))
+# Périmètres STRICTS par répertoire : les plugins foodeatup* sont découplés de
+# RapidoCRM (FoodEatUp a ses propres outils CRM) — ils ne peuvent citer QUE des
+# outils foodeatup. rapidocrm/ est contrôlé contre sa liste live + autres
+# catalogues (il référence légitimement des skills d'autres serveurs).
+PERIMETRES = [
+    (("foodeatup/", "foodeatup-boucles/"), live,
+     "outils foodeatup uniquement (plugin découplé de RapidoCRM)"),
+    (("foodeatup-iris/",), live | _ts.CATALOGUE.get("rapidocms", set()),
+     "outils foodeatup + rapidocms (Higgsfield : noms hors motif, non contrôlés)"),
+    (("rapidocrm/",), _ts.CATALOGUE.get("rapidocrm", set()) | AUTRES_SERVEURS | live,
+     f"liste live rapidocrm + catalogues"),
+]
 if live:
     for f in fichiers_suivis():
-        if not (f.startswith(("foodeatup/", "foodeatup-boucles/"))
-                and f.endswith(".md")):
+        if not f.endswith(".md") or f.endswith("CHANGELOG.md"):
+            continue  # CHANGELOG : historique, peut citer des outils disparus
+        perimetre = next(((autorise, motif) for prefixes, autorise, motif in PERIMETRES
+                          if f.startswith(prefixes)), None)
+        if not perimetre:
             continue
-        if f.endswith("CHANGELOG.md"):
-            continue  # historique : peut citer des outils disparus, c'est son rôle
+        autorise, motif = perimetre
         for tok in sorted(set(RX_TOKEN.findall(lire(f)))):
-            if (RX_FORME_OUTIL.match(tok) and tok not in live
-                    and tok not in AUTRES_SERVEURS):
-                erreurs.append(f"OUTILS : {f} cite `{tok}`, absent de la liste "
-                               f"live ({live_path})")
+            if RX_FORME_OUTIL.match(tok) and tok not in autorise:
+                erreurs.append(f"OUTILS : {f} cite `{tok}` — hors périmètre "
+                               f"({motif})")
     # la liste du hook destructif ne doit contenir que des outils existants
     for l in lire("foodeatup-boucles/hooks/scripts/outils-destructifs.txt").splitlines():
         l = l.strip()

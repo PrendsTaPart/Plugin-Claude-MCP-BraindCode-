@@ -33,7 +33,8 @@ verrouillent les écritures sensibles.
 ## Prérequis
 
 - Serveur **MCP FoodEatUp connecté** (obligatoire — le plugin ne fait rien sans).
-- Serveur MCP RapidoCRM connecté (optionnel : volets pipeline et campagnes CRM).
+  Le plugin est **découplé de RapidoCRM** : FoodEatUp porte ses propres outils
+  CRM (clients, segments, campagnes, WhatsApp, jeux, sondages) — aucun conflit.
 - Python 3 disponible (hooks).
 
 ## Installation

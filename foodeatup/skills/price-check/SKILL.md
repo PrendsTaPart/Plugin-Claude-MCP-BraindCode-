@@ -1,12 +1,12 @@
 ---
 name: price-check
-description: Utiliser quand l'utilisateur veut vérifier ses prix ou voir ses marges par produit avant une décision tarifaire. Produit un tableau marge par produit et trois scénarios de prix pour une vision financière complète. Accepte un nom de produit en argument. S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur veut vérifier ses prix ou voir ses marges par produit avant une décision tarifaire. Produit un tableau marge par produit et trois scénarios de prix pour une vision financière complète. Accepte un nom de produit en argument. S'appuie sur le MCP foodeatup et sur ./rapido-kb/ pour les seuils maison.
 source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 allowed-tools: Read, WebFetch, Bash
 ---
 
-> Nécessite les MCP **foodeatup** ET **rapidocrm** (tous deux déclarés dans
-> le `.mcp.json` du plugin).
+> Nécessite le MCP **foodeatup** (déclaré dans le `.mcp.json` du plugin).
+> Découplé de RapidoCRM : FoodEatUp porte ses propres outils CRM.
 
 ## Adaptation Rapido (lire d'abord)
 
@@ -15,12 +15,12 @@ systématiquement ses outils par les équivalents Rapido :
 
 | Outil cité dans ce skill | Équivalent à utiliser ici |
 |---|---|
-| QuickBooks / PayPal / Square / Stripe (finances, ventes) | FoodEatUp : `finance_summary`, `list_orders`, `list_invoices`, `list_expenses` ; RapidoCRM : `get_revenue_summary`, `list_factures`, `list_depenses` |
-| HubSpot (CRM, pipeline) | RapidoCRM : `get_pipeline`, `get_entreprise`, `get_historique_prospect`, `list_devis`, `log_activity` |
-| Gmail (envoi d'emails) | RapidoCRM : `send_email` / `schedule_email` (confirmation avant envoi) ; ou brouillons via le plugin rapido-direction |
-| Google Drive / Calendar | plugin rapido-direction (`coffre-documents`, agenda) ou RapidoCRM `agenda-rdv` |
+| QuickBooks / PayPal / Square / Stripe (finances, ventes) | FoodEatUp : `finance_summary`, `list_orders`, `list_invoices`, `list_expenses` |
+| HubSpot (CRM, pipeline) | FoodEatUp : `get_client`, `list_clients`, `list_quotes` (devis restaurant) — le pipeline B2B relève du plugin rapidocrm, hors périmètre ici |
+| Gmail (envoi d'emails) | brouillons via le plugin rapido-direction ; réponse à un avis public : `reply_review` (confirmée) |
+| Google Drive / Calendar | plugin rapido-direction (`coffre-documents`, agenda) |
 | Slack (notifications) | pas d'équivalent — restituer dans la conversation, ou notification via un workflow n8n (plugin rapido-n8n) |
-| Zendesk / Shopify | pas d'équivalent direct — support : `log_activity` (CRM) ; vente en ligne : carte vitrine FoodEatUp |
+| Zendesk / Shopify | pas d'équivalent direct — support : noter l'échange sur la fiche client (`update_client`) ; vente en ligne : carte vitrine FoodEatUp |
 | CSV uploads | inutile si les MCP répondent — les données viennent des serveurs |
 
 Les seuils, cadences et benchmarks du skill sont des DÉFAUTS US : les seuils
@@ -42,7 +42,7 @@ Parse arguments:
 Using the `margin-analyzer` skill workflow:
 
 1. Récupère les ventes par plat/produit sur 90 jours : FoodEatUp (`finance_summary`,
-   `list_orders`, `list_invoices`) et/ou RapidoCRM (`get_revenue_summary`, `list_factures`).
+   `list_orders`, `list_invoices`).
 2. Récupère le coût de revient par plat depuis les recettes (`get_recipe`,
    `recette-cout-marge`) + dépenses directes (`list_expenses`).
 3. Croise les deux sources de revenus **sans double-compter** (cf. `margin-analyzer/reference/gotchas.md`).

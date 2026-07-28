@@ -3,10 +3,6 @@
     "foodeatup": {
       "type": "http",
       "url": "https://foodeatup.com/api/mcp"
-    },
-    "rapidocrm": {
-      "type": "http",
-      "url": "https://crm.rapidosoftware.com/mcp"
     }
   }
 }

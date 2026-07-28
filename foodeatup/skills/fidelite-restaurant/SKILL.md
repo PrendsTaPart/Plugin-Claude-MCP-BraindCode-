@@ -1,6 +1,6 @@
 ---
 name: fidelite-restaurant
-description: Utiliser quand l'utilisateur parle de fidélité, de points, de récompenses, de cartes cadeaux, de bons à valider ou d'un geste commercial — « mon programme de fidélité », « ajoute des points à ce client », « crée une récompense », « valide ce bon », « vérifie cette carte cadeau », « qui sont mes clients fidèles ». Pilote le programme de fidélité FoodEatUp (points, récompenses, redemptions, cartes cadeaux). À NE PAS utiliser pour un visuel de carte de fidélité (rapidocms) ni une campagne emailing (rapidocrm).
+description: Utiliser quand l'utilisateur parle de fidélité, de points, de récompenses, de cartes cadeaux, de bons à valider ou d'un geste commercial — « mon programme de fidélité », « ajoute des points à ce client », « crée une récompense », « valide ce bon », « vérifie cette carte cadeau », « qui sont mes clients fidèles ». Pilote le programme de fidélité FoodEatUp (points, récompenses, redemptions, cartes cadeaux). À NE PAS utiliser pour un visuel de carte de fidélité (rapidocms) ni une campagne (skill `campagnes-restaurant`).
 ---
 
 # Fidélité restaurant (programme, points, récompenses, cartes cadeaux)
@@ -50,14 +50,14 @@ silencieux. Au-delà de ±1000, le fractionner en le disant, ou refuser.
 
 ## 5. Analyse — clients fidèles
 
-Croiser `list_redemptions` + `list_gift_cards` (FoodEatUp) avec les points côté CRM
-(`rapidocrm:get_loyalty_points` — même client, vision transverse). Restituer un top
-clients **chiffré** (aucune estimation).
+Croiser `list_redemptions` + `list_gift_cards` avec les comptes de points
+(`get_loyalty_account` par client actif). Restituer un top clients **chiffré**
+(aucune estimation).
 
 ## Passerelles
 
 - Visuel de récompense / carte → `rapidocms:studio-visuel-marque`. Emailing fidélité →
-  `rapidocrm:campagne-marketing`. Points côté CRM → `rapidocrm:animation-client`.
+  le skill `campagnes-restaurant` (outils FoodEatUp).
 - Jeux (roue) et sondages : outils exposés (`list_wheel_games`, `get_wheel_stats`,
   `list_surveys`, `get_survey_results`) — volet animation à venir (schémas à finaliser).
 

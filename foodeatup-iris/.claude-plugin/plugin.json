@@ -1,0 +1,14 @@
+{
+  "name": "foodeatup-iris",
+  "version": "0.1.0",
+  "description": "Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trouver des RAISONS de publier, fabrique visuels (RapidoCMS) et vidéos virales de plats (Higgsfield) aux couleurs de la maison — et ne publie JAMAIS sans validation humaine",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "foodeatup",
+    "rapidocms",
+    "huggsfield"
+  ]
+}

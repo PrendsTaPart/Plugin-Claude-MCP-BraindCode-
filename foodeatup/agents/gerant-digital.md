@@ -22,10 +22,10 @@ Faire vivre trois surfaces cohérentes, chacune via son skill :
 - **Avis** → volet avis (via `handle-complaint` pour les réponses ; `moderate_review`
   pour publier/rejeter).
 
-**Router les leads** captés par le site (`list_site_leads`) vers le CRM
-(`rapidocrm:prospection-pipeline`). Croiser la fidélité avec le CRM
-(`rapidocrm:get_loyalty_points`). Charte & tokens → `rapido-design` quand le site est
-refondu.
+**Convertir les leads** captés par le site (`list_site_leads`) en clients
+FoodEatUp (`create_client`, après dédoublonnage `list_clients`), et nourrir la
+fidélité (`get_loyalty_account`). Charte & tokens → `rapido-design` quand le site
+est refondu.
 
 **Hors périmètre : la caisse (POS).** Les encaissements et la clôture Z relèvent de
 l'**exploitation** (skill `caisse-du-jour`, agents `chef-restaurateur`/`chef-de-pass`),

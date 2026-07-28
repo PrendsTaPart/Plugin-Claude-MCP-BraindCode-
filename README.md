@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-26-blue)
-![Skills](https://img.shields.io/badge/skills-401-brightgreen)
-![Agents](https://img.shields.io/badge/agents-42-orange)
+![Plugins](https://img.shields.io/badge/plugins-27-blue)
+![Skills](https://img.shields.io/badge/skills-409-brightgreen)
+![Agents](https://img.shields.io/badge/agents-44-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -53,6 +53,8 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
    ```
    /plugin install rapido-suite@rapido        ← recommandé en premier (onboarding + pilotage)
    /plugin install foodeatup@rapido           ← si vous gérez un restaurant
+   /plugin install foodeatup-boucles@rapido   ← + les 8 boucles (diagnostic, croisement gestion × vente)
+   /plugin install foodeatup-iris@rapido      ← + Iris (communication : visuels & vidéos de plats, validés par vous)
    /plugin install rapidocrm@rapido           ← ventes, devis, factures, campagnes
    /plugin install rapidocms@rapido           ← réseaux sociaux, visuels, marques
    ```
@@ -74,6 +76,10 @@ volet **en le disant** (dégradation propre).
 **A. Serveurs natifs Rapido** — `foodeatup`, `rapidocrm`, `rapidocms`, `rapidorh`.
 URLs produit déjà présentes dans les `.mcp.json` ; **rien à fournir** :
 authentification OAuth individuelle au premier appel. Vérifiez `/mcp` → « connected ».
+Anti-conflit : les plugins FoodEatUp (`foodeatup`, `foodeatup-boucles`) n'utilisent
+**que** le serveur `foodeatup` — FoodEatUp porte ses propres outils CRM (clients,
+segments, campagnes, WhatsApp, jeux, sondages), les outils RapidoCRM n'y sont pas
+connectés (invariante vérifiée en CI).
 
 **B. Satellites officiels** — OAuth au premier usage, rien à exporter (sauf les URLs
 d'instance signalées) :
@@ -99,7 +105,7 @@ fournissez une clé/URL **en variable d'env, jamais dans le dépôt** :
 | Google Analytics 4 | rapido-seo, rapido-google-ads | `GA4_MCP_URL` | Auto-hébergé, lecture seule |
 | Google Ads | rapido-google-ads | `GOOGLE_ADS_MCP_URL` | **Lecture seule** (analyse + recommande) |
 | TikTok Ads | rapido-tiktok-ads | `TIKTOK_ADS_MCP_URL` | R/W **verrouillé argent réel** (création refusée par hook) |
-| Higgsfield | rapido-higgsfield | `HIGGSFIELD_MCP_URL` | URL d'instance, génération payante |
+| Higgsfield | rapido-higgsfield, foodeatup-iris (vidéo de plats) ; option : rapido-prompteur, rapido-video | `HIGGSFIELD_MCP_URL` | URL d'instance, génération payante — coût confirmé avant (hooks) |
 
 **Connecteurs optionnels** (marqués comme tels dans les skills) : **Fireflies**
 (intelligence commerciale de `rapido-marketing` — absent = volet sauté),
@@ -119,9 +125,10 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.8.0 | 22 | 5 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
-| `foodeatup-boucles` | 0.1.0 | 10 | 3 | foodeatup, rapidocrm | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
-| `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | RapidoCRM |
+| `foodeatup` | 1.9.0 | 22 | 5 | foodeatup | Gestion restaurant FoodEatUp |
+| `foodeatup-boucles` | 0.2.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
+| `foodeatup-iris` | 0.1.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
+| `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | Orchestration transverse des 4 serveurs MCP Rapido |
@@ -146,7 +153,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 26 plugins, 401 skills, 42 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 27 plugins, 409 skills, 44 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -155,7 +162,7 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 | Domaine | Plugins | Ce que vous pilotez |
 |---|---|---|
-| **Restaurant** | `foodeatup`, `foodeatup-boucles` | Salle, cuisine (KDS), HACCP, achats, réservations — et **les 8 boucles du livre blanc** (diagnostic par boucle, croisement gestion × vente) |
+| **Restaurant** | `foodeatup`, `foodeatup-boucles`, `foodeatup-iris` | Salle, cuisine (KDS), HACCP, achats, réservations — **les 8 boucles du livre blanc** (diagnostic, croisement gestion × vente) — et **Iris**, l'agent communication qui trouve des raisons de publier dans les données d'exploitation |
 | **Ventes & CRM** | `rapidocrm`, `rapido-gmaps` | Prospection, pipeline, devis/factures, vente terrain, **sourcing Google Maps → CRM** |
 | **Relation client** | `rapido-relation-client` | Service client (SLA), NPS, health score, RFM |
 | **Contenu & marque** | `rapidocms`, `rapido-copywriter`, `rapido-design` | Réseaux sociaux, visuels, multi-marques, **copy 4 réseaux**, **studio UX/UI** |
@@ -187,6 +194,24 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 `/boucles` (état d'ensemble) · `/boucle <n>` (détail) · `/croisement`
 (incohérences gestion × vente) · `/sante-donnees` (fiabilité des données).
 Cartographie complète : [`docs/boucles-vs-outils.md`](docs/boucles-vs-outils.md).
+
+### Iris — l'agent communication (plugin `foodeatup-iris`)
+
+**Iris n'invente pas de contenu : elle trouve des raisons de publier.** Elle lit
+la boucle gestion pour alimenter la boucle vente — le seul point où le stock
+parle au marketing :
+
+> *Il reste 12 kg de saumon, DLC vendredi. Iris l'a vu, elle a fait le visuel
+> aux couleurs de la maison, écrit le post et sa raison, et proposé le tout pour
+> demain 11h. Vous validez d'un doigt — rien ne part sans vous.*
+
+Moteur d'opportunités (11 signaux d'exploitation, score urgence × valeur ×
+fraîcheur), fabrique RapidoCMS (gate charte), **vidéos virales de plats** à
+partir de leurs VRAIES photos (Higgsfield : image-to-video, 9:16,
+`virality_predictor`), calendrier 7 jours glissants, mesure et apprentissage.
+Garde-fous : jamais de publication automatique, coûts en crédits confirmés
+avant, avis négatif = alerte et zéro post. Faisabilité détaillée vs cahier des
+charges : [`docs/FAISABILITE-IRIS.md`](docs/FAISABILITE-IRIS.md).
 
 Les **routines récurrentes** (Loop Engine : Sense → Plan → Act → Feed → Report)
 sont cataloguées dans [`reference/registre-routines.md`](reference/registre-routines.md) —
@@ -225,6 +250,9 @@ D'autres déclencheurs réels :
 | « Qui est surchargé dans l'équipe ? » | `rapidorh` : charge déclarée vs contractuelle, calculée par script |
 | « Surveille ma trésorerie » | `rapido-startup` : sentinelle cash, runway par script, alerte seulement |
 | « Pilote mon entreprise » | `rapido-suite` : Loop Engine complet, récap groupé avant toute écriture |
+| « Où en sont mes 8 boucles ? » | `foodeatup-boucles` : état des 8 boucles en un écran, croisement gestion × vente |
+| « Trouve-moi des raisons de publier » | `foodeatup-iris` : opportunités scorées depuis le stock, les avis, les créneaux creux — avec leur « Parce que… » |
+| « Fais une vidéo virale de mon plat » | `foodeatup-iris` : vraie photo → vidéo courte 9:16 (Higgsfield), brouillon CMS, publication après votre OK |
 
 ## Conventions maison
 
@@ -243,8 +271,14 @@ portabilité et la fiabilité.
   relances) sont **rédigés** puis envoyés **après votre validation**.
 - **Rien d'inventé** — chaque donnée vient d'un outil MCP, de la KB ou de vous ;
   une valeur manquante se dit, elle ne s'estime pas.
-- **Versioning + CHANGELOG** — chaque plugin modifié incrémente sa `version` et
-  ajoute une entrée datée en tête de son `CHANGELOG.md`.
+- **Versioning + CHANGELOG** — chaque plugin modifié incrémente sa `version`
+  (règles semver et distribution git : [`docs/POLITIQUE-VERSIONS.md`](docs/POLITIQUE-VERSIONS.md))
+  et ajoute une entrée datée en tête de son `CHANGELOG.md` ; versions
+  synchronisées avec `marketplace.json`, contrôlées en CI.
+- **Listes d'outils live versionnées** — les outils MCP cités dans les skills
+  sont validés contre les listes relevées sur les serveurs réels
+  (`docs/inventaires/*-tools-live.txt` : foodeatup 177, rapidocrm 110,
+  huggsfield 81) — citer un outil inexistant fait échouer la CI.
 - **Attribution des sources** — tout skill importé conserve sa LICENSE dans son
   dossier et sa provenance dans l'`ATTRIBUTIONS.md` (ou `NOTICE.md`) du plugin.
 - **Portabilité absolue** — aucune donnée client, aucun identifiant ni URL
@@ -284,8 +318,17 @@ la dernière ligne de défense, **indépendante du modèle** : `garde-destructif
 (suppressions, transitions de facture hors DGFiP), `anti-donnee-inventee` (valeurs
 invraisemblables), `garde-argent-reel` + `plafond-budget` (dépenses Meta Ads),
 `garde-production` (workflows n8n), `garde-stripe-write`, `garde-irreversible`
-(Gmail/Drive/Calendar), `garde-ecriture-kb`… Ils imposent une confirmation et
-**ne se contournent jamais** — une PR qui affaiblit un hook est refusée.
+(Gmail/Drive/Calendar), `garde-ecriture-kb`, `garde-destructif-boucles`
+(**fail-closed** : liste d'outils destructifs versionnée, les champs
+`confirm`/`confirmed` posés par le modèle sont volontairement ignorés — la
+confirmation vient de l'humain), `garde-iris` (aucune publication sans
+validation humaine, génération vidéo refusée sans coût confirmé)… Ils imposent
+une confirmation et **ne se contournent jamais** — une PR qui affaiblit un hook
+est refusée. S'y ajoutent un **journal local des écritures MCP**
+(`.claude/logs/`, secrets masqués) et des contrôles CI **auto-testés**
+(similarité de descriptions, scan de secrets sans écho du contenu, périmètres
+d'outils stricts par plugin) : une CI qui n'a pas prouvé qu'elle sait échouer
+ne teste rien.
 
 - **Jamais de secrets dans le dépôt** — authentifications par connecteurs MCP et
   OAuth individuels ; clés en variables d'environnement uniquement.

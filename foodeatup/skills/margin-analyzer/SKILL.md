@@ -1,13 +1,13 @@
 ---
 name: margin-analyzer
-description: Utiliser quand l'utilisateur parle d'augmenter ses prix, de marges, de coûts qui grignotent le profit, ou demande « est-ce que je gagne assez ? », « je devrais facturer plus ? ». Analyse l'économie unitaire par produit/service depuis les ventes et coûts réels et montre des scénarios de prix — analyse seulement, ne recommande pas un prix. S'appuie sur les MCP foodeatup/rapidocrm et sur ./rapido-kb/ pour les seuils maison.
+description: Utiliser quand l'utilisateur parle d'augmenter ses prix, de marges, de coûts qui grignotent le profit, ou demande « est-ce que je gagne assez ? », « je devrais facturer plus ? ». Analyse l'économie unitaire par produit/service depuis les ventes et coûts réels et montre des scénarios de prix — analyse seulement, ne recommande pas un prix. S'appuie sur le MCP foodeatup et sur ./rapido-kb/ pour les seuils maison.
 source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
 ---
 
 # Margin Analyzer
 
-> Nécessite les MCP **foodeatup** ET **rapidocrm** (tous deux déclarés dans
-> le `.mcp.json` du plugin).
+> Nécessite le MCP **foodeatup** (déclaré dans le `.mcp.json` du plugin).
+> Découplé de RapidoCRM : FoodEatUp porte ses propres outils CRM.
 
 ## Adaptation Rapido (lire d'abord)
 
@@ -16,12 +16,12 @@ systématiquement ses outils par les équivalents Rapido :
 
 | Outil cité dans ce skill | Équivalent à utiliser ici |
 |---|---|
-| QuickBooks / PayPal / Square / Stripe (finances, ventes) | FoodEatUp : `finance_summary`, `list_orders`, `list_invoices`, `list_expenses` ; RapidoCRM : `get_revenue_summary`, `list_factures`, `list_depenses` |
-| HubSpot (CRM, pipeline) | RapidoCRM : `get_pipeline`, `get_entreprise`, `get_historique_prospect`, `list_devis`, `log_activity` |
-| Gmail (envoi d'emails) | RapidoCRM : `send_email` / `schedule_email` (confirmation avant envoi) ; ou brouillons via le plugin rapido-direction |
-| Google Drive / Calendar | plugin rapido-direction (`coffre-documents`, agenda) ou RapidoCRM `agenda-rdv` |
+| QuickBooks / PayPal / Square / Stripe (finances, ventes) | FoodEatUp : `finance_summary`, `list_orders`, `list_invoices`, `list_expenses` |
+| HubSpot (CRM, pipeline) | FoodEatUp : `get_client`, `list_clients`, `list_quotes` (devis restaurant) — le pipeline B2B relève du plugin rapidocrm, hors périmètre ici |
+| Gmail (envoi d'emails) | brouillons via le plugin rapido-direction ; réponse à un avis public : `reply_review` (confirmée) |
+| Google Drive / Calendar | plugin rapido-direction (`coffre-documents`, agenda) |
 | Slack (notifications) | pas d'équivalent — restituer dans la conversation, ou notification via un workflow n8n (plugin rapido-n8n) |
-| Zendesk / Shopify | pas d'équivalent direct — support : `log_activity` (CRM) ; vente en ligne : carte vitrine FoodEatUp |
+| Zendesk / Shopify | pas d'équivalent direct — support : noter l'échange sur la fiche client (`update_client`) ; vente en ligne : carte vitrine FoodEatUp |
 | CSV uploads | inutile si les MCP répondent — les données viennent des serveurs |
 
 Les seuils, cadences et benchmarks du skill sont des DÉFAUTS US : les seuils
@@ -39,7 +39,7 @@ When an SMB owner asks "should I raise my prices?" or "are my margins okay?", th
 2. **Pulls cost data** — coût matière depuis les recettes FoodEatUp (`get_recipe`,
    `recette-cout-marge`) + dépenses directes (`list_expenses`)
 3. **Pulls revenue data** — ventes réelles FoodEatUp (`finance_summary`,
-   `list_orders`, `list_invoices`) et/ou RapidoCRM (`get_revenue_summary`, `list_factures`)
+   `list_orders`, `list_invoices`)
 4. **Computes unit economics** — revenue, COGS, gross margin, margin % per item
 5. **Benchmarks against context** — inflation, cost changes, industry norms if available
 6. **Builds pricing scenarios** — shows what happens to revenue and margin at +5%, +10%, +15% price changes, using historical correlation where data allows
@@ -100,10 +100,9 @@ prendre 0 comme coût. Le signaler :
 
 Flag this limitation in the Data Quality Notes section of the final output.
 
-### Step 4: Pull revenue data (FoodEatUp / RapidoCRM)
+### Step 4: Pull revenue data (FoodEatUp)
 
-Fetch from `list_orders` (FoodEatUp — ventes réelles) or `get_revenue_summary`
-(RapidoCRM — synthèse de revenus) :
+Fetch from `list_orders` (ventes réelles) et `finance_summary` (synthèse) :
 - **Date range:** Match the cost data window (last 12 months)
 - **Extract:** Transaction amount, item/service name, date, quantity if available
 
@@ -183,10 +182,10 @@ This is intentional. Pricing decisions have real business consequences and depen
 
 ## Connectors
 
-**Requis :** FoodEatUp + RapidoCRM (déclarés dans le `.mcp.json` du plugin).
+**Requis :** FoodEatUp (déclaré dans le `.mcp.json` du plugin).
 Coûts = recettes/ingrédients + `list_expenses` ; revenus = `finance_summary` /
-`list_orders` / `list_invoices` (FoodEatUp) et `get_revenue_summary` / `list_factures`
-(RapidoCRM). Aucun connecteur QuickBooks / PayPal / Square dans cet écosystème.
+`list_orders` / `list_invoices`. Aucun connecteur QuickBooks / PayPal / Square
+dans cet écosystème ; le CA B2B du CRM est hors périmètre (plugin rapidocrm).
 
 ---
 
