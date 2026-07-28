@@ -13,6 +13,11 @@
       "description": "Gestion restaurant (HACCP, salle, cuisine, achats)"
     },
     {
+      "name": "foodeatup-boucles",
+      "source": "./foodeatup-boucles",
+      "description": "Les 8 boucles du livre blanc FoodEatUp : diagnostic par boucle, croisement gestion × vente, garde-fou destructif fail-closed, journal d'écritures — complément du plugin foodeatup"
+    },
+    {
       "name": "rapidocrm",
       "source": "./rapidocrm",
       "description": "CRM : prospection, pipeline, facturation, marketing"

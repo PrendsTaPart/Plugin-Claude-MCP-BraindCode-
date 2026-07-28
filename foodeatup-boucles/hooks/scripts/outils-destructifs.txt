@@ -1,0 +1,50 @@
+# Outils MCP destructifs/irréversibles interceptés par garde-destructif-boucles.py.
+# Format : <serveur>:<outil> (serveur en minuscules), un par ligne, # = commentaire.
+# Source : docs/boucles-vs-outils.md (colonne « confirm requis »). Si ce fichier
+# est absent ou illisible, le garde-fou BLOQUE toute écriture (mode fermé).
+#
+# --- foodeatup : envois / publications / irréversibles
+foodeatup:launch_campaign
+foodeatup:submit_whatsapp_template
+foodeatup:publish_site
+foodeatup:apply_site_template
+foodeatup:close_pos_session
+foodeatup:import_storefront_menu
+# --- foodeatup : suppressions (tous les delete_*)
+foodeatup:delete_category
+foodeatup:delete_client
+foodeatup:delete_dish
+foodeatup:delete_employee
+foodeatup:delete_ingredient
+foodeatup:delete_product
+foodeatup:delete_recipe
+# --- foodeatup : argent / droit du travail / réputation
+foodeatup:record_pos_payment
+foodeatup:adjust_points
+foodeatup:update_loyalty_program
+foodeatup:create_employee_contract
+foodeatup:update_employee_schedule
+foodeatup:moderate_review
+foodeatup:reply_review
+# --- rapidocrm : envois réels (emails, SMS, appels, campagnes)
+rapidocrm:send_email
+rapidocrm:send_sms
+rapidocrm:send_newsletter
+rapidocrm:schedule_email
+rapidocrm:schedule_sms
+rapidocrm:lancer_campagne
+rapidocrm:lancer_jeu_concours_entreprise
+rapidocrm:lancer_sondage_entreprise
+rapidocrm:appeler_entreprise_vocal
+rapidocrm:prospecter_et_appeler_vocal
+# --- rapidocrm : suppressions et imports en masse
+rapidocrm:delete_contact
+rapidocrm:delete_entreprise
+rapidocrm:delete_commercial
+rapidocrm:delete_contrat
+rapidocrm:delete_contrat_template
+rapidocrm:delete_editor_template
+rapidocrm:delete_product
+rapidocrm:delete_template_email
+rapidocrm:delete_template_sms
+rapidocrm:enregistrer_tous_prospects
