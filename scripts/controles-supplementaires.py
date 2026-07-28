@@ -130,7 +130,12 @@ for f in fichiers_suivis():
     for nom, rx in MOTIFS_SECRETS:
         m = rx.search(contenu)
         if m:
-            erreurs.append(f"SECRET ({nom}) : {f} — « {m.group(0)[:24]}… »")
+            # Ne JAMAIS reproduire le contenu détecté : le journal CI est
+            # public, l'écho d'un secret serait une fuite en soi (CodeQL
+            # py/clear-text-logging-sensitive-data). Fichier + ligne suffisent.
+            ligne = contenu.count("\n", 0, m.start()) + 1
+            erreurs.append(f"SECRET ({nom}) : {f} ligne {ligne} — contenu "
+                           "masqué, ouvrir le fichier pour vérifier")
 
 # -------------------------------------------------------------------- 3. OUTILS
 live_path = "docs/inventaires/foodeatup-tools-live.txt"
