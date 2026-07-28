@@ -372,12 +372,13 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocms__create_brand",
           "tool_input": {"couleurs": "#00F"}}, "deny"),
         ({"tool_name": "mcp__rapidocms__create_brand",
-          "tool_input": {"couleurs": "#0055FF,#FFFFFF"}}, "allow"),
+          "tool_input": {"couleurs": "#0055FF,#FFFFFF"}}, "ask"),
         # font_family
         ({"tool_name": "mcp__rapidocms__create_brand",
           "tool_input": {"font_family": "Montserrat"}}, "deny"),
+        # bien formé → ask quand même : une modification de charte se confirme (P4.2)
         ({"tool_name": "mcp__rapidocms__edit_brand",
-          "tool_input": {"brand_id": 1, "font_family": "Arial, sans-serif"}}, "allow"),
+          "tool_input": {"brand_id": 1, "font_family": "Arial, sans-serif"}}, "ask"),
         # logo / site_web http(s)
         ({"tool_name": "mcp__rapidocms__create_brand",
           "tool_input": {"logo": "/tmp/logo.png"}}, "deny"),

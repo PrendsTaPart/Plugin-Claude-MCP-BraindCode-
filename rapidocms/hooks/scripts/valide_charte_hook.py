@@ -12,7 +12,9 @@ Couverture (matcher hooks.json) :
 - images_to_image : images (http/https, sans espace, nombre <= LIMITE_IMAGES).
 - upload_file_tool : type ∈ {image, video, doc}, file_url (http/https).
 
-Décision : allow (exit 0) par défaut ; deny (exit 2 + stderr) si malformé.
+Décision : allow (exit 0) par défaut ; deny (exit 2 + stderr) si malformé ;
+ask (JSON) pour toute modification de charte BIEN FORMÉE (P4.2) — la charte
+engage tous les contenus produits ensuite, sa modification est un acte humain.
 """
 import json
 import re
@@ -77,6 +79,21 @@ def main():
                     f"{champ}='{val}' doit être une URL http(s). Un fichier "
                     "local n'est pas accepté : héberge-le d'abord "
                     "(upload_file_tool renvoie une file_url publique).")
+        # Formats valides → confirmation humaine quand même (P4.2) : une charte
+        # modifiée s'impose ensuite à tous les contenus. Récapituler avant/après.
+        print(json.dumps({
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "ask",
+                "permissionDecisionReason": (
+                    f"Modification de charte de marque ({outil}) : couleurs, "
+                    "polices ou logo engagent tous les contenus produits "
+                    "ensuite. Récapituler l'avant/après et obtenir la "
+                    "confirmation de l'utilisateur (plugin rapidocms, P4.2)."
+                ),
+            }
+        }, ensure_ascii=False))
+        sys.exit(0)
 
     elif outil == "images_to_image":
         images = ti.get("images")
