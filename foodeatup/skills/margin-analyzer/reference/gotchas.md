@@ -1,9 +1,9 @@
 # Pièges (gotchas)
 
-Sources de revenus et de coûts **réelles** de l'écosystème Rapido : FoodEatUp
-(`finance_summary`, `list_orders`, `list_invoices`, `list_expenses`) et RapidoCRM
-(`get_revenue_summary`, `list_factures`, `list_depenses`). Aucun connecteur PayPal /
-QuickBooks / Square ici — ne jamais citer d'outil qui n'existe pas côté serveur.
+Sources de revenus et de coûts **réelles** : FoodEatUp uniquement
+(`finance_summary`, `list_orders`, `list_invoices`, `list_expenses`) — le plugin
+est découplé de RapidoCRM. Aucun connecteur PayPal / QuickBooks / Square ici —
+ne jamais citer d'outil qui n'existe pas côté serveur.
 
 ## Piège : confondre chiffre d'affaires et bénéfice
 
@@ -92,24 +92,23 @@ estimation ? » Marquer la limite dans la sortie.
 
 ---
 
-## Piège : deux sources de revenus (FoodEatUp + RapidoCRM)
+## Piège : périmètre du chiffre d'affaires (restaurant vs B2B)
 
-Le chiffre d'affaires peut venir de **deux serveurs** : FoodEatUp (activité
-restaurant) et RapidoCRM (facturation commerciale / prestations). Les listes sont
-**paginées** (`limit`) — parcourir plusieurs pages ne doit pas double-compter.
+Ce plugin analyse le CA **restaurant** (FoodEatUp). Si l'exploitant a aussi une
+facturation B2B/prestations dans un CRM, elle est HORS périmètre ici — l'analyse
+ne la voit pas. Les listes FoodEatUp sont **paginées** (`limit`) — parcourir
+plusieurs pages ne doit pas double-compter.
 
-**Pourquoi c'est important :** additionner les deux sources aveuglément gonfle le
-CA ; n'en interroger qu'une en oublie une partie.
+**Pourquoi c'est important :** présenter une marge « globale » calculée sur le
+seul restaurant, sans le dire, trompe l'exploitant qui a d'autres revenus.
 
 ### ✗ Mauvais
-Prendre `finance_summary` (FoodEatUp) **et** `get_revenue_summary` (CRM) et les
-additionner sans vérifier les périmètres.
+Annoncer « ta marge totale » alors que seul le CA restaurant a été lu.
 
 ### ✓ Bon
-Choisir la source qui fait foi pour le périmètre analysé (restaurant → FoodEatUp ;
-prestations facturées → CRM), le **dire** dans la sortie, et ne croiser que si les
-périmètres sont disjoints. En cas de doute, demander à l'exploitant quelle source
-reflète ses ventes.
+Dire explicitement le périmètre (« CA restaurant FoodEatUp uniquement ») et, si
+l'exploitant a une activité B2B, la signaler comme non couverte (plugin
+rapidocrm, hors périmètre de ce skill).
 
 ---
 

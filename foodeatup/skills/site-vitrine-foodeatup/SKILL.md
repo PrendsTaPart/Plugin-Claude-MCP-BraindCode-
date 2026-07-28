@@ -49,7 +49,8 @@ publier (jamais `confirm:true` d'office). Vérifier le domaine (DNS/SSL) via
 
 - `get_site_stats` : commandes web, CA, leads, avis, jeux (30 j).
 - `list_site_leads` (`source` optionnel) : leads captés (contact, roue, privatisation).
-  **Router les leads vers le CRM** (`rapidocrm:prospection-pipeline` / `enregistrer_prospect`).
+  **Convertir les leads dans FoodEatUp** : `create_client` un par un après
+  dédoublonnage (`list_clients`) — le pipeline B2B du CRM est hors périmètre.
 - `get_wheel_stats` (`wheel_id`) : lancers, lots, leads d'un jeu de roue.
 
 ## Passerelles

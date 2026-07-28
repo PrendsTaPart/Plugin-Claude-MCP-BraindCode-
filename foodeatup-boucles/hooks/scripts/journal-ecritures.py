@@ -21,8 +21,7 @@ PLAFOND_OCTETS = 5 * 1024 * 1024  # 5 Mo par fichier de journal
 LECTURE_PREFIXES = ("list_", "get_", "check_")
 LECTURE_NOMMEES = {
     "finance_summary", "floor_plan_status", "reservation_availability",
-    "search_entities", "rechercher_prospects", "rechercher_entreprise_siret",
-    "search_entreprises",
+    "search_entities",
 }
 CLES_SECRETES = re.compile(r"token|secret|password|api[_-]?key|authorization", re.I)
 RX_EMAIL = re.compile(r"([A-Za-z0-9._%+-])[A-Za-z0-9._%+-]*(@[A-Za-z0-9.-]+)")

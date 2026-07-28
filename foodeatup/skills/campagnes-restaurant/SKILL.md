@@ -48,6 +48,6 @@ description: Utiliser quand l'utilisateur veut créer, lancer ou suivre une camp
 
 - Le diagnostic d'ensemble de la communication → skill `boucle-6-communication`
   (plugin foodeatup-boucles).
-- Les campagnes emailing/SMS B2B du CRM (`lancer_campagne`, `send_email`) →
-  plugin rapidocrm.
+- Les campagnes emailing/SMS B2B du CRM → plugin rapidocrm (outils CRM
+  volontairement non connectés à ce plugin).
 - Les visuels et posts sociaux → plugin rapidocms.

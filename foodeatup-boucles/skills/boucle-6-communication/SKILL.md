@@ -42,8 +42,7 @@ la boucle : « ai-je de quoi parler, et à qui ? »
 Interceptés par le hook du plugin (confirmation humaine obligatoire) :
 - `launch_campaign` — envoi réel aux destinataires ;
 - `submit_whatsapp_template` — soumission Meta ;
-- `reply_review`, `moderate_review` — actes publics ;
-- côté CRM : `send_email`, `send_sms`, `send_newsletter`, `lancer_campagne`.
+- `reply_review`, `moderate_review` — actes publics.
 Créer une campagne (`create_campaign`) est libre : c'est un brouillon.
 La lancer ne l'est jamais.
 

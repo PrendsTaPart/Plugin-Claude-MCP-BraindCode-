@@ -119,8 +119,8 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.8.0 | 22 | 5 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
-| `foodeatup-boucles` | 0.1.0 | 10 | 3 | foodeatup, rapidocrm | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
+| `foodeatup` | 1.9.0 | 22 | 5 | foodeatup | Gestion restaurant FoodEatUp |
+| `foodeatup-boucles` | 0.2.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |

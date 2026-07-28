@@ -226,6 +226,6 @@ echo '{"tool_name":"mcp__foodeatup__create_employee_contract","tool_input":{}}' 
 ## Anti-déclenchements (série SYNC S1)
 
 - « Génère un visuel pour ma carte de fidélité » → `rapidocms:studio-visuel-marque`.
-- « Lance une campagne emailing de fidélité » → `rapidocrm:campagne-marketing`.
+- « Lance une campagne de fidélité » → `campagnes-restaurant` (FoodEatUp, lancement confirmé).
 - « Construis un MVP/app sur mesure » → `rapido-lovable:mvp-lovable` (pas `site-vitrine-foodeatup`).
 - « Ajoute un plat à la carte » → `carte-vitrine` (pas `site-vitrine-foodeatup`).

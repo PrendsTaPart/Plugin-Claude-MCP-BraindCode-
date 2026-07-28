@@ -250,8 +250,10 @@ TESTS_HOOKS_EXTRAS = {
         # confirm auto-posé par le modèle → toujours ask
         ({"tool_name": "mcp__foodeatup__close_pos_session",
           "tool_input": {"confirm": True, "confirmed": True}}, "ask"),
+        # découplage : les outils RapidoCRM ne sont plus dans le périmètre du
+        # garde (ni du matcher) — écriture non listée → allow
         ({"tool_name": "mcp__RapidoCRM__send_sms",
-          "tool_input": {"confirmed": True}}, "ask"),
+          "tool_input": {"confirmed": True}}, "allow"),
         ({"tool_name": "mcp__foodeatup__create_reservation", "tool_input": {}}, "allow"),
         ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
     ],

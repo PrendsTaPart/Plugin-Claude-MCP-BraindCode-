@@ -7,8 +7,8 @@
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `foodeatup` | 1.8.0 | 22 | Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — … |
-| `foodeatup-boucles` | 0.1.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
+| `foodeatup` | 1.9.0 | 22 | Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — … |
+| `foodeatup-boucles` | 0.2.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
 
 Phrases qui déclenchent le bon skill :
 - « fais le briefing du jour de mon restaurant »

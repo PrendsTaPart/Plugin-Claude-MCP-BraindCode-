@@ -30,7 +30,7 @@ Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KD
 
 ## Serveurs MCP requis
 
-`foodeatup`, `rapidocrm` — connexion et clés : voir « Prérequis & connecteurs » du [README racine](../README.md). Aucune clé n'est stockée dans le dépôt.
+`foodeatup` (seul serveur requis — plugin découplé de RapidoCRM) — connexion et clés : voir « Prérequis & connecteurs » du [README racine](../README.md). Aucune clé n'est stockée dans le dépôt.
 
 ## Déclencheurs (exemples réels)
 
