@@ -37,41 +37,21 @@ RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Noms d'outils relevés sur les serveurs MCP live (session du 2026-07-06).
 # Les catalogues vivent côté serveur : ces listes servent aux AVERTISSEMENTS,
 # jamais à un échec bloquant.
+
+def _charger_catalogue_foodeatup():
+    chemin = os.path.join(RACINE, "docs", "inventaires", "foodeatup-tools-live.txt")
+    with open(chemin, encoding="utf-8") as f:
+        outils = {l.strip() for l in f if l.strip() and not l.startswith("#")}
+    if len(outils) < 100:
+        raise SystemExit(f"catalogue foodeatup suspect : {len(outils)} outils dans {chemin}")
+    return outils
+
+
 CATALOGUE = {
-    "foodeatup": set("""add_temperature add_waitlist adjust_stock approve_leave assign_task
-cancel_reservation checkin_reservation confirm_reservation create_category create_client
-create_dish create_dish_category create_employee create_employee_contract create_expense
-create_haccp_label create_haccp_reception create_haccp_tracabilite
-create_hygiene_checklist_validation create_ingredient create_invoice create_notification
-create_order create_product create_production_plan create_quote create_recipe
-create_reservation create_shift create_supplier create_supplier_order create_table
-create_tva create_zone delete_category delete_client delete_dish delete_employee
-delete_ingredient delete_product delete_recipe finance_summary floor_plan_status
-get_client get_employee get_expense get_ingredient get_invoice get_order get_product
-get_production_ingredients get_quote get_recipe get_supplier import_storefront_menu
-list_attendances list_categories list_cleaning_actions list_cleaning_zones list_clients
-list_deliveries list_dishes list_employee_contracts list_employee_documents
-list_employees list_expenses list_haccp_labels list_haccp_reception
-list_haccp_temperatures list_haccp_tracabilite list_hygiene_checklists
-list_ingredients list_invoices list_leaves list_low_stocks list_notifications
-list_orders list_plannings list_production_alerts list_production_plans list_products
-list_quotes list_recipes list_reservations list_stocks list_suppliers list_tables
-list_top_productions list_tva list_units list_waitlist list_zones no_show_reservation
-record_cleaning_action reject_leave reservation_availability search_entities seat_waitlist
-update_category update_client update_dish update_employee update_employee_schedule
-update_ingredient update_invoice_status update_kds_item_status update_order_status update_product
-update_quote_status update_recipe update_table_status validate_production
-add_site_page apply_site_template check_gift_card close_pos_session create_job_offer
-get_daily_brief get_domain_status get_loyalty_account get_loyalty_program get_page_content
-get_pos_report get_pos_session get_site_pages get_site_stats get_site_status get_station_load
-get_survey_results get_wheel_stats list_beverages list_delivery_zones list_gift_cards
-list_happy_hours list_job_applications list_loyalty_rewards list_pos_payments list_pos_tabs
-list_private_event_requests list_redemptions list_reviews list_site_leads list_site_templates
-list_surveys list_wheel_games moderate_review open_pos_session publish_site record_pos_payment
-remove_beverage_item reply_review set_site_theme toggle_site_page update_application_status
-update_event_request_status update_job_offer update_loyalty_program update_section
-upsert_beverage_item upsert_delivery_zone upsert_happy_hour upsert_loyalty_reward
-validate_redemption adjust_points""".split()),
+    # foodeatup : chargé depuis la liste versionnée live (177 outils, 2026-07-28).
+    # Mode fermé : si le fichier manque, on échoue bruyamment plutôt que de
+    # valider contre une liste vide.
+    "foodeatup": _charger_catalogue_foodeatup(),
     "rapidocrm": set("""ajouter_prospect_pipeline close_opportunity create_campagne
 create_commercial create_contact create_contrat create_contrat_template create_depense
 create_devis create_editor_template create_entreprise create_evenement create_facture
@@ -266,6 +246,26 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocrm__create_depense",
           "tool_input": {"entreprise_id": 1, "total_ht": 100}}, "ask"),
     ],
+    # foodeatup-boucles — garde fail-closed : la confirmation vient de l'humain,
+    # les champs confirm/confirmed posés par le modèle sont ignorés (audit P2.1).
+    ("foodeatup-boucles", "garde-destructif-boucles.py"): [
+        ({"tool_name": "mcp__foodeatup__list_clients", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup__launch_campaign", "tool_input": {}}, "ask"),
+        # confirm auto-posé par le modèle → toujours ask
+        ({"tool_name": "mcp__foodeatup__close_pos_session",
+          "tool_input": {"confirm": True, "confirmed": True}}, "ask"),
+        ({"tool_name": "mcp__RapidoCRM__send_sms",
+          "tool_input": {"confirmed": True}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__create_reservation", "tool_input": {}}, "allow"),
+        ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
+    ],
+    # journal d'écritures : jamais bloquant (allow = exit 0 sans décision)
+    ("foodeatup-boucles", "journal-ecritures.py"): [
+        ({"tool_name": "mcp__foodeatup__create_client",
+          "tool_input": {"establishment_id": 1, "email": "a@b.c"},
+          "tool_response": {"id": 9}}, "allow"),
+        ({"tool_name": "mcp__foodeatup__list_clients", "tool_input": {}}, "allow"),
+    ],
     ("rapido-suite", "garde-destructif.py"): [
         ({"tool_name": "mcp__rapidocrm__update_invoice_status",
           "tool_input": {"statut": "brouillon"}}, "deny"),
@@ -372,12 +372,13 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__rapidocms__create_brand",
           "tool_input": {"couleurs": "#00F"}}, "deny"),
         ({"tool_name": "mcp__rapidocms__create_brand",
-          "tool_input": {"couleurs": "#0055FF,#FFFFFF"}}, "allow"),
+          "tool_input": {"couleurs": "#0055FF,#FFFFFF"}}, "ask"),
         # font_family
         ({"tool_name": "mcp__rapidocms__create_brand",
           "tool_input": {"font_family": "Montserrat"}}, "deny"),
+        # bien formé → ask quand même : une modification de charte se confirme (P4.2)
         ({"tool_name": "mcp__rapidocms__edit_brand",
-          "tool_input": {"brand_id": 1, "font_family": "Arial, sans-serif"}}, "allow"),
+          "tool_input": {"brand_id": 1, "font_family": "Arial, sans-serif"}}, "ask"),
         # logo / site_web http(s)
         ({"tool_name": "mcp__rapidocms__create_brand",
           "tool_input": {"logo": "/tmp/logo.png"}}, "deny"),

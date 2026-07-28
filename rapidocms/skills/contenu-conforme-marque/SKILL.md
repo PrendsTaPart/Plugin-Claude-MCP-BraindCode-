@@ -54,7 +54,11 @@ Ce qui s'ajoute, au moment de l'exécution :
    dit `#1A73E8` ») et **proposer la synchronisation via `gestion-marques`**
    (`edit_brand`) — **jamais d'écrasement silencieux**, dans un sens comme dans
    l'autre. Tant que l'utilisateur n'a pas tranché, appliquer la KB (prioritaire)
-   et le dire.
+   et le dire. Le skill peut donc **corriger**, pas seulement constater : la
+   correction passe par `edit_brand` (ou `create_brand` si la marque n'existe
+   pas côté CMS), et le hook de validation de charte du plugin exige alors une
+   **confirmation humaine** même quand les valeurs sont bien formées — toute
+   modification de charte engage les contenus produits ensuite.
 
 ## Assets de marque (logos officiels)
 
