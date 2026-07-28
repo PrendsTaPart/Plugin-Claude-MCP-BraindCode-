@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-25-blue)
-![Skills](https://img.shields.io/badge/skills-383-brightgreen)
-![Agents](https://img.shields.io/badge/agents-38-orange)
+![Plugins](https://img.shields.io/badge/plugins-26-blue)
+![Skills](https://img.shields.io/badge/skills-397-brightgreen)
+![Agents](https://img.shields.io/badge/agents-41-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -120,6 +120,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
 | `foodeatup` | 1.7.0 | 18 | 4 | foodeatup, rapidocrm | Gestion restaurant FoodEatUp |
+| `foodeatup-boucles` | 0.1.0 | 10 | 3 | foodeatup, rapidocrm | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
 | `rapidocrm` | 1.7.0 | 29 | 2 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |
@@ -145,7 +146,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 25 plugins, 387 skills, 38 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 26 plugins, 397 skills, 41 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -154,7 +155,7 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 | Domaine | Plugins | Ce que vous pilotez |
 |---|---|---|
-| **Restaurant** | `foodeatup` | Salle, cuisine (KDS), HACCP, achats, réservations |
+| **Restaurant** | `foodeatup`, `foodeatup-boucles` | Salle, cuisine (KDS), HACCP, achats, réservations — et **les 8 boucles du livre blanc** (diagnostic par boucle, croisement gestion × vente) |
 | **Ventes & CRM** | `rapidocrm`, `rapido-gmaps` | Prospection, pipeline, devis/factures, vente terrain, **sourcing Google Maps → CRM** |
 | **Relation client** | `rapido-relation-client` | Service client (SLA), NPS, health score, RFM |
 | **Contenu & marque** | `rapidocms`, `rapido-copywriter`, `rapido-design` | Réseaux sociaux, visuels, multi-marques, **copy 4 réseaux**, **studio UX/UI** |
@@ -164,6 +165,28 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 | **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n |
 | **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction` | Pilotage transverse (Loop Engine), finance, chef de cabinet |
 | **Incubation** | `rapido-forge` | 181 exercices StartupsForge → livrables KB |
+
+### Les 8 boucles FoodEatUp (plugin `foodeatup-boucles`)
+
+```
+        GESTION                         VENTE
+  ┌──────────────────┐          ┌──────────────────┐
+  │ ① Configuration  │          │ ⑤ E-commerce     │
+  │ ② Équipe         │          │ ⑥ Communication  │
+  │ ③ Stock/Product. │          │ ⑦ Fidélité       │
+  │ ④ HACCP          │          │ ⑧ Comptabilité   │
+  └────────┬─────────┘          └────────┬─────────┘
+           │       ╔══════════════╗      │
+           └──────▶║  LE SERVICE  ║◀─────┘
+                   ║  (croisement ║
+                   ║   du 8)      ║
+                   ╚══════════════╝
+        commande · encaissement · carte · marge
+```
+
+`/boucles` (état d'ensemble) · `/boucle <n>` (détail) · `/croisement`
+(incohérences gestion × vente) · `/sante-donnees` (fiabilité des données).
+Cartographie complète : [`docs/boucles-vs-outils.md`](docs/boucles-vs-outils.md).
 
 Les **routines récurrentes** (Loop Engine : Sense → Plan → Act → Feed → Report)
 sont cataloguées dans [`reference/registre-routines.md`](reference/registre-routines.md) —

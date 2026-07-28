@@ -206,6 +206,38 @@ else:
             erreurs.append(f"CARTE : plugin {p} absent de carte-marketplace.md — "
                            "relancer scripts/generer-carte-boucles.py")
 
+# --------------------------------------------------------------- 6. MARKETPLACE
+# Chaque entrée : name/source/description/version/category présents, source
+# résout vers un dossier plugin, version synchrone avec plugin.json,
+# catégorie dans la liste harmonisée (docs/POLITIQUE-VERSIONS.md).
+CATEGORIES = {"restaurant", "ventes-crm", "contenu-marque", "rh-projets",
+              "marketing-acquisition", "media-ia", "app-automatisation",
+              "direction-finance", "incubation"}
+try:
+    market = json.load(open(".claude-plugin/marketplace.json", encoding="utf-8"))
+except Exception as e:
+    market = {}
+    erreurs.append(f"MARKETPLACE : marketplace.json illisible ({e})")
+for e in market.get("plugins", []):
+    n = e.get("name", "?")
+    for champ in ("name", "source", "description", "version", "category"):
+        if not e.get(champ):
+            erreurs.append(f"MARKETPLACE : entrée {n} sans champ `{champ}`")
+    src = e.get("source", "")
+    pj_path = os.path.join(src, ".claude-plugin", "plugin.json")
+    if not (src.startswith("./") and os.path.isfile(pj_path)):
+        erreurs.append(f"MARKETPLACE : source `{src}` de {n} ne résout pas "
+                       "(chemin relatif attendu, distribution git — "
+                       "docs/POLITIQUE-VERSIONS.md)")
+        continue
+    pj = json.load(open(pj_path, encoding="utf-8"))
+    if e.get("version") != pj.get("version"):
+        erreurs.append(f"MARKETPLACE : version de {n} divergente "
+                       f"(marketplace {e.get('version')} ≠ plugin.json {pj.get('version')})")
+    if e.get("category") and e["category"] not in CATEGORIES:
+        erreurs.append(f"MARKETPLACE : catégorie `{e['category']}` de {n} hors "
+                       "liste harmonisée")
+
 # ---------------------------------------------------------------------- verdict
 if erreurs:
     print(f"controles-supplementaires.py — {len(erreurs)} erreur(s) :")
