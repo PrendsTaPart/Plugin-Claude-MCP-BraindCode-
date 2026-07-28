@@ -104,7 +104,7 @@ for i in range(len(descs)):
             erreurs.append(f"SIMILARITÉ {s:.2f} : {a[1]} ≈ {b[1]}")
 
 # ------------------------------------------------------------------- 2. SECRETS
-MOTIFS_SECRETS = [
+MOTIFS_DETECTION_FUITES = [
     ("clé OpenAI/Stripe-like", re.compile(r"\b(?:sk|rk|pk)-[A-Za-z0-9]{20,}")),
     ("token GitHub", re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}")),
     ("token Slack", re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{10,}")),
@@ -119,7 +119,7 @@ _FIXTURES = [
     "AKIA" + "C" * 16, "-----BEGIN RSA PRIVATE KEY-----",
     'api_key = "' + "d" * 20 + '"',
 ]
-for (_, rx), fx in zip(MOTIFS_SECRETS, _FIXTURES):
+for (_, rx), fx in zip(MOTIFS_DETECTION_FUITES, _FIXTURES):
     assert rx.search(fx), f"auto-test SECRETS : motif inerte sur {fx[:20]}…"
 
 BINAIRES = (".png", ".jpg", ".jpeg", ".gif", ".pdf", ".zip", ".woff", ".ico")
@@ -127,7 +127,7 @@ for f in fichiers_suivis():
     if f.endswith(BINAIRES) or f == "scripts/controles-supplementaires.py":
         continue  # ce script porte les motifs et fixtures : exclu de son propre scan
     contenu = lire(f)
-    for nom, rx in MOTIFS_SECRETS:
+    for nom, rx in MOTIFS_DETECTION_FUITES:
         m = rx.search(contenu)
         if m:
             # Ne JAMAIS reproduire le contenu détecté : le journal CI est
