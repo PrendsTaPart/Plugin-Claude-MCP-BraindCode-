@@ -82,6 +82,12 @@ powershell -ExecutionPolicy Bypass -File .\scripts\openclaw\install-rapido.ps1 `
   -SetOpenAIModel
 ```
 
+Avec OpenClaw 2026.7.1, l'installateur renomme les `.mcp.json` uniquement dans
+les copies installées sous `~\.openclaw\extensions`. Cela évite que le chargeur
+de bundles ajoute un `cwd` incompatible aux serveurs HTTP. Le clone du dépôt
+reste intact et les mêmes serveurs sont enregistrés par le registre MCP natif
+avec `openclaw mcp set`.
+
 Ne pas réutiliser `-ConfigureWhatsApp` si le canal est déjà correctement lié.
 Pour une nouvelle installation personnelle, la forme est :
 

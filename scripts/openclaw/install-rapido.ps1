@@ -54,6 +54,34 @@ function ConvertTo-NativeJsonArgument {
     return $Json
 }
 
+function Get-InstalledBundleMcpPaths {
+    param(
+        [Parameter(Mandatory = $true)][string]$StateDirectory,
+        [Parameter(Mandatory = $true)][string]$PluginName
+    )
+    $extensionDirectory = Join-Path (Join-Path $StateDirectory "extensions") $PluginName
+    return @{
+        Active = Join-Path $extensionDirectory ".mcp.json"
+        Disabled = Join-Path $extensionDirectory ".mcp.json.rapido-disabled"
+    }
+}
+
+function Disable-InstalledBundleMcp {
+    param(
+        [Parameter(Mandatory = $true)][string]$StateDirectory,
+        [Parameter(Mandatory = $true)][string]$PluginName,
+        [bool]$Execute = $true
+    )
+    $paths = Get-InstalledBundleMcpPaths `
+        -StateDirectory $StateDirectory `
+        -PluginName $PluginName
+    if (-not (Test-Path -LiteralPath $paths.Active)) { return }
+    Write-Host "MCP embarque duplique desactive : $($paths.Active)" -ForegroundColor DarkGray
+    if ($Execute) {
+        Move-Item -LiteralPath $paths.Active -Destination $paths.Disabled -Force
+    }
+}
+
 if ($SelfTest) {
     $guardArguments = @(Get-GuardInstallArguments -PluginPath "C:\Rapido Guard")
     if ($guardArguments -contains "--force") {
@@ -80,6 +108,29 @@ if ($SelfTest) {
     $roundTripJson = & node -e 'process.stdout.write(process.argv[1])' $nativeJson
     if ($LASTEXITCODE -ne 0 -or $roundTripJson -ne $rawJson) {
         throw "Native JSON round-trip self-test failed: $roundTripJson"
+    }
+    $tempStateDir = Join-Path ([IO.Path]::GetTempPath()) ("openclaw-rapido-selftest-" + [guid]::NewGuid().ToString("N"))
+    try {
+        $bundlePaths = Get-InstalledBundleMcpPaths `
+            -StateDirectory $tempStateDir `
+            -PluginName "test-plugin"
+        New-Item -ItemType Directory `
+            -Path ([IO.Path]::GetDirectoryName($bundlePaths.Active)) `
+            -Force | Out-Null
+        [IO.File]::WriteAllText($bundlePaths.Active, '{"mcpServers":{}}')
+        Disable-InstalledBundleMcp `
+            -StateDirectory $tempStateDir `
+            -PluginName "test-plugin"
+        if (
+            (Test-Path -LiteralPath $bundlePaths.Active) -or
+            -not (Test-Path -LiteralPath $bundlePaths.Disabled)
+        ) {
+            throw "Installed bundle MCP isolation self-test failed."
+        }
+    } finally {
+        if (Test-Path -LiteralPath $tempStateDir) {
+            Remove-Item -LiteralPath $tempStateDir -Recurse -Force
+        }
     }
     $nonAsciiBytes = @([IO.File]::ReadAllBytes($PSCommandPath) | Where-Object { $_ -gt 127 })
     if ($nonAsciiBytes.Count -gt 0) {
@@ -194,6 +245,14 @@ foreach ($plugin in $plugins) {
         "--marketplace", $RepoRoot,
         "--force"
     )
+}
+
+Write-Host "Neutralisation des declarations MCP embarquees dupliquees" -ForegroundColor Cyan
+foreach ($plugin in $plugins) {
+    Disable-InstalledBundleMcp `
+        -StateDirectory $stateDir `
+        -PluginName $plugin `
+        -Execute:(-not $DryRun)
 }
 
 if ($Scope -eq "all") {

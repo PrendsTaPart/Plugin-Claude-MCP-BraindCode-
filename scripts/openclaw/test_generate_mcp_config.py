@@ -35,6 +35,8 @@ class GenerateMcpConfigTests(unittest.TestCase):
         for server in result["servers"].values():
             self.assertEqual(server["transport"], "streamable-http")
             self.assertEqual(server["auth"], "oauth")
+            self.assertNotIn("cwd", server)
+            self.assertNotIn("command", server)
         self.assertEqual(result["skipped"], [])
         static_core = json.loads(
             (Path(__file__).with_name("core-mcp.json")).read_text(encoding="utf-8")
