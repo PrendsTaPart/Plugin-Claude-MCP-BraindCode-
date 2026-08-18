@@ -197,6 +197,21 @@ complet, supprimer les plugins/MCP ajoutés avec les commandes `plugins` et `mcp
 de la version OpenClaw installée, puis restaurer cette sauvegarde de
 configuration.
 
+Si le journal affiche `disk I/O error`, arrêter la procédure, libérer de l'espace
+et ne supprimer aucun fichier de l'état OpenClaw. Si un redémarrage Windows
+échoue avec une assertion `UV_HANDLE_CLOSING`, ne pas lancer une seconde instance
+en parallèle :
+
+```powershell
+openclaw gateway stop
+openclaw gateway start
+openclaw gateway status --deep --require-rpc
+```
+
+Si l'arrêt échoue encore, redémarrer Windows avant de reprendre à partir du
+contrôle `gateway status`; ne jamais exposer le port du gateway pour contourner
+ce problème local.
+
 ## Références officielles
 
 - OpenClaw — [bundles Claude compatibles](https://docs.openclaw.ai/plugins/bundles)

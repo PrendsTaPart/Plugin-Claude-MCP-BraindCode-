@@ -189,10 +189,11 @@ if ($SetOpenAIModel) {
 }
 
 if ($ConfigureWhatsApp) {
-    $normalizedPhone = $WhatsAppNumber -replace '^\+', ''
-    if ($normalizedPhone -notmatch '^[1-9][0-9]{7,14}$') {
+    $phoneDigits = $WhatsAppNumber -replace '^\+', ''
+    if ($phoneDigits -notmatch '^[1-9][0-9]{7,14}$') {
         throw "-WhatsAppNumber doit être au format E.164, par exemple +216XXXXXXXX."
     }
+    $normalizedPhone = "+$phoneDigits"
     $policyJson = "allowlist" | ConvertTo-Json -Compress
     $allowFromJson = @($normalizedPhone) | ConvertTo-Json -Compress
     Invoke-Checked "openclaw" @(
