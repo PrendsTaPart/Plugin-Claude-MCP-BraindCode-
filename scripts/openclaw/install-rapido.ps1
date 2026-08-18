@@ -101,7 +101,6 @@ if ($driveRoot -and $driveRoot.Length -ge 2 -and $driveRoot[1] -eq ':') {
     }
 }
 
-$python = Find-Python
 $marketplace = Get-Content (Join-Path $RepoRoot ".claude-plugin\marketplace.json") -Raw | ConvertFrom-Json
 $corePlugins = @("rapido-suite", "rapidocrm", "rapidocms", "rapidorh", "foodeatup")
 $plugins = if ($Scope -eq "all") {
@@ -145,18 +144,21 @@ foreach ($plugin in $plugins) {
     )
 }
 
-$generator = Join-Path $RepoRoot "scripts\openclaw\generate_mcp_config.py"
-$generatorArguments = @($python.Prefix) + @($generator, "--repo", $RepoRoot)
-foreach ($plugin in $plugins) {
-    $generatorArguments += @("--plugin", $plugin)
-}
 if ($Scope -eq "all") {
+    $python = Find-Python
+    $generator = Join-Path $RepoRoot "scripts\openclaw\generate_mcp_config.py"
+    $generatorArguments = @($python.Prefix) + @($generator, "--repo", $RepoRoot)
+    foreach ($plugin in $plugins) {
+        $generatorArguments += @("--plugin", $plugin)
+    }
     $generatorArguments += @("--include-satellites", "--expand-url-env")
-}
-
-$generatedText = & $python.Command @generatorArguments | Out-String
-if ($LASTEXITCODE -ne 0) {
-    throw "La génération de la configuration MCP a échoué."
+    $generatedText = & $python.Command @generatorArguments | Out-String
+    if ($LASTEXITCODE -ne 0) {
+        throw "La génération de la configuration MCP a échoué."
+    }
+} else {
+    $coreConfigPath = Join-Path $RepoRoot "scripts\openclaw\core-mcp.json"
+    $generatedText = Get-Content $coreConfigPath -Raw
 }
 $generated = $generatedText | ConvertFrom-Json
 $serverProperties = @($generated.servers.PSObject.Properties)

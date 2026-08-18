@@ -30,7 +30,9 @@ OAuth MCP ne sont jamais placés dans Git non plus.
 
 OpenClaw a déjà besoin d'être installé et WhatsApp lié. Garder au moins **2 Go**
 libres sur le disque du dépôt ; l'installateur s'arrête sinon. Le runtime de
-plugin exige actuellement Node **22.22.3+**, **24.15+** ou **25.9+**.
+plugin exige actuellement Node **22.22.3+**, **24.15+** ou **25.9+**. Le noyau
+n'exige pas Python ; Python 3 est demandé seulement par `-Scope all` pour
+convertir les déclarations optionnelles des 27 plugins.
 
 ```powershell
 node --version

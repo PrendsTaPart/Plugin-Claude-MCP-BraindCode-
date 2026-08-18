@@ -36,6 +36,10 @@ class GenerateMcpConfigTests(unittest.TestCase):
             self.assertEqual(server["transport"], "streamable-http")
             self.assertEqual(server["auth"], "oauth")
         self.assertEqual(result["skipped"], [])
+        static_core = json.loads(
+            (Path(__file__).with_name("core-mcp.json")).read_text(encoding="utf-8")
+        )
+        self.assertEqual(static_core, result)
 
     def test_unresolved_satellite_url_is_reported_without_secret_expansion(self) -> None:
         with mock.patch.dict(os.environ, {}, clear=True):
