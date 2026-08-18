@@ -17,6 +17,8 @@ param(
 
     [switch]$DryRun,
 
+    [switch]$SelfTest,
+
     [ValidateRange(1, 100)]
     [int]$MinimumFreeGb = 2
 )
@@ -35,7 +37,22 @@ function Format-Command {
     $quoted = $Arguments | ForEach-Object {
         if ($_ -match '[\s"]') { '"' + ($_ -replace '"', '\"') + '"' } else { $_ }
     }
-    return (($Command, $quoted) -join " ").Trim()
+    $parts = @($Command) + @($quoted)
+    return ($parts -join " ").Trim()
+}
+
+if ($SelfTest) {
+    $sample = Format-Command "openclaw" @("plugins", "install", "--link", "C:\Rapido Guard")
+    $expected = 'openclaw plugins install --link "C:\Rapido Guard"'
+    if ($sample -ne $expected) {
+        throw "Format-Command self-test failed: $sample"
+    }
+    $nonAsciiBytes = @([IO.File]::ReadAllBytes($PSCommandPath) | Where-Object { $_ -gt 127 })
+    if ($nonAsciiBytes.Count -gt 0) {
+        throw "The PowerShell installer must remain ASCII-compatible with Windows PowerShell 5.1."
+    }
+    Write-Host "PowerShell installer self-test OK"
+    exit 0
 }
 
 function Invoke-Checked {
@@ -47,7 +64,7 @@ function Invoke-Checked {
     if ($DryRun) { return }
     & $Command @Arguments
     if ($LASTEXITCODE -ne 0) {
-        throw "Commande en échec ($LASTEXITCODE): $(Format-Command $Command $Arguments)"
+        throw "Commande en echec ($LASTEXITCODE): $(Format-Command $Command $Arguments)"
     }
 }
 
@@ -58,7 +75,7 @@ function Find-Python {
     if (Get-Command py -ErrorAction SilentlyContinue) {
         return @{ Command = "py"; Prefix = @("-3") }
     }
-    throw "Python 3 est requis pour convertir les déclarations MCP."
+    throw "Python 3 est requis pour convertir les declarations MCP."
 }
 
 function Assert-SupportedNode {
@@ -77,9 +94,9 @@ function Assert-SupportedNode {
         ($nodeVersion.Major -eq 25 -and $nodeVersion -ge [version]"25.9.0")
     )
     if (-not $supported) {
-        throw "Node.js $nodeVersion non supporté. Installez Node 22.22.3+, 24.15+ ou 25.9+, puis ouvrez un nouveau terminal."
+        throw "Node.js $nodeVersion non supporte. Installez Node 22.22.3+, 24.15+ ou 25.9+, puis ouvrez un nouveau terminal."
     }
-    Write-Host "Node.js supporté : v$nodeVersion" -ForegroundColor Cyan
+    Write-Host "Node.js supporte : v$nodeVersion" -ForegroundColor Cyan
 }
 
 if (-not (Test-Path (Join-Path $RepoRoot ".claude-plugin\marketplace.json"))) {
@@ -125,7 +142,7 @@ if (Test-Path $configPath) {
     }
 }
 
-Write-Host "OpenClaw détecté :" -ForegroundColor Cyan
+Write-Host "OpenClaw detecte :" -ForegroundColor Cyan
 Invoke-Checked "openclaw" @("--version")
 $guardPath = Join-Path $RepoRoot "openclaw-rapido-guard"
 Write-Host "Installation et preuve runtime du garde-fou avant les MCP" -ForegroundColor Cyan
@@ -154,7 +171,7 @@ if ($Scope -eq "all") {
     $generatorArguments += @("--include-satellites", "--expand-url-env")
     $generatedText = & $python.Command @generatorArguments | Out-String
     if ($LASTEXITCODE -ne 0) {
-        throw "La génération de la configuration MCP a échoué."
+        throw "La generation de la configuration MCP a echoue."
     }
 } else {
     $coreConfigPath = Join-Path $RepoRoot "scripts\openclaw\core-mcp.json"
@@ -171,7 +188,7 @@ foreach ($property in $serverProperties) {
 
 foreach ($skipped in @($generated.skipped)) {
     $variables = @($skipped.variables) -join ", "
-    Write-Warning "MCP '$($skipped.server)' ignoré : variable(s) d'URL absente(s) ou expansion non demandée ($variables)."
+    Write-Warning "MCP '$($skipped.server)' ignore : variable(s) d'URL absente(s) ou expansion non demandee ($variables)."
 }
 
 if ($SetOpenAIModel) {
@@ -182,7 +199,7 @@ if ($SetOpenAIModel) {
     }
     Write-Host $modelListText.TrimEnd()
     if ($modelListText -notmatch [regex]::Escape("openai/gpt-5.6-sol")) {
-        throw "Le compte ne confirme pas l'accès à openai/gpt-5.6-sol. Choisissez explicitement un modèle disponible."
+        throw "Le compte ne confirme pas l'acces a openai/gpt-5.6-sol. Choisissez explicitement un modele disponible."
     }
     $modelJson = "openai/gpt-5.6-sol" | ConvertTo-Json -Compress
     Invoke-Checked "openclaw" @(
@@ -193,7 +210,7 @@ if ($SetOpenAIModel) {
 if ($ConfigureWhatsApp) {
     $phoneDigits = $WhatsAppNumber -replace '^\+', ''
     if ($phoneDigits -notmatch '^[1-9][0-9]{7,14}$') {
-        throw "-WhatsAppNumber doit être au format E.164, par exemple +216XXXXXXXX."
+        throw "-WhatsAppNumber doit etre au format E.164, par exemple +216XXXXXXXX."
     }
     $normalizedPhone = "+$phoneDigits"
     $policyJson = "allowlist" | ConvertTo-Json -Compress
@@ -231,7 +248,7 @@ Invoke-Checked "openclaw" @("gateway", "status", "--deep", "--require-rpc")
 Invoke-Checked "openclaw" @("plugins", "inspect", "rapido-guard", "--runtime", "--json")
 
 Write-Host ""
-Write-Host "Configuration locale terminée." -ForegroundColor Green
+Write-Host "Configuration locale terminee." -ForegroundColor Green
 if (-not $StartOAuthLogin) {
     Write-Host "Authentification humaine encore requise pour les MCP OAuth :" -ForegroundColor Yellow
     foreach ($serverName in @($serverProperties.Name)) {
@@ -243,4 +260,4 @@ if (-not $StartOAuthLogin) {
     }
 }
 Write-Host "Test lecture WhatsApp : Liste mes marques RapidoCMS sans rien modifier."
-Write-Host "Test garde-fou : Crée un brouillon RapidoCMS nommé TEST-OPENCLAW, sans le publier."
+Write-Host "Test garde-fou : Cree un brouillon RapidoCMS nomme TEST-OPENCLAW, sans le publier."

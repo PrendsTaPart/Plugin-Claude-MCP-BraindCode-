@@ -43,6 +43,10 @@ jobs:
           node --check openclaw-rapido-guard/index.ts
           node --test openclaw-rapido-guard/test/policy.test.js
 
+      - name: Installateur PowerShell OpenClaw
+        shell: pwsh
+        run: ./scripts/openclaw/install-rapido.ps1 -SelfTest
+
       - name: Carte marketplace à jour (generer-carte-boucles.py, échoue si plugin non classé)
         run: |
           python3 scripts/generer-carte-boucles.py
