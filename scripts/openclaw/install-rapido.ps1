@@ -227,6 +227,14 @@ if (Test-Path $configPath) {
     }
 }
 
+# Repair existing installed copies before the first gateway restart.
+foreach ($plugin in $plugins) {
+    Disable-InstalledBundleMcp `
+        -StateDirectory $stateDir `
+        -PluginName $plugin `
+        -Execute:(-not $DryRun)
+}
+
 Write-Host "OpenClaw detecte :" -ForegroundColor Cyan
 Invoke-Checked "openclaw" @("--version")
 $guardPath = Join-Path $RepoRoot "openclaw-rapido-guard"
