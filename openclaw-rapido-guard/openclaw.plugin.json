@@ -1,0 +1,11 @@
+{
+  "id": "rapido-guard",
+  "name": "Rapido Guard",
+  "version": "0.1.0",
+  "description": "Approval gate for write, destructive, paid and unknown Rapido MCP calls.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

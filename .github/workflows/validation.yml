@@ -19,6 +19,10 @@ jobs:
         with:
           python-version: "3.11"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       # Pas de `pip install` : tout est stdlib. Si un futur script exige une
       # dépendance, ce job DOIT échouer — c'est le contrat du dépôt.
 
@@ -30,6 +34,14 @@ jobs:
 
       - name: Contrôles supplémentaires P5.1 (similarité, secrets, outils MCP, carto, carte)
         run: python3 scripts/controles-supplementaires.py
+
+      - name: Adaptateur MCP OpenClaw
+        run: python3 -m unittest scripts/openclaw/test_generate_mcp_config.py
+
+      - name: Garde-fou natif OpenClaw
+        run: |
+          node --check openclaw-rapido-guard/index.ts
+          node --test openclaw-rapido-guard/test/policy.test.js
 
       - name: Carte marketplace à jour (generer-carte-boucles.py, échoue si plugin non classé)
         run: |

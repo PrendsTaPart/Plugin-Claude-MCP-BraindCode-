@@ -20,6 +20,7 @@ satellites — via des **skills métier**, des **personas experts** et des
 > `./rapido-kb/` (jamais commitées). **Aucun secret n'est stocké dans le dépôt.**
 
 **Sommaire** : [Pourquoi](#pourquoi-ce-marketplace) · [Installation](#installation) ·
+[OpenAI + OpenClaw + WhatsApp](#openai--openclaw--whatsapp) ·
 [Prérequis & connecteurs](#prérequis--connecteurs) · [Les plugins](#les-plugins) ·
 [Démarrage rapide](#démarrage-rapide) · [Conventions maison](#conventions-maison) ·
 [Structure du dépôt](#structure-du-dépôt) · [Sécurité](#sécurité) ·
@@ -63,6 +64,20 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
 
 Test en local depuis un clone : `/plugin marketplace add ./<dossier-du-clone>`
 depuis le dossier parent, puis les mêmes `install`.
+
+## OpenAI + OpenClaw + WhatsApp
+
+La marketplace peut aussi servir d'équipe métier à **OpenClaw avec un modèle
+OpenAI**, puis être pilotée depuis un canal WhatsApp autorisé. L'intégration
+fournie ici convertit les MCP HTTP Rapido et ajoute un garde-fou natif OpenClaw :
+lecture directe, approbation ponctuelle obligatoire pour toute écriture, action
+destructive, payante ou inconnue.
+
+Commencer par le noyau `rapido-suite`, `rapidocrm`, `rapidocms`, `rapidorh` et
+`foodeatup`, puis activer les satellites seulement après une preuve réelle en
+lecture et une preuve d'approbation. Procédure Windows, OAuth, tests WhatsApp,
+passage serveur et retour arrière :
+[`docs/OPENAI-OPENCLAW-WHATSAPP.md`](docs/OPENAI-OPENCLAW-WHATSAPP.md).
 
 ## Prérequis & connecteurs
 
