@@ -41,8 +41,17 @@ function Format-Command {
     return ($parts -join " ").Trim()
 }
 
+function Get-GuardInstallArguments {
+    param([Parameter(Mandatory = $true)][string]$PluginPath)
+    @("plugins", "install", "--link", $PluginPath)
+}
+
 if ($SelfTest) {
-    $sample = Format-Command "openclaw" @("plugins", "install", "--link", "C:\Rapido Guard")
+    $guardArguments = @(Get-GuardInstallArguments -PluginPath "C:\Rapido Guard")
+    if ($guardArguments -contains "--force") {
+        throw "Linked plugin installs must not use --force."
+    }
+    $sample = Format-Command "openclaw" $guardArguments
     $expected = 'openclaw plugins install --link "C:\Rapido Guard"'
     if ($sample -ne $expected) {
         throw "Format-Command self-test failed: $sample"
@@ -146,7 +155,8 @@ Write-Host "OpenClaw detecte :" -ForegroundColor Cyan
 Invoke-Checked "openclaw" @("--version")
 $guardPath = Join-Path $RepoRoot "openclaw-rapido-guard"
 Write-Host "Installation et preuve runtime du garde-fou avant les MCP" -ForegroundColor Cyan
-Invoke-Checked "openclaw" @("plugins", "install", "--link", $guardPath, "--force")
+$guardInstallArguments = @(Get-GuardInstallArguments -PluginPath $guardPath)
+Invoke-Checked "openclaw" $guardInstallArguments
 Invoke-Checked "openclaw" @("plugins", "enable", "rapido-guard")
 Invoke-Checked "openclaw" @("gateway", "restart")
 Invoke-Checked "openclaw" @("gateway", "status", "--deep", "--require-rpc")

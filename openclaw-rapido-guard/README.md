@@ -15,7 +15,7 @@ Claude et ne sont pas exécutés par la couche de compatibilité OpenClaw.
 Installation depuis la racine de ce dépôt :
 
 ```powershell
-openclaw plugins install --link .\openclaw-rapido-guard --force
+openclaw plugins install --link .\openclaw-rapido-guard
 openclaw plugins enable rapido-guard
 openclaw plugins doctor
 ```
