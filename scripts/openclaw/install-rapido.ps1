@@ -46,6 +46,14 @@ function Get-GuardInstallArguments {
     @("plugins", "install", "--link", $PluginPath)
 }
 
+function ConvertTo-NativeJsonArgument {
+    param([Parameter(Mandatory = $true)][string]$Json)
+    if ($PSVersionTable.PSEdition -eq "Desktop") {
+        return $Json.Replace('"', '\"')
+    }
+    return $Json
+}
+
 if ($SelfTest) {
     $guardArguments = @(Get-GuardInstallArguments -PluginPath "C:\Rapido Guard")
     if ($guardArguments -contains "--force") {
@@ -55,6 +63,23 @@ if ($SelfTest) {
     $expected = 'openclaw plugins install --link "C:\Rapido Guard"'
     if ($sample -ne $expected) {
         throw "Format-Command self-test failed: $sample"
+    }
+    $rawJson = '{"url":"https://example.invalid/api/mcp","auth":"oauth"}'
+    $nativeJson = ConvertTo-NativeJsonArgument -Json $rawJson
+    $expectedNativeJson = if ($PSVersionTable.PSEdition -eq "Desktop") {
+        '{\"url\":\"https://example.invalid/api/mcp\",\"auth\":\"oauth\"}'
+    } else {
+        $rawJson
+    }
+    if ($nativeJson -ne $expectedNativeJson) {
+        throw "Native JSON escaping self-test failed: $nativeJson"
+    }
+    if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
+        throw "Node.js is required for the native JSON round-trip self-test."
+    }
+    $roundTripJson = & node -e 'process.stdout.write(process.argv[1])' $nativeJson
+    if ($LASTEXITCODE -ne 0 -or $roundTripJson -ne $rawJson) {
+        throw "Native JSON round-trip self-test failed: $roundTripJson"
     }
     $nonAsciiBytes = @([IO.File]::ReadAllBytes($PSCommandPath) | Where-Object { $_ -gt 127 })
     if ($nonAsciiBytes.Count -gt 0) {
@@ -193,7 +218,8 @@ $serverProperties = @($generated.servers.PSObject.Properties)
 Write-Host "Enregistrement de $($serverProperties.Count) serveur(s) MCP" -ForegroundColor Cyan
 foreach ($property in $serverProperties) {
     $serverJson = $property.Value | ConvertTo-Json -Compress -Depth 20
-    Invoke-Checked "openclaw" @("mcp", "set", $property.Name, $serverJson)
+    $serverJsonArgument = ConvertTo-NativeJsonArgument -Json $serverJson
+    Invoke-Checked "openclaw" @("mcp", "set", $property.Name, $serverJsonArgument)
 }
 
 foreach ($skipped in @($generated.skipped)) {
@@ -211,7 +237,9 @@ if ($SetOpenAIModel) {
     if ($modelListText -notmatch [regex]::Escape("openai/gpt-5.6-sol")) {
         throw "Le compte ne confirme pas l'acces a openai/gpt-5.6-sol. Choisissez explicitement un modele disponible."
     }
-    $modelJson = "openai/gpt-5.6-sol" | ConvertTo-Json -Compress
+    $modelJson = ConvertTo-NativeJsonArgument -Json (
+        "openai/gpt-5.6-sol" | ConvertTo-Json -Compress
+    )
     Invoke-Checked "openclaw" @(
         "config", "set", "agents.defaults.model.primary", $modelJson, "--strict-json"
     )
@@ -223,8 +251,12 @@ if ($ConfigureWhatsApp) {
         throw "-WhatsAppNumber doit etre au format E.164, par exemple +216XXXXXXXX."
     }
     $normalizedPhone = "+$phoneDigits"
-    $policyJson = "allowlist" | ConvertTo-Json -Compress
-    $allowFromJson = @($normalizedPhone) | ConvertTo-Json -Compress
+    $policyJson = ConvertTo-NativeJsonArgument -Json (
+        "allowlist" | ConvertTo-Json -Compress
+    )
+    $allowFromJson = ConvertTo-NativeJsonArgument -Json (
+        @($normalizedPhone) | ConvertTo-Json -Compress
+    )
     Invoke-Checked "openclaw" @(
         "config", "set", "channels.whatsapp.dmPolicy", $policyJson, "--strict-json"
     )

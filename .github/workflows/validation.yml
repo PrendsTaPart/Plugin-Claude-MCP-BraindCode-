@@ -67,3 +67,16 @@ jobs:
           find . -name '*.sh' -not -path './.git/*' -print0 \
             | xargs -0 -r -n1 bash -n
           echo "Tous les .sh passent bash -n"
+
+  valider-windows-powershell:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Installateur Windows PowerShell 5.1
+        shell: powershell
+        run: .\scripts\openclaw\install-rapido.ps1 -SelfTest
