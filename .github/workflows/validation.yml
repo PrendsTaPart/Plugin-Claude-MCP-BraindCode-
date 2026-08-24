@@ -19,6 +19,10 @@ jobs:
         with:
           python-version: "3.11"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       # Pas de `pip install` : tout est stdlib. Si un futur script exige une
       # dépendance, ce job DOIT échouer — c'est le contrat du dépôt.
 
@@ -30,6 +34,18 @@ jobs:
 
       - name: Contrôles supplémentaires P5.1 (similarité, secrets, outils MCP, carto, carte)
         run: python3 scripts/controles-supplementaires.py
+
+      - name: Adaptateur MCP OpenClaw
+        run: python3 -m unittest scripts/openclaw/test_generate_mcp_config.py
+
+      - name: Garde-fou natif OpenClaw
+        run: |
+          node --check openclaw-rapido-guard/index.ts
+          node --test openclaw-rapido-guard/test/policy.test.js
+
+      - name: Installateur PowerShell OpenClaw
+        shell: pwsh
+        run: ./scripts/openclaw/install-rapido.ps1 -SelfTest
 
       - name: Carte marketplace à jour (generer-carte-boucles.py, échoue si plugin non classé)
         run: |
@@ -51,3 +67,16 @@ jobs:
           find . -name '*.sh' -not -path './.git/*' -print0 \
             | xargs -0 -r -n1 bash -n
           echo "Tous les .sh passent bash -n"
+
+  valider-windows-powershell:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Installateur Windows PowerShell 5.1
+        shell: powershell
+        run: .\scripts\openclaw\install-rapido.ps1 -SelfTest

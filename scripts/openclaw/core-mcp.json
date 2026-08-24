@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "servers": {
+    "foodeatup": {
+      "url": "https://foodeatup.com/api/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth"
+    },
+    "rapidocms": {
+      "url": "https://cms.rapidosoftware.com/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth"
+    },
+    "rapidocrm": {
+      "url": "https://crm.rapidosoftware.com/mcp",
+      "transport": "streamable-http",
+      "auth": "oauth"
+    },
+    "rapidorh": {
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh",
+      "transport": "streamable-http",
+      "auth": "oauth"
+    }
+  },
+  "skipped": []
+}
