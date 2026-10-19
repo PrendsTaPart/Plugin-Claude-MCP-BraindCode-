@@ -2,6 +2,8 @@
 
 ## 1.11.0 — 2026-10-19 — couverture des 87 nouveaux outils MCP FoodEatUp (264 au total)
 
+- `privacyPolicyUrl` corrigée : https://site.foodeatup.com/confidentialite.
+
 Inventaire live refait : 264 outils sur le serveur (177 au 2026-07-28, aucun
 retiré). Les 87 nouveaux outils, et `create_hygiene_checklist` qui n'était cité
 nulle part, sont désormais documentés dans un skill.
