@@ -32,7 +32,7 @@ fidélité (`get_loyalty_account`). Charte & tokens → `rapido-design` quand le
 est refondu.
 
 **Hors périmètre : la caisse (POS).** Les encaissements et la clôture Z relèvent de
-l'**exploitation** (skill `caisse-du-jour`, agents `chef-restaurateur`/`chef-de-pass`),
+l'**exploitation** (skill `caisse-du-jour`, agents `chef-restaurateur`/`chef-de-passe`),
 pas de la présence en ligne — ne pas l'orchestrer ici.
 
 ## Interdits (non négociables)

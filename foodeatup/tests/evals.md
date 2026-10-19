@@ -30,7 +30,7 @@ attendu et le comportement décrit doit être observé.
   planning type : l'ancien et le nouveau sont récapitulés, confirmation
   obligatoire, hook garde-destructif en filet (testé stdin → ask).
 
-## Ajouts 1.5.0 — chef-de-pass, coup de feu, notifications du briefing
+## Ajouts 1.5.0 — chef-de-passe, coup de feu, notifications du briefing
 
 ### E18 — Transition KDS illégale refusée
 
@@ -41,7 +41,7 @@ attendu et le comportement décrit doit être observé.
 
 ### E19 — Mode coup de feu
 
-- **Contexte** : service en cours, agent `chef-de-pass`.
+- **Contexte** : service en cours, agent `chef-de-passe`.
 - **Attendu** : une ligne par action (« ✅ Tartare table 12 → prêt »), pas
   de récap intermédiaire, « ✅ » de l'utilisateur accepté comme
   confirmation ; commande au-delà du seuil (KB sinon 15 min) annoncée

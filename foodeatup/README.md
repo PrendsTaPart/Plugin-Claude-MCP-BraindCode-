@@ -37,7 +37,7 @@ Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), s
 ## Agents (5)
 
 - **`chef-cuisine`** — Chef de cuisine, expert fiches techniques et production.
-- **`chef-de-pass`** — Chef de passe (comptoir d'envoi des plats) pendant le service.
+- **`chef-de-passe`** — Chef de passe (comptoir d'envoi des plats) pendant le service.
 - **`chef-restaurateur`** — Directeur de restaurant expérimenté.
 - **`gerant-digital`** — Gérant de la présence en ligne du restaurant — orchestre le site vitrine, la fidélité, les avis et les leads captés.
 - **`responsable-evenements`** — Responsable événementiel du restaurant.
@@ -85,4 +85,4 @@ Dans Claude Code, les outils s'appellent
 
 ## Version & conventions
 
-v1.11.0 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
+v1.11.1 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).

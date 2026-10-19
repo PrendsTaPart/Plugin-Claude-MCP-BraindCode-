@@ -11,7 +11,7 @@
       "name": "foodeatup",
       "source": "./foodeatup",
       "description": "Gestion restaurant (HACCP, salle, caisse, cuisine, achats, écrans)",
-      "version": "1.11.0",
+      "version": "1.11.1",
       "category": "restaurant"
     },
     {

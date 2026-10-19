@@ -1,6 +1,6 @@
 {
   "name": "foodeatup",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "description": "Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS), carte, formules et options, recettes & marges, production, réapprovisionnement, écrans et bornes, appels de l'assistante vocale — avec agents chef-restaurateur et chef-cuisine",
   "author": {
     "name": "BraindCode",
