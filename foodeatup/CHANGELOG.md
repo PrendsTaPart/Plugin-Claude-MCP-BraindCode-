@@ -1,5 +1,19 @@
 # Changelog — plugin foodeatup
 
+## 1.11.2 — 2026-10-19 — hooks lisibles par le validateur du portail
+
+Le portail ne suit automatiquement qu'un script shell sans variable shell
+(hormis `CLAUDE_PLUGIN_ROOT`), sans substitution, motif ni here-document
+(retenue `COMMAND_SCRIPT_NOT_FOLLOWED`).
+- `garde-destructif.sh` : réponse « ask » fixe par `echo`, sans lecture de
+  l'entrée. Le motif ne cite plus le nom de l'outil (Claude Code l'affiche
+  déjà dans la demande de confirmation).
+- `anti-donnee-inventee.sh` : contrôle fait entièrement par un programme awk
+  (lecture par `getline`, sans regex) ; le refus passe par
+  `permissionDecision: "deny"` en JSON (exit 0) au lieu d'exit 2 + stderr.
+  Mêmes règles qu'avant : equipment_id requis, valeur numérique, plage
+  -30 °C à +90 °C. Les deux scripts ne contiennent plus aucun `$`.
+
 ## 1.11.1 — 2026-10-19 — retours de la 2e validation du portail
 
 - Matchers des hooks au format recommandé par le portail, qui tient compte

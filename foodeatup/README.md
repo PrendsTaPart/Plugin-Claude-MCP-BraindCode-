@@ -61,9 +61,10 @@ Dans Claude Code, les outils s'appellent
 - Les données envoyées au serveur sont celles des outils appelés (relevés
   HACCP, réservations, commandes, carte…), pour le compte connecté.
   Politique de confidentialité : https://site.foodeatup.com/confidentialite
-- Les deux hooks (`hooks/scripts/*.sh`) sont des scripts shell locaux : ils lisent
-  l'appel d'outil sur l'entrée standard pour demander une confirmation ou
-  refuser une température invalide, et ne font aucun appel réseau.
+- Les deux hooks (`hooks/scripts/*.sh`) sont des scripts shell locaux sans
+  variable : `garde-destructif.sh` renvoie une demande de confirmation fixe ;
+  `anti-donnee-inventee.sh` lit l'appel d'outil sur l'entrée standard avec awk
+  pour refuser une température invalide. Aucun fichier lu, aucun appel réseau.
 - Les écritures sensibles (paiement, envois, suppressions, diffusion sur les
   écrans, modifications en masse) demandent toujours la confirmation de
   l'utilisateur.
@@ -85,4 +86,4 @@ Dans Claude Code, les outils s'appellent
 
 ## Version & conventions
 
-v1.11.1 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
+v1.11.2 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
