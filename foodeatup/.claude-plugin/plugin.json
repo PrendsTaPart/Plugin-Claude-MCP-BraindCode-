@@ -1,12 +1,13 @@
 {
   "name": "foodeatup",
-  "version": "1.9.0",
-  "description": "Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — avec agents chef-restaurateur et chef-cuisine",
+  "version": "1.11.0",
+  "description": "Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS), carte, formules et options, recettes & marges, production, réapprovisionnement, écrans et bornes, appels de l'assistante vocale — avec agents chef-restaurateur et chef-cuisine",
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"
   },
-  "mcp_requis": [
-    "foodeatup"
-  ]
+  "homepage": "https://foodeatup.com",
+  "repository": "https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-",
+  "privacyPolicyUrl": "https://site.foodeatup.com/confidentialite",
+  "license": "Apache-2.0"
 }

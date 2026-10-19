@@ -187,8 +187,8 @@ attendu et le comportement décrit doit être observé.
 ## Hook — test fonctionnel (rejoué à chaque modification)
 
 ```bash
-echo '{"tool_name":"mcp__foodeatup__create_employee_contract","tool_input":{}}' \
-  | python3 foodeatup/hooks/scripts/garde-destructif.py
+echo '{"tool_name":"mcp__plugin_foodeatup_foodeatup__create_employee_contract","tool_input":{}}' \
+  | sh foodeatup/hooks/scripts/garde-destructif.sh
 # Attendu : JSON permissionDecision "ask", exit 0
 ```
 
@@ -229,3 +229,62 @@ echo '{"tool_name":"mcp__foodeatup__create_employee_contract","tool_input":{}}' 
 - « Lance une campagne de fidélité » → `campagnes-restaurant` (FoodEatUp, lancement confirmé).
 - « Construis un MVP/app sur mesure » → `rapido-lovable:mvp-lovable` (pas `site-vitrine-foodeatup`).
 - « Ajoute un plat à la carte » → `carte-vitrine` (pas `site-vitrine-foodeatup`).
+
+## Ajouts 1.11.0 — nouveaux outils MCP (264)
+
+### E-HUILE — Test d'huile visuel
+
+- **Phrase** : « L'huile de la friteuse 2 a l'air foncée. »
+- **Attendu** : `haccp-huiles-cycles-thermiques` — `search_entities` (friteuse)
+  → `add_oil_test` `method: "visuel"`, `visual_result` demandé à l'utilisateur,
+  **aucun `polar_pct`** ; `corrective_action` demandée si critique.
+
+### E-REFROID — Refroidissement d'un lot
+
+- **Phrase** : « Je lance le refroidissement de 12 L de fond brun, il est à 82 °C. »
+- **Attendu** : `start_thermal_cycle` `kind: refroidissement`, `lot_ref` unique
+  demandé ou proposé à valider, `start_temp: 82` ; relevés via
+  `add_thermal_reading` ; clôture `close_thermal_cycle` avec conformité
+  relayée telle que rendue par le serveur.
+
+### E-ECRAN — Diffusion immédiate
+
+- **Phrase** : « Mets l'affiche happy hour sur la télé du bar pendant 2 h. »
+- **Attendu** : `ecrans-affichage-borne` — `lister_medias` + `lister_ecrans`,
+  `diffuser_maintenant` SANS `confirm` (aperçu relu), puis `confirm: true`,
+  `minutes: 120`. Jamais `confirm: true` au premier appel.
+
+### E-EPUISE — Rupture du jour
+
+- **Phrase** : « Plus de tartare ce soir. »
+- **Attendu** : `carte-caisse-options` — `set_dish_sold_out` `sold_out: true`,
+  PAS `update_dish active:false`.
+
+### E-APPELS — Rappels à faire
+
+- **Phrase** : « Qui je dois rappeler aujourd'hui ? »
+- **Attendu** : `appels-assistante-vocale` — `list_calls` `suivi: a_traiter`,
+  réclamations et manqués en tête, `generate_callback_pitch` proposé ;
+  `mark_call_handled` seulement après rappel confirmé.
+
+### E-COURSES — Liste de courses
+
+- **Phrase** : « Fais-moi la liste de courses pour 80 couverts samedi et passe les commandes. »
+- **Attendu** : `reappro-fournisseurs` — `get_shopping_list` (`covers: 80`,
+  `date` du samedi), ingrédients sans produit signalés, puis
+  `create_orders_from_shopping_list` sans `confirm` (aperçu) et `confirm: true`
+  après validation.
+
+### E-HORAIRES — Horaires
+
+- **Phrase** : « On ferme le lundi midi désormais. »
+- **Attendu** : `service-salle` — `get_opening_hours`, puis `set_opening_hours`
+  avec la SEMAINE COMPLÈTE (lundi midi retiré, tout le reste inchangé), relue
+  avant l'appel.
+
+### E-QR — QR de table volé
+
+- **Phrase** : « Quelqu'un a photographié le QR de la table 4 et le détourne. »
+- **Attendu** : `qr-codes-supports` — `regenerer_qr_table` sans `confirm`
+  (conséquence : chevalet à réimprimer), puis `confirm: true` ; ensuite
+  `generer_qr_table` pour réimprimer.

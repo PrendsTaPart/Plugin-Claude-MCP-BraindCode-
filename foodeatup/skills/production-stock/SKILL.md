@@ -49,3 +49,14 @@ description: Utiliser quand l'utilisateur veut planifier une production, consult
   sans en avertir l'utilisateur d'abord.
 - `list_production_plans` permet de retrouver un `production_id` si l'utilisateur
   ne le connaît pas.
+
+## Supprimer un plan de production (ajout 1.11.0)
+
+`delete_production_plan` (`production_id`) supprime le plan avec ses listes de
+courses et livraisons en attente ; refusé pour une production déjà réalisée
+(historique). Appel sans `confirm` = description du plan → relire, puis
+`confirm: true` (hook `garde-destructif`).
+
+Refroidissement ou remise en température d'un lot produit →
+`haccp-huiles-cycles-thermiques` (`start_thermal_cycle` avec
+`production_plan_id`).

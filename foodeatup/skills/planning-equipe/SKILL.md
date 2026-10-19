@@ -85,3 +85,9 @@ description: Utiliser quand l'utilisateur parle de planning, de shifts, d'horair
 Consulter/éditer une fiche : `get_employee`, `update_employee` (prénom, nom, email,
 téléphone, rôle). **`delete_employee` = offboarding, confirmation** (hook). Création
 (`create_employee`, `create_employee_contract`) déjà couverte.
+
+## Tâches d'équipe existantes (ajout 1.11.0)
+
+`list_tasks` (`professional_id`, `date_from`/`date_to`) : relire les tâches
+déjà assignées (employé, date, priorité, état, shift) **avant** `assign_task`,
+pour éviter les doublons.

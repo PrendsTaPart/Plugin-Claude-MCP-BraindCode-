@@ -69,3 +69,10 @@ Croiser `list_redemptions` + `list_gift_cards` avec les comptes de points
 - **Garde-fous serveur respectés** : ±1000 et motif sur `adjust_points` ; usage unique
   sur `validate_redemption` ; `kind=product` → plat réel.
 - **Rien d'inventé** : soldes, points, stocks et récompenses viennent des outils.
+
+## Taux de capture (ajout 1.11.0)
+
+`get_loyalty_capture` (`from`/`to`) : part des tickets rattachés à une fiche
+client, clients uniques, CA identifié. C'est le KPI d'amont du programme : un
+taux bas = travailler l'identification en caisse avant de changer les
+récompenses.

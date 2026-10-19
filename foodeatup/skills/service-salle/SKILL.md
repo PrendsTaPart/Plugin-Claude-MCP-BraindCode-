@@ -70,3 +70,25 @@ Gérer le fichier clients du restaurant : `create_client` (`nom` requis ; email/
 adresse optionnels), `get_client`, `list_clients` (recherche, statut), `update_client`.
 **`delete_client` = irréversible → confirmation** (hook `garde-destructif`). Le CRM
 (plugin rapidocrm) reste la référence B2B ; ici, c'est le fichier resto.
+
+## État réel d'une table (ajout 1.11.0)
+
+`get_table_status` (`table_id` ou `table_name` « T1 ») : l'état vu par la
+caisse (note ouverte, montant, couverts, addition demandée, lignes non
+envoyées, prochaine réservation) et les **conflits** (statut enregistré
+contredit par la note, deux notes ouvertes, réservation imminente sur table
+occupée). Répondre avec son `summary` ; à consulter avant de forcer un statut.
+
+## Horaires et fermetures (ajout 1.11.0)
+
+Les horaires pilotent la disponibilité des réservations, le site et l'agent
+téléphonique.
+- `get_opening_hours` : horaires de la semaine (midi/soir) + fermetures à venir.
+- `set_opening_hours` (`hours` [{day, service, start_time, end_time} ou
+  {day, closed: true}]) **REMPLACE toute la semaine** : un jour absent devient
+  fermé. Relire la semaine complète à l'utilisateur avant l'appel ; garder
+  `previous_hours` de la réponse pour pouvoir revenir en arrière.
+- `list_closure_periods` (`include_past`), `add_closure_period` (`start_date`,
+  `end_date` inclus, `reason`) : les réservations déjà prises ne sont PAS
+  annulées — les lister à l'utilisateur. `delete_closure_period`
+  (`closure_id`, `confirm: true` après accord).

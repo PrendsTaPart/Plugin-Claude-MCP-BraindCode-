@@ -83,3 +83,20 @@ actionnable, choisie selon l'ordre HACCP > expérience client > rentabilité.
 - Si une source ne renvoie rien (pas de planning, pas de production), l'indiquer
   d'un mot — ne pas inventer.
 - Proposer en fin de briefing : « on traite la priorité 1 ? ».
+
+## Compléments du briefing (ajout 1.11.0, lecture seule)
+
+- **Appels à rappeler** — `list_calls` (`suivi: "a_traiter"`) : réclamations
+  et appels manqués de Caroline → priorité « client » (skill
+  `appels-assistante-vocale`).
+- **Objectifs de vente** — `list_sales_targets` (`running: true`) : réalisé,
+  reste à faire, en bonne voie ou non. Créer un objectif :
+  `create_sales_target` (`label`, `metric` ∈ revenue | tickets |
+  average_ticket | covers | product_quantity + `plat_id`, `target_value`,
+  `starts_on`/`ends_on`) — **hors briefing**, après avoir résumé la cible et
+  obtenu l'accord (`confirm: true`).
+- **Abonnement et crédits** — `get_subscription_overview` (fin d'essai,
+  période de grâce) et `get_credit_balance` (SMS/WhatsApp/vocal) : à citer
+  seulement s'il y a une échéance proche ou un solde bas.
+- **Écrans** — `etat_parc` si l'offre Écrans est active : écran muet en salle
+  = à signaler.

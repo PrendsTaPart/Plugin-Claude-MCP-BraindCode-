@@ -60,3 +60,32 @@ description: Utiliser quand l'utilisateur parle de stock bas, de commande fourni
 Catalogue produits/épicerie : `create_product` (`name`, `price_by_unit`, `unit`),
 `get_product`, `update_product`, **`delete_product` = confirmation**. Créer un
 fournisseur : `create_supplier` (`name`) — complète `get_supplier`/`list_suppliers`.
+
+## Liste de courses et cadencier (ajout 1.11.0)
+
+- **Prévision → liste de courses** — `get_shopping_list` (`covers` seul = mix
+  des 28 derniers jours, ou `covers` + `mix`, ou `dishes` [{plat_id,
+  quantity}] ; `date`/`date_to`, `safety_margin_percent`, `use_stock`) :
+  produits à commander **groupés par fournisseur**, arrondis au
+  conditionnement. `ingredients_sans_produit` (en tête) = à relier avant de
+  pouvoir commander : le signaler.
+- **Liste → commandes réelles** — `create_orders_from_shopping_list` (mêmes
+  paramètres + `delivery_date`, `exclude_ingredient_ids`,
+  `exclude_product_ids`). Sans `confirm` = aperçu des commandes par
+  fournisseur ; `confirm: true` seulement après validation explicite (achat
+  engagé, hook `garde-destructif`).
+- **Cadencier** — `get_cadencier` (`fournisseur_id`, `semaine`, `plat_id`) :
+  colis habituels, proposés et déjà en liste par jour de livraison.
+  `send_cadencier` (`cases` [{establishment_product_id, jour|date, colis}],
+  `memoriser`) : aperçu sans `confirm`, puis `confirm: true` après accord.
+
+## Codes-barres et ingrédients en masse (ajout 1.11.0)
+
+- `lookup_ean` (`ean`) : catalogue du restaurant d'abord, puis OpenFoodFacts,
+  source indiquée par champ. Lecture seule.
+- `fill_ingredient_from_ean` (`ingredient_id`, `ean`) : complète UNIQUEMENT
+  les champs vides (rendus dans `filled` / `kept`).
+- `bulk_update_ingredients` (`items` ou `ingredient_ids` + `set` :
+  `price_per_unit`, `unit`, `alert_threshold`, `cooking_coefficient`,
+  `category_id`, `allergens` — REMPLACE la liste) : tout ou rien, aperçu sans
+  `confirm`, puis `confirm: true`.

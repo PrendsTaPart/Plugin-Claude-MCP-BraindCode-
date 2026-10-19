@@ -20,6 +20,9 @@ foodeatup:delete_employee
 foodeatup:delete_ingredient
 foodeatup:delete_product
 foodeatup:delete_recipe
+foodeatup:delete_closure_period
+foodeatup:delete_dish_category
+foodeatup:delete_production_plan
 # --- foodeatup : argent / droit du travail / réputation
 foodeatup:record_pos_payment
 foodeatup:adjust_points
@@ -28,3 +31,5 @@ foodeatup:create_employee_contract
 foodeatup:update_employee_schedule
 foodeatup:moderate_review
 foodeatup:reply_review
+foodeatup:create_payment_link
+foodeatup:set_opening_hours

@@ -1,9 +1,9 @@
 ---
 name: coordination-cuisine
-description: Utiliser quand, pendant le service, l'utilisateur parle du pass, de l'écran cuisine (KDS), d'un plat prêt, en préparation ou à lancer, ou de coordonner cuisine et salle. Fait avancer les plats commande par commande (update_kds_item_status), signale les commandes qui attendent trop et propose le passage quand tout est prêt.
+description: Utiliser quand, pendant le service, l'utilisateur parle du passe (comptoir d'envoi des plats), de l'écran cuisine (KDS), d'un plat prêt, en préparation ou à lancer, ou de coordonner cuisine et salle. Fait avancer les plats commande par commande (update_kds_item_status), signale les commandes qui attendent trop et propose le passage quand tout est prêt.
 ---
 
-# Coordination cuisine (pass / KDS)
+# Coordination cuisine (passe / KDS)
 
 Pendant le service, la cuisine dicte l'état des plats (« le tartare de la 12
 est prêt ») et ce skill tient le KDS à jour, plat par plat, jusqu'au passage
@@ -31,7 +31,7 @@ confirme l'envoi.
 
 ## Workflow
 
-1. **Vue du pass** — `list_orders` (`establishment_id`,
+1. **Vue du passe** — `list_orders` (`establishment_id`,
    `status: "en_preparation"` — ajouter `confirmee` si la cuisine veut voir ce
    qui arrive) : commandes en cours avec leurs items. L'`item_id` d'un plat
    est l'ID de l'ITEM DE COMMANDE (ligne `boutique_commande_items` renvoyée
@@ -45,13 +45,13 @@ confirme l'envoi.
 3. **Faire avancer les plats** — `update_kds_item_status`
    (`establishment_id`, `item_id`, `status`) plat par plat :
    `pending → in_progress` quand la cuisine attaque, `→ ready` quand le plat
-   est au pass, `→ served` quand la salle l'a envoyé. Annoncer chaque
+   est au passe, `→ served` quand la salle l'a envoyé. Annoncer chaque
    changement (« Tartare table 12 → prêt »).
 4. **Commande complète** — quand TOUS les plats d'une commande sont `ready`,
    le signaler et PROPOSER `update_order_status` (`order_id`,
    `status: "prete"`) — décision de l'utilisateur, jamais automatique
    (machine à états des commandes : voir `gestion-commandes`).
-5. **Commandes qui attendent** — à chaque vue du pass, signaler toute
+5. **Commandes qui attendent** — à chaque vue du passe, signaler toute
    commande en cours depuis plus que le seuil maison
    (`./rapido-kb/processus-internes.md`, défaut 15 min) : « ⏱ table 7
    attend depuis 18 min ». Proposer l'action, ne pas la décider.
