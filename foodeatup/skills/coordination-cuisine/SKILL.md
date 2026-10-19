@@ -66,7 +66,7 @@ Pendant le service : réponses ULTRA-COURTES — une ligne par action
 (« ✅ Tartare table 12 → prêt »), pas de récapitulatif intermédiaire, un
 « ✅ » de l'utilisateur vaut confirmation de la dernière proposition. Le
 récapitulatif complet (IDs, statuts, retards) se fait EN FIN DE SERVICE.
-L'agent `chef-de-pass` incarne ce mode.
+L'agent `chef-de-passe` incarne ce mode.
 
 ## Garde-fous
 

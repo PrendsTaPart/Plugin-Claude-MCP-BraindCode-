@@ -1,5 +1,16 @@
 # Changelog — plugin foodeatup
 
+## 1.11.1 — 2026-10-19 — retours de la 2e validation du portail
+
+- Matchers des hooks au format recommandé par le portail, qui tient compte
+  des différents noms du serveur selon l'hôte :
+  `mcp__.*__(<outils>)$` pour `garde-destructif` (il ne fait que demander une
+  confirmation, donc sans risque même sur un autre serveur) et
+  `mcp__.*foodeatup.*__add_temperature$` pour `anti-donnee-inventee` (il
+  refuse, donc limité aux serveurs FoodEatUp).
+- Agent `chef-de-pass` renommé `chef-de-passe` : dernier « pass » pouvant être
+  lu comme un mot de passe par l'analyse automatique.
+
 ## 1.11.0 — 2026-10-19 — couverture des 87 nouveaux outils MCP FoodEatUp (264 au total)
 
 - `privacyPolicyUrl` corrigée : https://site.foodeatup.com/confidentialite.
