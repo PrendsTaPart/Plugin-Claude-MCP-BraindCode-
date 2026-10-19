@@ -1,5 +1,23 @@
 # Changelog — plugin foodeatup
 
+## 1.10.0 — 2026-10-19 — conformité au portail de soumission des plugins
+
+- **Manifeste** : champ inconnu `mcp_requis` retiré (Claude Code l'ignorait) ;
+  ajout de `privacyPolicyUrl`, `homepage`, `repository`, `license` et d'une
+  icône carrée `.claude-plugin/icon.png` (1024 px).
+- **Hooks** : les deux garde-fous sont réécrits en scripts shell POSIX
+  (`garde-destructif.sh`, `anti-donnee-inventee.sh`) appelés par chemin
+  littéral sous `${CLAUDE_PLUGIN_ROOT}` — plus d'interpréteur Python en
+  ligne de commande. Comportement inchangé (ask / deny / allow).
+- **Noms d'outils** : les matchers ciblent le nom réel des outils d'un MCP
+  fourni par plugin, `mcp__plugin_foodeatup_foodeatup__<outil>` (l'ancien
+  `mcp__foodeatup__<outil>` reste couvert pour un serveur ajouté à la main).
+- **allowed-tools** de `handle-complaint` et `price-check` réduit à `Read` :
+  `WebFetch` et `Bash` n'étaient pas utilisés.
+- `coordination-cuisine` / `chef-de-pass` : « pass » écrit « passe » (comptoir
+  d'envoi des plats) — le terme anglais était lu comme un mot de passe par
+  l'analyse automatique. Le plugin ne lit aucune information d'identification.
+
 ## 1.9.0 — 2026-07-28 — découplage RapidoCRM : FoodEatUp utilise SES outils CRM
 
 - **RapidoCRM retiré** de `.mcp.json` et de `mcp_requis` : FoodEatUp expose ses

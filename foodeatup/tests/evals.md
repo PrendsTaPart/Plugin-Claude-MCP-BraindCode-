@@ -187,8 +187,8 @@ attendu et le comportement décrit doit être observé.
 ## Hook — test fonctionnel (rejoué à chaque modification)
 
 ```bash
-echo '{"tool_name":"mcp__foodeatup__create_employee_contract","tool_input":{}}' \
-  | python3 foodeatup/hooks/scripts/garde-destructif.py
+echo '{"tool_name":"mcp__plugin_foodeatup_foodeatup__create_employee_contract","tool_input":{}}' \
+  | sh foodeatup/hooks/scripts/garde-destructif.sh
 # Attendu : JSON permissionDecision "ask", exit 0
 ```
 

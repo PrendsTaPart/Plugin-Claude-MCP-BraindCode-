@@ -164,10 +164,19 @@ TESTS_HOOKS = {
     "garde-destructif.py": [
         ({"tool_name": "mcp__test__delete_x", "tool_input": {}}, "ask"),
     ],
+    "garde-destructif.sh": [
+        ({"tool_name": "mcp__plugin_foodeatup_foodeatup__delete_dish", "tool_input": {}}, "ask"),
+    ],
     "anti-donnee-inventee.py": [
         ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 150, "equipment_id": 12}}, "deny"),
         ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4, "equipment_id": 12}}, "allow"),
         ({"tool_name": "mcp__foodeatup__add_temperature", "tool_input": {"temperature": 4}}, "deny"),
+    ],
+    "anti-donnee-inventee.sh": [
+        ({"tool_name": "mcp__plugin_foodeatup_foodeatup__add_temperature", "tool_input": {"temperature": 150, "equipment_id": 12}}, "deny"),
+        ({"tool_name": "mcp__plugin_foodeatup_foodeatup__add_temperature", "tool_input": {"temperature": 4, "equipment_id": 12}}, "allow"),
+        ({"tool_name": "mcp__plugin_foodeatup_foodeatup__add_temperature", "tool_input": {"temperature": 4}}, "deny"),
+        ({"tool_name": "mcp__plugin_foodeatup_foodeatup__add_temperature", "tool_input": {"temperature": "abc", "equipment_id": 12}}, "deny"),
     ],
     "garde-argent-reel.py": [
         ({"tool_name": "mcp__facebook-ads__ads_activate_entity", "tool_input": {}}, "ask"),

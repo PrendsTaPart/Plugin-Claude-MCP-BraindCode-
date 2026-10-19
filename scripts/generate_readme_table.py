@@ -5,8 +5,9 @@
   `<plugin>/.claude-plugin/plugin.json` (nom, version, description, mcp_requis)
   + comptage réel des dossiers (`skills/*/SKILL.md`, `agents/*.md`).
 - La clé `mcp_requis` est lue dans le plugin.json ; si absente, elle est
-  **déduite** des serveurs déclarés dans `<plugin>/.mcp.json` (mcpServers) et
-  **écrite** dans le plugin.json (migration idempotente).
+  **déduite** des serveurs déclarés dans `<plugin>/.mcp.json` (mcpServers),
+  sans être écrite : Claude Code ignore ce champ et le portail de soumission
+  le signale comme inconnu.
 - Réécrit UNIQUEMENT la zone entre les marqueurs
   `<!-- TABLE-PLUGINS:START -->` et `<!-- TABLE-PLUGINS:END -->` du README.
 - Stdlib uniquement. Idempotent : relancé sans changement de données, aucun diff.
@@ -56,19 +57,13 @@ def derive_mcp_requis(plugin_dir):
         return []
 
 
-def ensure_mcp_requis(plugin_dir, write=True):
-    """Lit mcp_requis du plugin.json ; l'ajoute (déduit de .mcp.json) si absent."""
+def ensure_mcp_requis(plugin_dir, write=False):
+    """Lit mcp_requis du plugin.json ; le déduit de .mcp.json si absent (jamais écrit)."""
     pj = os.path.join(ROOT, plugin_dir, ".claude-plugin", "plugin.json")
     d = json.load(open(pj, encoding="utf-8"))
-    changed = False
     if "mcp_requis" not in d:
         d["mcp_requis"] = derive_mcp_requis(plugin_dir)
-        changed = True
-        if write:
-            with open(pj, "w", encoding="utf-8") as f:
-                json.dump(d, f, ensure_ascii=False, indent=2)
-                f.write("\n")
-    return d, changed
+    return d, False
 
 
 def short_desc(desc):

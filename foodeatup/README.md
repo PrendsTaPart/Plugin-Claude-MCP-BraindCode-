@@ -25,7 +25,7 @@ Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KD
 ## Agents (3)
 
 - **`chef-cuisine`** — Chef de cuisine, expert fiches techniques et production.
-- **`chef-de-pass`** — Chef de pass pendant le service.
+- **`chef-de-pass`** — Chef de passe pendant le service.
 - **`chef-restaurateur`** — Directeur de restaurant expérimenté.
 
 ## Serveurs MCP requis

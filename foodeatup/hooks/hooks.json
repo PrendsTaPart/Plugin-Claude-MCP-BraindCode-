@@ -2,20 +2,20 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__foodeatup__(delete_.*|create_employee_contract|update_employee_schedule|adjust_points|record_pos_payment|close_pos_session|publish_site|apply_site_template|update_loyalty_program|moderate_review|reply_review|launch_campaign|submit_whatsapp_template|import_storefront_menu)",
+        "matcher": "mcp__(plugin_foodeatup_)?foodeatup__(delete_.*|create_employee_contract|update_employee_schedule|adjust_points|record_pos_payment|close_pos_session|publish_site|apply_site_template|update_loyalty_program|moderate_review|reply_review|launch_campaign|submit_whatsapp_template|import_storefront_menu)",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.py\""
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif.sh\""
           }
         ]
       },
       {
-        "matcher": "mcp__foodeatup__add_temperature",
+        "matcher": "mcp__(plugin_foodeatup_)?foodeatup__add_temperature",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-donnee-inventee.py\""
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-donnee-inventee.sh\""
           }
         ]
       }

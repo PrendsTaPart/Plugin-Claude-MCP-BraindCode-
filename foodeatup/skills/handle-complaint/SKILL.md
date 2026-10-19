@@ -2,7 +2,7 @@
 name: handle-complaint
 description: Utiliser quand un client se plaint (email, avis, ticket) et qu'il faut traiter la réclamation de bout en bout : contexte récupéré, réponse rédigée, correctif opérationnel proposé. Accepte un email ou un ID de ticket en argument. S'appuie sur le MCP foodeatup pour les données réelles et sur ./rapido-kb/ pour les seuils maison.
 source: anthropics/knowledge-work-plugins (commit 564d560c), Apache 2.0
-allowed-tools: Read, WebFetch, Bash
+allowed-tools: Read
 ---
 
 > Nécessite le MCP **foodeatup** (déclaré dans le `.mcp.json` du plugin).
