@@ -1,7 +1,7 @@
 # Couverture MCP du moteur fidélité & jeux FoodEatUp (P4.1)
 
 > Vérification outil par outil contre la liste réelle du serveur
-> (`docs/inventaires/foodeatup-tools-live.txt`, 177 outils, session 2026-07-28).
+> (`docs/inventaires/foodeatup-tools-live.txt`, 264 outils, session 2026-10-19).
 > Règle d'honnêteté : un utilisateur qui demande « crée-moi un jeu » doit
 > obtenir la vérité sur ce qui est faisable en MCP, pas une tentative qui échoue.
 
@@ -11,13 +11,15 @@
 |---|---|---|
 | Lister les roues existantes | `list_wheel_games` | ✅ disponible (lecture) |
 | Statistiques d'une roue | `get_wheel_stats` | ✅ disponible (lecture) |
-| Créer une roue | — | ❌ aucun outil `create_wheel*` sur le serveur |
+| Créer une roue | `create_wheel_game` | ✅ disponible depuis 2026-10 — créée INACTIVE par défaut (`active: true` possible à la création) |
 | Activer/désactiver une roue | — | ❌ aucun outil `update_wheel*` / `toggle_wheel*` |
 | Modifier les lots | — | ❌ absent |
 
-**Conclusion : lecture seule.** Création, activation et paramétrage des lots se
-font dans le **back-office FoodEatUp**. Claude peut : mesurer (stats), détecter
-une roue à l'arrêt, proposer la configuration à saisir — pas l'exécuter.
+**Conclusion (mise à jour 2026-10-19) : création possible, pilotage ensuite en
+back-office.** Claude peut créer une roue (segments, probabilités = 100 %, lots
+fournis par le restaurateur), mesurer (stats) et détecter une roue à l'arrêt ;
+l'activation ou la modification d'une roue existante se font dans le
+**back-office FoodEatUp**.
 
 ## Sondages
 
@@ -25,11 +27,11 @@ une roue à l'arrêt, proposer la configuration à saisir — pas l'exécuter.
 |---|---|---|
 | Lister les sondages | `list_surveys` | ✅ disponible (lecture) |
 | Résultats d'un sondage | `get_survey_results` | ✅ disponible (lecture) |
-| Créer un sondage | — | ❌ aucun outil `create_survey` sur le serveur |
+| Créer un sondage | `create_survey` | ✅ disponible depuis 2026-10 — créé INACTIF par défaut |
 | Clore/diffuser un sondage | — | ❌ absent |
 
-**Conclusion : lecture seule.** Même partage que la roue : analyse par Claude,
-création en back-office. (Nuance : le serveur **RapidoCRM** expose
+**Conclusion (mise à jour 2026-10-19) :** création possible (`create_survey`,
+inactif par défaut), analyse par Claude ; clôture et diffusion en back-office. (Nuance : le serveur **RapidoCRM** expose
 `create_sondage` et `lancer_sondage_entreprise` — c'est le sondage CRM B2B,
 pas le sondage restaurant FoodEatUp ; ne pas les confondre.)
 

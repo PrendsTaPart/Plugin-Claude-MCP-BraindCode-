@@ -60,3 +60,21 @@ Après clôture, présenter le Z (`get_pos_report` avec le `session_id`).
 - **Modes de paiement** = enum strict ; `titre_restaurant` sans rendu.
 - **Opérateur réel** (permission caisse) requis ; note soldée = reste dû 0.
 - **Rien d'inventé** : montants, écarts et rendus viennent du serveur.
+
+## Plusieurs caisses, TPE et liens de paiement (ajout 1.11.0)
+
+- **Z consolidé** — `get_consolidated_pos_report` (`date` AAAA-MM-JJ, défaut
+  aujourd'hui) : total de la maison toutes caisses, détail et écart par poste,
+  règlements, TVA, espèces. Les ventes du site déjà payées en ligne sont à
+  part, jamais dans le total caisse — ne pas les additionner.
+- **TPE Smile&Pay** — `list_payment_terminals` (terminaux, îlot, dernière
+  utilisation) ; `list_terminal_payments` (`date`, `status`) ;
+  `get_smilepay_reconciliation` (`date`) : encaissés / échoués / abandonnés,
+  pourboires, **paiements non rapprochés** à signaler à la clôture.
+- **Lien de paiement** — `create_payment_link` (`amount` TTC, `description`
+  vue par le client ; `order_id` ou `reservation_id` pour un acompte ;
+  canal d'envoi sms, whatsapp ou none, `customer_phone`). **Argent réel et
+  message envoyé au client** → récapituler montant, libellé, destinataire et
+  canal, puis confirmation (hook `garde-destructif`). Suivi :
+  `get_payment_link_status` (`code`).
+- Statistiques de caisse sur une période → `analyse-rentabilite-carte`.

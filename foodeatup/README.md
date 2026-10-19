@@ -1,32 +1,46 @@
 # foodeatup — Gestion restaurant FoodEatUp
 
-Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KDS), recettes & marges, production, réapprovisionnement — avec agents chef-restaurateur et chef-cuisine.
+Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS), carte, formules et options, recettes & marges, production, réapprovisionnement, écrans et bornes, appels de l'assistante vocale — avec agents chef-restaurateur et chef-cuisine.
 
-## Skills (15)
+## Skills (27)
 
 | Skill | Quand l'utiliser |
 |---|---|
 | `analyse-rentabilite-carte` | Analyser sa carte, savoir quels plats garder ou parle d'ingénierie de menu |
-| `briefing-du-jour` | Le briefing du jour, « ma journée » ou un point du matin. Routine du directeur de restaurant |
+| `appels-assistante-vocale` | Appels téléphoniques reçus par Caroline (l'assistante vocale du restaurant), d'appels manqués,… |
+| `boissons-offres-livraison` | Sa carte des boissons, d'un happy hour ou de ses zones de livraison — « ajoute ce cocktail à l… |
+| `briefing-du-jour` | Le briefing du jour, « ma journée » ou un point du matin |
+| `caisse-du-jour` | Caisse, de POS, d'ouvrir la caisse, d'encaisser une note, de rendu monnaie, de clôture Z, de r… |
+| `campagnes-restaurant` | Créer, lancer ou suivre une campagne marketing FoodEatUp ou un template WhatsApp pour son rest… |
+| `carte-caisse-options` | Modifier sa carte telle que la caisse, la borne et le QR de table la vendent — catégories de p… |
 | `carte-vitrine` | Construire ou mettre à jour sa carte en ligne (vitrine web), ses catégories de carte ou ses fo… |
-| `coordination-cuisine` | Pass, de l'écran cuisine (KDS), d'un plat prêt, en préparation ou à lancer, ou de coordonner c… |
+| `coordination-cuisine` | Pendant le service : passe (comptoir d'envoi), écran cuisine (KDS), plats prêts ou à lancer |
+| `ecrans-affichage-borne` | Écrans du restaurant (télé, affichage dynamique, menu board), d'affiches à diffuser, de playli… |
+| `evenements-prives` | Privatisation ou d'événement privé — « une demande de privatisation est arrivée », « réponds à… |
+| `fidelite-restaurant` | Fidélité, de points, de récompenses, de cartes cadeaux, de bons à valider ou d'un geste commer… |
 | `gestion-commandes` | Créer une commande, suivre les commandes en cours ou changer le statut d'une commande (confirm… |
 | `haccp-conformite-quotidienne` | Relevé de température, HACCP, contrôle réception, étiquette DLC, checklist hygiène, plan de ne… |
+| `haccp-huiles-cycles-thermiques` | Huile de friture, de friteuse, de test de polaires, de filtration ou de changement d'huile, ou… |
 | `handle-complaint` | Client se plaint (email, avis, ticket) et qu'il faut traiter la réclamation de bout en bout :… |
 | `margin-analyzer` | Augmenter ses prix, de marges, de coûts qui grignotent le profit, ou demande « est-ce que je g… |
 | `onboarding-restaurateur` | Nouveau client restaurateur démarre sur FoodEatUp, ou quand l'utilisateur dit « installe mon r… |
 | `planning-equipe` | Planning, de shifts, d'horaires d'équipe, de demandes de congé, de pointages, de contrat de tr… |
 | `price-check` | Vérifier ses prix ou voir ses marges par produit avant une décision tarifaire |
 | `production-stock` | Planifier une production, consulter les alertes de production ou valider une production réalis… |
+| `qr-codes-supports` | Un QR code (menu de table, réservation, avis Google, fidélité, roue cadeaux, sondage, carte ca… |
 | `reappro-fournisseurs` | Stock bas, de commande fournisseur ou de réapprovisionnement |
 | `recette-cout-marge` | Créer une recette, calculer le coût d'une recette, une marge, ou fixer un prix de vente |
+| `recrutement-restaurant` | Recruter pour son restaurant — offres d'emploi, candidatures, statuts |
 | `service-salle` | Réservation, d'installer un client, de plan de salle, de file d'attente ou de table libre |
+| `site-vitrine-foodeatup` | Gérer son site vitrine FoodEatUp — « mon site », « publie ma page », « change le thème du site… |
 
-## Agents (3)
+## Agents (5)
 
 - **`chef-cuisine`** — Chef de cuisine, expert fiches techniques et production.
-- **`chef-de-pass`** — Chef de passe pendant le service.
+- **`chef-de-pass`** — Chef de passe (comptoir d'envoi des plats) pendant le service.
 - **`chef-restaurateur`** — Directeur de restaurant expérimenté.
+- **`gerant-digital`** — Gérant de la présence en ligne du restaurant — orchestre le site vitrine, la fidélité, les avis et les leads captés.
+- **`responsable-evenements`** — Responsable événementiel du restaurant.
 
 ## Serveurs MCP requis
 
@@ -38,7 +52,11 @@ Gestion restaurant FoodEatUp : HACCP, service en salle, coordination cuisine (KD
 - « est-ce que je gagne assez ? »
 - « je devrais facturer plus ? »
 - « installe mon restaurant »
+- « mets le tartare en épuisé »
+- « diffuse l'affiche happy hour sur la télé du bar »
+- « qui faut-il rappeler aujourd'hui ? »
+- « fais-moi la liste de courses pour 80 couverts samedi »
 
 ## Version & conventions
 
-v1.7.0 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).
+v1.11.0 — historique dans [CHANGELOG.md](CHANGELOG.md). Skills en français (« Utiliser quand… »), calculs par script stdlib, garde-fous déterministes, rien d'inventé (KB `./rapido-kb/` prioritaire).

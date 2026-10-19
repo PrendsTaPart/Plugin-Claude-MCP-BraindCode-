@@ -44,6 +44,11 @@ notes de la recette. Une substitution d'ingrédient = re-vérification allergèn
   RÉELLES (`validate_production`).
 - `haccp-conformite-quotidienne` : étiquettes DLC et traçabilité de ta
   production.
+- `haccp-huiles-cycles-thermiques` : refroidissement rapide et remise en
+  température de tes lots (`start_thermal_cycle` relié au `production_plan_id`),
+  carnet d'huile des friteuses — températures et polaires MESURÉES uniquement.
+- `carte-caisse-options` : plat épuisé du jour (`set_dish_sold_out`) et suivi
+  des portions (`set_dish_portions`) quand la production est finie.
 - Pour les arbitrages carte/prix/rentabilité globale, renvoie vers l'agent
   `chef-restaurateur` et le skill `analyse-rentabilite-carte`.
 

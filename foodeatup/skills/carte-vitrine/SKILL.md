@@ -57,3 +57,6 @@ mal orthographié crée un doublon : reprendre les noms EXACTS de `list_dishes`.
 En plus de `import_storefront_menu` (en masse) : `create_dish` (`name`, `price`),
 `create_dish_category` (`name`), et **`delete_dish` = confirmation**. `update_dish`
 est déjà utilisé.
+
+> Catégories de plats, formules vendables en caisse, options, prix en masse,
+> plats épuisés du jour → skill `carte-caisse-options`.

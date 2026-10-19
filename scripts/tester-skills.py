@@ -48,7 +48,7 @@ def _charger_catalogue_live(fichier, minimum):
 
 
 CATALOGUE = {
-    # foodeatup : chargé depuis la liste versionnée live (177 outils, 2026-07-28).
+    # foodeatup : chargé depuis la liste versionnée live (264 outils, 2026-10-19).
     # Mode fermé : si le fichier manque, on échoue bruyamment plutôt que de
     # valider contre une liste vide.
     "foodeatup": _charger_catalogue_live("foodeatup-tools-live.txt", 100),

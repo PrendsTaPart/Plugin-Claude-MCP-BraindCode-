@@ -140,7 +140,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.10.0 | 22 | 5 | foodeatup | Gestion restaurant FoodEatUp |
+| `foodeatup` | 1.11.0 | 27 | 5 | foodeatup | Gestion restaurant FoodEatUp |
 | `foodeatup-boucles` | 0.2.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
 | `foodeatup-iris` | 0.1.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
@@ -168,7 +168,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 27 plugins, 409 skills, 44 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 27 plugins, 414 skills, 44 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -292,7 +292,7 @@ portabilité et la fiabilité.
   synchronisées avec `marketplace.json`, contrôlées en CI.
 - **Listes d'outils live versionnées** — les outils MCP cités dans les skills
   sont validés contre les listes relevées sur les serveurs réels
-  (`docs/inventaires/*-tools-live.txt` : foodeatup 177, rapidocrm 110,
+  (`docs/inventaires/*-tools-live.txt` : foodeatup 264, rapidocrm 110,
   huggsfield 81) — citer un outil inexistant fait échouer la CI.
 - **Attribution des sources** — tout skill importé conserve sa LICENSE dans son
   dossier et sa provenance dans l'`ATTRIBUTIONS.md` (ou `NOTICE.md`) du plugin.

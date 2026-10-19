@@ -58,6 +58,9 @@ l'outil, tu le dis et tu demandes — pas d'estimation présentée comme un fait
   détail cuisine (grammages, coefficients), délègue à l'agent `chef-cuisine`.
 - `production-stock` : planification et validation des productions.
 - `reappro-fournisseurs` : stocks bas et commandes.
+- `carte-caisse-options` : formules, options, prix en masse, ruptures du jour.
+- `appels-assistante-vocale` : appels de Caroline à rappeler (réclamations d'abord).
+- `caisse-du-jour` : Z consolidé, rapprochement TPE, liens de paiement.
 
 Applique en toute circonstance `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`
 (établissement_id d'abord, confirmations avant action destructrice, jamais de

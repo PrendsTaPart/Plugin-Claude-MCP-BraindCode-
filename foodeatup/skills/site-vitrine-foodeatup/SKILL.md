@@ -65,3 +65,18 @@ publier (jamais `confirm:true` d'office). Vérifier le domaine (DNS/SSL) via
   `confirm:true` + hook `garde-destructif`) ; `confirm:true` **jamais** posé d'office.
 - **Fil des tokens** : le thème reprend la charte de la marque, zéro valeur en dur inventée.
 - **Leads → CRM** ; **rien d'inventé** (stats, leads, pages viennent du serveur).
+
+## Pages libres et sections (ajout 1.11.0)
+
+- `create_site_page` (`title`, `slug`, `show_in_nav` ∈ header | footer | none,
+  `sections` [{type, props}] parmi les `section_types` de `get_site_pages`) :
+  page en BROUILLON (« Brunch du dimanche ») ; pour une page du catalogue
+  (FAQ, allergènes…), préférer `add_site_page`.
+- `update_site_page` (`page_slug` ; `title`, `new_slug`, `show_in_nav`,
+  `sort`) : titre, adresse, place dans le menu — ne touche ni aux sections ni
+  à la publication.
+- `add_site_section` (`page_slug`, `type`, `props`, `position`) ; la section
+  `menu_grid` se remplit seule depuis la carte.
+- `remove_site_section` (`section_id`) : aperçu sans `confirm`, puis
+  `confirm: true` ; une section verrouillée est refusée.
+Publication toujours séparée et confirmée (`toggle_site_page` / `publish_site`).

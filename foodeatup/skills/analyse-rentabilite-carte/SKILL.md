@@ -72,3 +72,17 @@ Chaque plat est classé sur deux axes, calculés sur des DONNÉES RÉELLES :
 - Toujours indiquer la période et les plats exclus faute de données.
 - Rappeler l'ordre de priorité maison : jamais une hausse de marge au détriment
   de la sécurité alimentaire ou de l'expérience client.
+
+## Statistiques de caisse (ajout 1.11.0)
+
+Sources réelles à croiser avec la matrice (lecture seule, `from`/`to`
+AAAA-MM-JJ) :
+- `get_pos_analytics` : CA, tickets, panier moyen, couverts, marge estimée,
+  CA par jour / heure / canal / mode / serveur / zone / table (défaut 30 j).
+- `get_top_flop_products` (`limit`) : meilleures ventes (CA, quantité, marge
+  estimée) et flops, **zéro vente inclus** — les plats « poids morts » de la
+  matrice.
+- `get_table_turnover` : durée d'occupation moyenne et médiane, rotations par
+  table et par jour — à lire avec la capacité avant toute conclusion sur le CA.
+Chiffres restitués tels quels ; une « marge estimée » serveur reste une
+estimation, à dire comme telle.

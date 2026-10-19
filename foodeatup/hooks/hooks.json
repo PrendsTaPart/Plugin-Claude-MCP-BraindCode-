@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__(plugin_foodeatup_)?foodeatup__(delete_.*|create_employee_contract|update_employee_schedule|adjust_points|record_pos_payment|close_pos_session|publish_site|apply_site_template|update_loyalty_program|moderate_review|reply_review|launch_campaign|submit_whatsapp_template|import_storefront_menu)",
+        "matcher": "mcp__(plugin_foodeatup_)?foodeatup__(delete_.*|create_employee_contract|update_employee_schedule|adjust_points|record_pos_payment|close_pos_session|publish_site|apply_site_template|update_loyalty_program|moderate_review|reply_review|launch_campaign|submit_whatsapp_template|import_storefront_menu|create_payment_link|set_opening_hours|diffuser_maintenant|arreter_diffusion|regenerer_qr_table|create_orders_from_shopping_list|send_cadencier|bulk_update_dishes|bulk_update_dish_images|bulk_update_ingredients|save_formule|create_sales_target|remove_site_section)",
         "hooks": [
           {
             "type": "command",

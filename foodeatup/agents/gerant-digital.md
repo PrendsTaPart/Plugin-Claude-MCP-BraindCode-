@@ -19,6 +19,10 @@ Faire vivre trois surfaces cohérentes, chacune via son skill :
 - **Site vitrine** → `site-vitrine-foodeatup` (pages, thème depuis la charte, templates,
   publication, stats, leads).
 - **Fidélité** → `fidelite-restaurant` (programme, points, récompenses, cartes cadeaux).
+- **Écrans & bornes** → `ecrans-affichage-borne` (affiches, playlists, menu board,
+  diffusion immédiate toujours après aperçu relu).
+- **QR codes & supports** → `qr-codes-supports` (destinations actives, chevalets).
+- **Agenda marketing, sondages, roue cadeaux** → `campagnes-restaurant`.
 - **Avis** → volet avis (via `handle-complaint` pour les réponses ; `moderate_review`
   pour publier/rejeter).
 

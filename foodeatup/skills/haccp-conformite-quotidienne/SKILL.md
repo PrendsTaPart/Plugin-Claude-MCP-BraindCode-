@@ -95,3 +95,18 @@ postes de `list_cleaning_zones`) — l'annoncer avec les non-conformités.
 - Terminer par un récapitulatif : relevés faits, non-conformités, réceptions,
   checklists validées, étiquettes créées, actions de nettoyage enregistrées
   (avec le ratio faites / attendues).
+
+## Modèles de checklists hygiène (paramétrage)
+
+À faire hors service, sur description de l'utilisateur :
+- `create_hygiene_checklist` (`nom_point_controle`, `points_controle` = liste
+  des vérifications, `categorie` ∈ `hygiene_personnel` | `etat_locaux`,
+  `description`) : nouveau modèle, ensuite validé au quotidien via
+  `create_hygiene_checklist_validation` (étape 4).
+- `update_hygiene_checklist` (`template_id` de `list_hygiene_checklists` ;
+  `points_controle` REMPLACE la liste, `points_add` / `points_remove` pour une
+  retouche, `actif: false` pour retirer le modèle des validations futures).
+  Les validations déjà enregistrées ne changent jamais.
+
+Huiles de friture et cycles de refroidissement / remise en température →
+skill `haccp-huiles-cycles-thermiques`.

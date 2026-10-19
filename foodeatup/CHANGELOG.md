@@ -1,5 +1,50 @@
 # Changelog — plugin foodeatup
 
+## 1.11.0 — 2026-10-19 — couverture des 87 nouveaux outils MCP FoodEatUp (264 au total)
+
+Inventaire live refait : 264 outils sur le serveur (177 au 2026-07-28, aucun
+retiré). Les 87 nouveaux outils, et `create_hygiene_checklist` qui n'était cité
+nulle part, sont désormais documentés dans un skill.
+
+- **5 nouveaux skills** :
+  - `haccp-huiles-cycles-thermiques` : carnet d'huile (friteuses, tests de
+    polaires, filtration, changement) et cycles de refroidissement / remise
+    en température, avec la conformité calculée par le serveur ;
+  - `ecrans-affichage-borne` : écrans (parc, appairage, affiches, affiches
+    IA, playlists, diffusion programmée ou immédiate, menu board) et bornes
+    de commande ;
+  - `appels-assistante-vocale` : appels de Caroline (liste, détail, pitch de
+    rappel, notes, appels traités) ;
+  - `qr-codes-supports` : destinations publiques, QR codes, chevalets,
+    régénération d'un QR compromis ;
+  - `carte-caisse-options` : catégories de plats, formules vendables, options,
+    prix et photos en masse, plats épuisés du jour, portions, HubRise.
+- **Skills complétés** : `caisse-du-jour` (Z consolidé, TPE Smile&Pay,
+  rapprochement, liens de paiement), `analyse-rentabilite-carte` (statistiques
+  de caisse, top/flop, rotation des tables), `reappro-fournisseurs` (liste de
+  courses, commandes depuis la liste, cadencier, codes-barres, ingrédients en
+  masse), `production-stock` (suppression de plan), `service-salle` (état
+  réel d'une table, horaires, fermetures), `campagnes-restaurant` (agenda
+  marketing, sondages, roue cadeaux), `fidelite-restaurant` (taux de capture),
+  `site-vitrine-foodeatup` (pages libres, sections), `briefing-du-jour`
+  (appels, objectifs de vente, abonnement, crédits, écrans), `planning-equipe`
+  (tâches existantes), `haccp-conformite-quotidienne` (modèles de checklists).
+- **Agents** mis à jour : chef-cuisine, chef-restaurateur, chef-de-pass,
+  gerant-digital.
+- **Garde-fou `garde-destructif`** étendu aux nouvelles écritures sensibles :
+  lien de paiement, horaires, diffusion et arrêt immédiats, régénération de
+  QR, commandes depuis la liste de courses, cadencier, modifications en masse,
+  formules, objectifs de vente, retrait de section (les `delete_*` étaient
+  déjà couverts).
+- `reference/pieges-outils.md` : 11 nouveaux pièges (catégories de plats ou
+  d'ingrédients, rupture du jour ou retrait de carte, horaires qui remplacent
+  toute la semaine, QR régénéré, test d'huile visuel…).
+- Dépôt : `docs/inventaires/foodeatup-tools-live.txt` (264),
+  `docs/boucles-vs-outils.md` (87 outils classés dans les boucles),
+  `docs/couverture-fidelite-jeux.md` (création de roue et de sondage désormais
+  possible), liste du garde-fou de `foodeatup-boucles` (3 `delete_*`, lien de
+  paiement, horaires).
+
 ## 1.10.0 — 2026-10-19 — conformité au portail de soumission des plugins
 
 - **Manifeste** : champ inconnu `mcp_requis` retiré (Claude Code l'ignorait) ;

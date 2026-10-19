@@ -51,3 +51,20 @@ description: Utiliser quand l'utilisateur veut créer, lancer ou suivre une camp
 - Les campagnes emailing/SMS B2B du CRM → plugin rapidocrm (outils CRM
   volontairement non connectés à ce plugin).
 - Les visuels et posts sociaux → plugin rapidocms.
+
+## Agenda marketing, sondages et roue cadeaux (ajout 1.11.0)
+
+- `get_marketing_calendar` (`year`, `month`) : marronniers, événements locaux,
+  jours creux détectés, campagnes planifiées/envoyées — point de départ pour
+  choisir QUAND lancer. `add_marketing_event` (`date`, `label`, `brief`) :
+  ajouter un match, un marché, une fête de quartier.
+- `create_survey` (`title`, `questions` 1–12 [{type ∈ rating | choice | multi |
+  text | nps, label, options, required}], `trigger` ∈ post_order | post_resa |
+  standalone | wheel, `reward_points`) : créé INACTIF ; activation = décision
+  du restaurateur.
+- `create_wheel_game` (`title`, `segments` 2–12 [{type ∈ Points | Cadeaux |
+  Perdu, label, probability — somme 100, points | plat_id | amount, stock}],
+  `cooldown_days`, `entry_action`, dates) : créée INACTIVE. Probabilités et lots
+  fournis par l'utilisateur ; relayer les probabilités réellement appliquées.
+- QR code d'un sondage ou d'une roue → `qr-codes-supports`. Affiche promo sur
+  les écrans → `ecrans-affichage-borne`.
