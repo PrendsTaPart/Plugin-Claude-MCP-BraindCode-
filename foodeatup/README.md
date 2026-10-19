@@ -42,6 +42,32 @@ Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), s
 - **`gerant-digital`** — Gérant de la présence en ligne du restaurant — orchestre le site vitrine, la fidélité, les avis et les leads captés.
 - **`responsable-evenements`** — Responsable événementiel du restaurant.
 
+## Installation
+
+```
+/plugin install foodeatup --marketplace PrendsTaPart/Plugin-Claude-MCP-BraindCode-
+```
+
+Au premier appel d'un outil, Claude Code ouvre la connexion OAuth au serveur
+MCP FoodEatUp (`https://foodeatup.com/api/mcp`) avec votre compte FoodEatUp.
+Dans Claude Code, les outils s'appellent
+`mcp__plugin_foodeatup_foodeatup__<outil>`.
+
+## Confidentialité & données
+
+- Le plugin ne lit aucun fichier d'identification ni aucune variable
+  d'environnement de la machine : l'accès au compte passe uniquement par la
+  connexion OAuth du serveur MCP FoodEatUp.
+- Les données envoyées au serveur sont celles des outils appelés (relevés
+  HACCP, réservations, commandes, carte…), pour le compte connecté.
+  Politique de confidentialité : https://site.foodeatup.com/confidentialite
+- Les deux hooks (`hooks/scripts/*.sh`) sont des scripts shell locaux : ils lisent
+  l'appel d'outil sur l'entrée standard pour demander une confirmation ou
+  refuser une température invalide, et ne font aucun appel réseau.
+- Les écritures sensibles (paiement, envois, suppressions, diffusion sur les
+  écrans, modifications en masse) demandent toujours la confirmation de
+  l'utilisateur.
+
 ## Serveurs MCP requis
 
 `foodeatup` (seul serveur requis — plugin découplé de RapidoCRM) — connexion et clés : voir « Prérequis & connecteurs » du [README racine](../README.md). Aucune clé n'est stockée dans le dépôt.

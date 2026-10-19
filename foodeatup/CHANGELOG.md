@@ -3,6 +3,11 @@
 ## 1.11.0 — 2026-10-19 — couverture des 87 nouveaux outils MCP FoodEatUp (264 au total)
 
 - `privacyPolicyUrl` corrigée : https://site.foodeatup.com/confidentialite.
+- Icône `.claude-plugin/icon.png` refaite à partir de la mascotte FoodEatUp
+  (autocollant sur fond bleu #007BFF, 1024 px).
+- README : ligne d'installation, nom des outils dans Claude Code, section
+  « Confidentialité & données » ; `LICENSE` (Apache 2.0) copiée dans le dossier
+  du plugin.
 
 Inventaire live refait : 264 outils sur le serveur (177 au 2026-07-28, aucun
 retiré). Les 87 nouveaux outils, et `create_hygiene_checklist` qui n'était cité
