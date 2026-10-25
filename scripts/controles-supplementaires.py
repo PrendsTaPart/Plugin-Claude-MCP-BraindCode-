@@ -203,7 +203,27 @@ PERIMETRES = [
      live | AUTRES_SERVEURS | _outils_annonces_employe(),
      "serveurs déclarés par rapido-employe (catalogues + outils annoncés par "
      "l'Academy, reference/familles-outils.json)"),
+    # foodeatup-tutoriel : l'Académie SEULE — le plugin de formation ne cite
+    # jamais un outil du connecteur produit (il ne l'appelle jamais). Règle
+    # propre à ce répertoire : les autres périmètres ne bougent pas.
+    (("foodeatup-tutoriel/",), _ts.CATALOGUE.get("foodeatup-tutoriel", set()),
+     "outils du serveur Académie uniquement (36 outils — le plugin n'appelle "
+     "jamais le connecteur produit)"),
 ]
+# Cohérence du garde fail-closed : la copie embarquée dans le hook doit être
+# IDENTIQUE à l'inventaire versionné (sinon le garde et la CI divergent).
+_emb_path = "foodeatup-tutoriel/hooks/scripts/outils-academie.txt"
+_embarque = {l.strip() for l in lire(_emb_path).splitlines()
+             if l.strip() and not l.startswith("#")}
+_inventaire = {l.strip() for l in
+               lire("docs/inventaires/foodeatup-tutoriel-tools-live.txt").splitlines()
+               if l.strip() and not l.startswith("#")}
+if _embarque != _inventaire:
+    _diff = sorted(_embarque ^ _inventaire)
+    erreurs.append(f"OUTILS : {_emb_path} diverge de l'inventaire versionné "
+                   f"({', '.join(_diff[:6])}…)" if len(_diff) > 6 else
+                   f"OUTILS : {_emb_path} diverge de l'inventaire versionné "
+                   f"({', '.join(_diff)})")
 if live:
     for f in fichiers_suivis():
         if not f.endswith(".md") or f.endswith("CHANGELOG.md"):

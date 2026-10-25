@@ -56,9 +56,6 @@ CATALOGUE = {
     "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
     # huggsfield (Higgsfield) : liste versionnée live (81 outils, 2026-07-28).
     "huggsfield": _charger_catalogue_live("huggsfield-tools-live.txt", 60),
-    # academy-foodeatup : liste versionnée (26 outils, session 2026-07-28 —
-    # serveur injoignable le 2026-10-25, à re-vérifier), mode fermé si absente.
-    "academy-foodeatup": _charger_catalogue_live("academy-foodeatup-tools-live.txt", 20),
     # academy (« FoodEatUp formation », formation.foodeatup.fr) : liste
     # versionnée live (191 outils via describe_server, 2026-10-25), mode fermé.
     "academy": _charger_catalogue_live("academy-tools-live.txt", 150),
@@ -394,16 +391,55 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
     ],
     # foodeatup-iris — jamais de publication auto ; crédits confirmés avant
-    # foodeatup-tutoriel — publication et gouvernance des comptes confirmées
-    ("foodeatup-tutoriel", "garde-academie.py"): [
-        ({"tool_name": "mcp__Academy_FoodEatUp__admin_publish_toggle",
-          "tool_input": {"cours_id": 1}}, "ask"),
-        ({"tool_name": "mcp__Academy_FoodEatUp__admin_user_role_set",
-          "tool_input": {"user_id": 1, "role": "formateur"}}, "ask"),
-        ({"tool_name": "mcp__Academy_FoodEatUp__academy_search",
-          "tool_input": {"q": "haccp"}}, "allow"),
-        ({"tool_name": "mcp__Academy_FoodEatUp__admin_cours_create",
-          "tool_input": {"titre": "x"}}, "allow"),
+    # foodeatup-tutoriel — périmètre Académie fail-closed : un outil hors de
+    # l'inventaire vérifié (36 outils) demande une confirmation humaine.
+    ("foodeatup-tutoriel", "garde-perimetre-academie.py"): [
+        ({"tool_name": "mcp__Foodeatup_tutoriel__rechercher_tutoriels",
+          "tool_input": {"question": "relevé de température"}}, "allow"),
+        ({"tool_name": "mcp__foodeatup-tutoriel__quiz_tutoriel",
+          "tool_input": {"slug": "boucle-01-configuration-boutique"}}, "allow"),
+        # outil inconnu de l'inventaire (dérive serveur) → ask
+        ({"tool_name": "mcp__Foodeatup_tutoriel__outil_tout_neuf",
+          "tool_input": {}}, "ask"),
+        # outil d'un AUTRE serveur passé par erreur dans le matcher → ask aussi
+        ({"tool_name": "mcp__foodeatup_tutoriel__admin_publish_toggle",
+          "tool_input": {}}, "ask"),
+    ],
+    # foodeatup-tutoriel — un lien/slug vient d'une réponse du serveur,
+    # jamais de mémoire.
+    ("foodeatup-tutoriel", "anti-lien-invente.py"): [
+        ({"tool_name": "mcp__Foodeatup_tutoriel__carte_tutoriel",
+          "tool_input": {"slug": "relever-les-temperatures"}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__rechercher_tutoriels",
+          "tool_input": {"question": "comment je fais un relevé ?"}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__carte_tutoriel",
+          "tool_input": {"slug": "https://exemple.com/video"}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__tutoriels_du_module",
+          "tool_input": {"module": "haccp",
+                         "lien": "https://site-pirate.example/tuto"}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__lister_tutoriels",
+          "tool_input": {"moduleSlug": "HACCP Module"}}, "deny"),
+    ],
+    # foodeatup-tutoriel — jamais un montant écrit sans date de vérification.
+    ("foodeatup-tutoriel", "garde-tarifs-et-commissions.py"): [
+        ({"tool_name": "Write",
+          "tool_input": {"file_path": "plan.html",
+                         "content": "Pack StockVision FoodEatUp : 99 €/mois"}},
+         "ask"),
+        ({"tool_name": "Write",
+          "tool_input": {"file_path": "plan.html",
+                         "content": "Pack StockVision FoodEatUp : 99 €/mois "
+                                    "(tarifs vérifiés le 2026-08-09)"}},
+         "allow"),
+        ({"tool_name": "Edit",
+          "tool_input": {"new_string": "le plan de formation des serveurs"}},
+         "allow"),
+    ],
+    # foodeatup-tutoriel — le contexte de session n'interfère jamais ailleurs.
+    ("foodeatup-tutoriel", "contexte-academie.py"): [
+        ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__lister_modules",
+          "tool_input": {}}, "allow"),
     ],
     ("foodeatup-iris", "garde-iris.py"): [
         ({"tool_name": "mcp__rapidocms__schedule_draft_tool", "tool_input": {}}, "ask"),

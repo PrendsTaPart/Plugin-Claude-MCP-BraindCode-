@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan de formation d'équipe</title>
+<style>
+:root { --bg:#f7f5f0; --fg:#1d1c1a; --carte:#ffffff; --accent:#b4540a;
+  --sourdine:#6b665e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#16140f; --fg:#eee9e0;
+    --carte:#211d16; --accent:#e8884a; --sourdine:#a39b8d; }
+}
+:root[data-theme="dark"] { --bg:#16140f; --fg:#eee9e0; --carte:#211d16;
+  --accent:#e8884a; --sourdine:#a39b8d; }
+body { margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
+  font:16px/1.55 system-ui, sans-serif; }
+main { max-width:760px; margin:0 auto; }
+h1 { font-size:1.3rem; }
+.rythme { color:var(--sourdine); }
+.poste { background:var(--carte); border-radius:12px; padding:16px 18px;
+  margin:14px 0; break-inside:avoid; }
+.poste h3 { margin:0 0 .5em; color:var(--accent); }
+.poste ol li { margin:.3em 0; }
+.poste small { color:var(--sourdine); }
+footer { color:var(--sourdine); font-size:.8rem; margin-top:1.2em; }
+@media print { body { background:#fff; padding:0; }
+  .poste { border:1px solid #ccc; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>{{TITRE}}</h1>
+  <p class="rythme">Rythme : {{RYTHME}} minute(s) par séance.</p>
+  {{POSTES}}
+  <footer>{{NOTE}} Chaque membre tient son code de reprise (commande
+  /carnet). Données : réponse de l'outil former_son_equipe du serveur
+  Académie.</footer>
+</main>
+</body>
+</html>

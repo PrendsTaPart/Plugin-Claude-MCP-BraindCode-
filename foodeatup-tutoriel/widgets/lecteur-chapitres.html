@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecteur de tutoriel</title>
+<style>
+:root { --bg:#f7f5f0; --fg:#1d1c1a; --carte:#ffffff; --accent:#b4540a;
+  --sourdine:#6b665e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#16140f; --fg:#eee9e0;
+    --carte:#211d16; --accent:#e8884a; --sourdine:#a39b8d; }
+}
+:root[data-theme="dark"] { --bg:#16140f; --fg:#eee9e0; --carte:#211d16;
+  --accent:#e8884a; --sourdine:#a39b8d; }
+body { margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
+  font:16px/1.55 system-ui, sans-serif; }
+main { max-width:760px; margin:0 auto; background:var(--carte);
+  border-radius:14px; padding:20px; }
+h1 { margin:0 0 .2em; font-size:1.3rem; }
+.meta { color:var(--sourdine); font-size:.9rem; margin-bottom:1em; }
+video { width:100%; border-radius:10px; background:#000; }
+.avant { border-left:3px solid var(--accent); padding:.5em .9em;
+  margin:1em 0; }
+h2 { font-size:1rem; color:var(--accent); margin:1.2em 0 .4em; }
+ol li { margin:.35em 0; }
+.liens a { color:var(--accent); margin-right:1.2em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>{{TITRE}}</h1>
+  <p class="meta">Durée : {{DUREE}}</p>
+  <div class="avant"><strong>Avant de lancer :</strong> {{AVANT}}</div>
+  <video controls playsinline preload="metadata" poster="{{VIGNETTE}}"
+         src="{{VIDEO}}"></video>
+  <h2>À suivre pendant la vidéo</h2>
+  <ol>
+    {{CHAPITRES}}
+  </ol>
+  <p class="liens">
+    <a href="{{PAGE}}">Fiche sur l'Académie</a>
+    <a href="{{YOUTUBE}}">Voir sur YouTube</a>
+  </p>
+</main>
+</body>
+</html>

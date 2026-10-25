@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiche tutoriel</title>
+<style>
+/* Jetons neutres — surchargables par la charte client (./rapido-kb/). */
+:root { --bg:#f7f5f0; --fg:#1d1c1a; --carte:#ffffff; --accent:#b4540a;
+  --sourdine:#6b665e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#16140f; --fg:#eee9e0;
+    --carte:#211d16; --accent:#e8884a; --sourdine:#a39b8d; }
+}
+:root[data-theme="dark"] { --bg:#16140f; --fg:#eee9e0; --carte:#211d16;
+  --accent:#e8884a; --sourdine:#a39b8d; }
+body { margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
+  font:16px/1.55 system-ui, sans-serif; }
+main { max-width:680px; margin:0 auto; background:var(--carte);
+  border-radius:14px; overflow:hidden; }
+img.vignette { display:block; width:100%; aspect-ratio:16/9;
+  object-fit:cover; background:var(--sourdine); }
+.corps { padding:20px; }
+.meta { color:var(--sourdine); font-size:.85rem; text-transform:uppercase;
+  letter-spacing:.04em; }
+h1 { margin:.3em 0 .5em; font-size:1.35rem; }
+h2 { font-size:1rem; color:var(--accent); margin:1.2em 0 .4em; }
+ol li { margin:.35em 0; }
+.astuce { border-left:3px solid var(--accent); padding:.5em .9em;
+  margin-top:1em; background:color-mix(in srgb, var(--accent) 8%, var(--carte)); }
+a.bouton { display:inline-block; margin-top:1.2em; padding:.55em 1.1em;
+  border-radius:8px; background:var(--accent); color:#fff;
+  text-decoration:none; font-weight:600; }
+footer { padding:0 20px 18px; color:var(--sourdine); font-size:.8rem; }
+</style>
+</head>
+<body>
+<main>
+  <img class="vignette" src="{{VIGNETTE}}" alt="Vignette du tutoriel {{TITRE}}">
+  <div class="corps">
+    <p class="meta">{{MODULE}} · {{DUREE}}</p>
+    <h1>{{TITRE}}</h1>
+    <h2>À quoi ça sert</h2>
+    <p>{{A_QUOI}}</p>
+    <h2>Les étapes</h2>
+    <ol>
+      {{ETAPES}}
+    </ol>
+    <div class="astuce"><strong>Astuce du chef :</strong> {{ASTUCE}}</div>
+    <a class="bouton" href="{{URL}}">Ouvrir la fiche sur l'Académie</a>
+  </div>
+  <footer>Données : réponse du serveur « FoodEatUp tutoriel » — rien
+  d'inventé, un champ absent s'affiche « — ».</footer>
+</main>
+</body>
+</html>

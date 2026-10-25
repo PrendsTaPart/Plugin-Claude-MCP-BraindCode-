@@ -29,6 +29,36 @@ s'améliore chaque vendredi, à travers 15 serveurs déclarés.
 - Orchestrateur assumé : délègue à rapidocrm, rapido-gmaps,
   rapido-leadmagnet, rapido-copywriter, rapido-direction, rapido-suite —
   zéro skill doublonné (contrôle de similarité CI).
+## L'Académie FoodEatUp, version serveur réel — foodeatup-tutoriel 0.2.0 (2026-10-25)
+
+Le plugin **`foodeatup-tutoriel`** est reconstruit sous le même slug sur le
+**vrai serveur public « FoodEatUp tutoriel »** (36 outils vérifiés en session
+live, v0.7.0, endpoint `https://tutoriel.foodeatup.com/mcp` — lecture seule,
+sans compte), en remplacement de la surface Academy de juillet (26 outils,
+serveur resté injoignable).
+
+- **16 skills** couvrant tout le serveur : cadrage (`demarrer-academie`,
+  secteur avant métier), parcours (`parcours-sur-mesure`), rituel de leçon
+  vidéo → quiz → exercice (`lecon-guidee`), recherche et exploration, équipe
+  (`former-mon-equipe`, rien n'est « envoyé »), carnet de reprise, prompts,
+  pont vers le connecteur produit (`passer-a-l-action` — jamais appelé par le
+  plugin), offre et partenaires aux **chiffres exclusivement sourcés et
+  datés**, parcours convive (**vidéos non tournées : aucun lien annoncé**),
+  API développeur, studio de production des tutos manquants.
+- **4 agents** (chef-formateur, responsable-formation, conseiller-academie,
+  producteur-tutos) + **7 commandes** (/academie, /lecon, /quiz, /parcours,
+  /former-equipe, /carnet, /tutos-manquants).
+- **5 widgets HTML** rendus par `render_widget.py` (stdlib, formules
+  affichées) — le serveur n'expose aucune ressource MCP Apps (vérifié), les
+  gabarits locaux sont le repli officiel.
+- **4 hooks testés en CI** : périmètre Académie **fail-closed** (inventaire
+  embarqué = liste versionnée, égalité contrôlée), anti-lien-inventé (deny),
+  garde tarifs/commissions (montant sans date de vérification → ask),
+  contexte de session.
+- CI étendue **sans assouplir les autres règles** : catalogue fail-closed 36
+  outils + périmètre OUTILS « Académie seule » pour `foodeatup-tutoriel/`.
+- `foodeatup` 1.11.5 : la passerelle d'onboarding pointe vers les nouveaux
+  skills.
 
 ## Studio UX/UI — rapido-design (2026-07-15)
 

@@ -7,8 +7,8 @@ satellites — via des **skills métier**, des **personas experts** et des
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
 ![Plugins](https://img.shields.io/badge/plugins-29-blue)
-![Skills](https://img.shields.io/badge/skills-449-brightgreen)
-![Agents](https://img.shields.io/badge/agents-54-orange)
+![Skills](https://img.shields.io/badge/skills-461-brightgreen)
+![Agents](https://img.shields.io/badge/agents-57-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -57,7 +57,7 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
    /plugin install foodeatup@rapido           ← si vous gérez un restaurant
    /plugin install foodeatup-boucles@rapido   ← + les 8 boucles (diagnostic, croisement gestion × vente)
    /plugin install foodeatup-iris@rapido      ← + Iris (communication : visuels & vidéos de plats, validés par vous)
-   /plugin install foodeatup-tutoriel@rapido  ← + l'Académie (se former, enseigner, fabriquer des cours)
+   /plugin install foodeatup-tutoriel@rapido  ← + l'Académie publique (parcours, leçons vidéo, quiz, équipe)
    /plugin install rapidocrm@rapido           ← ventes, devis, factures, campagnes
    /plugin install rapidocms@rapido           ← réseaux sociaux, visuels, marques
    ```
@@ -142,10 +142,10 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.11.4 | 27 | 5 | foodeatup | Gestion restaurant FoodEatUp |
+| `foodeatup` | 1.11.5 | 27 | 5 | foodeatup | Gestion restaurant FoodEatUp |
 | `foodeatup-boucles` | 0.3.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
 | `foodeatup-iris` | 0.2.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
-| `foodeatup-tutoriel` | 0.1.0 | 4 | 1 | academy-foodeatup | L'Académie FoodEatUp dans Claude |
+| `foodeatup-tutoriel` | 0.2.0 | 16 | 4 | foodeatup-tutoriel | L'Académie FoodEatUp dans Claude (serveur public tutoriel.foodeatup.com, lecture seule) |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.12.0 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |
@@ -172,7 +172,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 29 plugins, 449 skills, 54 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 29 plugins, 461 skills, 57 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -181,7 +181,7 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 
 | Domaine | Plugins | Ce que vous pilotez |
 |---|---|---|
-| **Restaurant** | `foodeatup`, `foodeatup-boucles`, `foodeatup-iris`, `foodeatup-tutoriel` | Salle, cuisine (KDS), HACCP, achats, réservations — **les 8 boucles du livre blanc** (diagnostic, croisement) — **Iris** (communication depuis les données d'exploitation) — et **l'Académie** (se former depuis les vrais besoins) |
+| **Restaurant** | `foodeatup`, `foodeatup-boucles`, `foodeatup-iris`, `foodeatup-tutoriel` | Salle, cuisine (KDS), HACCP, achats, réservations — **les 8 boucles du livre blanc** (diagnostic, croisement) — **Iris** (communication depuis les données d'exploitation) — et **l'Académie publique** (parcours sur mesure, leçons vidéo + quiz + exercices, formation d'équipe — le serveur enseigne, il n'agit pas) |
 | **Ventes & CRM** | `rapidocrm`, `rapido-gmaps`, `rapido-employe` | Prospection, pipeline, devis/factures, vente terrain, **sourcing Google Maps → CRM** — et **Claude employé** (vend FoodEatUp dans le cadre Academy : autonomie, quotas, budget) |
 | **Relation client** | `rapido-relation-client` | Service client (SLA), NPS, health score, RFM |
 | **Contenu & marque** | `rapidocms`, `rapido-copywriter`, `rapido-design` | Réseaux sociaux, visuels, multi-marques, **copy 4 réseaux**, **studio UX/UI** |
