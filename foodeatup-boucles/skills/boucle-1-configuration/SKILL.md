@@ -17,6 +17,10 @@ trouée (un plat sans TVA, une salle sans tables, un relevé HACCP sans équipem
 1. `search_entities` si l'`establishment_id` n'est pas connu (le demander sinon).
 2. Lectures, dans cet ordre : `list_categories`, `list_tva`, `list_units`,
    `list_zones`, `list_tables`, puis `list_dishes` et `list_products` pour croiser.
+   Référentiels 2026-10 : `get_opening_hours` (horaires affichés au public) et
+   `list_closure_periods` (fermetures posées), `list_dish_categories` (catégories
+   de CARTE, distinctes de `list_categories`), `get_hubrise_status` (liaison
+   caisse externe).
 3. Croisement : chaque plat/produit doit pointer vers une catégorie et une TVA
    existantes ; chaque zone doit contenir au moins une table.
 4. Corrections à la demande : `create_category` / `update_category`,

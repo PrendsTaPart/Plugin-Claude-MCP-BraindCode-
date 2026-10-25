@@ -24,6 +24,11 @@ traçabilités complètes, les checklists validées ? La question de la boucle :
    `create_hygiene_checklist_validation`), `list_cleaning_actions` vs
    `list_cleaning_zones` (zones jamais nettoyées).
 5. `list_haccp_labels` : étiquettes DLC en cours, alertes d'expiration.
+6. Huiles de friture : `list_fryers` vs `list_oil_logs` — chaque friteuse
+   active doit avoir ses contrôles (test polaire/visuel, filtration, change) ;
+   une friteuse sans journal est un trou de registre.
+7. Refroidissements : `list_thermal_cycles` — un cycle ouvert jamais clôturé
+   (`close_thermal_cycle`) est une non-conformité en cas de contrôle.
 
 ## Règles métier
 

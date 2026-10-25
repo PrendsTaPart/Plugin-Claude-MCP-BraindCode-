@@ -1,5 +1,13 @@
 # Changelog — plugin foodeatup
 
+## 1.11.3 — 2026-10-25 — roue & sondages : renvois à jour
+
+- `fidelite-restaurant` : le « volet animation à venir » est remplacé par le
+  renvoi réel — la création (`create_wheel_game`, `create_survey`, créés
+  inactifs) vit dans `campagnes-restaurant`.
+- docs/couverture-fidelite-jeux.md : « réponse type » réécrite (créer = MCP,
+  activer = back-office).
+
 ## 1.11.2 — 2026-10-19 — hooks lisibles par le validateur du portail
 
 Le portail ne suit automatiquement qu'un script shell sans variable shell

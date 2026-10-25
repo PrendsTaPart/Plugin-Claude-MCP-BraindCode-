@@ -7,9 +7,9 @@
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `foodeatup` | 1.11.2 | 27 | Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS)… |
-| `foodeatup-boucles` | 0.2.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
-| `foodeatup-iris` | 0.1.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
+| `foodeatup` | 1.11.3 | 27 | Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS)… |
+| `foodeatup-boucles` | 0.3.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
+| `foodeatup-iris` | 0.2.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
 
 Phrases qui déclenchent le bon skill :
 - « fais le briefing du jour de mon restaurant »
@@ -122,8 +122,9 @@ Phrases qui déclenchent le bon skill :
 
 ## Ce que la marketplace ne peut PAS faire (limites connues)
 
-- Créer/activer une **roue cadeaux** ou un **sondage** FoodEatUp : lecture
-  seule côté MCP, la création se fait en back-office
+- **Activer** une roue cadeaux ou un sondage FoodEatUp : la création est
+  possible par MCP (créés INACTIFS via le skill campagnes-restaurant),
+  l'activation reste une décision du restaurateur en back-office
   (docs/couverture-fidelite-jeux.md).
 - Encaisser, lancer une campagne, publier un site **sans confirmation
   humaine** : les garde-fous PreToolUse l'empêchent volontairement.

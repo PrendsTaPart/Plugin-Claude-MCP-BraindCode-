@@ -140,9 +140,9 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 <!-- TABLE-PLUGINS:START -->
 | Plugin | Version | Skills | Agents | MCP requis | Description |
 |---|---|---|---|---|---|
-| `foodeatup` | 1.11.2 | 27 | 5 | foodeatup | Gestion restaurant FoodEatUp |
-| `foodeatup-boucles` | 0.2.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
-| `foodeatup-iris` | 0.1.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
+| `foodeatup` | 1.11.3 | 27 | 5 | foodeatup | Gestion restaurant FoodEatUp |
+| `foodeatup-boucles` | 0.3.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
+| `foodeatup-iris` | 0.2.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
 | `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |

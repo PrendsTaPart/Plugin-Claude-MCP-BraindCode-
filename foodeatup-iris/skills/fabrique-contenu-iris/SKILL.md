@@ -22,7 +22,13 @@ Appairage fait (skill `appairage-marque-iris`) : charte et assets connus dans
      `generate_image` (texte, couleurs, logo) — **jamais un faux plat
      photoréaliste** : représenter un plat servi par une image inventée trompe
      le client ;
-   - vidéo → skill `video-virale-plats` (Higgsfield, coûts confirmés).
+   - vidéo → skill `video-virale-plats` (Higgsfield, coûts confirmés) ;
+   - affiche pour les ÉCRANS DE LA SALLE → `generer_affiche` (modèle selon le
+     nombre de plats : hero 1 / vitrine 2-4 / menu_board 5-20, crédits
+     annoncés avant) ; la diffusion (`planifier_diffusion`,
+     `diffuser_maintenant`) reste un acte confirmé (garde du plugin foodeatup)
+     — les écrans de la salle sont un canal comme les autres : rien ne
+     s'affiche sans validation.
 3. **GATE CHARTE** : vérifier le visuel contre la palette (couleurs, logo,
    zone de protection). Hors charte → régénérer, **2 tentatives maximum**,
    puis marquer l'opportunité en échec. Ne JAMAIS proposer un visuel hors

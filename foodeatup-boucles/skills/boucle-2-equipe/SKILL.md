@@ -21,7 +21,9 @@ est de détecter les trous de service avant qu'ils n'arrivent en salle.
    une par une, jamais en lot), `list_attendances` (pointages incohérents).
 4. Recrutement : `list_job_applications` et `update_application_status` ;
    `create_job_offer` / `update_job_offer` si un poste reste découvert.
-5. Actions courantes : `create_shift`, `assign_task`.
+5. Actions courantes : `create_shift`, `assign_task` ; `list_tasks` pour les
+   tâches assignées en attente, `list_sales_targets` pour les objectifs de
+   vente de l'équipe (un objectif sans suivi est un vœu).
 
 ## Règles métier
 
