@@ -1,12 +1,12 @@
 {
   "name": "foodeatup-tutoriel",
-  "version": "0.1.0",
-  "description": "L'Académie FoodEatUp dans Claude : se former (parcours, cours, progression), enseigner (apprenants, agenda, revenus) et fabriquer des cours (brouillons uniquement — un humain publie), reliée aux vrais besoins du restaurant détectés par les plugins foodeatup",
+  "version": "0.2.0",
+  "description": "L'Académie FoodEatUp dans Claude (serveur public tutoriel.foodeatup.com, lecture seule) : diagnostic de démarrage, parcours sur mesure, leçons guidées vidéo + quiz + exercices, formation d'équipe, carnet de reprise, offre et tarifs vérifiés, réseau de partenaires, parcours convive, API développeur et studio de production des tutos manquants — le serveur enseigne, il n'agit pas",
   "author": {
     "name": "BraindCode",
     "url": "https://braindcode.com"
   },
   "mcp_requis": [
-    "academy-foodeatup"
+    "foodeatup-tutoriel"
   ]
 }

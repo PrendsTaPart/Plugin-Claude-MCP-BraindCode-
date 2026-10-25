@@ -11,7 +11,7 @@
       "name": "foodeatup",
       "source": "./foodeatup",
       "description": "Gestion restaurant (HACCP, salle, caisse, cuisine, achats, écrans)",
-      "version": "1.11.4",
+      "version": "1.11.5",
       "category": "restaurant"
     },
     {
@@ -31,8 +31,8 @@
     {
       "name": "foodeatup-tutoriel",
       "source": "./foodeatup-tutoriel",
-      "description": "L'Académie FoodEatUp dans Claude : se former (parcours, progression), enseigner (apprenants, agenda, revenus), fabriquer des cours (brouillons — un humain publie) et le marketplace de prompts — la formation part des vrais besoins du restaurant",
-      "version": "0.1.0",
+      "description": "L'Académie FoodEatUp (serveur public tutoriel.foodeatup.com, lecture seule) : diagnostic, parcours sur mesure, leçons vidéo + quiz + exercices, formation d'équipe, carnet de reprise, offre et partenaires aux chiffres vérifiés, parcours convive, API — le serveur enseigne, il n'agit pas",
+      "version": "0.2.0",
       "category": "restaurant"
     },
     {

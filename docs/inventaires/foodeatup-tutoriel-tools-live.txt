@@ -1,0 +1,48 @@
+# Liste versionnée des outils du serveur MCP « FoodEatUp tutoriel » (Académie).
+# Source : énumération des outils exposés par le serveur connecté
+# (mcp__Foodeatup_tutoriel__*), session live du 2026-10-25. Serveur public en
+# lecture seule, version 0.7.0, 36 outils, données de
+# https://tutoriel.foodeatup.com (endpoint MCP : https://tutoriel.foodeatup.com/mcp,
+# sans authentification — confirmé par la page publique
+# https://tutoriel.foodeatup.com/connecter-son-assistant-ia).
+# Un nom par ligne. Sert de référence à la CI (catalogue fail-closed de
+# scripts/tester-skills.py, périmètre OUTILS de
+# scripts/controles-supplementaires.py) et au hook garde-perimetre-academie
+# (copie embarquée foodeatup-tutoriel/hooks/scripts/outils-academie.txt,
+# égalité vérifiée en CI).
+apercu_video
+audit_formation
+brief_video_client
+brief_video_partenaire
+capacites_foodeatup
+carnet_de_formation
+carte_tutoriel
+comprendre_foodeatup
+diagnostic_demarrage
+documentation_api_foodeatup
+exercice_pratique
+former_son_equipe
+glossaire_foodeatup
+journee_type
+lecon_suivante
+lecteur_video_tutoriel
+lister_modules
+lister_tutoriels
+obtenir_lien_tutoriel
+obtenir_prompts_tutoriel
+obtenir_tutoriel
+obtenir_video_tutoriel
+obtenir_vignette_tutoriel
+onboarding_foodeatup
+parcours_apprentissage
+parcours_client_restaurant
+parcours_metier_tutoriel
+premiers_pas_foodeatup
+prompts_formation
+quiz_tutoriel
+rechercher_tutoriels
+reseau_partenaires_foodeatup
+secteur_foodeatup
+tarifs_et_essai
+transcription_tutoriel
+tutoriels_du_module
