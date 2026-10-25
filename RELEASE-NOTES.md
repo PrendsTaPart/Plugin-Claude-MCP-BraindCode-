@@ -26,6 +26,96 @@ calendrier éditorial, blog, vidéos, webinaires, lead magnets, journal et
   « à faire valider par un juriste ».
 - CI : catalogue fail-closed 66 outils + périmètre OUTILS strict.
   **Validation : TOUT VALIDE (29 plugins) ; tester 0 FAIL / 0 WARN.**
+## Le pilote Plan'It — planit 0.1.0 (2026-10-25)
+
+Nouveau plugin **`planit`** (29e) : Claude Code pilote **Plan'It**
+(`https://planit.braindcode.com/mcp`) de bout en bout — tâches, routines,
+calendrier, **boucles routine ↔ KPI** (loop engineering), widgets de
+l'accueil, alertes, crédits, connecteurs MCP, routines sur événement,
+prompts, catalogue privé et vidéos courtes.
+
+- **Le contrat** : tout coût s'annonce AVANT (estimation obligatoire,
+  vérifiée par hook) ; propositions d'abord (rien ne se crée sans l'accord
+  explicite sur CETTE proposition, un refus est définitif à l'identique) ;
+  les 10 outils destructifs du serveur + les payants + ceux qui tranchent
+  passent en confirmation ; aucun effet annoncé sur `not_enough_data`
+  (3 exécutions ET 14 jours) ; jamais de pause de notre initiative.
+- **22 skills** (de l'accueil de pilotage à la revue du vendredi, chaîne de
+  l'Architecte, export de plugins vers le catalogue privé Plan'It),
+  **4 agents** (architecte, ingénieur des boucles, contrôleur des crédits,
+  concierge des connecteurs), **13 commandes**, **6 widgets** + scripts
+  stdlib (crédits vidéo = max(5, ⌈s/2⌉) ; jours d'autonomie =
+  solde / (total/30), formules affichées).
+- **6 hooks fail-closed testés** (26 cas) : garde-planit (trois familles
+  sensibles versionnées dans reference/outils-sensibles.json),
+  garde-cout-annonce (deny sans estimation au journal de session),
+  garde-autonomie (auto = ask ; auto + destructif = deny),
+  verite-des-donnees (PostToolUse : not_enough_data / throttled /
+  flat_price), contexte de session, journal masqué.
+- Inventaire live docs/inventaires/planit-tools-live.txt (63 outils) branché
+  au contrôle CI + périmètre OUTILS strict pour `planit/`.
+- Position assumée : **l'exécutant Plan'It** des routines conçues par
+  rapido-suite, rapido-startup et rapido-employe (registre traduit par
+  `installer-une-routine-du-registre`) — zéro skill doublonné.
+## Claude employé — rapido-employe 0.1.0 (2026-10-25)
+
+Nouveau plugin **`rapido-employe`** (29e) : Claude Code devient **l'employé
+commercial de FoodEatUp** — il se forme avec l'Academy (serveur « FoodEatUp
+formation », `https://formation.foodeatup.fr/mcp`, 191 outils relevés en
+live), puis prospecte, relance, prépare démos et devis, communique, sert et
+s'améliore chaque vendredi, à travers 15 serveurs déclarés.
+
+- **Le modèle** : le cadre se RELIT à chaque prise de poste
+  (`get_claude_brief` → `get_work_plan`) — 8 familles d'actions à 3 niveaux
+  (Aperçu/Brouillon/Confirmé), quotas du jour, budget `record_expense` —
+  rien n'est codé en dur, instantané dans `.claude/state/cadre-employe.json`.
+- **31 skills** (journée, apprendre, déployer, vendre, communiquer, servir,
+  orchestrer), **9 agents** (dont les six de l'équipe Academy, prompt de
+  production via `get_agent_brief`), **15 commandes** (/prise-de-poste …
+  /cadre), **6 widgets** à la palette Academy + `render_widget.py`.
+- **8 hooks fail-closed testés** : garde-cadre (familles → niveaux relus,
+  périmé > 24 h, agent arrêté = deny, « engager » toujours humain),
+  garde-depense (un refus arrête), garde-auto-gouvernance (deny absolu :
+  Claude ne fixe jamais son propre cadre), garde-envois (Gmail direct
+  interdit, quotas en deny), garde-memoire, anti-donnee-inventee, contexte
+  de session, journal des écritures (secrets masqués, compteurs).
+- Table versionnée `reference/familles-outils.json` (écritures de tous les
+  serveurs → familles, source unique des gardes, égalité d'intention avec
+  les inventaires `academy-tools-live.txt` 191 / `planit-tools-live.txt`
+  63 / `foodeatup-tutoriel-tools-live.txt` 36).
+- Orchestrateur assumé : délègue à rapidocrm, rapido-gmaps,
+  rapido-leadmagnet, rapido-copywriter, rapido-direction, rapido-suite —
+  zéro skill doublonné (contrôle de similarité CI).
+## L'Académie FoodEatUp, version serveur réel — foodeatup-tutoriel 0.2.0 (2026-10-25)
+
+Le plugin **`foodeatup-tutoriel`** est reconstruit sous le même slug sur le
+**vrai serveur public « FoodEatUp tutoriel »** (36 outils vérifiés en session
+live, v0.7.0, endpoint `https://tutoriel.foodeatup.com/mcp` — lecture seule,
+sans compte), en remplacement de la surface Academy de juillet (26 outils,
+serveur resté injoignable).
+
+- **16 skills** couvrant tout le serveur : cadrage (`demarrer-academie`,
+  secteur avant métier), parcours (`parcours-sur-mesure`), rituel de leçon
+  vidéo → quiz → exercice (`lecon-guidee`), recherche et exploration, équipe
+  (`former-mon-equipe`, rien n'est « envoyé »), carnet de reprise, prompts,
+  pont vers le connecteur produit (`passer-a-l-action` — jamais appelé par le
+  plugin), offre et partenaires aux **chiffres exclusivement sourcés et
+  datés**, parcours convive (**vidéos non tournées : aucun lien annoncé**),
+  API développeur, studio de production des tutos manquants.
+- **4 agents** (chef-formateur, responsable-formation, conseiller-academie,
+  producteur-tutos) + **7 commandes** (/academie, /lecon, /quiz, /parcours,
+  /former-equipe, /carnet, /tutos-manquants).
+- **5 widgets HTML** rendus par `render_widget.py` (stdlib, formules
+  affichées) — le serveur n'expose aucune ressource MCP Apps (vérifié), les
+  gabarits locaux sont le repli officiel.
+- **4 hooks testés en CI** : périmètre Académie **fail-closed** (inventaire
+  embarqué = liste versionnée, égalité contrôlée), anti-lien-inventé (deny),
+  garde tarifs/commissions (montant sans date de vérification → ask),
+  contexte de session.
+- CI étendue **sans assouplir les autres règles** : catalogue fail-closed 36
+  outils + périmètre OUTILS « Académie seule » pour `foodeatup-tutoriel/`.
+- `foodeatup` 1.11.5 : la passerelle d'onboarding pointe vers les nouveaux
+  skills.
 
 ## Studio UX/UI — rapido-design (2026-07-15)
 

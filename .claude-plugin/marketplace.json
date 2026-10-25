@@ -11,7 +11,7 @@
       "name": "foodeatup",
       "source": "./foodeatup",
       "description": "Gestion restaurant (HACCP, salle, caisse, cuisine, achats, écrans)",
-      "version": "1.11.4",
+      "version": "1.11.5",
       "category": "restaurant"
     },
     {
@@ -31,8 +31,8 @@
     {
       "name": "foodeatup-tutoriel",
       "source": "./foodeatup-tutoriel",
-      "description": "L'Académie FoodEatUp dans Claude : se former (parcours, progression), enseigner (apprenants, agenda, revenus), fabriquer des cours (brouillons — un humain publie) et le marketplace de prompts — la formation part des vrais besoins du restaurant",
-      "version": "0.1.0",
+      "description": "L'Académie FoodEatUp (serveur public tutoriel.foodeatup.com, lecture seule) : diagnostic, parcours sur mesure, leçons vidéo + quiz + exercices, formation d'équipe, carnet de reprise, offre et partenaires aux chiffres vérifiés, parcours convive, API — le serveur enseigne, il n'agit pas",
+      "version": "0.2.0",
       "category": "restaurant"
     },
     {
@@ -96,6 +96,13 @@
       "source": "./rapido-n8n",
       "description": "Automatisations n8n sur l'instance du client (URL par variable d'environnement) : Claude fabrique des workflows qui tournent ensuite sans lui — recettes métier Rapido incluses",
       "version": "1.6.2",
+      "category": "app-automatisation"
+    },
+    {
+      "name": "planit",
+      "source": "./planit",
+      "description": "Pilote Plan'It de bout en bout : tâches et routines à objectif chiffré, boucles routine ↔ KPI (référence figée, verdict après 3 exécutions ET 14 jours), widgets, alertes, crédits (tout coût annoncé avant), connecteurs, événements, catalogue privé, vidéos — propositions d'abord, l'utilisateur décide. 22 skills, 4 agents, 6 hooks fail-closed",
+      "version": "0.1.0",
       "category": "app-automatisation"
     },
     {
@@ -187,6 +194,13 @@
       "source": "./rapido-gmaps",
       "description": "Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS), scoring ICP par script, déduplication obligatoire, détection d'opportunités FoodEatUp (business sans système numérique), enrichissement de fiches, veille concurrentielle. Garde-fous CGU/RGPD déterministes. 4 skills + agent chasseur-leads + routine GMAPS-HEBDO.",
       "version": "0.5.0",
+      "category": "ventes-crm"
+    },
+    {
+      "name": "rapido-employe",
+      "source": "./rapido-employe",
+      "description": "Claude employé commercial FoodEatUp : se forme avec l'Academy puis prospecte, relance, prépare devis et démos, communique, sert et s'améliore chaque vendredi — dans le cadre relu à chaque prise de poste (8 familles d'autonomie, quotas, budget), 8 hooks fail-closed, 31 skills, 9 agents",
+      "version": "0.1.0",
       "category": "ventes-crm"
     },
     {

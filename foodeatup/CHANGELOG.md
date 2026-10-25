@@ -1,5 +1,12 @@
 # Changelog — plugin foodeatup
 
+## 1.11.5 — 2026-10-25 — passerelle Académie réécrite (correctif)
+
+- onboarding-restaurateur : la passerelle pointe vers les skills réels du
+  plugin foodeatup-tutoriel 0.2.0 (`demarrer-academie`, `lecon-guidee`) —
+  l'ancien skill `se-former-foodeatup` a disparu avec la reconstruction du
+  plugin sur le vrai serveur Académie.
+
 ## 1.11.4 — 2026-10-25 — passerelle vers l'Académie
 
 - onboarding-restaurateur : à chaque chantier terminé, proposer le cours

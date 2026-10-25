@@ -164,6 +164,24 @@ _ts = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ts)
 AUTRES_SERVEURS = set().union(*(v for k, v in _ts.CATALOGUE.items()
                                 if k != "foodeatup"))
+
+
+def _outils_annonces_employe():
+    """Outils des serveurs SANS catalogue (site, social, prospector-hub,
+    studio-print, build…), tels que la table versionnée du plugin
+    rapido-employe les classe. Source : reference/familles-outils.json —
+    construite depuis get_capabilities (Academy) et re-vérifiée à chaque
+    session connectée. Fail-closed : table absente = ensemble vide."""
+    try:
+        table = json.loads(lire("rapido-employe/reference/familles-outils.json"))
+    except Exception:  # noqa: BLE001
+        return set()
+    noms = {cle.split(":", 1)[-1] for cle in table.get("outils", {})}
+    for liste in ("gouvernance_deny", "outils_payants", "envois_ask",
+                  "envois_deny_direct", "quota_envois", "quota_publications",
+                  "quota_reponses"):
+        noms |= {cle.split(":", 1)[-1] for cle in table.get(liste, [])}
+    return noms
 # Périmètres STRICTS par répertoire : les plugins foodeatup* sont découplés de
 # RapidoCRM (FoodEatUp a ses propres outils CRM) — ils ne peuvent citer QUE des
 # outils foodeatup. rapidocrm/ est contrôlé contre sa liste live + autres
@@ -175,12 +193,47 @@ PERIMETRES = [
      "outils foodeatup + rapidocms (Higgsfield : noms hors motif, non contrôlés)"),
     (("rapidocrm/",), _ts.CATALOGUE.get("rapidocrm", set()) | AUTRES_SERVEURS | live,
      f"liste live rapidocrm + catalogues"),
+    # planit : le plugin ne déclare QUE le serveur Plan'It — ses skills ne
+    # citent que ses 63 outils (liste live). Les autres périmètres ne
+    # bougent pas.
+    (("planit/",), _ts.CATALOGUE.get("planit", set()),
+     "outils du serveur Plan'It uniquement (63 outils, liste live)"),
+    # rapido-employe : orchestrateur multi-serveurs (comme rapido-suite, qui
+    # n'est pas contraint) — contrôlé QUAND MÊME, contre l'union des
+    # catalogues des serveurs qu'il déclare. Les serveurs sans catalogue
+    # (site, social, prospector-hub, studio-print, build — annoncés par
+    # get_capabilities de l'Academy) sont couverts par la table versionnée du
+    # plugin. Ne modifie pas les périmètres foodeatup*/ existants.
+    (("rapido-employe/",),
+     live | AUTRES_SERVEURS | _outils_annonces_employe(),
+     "serveurs déclarés par rapido-employe (catalogues + outils annoncés par "
+     "l'Academy, reference/familles-outils.json)"),
+    # foodeatup-tutoriel : l'Académie SEULE — le plugin de formation ne cite
+    # jamais un outil du connecteur produit (il ne l'appelle jamais). Règle
+    # propre à ce répertoire : les autres périmètres ne bougent pas.
+    (("foodeatup-tutoriel/",), _ts.CATALOGUE.get("foodeatup-tutoriel", set()),
+     "outils du serveur Académie uniquement (36 outils — le plugin n'appelle "
+     "jamais le connecteur produit)"),
     # rapido-prospector : exécutant du serveur Prospect, avec RapidoCRM déclaré
     # en option pour la synchronisation — rien d'autre.
     (("rapido-prospector/",),
      _ts.CATALOGUE.get("prospect", set()) | _ts.CATALOGUE.get("rapidocrm", set()),
      "outils Prospect (66, liste versionnée) + RapidoCRM (sync optionnelle)"),
 ]
+# Cohérence du garde fail-closed : la copie embarquée dans le hook doit être
+# IDENTIQUE à l'inventaire versionné (sinon le garde et la CI divergent).
+_emb_path = "foodeatup-tutoriel/hooks/scripts/outils-academie.txt"
+_embarque = {l.strip() for l in lire(_emb_path).splitlines()
+             if l.strip() and not l.startswith("#")}
+_inventaire = {l.strip() for l in
+               lire("docs/inventaires/foodeatup-tutoriel-tools-live.txt").splitlines()
+               if l.strip() and not l.startswith("#")}
+if _embarque != _inventaire:
+    _diff = sorted(_embarque ^ _inventaire)
+    erreurs.append(f"OUTILS : {_emb_path} diverge de l'inventaire versionné "
+                   f"({', '.join(_diff[:6])}…)" if len(_diff) > 6 else
+                   f"OUTILS : {_emb_path} diverge de l'inventaire versionné "
+                   f"({', '.join(_diff)})")
 if live:
     for f in fichiers_suivis():
         if not f.endswith(".md") or f.endswith("CHANGELOG.md"):
