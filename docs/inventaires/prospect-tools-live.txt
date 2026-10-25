@@ -1,0 +1,74 @@
+# Liste versionnée des outils du serveur MCP Prospect (« Prospector Hub »).
+# Relevé du 2026-10-25. Source : manifeste MCP publié du projet Lovable
+# Prospector Hub (.lovable/mcp/manifest.json, commit 6ad9af2) — le point
+# d'entrée https://prospect-pebble.lovable.app/mcp est une ressource OAuth
+# protégée (sonde HTTP 401 + .well-known/oauth-protected-resource), le
+# tools/list authentifié se refait à la première session connectée.
+# 66 outils. Un nom par ligne. Sert de référence à la CI (contrôle des outils
+# cités dans les fichiers du plugin rapido-prospector).
+add_blog_post
+add_calendar_post
+add_clients
+add_email_template
+add_lead_magnet
+add_linkedin_account
+add_linkedin_connection
+add_linkedin_scheduled_message
+add_linkedin_template
+add_log
+add_message_template
+add_video_post
+add_webinar
+delete_blog_post
+delete_calendar_post
+delete_client
+delete_email_template
+delete_lead_magnet
+delete_linkedin_account
+delete_linkedin_connection
+delete_linkedin_scheduled_message
+delete_linkedin_template
+delete_message_template
+delete_video_post
+delete_webinar
+enrich_linkedin_profile
+get_linkedin_connection
+list_blog_posts
+list_calendar_posts
+list_calls
+list_clients
+list_email_templates
+list_emails
+list_lead_magnets
+list_linkedin_accounts
+list_linkedin_connections
+list_linkedin_message_history
+list_linkedin_scheduled_day
+list_linkedin_scheduled_messages
+list_linkedin_templates
+list_logs
+list_message_templates
+list_sms
+list_video_posts
+list_webinars
+place_call
+prospection_history
+prospection_terms
+run_prospection
+send_email
+send_linkedin_invite
+send_linkedin_message
+send_sms
+stripe_stats
+update_blog_post
+update_calendar_post
+update_client
+update_email_template
+update_lead_magnet
+update_linkedin_account
+update_linkedin_connection
+update_linkedin_scheduled_message
+update_linkedin_template
+update_message_template
+update_video_post
+update_webinar

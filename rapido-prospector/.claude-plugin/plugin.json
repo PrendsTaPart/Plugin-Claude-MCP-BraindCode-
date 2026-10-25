@@ -1,0 +1,12 @@
+{
+  "name": "rapido-prospector",
+  "version": "0.1.0",
+  "description": "Prospector Hub : prospection par zone, base dédoublonnée, campagnes e-mail/SMS/LinkedIn sous contrôle humain, calendrier éditorial, blog, vidéos, webinaires, lead magnets et entonnoir jusqu'au MRR Stripe",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "prospect"
+  ]
+}

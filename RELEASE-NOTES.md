@@ -1,5 +1,31 @@
 # Notes de release
 
+## Le prospecteur Prospector Hub — rapido-prospector (2026-10-25)
+
+Nouveau plugin **`rapido-prospector`** (29e) — **toute la prospection
+commerciale** au-dessus du serveur MCP Prospect (« Prospector Hub »,
+66 outils relevés, OAuth au premier appel) : zones et spécialités, base
+dédoublonnée, campagnes **e-mail / SMS / LinkedIn sous contrôle humain**,
+calendrier éditorial, blog, vidéos, webinaires, lead magnets, journal et
+**MRR Stripe (présenté en estimation)**.
+
+- **19 skills**, **4 agents** (chasseur, rédacteur de séquences,
+  programmateur de contenus, contrôleur conformité et mesure),
+  **12 commandes**, **8 widgets** à la charte FoodEatUp.
+- **7 scripts stdlib** (dédoublonnage 5 critères, E.164/mobiles, segments
+  GSM-7/UCS-2, quotas min(KB, cadre Academy), entonnoir, MRR, conformité)
+  — formules affichées.
+- **7 hooks fail-closed, 30 cas CI** : ask systématique sur les 5 envois
+  réels, deny quota/lot/fenêtre, deny sans désinscription/STOP/identité,
+  **appels automatisés désactivés par défaut** (activation = KB + base
+  légale validée), cascades des 12 delete rappelées, anti-doublon sur
+  add_clients, journal masqué.
+- **KB de prospection** (gabarit rapido-kb-template/prospection.md) :
+  quotas, fenêtre horaire, identité d'expéditeur, désinscription/STOP,
+  **liste d'opposition** ; reference/conformite-prospection.md marqué
+  « à faire valider par un juriste ».
+- CI : catalogue fail-closed 66 outils + périmètre OUTILS strict.
+  **Validation : TOUT VALIDE (29 plugins) ; tester 0 FAIL / 0 WARN.**
 ## Le pilote Plan'It — planit 0.1.0 (2026-10-25)
 
 Nouveau plugin **`planit`** (29e) : Claude Code pilote **Plan'It**

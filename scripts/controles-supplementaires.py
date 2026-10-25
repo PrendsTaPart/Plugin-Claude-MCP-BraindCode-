@@ -214,6 +214,11 @@ PERIMETRES = [
     (("foodeatup-tutoriel/",), _ts.CATALOGUE.get("foodeatup-tutoriel", set()),
      "outils du serveur Académie uniquement (36 outils — le plugin n'appelle "
      "jamais le connecteur produit)"),
+    # rapido-prospector : exécutant du serveur Prospect, avec RapidoCRM déclaré
+    # en option pour la synchronisation — rien d'autre.
+    (("rapido-prospector/",),
+     _ts.CATALOGUE.get("prospect", set()) | _ts.CATALOGUE.get("rapidocrm", set()),
+     "outils Prospect (66, liste versionnée) + RapidoCRM (sync optionnelle)"),
 ]
 # Cohérence du garde fail-closed : la copie embarquée dans le hook doit être
 # IDENTIQUE à l'inventaire versionné (sinon le garde et la CI divergent).

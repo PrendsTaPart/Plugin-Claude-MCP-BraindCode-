@@ -43,10 +43,6 @@
       "type": "http",
       "url": "${STUDIO_PRINT_MCP_URL}"
     },
-    "prospector-hub": {
-      "type": "http",
-      "url": "${PROSPECTOR_HUB_MCP_URL}"
-    },
     "build": {
       "type": "http",
       "url": "https://build.braindcode.com/api/mcp"
@@ -62,6 +58,10 @@
     "google-drive": {
       "type": "http",
       "url": "https://drivemcp.googleapis.com/mcp/v1"
+    },
+    "prospect": {
+      "type": "http",
+      "url": "https://prospect-pebble.lovable.app/mcp"
     }
   }
 }

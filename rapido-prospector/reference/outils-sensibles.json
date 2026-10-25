@@ -1,0 +1,45 @@
+{
+  "_source": "Manifeste MCP du projet Lovable « Prospector Hub » (commit 6ad9af2, relevé du 2026-10-25) + règles de la mission. Les hooks lisent ce fichier et refusent tout (fail-closed) s'il est illisible. Les plafonds par défaut ci-dessous sont PRUDENTS : ./rapido-kb/prospection.md peut les abaisser, jamais les contourner.",
+  "envois_reels": {
+    "send_email": {"champ_cibles": "recipients", "plafond_lot_defaut": 25},
+    "send_sms": {"champ_cibles": "targets", "plafond_lot_defaut": 10, "max_serveur": 200, "max_caracteres": 1600},
+    "place_call": {"champ_cibles": "targets", "plafond_lot_defaut": 5, "max_serveur": 100, "desactive_par_defaut": true},
+    "send_linkedin_invite": {"champ_cibles": "connectionId", "plafond_lot_defaut": 1},
+    "send_linkedin_message": {"champ_cibles": "connectionId", "plafond_lot_defaut": 1}
+  },
+  "suppressions": {
+    "delete_blog_post": "supprime définitivement l'article planifié",
+    "delete_calendar_post": "supprime définitivement la publication planifiée",
+    "delete_client": "suppression DÉFINITIVE de la fiche client",
+    "delete_email_template": "supprime définitivement le modèle d'e-mail",
+    "delete_lead_magnet": "supprime le document ET son fichier stocké",
+    "delete_linkedin_account": "supprime le compte LinkedIn déclaré",
+    "delete_linkedin_connection": "CASCADE : efface aussi les modèles, l'historique et les messages programmés de la connexion",
+    "delete_linkedin_scheduled_message": "retire le message du calendrier LinkedIn",
+    "delete_linkedin_template": "supprime définitivement le modèle LinkedIn",
+    "delete_message_template": "supprime définitivement le modèle SMS ou texte d'appel",
+    "delete_video_post": "supprime définitivement la vidéo planifiée",
+    "delete_webinar": "CASCADE : efface aussi les inscriptions et les rappels du webinaire"
+  },
+  "publications": {
+    "add_webinar": {"champ": "is_active", "valeurs": [true], "raison": "active la page publique du webinaire"},
+    "update_webinar": {"champ": "is_active", "valeurs": [true], "raison": "active la page publique du webinaire"},
+    "add_blog_post": {"champ": "status", "valeurs": ["publie"], "raison": "article de blog visible"},
+    "update_blog_post": {"champ": "status", "valeurs": ["publie"], "raison": "article de blog visible"},
+    "add_calendar_post": {"champ": "status", "valeurs": ["publie"], "raison": "statut publié du calendrier éditorial"},
+    "update_calendar_post": {"champ": "status", "valeurs": ["publie"], "raison": "statut publié du calendrier éditorial"},
+    "add_video_post": {"champ": "status", "valeurs": ["publie"], "raison": "statut publié d'une vidéo"},
+    "update_video_post": {"champ": "status", "valeurs": ["publie"], "raison": "statut publié d'une vidéo"}
+  },
+  "couts_externes": {
+    "run_prospection": "webhook n8n de prospection",
+    "enrich_linkedin_profile": "webhook get_linkedin_profile (enrichissement facturé côté fournisseur)",
+    "send_sms": "Twilio (coût par SMS et par segment)",
+    "place_call": "Twilio (coût par appel et par minute)"
+  },
+  "ecritures_configuration": {
+    "prospection_terms": {"champ_declencheur": "add_kind", "raison": "ajoute un terme de prospection (région ou spécialité)"},
+    "add_linkedin_account": {"raison": "déclare un compte LinkedIn d'envoi"},
+    "update_linkedin_account": {"raison": "modifie un compte LinkedIn d'envoi"}
+  }
+}

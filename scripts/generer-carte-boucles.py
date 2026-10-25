@@ -26,7 +26,7 @@ DOMAINES = {
     },
     "Ventes & CRM": {
         "plugins": ["rapidocrm", "rapido-relation-client", "rapido-gmaps",
-                    "rapido-employe"],
+                    "rapido-employe", "rapido-prospector"],
         "phrases": ["« fais ma revue de pipeline »",
                     "« relance les devis en attente »",
                     "« trouve-moi des prospects restaurateurs à Lyon »"],

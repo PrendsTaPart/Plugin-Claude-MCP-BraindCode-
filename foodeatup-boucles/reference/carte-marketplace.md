@@ -25,6 +25,7 @@ Phrases qui déclenchent le bon skill :
 | `rapido-relation-client` | 0.2.0 | 6 | (bêta) Service client, fidélité et santé client en boucle : SLA, CSAT/NPS, health score, sauvetages et 100 premiers jours — orchestré sur… |
 | `rapido-gmaps` | 0.5.0 | 4 | Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS auto-h… |
 | `rapido-employe` | 0.1.0 | 31 | Claude employé commercial de FoodEatUp : il se forme avec l'Academy (FoodEatUp formation), puis prospecte, relance, prépare démonstration… |
+| `rapido-prospector` | 0.1.0 | 19 | Prospector Hub : prospection par zone, base dédoublonnée, campagnes e-mail/SMS/LinkedIn sous contrôle humain, calendrier éditorial, blog,… |
 
 Phrases qui déclenchent le bon skill :
 - « fais ma revue de pipeline »

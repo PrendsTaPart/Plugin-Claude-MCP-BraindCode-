@@ -76,9 +76,10 @@ partout (budget 0 € = aucune dépense ; agent arrêté = rapport seulement).
   affiché une seule fois — jamais dans un fichier). Sans elle, pas de
   cadre : le plugin s'arrête en le disant.
 - Serveurs requis : foodeatup, foodeatup-tutoriel, site, social, rapidocrm,
-  rapidocms, rapidorh, planit. Optionnels : studio-print et prospector-hub
+  rapidocms, rapidorh, planit. Optionnels : studio-print
   (adresses d'instance en `${STUDIO_PRINT_MCP_URL}` /
-  `${PROSPECTOR_HUB_MCP_URL}`), build, lovable, gmail, google-drive — un
+  `${STUDIO_PRINT_MCP_URL}` ; prospect = Prospector Hub,
+  https://prospect-pebble.lovable.app/mcp, OAuth au premier appel), build, lovable, gmail, google-drive — un
   optionnel absent fait sauter son volet EN LE DISANT.
 - Budget actuel du cadre : 0 €/mois — toute action payante est refusée tant
   que le responsable ne l'a pas changé dans l'application.

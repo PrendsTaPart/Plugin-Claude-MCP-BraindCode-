@@ -1,0 +1,67 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/contexte-prospect.sh\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Pp]rospect__(send_email|send_sms|place_call|send_linkedin_invite|send_linkedin_message)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-conformite.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-envois-prospect.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Pp]rospect__delete_.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-destructif-prospect.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Pp]rospect__((add|update)_(webinar|blog_post|calendar_post|video_post|linkedin_account)|prospection_terms)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-publication.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Pp]rospect__add_clients",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-doublon.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Pp]rospect__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/journal-prospect.py\""
+          }
+        ]
+      }
+    ]
+  }
+}
