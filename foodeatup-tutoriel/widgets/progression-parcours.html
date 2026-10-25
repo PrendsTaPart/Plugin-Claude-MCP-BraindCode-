@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progression du parcours</title>
+<style>
+:root { --bg:#f7f5f0; --fg:#1d1c1a; --carte:#ffffff; --accent:#b4540a;
+  --sourdine:#6b665e; --ok:#2e7d32; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#16140f; --fg:#eee9e0;
+    --carte:#211d16; --accent:#e8884a; --sourdine:#a39b8d; --ok:#81c784; }
+}
+:root[data-theme="dark"] { --bg:#16140f; --fg:#eee9e0; --carte:#211d16;
+  --accent:#e8884a; --sourdine:#a39b8d; --ok:#81c784; }
+body { margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
+  font:16px/1.5 system-ui, sans-serif; }
+main { max-width:760px; margin:0 auto; background:var(--carte);
+  border-radius:14px; padding:20px; }
+h1 { font-size:1.25rem; margin:0 0 .3em; }
+.score { color:var(--accent); font-weight:700; }
+table { width:100%; border-collapse:collapse; margin-top:1em; }
+th, td { text-align:left; padding:.45em .5em;
+  border-bottom:1px solid color-mix(in srgb, var(--sourdine) 30%, transparent); }
+th { color:var(--sourdine); font-size:.8rem; text-transform:uppercase; }
+tr.fait td { color:var(--ok); }
+footer { color:var(--sourdine); font-size:.8rem; margin-top:1em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Parcours — {{OBJECTIF}}</h1>
+  <p><span class="score">{{FAITS}} / {{TOTAL_LECONS}}</span> leçons vues ·
+  durée totale du programme : {{DUREE_TOTALE}}</p>
+  <table>
+    <thead><tr><th>#</th><th>État</th><th>Leçon</th><th>Module</th>
+    <th>Durée</th></tr></thead>
+    <tbody>
+      {{LIGNES}}
+    </tbody>
+  </table>
+  <footer>Calcul affiché : {{FORMULE}}. L'état « vu » vient des slugs du
+  carnet de reprise — jamais estimé.</footer>
+</main>
+</body>
+</html>
