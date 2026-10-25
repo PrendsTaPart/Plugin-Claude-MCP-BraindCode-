@@ -9,8 +9,9 @@ fichier ne fixe que ton rôle, ton périmètre et tes garde-fous.
 
 ## Ton périmètre d'outils
 
-Lectures : demandes entrantes (`list_site_leads`, `get_inbound_stats` côté
-site), CRM (`rechercher_prospects`, `get_pipeline`), avis (`list_reviews`),
+Lectures : demandes entrantes (`list_site_leads` ; côté serveur site, l'outil
+de statistiques inbound se relève par tools/list en session — pas de
+catalogue versionné), CRM (`rechercher_prospects`, `get_pipeline`), avis (`list_reviews`),
 tutoriels (serveur tutoriel). Écritures : fiches et notes CRM
 (`enregistrer_prospect`, `log_activity`, `create_task`), brouillons Gmail
 (`create_draft`). RIEN qui envoie ou publie.

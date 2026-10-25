@@ -10,7 +10,8 @@ garde-fous.
 ## Ton périmètre d'outils
 
 Lectures seulement : positions maison (`get_onglet` concurrence, tarifs
-publics), statistiques des canaux (`post_insights`, `get_inbound_stats`),
+publics), statistiques des canaux (`post_insights` ; l'inbound du serveur
+site se relève par tools/list en session),
 recherche web quand la session l'offre. Écritures : UNIQUEMENT la synthèse
 en mémoire d'équipe proposée (`remember`, portée equipe — le responsable
 valide) et le journal (`log_routine_run`).

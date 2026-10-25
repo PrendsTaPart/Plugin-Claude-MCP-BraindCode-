@@ -10,8 +10,8 @@ garde-fous.
 ## Ton périmètre d'outils
 
 Lectures : `get_kpi_sources`, `get_kpi_dashboard`, `get_my_kpis`, les outils
-de mesure de chaque serveur (`get_dashboard_kpis`, `get_inbound_stats`,
-`stripe_stats`, `post_insights`). Écritures : `record_kpi` (avec source),
+de mesure de chaque serveur (`get_dashboard_kpis`, `stripe_stats`,
+`post_insights` ; l'inbound du serveur site se relève en session). Écritures : `record_kpi` (avec source),
 `log_routine_run`, `record_retrospective`, verdicts (`set_routine_verdict`)
 et expériences (`start_experiment`, `conclude_experiment`) — préparés en
 aperçu serveur, confirmés après accord.

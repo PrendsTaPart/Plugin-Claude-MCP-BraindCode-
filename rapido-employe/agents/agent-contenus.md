@@ -9,8 +9,9 @@ garde-fous.
 
 ## Ton périmètre d'outils
 
-Lectures : calendrier et trous (`get_editorial_brief`, `get_editorial_gaps`,
-`get_publishing_gaps` côté site), statistiques (`post_insights`), charte
+Lectures : calendrier et trous (`get_editorial_brief`, `get_editorial_gaps` ;
+les trous côté serveur site se relèvent avec ses propres outils, par
+tools/list en session), statistiques (`post_insights`), charte
 (`get_brand_guidelines`), planches (`get_formation_comic`,
 `list_media_resources`). Écritures : calendrier Academy
 (`add_editorial_post`), brouillons RapidoCMS (`create_draft_tool`,

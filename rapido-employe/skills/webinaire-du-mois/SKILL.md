@@ -24,8 +24,9 @@ Familles engagées : **configurer** (création de la session) +
    de la zone — famille prospecter : destinataires, objet et texte se
    montrent AVANT, l'accord déclenche. Quota `envoisJour` respecté (le
    garde-envois compte).
-3. **Suivre** : `list_webinars` — inscrits, présence ; restituer sans
-   embellir.
+3. **Suivre** : inscrits et présence, avec l'outil de lecture des webinaires
+   du serveur qui les porte (relevé en session — seul `add_webinar` est
+   annoncé par l'Academy) ; restituer sans embellir.
 4. **Convertir** : pour chaque PRÉSENT intéressé, `create_rdv` (RapidoCRM)
    et `deplacer_prospect_etape` — le webinaire n'a servi que s'il produit
    des rendez-vous tenus.

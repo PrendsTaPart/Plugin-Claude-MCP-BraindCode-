@@ -23,8 +23,10 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`.
 3. **`reply_review`** — l'appel SE MONTRE (texte complet) et attend
    l'accord ; la publication est publique, donc famille service-client avec
    ask systématique du garde-envois. Quota `reponsesJour` compté.
-4. **Mesurer** : note moyenne et délai de réponse (`get_avis_client_stats`
-   côté RapidoCRM quand la source KPI le désigne) → `record_kpi`.
+4. **Mesurer** : note moyenne et délai de réponse (l'outil de statistiques
+   d'avis côté RapidoCRM quand la source KPI le désigne — get_avis_client_stats
+   vu en session mais absent de la liste live versionnée : vérifier avant
+   usage) → `record_kpi`.
 5. Un avis qui révèle un problème produit remonte au responsable et à la
    routine « demandes entrantes ».
 

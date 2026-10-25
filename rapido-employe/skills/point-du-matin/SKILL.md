@@ -20,7 +20,8 @@ Familles engagées : **apprendre** (lectures) + **configurer**
 2. **Lire chaque KPI à sa source**, serveur par serveur, par exemple :
    - RapidoCRM : `get_dashboard_kpis`, `get_stats_pipeline`,
      `get_conversion_par_canal` ;
-   - Site FoodEatUp (inbound) : `get_inbound_stats` ;
+   - Site FoodEatUp (inbound) : l'outil de statistiques du serveur site,
+     relevé par tools/list en session ;
    - Prospector Hub : `stripe_stats` (clients, MRR estimé) ;
    - RapidoCMS : `post_insights` / `ingishts_campagne` ;
    - FoodEatUp : `get_daily_brief` si la source le désigne.

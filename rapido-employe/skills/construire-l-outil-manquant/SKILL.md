@@ -23,8 +23,9 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`.
 3. **Faire construire, APRÈS accord** : `list_projects` (Lovable) pour
    trouver le projet qui porte le serveur MCP, puis `send_message` avec la
    demande — EN PRÉPRODUCTION (jamais deploy). Pour un projet du hackathon,
-   le pendant Build BraindCode (`get_project_context`,
-   `start_prompt_step`…) s'applique.
+   le pendant Build BraindCode s'applique (ses outils de contexte de projet
+   et d'étapes se relèvent par tools/list en session — pas de catalogue
+   versionné).
 4. **Relire** : `get_diff` — le diff se lit en entier ; tout écart au besoin
    se redemande. `update_mcp_tool_request` pour noter l'avancement.
 5. **L'humain publie** : `deploy_project` et la mise en production ne sont
