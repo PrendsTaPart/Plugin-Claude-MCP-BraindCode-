@@ -125,12 +125,17 @@ def planning_publication(d):
 
 
 def atelier(d):
-    versions = "\n".join(
-        f"<tr><td>{e(t.get('id') or t.get('version'))}</td>"
-        f"<td>{e(t.get('score'))}</td>"
-        f"<td>{e(', '.join(f'{k} {v}' for k, v in (t.get('subscores') or {}).items()) or None)}</td>"
-        f"<td>{('<a href=\"' + html.escape(t['preview_url']) + '\">aperçu (lien temporaire)</a>') if t.get('preview_url') else '—'}</td></tr>"
-        for t in _liste(d, "versions", "thumbnails")) \
+    def ligne(t):
+        sous = ", ".join(f"{k} {v}" for k, v in
+                         (t.get("subscores") or {}).items())
+        apercu = "—"
+        if t.get("preview_url"):
+            apercu = ('<a href="' + html.escape(t["preview_url"])
+                      + '">aperçu (lien temporaire)</a>')
+        return (f"<tr><td>{e(t.get('id') or t.get('version'))}</td>"
+                f"<td>{e(t.get('score'))}</td><td>{e(sous or None)}</td>"
+                f"<td>{apercu}</td></tr>")
+    versions = "\n".join(ligne(t) for t in _liste(d, "versions", "thumbnails")) \
         or "<tr><td colspan=4>—</td></tr>"
     return {"VERSIONS": versions,
             "SUGGESTIONS": "\n".join(f"<li>{e(s)}</li>"
