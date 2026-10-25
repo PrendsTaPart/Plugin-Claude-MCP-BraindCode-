@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boucles routine ↔ KPI</title>
+<style>
+:root { --fond:#f4f5f7; --carte:#ffffff; --texte:#1c2330; --accent:#3b5bdb;
+  --sourdine:#6b7280; --bon:#2f9e44; --alerte:#c92a2a; --neutre:#e8590c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --fond:#151922; --carte:#1f2530;
+    --texte:#e8ebf1; --sourdine:#9aa3b2; }
+}
+:root[data-theme="dark"] { --fond:#151922; --carte:#1f2530;
+  --texte:#e8ebf1; --sourdine:#9aa3b2; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--fond); color:var(--texte);
+  font:16px/1.5 system-ui, sans-serif; }
+main { max-width:900px; margin:0 auto; background:var(--carte);
+  border-radius:14px; padding:24px; border-top:6px solid var(--accent); }
+h1 { font-size:1.35rem; margin:0 0 .6em; }
+table { width:100%; border-collapse:collapse; font-size:.92rem; }
+th { text-align:left; background:var(--accent); color:#fff; padding:.5em .6em; }
+td { padding:.5em .6em; border-bottom:1px solid color-mix(in srgb, var(--sourdine) 30%, transparent); }
+tr.v-improving td { color:var(--bon); }
+tr.v-degrading td { color:var(--alerte); }
+tr.v-not_enough_data td { color:var(--sourdine); font-style:italic; }
+footer { color:var(--sourdine); font-size:.8rem; margin-top:1.2em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Boucles routine ↔ KPI</h1>
+  <table>
+    <thead><tr><th>Routine</th><th>KPI</th><th>Référence (figée)</th>
+    <th>Valeur courante</th><th>Écart orienté</th><th>Verdict</th></tr></thead>
+    <tbody>
+    {{LIGNES}}
+    </tbody>
+  </table>
+  <footer>Données : list_active_loops / evaluate_loops. La référence est
+  FIGÉE au rattachement ; « pas assez de données » = moins de 3 exécutions
+  OU moins de 14 jours — aucun effet annoncé dans ce cas. Une baisse d'un
+  coût est un progrès (écart orienté).</footer>
+</main>
+</body>
+</html>

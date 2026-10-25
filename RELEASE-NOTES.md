@@ -1,5 +1,37 @@
 # Notes de release
 
+## Le pilote Plan'It — planit 0.1.0 (2026-10-25)
+
+Nouveau plugin **`planit`** (29e) : Claude Code pilote **Plan'It**
+(`https://planit.braindcode.com/mcp`) de bout en bout — tâches, routines,
+calendrier, **boucles routine ↔ KPI** (loop engineering), widgets de
+l'accueil, alertes, crédits, connecteurs MCP, routines sur événement,
+prompts, catalogue privé et vidéos courtes.
+
+- **Le contrat** : tout coût s'annonce AVANT (estimation obligatoire,
+  vérifiée par hook) ; propositions d'abord (rien ne se crée sans l'accord
+  explicite sur CETTE proposition, un refus est définitif à l'identique) ;
+  les 10 outils destructifs du serveur + les payants + ceux qui tranchent
+  passent en confirmation ; aucun effet annoncé sur `not_enough_data`
+  (3 exécutions ET 14 jours) ; jamais de pause de notre initiative.
+- **22 skills** (de l'accueil de pilotage à la revue du vendredi, chaîne de
+  l'Architecte, export de plugins vers le catalogue privé Plan'It),
+  **4 agents** (architecte, ingénieur des boucles, contrôleur des crédits,
+  concierge des connecteurs), **13 commandes**, **6 widgets** + scripts
+  stdlib (crédits vidéo = max(5, ⌈s/2⌉) ; jours d'autonomie =
+  solde / (total/30), formules affichées).
+- **6 hooks fail-closed testés** (26 cas) : garde-planit (trois familles
+  sensibles versionnées dans reference/outils-sensibles.json),
+  garde-cout-annonce (deny sans estimation au journal de session),
+  garde-autonomie (auto = ask ; auto + destructif = deny),
+  verite-des-donnees (PostToolUse : not_enough_data / throttled /
+  flat_price), contexte de session, journal masqué.
+- Inventaire live docs/inventaires/planit-tools-live.txt (63 outils) branché
+  au contrôle CI + périmètre OUTILS strict pour `planit/`.
+- Position assumée : **l'exécutant Plan'It** des routines conçues par
+  rapido-suite, rapido-startup et rapido-employe (registre traduit par
+  `installer-une-routine-du-registre`) — zéro skill doublonné.
+
 ## Studio UX/UI — rapido-design (2026-07-15)
 
 Nouveau plugin **`rapido-design`** (25e) — le **studio UX/UI** qui orchestre toute la

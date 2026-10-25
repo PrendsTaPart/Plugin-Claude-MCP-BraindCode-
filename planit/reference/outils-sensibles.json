@@ -1,0 +1,33 @@
+{
+  "_source": "Relevé live du serveur Plan'It (list_destructive_tools mcp_key=planit + descriptions de get_tools), session du 2026-10-25. Versionné : la CI vérifie que les destructifs sont bien les 10 du serveur ; toute dérive se re-relève, elle ne se devine pas.",
+  "_regles": "Le hook garde-planit lit ce fichier et impose ask sur les trois familles. Les champs de confirmation posés par le modèle ne valent jamais confirmation humaine. Fichier illisible = fail-closed (ask sur toute écriture planit).",
+  "destructifs": [
+    "accept_routine_proposal",
+    "apply_routine_improvement",
+    "delete_prompt",
+    "delete_task",
+    "pause_routine",
+    "remove_kpi_widget",
+    "remove_mcp_server",
+    "resume_routine",
+    "run_routine_now",
+    "unsubscribe_event"
+  ],
+  "payants": [
+    "compose_video",
+    "refresh_kpi",
+    "attach_kpi_to_routine",
+    "add_kpi_widget"
+  ],
+  "tranchent": [
+    "decide_kpi_alert",
+    "decline_routine_proposal",
+    "decline_routine_improvement"
+  ],
+  "exigent_estimation_prealable": {
+    "run_routine_now": "estimate_routine_cost sur la même routine, dans la session",
+    "accept_routine_proposal": "estimate_routine_cost (ou coût de la proposition) annoncé dans la session",
+    "resume_routine": "estimate_routine_cost sur la même routine, dans la session",
+    "add_kpi_widget": "list_kpi_catalog lu dans la session (coût de collecte annoncé)"
+  }
+}
