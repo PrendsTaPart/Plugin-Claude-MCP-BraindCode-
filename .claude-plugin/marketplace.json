@@ -36,6 +36,13 @@
       "category": "restaurant"
     },
     {
+      "name": "rapido-prospector",
+      "source": "./rapido-prospector",
+      "description": "Prospector Hub : prospection, campagnes e-mail/SMS/LinkedIn, contenus, MRR",
+      "version": "0.1.0",
+      "category": "ventes-crm"
+    },
+    {
       "name": "rapidocrm",
       "source": "./rapidocrm",
       "description": "CRM : prospection, pipeline, facturation, marketing",

@@ -61,6 +61,9 @@ CATALOGUE = {
     "academy-foodeatup": _charger_catalogue_live("academy-foodeatup-tools-live.txt", 20),
     # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
     "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
+    # prospect (Prospector Hub) : liste versionnée (66 outils, manifeste MCP
+    # publié du projet, 2026-10-25), mode fermé si absente.
+    "prospect": _charger_catalogue_live("prospect-tools-live.txt", 60),
     "rapidorh": set("""create-daily-tool create-project-link-tool create-project-tool
 create-role-tool create-task-list-tool create-task-tool create-user-tool
 delete-project-link-tool delete-user-tool get-dailies-tool get-departments-list-tool
@@ -198,7 +201,132 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__google-calendar__delete_event", "tool_input": {}}, "ask"),
     ],
 }
+# Dates dynamiques pour les hooks à fenêtre horaire (jamais de date figée
+# qui périme) : prochain lundi 10 h (ouvré) et prochain dimanche 10 h (fermé).
+import datetime as _dt  # noqa: E402
+
+_AUJOURDHUI = _dt.date.today().isoformat()
+_PROCHAIN_LUNDI = (_dt.date.today()
+                   + _dt.timedelta(days=(7 - _dt.date.today().weekday()) % 7 or 7))
+_LUNDI_10H = _PROCHAIN_LUNDI.isoformat() + "T10:00:00"
+_DIMANCHE_10H = (_PROCHAIN_LUNDI - _dt.timedelta(days=1)).isoformat() + "T10:00:00"
+_KB_PROSPECT_OK = {
+    "expediteur": {"identite": "FoodEatUp", "email": "contact@foodeatup.com",
+                   "desinscription": "Pour vous désinscrire, répondez STOP",
+                   "mention_stop": "STOP au 36180"},
+    "liste_opposition": ["opposant@exemple.fr", "+33699999999", "conn-42"],
+    "appels_automatises": {"actives": True},
+}
+
 TESTS_HOOKS_EXTRAS = {
+    # rapido-prospector — envois réels : ask systématique, deny quota/lot/fenêtre
+    ("rapido-prospector", "garde-envois-prospect.py"): [
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr", "c@d.fr"], "subject": "x",
+                         "content": "y"},
+          "maintenant_test": _LUNDI_10H}, "ask"),
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": [f"p{i}@x.fr" for i in range(30)]},
+          "maintenant_test": _LUNDI_10H}, "deny"),  # lot 30 > plafond 25
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"]},
+          "compteurs_test": {"date": _AUJOURDHUI, "email": 50},
+          "maintenant_test": _LUNDI_10H}, "deny"),  # quota du jour atteint
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"]},
+          "maintenant_test": _DIMANCHE_10H}, "deny"),  # hors fenêtre
+        ({"tool_name": "mcp__prospect__place_call",
+          "tool_input": {"targets": ["+33611111111"], "message": "x"},
+          "maintenant_test": _LUNDI_10H}, "deny"),  # appels : quota 0 par défaut
+        ({"tool_name": "mcp__prospect__send_sms",
+          "tool_input": {"targets": ["+33611111111"], "content": "x STOP"},
+          "maintenant_test": _LUNDI_10H}, "ask"),
+        ({"tool_name": "mcp__prospect__send_linkedin_invite",
+          "tool_input": {"connectionId": "c1", "account_id": "a1"},
+          "maintenant_test": _LUNDI_10H}, "ask"),
+        ({"tool_name": "mcp__prospect__list_clients", "tool_input": {}}, "allow"),
+    ],
+    # rapido-prospector — conformité : deny sans identité/désinscription/STOP,
+    # deny appels non activés, deny liste d'opposition
+    ("rapido-prospector", "garde-conformite.py"): [
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"], "subject": "Démo",
+                         "content": "Bonjour, ici FoodEatUp. "
+                                    "Pour vous désinscrire, répondez STOP."},
+          "kb_test": _KB_PROSPECT_OK}, "allow"),
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"], "subject": "Démo",
+                         "content": "Bonjour sans rien"}}, "deny"),
+        ({"tool_name": "mcp__prospect__send_sms",
+          "tool_input": {"targets": ["+33611111111"],
+                         "content": "Démo FoodEatUp"}}, "deny"),  # pas de STOP
+        ({"tool_name": "mcp__prospect__send_sms",
+          "tool_input": {"targets": ["+33611111111"],
+                         "content": "Démo FoodEatUp — STOP pour refuser"},
+          "kb_test": _KB_PROSPECT_OK}, "allow"),
+        ({"tool_name": "mcp__prospect__place_call",
+          "tool_input": {"targets": ["+33611111111"],
+                         "message": "Ici FoodEatUp, dites refuser pour "
+                                    "ne plus être contacté"}}, "deny"),  # non activés
+        ({"tool_name": "mcp__prospect__place_call",
+          "tool_input": {"targets": ["+33611111111"],
+                         "message": "Ici FoodEatUp, dites refuser pour "
+                                    "ne plus être contacté"},
+          "kb_test": _KB_PROSPECT_OK}, "allow"),
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["opposant@exemple.fr"], "subject": "x",
+                         "content": "Ici FoodEatUp. Pour vous désinscrire…"},
+          "kb_test": _KB_PROSPECT_OK}, "deny"),  # liste d'opposition
+        ({"tool_name": "mcp__prospect__send_linkedin_message",
+          "tool_input": {"connectionId": "conn-42", "account_id": "a1",
+                         "message": "bonjour"},
+          "kb_test": _KB_PROSPECT_OK}, "deny"),  # connexion opposée
+    ],
+    # rapido-prospector — suppressions : ask avec cascade ; lectures : allow
+    ("rapido-prospector", "garde-destructif-prospect.py"): [
+        ({"tool_name": "mcp__prospect__delete_client",
+          "tool_input": {"id": "c1"}}, "ask"),
+        ({"tool_name": "mcp__prospect__delete_linkedin_connection",
+          "tool_input": {"id": "l1"}}, "ask"),
+        ({"tool_name": "mcp__prospect__delete_webinar",
+          "tool_input": {"id": "w1"}}, "ask"),
+        ({"tool_name": "mcp__prospect__list_clients", "tool_input": {}}, "allow"),
+    ],
+    # rapido-prospector — publications visibles + configuration
+    ("rapido-prospector", "garde-publication.py"): [
+        ({"tool_name": "mcp__prospect__add_webinar",
+          "tool_input": {"title": "x", "event_date": "2027-01-01",
+                         "is_active": True}}, "ask"),
+        ({"tool_name": "mcp__prospect__add_webinar",
+          "tool_input": {"title": "x", "event_date": "2027-01-01",
+                         "is_active": False}}, "allow"),
+        ({"tool_name": "mcp__prospect__update_blog_post",
+          "tool_input": {"id": "b1", "status": "publie"}}, "ask"),
+        ({"tool_name": "mcp__prospect__update_blog_post",
+          "tool_input": {"id": "b1", "status": "brouillon"}}, "allow"),
+        ({"tool_name": "mcp__prospect__prospection_terms",
+          "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__prospect__prospection_terms",
+          "tool_input": {"add_kind": "speciality", "add_value": "boulangerie"}},
+         "ask"),
+        ({"tool_name": "mcp__prospect__add_linkedin_account",
+          "tool_input": {"name": "Compte", "account_id": "a1"}}, "ask"),
+    ],
+    # rapido-prospector — add_clients sans dédoublonnage du jour = ask
+    ("rapido-prospector", "anti-doublon.py"): [
+        ({"tool_name": "mcp__prospect__add_clients",
+          "tool_input": {"city": "Lyon", "speciality": "pizzeria",
+                         "clients": [{"name": "x"}]},
+          "session_test": {"dedoublonnage": _AUJOURDHUI + "T09:00:00"},
+          "aujourdhui_test": _AUJOURDHUI}, "allow"),
+        ({"tool_name": "mcp__prospect__add_clients",
+          "tool_input": {"clients": [{"name": "x"}]},
+          "session_test": {}, "aujourdhui_test": _AUJOURDHUI}, "ask"),
+        ({"tool_name": "mcp__prospect__add_clients",
+          "tool_input": {"clients": [{"name": "x"}]},
+          "session_test": {"dedoublonnage": "2020-01-01T09:00:00"},
+          "aujourdhui_test": _AUJOURDHUI}, "ask"),  # preuve périmée
+    ],
     # rapido-lovable / rapido-canva / rapido-video — hooks ajoutés (série FINITION F2)
     ("rapido-lovable", "garde-lovable.py"): [
         ({"tool_name": "mcp__Lovable__deploy_project", "tool_input": {}}, "ask"),

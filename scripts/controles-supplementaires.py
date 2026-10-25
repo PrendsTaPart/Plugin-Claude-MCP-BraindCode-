@@ -175,6 +175,11 @@ PERIMETRES = [
      "outils foodeatup + rapidocms (Higgsfield : noms hors motif, non contrôlés)"),
     (("rapidocrm/",), _ts.CATALOGUE.get("rapidocrm", set()) | AUTRES_SERVEURS | live,
      f"liste live rapidocrm + catalogues"),
+    # rapido-prospector : exécutant du serveur Prospect, avec RapidoCRM déclaré
+    # en option pour la synchronisation — rien d'autre.
+    (("rapido-prospector/",),
+     _ts.CATALOGUE.get("prospect", set()) | _ts.CATALOGUE.get("rapidocrm", set()),
+     "outils Prospect (66, liste versionnée) + RapidoCRM (sync optionnelle)"),
 ]
 if live:
     for f in fichiers_suivis():

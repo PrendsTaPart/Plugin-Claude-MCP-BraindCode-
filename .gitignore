@@ -28,3 +28,8 @@ tests/tmp/
 
 # Journaux locaux des hooks (garde-fou et écritures MCP du plugin foodeatup-boucles)
 .claude/logs/
+
+# État local du plugin rapido-prospector (compteurs d'envoi, marqueurs de
+# session) et widgets générés — jamais de donnée de prospect dans le dépôt
+.claude/state/
+.claude/widgets-rendus/
