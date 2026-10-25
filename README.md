@@ -144,12 +144,12 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `foodeatup-boucles` | 0.3.0 | 10 | 3 | foodeatup | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commer… |
 | `foodeatup-iris` | 0.2.0 | 6 | 1 | foodeatup, rapidocms, huggsfield | Iris, l'agent communication du restaurant |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
-| `rapidocms` | 1.11.8 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
+| `rapidocms` | 1.12.0 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | Orchestration transverse des 4 serveurs MCP Rapido |
-| `rapido-canva` | 1.0.2 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | Design Canva alimenté par les données Rapido |
+| `rapido-canva` | 1.0.3 | 7 | 1 | canva, foodeatup, rapidocms, rapidocrm, rapidorh | Design Canva alimenté par les données Rapido |
 | `rapido-lovable` | 1.5.2 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | Apps et agents IA Lovable alimentés par les données Rapido |
-| `rapido-meta-ads` | 1.0.5 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido |
+| `rapido-meta-ads` | 1.0.6 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido |
 | `rapido-n8n` | 1.6.2 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | Automatisations n8n sur l'instance du client |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | Chef de cabinet du dirigeant |
 | `rapido-startup` | 1.10.0 | 6 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | Finance & création de startup |

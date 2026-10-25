@@ -47,6 +47,13 @@ nom hors convention est signalé (voir §Audit) et une reprise de nom proposée.
   réutiliser une URL déjà hébergée. Ne jamais inventer d'URL.
 - ⚠️ La réponse **ne contient pas d'id** — voir §Résoudre l'asset_id.
 
+## Supprimer — `delete_file_tool` (2026-10)
+
+`delete_file_tool(file_id)` : suppression DÉFINITIVE. Avant : vérifier que le
+fichier n'est référencé par aucun brouillon (`list_drafts_tool`) ni post
+programmé (`list_scheduled_posts`), ni rattaché à une marque comme asset.
+Confirmation par le hook (delete_.*) — récapituler nom + usage avant.
+
 ## Inventorier — `list_all_files`
 
 `list_all_files(type, search)` → présenter en **tableau** :

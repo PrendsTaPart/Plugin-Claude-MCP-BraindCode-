@@ -47,7 +47,17 @@ la charte sert de repli et pour les règles non exposées par l'API.
      immédiate. Ne JAMAIS copier-coller le même texte sur tous les réseaux.
 4. **Planifier** — `schedule_draft_tool` (`draft_id`, `post_date` format STRICT
    `Y-m-d`, `post_heure` format STRICT `H-i-s`, ex. `2026-07-10` / `18-30-00`).
-   Confirmer date et heure avec l'utilisateur avant l'appel. Retrouver un brouillon
+   Confirmer date et heure avec l'utilisateur avant l'appel.
+   **Spécifique TikTok (2026-10)** — un brouillon `social_type: tiktok` prend
+   en plus :
+   - `privacy_level` : **défaut `SELF_ONLY`** — le post programmé reste PRIVÉ.
+     Pour une vraie publication publique, demander le niveau voulu à
+     l'utilisateur et le passer explicitement ; ne jamais supposer « public ».
+   - Divulgation commerciale (obligation TikTok, jamais déduite) : `your_brand`
+     (promotion de sa propre activité) et `content_brand` (partenariat rémunéré
+     pour un tiers) — poser la question si le contenu est promotionnel.
+   - `disable_comment` / `disable_duet` / `disable_stitch` : sur demande
+     explicite seulement. Retrouver un brouillon
    avec `list_drafts_tool` (`name`, `social`), vérifier avec `list_scheduled_posts`.
    Corriger un brouillon AVANT planification : `edit_draft_tool` (`draft_id` +
    les seuls champs à changer) — toujours préférable à supprimer/recréer.

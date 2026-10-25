@@ -22,7 +22,8 @@ Charger `${CLAUDE_PLUGIN_ROOT}/reference/directives-outils.md`,
      `create-design-from-candidate` → `get-export-formats` → `export-design`
      PNG → URL publique ;
    - **Image IA CMS** (rapide) : skill `prompt-engineering-visuel`
-     (`generate_image` + `upload_file_tool`) — pas de texte dans l'image.
+     (`generate_image` + `upload_file_tool`) — texte incrusté possible
+     (protocole zéro faute du CMS) ; pour la pub, rester sobre (voir règle pub).
    - **Higgsfield premium** (packshot 4K, pub vidéo) :
      `rapido-higgsfield:studio-image-pro` / `usine-video-marketing` **si installé**,
      **coût confirmé** ; créatif IA → **`self_ai_disclosure: OPT_IN`**, et **gate

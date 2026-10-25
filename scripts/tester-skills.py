@@ -56,16 +56,8 @@ CATALOGUE = {
     "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
     # huggsfield (Higgsfield) : liste versionnée live (81 outils, 2026-07-28).
     "huggsfield": _charger_catalogue_live("huggsfield-tools-live.txt", 60),
-    "rapidocms": set("""add_asset add_card_page_link add_digital_card add_post_campagne add_prompt
-assign_card_template cancel_schedules_post create_campagne create_draft_tool
-create_post_template delete_campagne delete_card_page_link delete_digital_card
-create_brand delete_brand delete_draft_tool delete_prompt edit_brand
-edit_campagne edit_card_page edit_digital_card
-edit_draft_tool edit_prompt generate_image get_brand get_company get_profile
-ingishts_campagne list_all_files list_campagnes list_card_page list_card_templates
-list_connected_accounts list_digital_card list_drafts_tool list_posts_campagne
-list_prompts list_scheduled_posts post_insights remove_asset remove_post_campagne
-schedule_draft_tool upload_file_tool""".split()),
+    # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
+    "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
     "rapidorh": set("""create-daily-tool create-project-link-tool create-project-tool
 create-role-tool create-task-list-tool create-task-tool create-user-tool
 delete-project-link-tool delete-user-tool get-dailies-tool get-departments-list-tool

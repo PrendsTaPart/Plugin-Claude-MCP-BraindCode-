@@ -30,12 +30,13 @@ portrait). Un visuel généré sans prompt négatif n'est pas un travail fini.
 - Le texte exact est écrit ENTRE GUILLEMETS dans le prompt, jamais paraphrasé.
 - Avant génération, tu épelles le texte lettre par lettre dans ta réponse et
   tu le fais VALIDER par l'utilisateur (accents, majuscules, ponctuation).
-- Maximum 5 mots de texte incrusté par visuel — au-delà, le texte se pose en
-  post-production (le générateur déforme les textes longs).
+- Plus de plafond de mots (2026-10, typographie générée fiable) : titres,
+  phrases et petits menus s'incrustent directement ; pour un pavé dense,
+  l'espace négatif + post-production reste une option de mise en page.
 - Après génération, tu VÉRIFIES le rendu caractère par caractère. Une seule
   lettre fausse = visuel rejeté, on itère. Pas de « ça passe ».
-- En cas d'échec après 2 itérations : tu bascules en « espace négatif » —
-  image générée sans texte + texte ajouté proprement ensuite.
+- En cas d'échec après 2 itérations : dernier recours « espace négatif »
+  (image sans texte + texte posé ensuite) ou Canva (texte maîtrisé au pixel).
 
 **5. Proposer 2-3 variantes** (angle, style ou ambiance différents) avant de
 générer, chacune avec son couple prompt positif / prompt négatif complet.

@@ -7,6 +7,8 @@ description: Utiliser quand l'utilisateur veut un prompt de génération d'image
 
 Complète `prompt-engineering-visuel` (structure 6 blocs, workflow, capitalisation) :
 ce skill ajoute les prompts NÉGATIFS structurés et le protocole texte-dans-l'image.
+Depuis 2026-10, la typographie générée est fiable : le texte incrusté est un cas
+NORMAL (titres, phrases, petits menus), plus une exception à contourner.
 L'agent `prompt-designer` applique les deux.
 
 ## Étape 0 — Marque et bibliothèque (obligatoire, avant tout prompt)
@@ -56,9 +58,10 @@ existe ; sinon l'ajouter en fin de prompt sous la forme
 2. **Validation orthographique AVANT génération** : épeler le texte à
    l'utilisateur (accents compris : Menu — M·e·n·u) et attendre son OK.
    Le texte vient des données réelles (MCP, KB, utilisateur) — jamais inventé.
-3. **5 mots maximum incrustés.** Au-delà : générer l'image avec un
-   `[espace négatif en haut/bas/gauche]` prévu dans la composition, poser le
-   texte en post-production.
+3. **Plus de plafond dur** (2026-10) : titres, phrases et petits menus
+   s'incrustent directement. Pour un pavé dense (menu complet, CGV), l'espace
+   négatif + post-production reste une OPTION de mise en page, pas une
+   obligation — proposer les deux.
 4. **Vérification APRÈS génération** : relire le rendu caractère par
    caractère. Une lettre déformée, un accent manquant = REJET.
 5. **Correction chirurgicale du texte — protocole v2 (par défaut)** : NE PAS
@@ -72,8 +75,9 @@ existe ; sinon l'ajouter en fin de prompt sous la forme
    - **Fallback** : si le serveur **refuse le rendu en référence** (erreur, ou
      `images_to_image` indisponible), revenir au protocole v1 — regénérer via
      `generate_image` en itérant sur le **bloc texte uniquement**.
-6. **2 itérations max** sur le texte incrusté, puis bascule obligatoire en
-   post-production. Ne jamais publier un « presque bon ».
+6. **2 itérations max** sur le texte incrusté, puis proposer le dernier
+   recours (post-production, ou Canva pour un texte maîtrisé au pixel).
+   Ne jamais publier un « presque bon ».
 
 ## Livrable type (à produire pour chaque demande)
 
