@@ -115,6 +115,7 @@ Phrases qui déclenchent le bon skill :
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
 | `rapido-forge` | 1.1.3 | 181 | StartupsForge (PrendsTaPart) : 180 exercices d'incubateur en 3 parcours — bootcamp 5 jours, roadmap idéation, roadmap scale — pilotés par… |
+| `braindcode-build` | 0.1.0 | 0 | BraindCode Build : chef de chantier d'une extension de bout en bout — idée, cahier des charges, Figma, construction Lovable pas à pas, MC… |
 
 Phrases qui déclenchent le bon skill :
 - « démarre le bootcamp 5 jours »

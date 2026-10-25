@@ -1,0 +1,41 @@
+{
+  "_source": "Manifeste MCP publié du projet Build (serveur braindcode-extensions-hub 1.0.0, relevé du 2026-10-25), énumération live des outils Lovable et marketplace de la même session, et listes du plugin planit (branche feat/planit). Les hooks lisent ce fichier ; fail-closed s'il est illisible.",
+  "publication_build": {
+    "publish_project": "rend la vitrine publique",
+    "unpublish_project": "retire la vitrine publiée",
+    "propose_idea": "soumet une idée visible aux équipes Build",
+    "propose_connector": "soumet un connecteur au catalogue",
+    "join_hackathon": "rattache le projet à un hackathon",
+    "register_pitch": "inscrit un pitch au demoday"
+  },
+  "credits_lovable": {
+    "create_project": "crée un projet Lovable (crédits consommés, asynchrone)",
+    "send_message": "fait travailler l'agent Lovable (crédits consommés)",
+    "remix_project": "duplique un projet existant (crédits consommés)",
+    "respond_to_approval": "répond à une pause Lovable — la décision doit venir de l'humain"
+  },
+  "mise_en_production_lovable": {
+    "deploy_project": "met l'application EN LIGNE publiquement — validation humaine de kind mise_en_ligne exigée avant"
+  },
+  "ecritures_risquees_lovable": {
+    "set_project_knowledge": "REMPLACE tout le knowledge du projet — get_project_knowledge d'abord",
+    "query_database": "SQL direct — SELECT libre, toute écriture sur accord, DROP/TRUNCATE refusés",
+    "enable_database": "provisionne la base du projet",
+    "set_project_visibility": "change la visibilité du projet",
+    "set_folder_visibility": "change la visibilité d'un dossier",
+    "move_projects_to_folder": "déplace des projets",
+    "create_workspace_skill": "pousse une consigne à TOUT l'espace",
+    "update_workspace_skill": "modifie une consigne d'espace",
+    "delete_workspace_skill": "supprime une consigne d'espace"
+  },
+  "ecritures_planit": {
+    "destructifs": ["accept_routine_proposal", "apply_routine_improvement", "delete_prompt", "delete_task", "pause_routine", "remove_kpi_widget", "remove_mcp_server", "resume_routine", "run_routine_now", "unsubscribe_event"],
+    "payants": ["compose_video", "refresh_kpi", "attach_kpi_to_routine", "add_kpi_widget"],
+    "tranchent": ["decide_kpi_alert", "decline_routine_proposal", "decline_routine_improvement"],
+    "_note": "listes reprises du plugin planit (reference/outils-sensibles.json) — c'est lui qui garde ces outils quand il est installé"
+  },
+  "ecritures_marketplace": {
+    "outils": ["declarer_mcp", "signaler_ecart_mcp", "proposer_routine", "mettre_a_jour_routine", "enregistrer_execution_routine", "journal_routine", "rendre_verdict_routine", "promouvoir_routine", "definir_kpi", "rattacher_kpi_routine", "enregistrer_kpi", "enregistrer_kpi_lot", "installer_routine", "planifier_routine", "creer_ma_kb", "definir_variable", "ajouter_favori", "marquer_progression"],
+    "_note": "toute écriture plugin.braindcode.com passe en modération humaine côté serveur ; rien n'est publié directement"
+  }
+}

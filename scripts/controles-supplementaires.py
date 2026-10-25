@@ -175,6 +175,11 @@ PERIMETRES = [
      "outils foodeatup + rapidocms (Higgsfield : noms hors motif, non contrôlés)"),
     (("rapidocrm/",), _ts.CATALOGUE.get("rapidocrm", set()) | AUTRES_SERVEURS | live,
      f"liste live rapidocrm + catalogues"),
+    # braindcode-build : chef de chantier multi-serveurs — contrôlé contre
+    # l'union des catalogues live (Build, Lovable, Plan'It, marketplace,
+    # Academy, tutoriel, produits Rapido, foodeatup).
+    (("braindcode-build/",), live | AUTRES_SERVEURS,
+     "serveurs déclarés par braindcode-build (catalogues live uniquement)"),
 ]
 if live:
     for f in fichiers_suivis():

@@ -1,0 +1,52 @@
+# Liste versionnée des outils du serveur MCP BraindCode Build
+# (https://build.braindcode.com/api/mcp). Relevé du 2026-10-25, source :
+# manifeste MCP publié du projet Lovable de Build (.lovable/mcp/manifest.json,
+# serveur « braindcode-extensions-hub » 1.0.0) — le point d'entrée est une
+# ressource OAuth (Supabase, 401 à la sonde), le tools/list authentifié se
+# refait à la première session connectée. NB : la fiche Academy
+# get_build_braindcode (relevé 2026-10-07) n'en liste que 37 : elle date.
+# 44 outils. Un nom par ligne. Référence CI du plugin braindcode-build.
+add_project_agent
+add_task
+attach_project_routine
+check_project_readiness
+complete_prompt_step
+generate_plugin_scaffold
+get_board
+get_brand_guidelines
+get_clash_arena
+get_connector
+get_demoday
+get_hackathon
+get_pending_validations
+get_project
+get_project_agents
+get_project_context
+get_project_prompts
+get_project_roadmap
+get_project_routine_plan
+get_prompt_execution_plan
+get_published_project
+get_spec_prompt
+join_hackathon
+list_connectors
+list_hackathons
+list_my_ideas
+list_my_projects
+list_project_agents
+list_projects
+list_prompt_templates
+propose_connector
+propose_idea
+publish_project
+register_ai_developer
+register_pitch
+report_blocker
+request_human_validation
+reserve_project
+save_project_progress
+save_project_spec
+set_workspace_target
+start_prompt_step
+unpublish_project
+update_task

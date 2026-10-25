@@ -1,0 +1,57 @@
+# Liste versionnée des outils du serveur MCP de la marketplace BraindCode
+# (« Rapido Plugins », https://plugin.braindcode.com/mcp). Relevé du
+# 2026-10-25 : énumération des outils exposés dans la session connectée
+# (mcp__Braindcode_Plugin__*). 53 outils. Un nom par ligne. Référence CI.
+ajouter_favori
+alertes_kpi
+auditer_routines
+chercher_outils
+chercher_prompts
+collections_pour_outil
+creer_ma_kb
+declarer_mcp
+definir_kpi
+definir_variable
+enregistrer_execution_routine
+enregistrer_kpi
+enregistrer_kpi_lot
+installer_routine
+journal_routine
+lister_boucles
+lister_collections
+lister_kpi
+lister_mcp
+lister_mes_kb
+lister_routines
+ma_kb_statut
+ma_semaine
+marquer_progression
+mes_favoris
+mes_notes
+mes_plus_utilises
+mes_prompts
+mes_rappels
+mes_routines
+mes_variables
+mettre_a_jour_routine
+mon_parcours
+obtenir_boucle
+obtenir_collection
+obtenir_kpi
+obtenir_ma_kb
+obtenir_mcp
+obtenir_mon_pack
+obtenir_mon_prompt
+obtenir_prompt
+obtenir_routine
+planifier_routine
+promouvoir_routine
+prompts_pour_agent
+prompts_pour_outil
+proposer_routine
+rattacher_kpi_routine
+rendre_verdict_routine
+routines_pour_mcp
+serie_kpi
+signaler_ecart_mcp
+tableau_de_bord

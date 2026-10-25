@@ -1,0 +1,81 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/contexte-build.sh\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Bb]raindcode[-_][Bb]uild__(publish_project|unpublish_project|propose_idea|propose_connector|join_hackathon|register_pitch)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-build.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Ll]ovable__(create_project|remix_project|respond_to_approval|send_message)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-credits-lovable.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Ll]ovable__deploy_project",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-mise-en-ligne.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Ll]ovable__(set_project_knowledge|query_database|enable_database|set_project_visibility|set_folder_visibility|move_projects_to_folder|create_workspace_skill|update_workspace_skill|delete_workspace_skill)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-lovable-ecritures.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?([Ll]ovable__(send_message|create_project|set_project_knowledge)|[Bb]raindcode[-_][Bb]uild__(request_human_validation|report_blocker|save_project_progress|publish_project))",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-secret.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?[Ll]ovable__(get_diff|read_file)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/audit-credentials-front.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__(plugin_[A-Za-z0-9-]+_)?([Ll]ovable|[Bb]raindcode[-_][Bb]uild)__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/journal-build.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

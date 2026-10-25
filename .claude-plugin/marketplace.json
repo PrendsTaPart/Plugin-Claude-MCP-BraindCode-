@@ -106,6 +106,13 @@
       "category": "direction-finance"
     },
     {
+      "name": "braindcode-build",
+      "source": "./braindcode-build",
+      "description": "Chef de chantier Build : extension de bout en bout, de l'idée à la routine Plan'It",
+      "version": "0.1.0",
+      "category": "incubation"
+    },
+    {
       "name": "rapido-forge",
       "source": "./rapido-forge",
       "description": "StartupsForge (PrendsTaPart) : 180 exercices d'incubateur en 3 parcours (bootcamp 5 jours, idéation, scale) + 4 agents mentors — livrables dans ./rapido-kb/startup/forge/",

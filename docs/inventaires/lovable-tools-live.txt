@@ -1,0 +1,50 @@
+# Liste versionnée des outils du serveur MCP Lovable (https://mcp.lovable.dev).
+# Relevé du 2026-10-25 : énumération des outils exposés dans la session
+# connectée (mcp__Lovable__*). Écarts vs le relevé embarqué antérieur de
+# scripts/tester-skills.py : disparus — disable_project_skill,
+# enable_project_skill, list_available_connectors, list_connections,
+# list_project_skills ; nouveaux — import-claude-design-from-url,
+# initiate_project, respond_to_approval.
+# 42 outils. Un nom par ligne. Référence CI (rapido-lovable, braindcode-build).
+add_connector
+create_project
+create_workspace_skill
+delete_workspace_skill
+deploy_project
+enable_database
+get_database_status
+get_diff
+get_file_upload_url
+get_me
+get_message
+get_project
+get_project_analytics
+get_project_analytics_trend
+get_project_knowledge
+get_workspace
+get_workspace_knowledge
+get_workspace_skill
+import-claude-design-from-url
+initiate_project
+list_connectors
+list_custom_connectors
+list_design_systems
+list_edits
+list_files
+list_messages
+list_projects
+list_template_projects
+list_workspace_skills
+list_workspaces
+move_projects_to_folder
+query_database
+read_file
+remix_project
+render_project_widget
+respond_to_approval
+send_message
+set_folder_visibility
+set_project_knowledge
+set_project_visibility
+set_workspace_knowledge
+update_workspace_skill
