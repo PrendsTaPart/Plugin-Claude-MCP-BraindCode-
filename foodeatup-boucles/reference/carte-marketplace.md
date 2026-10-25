@@ -41,7 +41,7 @@ Phrases qui déclenchent le bon skill :
 | `rapido-canva` | 1.0.3 | 7 | Design Canva alimenté par les données Rapido : menus restaurant (FoodEatUp), visuels sociaux (RapidoCMS), supports commerciaux (RapidoCRM… |
 | `rapido-design` | 0.5.0 | 4 | Le studio UX/UI : orchestre la chaîne charte CMS → direction artistique → sitemap/flows → maquettes hi-fi Figma → design system → MVP Lov… |
 | `rapido-prompteur` | 1.0.0 | 4 | Directeur de prompts : l'agent directeur-prompts orchestre la conception de prompts (image, vidéo, web, audio) pour Higgsfield, RapidoCMS… |
-| `rapido-youtube` | 0.1.0 | 0 | YouTube Publisher Bot : veille et outliers, mots-clés, titres et SEO, atelier de miniatures, publication sous contrôle du quota, autopilo… |
+| `rapido-youtube` | 0.1.0 | 20 | YouTube Publisher Bot : veille et outliers, mots-clés, titres et SEO, atelier de miniatures, publication sous contrôle du quota, autopilo… |
 
 Phrases qui déclenchent le bon skill :
 - « programme mes posts de la semaine »

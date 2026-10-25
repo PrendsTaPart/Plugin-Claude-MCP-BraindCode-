@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-32-blue)
-![Skills](https://img.shields.io/badge/skills-524-brightgreen)
-![Agents](https://img.shields.io/badge/agents-71-orange)
+![Plugins](https://img.shields.io/badge/plugins-33-blue)
+![Skills](https://img.shields.io/badge/skills-544-brightgreen)
+![Agents](https://img.shields.io/badge/agents-77-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -62,6 +62,7 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
    /plugin install rapidocrm@rapido           ← ventes, devis, factures, campagnes
    /plugin install rapido-prospector@rapido   ← prospection Prospector Hub (zones, campagnes, LinkedIn, MRR)
    /plugin install rapidocms@rapido           ← réseaux sociaux, visuels, marques
+   /plugin install rapido-youtube@rapido      ← les 4 chaînes YouTube (miniatures, quota, Shorts, A/B)
    /plugin install braindcode-build@rapido    ← construire une extension Build de bout en bout
    /plugin install braindcode-build@rapido    ← construire une extension Build de bout en bout
    ```
@@ -152,6 +153,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `foodeatup-tutoriel` | 0.2.0 | 16 | 4 | foodeatup-tutoriel | L'Académie FoodEatUp dans Claude (serveur public tutoriel.foodeatup.com, lecture seule) |
 | `rapido-prospector` | 0.1.0 | 19 | 4 | prospect | Prospector Hub |
 | `rapidocrm` | 1.8.0 | 31 | 3 | rapidocrm | RapidoCRM |
+| `rapido-youtube` | 0.1.0 | 20 | 6 | rapido-youtube | YouTube Publisher Bot |
 | `rapidocms` | 1.12.0 | 22 | 6 | rapidocms, hyperframes | RapidoCMS |
 | `rapidorh` | 1.1.0 | 12 | 2 | rapidorh | RapidoRh |
 | `rapido-suite` | 1.4.2 | 13 | 1 | rapidocrm, rapidocms, rapidorh, foodeatup, lovable, facebook-ads, n8n | Orchestration transverse des 4 serveurs MCP Rapido |
@@ -179,7 +181,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 32 plugins, 524 skills, 71 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 33 plugins, 544 skills, 77 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -191,10 +193,10 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 | **Restaurant** | `foodeatup`, `foodeatup-boucles`, `foodeatup-iris`, `foodeatup-tutoriel` | Salle, cuisine (KDS), HACCP, achats, réservations — **les 8 boucles du livre blanc** (diagnostic, croisement) — **Iris** (communication depuis les données d'exploitation) — et **l'Académie publique** (parcours sur mesure, leçons vidéo + quiz + exercices, formation d'équipe — le serveur enseigne, il n'agit pas) |
 | **Ventes & CRM** | `rapidocrm`, `rapido-gmaps`, `rapido-employe`, `rapido-prospector` | Prospection, pipeline, devis/factures, vente terrain, **sourcing Google Maps → CRM** — **Claude employé** (vend FoodEatUp dans le cadre Academy : autonomie, quotas, budget) — et **Prospector Hub** (zones, base dédoublonnée, campagnes sous contrôle humain) |
 | **Relation client** | `rapido-relation-client` | Service client (SLA), NPS, health score, RFM |
-| **Contenu & marque** | `rapidocms`, `rapido-copywriter`, `rapido-design` | Réseaux sociaux, visuels, multi-marques, **copy 4 réseaux**, **studio UX/UI** |
+| **Contenu & marque** | `rapidocms`, `rapido-copywriter`, `rapido-design`, `rapido-youtube` | Réseaux sociaux, visuels, multi-marques, **copy 4 réseaux**, **studio UX/UI**, **YouTube Publisher Bot (miniatures, quota, Shorts, A/B)** |
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
 | **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads`, `rapido-prospector` | Leads, tunnel, attribution, **usine à lead magnets**, SEO, SEA, TikTok, Meta, **campagnes e-mail/SMS/LinkedIn Prospector Hub** |
-| **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos, montage libre, voix, design, prompts |
+| **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva`, `rapido-youtube` | Images/vidéos, montage libre, voix, design, prompts, **publication YouTube sous quota** |
 | **App & automatisation** | `rapido-lovable`, `rapido-n8n`, `planit`, `braindcode-build` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n, **chantier d'extension Build piloté dans Lovable** |
 | **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction`, `rapido-employe`, `planit` | Pilotage transverse (Loop Engine), finance, chef de cabinet — le **cadre de l'employé IA** (prise de poste, boucle du vendredi, rapport au responsable) — et le **pilotage Plan'It** (boucles routine ↔ KPI, crédits, revue du vendredi) |
 | **Incubation** | `rapido-forge`, `braindcode-build` | 181 exercices StartupsForge → livrables KB, **extension BraindCode Build de l'idée à la routine Plan'It** |
