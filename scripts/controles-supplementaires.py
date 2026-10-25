@@ -224,7 +224,41 @@ PERIMETRES = [
     # Academy, tutoriel, produits Rapido, foodeatup).
     (("braindcode-build/",), live | AUTRES_SERVEURS,
      "serveurs déclarés par braindcode-build (catalogues live uniquement)"),
+    # rapido-youtube : outils yt_ + serveurs optionnels à catalogue
+    # (tutoriel, academy, rapidocms, académies tuto, planit-tutoriel, planit).
+    (("rapido-youtube/",),
+     _ts.CATALOGUE.get("rapido-youtube", set())
+     | _ts.CATALOGUE.get("foodeatup-tutoriel", set())
+     | _ts.CATALOGUE.get("academy", set())
+     | _ts.CATALOGUE.get("rapidocms", set())
+     | _ts.CATALOGUE.get("rapidocms-tuto", set())
+     | _ts.CATALOGUE.get("rapidorh-tuto", set())
+     | _ts.CATALOGUE.get("planit-tutoriel", set())
+     | _ts.CATALOGUE.get("planit", set()),
+     "outils yt_ officiels + serveurs optionnels déclarés (alias dépréciés "
+     "interdits par le contrôle dédié)"),
 ]
+
+# --------- rapido-youtube : les 86 alias dépréciés sont INTERDITS partout
+# dans le plugin (même si un nom identique existe sur un autre serveur
+# déclaré) — le serveur les retire le 2026-12-31.
+try:
+    _alias_yt = {l.split("\t")[0].strip()
+                 for l in lire("docs/inventaires/rapido-youtube-alias-deprecies.txt").splitlines()
+                 if l.strip() and not l.startswith("#")}
+except Exception:  # noqa: BLE001
+    _alias_yt = None
+if _alias_yt is None:
+    erreurs.append("ALIAS-YT : docs/inventaires/rapido-youtube-alias-deprecies.txt "
+                   "illisible (fail-closed)")
+else:
+    for f in fichiers_suivis():
+        if not f.startswith("rapido-youtube/") or not f.endswith(".md") \
+                or f.endswith("CHANGELOG.md"):
+            continue
+        for tok in sorted(set(RX_TOKEN.findall(lire(f))) & _alias_yt):
+            erreurs.append(f"ALIAS-YT : {f} cite `{tok}` — alias déprécié "
+                           f"(retiré le 2026-12-31), utiliser `yt_{tok}`")
 # Cohérence du garde fail-closed : la copie embarquée dans le hook doit être
 # IDENTIQUE à l'inventaire versionné (sinon le garde et la CI divergent).
 _emb_path = "foodeatup-tutoriel/hooks/scripts/outils-academie.txt"

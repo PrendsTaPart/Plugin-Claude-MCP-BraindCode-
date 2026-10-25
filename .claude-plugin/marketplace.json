@@ -50,6 +50,13 @@
       "category": "ventes-crm"
     },
     {
+      "name": "rapido-youtube",
+      "source": "./rapido-youtube",
+      "description": "YouTube Publisher Bot : miniatures, SEO, publication sous quota, Shorts, A/B, analytics",
+      "version": "0.1.0",
+      "category": "contenu-marque"
+    },
+    {
       "name": "rapidocms",
       "source": "./rapidocms",
       "description": "Contenu & réseaux sociaux, cartes digitales",
