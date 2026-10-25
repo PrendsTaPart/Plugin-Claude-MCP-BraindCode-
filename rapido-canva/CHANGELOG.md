@@ -1,5 +1,10 @@
 # Changelog — plugin rapido-canva
 
+## 1.0.3 — 2026-10-25 — texte incrusté possible côté image IA
+
+- studio-creatif : l'option « Image IA » n'exclut plus le texte dans l'image
+  (protocole zéro faute du CMS) ; Canva reste l'option texte maîtrisé au pixel.
+
 ## 1.0.2 — 2026-07-15 — hooks (garde + récap IDs) — série FINITION F2
 
 - hook PreToolUse `garde-canva` (ask) sur export-design / publish-brand-template (sorties partagées) + hook Stop récap-IDs. Testés au testeur.

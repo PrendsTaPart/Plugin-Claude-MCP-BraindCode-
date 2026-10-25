@@ -107,5 +107,8 @@ chacune) — pas `generate_image`. Le prompt se construit alors différemment :
 - Jamais de génération sans palette de charte dans le prompt.
 - Le visuel final est montré/décrit à l'utilisateur pour validation avant tout
   usage dans un post.
-- Pas de texte dans l'image générée (typographie non fiable) : le texte vit
-  dans la caption ou est ajouté par un outil dédié.
+- Texte dans l'image : AUTORISÉ (2026-10 — la typographie générée est devenue
+  fiable). Toujours via le protocole zéro faute de `prompts-visuels-pro` :
+  texte EXACT entre guillemets, validation orthographique avant, relecture
+  caractère par caractère après. Le texte long éditable (caption, hashtags)
+  reste hors image.

@@ -1,5 +1,12 @@
 # Changelog — plugin foodeatup-iris
 
+## 0.2.0 — 2026-10-25 — nouveaux capteurs et canal écrans
+
+- Moteur : marronniers/événements via `get_marketing_calendar` (serveur, plus
+  de calendrier interne), plat star aussi via `get_top_flop_products`.
+- Fabrique : affiches pour les écrans de la salle (`generer_affiche`, modèle
+  selon le nombre de plats) ; diffusion toujours confirmée (garde foodeatup).
+
 ## 0.1.0 — 2026-07-28 — naissance d'Iris (CDC agent communication v1.0)
 
 - Agent `iris` + 6 skills : appairage marque (L1), moteur d'opportunités

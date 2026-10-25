@@ -21,7 +21,9 @@ réponse, dépenses de la période, synthèse financière. La question de la bou
    quand le client a répondu.
 4. `list_expenses` sur la période, `create_expense` pour saisir au fil de l'eau.
 5. Rapprochement caisse : `get_pos_report` et `list_pos_payments` (boucle ⑤)
-   vs factures — les écarts sont le livrable le plus utile.
+   vs factures — les écarts sont le livrable le plus utile. Vue consolidée
+   multi-sources : `get_consolidated_pos_report` ; analyse : `get_pos_analytics`
+   et `get_top_flop_products` (ce qui fait le CA et ce qui dort).
 6. `create_invoice` / `create_quote` à la demande (note : `create_order` génère
    déjà facture + devis automatiquement — ne pas doubler).
 

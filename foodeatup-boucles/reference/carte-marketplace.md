@@ -7,9 +7,10 @@
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `foodeatup` | 1.11.2 | 27 | Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS)… |
-| `foodeatup-boucles` | 0.2.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
-| `foodeatup-iris` | 0.1.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
+| `foodeatup` | 1.11.4 | 27 | Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS)… |
+| `foodeatup-boucles` | 0.3.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
+| `foodeatup-iris` | 0.2.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
+| `foodeatup-tutoriel` | 0.1.0 | 4 | L'Académie FoodEatUp dans Claude : se former (parcours, cours, progression), enseigner (apprenants, agenda, revenus) et fabriquer des cou… |
 
 Phrases qui déclenchent le bon skill :
 - « fais le briefing du jour de mon restaurant »
@@ -33,9 +34,9 @@ Phrases qui déclenchent le bon skill :
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `rapidocms` | 1.11.8 | 22 | RapidoCMS : contenu réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, gestion des marques mu… |
+| `rapidocms` | 1.12.0 | 22 | RapidoCMS : contenu réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok), campagnes de posts, cartes digitales, gestion des marques mu… |
 | `rapido-copywriter` | 0.6.0 | 4 | Le copywriter LinkedIn · Facebook · Instagram · TikTok : grammaires natives par réseau (datées, révisées trimestriellement), banque de ho… |
-| `rapido-canva` | 1.0.2 | 7 | Design Canva alimenté par les données Rapido : menus restaurant (FoodEatUp), visuels sociaux (RapidoCMS), supports commerciaux (RapidoCRM… |
+| `rapido-canva` | 1.0.3 | 7 | Design Canva alimenté par les données Rapido : menus restaurant (FoodEatUp), visuels sociaux (RapidoCMS), supports commerciaux (RapidoCRM… |
 | `rapido-design` | 0.5.0 | 4 | Le studio UX/UI : orchestre la chaîne charte CMS → direction artistique → sitemap/flows → maquettes hi-fi Figma → design system → MVP Lov… |
 | `rapido-prompteur` | 1.0.0 | 4 | Directeur de prompts : l'agent directeur-prompts orchestre la conception de prompts (image, vidéo, web, audio) pour Higgsfield, RapidoCMS… |
 
@@ -49,7 +50,7 @@ Phrases qui déclenchent le bon skill :
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
 | `rapido-marketing` | 0.18.3 | 17 | Marketing & acquisition Rapido-first : génération de leads, tunnel de conversion, nurturing, publicité, sales intelligence (transcripts R… |
-| `rapido-meta-ads` | 1.0.5 | 13 | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido : lancement de campagnes, boost de posts, audiences CRM, créatifs, pix… |
+| `rapido-meta-ads` | 1.0.6 | 13 | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido : lancement de campagnes, boost de posts, audiences CRM, créatifs, pix… |
 | `rapido-google-ads` | 0.1.0 | 4 | (bêta) SEA Google Ads en LECTURE SEULE (MCP officiel read-only) : pilotage de performance, audit de compte, mots-clés payants, synergie S… |
 | `rapido-tiktok-ads` | 0.1.0 | 3 | (bêta) TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture). Pilotage de performance, lancement de campagne 100 % en état … |
 | `rapido-leadmagnet` | 0.5.0 | 4 | L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (landing + formulaire Lov… |
@@ -122,8 +123,9 @@ Phrases qui déclenchent le bon skill :
 
 ## Ce que la marketplace ne peut PAS faire (limites connues)
 
-- Créer/activer une **roue cadeaux** ou un **sondage** FoodEatUp : lecture
-  seule côté MCP, la création se fait en back-office
+- **Activer** une roue cadeaux ou un sondage FoodEatUp : la création est
+  possible par MCP (créés INACTIFS via le skill campagnes-restaurant),
+  l'activation reste une décision du restaurateur en back-office
   (docs/couverture-fidelite-jeux.md).
 - Encaisser, lancer une campagne, publier un site **sans confirmation
   humaine** : les garde-fous PreToolUse l'empêchent volontairement.

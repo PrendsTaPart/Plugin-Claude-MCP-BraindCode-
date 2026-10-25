@@ -58,8 +58,9 @@ Croiser `list_redemptions` + `list_gift_cards` avec les comptes de points
 
 - Visuel de récompense / carte → `rapidocms:studio-visuel-marque`. Emailing fidélité →
   le skill `campagnes-restaurant` (outils FoodEatUp).
-- Jeux (roue) et sondages : outils exposés (`list_wheel_games`, `get_wheel_stats`,
-  `list_surveys`, `get_survey_results`) — volet animation à venir (schémas à finaliser).
+- Jeux (roue) et sondages : lecture ici (`list_wheel_games`, `get_wheel_stats`,
+  `list_surveys`, `get_survey_results`) ; la CRÉATION (`create_wheel_game`,
+  `create_survey`, créés inactifs) → skill `campagnes-restaurant`.
 
 ## Règles
 

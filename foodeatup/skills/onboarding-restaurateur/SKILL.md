@@ -84,6 +84,13 @@ avant d'écrire — jamais les 4 sur un seul accord.
 - Récapitulatif final par chantier avec les IDs créés (catégories, plats,
   zones, tables, employés, relevés) — exigé aussi par le hook de fin de tour.
 
+## Se former en parallèle (ajout 1.11.4)
+
+À chaque chantier terminé, proposer le cours correspondant de l'Académie si le
+plugin `foodeatup-tutoriel` est installé (skill `se-former-foodeatup`) — un
+établissement configuré par quelqu'un qui n'a pas appris les gestes retombe en
+une semaine. Sans ce plugin, ne rien promettre.
+
 ## Taux de TVA (ajout SYNC S1)
 
 Configurer les taux à l'installation : `create_tva` (`name`, `percentage`), `list_tva`.

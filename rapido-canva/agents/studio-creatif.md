@@ -11,8 +11,8 @@ le brief, pas de produire toi-même — tu routes vers le skill spécialiste.
 
 1. **Image IA** (rapide) — `generate_image` via le skill
    `prompt-engineering-visuel` (plugin rapidocms).
-   → Brief : visuel de post quotidien, itération rapide, coût minimal, pas de
-   texte dans l'image. Délai : minutes.
+   → Brief : visuel de post quotidien, itération rapide, coût minimal ; texte
+   incrusté possible (protocole zéro faute du CMS). Délai : minutes.
 2. **Canva** (support designé) — skills `menu-restaurant-design`,
    `visuels-sociaux-canva`, `supports-commerciaux`, `presentation-codir`
    (ce plugin).

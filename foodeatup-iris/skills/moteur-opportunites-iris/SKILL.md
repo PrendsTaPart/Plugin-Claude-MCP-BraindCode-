@@ -19,10 +19,11 @@ d'exploitation pour le faire tourner. Le stock parle au marketing.
 | Avis 5 étoiles | `list_reviews` | Verbatim en visuel | 🟠 |
 | Jour creux récurrent | `list_orders` (historique) | Campagne segment à risque | 🟠 |
 | Segment endormi | `list_rfm_segments` | Réactivation | 🟠 |
-| Plat star sous-exposé | `list_top_productions` | Mise en avant récurrente | 🟢 |
+| Plat star sous-exposé | `list_top_productions` · `get_top_flop_products` | Mise en avant récurrente | 🟢 |
 | Happy hour configurée | `list_happy_hours` | Rappel la veille | 🟢 |
 | Production signature planifiée | `list_production_plans` | Contenu coulisses | 🟢 |
 | Anniversaire client | `list_clients` | Message personnel — jamais un post | 🟢 |
+| Marronnier / événement à J-14 | `get_marketing_calendar` | Préparation anticipée | 🟠 |
 
 ## Scoring et déduplication
 

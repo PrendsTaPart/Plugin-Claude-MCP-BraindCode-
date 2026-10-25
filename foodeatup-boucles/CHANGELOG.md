@@ -1,5 +1,17 @@
 # Changelog — plugin foodeatup-boucles
 
+## 0.3.0 — 2026-10-25 — diagnostics alignés sur le serveur 2026-10 (264 outils)
+
+- Les 8 skills de boucle lisent les nouveaux registres : horaires/fermetures et
+  HubRise (①), tâches et objectifs de vente (②), liste de courses et cadencier
+  (③), huiles de friture et cycles thermiques (④), appels entrants, bornes,
+  rotation des tables et réconciliation SmilePay (⑤), calendrier marketing et
+  écrans de la salle (⑥), taux de capture fidélité (⑦), rapport consolidé,
+  analytics caisse et top/flop (⑧).
+- `boucle-7-fidelite` : création de roue/sondage désormais possible par MCP
+  (créés inactifs, via campagnes-restaurant) — l'affirmation « back-office
+  uniquement » était périmée. Carte marketplace corrigée de même.
+
 ## 0.2.0 — 2026-07-28 — découplage RapidoCRM
 
 - RapidoCRM retiré de `.mcp.json`, `mcp_requis`, des matchers de hooks

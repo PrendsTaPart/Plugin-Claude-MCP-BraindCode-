@@ -47,15 +47,16 @@ pas le sondage restaurant FoodEatUp ; ne pas les confondre.)
 | Bons émis / validation | `list_redemptions` / `validate_redemption` | ✅ (validation à usage unique, dédup serveur) |
 | Cartes cadeaux | `list_gift_cards` / `check_gift_card` | ✅ lecture (pas de création par MCP) |
 
-## Réponse type à « crée-moi un jeu »
+## Réponse type à « crée-moi un jeu » (mise à jour 2026-10)
 
-> Je ne peux pas créer la roue cadeaux par MCP — le serveur n'expose que la
-> lecture (`list_wheel_games`, `get_wheel_stats`). Voici ce que je peux faire :
-> 1) vérifier que le programme de fidélité est actif (sinon le jeu ne produira
-> rien), 2) te proposer les lots et leur coût à partir de tes marges réelles,
-> 3) te donner la configuration exacte à saisir dans le back-office FoodEatUp,
-> 4) suivre les stats de la roue une fois créée.
+> Je peux créer la roue cadeaux par MCP (`create_wheel_game`) : segments et
+> probabilités (somme 100 %), lots chiffrés sur tes marges réelles, période,
+> cooldown. Elle est créée **INACTIVE** — l'activation est ta décision, dans le
+> back-office. Avant ça : 1) je vérifie que le programme de fidélité est actif
+> (sinon le jeu ne produira rien), 2) je te propose les lots et leur coût à
+> partir de tes marges réelles, 3) après activation, je suis les stats
+> (`get_wheel_stats`) et le taux de capture (`get_loyalty_capture`).
 
-Le skill `boucle-7-fidelite` (plugin `foodeatup-boucles`) et le skill
-`fidelite-restaurant` (plugin `foodeatup`) appliquent cette distinction
-« pilotable par Claude » / « à faire en back-office ».
+Le skill `campagnes-restaurant` (plugin `foodeatup`) porte la création ; le
+skill `boucle-7-fidelite` (plugin `foodeatup-boucles`) le diagnostic. La
+distinction qui demeure : **créer = MCP, activer = back-office**.

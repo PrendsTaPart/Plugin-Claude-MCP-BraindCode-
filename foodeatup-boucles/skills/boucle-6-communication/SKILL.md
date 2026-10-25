@@ -23,6 +23,9 @@ la boucle : « ai-je de quoi parler, et à qui ? »
 4. E-réputation : `list_reviews` — avis sans réponse, avis négatifs récents.
    Réponse via `reply_review` (publique → confirmation).
 5. Templates : `list_whatsapp_templates`, `create_whatsapp_template` (brouillon).
+   Marronniers : `get_marketing_calendar` (événements à venir, rien à inventer) ;
+   écrans de la salle : `lister_ecrans` + `rapport_diffusion` (ce qui est
+   réellement affiché — un écran allumé sur une promo périmée dessert).
 6. Capture : `list_site_leads` (leads du site non convertis en clients →
    proposer `create_client` un par un).
 

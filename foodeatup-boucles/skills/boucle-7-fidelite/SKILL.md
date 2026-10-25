@@ -23,12 +23,15 @@ bons émis, cartes cadeaux, roues cadeaux et sondages. La question de la boucle 
    récompenses), `list_redemptions` (bons émis vs utilisés — un taux d'usage
    nul signale un catalogue inadapté).
 3. `list_gift_cards` (encours de cartes cadeaux = dette), `check_gift_card` au
-   cas par cas.
+   cas par cas ; `get_loyalty_capture` (part des tickets rattachés à une fiche
+   client — le KPI d'amont : un taux bas se traite AVANT de toucher aux
+   récompenses).
 4. Jeux : `list_wheel_games` + `get_wheel_stats`, `list_surveys` +
-   `get_survey_results`. **Lecture seule côté MCP** — la création/activation
-   d'une roue ou d'un sondage FoodEatUp se fait en back-office (voir
-   docs/couverture-fidelite-jeux.md à la racine du dépôt) : le dire honnêtement
-   au lieu de tenter un appel qui n'existe pas.
+   `get_survey_results`. La **création est possible par MCP depuis 2026-10**
+   (`create_wheel_game`, `create_survey` — créés INACTIFS, l'activation reste
+   une décision du restaurateur, en back-office) : pour créer, passer par le
+   skill `campagnes-restaurant` (plugin foodeatup) ; détail des limites dans
+   docs/couverture-fidelite-jeux.md à la racine du dépôt.
 5. Comptes : `get_loyalty_account` par client ; `adjust_points` seulement en
    geste commercial motivé (plafond serveur ±1000, motif obligatoire).
 
@@ -59,6 +62,6 @@ bons, cartes cadeaux, roue, sondages.
 
 - Gérer les points d'un client au fil du service → skill `fidelite-restaurant`
   (plugin foodeatup).
-- Créer ou activer une roue cadeaux / un sondage → back-office FoodEatUp
-  (limite MCP documentée).
+- Créer une roue cadeaux ou un sondage → skill `campagnes-restaurant` (plugin
+  foodeatup) ; l'ACTIVATION reste en back-office (créés inactifs).
 - Communiquer sur le programme → skill `boucle-6-communication`.

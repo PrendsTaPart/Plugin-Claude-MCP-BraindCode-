@@ -20,7 +20,9 @@ boucle : « puis-je servir ce que je prévois de vendre ? »
    (boucle ⑤). Une production planifiée sans demande correspondante est un
    gaspillage annoncé — c'est une détection du skill `croisement-service`.
 4. `list_top_productions` pour l'historique (que produit-on vraiment ?).
-5. Réappro : `list_suppliers`, puis `create_supplier_order` sur accord ;
+5. Réappro : `get_shopping_list` (besoins calculés) et `get_cadencier`
+   (rythme de commande par fournisseur) d'abord, `list_suppliers`, puis
+   `create_supplier_order` sur accord ;
    réception contrôlée en boucle ④ (`create_haccp_reception`).
 6. Ajustements : `adjust_stock` (toujours motivé : inventaire, casse, erreur).
 

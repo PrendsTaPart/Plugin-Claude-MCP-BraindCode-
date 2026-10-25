@@ -124,7 +124,7 @@ Format : phrase → skill → séquence d'outils MCP → garde-fous.
 | « Nouvelle scène avec Origami » | coherence-personnage | lire `personnages.json` → `images_to_image` (1-3 portraits) → critique vs canon | JAMAIS de génération sans référence canonique |
 | « Prépare un post Insta avec notre logo » | pipeline-contenu-social | `list_connected_accounts` → route → `studio-visuel-marque` → `upload_file_tool` → `create_draft_tool` → `schedule_draft_tool` | confirmation date/heure, `media_source:"biblio"`, rendu rattaché au brouillon |
 | « Applique ma marque » (KB #0052FF vs CMS #1A73E8) | contenu-conforme-marque | `get_brand` + `list_all_files` (URLs réelles) → signale divergence | KB prioritaire, sync proposée via gestion-marques, jamais d'écrasement |
-| « Génère un visuel du burger » (sans logo) | prompt-engineering-visuel | `list_prompts` → `generate_image` → critique charte | palette hex de la charte, pas de texte incrusté |
+| « Génère un visuel du burger » (sans logo) | prompt-engineering-visuel | `list_prompts` → `generate_image` → critique charte | palette hex de la charte ; texte incrusté seulement si demandé, alors EXACT entre guillemets (zéro faute) |
 | « Il y a une faute dans le texte du visuel » | prompts-visuels-pro | `images_to_image` (rendu fautif en réf, v2) | correction du texte seul, fallback v1 (`generate_image`) si refus serveur |
 | « Configure mon entreprise » (charte remplie) | rapido-suite:onboarding-entreprise | interview → Phase 3 bis `create_brand` (via gestion-marques) → écrit `brand_id` en KB | Miroir CMS non bloquant si rapidocms/MCP absent |
 
@@ -143,5 +143,6 @@ Format : phrase → skill → séquence d'outils MCP → garde-fous.
   STRICT `H-i-s` (tirets), confirmation date/heure avant l'appel.
 - **NR2 — « Génère un visuel pour ce post »** : prompt-engineering-visuel —
   Étape 0 (charte + `list_prompts` AVANT de créer), palette hex de la charte
-  dans le prompt, pas de texte incrusté, capitalisation PROPOSÉE via
-  `add_prompt` (jamais imposée).
+  dans le prompt, texte incrusté exact entre guillemets si demandé
+  (protocole zéro faute), capitalisation PROPOSÉE via `add_prompt`
+  (jamais imposée).

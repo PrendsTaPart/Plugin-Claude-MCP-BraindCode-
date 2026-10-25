@@ -13,6 +13,8 @@ Consulter ce tableau au moindre doute avant d'appeler un outil.
 | `add_digital_card` | `owner_phone` chiffres uniquement ; tous champs requis | `+33 6...` avec espaces/`+` | Nombre nu (ex. `33612345678`) ; collecter tous les champs avant l'appel |
 | `edit_card_page` | `text` en HTML avec CSS INLINE | Classes CSS ou feuille de style externe | Styles dans les éléments eux-mêmes (couleur, taille, décoration) |
 | `upload_file_tool` / `add_card_page_link` | `file_url` / `image_url` publiques | URL locale ou privée | URL http(s) publiquement accessible uniquement |
-| `generate_image` | `size` ∈ hd / standard ; palette | Palette laissée au hasard | Couleurs hex de la charte dans le prompt ; pas de texte dans l'image |
+| `generate_image` | `size` ∈ hd / standard ; palette | Palette laissée au hasard ; texte « à peu près » | Couleurs hex de la charte dans le prompt ; texte incrusté AUTORISÉ (2026-10, typographie fiable) — texte EXACT entre guillemets + protocole zéro faute (`prompts-visuels-pro`) |
 | Formats visuels par réseau | dimensions | Recadrage aveugle inter-réseaux | IG post 1080×1350, story/TikTok 1080×1920, LinkedIn 1200×627, Facebook 1200×630 — décliner par destination |
+| `schedule_draft_tool` (TikTok) | `privacy_level` défaut `SELF_ONLY` ; `your_brand`/`content_brand` | Post programmé « publié » mais invisible (resté SELF_ONLY) ; partenariat rémunéré non déclaré | Demander le niveau de visibilité et le passer explicitement ; poser la question de la divulgation commerciale, obligation TikTok |
+| `delete_file_tool` | suppression DÉFINITIVE de la bibliothèque | Supprimer un fichier encore référencé par un brouillon ou un post programmé | Vérifier `list_drafts_tool`/`list_scheduled_posts` avant ; hook delete_.* → confirmation |
 | `cancel_schedules_post` / `delete_*` | irréversibles | Annulation/suppression sans accord | Confirmation utilisateur explicite (hook ask) |

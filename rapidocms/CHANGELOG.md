@@ -1,5 +1,25 @@
 # Changelog — plugin rapidocms
 
+## 1.12.0 — 2026-10-25 — texte incrusté autorisé + intégration TikTok complète
+
+- **Nouvelle règle texte-dans-l'image** : la typographie générée est devenue
+  fiable — le texte incrusté est un cas normal (titres, phrases, petits menus),
+  plus une exception. Plafond « 5 mots max » levé ; la post-production devient
+  un dernier recours, plus une bascule obligatoire. Protocole zéro faute
+  inchangé (texte EXACT entre guillemets, validation avant, relecture après,
+  2 itérations max). Mis à jour : prompt-engineering-visuel,
+  prompts-visuels-pro, agent prompt-designer, pièges, evals.
+- **TikTok** : paramètres de planification documentés (pipeline-contenu-social,
+  pièges) — privacy_level défaut SELF_ONLY (un post programmé sans niveau
+  explicite reste PRIVÉ), divulgation commerciale your_brand/content_brand
+  (obligation TikTok, jamais déduite), disable_comment/duet/stitch sur demande.
+- `delete_file_tool` (nouvel outil) : suppression définitive de bibliothèque,
+  documentée dans bibliotheque-assets (vérifier les références avant ; hook
+  delete_.* en confirmation).
+- CI : catalogue rapidocms chargé depuis la liste versionnée live
+  docs/inventaires/rapidocms-tools-live.txt (45 outils ; l'embarqué en
+  connaissait 43).
+
 ## 1.11.8 — 2026-07-15 — sync DA bidirectionnel (rapido-design)
 
 - `gestion-marques` : intégration du **sync direction artistique** bidirectionnel — quand

@@ -19,7 +19,7 @@ RX_FRONT = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 # en « autres » avec un avertissement : compléter le dico, pas la carte à la main.
 DOMAINES = {
     "Restaurant (FoodEatUp)": {
-        "plugins": ["foodeatup", "foodeatup-boucles", "foodeatup-iris"],
+        "plugins": ["foodeatup", "foodeatup-boucles", "foodeatup-iris", "foodeatup-tutoriel"],
         "phrases": ["« fais le briefing du jour de mon restaurant »",
                     "« où en sont mes 8 boucles ? »",
                     "« détecte les incohérences entre ma com et mon stock »"],
@@ -121,8 +121,9 @@ if orphelins:
     L.append("")
 
 L.append("## Ce que la marketplace ne peut PAS faire (limites connues)\n")
-L.append("- Créer/activer une **roue cadeaux** ou un **sondage** FoodEatUp : lecture")
-L.append("  seule côté MCP, la création se fait en back-office")
+L.append("- **Activer** une roue cadeaux ou un sondage FoodEatUp : la création est")
+L.append("  possible par MCP (créés INACTIFS via le skill campagnes-restaurant),")
+L.append("  l'activation reste une décision du restaurateur en back-office")
 L.append("  (docs/couverture-fidelite-jeux.md).")
 L.append("- Encaisser, lancer une campagne, publier un site **sans confirmation")
 L.append("  humaine** : les garde-fous PreToolUse l'empêchent volontairement.")

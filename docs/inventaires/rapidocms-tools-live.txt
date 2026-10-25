@@ -1,0 +1,53 @@
+# Liste versionnée des outils du serveur MCP RapidoCMS (session live du 2026-10-25).
+# Source : énumération des outils exposés par le serveur connecté (mcp__RapidoCMS__*).
+# 45 outils. Un nom par ligne. Sert de référence à la CI (contrôle des outils
+# cités dans les SKILL.md du plugin rapidocms).
+# Intégration TikTok (2026-10) : social_type/social « tiktok » sur les brouillons
+# et listes, réseau « tiktok » + « linkedin_profile » dans list_connected_accounts,
+# paramètres TikTok de schedule_draft_tool (privacy_level, disable_comment,
+# disable_duet, disable_stitch, your_brand, content_brand).
+add_asset
+add_card_page_link
+add_digital_card
+add_post_campagne
+add_prompt
+assign_card_template
+cancel_schedules_post
+create_brand
+create_campagne
+create_draft_tool
+create_post_template
+delete_brand
+delete_campagne
+delete_card_page_link
+delete_digital_card
+delete_draft_tool
+delete_file_tool
+delete_prompt
+edit_brand
+edit_campagne
+edit_card_page
+edit_digital_card
+edit_draft_tool
+edit_prompt
+generate_image
+get_brand
+get_company
+get_profile
+images_to_image
+ingishts_campagne
+list_all_files
+list_campagnes
+list_card_page
+list_card_templates
+list_connected_accounts
+list_digital_card
+list_drafts_tool
+list_posts_campagne
+list_prompts
+list_scheduled_posts
+post_insights
+remove_asset
+remove_post_campagne
+schedule_draft_tool
+upload_file_tool

@@ -20,7 +20,11 @@ boucle : « par où l'argent entre-t-il, et quel canal fuit ? »
 3. Site vitrine : `get_site_status` (publié ? domaine ? → `get_domain_status`),
    `get_site_stats` (trafic), `get_site_pages` (pages désactivées par erreur).
 4. Canaux annexes : `list_delivery_zones`, `list_happy_hours`,
-   `list_private_event_requests` (demandes sans réponse = clients perdus).
+   `list_private_event_requests` (demandes sans réponse = clients perdus),
+   `list_calls` (appels entrants non traités — `mark_call_handled` après
+   rappel), bornes de commande : `lister_bornes` / `etat_parc` (une borne hors
+   ligne est un canal fermé), `get_table_turnover` (rotation des tables),
+   `get_smilepay_reconciliation` (encaissements SmilePay vs caisse).
 5. Écritures courantes : `update_order_status`, `confirm_reservation`,
    `update_event_request_status`, `upsert_delivery_zone`, `upsert_happy_hour`,
    pages du site (`add_site_page`, `update_section`, `toggle_site_page`).

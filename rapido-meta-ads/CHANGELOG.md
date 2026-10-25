@@ -1,5 +1,11 @@
 # Changelog — plugin rapido-meta-ads
 
+## 1.0.6 — 2026-10-25 — texte incrusté possible sur les créatifs
+
+- creatifs-publicitaires : l'image IA CMS peut incruster du texte (protocole
+  zéro faute) ; la règle pub « peu de texte incrusté = meilleure diffusion »
+  reste inchangée.
+
 ## 1.0.5 — 2026-07-15
 
 - `creatifs-publicitaires` (patch H9) : **3e voie créatif** — Higgsfield premium
