@@ -1,0 +1,12 @@
+{
+  "name": "foodeatup-tutoriel",
+  "version": "0.1.0",
+  "description": "L'Académie FoodEatUp dans Claude : se former (parcours, cours, progression), enseigner (apprenants, agenda, revenus) et fabriquer des cours (brouillons uniquement — un humain publie), reliée aux vrais besoins du restaurant détectés par les plugins foodeatup",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "academy-foodeatup"
+  ]
+}

@@ -1,0 +1,34 @@
+# Liste versionnée des outils du serveur MCP Academy FoodEatUp.
+# Source : énumération des outils exposés par le serveur connecté
+# (mcp__Academy_FoodEatUp__*), session du 2026-07-28. Le serveur était
+# INJOIGNABLE le 2026-10-25 (échec de connexion) : liste à re-vérifier à la
+# prochaine session connectée. 26 outils. Un nom par ligne.
+# Règles serveur (instructions MCP) : RLS FoodEatUp respectée, actions
+# journalisées, contenus créés par l'IA TOUJOURS en brouillon
+# (published=false) — un humain valide dans /admin/contenu-cours.
+academy_get_cours
+academy_get_parcours
+academy_get_public_link
+academy_list_parcours
+academy_list_public_links
+academy_search
+admin_candidatures_list
+admin_cours_create
+admin_mcp_audit_tail
+admin_paiements_summary
+admin_parcours_create
+admin_prompt_create
+admin_publish_toggle
+admin_user_role_set
+admin_users_search
+formateur_agenda_list
+formateur_apprenants_list
+formateur_revenus_summary
+marketplace_get_prompt
+marketplace_list_prompts
+me_favorites_add
+me_favorites_remove
+me_mark_cours_complete
+me_mes_achats
+me_progression
+me_reservations_upcoming

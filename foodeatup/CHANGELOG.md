@@ -1,5 +1,11 @@
 # Changelog — plugin foodeatup
 
+## 1.11.4 — 2026-10-25 — passerelle vers l'Académie
+
+- onboarding-restaurateur : à chaque chantier terminé, proposer le cours
+  correspondant si le plugin foodeatup-tutoriel est installé (jamais promis
+  sans lui).
+
 ## 1.11.3 — 2026-10-25 — roue & sondages : renvois à jour
 
 - `fidelite-restaurant` : le « volet animation à venir » est remplacé par le

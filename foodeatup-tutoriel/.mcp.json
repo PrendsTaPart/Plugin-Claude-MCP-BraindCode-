@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "academy-foodeatup": {
+      "type": "http",
+      "url": "${ACADEMY_FOODEATUP_MCP_URL}"
+    }
+  }
+}

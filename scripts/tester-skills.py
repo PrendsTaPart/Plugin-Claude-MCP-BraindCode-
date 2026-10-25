@@ -56,6 +56,9 @@ CATALOGUE = {
     "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
     # huggsfield (Higgsfield) : liste versionnée live (81 outils, 2026-07-28).
     "huggsfield": _charger_catalogue_live("huggsfield-tools-live.txt", 60),
+    # academy-foodeatup : liste versionnée (26 outils, session 2026-07-28 —
+    # serveur injoignable le 2026-10-25, à re-vérifier), mode fermé si absente.
+    "academy-foodeatup": _charger_catalogue_live("academy-foodeatup-tools-live.txt", 20),
     # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
     "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
     "rapidorh": set("""create-daily-tool create-project-link-tool create-project-tool
@@ -261,6 +264,17 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
     ],
     # foodeatup-iris — jamais de publication auto ; crédits confirmés avant
+    # foodeatup-tutoriel — publication et gouvernance des comptes confirmées
+    ("foodeatup-tutoriel", "garde-academie.py"): [
+        ({"tool_name": "mcp__Academy_FoodEatUp__admin_publish_toggle",
+          "tool_input": {"cours_id": 1}}, "ask"),
+        ({"tool_name": "mcp__Academy_FoodEatUp__admin_user_role_set",
+          "tool_input": {"user_id": 1, "role": "formateur"}}, "ask"),
+        ({"tool_name": "mcp__Academy_FoodEatUp__academy_search",
+          "tool_input": {"q": "haccp"}}, "allow"),
+        ({"tool_name": "mcp__Academy_FoodEatUp__admin_cours_create",
+          "tool_input": {"titre": "x"}}, "allow"),
+    ],
     ("foodeatup-iris", "garde-iris.py"): [
         ({"tool_name": "mcp__rapidocms__schedule_draft_tool", "tool_input": {}}, "ask"),
         ({"tool_name": "mcp__huggsfield__tiktok_publish", "tool_input": {}}, "ask"),

@@ -11,7 +11,7 @@
       "name": "foodeatup",
       "source": "./foodeatup",
       "description": "Gestion restaurant (HACCP, salle, caisse, cuisine, achats, écrans)",
-      "version": "1.11.3",
+      "version": "1.11.4",
       "category": "restaurant"
     },
     {
@@ -26,6 +26,13 @@
       "source": "./foodeatup-iris",
       "description": "Iris, l'agent communication : détecte les raisons de publier dans les données d'exploitation FoodEatUp, fabrique visuels (RapidoCMS) et vidéos virales de plats (Higgsfield) — brouillons uniquement, validation humaine obligatoire",
       "version": "0.2.0",
+      "category": "restaurant"
+    },
+    {
+      "name": "foodeatup-tutoriel",
+      "source": "./foodeatup-tutoriel",
+      "description": "L'Académie FoodEatUp dans Claude : se former (parcours, progression), enseigner (apprenants, agenda, revenus), fabriquer des cours (brouillons — un humain publie) et le marketplace de prompts — la formation part des vrais besoins du restaurant",
+      "version": "0.1.0",
       "category": "restaurant"
     },
     {
