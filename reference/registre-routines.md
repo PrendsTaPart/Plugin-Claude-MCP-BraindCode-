@@ -22,6 +22,7 @@
 | `TIKTOK-*` | Acquisition payante TikTok | `rapido-tiktok-ads` | actif (si compte) |
 | `RC-*` | Relation client (support, NPS, santé) | `rapido-relation-client` | actif |
 | `GMAPS-*` | Sourcing de leads Google Maps → CRM | `rapido-gmaps` (`sourcing-gmaps`) | actif (si mode d'exécution configuré) |
+| `EMP-*` | Claude employé FoodEatUp (renvoi : registre Academy + Plan'It) | `rapido-employe` (`executer-mes-routines`) | actif (source de vérité HORS dépôt — voir § Claude employé) |
 
 ## Table des alias (rétrocompatibilité)
 
@@ -294,3 +295,28 @@ en dur là où il devrait vivre dans `./rapido-kb/` : les skills opérationnels
 (loop-engine, pilotage-*, VENTE-*) lisent déjà leurs seuils depuis la KB (défauts
 explicitement étiquetés « défaut si absent »). Règle maintenue : un seuil de
 **décision** vit dans `./rapido-kb/` ; un seuil **pédagogique** reste dans le texte.
+
+## Claude employé (rapido-employe) — un RENVOI, pas une duplication
+
+La **source de vérité** des routines de Claude employé est le serveur
+Academy (« FoodEatUp formation » : `list_routines`, `get_routine`,
+`configure_routine`, `log_routine_run`, `set_routine_verdict`) et Plan'It
+pour la planification. Le registre Academy porte, au relevé du 2026-10-25,
+**20 routines V0 en Aperçu**, parmi lesquelles : Point du matin (quotidien),
+Traitement des demandes entrantes, Relance des devis à J+3 et J+7, Sourcing
+de prescripteurs et partenaires, Séquence de prise de contact prescripteurs,
+Synchronisation des contacts de la carte vers le CRM, Publications du jour
+et trous du calendrier, Webinaire du samedi, Guides PDF, Veille des
+tendances (hebdo), Veille des concurrents (mensuel), Séquences d'e-mails de
+nurturing, Revue des boucles (vendredi), Rapport hebdomadaire à Michael
+(vendredi), Liste LinkedIn du matin, Suivi des conversations, Du LinkedIn au
+CRM, Tournée d'appels, Publications de groupes, Bilan de prospection
+(vendredi).
+
+Ces routines NE SONT PAS dupliquées ici : elles évoluent dans l'Academy
+(V0 → V1 après 3 exécutions, V1 → V2 avec un KPI sur 14 jours, verdict
+chaque vendredi). Le plugin les exécute par le skill
+`executer-mes-routines`, les journalise (`log_routine_run`) et les juge le
+vendredi (`boucle-du-vendredi`). Identifiants d'appel : « lance la routine
+<nom Academy> » — aucun alias EMP-* numéroté n'est créé tant que le
+registre Academy fait foi.

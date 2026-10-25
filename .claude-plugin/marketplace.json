@@ -183,6 +183,13 @@
       "category": "ventes-crm"
     },
     {
+      "name": "rapido-employe",
+      "source": "./rapido-employe",
+      "description": "Claude employé commercial FoodEatUp : se forme avec l'Academy puis prospecte, relance, prépare devis et démos, communique, sert et s'améliore chaque vendredi — dans le cadre relu à chaque prise de poste (8 familles d'autonomie, quotas, budget), 8 hooks fail-closed, 31 skills, 9 agents",
+      "version": "0.1.0",
+      "category": "ventes-crm"
+    },
+    {
       "name": "rapido-leadmagnet",
       "source": "./rapido-leadmagnet",
       "description": "L'usine à lead magnets de bout en bout : fabrication (contenu + PDF brandé → bibliothèque CMS), page de capture (Lovable → segment + pipeline CRM), campagne multi-canal (organique + payant PAUSED + nurturing + mesure) et projet RH (tâches affectées aux agents IA). Exécute ce que rapido-marketing:lead-magnet-machine a conçu. Garde-fous RGPD/délivrabilité/budget.",
