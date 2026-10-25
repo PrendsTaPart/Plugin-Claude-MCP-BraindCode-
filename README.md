@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-28-blue)
-![Skills](https://img.shields.io/badge/skills-430-brightgreen)
-![Agents](https://img.shields.io/badge/agents-48-orange)
+![Plugins](https://img.shields.io/badge/plugins-29-blue)
+![Skills](https://img.shields.io/badge/skills-461-brightgreen)
+![Agents](https://img.shields.io/badge/agents-57-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -53,6 +53,7 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
 3. **Installer les plugins utiles** (`@rapido` = le nom de cette marketplace) :
    ```
    /plugin install rapido-suite@rapido        ← recommandé en premier (onboarding + pilotage)
+   /plugin install rapido-employe@rapido      ← + Claude employé FoodEatUp (se forme, vend, rend compte)
    /plugin install foodeatup@rapido           ← si vous gérez un restaurant
    /plugin install foodeatup-boucles@rapido   ← + les 8 boucles (diagnostic, croisement gestion × vente)
    /plugin install foodeatup-iris@rapido      ← + Iris (communication : visuels & vidéos de plats, validés par vous)
@@ -166,11 +167,12 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-tiktok-ads` | 0.1.0 | 3 | 0 | tiktok-ads, rapidocms, rapidocrm | (bêta) TikTok Ads VERROUILLÉ — argent réel (MCP officiel lecture/écriture). Pilotage de performance, lancemen… |
 | `rapido-relation-client` | 0.2.0 | 6 | 0 | rapidocrm, foodeatup, rapidocms, rapidorh | (bêta) Service client, fidélité et santé client en boucle |
 | `rapido-gmaps` | 0.5.0 | 4 | 1 | rapidocrm, foodeatup, rapidocms | Sourcing de leads Google Maps → pipeline RapidoCRM |
+| `rapido-employe` | 0.1.0 | 31 | 9 | academy, foodeatup, foodeatup-tutoriel, site, social, rapidocrm, rapidocms, rapidorh, planit | Claude employé commercial de FoodEatUp |
 | `rapido-leadmagnet` | 0.5.0 | 4 | 1 | rapidocrm, rapidocms, rapidorh, lovable, facebook-ads | L'usine à lead magnets de bout en bout |
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 28 plugins, 430 skills, 48 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 29 plugins, 461 skills, 57 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -180,14 +182,14 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 | Domaine | Plugins | Ce que vous pilotez |
 |---|---|---|
 | **Restaurant** | `foodeatup`, `foodeatup-boucles`, `foodeatup-iris`, `foodeatup-tutoriel` | Salle, cuisine (KDS), HACCP, achats, réservations — **les 8 boucles du livre blanc** (diagnostic, croisement) — **Iris** (communication depuis les données d'exploitation) — et **l'Académie publique** (parcours sur mesure, leçons vidéo + quiz + exercices, formation d'équipe — le serveur enseigne, il n'agit pas) |
-| **Ventes & CRM** | `rapidocrm`, `rapido-gmaps` | Prospection, pipeline, devis/factures, vente terrain, **sourcing Google Maps → CRM** |
+| **Ventes & CRM** | `rapidocrm`, `rapido-gmaps`, `rapido-employe` | Prospection, pipeline, devis/factures, vente terrain, **sourcing Google Maps → CRM** — et **Claude employé** (vend FoodEatUp dans le cadre Academy : autonomie, quotas, budget) |
 | **Relation client** | `rapido-relation-client` | Service client (SLA), NPS, health score, RFM |
 | **Contenu & marque** | `rapidocms`, `rapido-copywriter`, `rapido-design` | Réseaux sociaux, visuels, multi-marques, **copy 4 réseaux**, **studio UX/UI** |
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
 | **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, **usine à lead magnets**, SEO, SEA, TikTok, Meta |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos, montage libre, voix, design, prompts |
 | **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n |
-| **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction` | Pilotage transverse (Loop Engine), finance, chef de cabinet |
+| **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction`, `rapido-employe` | Pilotage transverse (Loop Engine), finance, chef de cabinet — et le **cadre de l'employé IA** (prise de poste, boucle du vendredi, rapport au responsable) |
 | **Incubation** | `rapido-forge` | 181 exercices StartupsForge → livrables KB |
 
 ### Les 8 boucles FoodEatUp (plugin `foodeatup-boucles`)

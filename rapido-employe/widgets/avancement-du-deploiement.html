@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avancement du déploiement</title>
+<style>
+:root { --nuit:#0f1a23; --bleu:#007bff; --orange:#ffa500; --creme:#fcf9e6;
+  --blanc:#ffffff; --gris:#737373; --bon:#1f9d55; --moyen:#d98a00;
+  --alerte:#c0392b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --blanc:#141c24; --creme:#1d2733;
+    --nuit:#edf2f7; --gris:#9aa7b4; }
+}
+:root[data-theme="dark"] { --blanc:#141c24; --creme:#1d2733;
+  --nuit:#edf2f7; --gris:#9aa7b4; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--creme); color:var(--nuit);
+  font:16px/1.5 Inter, system-ui, sans-serif; }
+main { max-width:860px; margin:0 auto; background:var(--blanc);
+  border-radius:14px; padding:24px; border-top:8px solid var(--bleu); }
+h1 { font-size:1.4rem; margin:0 0 .2em; }
+h3 { color:var(--bleu); font-size:1rem; margin:1.2em 0 .4em; }
+.sous { color:var(--gris); font-size:.9rem; margin:0 0 1em; }
+table { width:100%; border-collapse:collapse; font-size:.95rem; }
+th { text-align:left; background:var(--bleu); color:#fff; padding:.5em .6em; }
+td { padding:.5em .6em; border-bottom:1px solid color-mix(in srgb, var(--gris) 30%, transparent); }
+tr.fait td { color:var(--bon); }
+.badge { font-size:1.2rem; font-weight:700; color:var(--bleu); }
+footer { color:var(--gris); font-size:.8rem; margin-top:1.2em; }
+li small { color:var(--gris); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Déployer ma zone — <span class="badge">{{FAITES}}/{{TOTAL}}</span> étapes</h1>
+  <p class="sous">Étape en cours : <strong>{{ETAPE_COURANTE}}</strong></p>
+  <table><thead><tr><th>#</th><th>Étape</th><th>Statut</th><th>Note</th></tr></thead>
+  <tbody>
+  {{LIGNES}}
+  </tbody></table>
+  <h3>Questions encore sans réponse</h3>
+  <ul>
+  {{QUESTIONS}}
+  </ul>
+  <footer>Calcul affiché : {{FORMULE}}. Données : get_deployment_plan — une
+  étape ne se coche que faite et vérifiée (update_deployment_step).</footer>
+</main>
+</body>
+</html>

@@ -56,8 +56,14 @@ CATALOGUE = {
     "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
     # huggsfield (Higgsfield) : liste versionnée live (81 outils, 2026-07-28).
     "huggsfield": _charger_catalogue_live("huggsfield-tools-live.txt", 60),
-    # foodeatup-tutoriel (Académie) : liste versionnée live (36 outils,
-    # serveur public v0.7.0, session du 2026-10-25), mode fermé si absente.
+    # academy (« FoodEatUp formation », formation.foodeatup.fr) : liste
+    # versionnée live (191 outils via describe_server, 2026-10-25), mode fermé.
+    "academy": _charger_catalogue_live("academy-tools-live.txt", 150),
+    # planit (Plan'It, planit.braindcode.com) : liste versionnée live
+    # (63 outils, session du 2026-10-25), mode fermé si absente.
+    "planit": _charger_catalogue_live("planit-tools-live.txt", 50),
+    # foodeatup-tutoriel (Académie publique tutoriel.foodeatup.com) : liste
+    # versionnée live (36 outils, v0.7.0, 2026-10-25), mode fermé si absente.
     "foodeatup-tutoriel": _charger_catalogue_live("foodeatup-tutoriel-tools-live.txt", 30),
     # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
     "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
@@ -147,7 +153,12 @@ stripe_implementation_planner""".split()),
 # attribuable passe en INFO (à vérifier en ligne, MCP connectés), pas en WARN.
 # canva : OAuth non connecté dans la session du 2026-07-10 — seul catalogue
 # non re-vérifiable en live (relevé du 2026-07-06 embarqué ci-dessus).
-SERVEURS_CATALOGUE_DISTANT = ["canva"]
+SERVEURS_CATALOGUE_DISTANT = ["canva",
+                              # serveurs FoodEatUp annoncés par get_capabilities
+                              # (Academy) mais non connectés en session : leurs
+                              # outils cités se vérifient en ligne (INFO).
+                              "site", "social", "prospector-hub",
+                              "studio-print", "build"]
 SERVEURS_SANS_CATALOGUE = set()
 PREFIXES_OUTIL = ("create", "list", "get", "update", "delete", "add", "edit", "send",
                   "schedule", "cancel", "remove", "upload", "generate", "assign", "move",
@@ -198,7 +209,123 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__google-calendar__delete_event", "tool_input": {}}, "ask"),
     ],
 }
+import datetime as _dt  # noqa: E402 — cadres de test dynamiques (rapido-employe)
+
+# Cadre employé de test (rapido-employe) : la clé racine cadre_test n'est
+# injectable que par le harnais ou Claude Code — jamais par le modèle, qui ne
+# contrôle que tool_input. L'horodatage est calculé pour rester frais.
+_CADRE_EMPLOYE = {
+    "horodatage": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+    "actif": True,
+    "autonomie": {"apprendre": "Confirmé", "configurer": "Confirmé",
+                  "preparer": "Brouillon", "prospecter": "Aperçu",
+                  "publier": "Aperçu", "service-client": "Brouillon",
+                  "developper": "Brouillon", "engager": "Aperçu"},
+    "quotas_jour": {"envoisJour": 1, "publicationsJour": 1, "reponsesJour": 5},
+}
+_CADRE_EMPLOYE_ARRET = dict(_CADRE_EMPLOYE, actif=False)
+_CADRE_EMPLOYE_PERIME = dict(_CADRE_EMPLOYE,
+                             horodatage="2020-01-01T00:00:00+00:00")
+_AUJOURDHUI = _dt.date.today().isoformat()
+
 TESTS_HOOKS_EXTRAS = {
+    # rapido-employe — le cadre Academy (niveaux par famille, quotas, arrêt)
+    # est relu, jamais codé : fail-closed sans cadre, deny si agent arrêté,
+    # engager toujours en ask, Aperçu=ask, Brouillon=brouillons seuls,
+    # Confirmé=allow. confirm posé par le modèle : ignoré.
+    ("rapido-employe", "garde-cadre-employe.py"): [
+        ({"tool_name": "mcp__academy__get_work_plan", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_formation__configure_routine",
+          "tool_input": {"confirm": True}}, "ask"),  # pas de cadre → ask
+        ({"tool_name": "mcp__Foodeatup_formation__log_routine_run",
+          "tool_input": {}, "cadre_test": _CADRE_EMPLOYE}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE}, "allow"),  # Brouillon + brouillon
+        ({"tool_name": "mcp__rapidocrm__send_email", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE}, "ask"),  # prospecter = Aperçu
+        ({"tool_name": "mcp__academy__record_expense",
+          "tool_input": {"confirm": True},
+          "cadre_test": _CADRE_EMPLOYE}, "ask"),  # engager : toujours
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE_ARRET}, "deny"),  # agent arrêté
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE_PERIME}, "ask"),  # cadre > 24 h
+    ],
+    # rapido-employe — Claude ne gouverne jamais son propre cadre.
+    ("rapido-employe", "garde-auto-gouvernance.py"): [
+        ({"tool_name": "mcp__Foodeatup_formation__set_agent_policy",
+          "tool_input": {"confirm": True}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__incubation_admin_review_step",
+          "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__decide_module",
+          "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__configure_routine",
+          "tool_input": {}}, "allow"),
+    ],
+    # rapido-employe — rien ne se paie sans record_expense ; un refus arrête.
+    ("rapido-employe", "garde-depense.py"): [
+        ({"tool_name": "mcp__studio-print__creer_pack", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__studio-print__creer_pack", "tool_input": {},
+          "depenses_test": {_AUJOURDHUI: {"refuse": True}}}, "deny"),
+        ({"tool_name": "mcp__studio-print__creer_pack", "tool_input": {},
+          "depenses_test": {_AUJOURDHUI: {"accepte": True}}}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {}}, "allow"),
+    ],
+    # rapido-employe — envoi Gmail direct interdit (brouillon à la place),
+    # envois/publications en ask, quotas du jour en deny une fois atteints.
+    ("rapido-employe", "garde-envois.py"): [
+        ({"tool_name": "mcp__Gmail__send_message", "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__gmail__reply", "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__prospector-hub__send_email", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE, "compteurs_test": {}}, "ask"),
+        ({"tool_name": "mcp__prospector-hub__send_email", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE,
+          "compteurs_test": {_AUJOURDHUI: {"envois": 1}}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__schedule_draft_tool", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE, "compteurs_test": {}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__reply_review", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE, "compteurs_test": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__list_rdvs", "tool_input": {}}, "allow"),
+    ],
+    # rapido-employe — la mémoire ne range ni secret ni donnée personnelle.
+    ("rapido-employe", "garde-memoire.py"): [
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"type": "methode",
+                         "texte": "relancer à J+3 le matin marche mieux"}},
+         "allow"),
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"texte": "le client préfère karim.b@restaurant.fr"}},
+         "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"texte": "jeton api_key: sk-abcdef123456789"}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"texte": "IBAN FR76 3000 6000 0112 3456 7890 189"}},
+         "deny"),
+        ({"tool_name": "mcp__rapidocrm__create_contact",
+          "tool_input": {"email": "vrai@resto.fr"}}, "allow"),
+    ],
+    # rapido-employe — signatures mécaniques de l'invention dans les écritures.
+    ("rapido-employe", "anti-donnee-inventee.py"): [
+        ({"tool_name": "mcp__rapidocrm__create_contact",
+          "tool_input": {"email": "jean@exemple.com"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__create_draft_tool",
+          "tool_input": {"contenu": "des résultats garantis +30 % dès le "
+                                    "premier mois"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__create_draft_tool",
+          "tool_input": {"contenu": "Texte avec [ville] à remplir"}}, "deny"),
+        ({"tool_name": "mcp__rapidocrm__create_devis",
+          "tool_input": {"entreprise_id": 12, "total_ht": 99}}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__list_contacts", "tool_input": {}},
+         "allow"),
+    ],
+    # rapido-employe — le journal n'est jamais bloquant.
+    ("rapido-employe", "journal-ecritures.py"): [
+        ({"tool_name": "mcp__rapidocrm__create_devis",
+          "tool_input": {"entreprise_id": 1},
+          "tool_response": {"id": 7}}, "allow"),
+        ({"tool_name": "mcp__academy__get_work_plan", "tool_input": {}},
+         "allow"),
+    ],
     # rapido-lovable / rapido-canva / rapido-video — hooks ajoutés (série FINITION F2)
     ("rapido-lovable", "garde-lovable.py"): [
         ({"tool_name": "mcp__Lovable__deploy_project", "tool_input": {}}, "ask"),

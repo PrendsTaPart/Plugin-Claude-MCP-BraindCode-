@@ -25,7 +25,8 @@ DOMAINES = {
                     "« détecte les incohérences entre ma com et mon stock »"],
     },
     "Ventes & CRM": {
-        "plugins": ["rapidocrm", "rapido-relation-client", "rapido-gmaps"],
+        "plugins": ["rapidocrm", "rapido-relation-client", "rapido-gmaps",
+                    "rapido-employe"],
         "phrases": ["« fais ma revue de pipeline »",
                     "« relance les devis en attente »",
                     "« trouve-moi des prospects restaurateurs à Lyon »"],

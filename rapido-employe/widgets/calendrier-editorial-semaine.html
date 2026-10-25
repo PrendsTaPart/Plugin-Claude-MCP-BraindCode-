@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendrier éditorial</title>
+<style>
+:root { --nuit:#0f1a23; --bleu:#007bff; --orange:#ffa500; --creme:#fcf9e6;
+  --blanc:#ffffff; --gris:#737373; --bon:#1f9d55; --moyen:#d98a00;
+  --alerte:#c0392b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --blanc:#141c24; --creme:#1d2733;
+    --nuit:#edf2f7; --gris:#9aa7b4; }
+}
+:root[data-theme="dark"] { --blanc:#141c24; --creme:#1d2733;
+  --nuit:#edf2f7; --gris:#9aa7b4; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--creme); color:var(--nuit);
+  font:16px/1.5 Inter, system-ui, sans-serif; }
+main { max-width:860px; margin:0 auto; background:var(--blanc);
+  border-radius:14px; padding:24px; border-top:8px solid var(--bleu); }
+h1 { font-size:1.4rem; margin:0 0 .6em; }
+h3 { color:var(--bleu); font-size:1rem; margin:1.2em 0 .4em; }
+footer { color:var(--gris); font-size:.8rem; margin-top:1.2em; }
+li small { color:var(--orange); font-weight:600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Calendrier éditorial — {{SEMAINE}}</h1>
+  <h3>Publications prévues</h3>
+  <ul>
+  {{POSTS}}
+  </ul>
+  <h3>Trous à combler</h3>
+  <ul>
+  {{TROUS}}
+  </ul>
+  <footer>Données : calendrier Academy (get_editorial_brief /
+  get_editorial_gaps) et brouillons RapidoCMS. Rien ne se publie sans
+  accord, dans le quota du jour.</footer>
+</main>
+</body>
+</html>

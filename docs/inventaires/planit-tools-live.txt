@@ -1,0 +1,69 @@
+# Liste versionnée des outils du serveur MCP Plan'It (planit.braindcode.com).
+# Source : énumération des outils exposés par le serveur connecté
+# (mcp__Plan_It__*), session live du 2026-10-25. 63 outils. Un nom par ligne.
+# Sert de référence à la CI et au hook garde-cadre-employe du plugin
+# rapido-employe. (Le serveur d'administration Plan'It Admin, distinct,
+# n'est pas déclaré par les plugins.)
+accept_routine_proposal
+add_kpi_widget
+add_mcp_server
+apply_all_my_tool_prompts
+apply_my_tool_prompt
+apply_routine_improvement
+attach_kpi_to_routine
+compose_video
+create_private_plugin
+create_private_skill
+create_prompt
+create_task
+decide_kpi_alert
+decline_routine_improvement
+decline_routine_proposal
+delete_prompt
+delete_task
+detach_kpi_from_routine
+estimate_routine_cost
+evaluate_loops
+evaluate_routines
+get_calendar
+get_composed_video
+get_kpi_home
+get_mcp_server_tools
+get_prompt
+get_routine_report
+get_task
+get_task_executions
+get_tools
+get_tools_filtered
+list_active_loops
+list_destructive_tools
+list_event_sources
+list_kpi_catalog
+list_mcp_servers
+list_my_mcp_tools
+list_my_private_catalog
+list_pending_routine_actions
+list_promotions
+list_prompts
+list_routines
+list_task_prompts
+list_tasks
+open_private_proposal
+pause_routine
+preview_my_tool_prompts
+propose_private_item
+propose_routine
+propose_routine_improvement
+recommend_routines
+refresh_kpi
+remove_kpi_widget
+remove_mcp_server
+resume_routine
+route_orchestrator
+run_routine_now
+select_routine_tools
+subscribe_event
+test_mcp_server
+unsubscribe_event
+update_prompt
+update_task
