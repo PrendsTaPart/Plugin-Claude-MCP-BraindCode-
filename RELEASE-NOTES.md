@@ -1,5 +1,31 @@
 # Notes de release
 
+## Le chef de chantier Build — braindcode-build (2026-10-25)
+
+Nouveau plugin **`braindcode-build`** (29e) — Claude Code **développeur IA
+déclaré** d'une extension BraindCode Build, de l'idée à la routine : cahier
+des charges sur outils réels, maquettes, **construction Lovable pas à pas**
+(pauses à l'humain, diffs relus), MCP produit branché **côté serveur**,
+tests et rapport obligatoire, **MCP de l'extension exposé et validé par une
+tâche tracée**, déclaration Plan'It + marketplace, routine auditée, plugin
+publié sur ce dépôt, vitrine, hackathon.
+
+- **22 skills**, **6 agents**, **17 commandes**, **8 widgets** charte
+  BraindCode (vérifiée dans le design system du projet Build).
+- **8 hooks fail-closed, 33 cas CI** : deploy_project REFUSÉ sans
+  validation humaine de mise en ligne lue, anti-secret (deny sur clés,
+  jetons, mots de passe dans 7 outils), audit des credentials front
+  (critère n° 3), crédits Lovable sous accord, knowledge lu avant d'être
+  remplacé, DROP/TRUNCATE refusés.
+- **6 catalogues CI** branchés : Build 44 (manifeste MCP publié du
+  projet), **Lovable 42 en liste versionnée** (remplace le relevé embarqué
+  périmé : 5 outils disparus, 3 nouveaux), marketplace 53, + academy,
+  planit et tutoriel repris des branches sœurs.
+- Référence : méthode en dix étapes + cinq critères + trois parcours,
+  règles Lovable, carte des interconnexions (8 serveurs), pièges vérifiés
+  (hackathon aux dates périmées, 20 vitrines sans tutoriel, Daily Brief en
+  brouillon).
+  **Validation : TOUT VALIDE (29 plugins) ; tester 0 FAIL / 0 WARN.**
 ## Le prospecteur Prospector Hub — rapido-prospector (2026-10-25)
 
 Nouveau plugin **`rapido-prospector`** (29e) — **toute la prospection

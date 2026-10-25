@@ -219,6 +219,11 @@ PERIMETRES = [
     (("rapido-prospector/",),
      _ts.CATALOGUE.get("prospect", set()) | _ts.CATALOGUE.get("rapidocrm", set()),
      "outils Prospect (66, liste versionnée) + RapidoCRM (sync optionnelle)"),
+    # braindcode-build : chef de chantier multi-serveurs — contrôlé contre
+    # l'union des catalogues live (Build, Lovable, Plan'It, marketplace,
+    # Academy, tutoriel, produits Rapido, foodeatup).
+    (("braindcode-build/",), live | AUTRES_SERVEURS,
+     "serveurs déclarés par braindcode-build (catalogues live uniquement)"),
 ]
 # Cohérence du garde fail-closed : la copie embarquée dans le hook doit être
 # IDENTIQUE à l'inventaire versionné (sinon le garde et la CI divergent).

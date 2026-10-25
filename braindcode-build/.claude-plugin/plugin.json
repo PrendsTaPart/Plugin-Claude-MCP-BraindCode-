@@ -1,0 +1,13 @@
+{
+  "name": "braindcode-build",
+  "version": "0.1.0",
+  "description": "BraindCode Build : chef de chantier d'une extension de bout en bout — idée, cahier des charges, Figma, construction Lovable pas à pas, MCP branché côté serveur, tests, MCP exposé, Plan'It, routine, plugin, vitrine, hackathon",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "braindcode-build",
+    "lovable"
+  ]
+}

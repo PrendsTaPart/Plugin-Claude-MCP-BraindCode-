@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>checklist de publication</title>
+<style>
+  :root {
+    --brand: #0098F3; --night: #161B2C; --ink: #000000; --hairline: #C1C1C1;
+    --fond: #FFFFFF; --ok: #4CAF50; --attention: #D98A00; --alerte: #C0392B;
+    /* Charte BraindCode vérifiée dans le design system du projet Build
+       (src/styles.css, relevé du 2026-10-25) : Poppins, accent unique
+       #0098F3, surfaces sombres #161B2C, filets #C1C1C1. */
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--fond); color: var(--ink);
+         font: 15px/1.55 "Poppins", ui-sans-serif, system-ui, sans-serif;
+         padding: 24px; }
+  h1 { font-size: 1.3em; font-weight: 600; letter-spacing: -.02em; }
+  h1 span { color: var(--brand); }
+  h2 { font-size: .95em; font-weight: 600; color: var(--brand);
+       margin: 18px 0 8px; text-transform: uppercase; letter-spacing: .05em; }
+  .carte { border: 1px solid var(--hairline); border-radius: 10px;
+           padding: 14px 16px; margin-top: 10px; background: #fff; }
+  .nuit { background: var(--night); color: #fff; border-color: var(--night); }
+  .sous { color: #5a6072; font-size: .85em; }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  th, td { text-align: left; padding: 5px 8px;
+           border-bottom: 1px solid var(--hairline); }
+  th { color: #5a6072; font-weight: 600; font-size: .85em; }
+  ul { margin: 6px 0 0 18px; }
+  .ok { color: var(--ok); } .attention { color: var(--attention); }
+  .alerte { color: var(--alerte); }
+  .badge { display: inline-block; padding: 1px 10px; border-radius: 12px;
+           border: 1px solid var(--hairline); font-size: .8em; }
+  .badge-brand { border-color: var(--brand); color: var(--brand); }
+  .nombre { font-size: 1.9em; font-weight: 600; }
+  .barre { background: #eef1f5; border-radius: 6px; height: 12px; overflow: hidden; }
+  .barre > span { display: block; height: 100%; background: var(--brand); }
+</style></head>
+<body>
+<h1><span>Build</span> — checklist de publication</h1>
+<p class="sous">Généré le {{DATE}} — données des serveurs Build/Lovable, rien d'estimé sans le dire.</p>
+<div class="carte">
+<p><strong>{{PROJET}}</strong> — prêt à publier : <strong>{{PRET}}</strong></p>
+</div>
+<h2>Éléments du readiness</h2>
+<div class="carte"><table>
+<tr><th>Élément</th><th>État</th><th>Source réelle attendue</th></tr>
+{{ELEMENTS}}
+</table>
+<p class="sous">business model et pricing : sur indication humaine uniquement — jamais inventés.</p></div>
+</body></html>

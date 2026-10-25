@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prospection — tableau de bord</title>
+<style>
+  :root {
+    --nuit: #0f1a23; --bleu: #007bff; --orange: #ffa500; --creme: #fcf9e6;
+    --bon: #1f9d55; --moyen: #d98a00; --alerte: #c0392b;
+    /* Charte FoodEatUp — gabarit officiel des rapports Academy
+       (get_report_brief, relevé du 2026-10-25). */
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--nuit); color: var(--creme);
+         font: 15px/1.5 "Segoe UI", system-ui, sans-serif; padding: 24px; }
+  h1 { font-size: 1.3em; color: var(--orange); margin-bottom: 2px; }
+  h2 { font-size: 1em; color: var(--bleu); margin: 18px 0 8px;
+       text-transform: uppercase; letter-spacing: .06em; }
+  .carte { background: #16222e; border: 1px solid #22313f; border-radius: 10px;
+           padding: 14px 16px; margin-top: 10px; }
+  .sous { color: #8fa3b3; font-size: .85em; }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #22313f; }
+  th { color: #8fa3b3; font-weight: 600; font-size: .85em; }
+  ul { margin: 6px 0 0 18px; }
+  .ok { color: var(--bon); } .attention { color: var(--moyen); }
+  .alerte { color: var(--alerte); }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px;
+           background: #22313f; font-size: .8em; }
+  .nombre { font-size: 1.9em; font-weight: 700; color: var(--creme); }
+  .barre { background: #22313f; border-radius: 6px; height: 14px; overflow: hidden; }
+  .barre > span { display: block; height: 100%; background: var(--bleu); }
+</style></head>
+<body>
+<h1>Prospection — tableau de bord</h1>
+<p class="sous">Généré le 2026-10-25 — données servies par le serveur Prospect, rien d'estimé sans le dire.</p>
+<h2>Entonnoir</h2>
+<div class="carte">
+<table>
+<tr><th>Étape</th><th>Volume</th><th></th></tr>
+<tr><td>prospects</td><td>3</td><td><div class="barre"><span style="width:100%"></span></div></td></tr>
+<tr><td>contactés</td><td>2</td><td><div class="barre"><span style="width:66%"></span></div></td></tr>
+<tr><td>réponses</td><td>—</td><td></td></tr>
+<tr><td>rendez-vous</td><td>—</td><td></td></tr>
+<tr><td>clients</td><td>12</td><td><div class="barre"><span style="width:400%"></span></div></td></tr>
+</table>
+<p class="sous">réponses et rendez-vous : mesurés côté CRM, « — » sinon.</p>
+</div>
+<h2>Envois du jour vs quotas</h2>
+<div class="carte"><table>
+<tr><th>Canal</th><th>Envoyés</th><th>Quota</th><th>Restant</th></tr>
+<tr><td>email</td><td>3</td><td>50</td><td>47</td></tr>
+</table></div>
+<h2>File LinkedIn du jour</h2>
+<div class="carte"><ul><li>2026-10-27T09:30 — Marie D.</li></ul></div>
+<h2>Revenus</h2>
+<div class="carte"><span class="nombre">1240</span> <span class="badge">MRR estimé</span>
+<p class="sous">abonnements actifs : 11 — CA : 14200</p></div>
+<h2>Trois priorités proposées</h2>
+<div class="carte"><ul><li>Relancer 4 prospects J+7</li>
+<li>Prospecter Lille boulangeries</li>
+<li>Activer le webinaire de novembre</li></ul></div>
+</body></html>

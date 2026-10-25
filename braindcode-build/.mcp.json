@@ -1,0 +1,47 @@
+{
+  "mcpServers": {
+    "braindcode-build": {
+      "type": "http",
+      "url": "https://build.braindcode.com/api/mcp"
+    },
+    "lovable": {
+      "type": "http",
+      "url": "https://mcp.lovable.dev"
+    },
+    "planit": {
+      "type": "http",
+      "url": "https://planit.braindcode.com/mcp"
+    },
+    "marketplace-prompts": {
+      "type": "http",
+      "url": "https://plugin.braindcode.com/mcp"
+    },
+    "foodeatup": {
+      "type": "http",
+      "url": "https://foodeatup.com/api/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    },
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "rapidorh": {
+      "type": "http",
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh"
+    },
+    "academy": {
+      "type": "http",
+      "url": "https://formation.foodeatup.fr/mcp",
+      "headers": {
+        "Authorization": "Bearer ${ACADEMY_MCP_TOKEN}"
+      }
+    },
+    "foodeatup-tutoriel": {
+      "type": "http",
+      "url": "https://tutoriel.foodeatup.com/mcp"
+    }
+  }
+}

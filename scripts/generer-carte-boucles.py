@@ -70,7 +70,7 @@ DOMAINES = {
                     "« branche mon app sur les données Rapido »"],
     },
     "Formation & incubation": {
-        "plugins": ["rapido-forge"],
+        "plugins": ["rapido-forge", "braindcode-build"],
         "phrases": ["« démarre le bootcamp 5 jours »",
                     "« aide-moi à valider mon idée »",
                     "« passe-moi en mode mentor scale »"],

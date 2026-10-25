@@ -70,6 +70,12 @@ CATALOGUE = {
     # prospect (Prospector Hub) : liste versionnée (66 outils, manifeste MCP
     # publié du projet, 2026-10-25), mode fermé si absente.
     "prospect": _charger_catalogue_live("prospect-tools-live.txt", 60),
+    # braindcode-build (build.braindcode.com/api/mcp) : liste versionnée
+    # (44 outils, manifeste MCP publié du projet, 2026-10-25), mode fermé.
+    "braindcode-build": _charger_catalogue_live("braindcode-build-tools-live.txt", 40),
+    # marketplace-prompts (plugin.braindcode.com) : liste versionnée live
+    # (53 outils, session du 2026-10-25), mode fermé si absente.
+    "marketplace-prompts": _charger_catalogue_live("marketplace-prompts-tools-live.txt", 40),
     # planit (Plan'It, planit.braindcode.com) : liste versionnée live
     # (63 outils, session du 2026-10-25), mode fermé si absente.
     "planit": _charger_catalogue_live("planit-tools-live.txt", 50),
@@ -89,17 +95,9 @@ list-folder-items list-replies merge-designs move-item-to-folder
 perform-editing-operations publish-brand-template reply-to-comment
 request-outline-review resize-design resolve-shortlink search-brand-templates
 search-designs search-folders start-editing-transaction upload-asset-from-url""".split()),
-    "lovable": set("""add_connector create_project create_workspace_skill
-delete_workspace_skill deploy_project disable_project_skill enable_database
-enable_project_skill get_database_status get_diff get_file_upload_url get_me
-get_message get_project get_project_analytics get_project_analytics_trend
-get_project_knowledge get_workspace get_workspace_knowledge get_workspace_skill
-list_available_connectors list_connections list_connectors list_custom_connectors
-list_design_systems list_edits list_files list_messages list_project_skills
-list_projects list_template_projects list_workspace_skills list_workspaces
-move_projects_to_folder query_database read_file remix_project render_project_widget
-send_message set_folder_visibility set_project_knowledge set_project_visibility
-set_workspace_knowledge update_workspace_skill""".split()),
+    # lovable (mcp.lovable.dev) : liste versionnée live (42 outils, session du
+    # 2026-10-25 — 5 disparus et 3 nouveaux vs l'ancien relevé embarqué).
+    "lovable": _charger_catalogue_live("lovable-tools-live.txt", 35),
     "hyperframes": set("compose get_project get_project_status get_render_status "
                        "list_projects render_video".split()),
     "gmail": set("""apply_sensitive_message_label apply_sensitive_thread_label
@@ -248,6 +246,94 @@ _KB_PROSPECT_OK = {
 }
 
 TESTS_HOOKS_EXTRAS = {
+    # braindcode-build — écritures visibles Build : ask ; lectures : allow
+    ("braindcode-build", "garde-build.py"): [
+        ({"tool_name": "mcp__braindcode-build__publish_project",
+          "tool_input": {"project_id": "p1"}}, "ask"),
+        ({"tool_name": "mcp__braindcode-build__register_pitch",
+          "tool_input": {"hackathon_id": "h1"}}, "ask"),
+        ({"tool_name": "mcp__braindcode-build__list_projects",
+          "tool_input": {}}, "allow"),
+    ],
+    # braindcode-build — crédits Lovable : ask ; send_message hors plan : ask
+    ("braindcode-build", "garde-credits-lovable.py"): [
+        ({"tool_name": "mcp__Lovable__create_project",
+          "tool_input": {"initial_message": "x"}}, "ask"),
+        ({"tool_name": "mcp__Lovable__remix_project",
+          "tool_input": {"project_id": "p"}}, "ask"),
+        ({"tool_name": "mcp__Lovable__respond_to_approval",
+          "tool_input": {"event_id": "e"}}, "ask"),
+        ({"tool_name": "mcp__Lovable__send_message",
+          "tool_input": {"project_id": "p", "message": "x"},
+          "session_test": {"start_prompt_step": "2026-10-25T09:00:00"}},
+         "allow"),
+        ({"tool_name": "mcp__Lovable__send_message",
+          "tool_input": {"project_id": "p", "message": "x"},
+          "session_test": {}}, "ask"),
+        ({"tool_name": "mcp__Lovable__get_project",
+          "tool_input": {"project_id": "p"}}, "allow"),
+    ],
+    # braindcode-build — deploy sans validation mise_en_ligne lue : deny
+    ("braindcode-build", "garde-mise-en-ligne.py"): [
+        ({"tool_name": "mcp__Lovable__deploy_project",
+          "tool_input": {"project_id": "p1"}, "session_test": {}}, "deny"),
+        ({"tool_name": "mcp__Lovable__deploy_project",
+          "tool_input": {"project_id": "p1"},
+          "session_test": {"validations_mise_en_ligne": {"p1": True}}},
+         "allow"),
+        ({"tool_name": "mcp__Lovable__deploy_project",
+          "tool_input": {"project_id": "p2"},
+          "session_test": {"validations_mise_en_ligne": {"p1": True}}},
+         "deny"),
+    ],
+    # braindcode-build — écritures risquées Lovable
+    ("braindcode-build", "garde-lovable-ecritures.py"): [
+        ({"tool_name": "mcp__Lovable__set_project_knowledge",
+          "tool_input": {"project_id": "p", "knowledge": "x"},
+          "session_test": {}}, "ask"),
+        ({"tool_name": "mcp__Lovable__set_project_knowledge",
+          "tool_input": {"project_id": "p", "knowledge": "x"},
+          "session_test": {"get_project_knowledge": "2026-10-25T09:00:00"}},
+         "allow"),
+        ({"tool_name": "mcp__Lovable__query_database",
+          "tool_input": {"query": "SELECT * FROM leads LIMIT 5"}}, "allow"),
+        ({"tool_name": "mcp__Lovable__query_database",
+          "tool_input": {"query": "INSERT INTO leads VALUES (1)"}}, "ask"),
+        ({"tool_name": "mcp__Lovable__query_database",
+          "tool_input": {"query": "DROP TABLE leads"}}, "deny"),
+        ({"tool_name": "mcp__Lovable__create_workspace_skill",
+          "tool_input": {"name": "s"}}, "ask"),
+        ({"tool_name": "mcp__Lovable__set_project_visibility",
+          "tool_input": {"project_id": "p"}}, "ask"),
+    ],
+    # braindcode-build — aucun secret ne part
+    ("braindcode-build", "anti-secret.py"): [
+        ({"tool_name": "mcp__Lovable__send_message",
+          "tool_input": {"message": "utilise sk_live_abcdefgh12345678"}},
+         "deny"),
+        ({"tool_name": "mcp__braindcode-build__report_blocker",
+          "tool_input": {"description": "Bearer abcdef0123456789abcdef"}},
+         "deny"),
+        ({"tool_name": "mcp__braindcode-build__save_project_progress",
+          "tool_input": {"note": "api_key: AbCdEf0123456789"}}, "deny"),
+        ({"tool_name": "mcp__Lovable__send_message",
+          "tool_input": {"message": "ajoute l'écran de connexion et le "
+                                    "parcours devis"}}, "allow"),
+        ({"tool_name": "mcp__braindcode-build__request_human_validation",
+          "tool_input": {"kind": "mise_en_ligne",
+                         "message": "prêt à déployer ?"}}, "allow"),
+    ],
+    # braindcode-build — audit front : silencieux sur code sain (PostToolUse)
+    ("braindcode-build", "audit-credentials-front.py"): [
+        ({"tool_name": "mcp__Lovable__get_diff",
+          "tool_input": {"project_id": "p"},
+          "tool_response": {"diff": "const total = somme(lignes);"}}, "allow"),
+    ],
+    # braindcode-build — journal : jamais bloquant sur lecture
+    ("braindcode-build", "journal-build.py"): [
+        ({"tool_name": "mcp__braindcode-build__list_my_projects",
+          "tool_input": {}}, "allow"),
+    ],
     # rapido-prospector — envois réels : ask systématique, deny quota/lot/fenêtre
     ("rapido-prospector", "garde-envois-prospect.py"): [
         ({"tool_name": "mcp__prospect__send_email",

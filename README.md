@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-31-blue)
-![Skills](https://img.shields.io/badge/skills-502-brightgreen)
-![Agents](https://img.shields.io/badge/agents-65-orange)
+![Plugins](https://img.shields.io/badge/plugins-32-blue)
+![Skills](https://img.shields.io/badge/skills-524-brightgreen)
+![Agents](https://img.shields.io/badge/agents-71-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -62,6 +62,8 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
    /plugin install rapidocrm@rapido           ← ventes, devis, factures, campagnes
    /plugin install rapido-prospector@rapido   ← prospection Prospector Hub (zones, campagnes, LinkedIn, MRR)
    /plugin install rapidocms@rapido           ← réseaux sociaux, visuels, marques
+   /plugin install braindcode-build@rapido    ← construire une extension Build de bout en bout
+   /plugin install braindcode-build@rapido    ← construire une extension Build de bout en bout
    ```
    …puis les autres selon vos usages (voir [la table des plugins](#les-plugins)).
 4. **Recharger** : `/reload-plugins` (ou relancer Claude Code).
@@ -160,6 +162,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `planit` | 0.1.0 | 22 | 4 | planit | Pilote Plan'It de bout en bout |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | Chef de cabinet du dirigeant |
 | `rapido-startup` | 1.10.0 | 6 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | Finance & création de startup |
+| `braindcode-build` | 0.1.0 | 22 | 6 | braindcode-build, lovable | BraindCode Build |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | StartupsForge (PrendsTaPart) |
 | `rapido-marketing` | 0.18.3 | 17 | 5 | rapidocrm, rapidocms, rapidorh, facebook-ads, canva, lovable, n8n, gmail, google-calendar | Marketing & acquisition Rapido-first |
 | `rapido-higgsfield` | 1.0.4 | 9 | 1 | huggsfield, rapidocms, rapidocrm, rapidorh, foodeatup | Usine média IA (Higgsfield) branchée sur l'écosystème Rapido |
@@ -176,7 +179,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 31 plugins, 502 skills, 65 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 32 plugins, 524 skills, 71 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -192,9 +195,9 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
 | **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads`, `rapido-prospector` | Leads, tunnel, attribution, **usine à lead magnets**, SEO, SEA, TikTok, Meta, **campagnes e-mail/SMS/LinkedIn Prospector Hub** |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos, montage libre, voix, design, prompts |
-| **App & automatisation** | `rapido-lovable`, `rapido-n8n`, `planit` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n |
+| **App & automatisation** | `rapido-lovable`, `rapido-n8n`, `planit`, `braindcode-build` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n, **chantier d'extension Build piloté dans Lovable** |
 | **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction`, `rapido-employe`, `planit` | Pilotage transverse (Loop Engine), finance, chef de cabinet — le **cadre de l'employé IA** (prise de poste, boucle du vendredi, rapport au responsable) — et le **pilotage Plan'It** (boucles routine ↔ KPI, crédits, revue du vendredi) |
-| **Incubation** | `rapido-forge` | 181 exercices StartupsForge → livrables KB |
+| **Incubation** | `rapido-forge`, `braindcode-build` | 181 exercices StartupsForge → livrables KB, **extension BraindCode Build de l'idée à la routine Plan'It** |
 
 ### Les 8 boucles FoodEatUp (plugin `foodeatup-boucles`)
 
