@@ -29,7 +29,7 @@ aucun jeton n'est stocké dans le dépôt. À relire au début de chaque skill.
 
 | Outil | Rôle | À savoir avant d'appeler |
 |---|---|---|
-| `prospection_terms` | régions et spécialités connues | sans paramètre = lecture ; `add_kind`+`add_value` = écriture de configuration (accord requis) |
+| `prospection_terms` | régions et spécialités connues | sans paramètre = lecture ; add_kind+add_value = écriture de configuration (accord requis) |
 | `run_prospection` | lance la prospection n8n (city, speciality) | coût externe (webhook) ; ne sauvegarde PAS les prospects |
 | `prospection_history` | historique des prospections | sert au tableau de bord et à éviter de refaire une zone |
 | `add_clients` | enregistre des clients (lot) | APRÈS dédoublonnage (scripts/dedoublonner.py) et accord ; porter city + speciality |

@@ -8,7 +8,7 @@
 > l'autorité compétente (en France : la CNIL) avant d'être affirmée. Quand
 > le connecteur Academy (« FoodEatUp formation ») est branché, les
 > formations `conformite` et `rgpd` du catalogue font référence :
-> `get_formation` les sert avec leur date de mise à jour.
+> l’outil get_formation de l’Academy les sert avec leur date de mise à jour.
 
 ## Principes appliqués par les hooks, quel que soit le canal
 
