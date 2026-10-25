@@ -20,7 +20,8 @@ description: Utiliser quand les routines se jugent, que l'utilisateur dit « aud
    no_measured_effect, failing, not_enough_data) sont recalculés et
    ENREGISTRÉS à l'historique. Aucun effet annoncé sur not_enough_data.
 3. **`get_routine_report`** sur chaque routine signalée `silent`, `failing`,
-   `expensive`, `no_effect` ou `no_kpi` — exécutions, taux de réussite,
+   `expensive`, no_effect ou no_kpi (drapeaux du serveur, pas des outils) —
+   exécutions, taux de réussite,
    crédits, outils réellement appelés, proposition courante.
 4. **UNE amélioration par routine** : **`propose_routine_improvement`** —
    résumé, UN changement (consigne, fréquence, outils, autonomie, plafond,
