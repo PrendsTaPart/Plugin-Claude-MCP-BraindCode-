@@ -64,7 +64,7 @@ DOMAINES = {
                     "« pilote la boîte : sense, plan, act »"],
     },
     "Sites & apps": {
-        "plugins": ["rapido-lovable", "rapido-n8n"],
+        "plugins": ["rapido-lovable", "rapido-n8n", "planit"],
         "phrases": ["« construis un MVP multi-pages »",
                     "« automatise ce process dans n8n »",
                     "« branche mon app sur les données Rapido »"],

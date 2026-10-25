@@ -67,6 +67,9 @@ CATALOGUE = {
     "foodeatup-tutoriel": _charger_catalogue_live("foodeatup-tutoriel-tools-live.txt", 30),
     # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
     "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
+    # planit (Plan'It, planit.braindcode.com) : liste versionnée live
+    # (63 outils, session du 2026-10-25), mode fermé si absente.
+    "planit": _charger_catalogue_live("planit-tools-live.txt", 50),
     "rapidorh": set("""create-daily-tool create-project-link-tool create-project-tool
 create-role-tool create-task-list-tool create-task-tool create-user-tool
 delete-project-link-tool delete-user-tool get-dailies-tool get-departments-list-tool
@@ -209,7 +212,10 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__google-calendar__delete_event", "tool_input": {}}, "ask"),
     ],
 }
-import datetime as _dt  # noqa: E402 — cadres de test dynamiques (rapido-employe)
+import datetime as _dt  # noqa: E402 — états et cadres de test dynamiques
+
+_AUJOURDHUI = _dt.date.today().isoformat()
+
 
 # Cadre employé de test (rapido-employe) : la clé racine cadre_test n'est
 # injectable que par le harnais ou Claude Code — jamais par le modèle, qui ne
@@ -226,9 +232,75 @@ _CADRE_EMPLOYE = {
 _CADRE_EMPLOYE_ARRET = dict(_CADRE_EMPLOYE, actif=False)
 _CADRE_EMPLOYE_PERIME = dict(_CADRE_EMPLOYE,
                              horodatage="2020-01-01T00:00:00+00:00")
-_AUJOURDHUI = _dt.date.today().isoformat()
 
 TESTS_HOOKS_EXTRAS = {
+    # planit — les trois familles sensibles (destructifs, payants, tranchent)
+    # exigent une confirmation ; confirm posé par le modèle ignoré.
+    ("planit", "garde-planit.py"): [
+        ({"tool_name": "mcp__Plan_It__delete_task",
+          "tool_input": {"name": "x", "confirm": True}}, "ask"),
+        ({"tool_name": "mcp__planit__run_routine_now",
+          "tool_input": {"task_id": "rt-1"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__compose_video",
+          "tool_input": {"subject": "x", "duration": 20}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__decide_kpi_alert",
+          "tool_input": {"alert_id": "a1", "decision": "accept"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__list_tasks", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__propose_routine",
+          "tool_input": {"name": "veille"}}, "allow"),
+    ],
+    # planit — pas d'exécution sans coût annoncé dans la session.
+    ("planit", "garde-cout-annonce.py"): [
+        ({"tool_name": "mcp__Plan_It__run_routine_now",
+          "tool_input": {"task_id": "rt-77"}}, "deny"),
+        ({"tool_name": "mcp__Plan_It__run_routine_now",
+          "tool_input": {"task_id": "rt-77"},
+          "session_test": {_AUJOURDHUI: {"couts_annonces": ["rt-77"]}}},
+         "allow"),
+        ({"tool_name": "mcp__Plan_It__accept_routine_proposal",
+          "tool_input": {"proposal_id": "pp-9"},
+          "session_test": {_AUJOURDHUI: {"couts_annonces": ["rt-77"]}}},
+         "deny"),
+        ({"tool_name": "mcp__Plan_It__add_kpi_widget",
+          "tool_input": {"kpi": "mrr"}}, "deny"),
+        ({"tool_name": "mcp__Plan_It__add_kpi_widget",
+          "tool_input": {"kpi": "mrr"},
+          "session_test": {_AUJOURDHUI: {"kpi_catalog": True}}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__list_routines", "tool_input": {}},
+         "allow"),
+    ],
+    # planit — « auto » ne se donne pas tout seul ; destructif en auto = deny.
+    ("planit", "garde-autonomie.py"): [
+        ({"tool_name": "mcp__Plan_It__propose_routine",
+          "tool_input": {"name": "x", "autonomy_level": "auto"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__propose_routine",
+          "tool_input": {"name": "x", "autonomy_level": "confirm"}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__subscribe_event",
+          "tool_input": {"routine": "r", "governance": "auto",
+                         "tools": ["delete_task"]}}, "deny"),
+        ({"tool_name": "mcp__Plan_It__subscribe_event",
+          "tool_input": {"routine": "r", "governance": "auto"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__subscribe_event",
+          "tool_input": {"routine": "r", "governance": "validation"}},
+         "allow"),
+    ],
+    # planit — vérité des données : silencieux sur un résultat sain (le
+    # déclenchement injecte du contexte, vérifié dans tests/evals.md).
+    ("planit", "verite-des-donnees.py"): [
+        ({"tool_name": "mcp__Plan_It__list_active_loops",
+          "tool_input": {},
+          "tool_response": {"loops": [{"verdict": "improving"}]}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__get_kpi_home", "tool_input": {},
+          "tool_response": {"credits": 100}}, "allow"),
+    ],
+    # planit — le journal n'est jamais bloquant.
+    ("planit", "journal-ecritures.py"): [
+        ({"tool_name": "mcp__Plan_It__update_task",
+          "tool_input": {"name": "x", "due_date": "2026-11-02"},
+          "tool_response": {"ok": True}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__list_tasks", "tool_input": {}},
+         "allow"),
+    ],
     # rapido-employe — le cadre Academy (niveaux par famille, quotas, arrêt)
     # est relu, jamais codé : fail-closed sans cadre, deny si agent arrêté,
     # engager toujours en ask, Aperçu=ask, Brouillon=brouillons seuls,

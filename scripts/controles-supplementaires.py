@@ -193,6 +193,11 @@ PERIMETRES = [
      "outils foodeatup + rapidocms (Higgsfield : noms hors motif, non contrôlés)"),
     (("rapidocrm/",), _ts.CATALOGUE.get("rapidocrm", set()) | AUTRES_SERVEURS | live,
      f"liste live rapidocrm + catalogues"),
+    # planit : le plugin ne déclare QUE le serveur Plan'It — ses skills ne
+    # citent que ses 63 outils (liste live). Les autres périmètres ne
+    # bougent pas.
+    (("planit/",), _ts.CATALOGUE.get("planit", set()),
+     "outils du serveur Plan'It uniquement (63 outils, liste live)"),
     # rapido-employe : orchestrateur multi-serveurs (comme rapido-suite, qui
     # n'est pas contraint) — contrôlé QUAND MÊME, contre l'union des
     # catalogues des serveurs qu'il déclare. Les serveurs sans catalogue

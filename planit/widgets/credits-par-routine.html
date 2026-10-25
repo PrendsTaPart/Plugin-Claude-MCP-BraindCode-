@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crédits par routine</title>
+<style>
+:root { --fond:#f4f5f7; --carte:#ffffff; --texte:#1c2330; --accent:#3b5bdb;
+  --sourdine:#6b7280; --bon:#2f9e44; --alerte:#c92a2a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --fond:#151922; --carte:#1f2530;
+    --texte:#e8ebf1; --sourdine:#9aa3b2; }
+}
+:root[data-theme="dark"] { --fond:#151922; --carte:#1f2530;
+  --texte:#e8ebf1; --sourdine:#9aa3b2; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--fond); color:var(--texte);
+  font:16px/1.5 system-ui, sans-serif; }
+main { max-width:780px; margin:0 auto; background:var(--carte);
+  border-radius:14px; padding:24px; border-top:6px solid var(--accent); }
+h1 { font-size:1.35rem; margin:0 0 .4em; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+  margin:.8em 0 1em; }
+.s { background:var(--fond); border-radius:10px; padding:.7em;
+  text-align:center; font-size:.85rem; }
+.s .v { font-size:1.5rem; font-weight:700; color:var(--accent); }
+ol li { margin:.35em 0; }
+li small { color:var(--sourdine); }
+footer { color:var(--sourdine); font-size:.8rem; margin-top:1.2em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Crédits par routine (classement)</h1>
+  <div class="stats">
+    <div class="s"><div class="v">{{SOLDE}}</div>crédits restants</div>
+    <div class="s"><div class="v">{{TOTAL}}</div>crédits/mois (total)</div>
+    <div class="s"><div class="v">{{JOURS}}</div>jours d'autonomie</div>
+  </div>
+  <ol>
+  {{LIGNES}}
+  </ol>
+  <footer>Calcul affiché : {{FORMULE}}. Sources : get_kpi_home,
+  list_routines, get_routine_report (consommation mesurée quand elle existe,
+  estimée sinon — base dite). Les jours d'autonomie du serveur priment en
+  cas d'écart.</footer>
+</main>
+</body>
+</html>

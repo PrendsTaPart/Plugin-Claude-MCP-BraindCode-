@@ -92,6 +92,13 @@
       "category": "app-automatisation"
     },
     {
+      "name": "planit",
+      "source": "./planit",
+      "description": "Pilote Plan'It de bout en bout : tâches et routines à objectif chiffré, boucles routine ↔ KPI (référence figée, verdict après 3 exécutions ET 14 jours), widgets, alertes, crédits (tout coût annoncé avant), connecteurs, événements, catalogue privé, vidéos — propositions d'abord, l'utilisateur décide. 22 skills, 4 agents, 6 hooks fail-closed",
+      "version": "0.1.0",
+      "category": "app-automatisation"
+    },
+    {
       "name": "rapido-direction",
       "source": "./rapido-direction",
       "description": "Chef de cabinet : Gmail, Google Calendar et Drive (compte de chacun) unifiés avec les systèmes Rapido — journée du dirigeant, tri de boîte mail, secrétariat commercial, coffre documents",

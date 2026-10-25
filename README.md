@@ -6,9 +6,9 @@ satellites — via des **skills métier**, des **personas experts** et des
 **garde-fous déterministes** par-dessus vos serveurs **MCP**.
 
 ![validation](https://github.com/PrendsTaPart/Plugin-Claude-MCP-BraindCode-/actions/workflows/validation.yml/badge.svg)
-![Plugins](https://img.shields.io/badge/plugins-29-blue)
-![Skills](https://img.shields.io/badge/skills-461-brightgreen)
-![Agents](https://img.shields.io/badge/agents-57-orange)
+![Plugins](https://img.shields.io/badge/plugins-30-blue)
+![Skills](https://img.shields.io/badge/skills-483-brightgreen)
+![Agents](https://img.shields.io/badge/agents-61-orange)
 ![Version](https://img.shields.io/github/v/tag/PrendsTaPart/Plugin-Claude-MCP-BraindCode-?label=derni%C3%A8re%20version)
 ![Licence](https://img.shields.io/badge/licence-Apache%202.0-blue)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-marketplace%20de%20plugins-5A3FFF)
@@ -54,6 +54,7 @@ modèle) et une personnalisation par **votre base de connaissance `./rapido-kb/`
    ```
    /plugin install rapido-suite@rapido        ← recommandé en premier (onboarding + pilotage)
    /plugin install rapido-employe@rapido      ← + Claude employé FoodEatUp (se forme, vend, rend compte)
+   /plugin install planit@rapido              ← + le pilote Plan'It (routines, boucles KPI, crédits)
    /plugin install foodeatup@rapido           ← si vous gérez un restaurant
    /plugin install foodeatup-boucles@rapido   ← + les 8 boucles (diagnostic, croisement gestion × vente)
    /plugin install foodeatup-iris@rapido      ← + Iris (communication : visuels & vidéos de plats, validés par vous)
@@ -154,6 +155,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-lovable` | 1.5.2 | 10 | 2 | lovable, foodeatup, rapidocms, rapidocrm, rapidorh | Apps et agents IA Lovable alimentés par les données Rapido |
 | `rapido-meta-ads` | 1.0.6 | 13 | 1 | facebook-ads, rapidocms, rapidocrm, canva, lovable, foodeatup | Publicité Meta (Facebook/Instagram) pilotée par les données Rapido |
 | `rapido-n8n` | 1.6.2 | 4 | 1 | n8n, foodeatup, rapidocms, rapidocrm, rapidorh | Automatisations n8n sur l'instance du client |
+| `planit` | 0.1.0 | 22 | 4 | planit | Pilote Plan'It de bout en bout |
 | `rapido-direction` | 1.1.0 | 5 | 1 | gmail, google-calendar, google-drive, rapidocrm, foodeatup, n8n | Chef de cabinet du dirigeant |
 | `rapido-startup` | 1.10.0 | 6 | 2 | stripe, rapidocrm, rapidocms, rapidorh, foodeatup, google-calendar | Finance & création de startup |
 | `rapido-forge` | 1.1.3 | 181 | 4 | rapidocrm, rapidocms, rapidorh | StartupsForge (PrendsTaPart) |
@@ -172,7 +174,7 @@ Table générée par [`scripts/generate_readme_table.py`](scripts/generate_readm
 | `rapido-copywriter` | 0.6.0 | 4 | 1 | rapidocms, rapidocrm, foodeatup | Le copywriter LinkedIn · Facebook · Instagram · TikTok |
 | `rapido-design` | 0.5.0 | 4 | 1 | rapidocms, lovable | Le studio UX/UI |
 
-**Total : 29 plugins, 461 skills, 57 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
+**Total : 30 plugins, 483 skills, 61 agents.** Table générée par `scripts/generate_readme_table.py` — ne pas éditer à la main.
 <!-- TABLE-PLUGINS:END -->
 
 Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
@@ -188,8 +190,8 @@ Historique détaillé des vagues : [`RELEASE-NOTES.md`](RELEASE-NOTES.md).
 | **RH & projets** | `rapidorh` | Kanban, dailies, charge d'équipe, onboarding |
 | **Marketing & acquisition** | `rapido-marketing`, `rapido-leadmagnet`, `rapido-seo`, `rapido-google-ads`, `rapido-tiktok-ads`, `rapido-meta-ads` | Leads, tunnel, attribution, **usine à lead magnets**, SEO, SEA, TikTok, Meta |
 | **Média IA** | `rapido-higgsfield`, `rapido-video`, `rapido-prompteur`, `rapido-elevenlabs`, `rapido-canva` | Images/vidéos, montage libre, voix, design, prompts |
-| **App & automatisation** | `rapido-lovable`, `rapido-n8n` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n |
-| **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction`, `rapido-employe` | Pilotage transverse (Loop Engine), finance, chef de cabinet — et le **cadre de l'employé IA** (prise de poste, boucle du vendredi, rapport au responsable) |
+| **App & automatisation** | `rapido-lovable`, `rapido-n8n`, `planit` | Sites/apps connectés au CRM, **agent MCP embarqué**, workflows n8n |
+| **Direction & finance** | `rapido-suite`, `rapido-startup`, `rapido-direction`, `rapido-employe`, `planit` | Pilotage transverse (Loop Engine), finance, chef de cabinet — le **cadre de l'employé IA** (prise de poste, boucle du vendredi, rapport au responsable) — et le **pilotage Plan'It** (boucles routine ↔ KPI, crédits, revue du vendredi) |
 | **Incubation** | `rapido-forge` | 181 exercices StartupsForge → livrables KB |
 
 ### Les 8 boucles FoodEatUp (plugin `foodeatup-boucles`)

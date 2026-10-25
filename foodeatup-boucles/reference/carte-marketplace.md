@@ -105,6 +105,7 @@ Phrases qui déclenchent le bon skill :
 |---|---|---|---|
 | `rapido-lovable` | 1.5.2 | 10 | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant (FoodEatUp), usine à landing pages (CRM), agent IA produit c… |
 | `rapido-n8n` | 1.6.2 | 4 | Automatisations n8n sur l'instance du client : usine à workflows (cycle SDK complet), recettes métier Rapido prêtes à déployer, surveilla… |
+| `planit` | 0.1.0 | 22 | Pilote Plan'It de bout en bout : tâches et routines (une routine a un objectif chiffré, jamais de fréquence once/custom), boucles routine… |
 
 Phrases qui déclenchent le bon skill :
 - « construis un MVP multi-pages »
