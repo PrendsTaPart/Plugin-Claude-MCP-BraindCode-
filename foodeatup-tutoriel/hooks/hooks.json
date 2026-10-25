@@ -1,12 +1,45 @@
 {
   "hooks": {
-    "PreToolUse": [
+    "SessionStart": [
       {
-        "matcher": "mcp__.*__(admin_publish_toggle|admin_user_role_set)$",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-academie.py\""
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/contexte-academie.py\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-tarifs-et-commissions.py\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "mcp__[Ff]oodeatup[-_][Tt]utoriel__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-perimetre-academie.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/anti-lien-invente.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/garde-tarifs-et-commissions.py\""
           }
         ]
       }

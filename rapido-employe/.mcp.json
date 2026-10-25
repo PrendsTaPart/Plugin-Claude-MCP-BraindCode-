@@ -1,0 +1,67 @@
+{
+  "mcpServers": {
+    "academy": {
+      "type": "http",
+      "url": "https://formation.foodeatup.fr/mcp",
+      "headers": {
+        "Authorization": "Bearer ${ACADEMY_MCP_TOKEN}"
+      }
+    },
+    "foodeatup": {
+      "type": "http",
+      "url": "https://foodeatup.com/api/mcp"
+    },
+    "foodeatup-tutoriel": {
+      "type": "http",
+      "url": "https://tutoriel.foodeatup.com/mcp"
+    },
+    "site": {
+      "type": "http",
+      "url": "https://site.foodeatup.com/mcp"
+    },
+    "social": {
+      "type": "http",
+      "url": "https://cms.foodeatup.com/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    },
+    "rapidocms": {
+      "type": "http",
+      "url": "https://cms.rapidosoftware.com/mcp"
+    },
+    "rapidorh": {
+      "type": "http",
+      "url": "https://rh.rapidosoftware.com/mcp/rapidorh"
+    },
+    "planit": {
+      "type": "http",
+      "url": "https://planit.braindcode.com/mcp"
+    },
+    "studio-print": {
+      "type": "http",
+      "url": "${STUDIO_PRINT_MCP_URL}"
+    },
+    "prospector-hub": {
+      "type": "http",
+      "url": "${PROSPECTOR_HUB_MCP_URL}"
+    },
+    "build": {
+      "type": "http",
+      "url": "https://build.braindcode.com/api/mcp"
+    },
+    "lovable": {
+      "type": "http",
+      "url": "https://mcp.lovable.dev"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmailmcp.googleapis.com/mcp/v1"
+    },
+    "google-drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1"
+    }
+  }
+}

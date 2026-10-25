@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz de l'Académie</title>
+<style>
+:root { --bg:#f7f5f0; --fg:#1d1c1a; --carte:#ffffff; --accent:#b4540a;
+  --sourdine:#6b665e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#16140f; --fg:#eee9e0;
+    --carte:#211d16; --accent:#e8884a; --sourdine:#a39b8d; }
+}
+:root[data-theme="dark"] { --bg:#16140f; --fg:#eee9e0; --carte:#211d16;
+  --accent:#e8884a; --sourdine:#a39b8d; }
+body { margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
+  font:16px/1.55 system-ui, sans-serif; }
+main { max-width:680px; margin:0 auto; }
+h1 { font-size:1.25rem; }
+.consigne { color:var(--sourdine); font-size:.9rem; }
+.q { background:var(--carte); border-radius:12px; padding:16px 18px;
+  margin:14px 0; }
+.q h3 { margin:0 0 .4em; font-size:1rem; }
+.q small { color:var(--sourdine); font-weight:400; }
+details { margin-top:.6em; }
+summary { cursor:pointer; color:var(--accent); font-weight:600; }
+.revoir a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Quiz — {{SUJET}}</h1>
+  <p class="consigne">{{NOMBRE}} question(s). Consigne du serveur :
+  {{CONSIGNE}}</p>
+  {{QUESTIONS}}
+  <p class="consigne">Les réponses sont repliées : on répond d'abord, on
+  déplie ensuite. En cas d'erreur, rejouer la vidéo « à revoir ».</p>
+</main>
+</body>
+</html>

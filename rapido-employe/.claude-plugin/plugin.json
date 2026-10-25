@@ -1,0 +1,20 @@
+{
+  "name": "rapido-employe",
+  "version": "0.1.0",
+  "description": "Claude employé commercial de FoodEatUp : il se forme avec l'Academy (FoodEatUp formation), puis prospecte, relance, prépare démonstrations et devis, communique, sert les clients et s'améliore chaque vendredi — toujours dans le cadre relu à chaque prise de poste (familles d'autonomie, quotas, budget), jamais codé en dur. Il orchestre les serveurs de l'écosystème et délègue aux plugins existants",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "academy",
+    "foodeatup",
+    "foodeatup-tutoriel",
+    "site",
+    "social",
+    "rapidocrm",
+    "rapidocms",
+    "rapidorh",
+    "planit"
+  ]
+}

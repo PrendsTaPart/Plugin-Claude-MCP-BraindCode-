@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progression de formation</title>
+<style>
+:root { --nuit:#0f1a23; --bleu:#007bff; --orange:#ffa500; --creme:#fcf9e6;
+  --blanc:#ffffff; --gris:#737373; --bon:#1f9d55; --moyen:#d98a00;
+  --alerte:#c0392b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --blanc:#141c24; --creme:#1d2733;
+    --nuit:#edf2f7; --gris:#9aa7b4; }
+}
+:root[data-theme="dark"] { --blanc:#141c24; --creme:#1d2733;
+  --nuit:#edf2f7; --gris:#9aa7b4; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--creme); color:var(--nuit);
+  font:16px/1.5 Inter, system-ui, sans-serif; }
+main { max-width:860px; margin:0 auto; background:var(--blanc);
+  border-radius:14px; padding:24px; border-top:8px solid var(--bleu); }
+h1 { font-size:1.4rem; margin:0 0 .6em; }
+h3 { color:var(--bleu); font-size:1rem; margin:1.2em 0 .4em; }
+footer { color:var(--gris); font-size:.8rem; margin-top:1.2em; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.s { background:var(--creme); border-radius:10px; padding:.7em;
+  text-align:center; font-size:.85rem; }
+.s .v { font-size:1.5rem; font-weight:700; color:var(--bleu); }
+.etape ul { margin:.3em 0; }
+.etape h3 { color:var(--orange); }
+li small { color:var(--gris); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Progression de formation et badges</h1>
+  <div class="stats">
+    <div class="s"><div class="v">{{MISSIONS}}</div>missions</div>
+    <div class="s"><div class="v">{{ETOILES}}</div>étoiles</div>
+    <div class="s"><div class="v">{{POINTS}}</div>points</div>
+    <div class="s"><div class="v">{{CERTIF}}</div>certification</div>
+  </div>
+  <h3>Le chemin, étape par étape</h3>
+  {{ETAPES}}
+  <h3>Badges</h3>
+  <ul>
+  {{BADGES}}
+  </ul>
+  <footer>Données : get_my_progress, list_my_badges et le chemin de
+  get_work_plan. Les points se gagnent dans l'application — rien n'est
+  validé ici.</footer>
+</main>
+</body>
+</html>
