@@ -28,3 +28,9 @@ tests/tmp/
 
 # Journaux locaux des hooks (garde-fou et écritures MCP du plugin foodeatup-boucles)
 .claude/logs/
+# État local de Claude employé (cadre du jour, compteurs de quotas — rapido-employe)
+.claude/state/
+
+# Widgets générés par rapido-prospector / braindcode-build — jamais de
+# donnée de prospect ni de projet dans le dépôt
+.claude/widgets-rendus/

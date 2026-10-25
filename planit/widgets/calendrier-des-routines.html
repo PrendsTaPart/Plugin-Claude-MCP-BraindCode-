@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendrier des routines</title>
+<style>
+:root { --fond:#f4f5f7; --carte:#ffffff; --texte:#1c2330; --accent:#3b5bdb;
+  --sourdine:#6b7280; --bon:#2f9e44; --alerte:#c92a2a; --manque:#e8590c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --fond:#151922; --carte:#1f2530;
+    --texte:#e8ebf1; --sourdine:#9aa3b2; }
+}
+:root[data-theme="dark"] { --fond:#151922; --carte:#1f2530;
+  --texte:#e8ebf1; --sourdine:#9aa3b2; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--fond); color:var(--texte);
+  font:16px/1.5 system-ui, sans-serif; }
+main { max-width:860px; margin:0 auto; background:var(--carte);
+  border-radius:14px; padding:24px; border-top:6px solid var(--accent); }
+h1 { font-size:1.35rem; margin:0 0 .6em; }
+h3 { color:var(--accent); font-size:1rem; margin:1em 0 .3em; }
+.jour h3 { color:var(--texte); }
+li.etat-done { color:var(--bon); }
+li.etat-failed { color:var(--alerte); }
+li.etat-missed { color:var(--manque); }
+li small { color:var(--sourdine); }
+footer { color:var(--sourdine); font-size:.8rem; margin-top:1.2em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Calendrier des routines — {{PLAGE}}</h1>
+  {{JOURS}}
+  <h3>Routines déclenchées par événement (sans horaire)</h3>
+  <ul>
+  {{EVENEMENTIELLES}}
+  </ul>
+  <footer>Données : get_calendar (62 jours au plus par appel). Un état autre
+  que done ne veut jamais dire « exécuté » ; les chevauchements se vérifient
+  avant de proposer un horaire. Thème neutre (pas de charte Plan'It dans le
+  dépôt).</footer>
+</main>
+</body>
+</html>

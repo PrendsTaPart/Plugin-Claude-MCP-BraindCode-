@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "prospect": {
+      "type": "http",
+      "url": "https://prospect-pebble.lovable.app/mcp"
+    },
+    "rapidocrm": {
+      "type": "http",
+      "url": "https://crm.rapidosoftware.com/mcp"
+    }
+  }
+}

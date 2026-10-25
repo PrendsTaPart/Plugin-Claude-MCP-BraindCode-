@@ -1,0 +1,41 @@
+# Copie embarquée de docs/inventaires/foodeatup-tutoriel-tools-live.txt
+# (36 outils, session du 2026-10-25, serveur v0.7.0). Le hook
+# garde-perimetre-academie lit ce fichier en fail-closed : fichier absent
+# ou vide → ask. L'égalité avec l'inventaire versionné est vérifiée en CI
+# (scripts/controles-supplementaires.py).
+apercu_video
+audit_formation
+brief_video_client
+brief_video_partenaire
+capacites_foodeatup
+carnet_de_formation
+carte_tutoriel
+comprendre_foodeatup
+diagnostic_demarrage
+documentation_api_foodeatup
+exercice_pratique
+former_son_equipe
+glossaire_foodeatup
+journee_type
+lecon_suivante
+lecteur_video_tutoriel
+lister_modules
+lister_tutoriels
+obtenir_lien_tutoriel
+obtenir_prompts_tutoriel
+obtenir_tutoriel
+obtenir_video_tutoriel
+obtenir_vignette_tutoriel
+onboarding_foodeatup
+parcours_apprentissage
+parcours_client_restaurant
+parcours_metier_tutoriel
+premiers_pas_foodeatup
+prompts_formation
+quiz_tutoriel
+rechercher_tutoriels
+reseau_partenaires_foodeatup
+secteur_foodeatup
+tarifs_et_essai
+transcription_tutoriel
+tutoriels_du_module

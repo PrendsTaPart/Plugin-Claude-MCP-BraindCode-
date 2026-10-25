@@ -7,10 +7,10 @@
 
 | Plugin | Version | Skills | Description |
 |---|---|---|---|
-| `foodeatup` | 1.11.4 | 27 | Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS)… |
+| `foodeatup` | 1.11.5 | 27 | Gestion restaurant FoodEatUp : HACCP (températures, huiles, refroidissement), service en salle, caisse et TPE, coordination cuisine (KDS)… |
 | `foodeatup-boucles` | 0.3.0 | 10 | Pilotage FoodEatUp par les 8 boucles du livre blanc (configuration, équipe, stock/production, HACCP, e-commerce, communication, fidélité,… |
 | `foodeatup-iris` | 0.2.0 | 6 | Iris, l'agent communication du restaurant : lit les données d'exploitation FoodEatUp (stock, DLC, marges, avis, créneaux creux) pour trou… |
-| `foodeatup-tutoriel` | 0.1.0 | 4 | L'Académie FoodEatUp dans Claude : se former (parcours, cours, progression), enseigner (apprenants, agenda, revenus) et fabriquer des cou… |
+| `foodeatup-tutoriel` | 0.2.0 | 16 | L'Académie FoodEatUp dans Claude (serveur public tutoriel.foodeatup.com, lecture seule) : diagnostic de démarrage, parcours sur mesure, l… |
 
 Phrases qui déclenchent le bon skill :
 - « fais le briefing du jour de mon restaurant »
@@ -24,6 +24,8 @@ Phrases qui déclenchent le bon skill :
 | `rapidocrm` | 1.8.0 | 31 | RapidoCRM : prospection, pipeline, campagnes marketing, devis/factures, communication client, performance commerciale — avec agents direc… |
 | `rapido-relation-client` | 0.2.0 | 6 | (bêta) Service client, fidélité et santé client en boucle : SLA, CSAT/NPS, health score, sauvetages et 100 premiers jours — orchestré sur… |
 | `rapido-gmaps` | 0.5.0 | 4 | Sourcing de leads Google Maps → pipeline RapidoCRM : scraping géo-ciblé (gosom/google-maps-scraper, MIT — Docker local ou API SaaS auto-h… |
+| `rapido-employe` | 0.1.0 | 31 | Claude employé commercial de FoodEatUp : il se forme avec l'Academy (FoodEatUp formation), puis prospecte, relance, prépare démonstration… |
+| `rapido-prospector` | 0.1.0 | 19 | Prospector Hub : prospection par zone, base dédoublonnée, campagnes e-mail/SMS/LinkedIn sous contrôle humain, calendrier éditorial, blog,… |
 
 Phrases qui déclenchent le bon skill :
 - « fais ma revue de pipeline »
@@ -104,6 +106,7 @@ Phrases qui déclenchent le bon skill :
 |---|---|---|---|
 | `rapido-lovable` | 1.5.2 | 10 | Apps et agents IA Lovable alimentés par les données Rapido : site restaurant (FoodEatUp), usine à landing pages (CRM), agent IA produit c… |
 | `rapido-n8n` | 1.6.2 | 4 | Automatisations n8n sur l'instance du client : usine à workflows (cycle SDK complet), recettes métier Rapido prêtes à déployer, surveilla… |
+| `planit` | 0.1.0 | 22 | Pilote Plan'It de bout en bout : tâches et routines (une routine a un objectif chiffré, jamais de fréquence once/custom), boucles routine… |
 
 Phrases qui déclenchent le bon skill :
 - « construis un MVP multi-pages »

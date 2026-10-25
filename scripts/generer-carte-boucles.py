@@ -25,7 +25,8 @@ DOMAINES = {
                     "« détecte les incohérences entre ma com et mon stock »"],
     },
     "Ventes & CRM": {
-        "plugins": ["rapidocrm", "rapido-relation-client", "rapido-gmaps"],
+        "plugins": ["rapidocrm", "rapido-relation-client", "rapido-gmaps",
+                    "rapido-employe", "rapido-prospector"],
         "phrases": ["« fais ma revue de pipeline »",
                     "« relance les devis en attente »",
                     "« trouve-moi des prospects restaurateurs à Lyon »"],
@@ -63,7 +64,7 @@ DOMAINES = {
                     "« pilote la boîte : sense, plan, act »"],
     },
     "Sites & apps": {
-        "plugins": ["rapido-lovable", "rapido-n8n"],
+        "plugins": ["rapido-lovable", "rapido-n8n", "planit"],
         "phrases": ["« construis un MVP multi-pages »",
                     "« automatise ce process dans n8n »",
                     "« branche mon app sur les données Rapido »"],

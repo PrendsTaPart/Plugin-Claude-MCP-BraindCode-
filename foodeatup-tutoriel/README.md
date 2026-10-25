@@ -1,50 +1,78 @@
 # foodeatup-tutoriel
 
-L'**Académie FoodEatUp** dans Claude : se former, enseigner et fabriquer des
-cours — reliés aux vrais besoins du restaurant que les plugins `foodeatup`
-détectent. Le principe : **la formation part du symptôme** (une erreur de
-caisse, un registre HACCP troué), pas d'un catalogue.
+L'**Académie FoodEatUp** dans Claude, branchée sur le vrai serveur public
+« FoodEatUp tutoriel » (`https://tutoriel.foodeatup.com/mcp`, lecture seule,
+sans compte — 36 outils vérifiés en session live du 2026-10-25, serveur
+v0.7.0). Le contrat : **le serveur enseigne, il n'agit pas** — agir sur un
+compte réel passe par le connecteur produit `https://foodeatup.com/api/mcp`,
+que ce plugin n'appelle jamais.
 
-## Les 4 skills (un par rôle) + l'agent
+## Les 16 skills
 
-| Rôle | Skill | Outils couverts |
-|---|---|---|
-| Apprenant | `se-former-foodeatup` | `academy_search`, `academy_list_parcours`, `academy_get_parcours`, `academy_get_cours`, `me_progression`, `me_mark_cours_complete`, `me_favorites_add`/`me_favorites_remove`, `me_mes_achats`, `me_reservations_upcoming` |
-| Formateur | `enseigner-foodeatup` | `formateur_apprenants_list`, `formateur_agenda_list`, `formateur_revenus_summary` |
-| Administrateur | `fabriquer-des-cours` | `admin_cours_create`, `admin_parcours_create`, `admin_prompt_create` (brouillons), `admin_publish_toggle` (confirmé), `admin_users_search`, `admin_user_role_set` (confirmé), `admin_candidatures_list`, `admin_paiements_summary`, `admin_mcp_audit_tail` |
-| Tous | `prompts-academie` | `marketplace_list_prompts`, `marketplace_get_prompt`, `academy_get_public_link`, `academy_list_public_links` |
+| Besoin | Skills |
+|---|---|
+| Se former | `demarrer-academie` (cadrage secteur → métier), `parcours-sur-mesure`, `lecon-guidee` (vidéo → quiz → exercice), `carnet-de-reprise` |
+| Trouver et explorer | `trouver-un-tuto`, `explorer-un-module`, `comprendre-foodeatup`, `journee-metier` |
+| Équipe | `former-mon-equipe` (plan par postes — rien n'est « envoyé ») |
+| Pratiquer avec l'IA | `prompts-ia-restaurant`, `passer-a-l-action` (le pont vers le connecteur produit) |
+| Avant-vente & écosystème | `decouvrir-l-offre` (tarifs datés), `devenir-partenaire`, `espace-convive` (vidéos non tournées : jamais de lien), `developpeur-api` |
+| Production de contenu | `studio-production-tutos` (manques, briefs, scripts) |
 
-Agent : **`professeur-foodeatup`** — diagnostique la compétence manquante
-depuis l'usage réel, recommande 1 à 3 cours avec leur raison, fait pratiquer
-chaque cours avec le skill foodeatup correspondant.
+## Les 4 agents
 
-Couverture : les **26 outils** du serveur (liste versionnée
-`docs/inventaires/academy-foodeatup-tools-live.txt`, relevée en session
-connectée du 2026-07-28 — serveur injoignable au moment de l'écriture du
-plugin, liste à re-vérifier à la prochaine connexion).
+- **`chef-formateur`** — mène la séance : une leçon à la fois, vignette,
+  quiz, exercice, code de reprise.
+- **`responsable-formation`** — pense équipe et calendrier : plans par
+  postes, onboarding, suivi des carnets.
+- **`conseiller-academie`** — l'avant-formation : offre, secteurs, convive,
+  partenaires, API — chaque chiffre sourcé et daté.
+- **`producteur-tutos`** — pilote les manques du catalogue et les briefs de
+  tournage (ton imposé : aucun concurrent, aucune promesse chiffrée).
 
-## Garde-fous
+Tous limités au périmètre du serveur Académie (36 outils).
 
-- **Règle du serveur, relayée partout** : tout contenu créé par l'IA reste en
-  **brouillon** (`published=false`) — un humain valide dans
-  `/admin/contenu-cours`. Toutes les actions sont journalisées côté serveur.
-- Hook `garde-academie.py` (testé en CI) : `admin_publish_toggle` (publication
-  visible des apprenants) et `admin_user_role_set` (gouvernance des comptes)
-  exigent une confirmation humaine.
-- Jamais de cours marqué complet à la place de l'apprenant ; progression lue,
-  jamais estimée.
+## Les 7 commandes
+
+`/academie` (sommaire ou cadrage) · `/lecon <slug|sujet>` · `/quiz
+<tutoriel|module>` · `/parcours <métier|module>` · `/former-equipe
+<postes>` · `/carnet [code]` · `/tutos-manquants [module]`.
+
+## Les 5 widgets HTML
+
+`widgets/` + `scripts/render_widget.py` (stdlib) : `carte-tutoriel`,
+`lecteur-chapitres` (repli `etapes` vérifié), `quiz-interactif` (réponses
+repliées), `progression-parcours` (formule de durée affichée),
+`plan-formation-equipe` (imprimable). Le serveur n'expose **aucune ressource
+MCP Apps (`ui://`)** — vérifié le 2026-10-25 — ces gabarits locaux sont le
+repli officiel. Jetons CSS neutres, surchargables par la charte client
+(`./rapido-kb/charte-graphique.md`, jamais versionnée ici).
+
+## Les 4 hooks (testés en CI)
+
+- `garde-perimetre-academie` — **fail-closed** : un outil hors de
+  l'inventaire vérifié (copie embarquée `outils-academie.txt`, égalité avec
+  `docs/inventaires/foodeatup-tutoriel-tools-live.txt` contrôlée en CI) →
+  confirmation humaine.
+- `anti-lien-invente` — un slug est en kebab-case et vient d'une réponse du
+  serveur ; une URL hors domaines de l'Académie est refusée (deny).
+- `garde-tarifs-et-commissions` — écrire un montant FoodEatUp sans date de
+  vérification → ask ; question de prix → rappel de la règle en contexte.
+- `contexte-academie` — SessionStart : le contrat du plugin en tête de
+  session (n'interfère jamais ailleurs).
+
+## Règles non négociables (reference/)
+
+`reference/directives-outils.md` (étape 0 de chaque skill) : méthode du
+serveur (secteur avant métier, une leçon à la fois, vignette en bloc image,
+quiz puis exercice, carnet en fin de séance), rien d'inventé (sujets,
+liens, chiffres — toujours l'outil + la date), convive sans lien vidéo,
+partenaires sans montant hors réponse. `reference/pieges-verifies.md` :
+comportements constatés en session live (paramètre `question`, `niveau`
+obligatoire, `videosEnLigne` ≠ `videosPrevues`, deux totaux d'outils selon
+la source…).
 
 ## Prérequis
 
-- Serveur **MCP Academy FoodEatUp** connecté :
-  `export ACADEMY_FOODEATUP_MCP_URL=…` (URL d'instance — pas de valeur par
-  défaut dans le dépôt). Sans lui, le plugin le dit et s'arrête.
-- Les travaux pratiques renvoient aux plugins `foodeatup` (faire) — ce plugin
-  apprend à faire, il n'exécute pas l'opération.
-
-## Installation
-
-```
-/plugin marketplace add PrendsTaPart/Plugin-Claude-MCP-BraindCode-
-/plugin install foodeatup-tutoriel@rapido
-```
+Aucun secret : le serveur Académie est public (`.mcp.json` embarqué). La
+charte graphique et les données client vivent dans `./rapido-kb/` (jamais
+versionnées).

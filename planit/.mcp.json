@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "planit": {
+      "type": "http",
+      "url": "https://planit.braindcode.com/mcp"
+    }
+  }
+}

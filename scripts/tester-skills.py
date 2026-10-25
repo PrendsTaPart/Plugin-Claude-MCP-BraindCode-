@@ -56,11 +56,6 @@ CATALOGUE = {
     "rapidocrm": _charger_catalogue_live("rapidocrm-tools-live.txt", 90),
     # huggsfield (Higgsfield) : liste versionnée live (81 outils, 2026-07-28).
     "huggsfield": _charger_catalogue_live("huggsfield-tools-live.txt", 60),
-    # academy-foodeatup : liste versionnée (26 outils, session 2026-07-28 —
-    # serveur injoignable le 2026-10-25, à re-vérifier), mode fermé si absente.
-    "academy-foodeatup": _charger_catalogue_live("academy-foodeatup-tools-live.txt", 20),
-    # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
-    "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
     # academy (« FoodEatUp formation », formation.foodeatup.fr) : liste
     # versionnée live (191 outils via describe_server, 2026-10-25), mode fermé.
     "academy": _charger_catalogue_live("academy-tools-live.txt", 150),
@@ -70,12 +65,20 @@ CATALOGUE = {
     # foodeatup-tutoriel (Académie publique tutoriel.foodeatup.com) : liste
     # versionnée live (36 outils, v0.7.0, 2026-10-25), mode fermé si absente.
     "foodeatup-tutoriel": _charger_catalogue_live("foodeatup-tutoriel-tools-live.txt", 30),
+    # rapidocms : liste versionnée live (45 outils, 2026-10-25), mode fermé si absente.
+    "rapidocms": _charger_catalogue_live("rapidocms-tools-live.txt", 40),
+    # prospect (Prospector Hub) : liste versionnée (66 outils, manifeste MCP
+    # publié du projet, 2026-10-25), mode fermé si absente.
+    "prospect": _charger_catalogue_live("prospect-tools-live.txt", 60),
     # braindcode-build (build.braindcode.com/api/mcp) : liste versionnée
     # (44 outils, manifeste MCP publié du projet, 2026-10-25), mode fermé.
     "braindcode-build": _charger_catalogue_live("braindcode-build-tools-live.txt", 40),
     # marketplace-prompts (plugin.braindcode.com) : liste versionnée live
     # (53 outils, session du 2026-10-25), mode fermé si absente.
     "marketplace-prompts": _charger_catalogue_live("marketplace-prompts-tools-live.txt", 40),
+    # planit (Plan'It, planit.braindcode.com) : liste versionnée live
+    # (63 outils, session du 2026-10-25), mode fermé si absente.
+    "planit": _charger_catalogue_live("planit-tools-live.txt", 50),
     "rapidorh": set("""create-daily-tool create-project-link-tool create-project-tool
 create-role-tool create-task-list-tool create-task-tool create-user-tool
 delete-project-link-tool delete-user-tool get-dailies-tool get-departments-list-tool
@@ -154,7 +157,11 @@ stripe_implementation_planner""".split()),
 # attribuable passe en INFO (à vérifier en ligne, MCP connectés), pas en WARN.
 # canva : OAuth non connecté dans la session du 2026-07-10 — seul catalogue
 # non re-vérifiable en live (relevé du 2026-07-06 embarqué ci-dessus).
-SERVEURS_CATALOGUE_DISTANT = ["canva"]
+SERVEURS_CATALOGUE_DISTANT = ["canva",
+                              # serveurs FoodEatUp annoncés par get_capabilities
+                              # (Academy) mais non connectés en session : leurs
+                              # outils cités se vérifient en ligne (INFO).
+                              "site", "social", "studio-print", "build"]
 SERVEURS_SANS_CATALOGUE = set()
 PREFIXES_OUTIL = ("create", "list", "get", "update", "delete", "add", "edit", "send",
                   "schedule", "cancel", "remove", "upload", "generate", "assign", "move",
@@ -205,6 +212,39 @@ TESTS_HOOKS = {
         ({"tool_name": "mcp__google-calendar__delete_event", "tool_input": {}}, "ask"),
     ],
 }
+import datetime as _dt  # noqa: E402 — états et cadres de test dynamiques
+
+_AUJOURDHUI = _dt.date.today().isoformat()
+
+
+# Cadre employé de test (rapido-employe) : la clé racine cadre_test n'est
+# injectable que par le harnais ou Claude Code — jamais par le modèle, qui ne
+# contrôle que tool_input. L'horodatage est calculé pour rester frais.
+_CADRE_EMPLOYE = {
+    "horodatage": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+    "actif": True,
+    "autonomie": {"apprendre": "Confirmé", "configurer": "Confirmé",
+                  "preparer": "Brouillon", "prospecter": "Aperçu",
+                  "publier": "Aperçu", "service-client": "Brouillon",
+                  "developper": "Brouillon", "engager": "Aperçu"},
+    "quotas_jour": {"envoisJour": 1, "publicationsJour": 1, "reponsesJour": 5},
+}
+_CADRE_EMPLOYE_ARRET = dict(_CADRE_EMPLOYE, actif=False)
+_CADRE_EMPLOYE_PERIME = dict(_CADRE_EMPLOYE,
+                             horodatage="2020-01-01T00:00:00+00:00")
+
+_PROCHAIN_LUNDI = (_dt.date.today()
+                   + _dt.timedelta(days=(7 - _dt.date.today().weekday()) % 7 or 7))
+_LUNDI_10H = _PROCHAIN_LUNDI.isoformat() + "T10:00:00"
+_DIMANCHE_10H = (_PROCHAIN_LUNDI - _dt.timedelta(days=1)).isoformat() + "T10:00:00"
+_KB_PROSPECT_OK = {
+    "expediteur": {"identite": "FoodEatUp", "email": "contact@foodeatup.com",
+                   "desinscription": "Pour vous désinscrire, répondez STOP",
+                   "mention_stop": "STOP au 36180"},
+    "liste_opposition": ["opposant@exemple.fr", "+33699999999", "conn-42"],
+    "appels_automatises": {"actives": True},
+}
+
 TESTS_HOOKS_EXTRAS = {
     # braindcode-build — écritures visibles Build : ask ; lectures : allow
     ("braindcode-build", "garde-build.py"): [
@@ -294,6 +334,278 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "mcp__braindcode-build__list_my_projects",
           "tool_input": {}}, "allow"),
     ],
+    # rapido-prospector — envois réels : ask systématique, deny quota/lot/fenêtre
+    ("rapido-prospector", "garde-envois-prospect.py"): [
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr", "c@d.fr"], "subject": "x",
+                         "content": "y"},
+          "maintenant_test": _LUNDI_10H}, "ask"),
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": [f"p{i}@x.fr" for i in range(30)]},
+          "maintenant_test": _LUNDI_10H}, "deny"),  # lot 30 > plafond 25
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"]},
+          "compteurs_test": {"date": _AUJOURDHUI, "email": 50},
+          "maintenant_test": _LUNDI_10H}, "deny"),  # quota du jour atteint
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"]},
+          "maintenant_test": _DIMANCHE_10H}, "deny"),  # hors fenêtre
+        ({"tool_name": "mcp__prospect__place_call",
+          "tool_input": {"targets": ["+33611111111"], "message": "x"},
+          "maintenant_test": _LUNDI_10H}, "deny"),  # appels : quota 0 par défaut
+        ({"tool_name": "mcp__prospect__send_sms",
+          "tool_input": {"targets": ["+33611111111"], "content": "x STOP"},
+          "maintenant_test": _LUNDI_10H}, "ask"),
+        ({"tool_name": "mcp__prospect__send_linkedin_invite",
+          "tool_input": {"connectionId": "c1", "account_id": "a1"},
+          "maintenant_test": _LUNDI_10H}, "ask"),
+        ({"tool_name": "mcp__prospect__list_clients", "tool_input": {}}, "allow"),
+    ],
+    # rapido-prospector — conformité : deny sans identité/désinscription/STOP,
+    # deny appels non activés, deny liste d'opposition
+    ("rapido-prospector", "garde-conformite.py"): [
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"], "subject": "Démo",
+                         "content": "Bonjour, ici FoodEatUp. "
+                                    "Pour vous désinscrire, répondez STOP."},
+          "kb_test": _KB_PROSPECT_OK}, "allow"),
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["a@b.fr"], "subject": "Démo",
+                         "content": "Bonjour sans rien"}}, "deny"),
+        ({"tool_name": "mcp__prospect__send_sms",
+          "tool_input": {"targets": ["+33611111111"],
+                         "content": "Démo FoodEatUp"}}, "deny"),  # pas de STOP
+        ({"tool_name": "mcp__prospect__send_sms",
+          "tool_input": {"targets": ["+33611111111"],
+                         "content": "Démo FoodEatUp — STOP pour refuser"},
+          "kb_test": _KB_PROSPECT_OK}, "allow"),
+        ({"tool_name": "mcp__prospect__place_call",
+          "tool_input": {"targets": ["+33611111111"],
+                         "message": "Ici FoodEatUp, dites refuser pour "
+                                    "ne plus être contacté"}}, "deny"),  # non activés
+        ({"tool_name": "mcp__prospect__place_call",
+          "tool_input": {"targets": ["+33611111111"],
+                         "message": "Ici FoodEatUp, dites refuser pour "
+                                    "ne plus être contacté"},
+          "kb_test": _KB_PROSPECT_OK}, "allow"),
+        ({"tool_name": "mcp__prospect__send_email",
+          "tool_input": {"recipients": ["opposant@exemple.fr"], "subject": "x",
+                         "content": "Ici FoodEatUp. Pour vous désinscrire…"},
+          "kb_test": _KB_PROSPECT_OK}, "deny"),  # liste d'opposition
+        ({"tool_name": "mcp__prospect__send_linkedin_message",
+          "tool_input": {"connectionId": "conn-42", "account_id": "a1",
+                         "message": "bonjour"},
+          "kb_test": _KB_PROSPECT_OK}, "deny"),  # connexion opposée
+    ],
+    # rapido-prospector — suppressions : ask avec cascade ; lectures : allow
+    ("rapido-prospector", "garde-destructif-prospect.py"): [
+        ({"tool_name": "mcp__prospect__delete_client",
+          "tool_input": {"id": "c1"}}, "ask"),
+        ({"tool_name": "mcp__prospect__delete_linkedin_connection",
+          "tool_input": {"id": "l1"}}, "ask"),
+        ({"tool_name": "mcp__prospect__delete_webinar",
+          "tool_input": {"id": "w1"}}, "ask"),
+        ({"tool_name": "mcp__prospect__list_clients", "tool_input": {}}, "allow"),
+    ],
+    # rapido-prospector — publications visibles + configuration
+    ("rapido-prospector", "garde-publication.py"): [
+        ({"tool_name": "mcp__prospect__add_webinar",
+          "tool_input": {"title": "x", "event_date": "2027-01-01",
+                         "is_active": True}}, "ask"),
+        ({"tool_name": "mcp__prospect__add_webinar",
+          "tool_input": {"title": "x", "event_date": "2027-01-01",
+                         "is_active": False}}, "allow"),
+        ({"tool_name": "mcp__prospect__update_blog_post",
+          "tool_input": {"id": "b1", "status": "publie"}}, "ask"),
+        ({"tool_name": "mcp__prospect__update_blog_post",
+          "tool_input": {"id": "b1", "status": "brouillon"}}, "allow"),
+        ({"tool_name": "mcp__prospect__prospection_terms",
+          "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__prospect__prospection_terms",
+          "tool_input": {"add_kind": "speciality", "add_value": "boulangerie"}},
+         "ask"),
+        ({"tool_name": "mcp__prospect__add_linkedin_account",
+          "tool_input": {"name": "Compte", "account_id": "a1"}}, "ask"),
+    ],
+    # rapido-prospector — add_clients sans dédoublonnage du jour = ask
+    ("rapido-prospector", "anti-doublon.py"): [
+        ({"tool_name": "mcp__prospect__add_clients",
+          "tool_input": {"city": "Lyon", "speciality": "pizzeria",
+                         "clients": [{"name": "x"}]},
+          "session_test": {"dedoublonnage": _AUJOURDHUI + "T09:00:00"},
+          "aujourdhui_test": _AUJOURDHUI}, "allow"),
+        ({"tool_name": "mcp__prospect__add_clients",
+          "tool_input": {"clients": [{"name": "x"}]},
+          "session_test": {}, "aujourdhui_test": _AUJOURDHUI}, "ask"),
+        ({"tool_name": "mcp__prospect__add_clients",
+          "tool_input": {"clients": [{"name": "x"}]},
+          "session_test": {"dedoublonnage": "2020-01-01T09:00:00"},
+          "aujourdhui_test": _AUJOURDHUI}, "ask"),  # preuve périmée
+    ],
+    # planit — les trois familles sensibles (destructifs, payants, tranchent)
+    # exigent une confirmation ; confirm posé par le modèle ignoré.
+    ("planit", "garde-planit.py"): [
+        ({"tool_name": "mcp__Plan_It__delete_task",
+          "tool_input": {"name": "x", "confirm": True}}, "ask"),
+        ({"tool_name": "mcp__planit__run_routine_now",
+          "tool_input": {"task_id": "rt-1"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__compose_video",
+          "tool_input": {"subject": "x", "duration": 20}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__decide_kpi_alert",
+          "tool_input": {"alert_id": "a1", "decision": "accept"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__list_tasks", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__propose_routine",
+          "tool_input": {"name": "veille"}}, "allow"),
+    ],
+    # planit — pas d'exécution sans coût annoncé dans la session.
+    ("planit", "garde-cout-annonce.py"): [
+        ({"tool_name": "mcp__Plan_It__run_routine_now",
+          "tool_input": {"task_id": "rt-77"}}, "deny"),
+        ({"tool_name": "mcp__Plan_It__run_routine_now",
+          "tool_input": {"task_id": "rt-77"},
+          "session_test": {_AUJOURDHUI: {"couts_annonces": ["rt-77"]}}},
+         "allow"),
+        ({"tool_name": "mcp__Plan_It__accept_routine_proposal",
+          "tool_input": {"proposal_id": "pp-9"},
+          "session_test": {_AUJOURDHUI: {"couts_annonces": ["rt-77"]}}},
+         "deny"),
+        ({"tool_name": "mcp__Plan_It__add_kpi_widget",
+          "tool_input": {"kpi": "mrr"}}, "deny"),
+        ({"tool_name": "mcp__Plan_It__add_kpi_widget",
+          "tool_input": {"kpi": "mrr"},
+          "session_test": {_AUJOURDHUI: {"kpi_catalog": True}}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__list_routines", "tool_input": {}},
+         "allow"),
+    ],
+    # planit — « auto » ne se donne pas tout seul ; destructif en auto = deny.
+    ("planit", "garde-autonomie.py"): [
+        ({"tool_name": "mcp__Plan_It__propose_routine",
+          "tool_input": {"name": "x", "autonomy_level": "auto"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__propose_routine",
+          "tool_input": {"name": "x", "autonomy_level": "confirm"}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__subscribe_event",
+          "tool_input": {"routine": "r", "governance": "auto",
+                         "tools": ["delete_task"]}}, "deny"),
+        ({"tool_name": "mcp__Plan_It__subscribe_event",
+          "tool_input": {"routine": "r", "governance": "auto"}}, "ask"),
+        ({"tool_name": "mcp__Plan_It__subscribe_event",
+          "tool_input": {"routine": "r", "governance": "validation"}},
+         "allow"),
+    ],
+    # planit — vérité des données : silencieux sur un résultat sain (le
+    # déclenchement injecte du contexte, vérifié dans tests/evals.md).
+    ("planit", "verite-des-donnees.py"): [
+        ({"tool_name": "mcp__Plan_It__list_active_loops",
+          "tool_input": {},
+          "tool_response": {"loops": [{"verdict": "improving"}]}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__get_kpi_home", "tool_input": {},
+          "tool_response": {"credits": 100}}, "allow"),
+    ],
+    # planit — le journal n'est jamais bloquant.
+    ("planit", "journal-ecritures.py"): [
+        ({"tool_name": "mcp__Plan_It__update_task",
+          "tool_input": {"name": "x", "due_date": "2026-11-02"},
+          "tool_response": {"ok": True}}, "allow"),
+        ({"tool_name": "mcp__Plan_It__list_tasks", "tool_input": {}},
+         "allow"),
+    ],
+    # rapido-employe — le cadre Academy (niveaux par famille, quotas, arrêt)
+    # est relu, jamais codé : fail-closed sans cadre, deny si agent arrêté,
+    # engager toujours en ask, Aperçu=ask, Brouillon=brouillons seuls,
+    # Confirmé=allow. confirm posé par le modèle : ignoré.
+    ("rapido-employe", "garde-cadre-employe.py"): [
+        ({"tool_name": "mcp__academy__get_work_plan", "tool_input": {}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_formation__configure_routine",
+          "tool_input": {"confirm": True}}, "ask"),  # pas de cadre → ask
+        ({"tool_name": "mcp__Foodeatup_formation__log_routine_run",
+          "tool_input": {}, "cadre_test": _CADRE_EMPLOYE}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE}, "allow"),  # Brouillon + brouillon
+        ({"tool_name": "mcp__rapidocrm__send_email", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE}, "ask"),  # prospecter = Aperçu
+        ({"tool_name": "mcp__academy__record_expense",
+          "tool_input": {"confirm": True},
+          "cadre_test": _CADRE_EMPLOYE}, "ask"),  # engager : toujours
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE_ARRET}, "deny"),  # agent arrêté
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE_PERIME}, "ask"),  # cadre > 24 h
+    ],
+    # rapido-employe — Claude ne gouverne jamais son propre cadre.
+    ("rapido-employe", "garde-auto-gouvernance.py"): [
+        ({"tool_name": "mcp__Foodeatup_formation__set_agent_policy",
+          "tool_input": {"confirm": True}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__incubation_admin_review_step",
+          "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__decide_module",
+          "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__configure_routine",
+          "tool_input": {}}, "allow"),
+    ],
+    # rapido-employe — rien ne se paie sans record_expense ; un refus arrête.
+    ("rapido-employe", "garde-depense.py"): [
+        ({"tool_name": "mcp__studio-print__creer_pack", "tool_input": {}}, "ask"),
+        ({"tool_name": "mcp__studio-print__creer_pack", "tool_input": {},
+          "depenses_test": {_AUJOURDHUI: {"refuse": True}}}, "deny"),
+        ({"tool_name": "mcp__studio-print__creer_pack", "tool_input": {},
+          "depenses_test": {_AUJOURDHUI: {"accepte": True}}}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__create_devis", "tool_input": {}}, "allow"),
+    ],
+    # rapido-employe — envoi Gmail direct interdit (brouillon à la place),
+    # envois/publications en ask, quotas du jour en deny une fois atteints.
+    ("rapido-employe", "garde-envois.py"): [
+        ({"tool_name": "mcp__Gmail__send_message", "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__gmail__reply", "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__prospector-hub__send_email", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE, "compteurs_test": {}}, "ask"),
+        ({"tool_name": "mcp__prospector-hub__send_email", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE,
+          "compteurs_test": {_AUJOURDHUI: {"envois": 1}}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__schedule_draft_tool", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE, "compteurs_test": {}}, "ask"),
+        ({"tool_name": "mcp__foodeatup__reply_review", "tool_input": {},
+          "cadre_test": _CADRE_EMPLOYE, "compteurs_test": {}}, "ask"),
+        ({"tool_name": "mcp__rapidocrm__list_rdvs", "tool_input": {}}, "allow"),
+    ],
+    # rapido-employe — la mémoire ne range ni secret ni donnée personnelle.
+    ("rapido-employe", "garde-memoire.py"): [
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"type": "methode",
+                         "texte": "relancer à J+3 le matin marche mieux"}},
+         "allow"),
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"texte": "le client préfère karim.b@restaurant.fr"}},
+         "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"texte": "jeton api_key: sk-abcdef123456789"}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_formation__remember",
+          "tool_input": {"texte": "IBAN FR76 3000 6000 0112 3456 7890 189"}},
+         "deny"),
+        ({"tool_name": "mcp__rapidocrm__create_contact",
+          "tool_input": {"email": "vrai@resto.fr"}}, "allow"),
+    ],
+    # rapido-employe — signatures mécaniques de l'invention dans les écritures.
+    ("rapido-employe", "anti-donnee-inventee.py"): [
+        ({"tool_name": "mcp__rapidocrm__create_contact",
+          "tool_input": {"email": "jean@exemple.com"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__create_draft_tool",
+          "tool_input": {"contenu": "des résultats garantis +30 % dès le "
+                                    "premier mois"}}, "deny"),
+        ({"tool_name": "mcp__rapidocms__create_draft_tool",
+          "tool_input": {"contenu": "Texte avec [ville] à remplir"}}, "deny"),
+        ({"tool_name": "mcp__rapidocrm__create_devis",
+          "tool_input": {"entreprise_id": 12, "total_ht": 99}}, "allow"),
+        ({"tool_name": "mcp__rapidocrm__list_contacts", "tool_input": {}},
+         "allow"),
+    ],
+    # rapido-employe — le journal n'est jamais bloquant.
+    ("rapido-employe", "journal-ecritures.py"): [
+        ({"tool_name": "mcp__rapidocrm__create_devis",
+          "tool_input": {"entreprise_id": 1},
+          "tool_response": {"id": 7}}, "allow"),
+        ({"tool_name": "mcp__academy__get_work_plan", "tool_input": {}},
+         "allow"),
+    ],
     # rapido-lovable / rapido-canva / rapido-video — hooks ajoutés (série FINITION F2)
     ("rapido-lovable", "garde-lovable.py"): [
         ({"tool_name": "mcp__Lovable__deploy_project", "tool_input": {}}, "ask"),
@@ -359,16 +671,55 @@ TESTS_HOOKS_EXTRAS = {
         ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
     ],
     # foodeatup-iris — jamais de publication auto ; crédits confirmés avant
-    # foodeatup-tutoriel — publication et gouvernance des comptes confirmées
-    ("foodeatup-tutoriel", "garde-academie.py"): [
-        ({"tool_name": "mcp__Academy_FoodEatUp__admin_publish_toggle",
-          "tool_input": {"cours_id": 1}}, "ask"),
-        ({"tool_name": "mcp__Academy_FoodEatUp__admin_user_role_set",
-          "tool_input": {"user_id": 1, "role": "formateur"}}, "ask"),
-        ({"tool_name": "mcp__Academy_FoodEatUp__academy_search",
-          "tool_input": {"q": "haccp"}}, "allow"),
-        ({"tool_name": "mcp__Academy_FoodEatUp__admin_cours_create",
-          "tool_input": {"titre": "x"}}, "allow"),
+    # foodeatup-tutoriel — périmètre Académie fail-closed : un outil hors de
+    # l'inventaire vérifié (36 outils) demande une confirmation humaine.
+    ("foodeatup-tutoriel", "garde-perimetre-academie.py"): [
+        ({"tool_name": "mcp__Foodeatup_tutoriel__rechercher_tutoriels",
+          "tool_input": {"question": "relevé de température"}}, "allow"),
+        ({"tool_name": "mcp__foodeatup-tutoriel__quiz_tutoriel",
+          "tool_input": {"slug": "boucle-01-configuration-boutique"}}, "allow"),
+        # outil inconnu de l'inventaire (dérive serveur) → ask
+        ({"tool_name": "mcp__Foodeatup_tutoriel__outil_tout_neuf",
+          "tool_input": {}}, "ask"),
+        # outil d'un AUTRE serveur passé par erreur dans le matcher → ask aussi
+        ({"tool_name": "mcp__foodeatup_tutoriel__admin_publish_toggle",
+          "tool_input": {}}, "ask"),
+    ],
+    # foodeatup-tutoriel — un lien/slug vient d'une réponse du serveur,
+    # jamais de mémoire.
+    ("foodeatup-tutoriel", "anti-lien-invente.py"): [
+        ({"tool_name": "mcp__Foodeatup_tutoriel__carte_tutoriel",
+          "tool_input": {"slug": "relever-les-temperatures"}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__rechercher_tutoriels",
+          "tool_input": {"question": "comment je fais un relevé ?"}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__carte_tutoriel",
+          "tool_input": {"slug": "https://exemple.com/video"}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__tutoriels_du_module",
+          "tool_input": {"module": "haccp",
+                         "lien": "https://site-pirate.example/tuto"}}, "deny"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__lister_tutoriels",
+          "tool_input": {"moduleSlug": "HACCP Module"}}, "deny"),
+    ],
+    # foodeatup-tutoriel — jamais un montant écrit sans date de vérification.
+    ("foodeatup-tutoriel", "garde-tarifs-et-commissions.py"): [
+        ({"tool_name": "Write",
+          "tool_input": {"file_path": "plan.html",
+                         "content": "Pack StockVision FoodEatUp : 99 €/mois"}},
+         "ask"),
+        ({"tool_name": "Write",
+          "tool_input": {"file_path": "plan.html",
+                         "content": "Pack StockVision FoodEatUp : 99 €/mois "
+                                    "(tarifs vérifiés le 2026-08-09)"}},
+         "allow"),
+        ({"tool_name": "Edit",
+          "tool_input": {"new_string": "le plan de formation des serveurs"}},
+         "allow"),
+    ],
+    # foodeatup-tutoriel — le contexte de session n'interfère jamais ailleurs.
+    ("foodeatup-tutoriel", "contexte-academie.py"): [
+        ({"tool_name": "Bash", "tool_input": {"command": "ls"}}, "allow"),
+        ({"tool_name": "mcp__Foodeatup_tutoriel__lister_modules",
+          "tool_input": {}}, "allow"),
     ],
     ("foodeatup-iris", "garde-iris.py"): [
         ({"tool_name": "mcp__rapidocms__schedule_draft_tool", "tool_input": {}}, "ask"),

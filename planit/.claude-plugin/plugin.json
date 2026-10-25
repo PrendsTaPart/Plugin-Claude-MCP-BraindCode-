@@ -1,0 +1,12 @@
+{
+  "name": "planit",
+  "version": "0.1.0",
+  "description": "Pilote Plan'It de bout en bout : tâches et routines (une routine a un objectif chiffré, jamais de fréquence once/custom), boucles routine ↔ KPI (référence figée, verdict après 3 exécutions ET 14 jours), widgets de l'accueil, alertes, crédits (tout coût s'annonce avant), connecteurs MCP, routines sur événement, prompts, catalogue privé et vidéos courtes — propositions d'abord, l'utilisateur décide",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "planit"
+  ]
+}

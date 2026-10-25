@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline de la zone</title>
+<style>
+:root { --nuit:#0f1a23; --bleu:#007bff; --orange:#ffa500; --creme:#fcf9e6;
+  --blanc:#ffffff; --gris:#737373; --bon:#1f9d55; --moyen:#d98a00;
+  --alerte:#c0392b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --blanc:#141c24; --creme:#1d2733;
+    --nuit:#edf2f7; --gris:#9aa7b4; }
+}
+:root[data-theme="dark"] { --blanc:#141c24; --creme:#1d2733;
+  --nuit:#edf2f7; --gris:#9aa7b4; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--creme); color:var(--nuit);
+  font:16px/1.5 Inter, system-ui, sans-serif; }
+main { max-width:860px; margin:0 auto; background:var(--blanc);
+  border-radius:14px; padding:24px; border-top:8px solid var(--bleu); }
+h1 { font-size:1.4rem; margin:0 0 .2em; }
+.sous { color:var(--gris); font-size:.9rem; margin:0 0 1em; }
+table { width:100%; border-collapse:collapse; font-size:.95rem; }
+th { text-align:left; background:var(--bleu); color:#fff; padding:.5em .6em; }
+td { padding:.5em .6em; border-bottom:1px solid color-mix(in srgb, var(--gris) 30%, transparent); }
+td.noms { color:var(--gris); font-size:.85rem; }
+footer { color:var(--gris); font-size:.8rem; margin-top:1.2em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pipeline — {{ZONE}}</h1>
+  <p class="sous">{{TOTAL}} prospect(s) dans le tunnel.</p>
+  <table><thead><tr><th>Étape</th><th>Nombre</th><th>Prospects (6 premiers)</th></tr></thead>
+  <tbody>
+  {{LIGNES}}
+  </tbody></table>
+  <footer>Calcul affiché : {{FORMULE}}. Données : get_pipeline /
+  get_stats_pipeline (RapidoCRM) — le pipeline ne se maquille pas.</footer>
+</main>
+</body>
+</html>

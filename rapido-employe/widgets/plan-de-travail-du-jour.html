@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan de travail du jour</title>
+<style>
+/* Palette FoodEatUp Academy (gabarit get_report_brief) : modifier les
+   variables, jamais les couleurs en dur. */
+:root { --nuit:#0f1a23; --bleu:#007bff; --orange:#ffa500; --creme:#fcf9e6;
+  --blanc:#ffffff; --gris:#737373; --bon:#1f9d55; --moyen:#d98a00;
+  --alerte:#c0392b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --blanc:#141c24; --creme:#1d2733;
+    --nuit:#edf2f7; --gris:#9aa7b4; }
+}
+:root[data-theme="dark"] { --blanc:#141c24; --creme:#1d2733;
+  --nuit:#edf2f7; --gris:#9aa7b4; }
+* { box-sizing:border-box; }
+body { margin:0; padding:24px 16px; background:var(--creme); color:var(--nuit);
+  font:16px/1.5 Inter, system-ui, sans-serif; }
+main { max-width:860px; margin:0 auto; background:var(--blanc);
+  border-radius:14px; padding:24px; border-top:8px solid var(--bleu); }
+h1 { font-size:1.4rem; margin:0 0 .2em; }
+h3 { color:var(--bleu); font-size:1rem; margin:1.2em 0 .4em; }
+.sous { color:var(--gris); font-size:.9rem; margin:0 0 1em; }
+table { width:100%; border-collapse:collapse; font-size:.95rem; }
+th { text-align:left; background:var(--bleu); color:#fff; padding:.5em .6em; }
+td { padding:.5em .6em; border-bottom:1px solid color-mix(in srgb, var(--gris) 30%, transparent); }
+footer { color:var(--gris); font-size:.8rem; margin-top:1.2em; }
+.etat { display:inline-block; padding:.2em .8em; border-radius:999px;
+  font-weight:700; color:#fff; font-size:.8rem; vertical-align:middle; }
+.etat.ok { background:var(--bon); } .etat.stop { background:var(--alerte); }
+.quotas { display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+  margin:1em 0; }
+.q { background:var(--creme); border-radius:10px; padding:.7em;
+  text-align:center; }
+.q .v { font-size:1.6rem; font-weight:700; }
+td.niv-aperçu { color:var(--moyen); font-weight:600; }
+td.niv-brouillon { color:var(--bleu); font-weight:600; }
+td.niv-confirmé { color:var(--bon); font-weight:600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Plan de travail du jour <span class="etat {{CLASSE_ETAT}}">{{ETAT}}</span></h1>
+  <p class="sous">Cadre relu dans get_work_plan — jamais codé en dur.
+  Prochaine mission : <strong>{{MISSION}}</strong> ({{MISSION_FORMATION}}).</p>
+  <div class="quotas">
+    <div class="q"><div class="v">{{ENVOIS}}</div>envois/jour</div>
+    <div class="q"><div class="v">{{PUBLIS}}</div>publications/jour</div>
+    <div class="q"><div class="v">{{REPONSES}}</div>réponses/jour</div>
+  </div>
+  <h3>Autonomie par famille</h3>
+  <table><thead><tr><th>Famille</th><th>Niveau</th><th>Connecteurs</th></tr></thead>
+  <tbody>
+  {{FAMILLES}}
+  </tbody></table>
+  <h3>Budget</h3>
+  <p>Mensuel : {{BUDGET_MOIS}} € · plafond du jour : {{BUDGET_JOUR}} € ·
+  restant : {{BUDGET_RESTE}} € — toute dépense passe par record_expense.</p>
+  <h3>Routines du registre</h3>
+  <ul>
+  {{ROUTINES}}
+  </ul>
+  <footer>Données : get_work_plan (Academy), à la prise de poste.
+  « Engager » reste une décision humaine quel que soit le niveau.</footer>
+</main>
+</body>
+</html>
