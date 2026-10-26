@@ -33,7 +33,7 @@ DOMAINES = {
     },
     "Contenu & réseaux sociaux": {
         "plugins": ["rapidocms", "rapido-copywriter", "rapido-canva",
-                    "rapido-design", "rapido-prompteur"],
+                    "rapido-design", "rapido-prompteur", "rapido-youtube"],
         "phrases": ["« programme mes posts de la semaine »",
                     "« écris la copy de ce lancement »",
                     "« décline ce visuel aux couleurs de ma marque »"],

@@ -1,0 +1,18 @@
+# Liste versionnée des outils du serveur MCP Plan'it tutoriel. Relevé du
+# 2026-10-25 : énumération des outils exposés dans la session connectée.
+# 15 outils. Un nom par ligne. Référence CI.
+agents_liaisons
+ajouter_carte_prompt
+definir_statut
+enregistrer_details_tutoriel
+enregistrer_transcription
+enregistrer_video
+enregistrer_vignette
+marketplace_enregistrer_video
+marketplace_fiche
+marketplace_lister
+marketplace_maj_fiche
+tutoriel_lister
+tutoriel_spec
+videos_manquantes
+vignette_spec

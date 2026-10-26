@@ -1,0 +1,12 @@
+{
+  "name": "rapido-youtube",
+  "version": "0.1.0",
+  "description": "YouTube Publisher Bot : veille et outliers, mots-clés, titres et SEO, atelier de miniatures, publication sous contrôle du quota, autopilote, Shorts, distribution, tests A/B, analytics, corrections en lot, commentaires — pour les 4 chaînes de l'écosystème",
+  "author": {
+    "name": "BraindCode",
+    "url": "https://braindcode.com"
+  },
+  "mcp_requis": [
+    "rapido-youtube"
+  ]
+}

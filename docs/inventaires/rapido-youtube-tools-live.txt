@@ -1,0 +1,94 @@
+# Liste versionnée des outils OFFICIELS du serveur MCP Rapido YouTube
+# (« YouTube Publisher Bot », https://youtube.rapidocms.com/mcp). Relevé du
+# 2026-10-25, source : manifeste MCP publié du projet Lovable (serveur
+# youtube-publisher-bot 0.4.0) — ressource OAuth (Supabase, sonde HTTP 401),
+# le tools/list authentifié se refait à la première session connectée.
+# Le serveur expose AUSSI 86 alias dépréciés sans préfixe (retrait le
+# 2026-12-31) : voir rapido-youtube-alias-deprecies.txt — JAMAIS utilisés.
+# 86 outils yt_. Un nom par ligne. Référence CI du plugin rapido-youtube.
+yt_analyze_outlier_pattern
+yt_analyze_thumbnail
+yt_apply_style
+yt_apply_template
+yt_attach_thumbnail_to_video
+yt_audit_channel
+yt_auto_optimize_thumbnail
+yt_bulk_schedule
+yt_cancel_bulk_job
+yt_cancel_cross_post
+yt_cancel_scheduled_video
+yt_clone_style_from_url
+yt_compare_thumbnails
+yt_compare_videos
+yt_create_bulk_job
+yt_create_clips_from_video
+yt_create_prompt
+yt_create_upload_url
+yt_delete_prompt
+yt_delete_video
+yt_draft_comment_reply
+yt_edit_thumbnail
+yt_extract_youtube_thumbnail
+yt_find_outliers
+yt_find_replace_descriptions
+yt_generate_description
+yt_generate_report
+yt_generate_thumbnail
+yt_generate_titles
+yt_generate_vertical_variant
+yt_get_bulk_job_status
+yt_get_channel_analytics
+yt_get_channel_health_score
+yt_get_channel_status
+yt_get_clip
+yt_get_credit_balance
+yt_get_daily_ideas
+yt_get_prompt
+yt_get_publishing_slots
+yt_get_quota_status
+yt_get_slot_scores
+yt_get_thumbnail
+yt_get_thumbnail_insights
+yt_get_video_analytics
+yt_get_video_momentum
+yt_get_video_status
+yt_inpaint_thumbnail
+yt_list_brand_kits
+yt_list_channels
+yt_list_comments
+yt_list_connected_accounts
+yt_list_cross_posts
+yt_list_face_models
+yt_list_prompts
+yt_list_recent_uploads
+yt_list_schedule
+yt_list_schedule_slots
+yt_list_styles
+yt_list_thumbnails
+yt_list_tracked_channels
+yt_list_videos
+yt_publish_clip
+yt_publish_video
+yt_queue_autopilot
+yt_register_uploaded_video
+yt_reply_to_comment
+yt_reschedule_video
+yt_research_keywords
+yt_retry_failed_items
+yt_retry_video
+yt_retry_videos
+yt_schedule_cross_post
+yt_schedule_video
+yt_score_video_seo
+yt_set_autopilot
+yt_set_favorite_channel
+yt_set_schedule_slots
+yt_start_ab_test
+yt_suggest_publishing_slots
+yt_suggest_slots
+yt_swap_face
+yt_switch_channel
+yt_toggle_prompt_favorite
+yt_track_channel
+yt_update_prompt
+yt_update_video_metadata

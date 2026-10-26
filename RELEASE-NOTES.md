@@ -1,5 +1,31 @@
 # Notes de release
 
+## YouTube Publisher Bot — rapido-youtube (2026-10-25)
+
+Nouveau plugin **`rapido-youtube`** (33e) — toute la vie des **4 chaînes
+YouTube** (FoodEatUp, RapidoCMS, RapidoCRM, Formation Braindcode) :
+veille/outliers, mots-clés, titres et SEO, **atelier de miniatures au
+barème lu**, publication et planification **sous contrôle du quota réel**
+(will_fail = refus), autopilote, Shorts, distribution, A/B (verdicts aux
+seuils exacts), analytics, corrections en lot après aperçu, commentaires
+relus, interconnexions avec les académies et Plan'It.
+
+- **86 outils OFFICIELS `yt_`** relevés au manifeste MCP publié — et les
+  **86 alias dépréciés (retrait 2026-12-31) interdits** : contrôle CI
+  dédié (vérifié par appât) + hook d'exécution qui donne le bon nom.
+- **20 skills**, **6 agents**, **17 commandes**, **9 widgets** à l'en-tête
+  du kit de marque de la chaîne, **5 scripts** (quota, crédits,
+  chapitres, checklist SEO, chevauchements de grille).
+- **11 hooks fail-closed, 36 cas CI** : quota frais obligatoire
+  (< 30 min, tight = question), chaîne toujours nommée, crédits sous
+  seuil KB, public sur accord, lots après preview/dry_run identiques,
+  grille lue (liste vide = effacement explicite), **visages verrouillés
+  aux modèles de l'utilisateur**, suppressions expliquées (la vidéo
+  publiée RESTE sur YouTube).
+- 4 inventaires additionnels relevés en session (académies RapidoCMS et
+  RapidoRH tuto, Plan'it tutoriel) pour les interconnexions.
+  **Validation : TOUT VALIDE (33 plugins) ; tester 0 FAIL / 0 WARN.**
+
 ## Le chef de chantier Build — braindcode-build (2026-10-25)
 
 Nouveau plugin **`braindcode-build`** (29e) — Claude Code **développeur IA

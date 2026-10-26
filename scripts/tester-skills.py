@@ -76,6 +76,15 @@ CATALOGUE = {
     # marketplace-prompts (plugin.braindcode.com) : liste versionnée live
     # (53 outils, session du 2026-10-25), mode fermé si absente.
     "marketplace-prompts": _charger_catalogue_live("marketplace-prompts-tools-live.txt", 40),
+    # rapido-youtube (« YouTube Publisher Bot », youtube.rapidocms.com) :
+    # 86 outils OFFICIELS yt_ (manifeste MCP publié, 2026-10-25) — les 86
+    # alias dépréciés n'y figurent pas et sont refusés (contrôle dédié).
+    "rapido-youtube": _charger_catalogue_live("rapido-youtube-tools-live.txt", 80),
+    # académies RapidoCMS / RapidoRH (administration des tutoriels) et
+    # Plan'it tutoriel : listes versionnées live (session du 2026-10-25).
+    "rapidocms-tuto": _charger_catalogue_live("rapidocms-tuto-tools-live.txt", 40),
+    "rapidorh-tuto": _charger_catalogue_live("rapidorh-tuto-tools-live.txt", 40),
+    "planit-tutoriel": _charger_catalogue_live("planit-tutoriel-tools-live.txt", 10),
     # planit (Plan'It, planit.braindcode.com) : liste versionnée live
     # (63 outils, session du 2026-10-25), mode fermé si absente.
     "planit": _charger_catalogue_live("planit-tools-live.txt", 50),
@@ -246,6 +255,151 @@ _KB_PROSPECT_OK = {
 }
 
 TESTS_HOOKS_EXTRAS = {
+    # rapido-youtube — alias dépréciés refusés, le bon nom donné
+    ("rapido-youtube", "alias-deprecies.py"): [
+        ({"tool_name": "mcp__rapido-youtube__publish_video",
+          "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__rapido-youtube__get_channel_status",
+          "tool_input": {}}, "deny"),
+        ({"tool_name": "mcp__rapido-youtube__yt_get_channel_status",
+          "tool_input": {}}, "allow"),
+    ],
+    # rapido-youtube — chaîne explicite exigée
+    ("rapido-youtube", "garde-chaine.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"video": "v.mp4"},
+          "session_test": {"chaine_active": "FoodEatUp"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"video": "v.mp4", "channel_id": "ch-1"}}, "allow"),
+        ({"tool_name": "mcp__rapido-youtube__yt_switch_channel",
+          "tool_input": {"channel_id": "ch-2"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_set_favorite_channel",
+          "tool_input": {"channel_id": "ch-2"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_list_videos",
+          "tool_input": {}}, "allow"),
+    ],
+    # rapido-youtube — quota : lecture fraîche exigée, will_fail = deny
+    ("rapido-youtube", "garde-quota.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"channel_id": "ch-1"},
+          "session_test": {}}, "deny"),  # jamais lu
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"channel_id": "ch-1"},
+          "session_test": {"quota": {"ts": _AUJOURDHUI + "T09:00:00",
+                                     "risk": "ok"}},
+          "maintenant_test": _AUJOURDHUI + "T10:00:00"}, "deny"),  # 60 min
+        ({"tool_name": "mcp__rapido-youtube__yt_schedule_video",
+          "tool_input": {"channel_id": "ch-1"},
+          "session_test": {"quota": {"ts": _AUJOURDHUI + "T09:00:00",
+                                     "risk": "will_fail"}},
+          "maintenant_test": _AUJOURDHUI + "T09:10:00"}, "deny"),
+        ({"tool_name": "mcp__rapido-youtube__yt_schedule_video",
+          "tool_input": {"channel_id": "ch-1"},
+          "session_test": {"quota": {"ts": _AUJOURDHUI + "T09:00:00",
+                                     "risk": "tight"}},
+          "maintenant_test": _AUJOURDHUI + "T09:10:00"}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"channel_id": "ch-1"},
+          "session_test": {"quota": {"ts": _AUJOURDHUI + "T09:00:00",
+                                     "risk": "ok"}},
+          "maintenant_test": _AUJOURDHUI + "T09:10:00"}, "allow"),
+        ({"tool_name": "mcp__rapido-youtube__yt_analyze_thumbnail",
+          "tool_input": {}}, "allow"),  # pas un envoi
+    ],
+    # rapido-youtube — crédits : variations > 1 ou seuil de session atteint
+    ("rapido-youtube", "garde-credits.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_generate_thumbnail",
+          "tool_input": {"prompt": "x", "variations": 3},
+          "session_test": {}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_generate_thumbnail",
+          "tool_input": {"prompt": "x"},
+          "session_test": {"credits_estimes": 30}}, "ask"),  # ≥ 25 défaut
+        ({"tool_name": "mcp__rapido-youtube__yt_generate_thumbnail",
+          "tool_input": {"prompt": "x"},
+          "session_test": {"credits_estimes": 3}}, "allow"),
+        ({"tool_name": "mcp__rapido-youtube__yt_analyze_thumbnail",
+          "tool_input": {}}, "allow"),  # gratuit
+    ],
+    # rapido-youtube — tout ce qui devient public
+    ("rapido-youtube", "garde-public.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"channel_id": "ch-1", "privacy": "public"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_publish_video",
+          "tool_input": {"channel_id": "ch-1", "privacy": "private"}},
+         "allow"),
+        ({"tool_name": "mcp__rapido-youtube__yt_update_video_metadata",
+          "tool_input": {"video_id": "v1", "title": "x"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_reply_to_comment",
+          "tool_input": {"comment_id": "c1", "text": "merci"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_start_ab_test",
+          "tool_input": {"video_id": "v1"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_create_prompt",
+          "tool_input": {"name": "x", "is_public": True}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_create_prompt",
+          "tool_input": {"name": "x"}}, "allow"),
+    ],
+    # rapido-youtube — lots : aperçu avant le réel
+    ("rapido-youtube", "garde-lot.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_create_bulk_job",
+          "tool_input": {"type": "seo", "video_ids": ["a", "b"],
+                         "preview_only": True}}, "allow"),
+        ({"tool_name": "mcp__rapido-youtube__yt_create_bulk_job",
+          "tool_input": {"type": "seo", "video_ids": ["a", "b"]},
+          "session_test": {"apercus_lot": []}}, "deny"),
+        ({"tool_name": "mcp__rapido-youtube__yt_find_replace_descriptions",
+          "tool_input": {"find": "ancien", "replace": "nouveau",
+                         "dry_run": True}}, "allow"),
+        ({"tool_name": "mcp__rapido-youtube__yt_find_replace_descriptions",
+          "tool_input": {"find": "ancien", "replace": "nouveau"},
+          "session_test": {"apercus_lot": []}}, "deny"),
+    ],
+    # rapido-youtube — la grille ne se remplace pas à l'aveugle
+    ("rapido-youtube", "garde-grille.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_set_schedule_slots",
+          "tool_input": {"channel_id": "ch-1", "slots": []},
+          "session_test": {"grille_lue": "oui"}}, "ask"),  # effacement
+        ({"tool_name": "mcp__rapido-youtube__yt_set_schedule_slots",
+          "tool_input": {"channel_id": "ch-1",
+                         "slots": [{"day": "tue", "time": "18:00"}]},
+          "session_test": {}}, "ask"),  # non lue
+        ({"tool_name": "mcp__rapido-youtube__yt_set_schedule_slots",
+          "tool_input": {"channel_id": "ch-1",
+                         "slots": [{"day": "tue", "time": "18:00"}]},
+          "session_test": {"grille_lue": "oui"}}, "ask"),  # toujours montrée
+    ],
+    # rapido-youtube — l'image des personnes
+    ("rapido-youtube", "garde-visage.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_swap_face",
+          "tool_input": {"face_model_id": "fm-1"},
+          "session_test": {}}, "deny"),  # aucun relevé
+        ({"tool_name": "mcp__rapido-youtube__yt_swap_face",
+          "tool_input": {"face_model_id": "fm-9"},
+          "session_test": {"face_models": ["fm-1"]}}, "deny"),  # hors liste
+        ({"tool_name": "mcp__rapido-youtube__yt_swap_face",
+          "tool_input": {"face_model_id": "fm-1"},
+          "session_test": {"face_models": ["fm-1"]}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_generate_thumbnail",
+          "tool_input": {"prompt": "x", "face_model_id": "fm-9"},
+          "session_test": {"face_models": ["fm-1"]}}, "deny"),
+        ({"tool_name": "mcp__rapido-youtube__yt_generate_thumbnail",
+          "tool_input": {"prompt": "x"}}, "allow"),  # sans visage
+    ],
+    # rapido-youtube — suppressions/annulations : ask avec l'effet réel
+    ("rapido-youtube", "garde-destructif-youtube.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_delete_video",
+          "tool_input": {"video_id": "v1", "confirm": True}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_cancel_scheduled_video",
+          "tool_input": {"video_id": "v1"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_delete_prompt",
+          "tool_input": {"prompt_id": "p1"}}, "ask"),
+        ({"tool_name": "mcp__rapido-youtube__yt_list_videos",
+          "tool_input": {}}, "allow"),
+    ],
+    # rapido-youtube — le journal n'est jamais bloquant
+    ("rapido-youtube", "journal-youtube.py"): [
+        ({"tool_name": "mcp__rapido-youtube__yt_list_videos",
+          "tool_input": {}}, "allow"),
+    ],
     # braindcode-build — écritures visibles Build : ask ; lectures : allow
     ("braindcode-build", "garde-build.py"): [
         ({"tool_name": "mcp__braindcode-build__publish_project",

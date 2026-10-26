@@ -1,0 +1,51 @@
+# Liste versionnée des outils du serveur MCP RapidoCMS Académie (administration des
+# tutoriels). Relevé du 2026-10-25 : énumération des outils exposés dans la
+# session connectée. Les deux académies partagent la même surface d'outils.
+# 47 outils. Un nom par ligne. Référence CI.
+ajouter_astuces
+ajouter_cas_usage
+ajouter_etapes_routine
+ajouter_lecon
+ajouter_prompts
+ajouter_variante_prompt
+capacites_academie
+configurer_agent_tutoriel
+configurer_hub
+creer_formation
+creer_prompt
+creer_prompts_lot
+creer_routine
+creer_tutoriel
+depublier_prompt
+depublier_routine
+enregistrer_execution_routine
+enregistrer_seo
+enregistrer_transcription
+enregistrer_video
+enregistrer_video_avatar
+enregistrer_vignette
+enregistrer_youtube
+journal_publications
+journal_routine
+lister_modules
+lister_prompts
+lister_routines
+lister_tutoriels
+lister_vignettes
+modifier_prompt
+modifier_routine
+obtenir_module
+obtenir_prompt
+obtenir_routine
+obtenir_tutoriel
+prompts_manquants
+publier_formation
+publier_prompt
+publier_routine
+publier_tutoriel
+routines_incompletes
+statistiques_prompts
+supprimer_prompt
+supprimer_routine
+synchroniser_outils
+tutoriels_incomplets

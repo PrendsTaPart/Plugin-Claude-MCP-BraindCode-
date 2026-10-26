@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparateur de miniatures</title>
+<style>
+  :root {
+    /* En-tête aux couleurs du KIT DE MARQUE de la chaîne ciblée :
+       render_widget.py remplit C_* depuis yt_list_brand_kits (réponse
+       brute). Sans kit fourni : thème neutre signalé ci-dessous. */
+    --accent: {{C_ACCENT}}; --fond-entete: {{C_FOND_ENTETE}};
+    --texte-entete: {{C_TEXTE_ENTETE}};
+    --fond: #ffffff; --texte: #15202b; --sous: #5a6472;
+    --filet: #d7dde3; --ok: #1f9d55; --attention: #d98a00;
+    --alerte: #c0392b;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--fond); color: var(--texte);
+         font: 15px/1.55 system-ui, "Segoe UI", sans-serif; padding: 0 0 24px; }
+  header { background: var(--fond-entete); color: var(--texte-entete);
+           padding: 18px 24px; }
+  header h1 { font-size: 1.25em; }
+  header .sous { color: inherit; opacity: .75; }
+  main { padding: 0 24px; }
+  h2 { font-size: .95em; color: var(--accent); margin: 18px 0 8px;
+       text-transform: uppercase; letter-spacing: .05em; }
+  .carte { border: 1px solid var(--filet); border-radius: 10px;
+           padding: 14px 16px; margin-top: 10px; }
+  .sous { color: var(--sous); font-size: .85em; }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  th, td { text-align: left; padding: 5px 8px;
+           border-bottom: 1px solid var(--filet); }
+  th { color: var(--sous); font-weight: 600; font-size: .85em; }
+  ul { margin: 6px 0 0 18px; }
+  .ok { color: var(--ok); } .attention { color: var(--attention); }
+  .alerte { color: var(--alerte); font-weight: 600; }
+  .badge { display: inline-block; padding: 1px 10px; border-radius: 12px;
+           border: 1px solid var(--filet); font-size: .8em; }
+  .nombre { font-size: 1.9em; font-weight: 700; }
+  .barre { background: #eef1f5; border-radius: 6px; height: 12px; overflow: hidden; }
+  .barre > span { display: block; height: 100%; background: var(--accent); }
+</style></head>
+<body>
+<header><h1>Comparateur de miniatures — {{CHAINE}}</h1>
+<p class="sous">Généré le {{DATE}} — données du serveur Rapido YouTube, rien d'estimé sans le dire. Aperçus = liens signés temporaires, jamais recopiés en dur.</p></header>
+<main>
+<div class="carte"><table>
+<tr><th></th><th>Miniature A</th><th>Miniature B</th></tr>
+{{LIGNES}}
+</table></div>
+<h2>Verdict</h2>
+<div class="carte"><p>{{VERDICT}}</p>
+<p class="sous">un gagnant A/B n'existe qu'à 95 % de confiance et 100 impressions par phase — sinon : non concluant, A restaurée.</p></div>
+</main>
+</body></html>

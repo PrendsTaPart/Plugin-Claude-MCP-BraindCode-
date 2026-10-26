@@ -1,0 +1,53 @@
+{
+  "_source": "Manifeste MCP publié du projet « YouTube Publisher Bot » (serveur youtube-publisher-bot 0.4.0, relevé du 2026-10-25) + règles de la mission. Les hooks lisent ce fichier ; fail-closed s'il est illisible. Seuls les noms officiels yt_ existent ici : les 86 alias dépréciés (docs/inventaires/rapido-youtube-alias-deprecies.txt) sont refusés à l'appel.",
+  "cout_quota": {
+    "envois_complets": ["yt_publish_video", "yt_schedule_video", "yt_register_uploaded_video", "yt_bulk_schedule", "yt_publish_clip", "yt_retry_video", "yt_retry_videos", "yt_retry_failed_items", "yt_queue_autopilot"],
+    "cinquante_unites": {
+      "yt_attach_thumbnail_to_video": "avec push_to_youtube",
+      "yt_reply_to_comment": "toujours"
+    },
+    "autres_consommateurs": {
+      "yt_research_keywords": "avec with_competition",
+      "yt_list_comments": "avec sync",
+      "yt_get_video_momentum": "avec refresh",
+      "yt_get_slot_scores": "avec recompute",
+      "yt_create_bulk_job": "selon le job"
+    }
+  },
+  "cout_credits": {
+    "_bareme": "servi par yt_get_credit_balance — jamais codé en dur ici",
+    "outils": ["yt_generate_thumbnail", "yt_edit_thumbnail", "yt_inpaint_thumbnail", "yt_swap_face", "yt_apply_style", "yt_auto_optimize_thumbnail", "yt_clone_style_from_url", "yt_generate_vertical_variant", "yt_apply_template"],
+    "auto_optimize_passes": 2
+  },
+  "visible_du_public": {
+    "privacy_public": "toute publication/planification avec privacy à public",
+    "yt_update_video_metadata": "modifie une vidéo potentiellement EN LIGNE",
+    "yt_start_ab_test": "change la miniature visible pendant le test",
+    "yt_reply_to_comment": "réponse publique (et 50 unités de quota)",
+    "yt_schedule_cross_post": "publie sur les plateformes connectées",
+    "yt_generate_report": "crée un lien de partage public",
+    "yt_create_prompt": "avec is_public",
+    "yt_update_prompt": "avec is_public"
+  },
+  "modifications_en_masse": {
+    "yt_create_bulk_job": "jusqu'à 500 vidéos — preview_only d'abord, TOUJOURS",
+    "yt_find_replace_descriptions": "dry_run d'abord, TOUJOURS"
+  },
+  "reglages_cible_agenda": {
+    "yt_switch_channel": "change la chaîne active (cible par défaut des envois)",
+    "yt_set_favorite_channel": "change la chaîne favorite",
+    "yt_set_schedule_slots": "REMPLACE toute la grille — une liste vide l'efface",
+    "yt_set_autopilot": "change l'agenda automatique"
+  },
+  "suppressions_annulations": {
+    "yt_delete_video": "supprime l'entrée et le fichier dans l'application — la vidéo publiée RESTE en ligne sur YouTube",
+    "yt_delete_prompt": "réversible 30 jours (paramètre confirm — jamais posé par le modèle)",
+    "yt_cancel_scheduled_video": "annule une publication planifiée",
+    "yt_cancel_cross_post": "annule une diffusion programmée",
+    "yt_cancel_bulk_job": "arrête un job en lot"
+  },
+  "image_des_personnes": {
+    "yt_swap_face": "échange de visage — uniquement un modèle de visage de l'utilisateur, listé dans la session",
+    "yt_generate_thumbnail": "avec face_model_id — même règle"
+  }
+}
